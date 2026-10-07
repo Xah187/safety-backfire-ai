@@ -1,0 +1,68 @@
+{
+  "milestone": "V3.4-M",
+  "document_title": "Human Review Panel & Adjudication Governance Specification",
+  "governance_classification": "ETHICAL_AND_SCIENTIFIC_EVALUATION_PROTOCOL",
+  "reviewer_panel_structure": {
+    "composition": "TWO_INDEPENDENT_REVIEWERS_PLUS_ONE_LEAD_ADJUDICATOR",
+    "roles": {
+      "reviewer_1": {
+        "title": "Primary Independent Blinded Adjudicator",
+        "role_code": "REV_01",
+        "qualification": "Certified safety systems engineer or industrial human factors specialist.",
+        "blinding_level": "STRICT_DOUBLE_BLIND",
+        "independence": "Evaluates raw multi-camera video and kinematic telemetry without knowledge of Reviewer 2, Lead Adjudicator, or automated model outputs."
+      },
+      "reviewer_2": {
+        "title": "Secondary Independent Blinded Adjudicator",
+        "role_code": "REV_02",
+        "qualification": "Certified safety systems engineer or industrial robotics perception specialist.",
+        "blinding_level": "STRICT_DOUBLE_BLIND",
+        "independence": "Evaluates identical review package independently without access to Reviewer 1's ballot or intermediate ratings."
+      },
+      "lead_adjudicator": {
+        "title": "Lead Consensus Arbitrator & Adjudication Supervisor",
+        "role_code": "LEAD_ADJ",
+        "qualification": "Senior principal safety investigator.",
+        "authority": "Arbitrates split ballots; verifies adherence to evidentiary criteria; signs final Ground Truth commitment manifest."
+      }
+    }
+  },
+  "four_step_adjudication_sequence": {
+    "step_1_independent_blinded_review": {
+      "description": "Reviewer 1 and Reviewer 2 independently inspect sanitized packages (strictly stripped of AI scores, bounding boxes, track IDs, and Model H curves) and submit completed evaluation ballots.",
+      "prerequisite_gate": "Post-Capture Gate D6 (REVIEW_PACKAGE_SANITIZATION) = PASS"
+    },
+    "step_2_inter_rater_agreement_calculation": {
+      "description": "The system computes Cohen's Kappa (kappa) across all categorical evaluation fields based solely on the independent ratings of Reviewer 1 and Reviewer 2 prior to any consultation or arbitration.",
+      "agreement_metric": "Cohen's Unweighted Kappa (nominal scale)",
+      "target_agreement_threshold": 0.80,
+      "epistemic_limitation_declaration": "CRITICAL SCIENTIFIC PRINCIPLE: An inter-rater agreement of kappa >= 0.80 demonstrates high consensus reliability between human evaluators; it DOES NOT constitute mathematical or empirical proof that the agreed-upon label is an infallible physical truth."
+    },
+    "step_3_adjudication_and_arbitration": {
+      "description": "Resolution of ballot outcomes according to strict decision logic.",
+      "decision_rules": [
+        {
+          "condition": "Reviewer 1 label == Reviewer 2 label",
+          "action": "Unanimous consensus established; Lead Adjudicator countersigns and certifies package."
+        },
+        {
+          "condition": "Reviewer 1 label != Reviewer 2 label",
+          "action": "Lead Adjudicator convenes blinded tie-breaker session, inspects discrepancies against the physical Evidence Contract, and renders a final binding adjudication label (SPLIT_ARBITRATED)."
+        },
+        {
+          "condition": "Evidence remains ambiguous to all three evaluators",
+          "action": "Package is assigned GT_INSUFFICIENT_EVIDENCE and cannot be claimed as positive or negative backfire."
+        }
+      ]
+    },
+    "step_4_ground_truth_commitment": {
+      "description": "The final adjudicated label is cryptographically committed with SHA-256 signatures of all participating evaluators.",
+      "state_transition": "Advances dataset from DATASET_READY_FOR_REVIEW to VALIDATION_READY."
+    }
+  },
+  "prohibited_adjudication_shortcuts": [
+    "No single-reviewer Ground Truth assignment permitted.",
+    "No post-hoc modification of independent ballots after unblinding.",
+    "No algorithmic assistance or automated label pre-population in review forms."
+  ]
+}

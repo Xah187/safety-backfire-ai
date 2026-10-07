@@ -1,0 +1,116 @@
+{
+  "models_evaluated": [
+    {
+      "name": "Model 0: Null Constant",
+      "k_params": 1,
+      "rss": 0.009769,
+      "r2": 0.0,
+      "adj_r2": 0.0,
+      "f_stat": 0.0,
+      "p_value": 1.0,
+      "aic": -194.19,
+      "bic": -192.97,
+      "loocv_rmse": 0.0206,
+      "beta": [
+        0.005422
+      ]
+    },
+    {
+      "name": "Model 1: Linear in Y",
+      "k_params": 2,
+      "rss": 0.009547,
+      "r2": 0.0226,
+      "adj_r2": -0.0198,
+      "f_stat": 0.53,
+      "p_value": 0.4604,
+      "aic": -192.76,
+      "bic": -190.32,
+      "loocv_rmse": 0.0213,
+      "beta": [
+        -0.002132,
+        0.0012
+      ]
+    },
+    {
+      "name": "Model 2: Quadratic in Y",
+      "k_params": 3,
+      "rss": 0.008914,
+      "r2": 0.0875,
+      "adj_r2": 0.0046,
+      "f_stat": 1.06,
+      "p_value": 0.3656,
+      "aic": -192.48,
+      "bic": -188.82,
+      "loocv_rmse": 0.0213,
+      "beta": [
+        -0.038387,
+        0.014208,
+        -0.000997
+      ]
+    },
+    {
+      "name": "Model 3: Cubic in Y",
+      "k_params": 4,
+      "rss": 0.008514,
+      "r2": 0.1285,
+      "adj_r2": 0.004,
+      "f_stat": 1.03,
+      "p_value": 0.3994,
+      "aic": -191.62,
+      "bic": -186.75,
+      "loocv_rmse": 0.0222,
+      "beta": [
+        -0.129453,
+        0.065261,
+        -0.009584,
+        0.000442
+      ]
+    },
+    {
+      "name": "Model 4: Radial Distortion (r^2, r^4)",
+      "k_params": 3,
+      "rss": 0.009027,
+      "r2": 0.076,
+      "adj_r2": -0.008,
+      "f_stat": 0.9,
+      "p_value": 0.4199,
+      "aic": -192.16,
+      "bic": -188.5,
+      "loocv_rmse": 0.0211,
+      "beta": [
+        0.013357,
+        -0.021637,
+        0.006349
+      ]
+    },
+    {
+      "name": "Model 5: Spatial Interaction (X, Y, X*Y, R^2)",
+      "k_params": 5,
+      "rss": 0.008201,
+      "r2": 0.1605,
+      "adj_r2": -0.0074,
+      "f_stat": 0.96,
+      "p_value": 0.4536,
+      "aic": -190.56,
+      "bic": -184.47,
+      "loocv_rmse": 0.0229,
+      "beta": [
+        -0.029244,
+        -0.004271,
+        0.012283,
+        0.000848,
+        -0.000849
+      ]
+    }
+  ],
+  "diagnostics": {
+    "w_statistic": 0.9825,
+    "jb_statistic": 0.3446,
+    "jb_p_value": 0.8417,
+    "heteroscedasticity_r": 0.1028,
+    "heteroscedasticity_p": 0.6049,
+    "moran_i": -0.0635,
+    "expected_moran_i": -0.0417
+  },
+  "scientific_verdict": "NO_SYSTEMATIC_DISTORTION_CONFIRMED"
+}

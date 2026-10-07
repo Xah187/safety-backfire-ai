@@ -1,0 +1,8 @@
+[
+  {
+    "sector": "Sector_D_Outbound_Staging",
+    "class": "Load",
+    "failure": "Stacked pallet occlusion in dim light causing missed detection",
+    "category": "ODD_BOUNDARY"
+  }
+]

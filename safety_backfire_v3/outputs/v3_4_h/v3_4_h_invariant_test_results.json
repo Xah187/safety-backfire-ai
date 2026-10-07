@@ -1,0 +1,53 @@
+{
+  "invariants": {
+    "PROPERTY_1_DEPTH_OCCLUSION_NEVER_CANDIDATE": {
+      "passed": true,
+      "description": "Secondary depth occluded must NEVER result in BACKFIRE_CANDIDATE."
+    },
+    "PROPERTY_2_DELTA_LEQ_ZERO_NEVER_CANDIDATE": {
+      "passed": true,
+      "description": "Delta_R_sec <= 0 must NEVER result in BACKFIRE_CANDIDATE."
+    },
+    "PROPERTY_3_UNCONFIRMED_INTERVENTION_NEVER_CANDIDATE": {
+      "passed": true,
+      "description": "Unconfirmed intervention must NEVER result in BACKFIRE_CANDIDATE."
+    },
+    "PROPERTY_4_FAILED_ISOLATION_NEVER_CANDIDATE": {
+      "passed": true,
+      "description": "Failed confounder isolation must NEVER result in BACKFIRE_CANDIDATE."
+    },
+    "PROPERTY_5_LATENCY_VIOLATION_NEVER_CANDIDATE": {
+      "passed": true,
+      "description": "Latency > 2.0s must NEVER result in BACKFIRE_CANDIDATE."
+    },
+    "PROPERTY_6_UNDEFINED_ZONE_NEVER_CANDIDATE": {
+      "passed": true,
+      "description": "Undefined secondary zone must NEVER result in BACKFIRE_CANDIDATE."
+    },
+    "PROPERTY_7_INTERACTION_SCORE_ALONE_NEVER_MANUFACTURES_BACKFIRE": {
+      "passed": true,
+      "description": "Elevating Primary Interaction Score to 1.00 on a safe stop must NEVER manufacture BACKFIRE_CANDIDATE."
+    },
+    "NEGATIVE_PROPERTY_SAFE_CLOSE_APPROACH_MUST_BE_PRIMARY_NEAR_MISS": {
+      "passed": true,
+      "description": "High proximity safe stop MUST be classified as PRIMARY_NEAR_MISS."
+    }
+  },
+  "counterfactuals": {
+    "CF1_REMOVE_REDIRECTION": {
+      "actual_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "expected_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "passed": true
+    },
+    "CF2_OCCLUDE_SECONDARY_DEPTH": {
+      "actual_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "expected_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "passed": true
+    },
+    "CF3_ADD_NEW_FORKLIFT_CONFOUNDER": {
+      "actual_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "expected_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "passed": true
+    }
+  }
+}

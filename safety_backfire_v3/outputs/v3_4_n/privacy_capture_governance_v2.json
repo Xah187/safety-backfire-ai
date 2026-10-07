@@ -1,0 +1,54 @@
+{
+  "milestone": "V3.4-N",
+  "document_title": "Comprehensive Privacy & Data Governance Specification V2",
+  "data_classification": "PSEUDONYMIZED_CONFIDENTIAL_RESEARCH_DATA",
+  "anonymity_disclaimer": "CRITICAL GOVERNANCE MANDATE: This dataset is NOT anonymous. Optical video of industrial work environments inherently captures human facial geometry, worker uniforms, name badges, and facility shift timestamps. The project enforces rigorous pseudonymization, physical audio elimination, and cryptographic access control, but DOES NOT claim statutory anonymization.",
+  "policies": {
+    "operator_identifier_policy": {
+      "format": "^(OP|TECH)-[A-Z0-9]{6}$",
+      "implementation": "Pseudonymous alphanumeric tokens assigned via salted hash of worker badge numbers. Real identity cross-walk table is stored in an encrypted offline physical key vault accessible exclusively by the Principal Investigator."
+    },
+    "video_identifiability": {
+      "raw_tier": "Unobscured raw video is retained exclusively for forensic human adjudication under Gate D6 blinded review.",
+      "derivative_tier": "Automated face blurring and uniform logo pixelation must be applied to all secondary research derivatives or publication video excerpts prior to release.",
+      "biometric_prohibition": "Facial recognition, biometric gait tracking, and worker productivity profiling algorithms are strictly forbidden across the entire codebase."
+    },
+    "audio_policy": {
+      "mandate": "COMPLETE_PHYSICAL_AUDIO_ELIMINATION",
+      "implementation": "All optical camera microphones must be physically disconnected, desoldered, or disabled via hardware board jumpers prior to Gate C9 signoff. Camera RTSP streams are configured with audio transport disabled (a=recvonly video only). Zero ambient speech capture permitted."
+    },
+    "access_control": {
+      "model": "Role-Based Access Control (RBAC) with cryptographic audit logging.",
+      "levels": {
+        "vault_admin": "Full access to raw master storage (Lead Data Engineer & Principal Investigator via hardware MFA).",
+        "adjudicator": "Ephemeral, read-only access to blinded, sanitized review packages.",
+        "researcher": "Access restricted to derived kinematic CSV telemetry and blurred clips."
+      }
+    },
+    "retention_policy": {
+      "raw_video_master_retention": "36_MONTHS_POST_PROJECT_COMPLETION",
+      "classification": "PROJECT_RETENTION_POLICY",
+      "rationale": "Allows sufficient duration for scientific replication, peer review scrutiny, and audit verification.",
+      "post_retention_action": "Secure cryptographic erasure conforming to NIST SP 800-88 Rev 1 (Purge/Destroy)."
+    },
+    "export_policy": {
+      "raw_master_export": "STRICTLY PROHIBITED outside the local physical storage facility boundary.",
+      "sanitized_derivative_export": "Permitted only following automated facial blurring, blinding sanitization, and Data Operations Lead cryptographic signoff."
+    },
+    "deletion_policy": {
+      "worker_opt_out": "If an individual worker formally requests removal, any naturalistic recording session featuring their identifiable presence must be permanently purged or re-recorded without their presence.",
+      "procedure": "Automated shredding of volume blocks and audit log entry recorded."
+    },
+    "site_authorization": {
+      "status": "MANDATORY_PREREQUISITE_GATE_C9",
+      "requirement": "Formal bilateral Data Access & Privacy Agreement signed between Research Consortium, Facility Operating Company, and Labor Union / Worker Safety Representatives."
+    },
+    "worker_notice": {
+      "status": "MANDATORY_TRANSPARENCY",
+      "implementation": "Prominent physical signage posted at all facility entrances indicating: 'Active Multi-Modal Safety Research Area - Optical and Kinematic Data Collection in Progress (No Audio Recording)'. Informational flyers distributed during shift briefings."
+    },
+    "data_minimization": {
+      "mandate": "Collect only sensor modalities strictly necessary for vehicle kinematic backfire detection (Optical Video, CAN Bus, LiDAR pointcloud). Prohibit ambient environmental audio, thermal imaging, or biometric wearables."
+    }
+  }
+}

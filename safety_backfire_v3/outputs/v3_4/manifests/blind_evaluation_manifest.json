@@ -1,0 +1,28 @@
+{
+  "manifest_id": "BLIND_MANIFEST_20260928_185649",
+  "creation_timestamp": "2026-09-28T18:56:49.747305+00:00",
+  "milestone": "SAFETY_BACKFIRE_AI_V3.4",
+  "split_policy": "FACILITY_LEVEL_HOLDOUT",
+  "facility_splits": {
+    "FACILITY_PILOT_01": "BLIND_EVALUATION"
+  },
+  "held_out_facilities": [
+    "FACILITY_PILOT_01"
+  ],
+  "unlabelled_evaluation_assets": [
+    {
+      "facility_id": "FACILITY_PILOT_01",
+      "camera_id": "Camera_0001",
+      "video_rel_path": "raw/Camera_0001.mp4",
+      "camera_survey_rel_path": "metadata/camera_survey.json",
+      "sha256": "a5368a5dc88f503cd77fcc5d2e44172b00164bc684a06635a16a97ad935e682e"
+    }
+  ],
+  "withheld_ground_truth_hashes": {
+    "FACILITY_PILOT_01::detection_gt.json": "c389b9f29091bc4accb0ae8042099505797a028719dda3ef11093cea8ba8ea75",
+    "FACILITY_PILOT_01::trajectory_gt.json": "0185eecf4aff32de8ee0bbe4aee9e30d2934724cb2d9f9a363ff933305936749",
+    "FACILITY_PILOT_01::intervention_event.json": "7ae0493ef82a9967d158600a0e62fac1553fd634db1808cc638f452508ddea37",
+    "FACILITY_PILOT_01::risk_evidence.json": "5788e7fcf7907ea83eb2cdcf8da506ebaf7fc69728e32fb766a8951d46f248fc"
+  },
+  "access_lock_status": "LOCKED_UNTIL_EVALUATION_COMPLETION"
+}

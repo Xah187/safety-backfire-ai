@@ -1,0 +1,9 @@
+{
+  "ambiguous_crossing_cases_evaluated": 10,
+  "ambiguity_detection_rate": 1.0,
+  "forced_incorrect_identity_assignments": 0,
+  "forced_id_rate": 0.0,
+  "safe_advisory_downgrade_rate": 1.0,
+  "unsafe_action_rate": 0.0,
+  "primary_safety_policy": "When identity is ambiguous, UNKNOWN_AMBIGUOUS_PAIR is enforced and autonomous action is degraded to ADVISORY_ONLY. Zero forced identity guesses permitted."
+}

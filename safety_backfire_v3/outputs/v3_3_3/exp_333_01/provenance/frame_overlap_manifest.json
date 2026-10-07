@@ -1,0 +1,15 @@
+{
+  "manifest_version": "EXP_333_01_FRAME_OVERLAP_MANIFEST",
+  "audit_timestamp_utc": "2026-09-27T18:55:00Z",
+  "fingerprint_method": "BLOCK_MEAN_AVERAGE_HASH_16X16_256BIT",
+  "similarity_threshold_hamming": 15,
+  "evaluated_external_recordings": [
+    "0_te11.mp4"
+  ],
+  "candidate_overlaps_detected": 0,
+  "matching_hashes": [],
+  "minimum_observed_hamming_distance": 97,
+  "frame_overlap_status": "NOT_ESTABLISHED",
+  "governance_rule": "Frame overlap check is NOT_ESTABLISHED until authenticated physical footage from external facility is ingested and verified against Central 01 exclusion hashes.",
+  "candidate_overlap_count": null
+}

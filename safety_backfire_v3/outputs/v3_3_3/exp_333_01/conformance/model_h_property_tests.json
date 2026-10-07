@@ -1,0 +1,205 @@
+{
+  "artifact": "MODEL_H_PROPERTY_TESTS",
+  "timestamp_utc": "2026-09-27T19:25:00Z",
+  "status": "PASS",
+  "properties_evaluated": 4,
+  "properties_passed": 4,
+  "property_tests": [
+    {
+      "property_id": "PROP_01_DISTANCE_HINGE",
+      "description": "For d <= 4.0m, distance penalty must be identically 0.0. For d > 4.0m, penalty must scale linearly with slope 0.08.",
+      "all_passed": true,
+      "subtests": [
+        {
+          "distance_m": 0.5,
+          "penalty": 0.0,
+          "passed": true
+        },
+        {
+          "distance_m": 1.0,
+          "penalty": 0.0,
+          "passed": true
+        },
+        {
+          "distance_m": 2.0,
+          "penalty": 0.0,
+          "passed": true
+        },
+        {
+          "distance_m": 3.0,
+          "penalty": 0.0,
+          "passed": true
+        },
+        {
+          "distance_m": 3.99,
+          "penalty": 0.0,
+          "passed": true
+        },
+        {
+          "distance_m": 4.0,
+          "penalty": 0.0,
+          "passed": true
+        },
+        {
+          "distance_m": 4.01,
+          "penalty": 0.000799999999999983,
+          "passed": true
+        },
+        {
+          "distance_m": 5.0,
+          "penalty": 0.08,
+          "passed": true
+        },
+        {
+          "distance_m": 6.0,
+          "penalty": 0.16,
+          "passed": true
+        },
+        {
+          "distance_m": 8.0,
+          "penalty": 0.32,
+          "passed": true
+        },
+        {
+          "distance_m": 10.0,
+          "penalty": 0.48,
+          "passed": true
+        },
+        {
+          "distance_m": 15.0,
+          "penalty": 0.88,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "property_id": "PROP_02_ILLUMINATION_THRESHOLD",
+      "description": "For L >= 300 lux, illumination penalty must be identically 0.0. For L < 300 lux, penalty increases as 0.12 * (300 - L) / 100.",
+      "all_passed": true,
+      "subtests": [
+        {
+          "illumination_lux": 0.0,
+          "penalty": 0.36,
+          "passed": true
+        },
+        {
+          "illumination_lux": 50.0,
+          "penalty": 0.3,
+          "passed": true
+        },
+        {
+          "illumination_lux": 100.0,
+          "penalty": 0.24,
+          "passed": true
+        },
+        {
+          "illumination_lux": 200.0,
+          "penalty": 0.12,
+          "passed": true
+        },
+        {
+          "illumination_lux": 299.0,
+          "penalty": 0.0012,
+          "passed": true
+        },
+        {
+          "illumination_lux": 300.0,
+          "penalty": 0.0,
+          "passed": true
+        },
+        {
+          "illumination_lux": 350.0,
+          "penalty": 0.0,
+          "passed": true
+        },
+        {
+          "illumination_lux": 500.0,
+          "penalty": 0.0,
+          "passed": true
+        },
+        {
+          "illumination_lux": 1000.0,
+          "penalty": 0.0,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "property_id": "PROP_03_PITCH_STEP_INDICATOR",
+      "description": "For pitch >= 40.0 deg, pitch compensation must be 0.0. For pitch < 40.0 deg, compensation is exactly 0.22.",
+      "all_passed": true,
+      "subtests": [
+        {
+          "pitch_deg": 10.0,
+          "penalty": 0.22,
+          "passed": true
+        },
+        {
+          "pitch_deg": 25.0,
+          "penalty": 0.22,
+          "passed": true
+        },
+        {
+          "pitch_deg": 35.0,
+          "penalty": 0.22,
+          "passed": true
+        },
+        {
+          "pitch_deg": 39.9,
+          "penalty": 0.22,
+          "passed": true
+        },
+        {
+          "pitch_deg": 40.0,
+          "penalty": 0.0,
+          "passed": true
+        },
+        {
+          "pitch_deg": 40.1,
+          "penalty": 0.0,
+          "passed": true
+        },
+        {
+          "pitch_deg": 45.0,
+          "penalty": 0.0,
+          "passed": true
+        },
+        {
+          "pitch_deg": 55.0,
+          "penalty": 0.0,
+          "passed": true
+        },
+        {
+          "pitch_deg": 60.0,
+          "penalty": 0.0,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "property_id": "PROP_04_OCCLUSION_MAPPING",
+      "description": "NONE=0.00, PARTIAL=0.20, HEAVY=0.40 exact discrete mapping.",
+      "all_passed": true,
+      "subtests": [
+        {
+          "state": "NONE",
+          "penalty": 0.0,
+          "expected": 0.0,
+          "passed": true
+        },
+        {
+          "state": "PARTIAL",
+          "penalty": 0.2,
+          "expected": 0.2,
+          "passed": true
+        },
+        {
+          "state": "HEAVY",
+          "penalty": 0.4,
+          "expected": 0.4,
+          "passed": true
+        }
+      ]
+    }
+  ]
+}

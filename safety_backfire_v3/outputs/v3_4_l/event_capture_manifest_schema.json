@@ -1,0 +1,134 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EventCaptureManifestSchema",
+  "description": "Validation schema for individual event recording packages, capturing multi-modal raw feeds, dynamic temporal intervals, sensor health, and cryptographic provenance.",
+  "type": "object",
+  "required": [
+    "event_id",
+    "facility_id",
+    "run_id",
+    "vehicle_id",
+    "camera_set",
+    "sensor_set",
+    "temporal_windows",
+    "abort_status",
+    "sensor_health_manifest",
+    "provenance"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "pattern": "^EVT-[0-9]{8}-[0-9]{4}-[A-Z0-9]{4}$"
+    },
+    "facility_id": { "type": "string" },
+    "run_id": { "type": "string" },
+    "vehicle_id": { "type": "string" },
+    "camera_set": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["CAMERA_A", "CAMERA_B", "CAMERA_C", "CAMERA_D"] },
+      "minItems": 2
+    },
+    "sensor_set": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["CAN_GATEWAY", "SECONDARY_LIDAR", "SECONDARY_UWB", "SECONDARY_RADAR"] },
+      "minItems": 1
+    },
+    "temporal_windows": {
+      "type": "object",
+      "description": "Dynamic event windows defined relative to physical intervention kinetics.",
+      "required": [
+        "pre_start_utc",
+        "intervention_start_utc",
+        "intervention_end_utc",
+        "secondary_onset_utc",
+        "post_end_utc",
+        "tau_latency_seconds",
+        "tau_constraint_classification",
+        "pre_duration_seconds",
+        "post_duration_seconds"
+      ],
+      "properties": {
+        "pre_start_utc": { "type": "string", "format": "date-time" },
+        "intervention_start_utc": { "type": "string", "format": "date-time" },
+        "intervention_end_utc": { "type": "string", "format": "date-time" },
+        "secondary_onset_utc": { "type": ["string", "null"], "format": "date-time" },
+        "post_end_utc": { "type": "string", "format": "date-time" },
+        "tau_latency_seconds": {
+          "type": ["number", "null"],
+          "description": "Latency between intervention start and secondary hazard onset. If secondary hazard occurs, tau_latency <= 2.0s is evaluated under CURRENT_SPECIFICATION_CONSTRAINT."
+        },
+        "tau_constraint_classification": {
+          "type": "string",
+          "const": "CURRENT_SPECIFICATION_CONSTRAINT"
+        },
+        "pre_duration_seconds": { "type": "number", "minimum": 1.5, "maximum": 15.0 },
+        "post_duration_seconds": { "type": "number", "minimum": 2.0, "maximum": 20.0 }
+      }
+    },
+    "abort_status": {
+      "type": "object",
+      "required": ["aborted", "abort_reason", "abort_timestamp_utc"],
+      "properties": {
+        "aborted": { "type": "boolean" },
+        "abort_reason": {
+          "type": ["string", "null"],
+          "enum": [
+            null,
+            "OPERATOR_MANUAL_ESTOP",
+            "EXCLUSION_ZONE_BREACH",
+            "SENSOR_CLOCK_LOSS",
+            "CAN_COMMUNICATION_TIMEOUT",
+            "CAMERA_FRAME_DROP_EXCEEDED",
+            "SECONDARY_OBSERVABILITY_LOSS",
+            "VEHICLE_KINEMATIC_FAULT"
+          ]
+        },
+        "abort_timestamp_utc": { "type": ["string", "null"], "format": "date-time" }
+      }
+    },
+    "sensor_health_manifest": {
+      "type": "object",
+      "required": [
+        "all_streams_continuous",
+        "clock_lock_maintained",
+        "packet_loss_rate_max",
+        "frame_drop_count_total",
+        "calibration_displacement_detected"
+      ],
+      "properties": {
+        "all_streams_continuous": { "type": "boolean" },
+        "clock_lock_maintained": { "type": "boolean" },
+        "packet_loss_rate_max": { "type": "number", "maximum": 0.01 },
+        "frame_drop_count_total": { "type": "integer", "maximum": 0 },
+        "calibration_displacement_detected": { "type": "boolean", "const": false }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "raw_video_hashes_sha256",
+        "can_telemetry_hash_sha256",
+        "secondary_sensor_hash_sha256",
+        "facility_geometry_hash_sha256",
+        "camera_calibration_hashes_sha256",
+        "software_pipeline_version",
+        "event_package_hash_sha256"
+      ],
+      "properties": {
+        "raw_video_hashes_sha256": {
+          "type": "object",
+          "additionalProperties": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        },
+        "can_telemetry_hash_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "secondary_sensor_hash_sha256": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+        "facility_geometry_hash_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "camera_calibration_hashes_sha256": {
+          "type": "object",
+          "additionalProperties": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        },
+        "software_pipeline_version": { "type": "string" },
+        "event_package_hash_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    }
+  }
+}

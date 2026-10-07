@@ -1,0 +1,31 @@
+{
+  "experiment_id": "EXP_33_02",
+  "title": "CROSS_ENVIRONMENT_GENERALIZATION",
+  "objective": "Determine whether the V3.2/V3.3 safety pipeline generalizes across previously unseen environments.",
+  "datasets": [
+    "DS_V3_3_DEV_AISLE_A",
+    "DS_V3_3_CALIB_SECTOR_B",
+    "DS_V3_3_VAL_INTERSECTION_C",
+    "DS_V3_3_BLIND_STAGING_D"
+  ],
+  "environments": [
+    "Sector_A_Main_Aisle",
+    "Sector_B_Storage_Grid",
+    "Sector_C_Forklift_Cross",
+    "Sector_D_Outbound_Staging"
+  ],
+  "sample_units": [
+    "Video_Frame",
+    "Trajectory_Sequence",
+    "Hazard_Episode",
+    "Ground_Point_Observation"
+  ],
+  "evaluation_levels": [
+    "PERCEPTION",
+    "TRACKING",
+    "IDENTITY",
+    "GEOMETRY",
+    "HAZARD",
+    "EVENT"
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safety-backfire-ai.org/schemas/v3_4_g/backfire_evidence_schema.json",
+  "title": "BackfireEvidenceContractSchema",
+  "description": "Formal JSON Schema specifying the evidence contract for Backfire-Aware event evaluation under Milestone V3.4-G.",
+  "type": "object",
+  "required": [
+    "event_id",
+    "primary_interaction",
+    "intervention_signal",
+    "primary_mitigation",
+    "secondary_zone",
+    "secondary_risk_pre",
+    "secondary_risk_post",
+    "delta_secondary_risk",
+    "temporal_order",
+    "causal_link",
+    "confounders",
+    "observability",
+    "detector_dependence",
+    "candidate_class",
+    "evidence_status",
+    "ground_truth_status"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "description": "Unique identifier of the event record within the union registry."
+    },
+    "primary_interaction": {
+      "type": "object",
+      "required": ["actor_vehicle_id", "actor_pedestrian_id", "minimum_separation_px", "interaction_duration_s", "co_occurring_frames"],
+      "properties": {
+        "actor_vehicle_id": { "type": ["integer", "string"] },
+        "actor_pedestrian_id": { "type": ["integer", "string"] },
+        "minimum_separation_px": { "type": "number", "minimum": 0 },
+        "interaction_duration_s": { "type": "number", "minimum": 0 },
+        "co_occurring_frames": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "intervention_signal": {
+      "type": "object",
+      "required": ["intervention_detected", "intervention_type", "evidence_status"],
+      "properties": {
+        "intervention_detected": { "type": "boolean" },
+        "intervention_type": {
+          "type": "string",
+          "enum": ["EMERGENCY_BRAKING", "SWERVE_AVOIDANCE", "PEDESTRIAN_YIELD", "COMBINED_MANEUVER", "NONE", "UNKNOWN"]
+        },
+        "evidence_status": {
+          "type": "string",
+          "enum": ["OBSERVED", "PARTIAL", "NOT_OBSERVED", "UNAVAILABLE"]
+        },
+        "timestamp_start_s": { "type": ["number", "null"] },
+        "timestamp_end_s": { "type": ["number", "null"] }
+      }
+    },
+    "primary_mitigation": {
+      "type": "object",
+      "required": ["collision_averted", "primary_risk_change", "evidence_status"],
+      "properties": {
+        "collision_averted": { "type": "boolean" },
+        "primary_risk_change": {
+          "type": "string",
+          "enum": ["ELIMINATED", "SUBSTANTIALLY_REDUCED", "UNCHANGED", "INCREASED", "UNKNOWN"]
+        },
+        "evidence_status": {
+          "type": "string",
+          "enum": ["OBSERVED", "PARTIAL", "NOT_OBSERVED", "UNAVAILABLE"]
+        }
+      }
+    },
+    "secondary_zone": {
+      "type": "object",
+      "required": ["zone_id", "zone_definition_type", "entry_observable", "interior_depth_observable"],
+      "properties": {
+        "zone_id": { "type": "string" },
+        "zone_definition_type": {
+          "type": "string",
+          "enum": ["CALIBRATED_POLYGON", "ADJACENT_RACK_AISLE", "PROVISIONAL", "UNKNOWN"]
+        },
+        "entry_observable": { "type": "boolean" },
+        "interior_depth_observable": { "type": "boolean" }
+      }
+    },
+    "secondary_risk_pre": {
+      "type": "object",
+      "required": ["risk_score", "occupancy_count", "evidence_status"],
+      "properties": {
+        "risk_score": { "type": "number", "minimum": 0 },
+        "occupancy_count": { "type": "integer", "minimum": 0 },
+        "evidence_status": {
+          "type": "string",
+          "enum": ["OBSERVED", "PARTIAL", "NOT_OBSERVED", "UNAVAILABLE"]
+        }
+      }
+    },
+    "secondary_risk_post": {
+      "type": "object",
+      "required": ["risk_score", "occupancy_count", "evidence_status"],
+      "properties": {
+        "risk_score": { "type": "number", "minimum": 0 },
+        "occupancy_count": { "type": "integer", "minimum": 0 },
+        "evidence_status": {
+          "type": "string",
+          "enum": ["OBSERVED", "PARTIAL", "NOT_OBSERVED", "UNAVAILABLE"]
+        }
+      }
+    },
+    "delta_secondary_risk": {
+      "type": "object",
+      "required": ["delta_value", "risk_increased", "evidence_status"],
+      "properties": {
+        "delta_value": { "type": "number" },
+        "risk_increased": { "type": "boolean" },
+        "evidence_status": {
+          "type": "string",
+          "enum": ["OBSERVED", "PARTIAL", "NOT_OBSERVED", "UNAVAILABLE"]
+        }
+      }
+    },
+    "temporal_order": {
+      "type": "object",
+      "required": ["chronological_stages_valid", "retroactive_attribution_prevented"],
+      "properties": {
+        "chronological_stages_valid": { "type": "boolean" },
+        "retroactive_attribution_prevented": { "type": "boolean" },
+        "stages": {
+          "type": "object",
+          "properties": {
+            "t0_pre_baseline": { "type": "string" },
+            "t1_primary_interaction": { "type": "string" },
+            "t2_intervention": { "type": "string" },
+            "t3_primary_mitigation": { "type": "string" },
+            "t4_secondary_redirection": { "type": "string" },
+            "t5_secondary_exposure_post": { "type": "string" }
+          }
+        }
+      }
+    },
+    "causal_link": {
+      "type": "object",
+      "required": ["causal_chain_status", "intervention_to_redirection_link", "redirection_to_secondary_risk_link"],
+      "properties": {
+        "causal_chain_status": {
+          "type": "string",
+          "enum": ["DIRECTLY_OBSERVED", "PARTIALLY_OBSERVED", "UNSUPPORTED", "UNAVAILABLE"]
+        },
+        "intervention_to_redirection_link": { "type": "boolean" },
+        "redirection_to_secondary_risk_link": { "type": "boolean" }
+      }
+    },
+    "confounders": {
+      "type": "object",
+      "required": ["confounders_present", "causal_isolation_status"],
+      "properties": {
+        "confounders_present": {
+          "type": "string",
+          "enum": ["YES", "NO", "UNKNOWN"]
+        },
+        "confounder_types": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["NEW_ACTOR", "NEW_FORKLIFT", "TRACK_HANDOFF", "INDEPENDENT_WORKER_CLUSTER", "UNRELATED_TRAFFIC", "NONE"]
+          }
+        },
+        "causal_isolation_status": {
+          "type": "string",
+          "enum": ["ISOLATED", "COMPROMISED", "FAILED", "UNKNOWN"]
+        }
+      }
+    },
+    "observability": {
+      "type": "object",
+      "required": ["primary_zone_status", "secondary_zone_status", "post_window_status", "overall_gate_pass"],
+      "properties": {
+        "primary_zone_status": { "type": "string", "enum": ["FULL", "PARTIAL", "NONE", "UNKNOWN"] },
+        "secondary_zone_status": { "type": "string", "enum": ["FULL", "PARTIAL", "NONE", "UNKNOWN"] },
+        "post_window_status": { "type": "string", "enum": ["ADEQUATE", "PARTIAL", "INADEQUATE", "UNKNOWN"] },
+        "overall_gate_pass": { "type": "boolean" }
+      }
+    },
+    "detector_dependence": {
+      "type": "string",
+      "enum": ["LOW", "MEDIUM", "HIGH"]
+    },
+    "candidate_class": {
+      "type": "string",
+      "enum": [
+        "PRIMARY_NEAR_MISS",
+        "BACKFIRE_CANDIDATE",
+        "INSUFFICIENT_BACKFIRE_EVIDENCE"
+      ],
+      "description": "Disjoint operational screening classification."
+    },
+    "evidence_status": {
+      "type": "string",
+      "enum": ["OBSERVED", "PARTIAL", "NOT_OBSERVED", "UNAVAILABLE"],
+      "description": "Degree of empirical support for the event record."
+    },
+    "ground_truth_status": {
+      "type": "string",
+      "enum": ["NOT_ESTABLISHED"],
+      "description": "Strictly locked governance status; ground truth cannot be established at screening stage."
+    }
+  },
+  "additionalProperties": false
+}

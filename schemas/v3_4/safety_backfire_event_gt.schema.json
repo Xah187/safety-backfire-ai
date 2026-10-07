@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safety-backfire-ai.org/schemas/v3_4/safety_backfire_event_gt.schema.json",
+  "title": "V3.4 Safety Backfire Ground-Truth Event Schema",
+  "description": "Standardized schema for candidate safety backfire events, multi-reviewer adjudication, and ground-truth evidence tracking.",
+  "type": "object",
+  "required": [
+    "event_id",
+    "facility_id",
+    "source_dataset",
+    "source_video_id",
+    "pre_start",
+    "pre_end",
+    "intervention_start",
+    "intervention_end",
+    "post_start",
+    "post_end",
+    "primary_zone",
+    "secondary_zones",
+    "intervention_type",
+    "affected_person_ids",
+    "affected_vehicle_ids",
+    "primary_risk_before",
+    "primary_risk_after",
+    "secondary_risk_before",
+    "secondary_risk_after",
+    "risk_transfer_mechanism",
+    "reviewer_1_label",
+    "reviewer_2_label",
+    "adjudicated_label",
+    "adjudication_notes",
+    "evidence_quality",
+    "causal_link_confidence",
+    "review_status"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique identifier for this safety backfire candidate or ground-truth event."
+    },
+    "facility_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Identifier for the operational facility or benchmark scene (e.g., Warehouse_026, Warehouse_027)."
+    },
+    "source_dataset": {
+      "type": "string",
+      "description": "Name and provenance of the underlying dataset (e.g., nvidia/PhysicalAI-SmartSpaces)."
+    },
+    "source_video_id": {
+      "type": "string",
+      "description": "Source video file or camera identifier where the event was primarily observed."
+    },
+    "pre_start": {
+      "type": "number",
+      "minimum": 0.0,
+      "description": "Start timestamp of the baseline pre-intervention window (seconds)."
+    },
+    "pre_end": {
+      "type": "number",
+      "minimum": 0.0,
+      "description": "End timestamp of the baseline pre-intervention window (seconds)."
+    },
+    "intervention_start": {
+      "type": "number",
+      "minimum": 0.0,
+      "description": "Start timestamp of the active intervention interval (seconds)."
+    },
+    "intervention_end": {
+      "type": "number",
+      "minimum": 0.0,
+      "description": "End timestamp of the active intervention interval (seconds)."
+    },
+    "post_start": {
+      "type": "number",
+      "minimum": 0.0,
+      "description": "Start timestamp of the post-intervention observation window (seconds)."
+    },
+    "post_end": {
+      "type": "number",
+      "minimum": 0.0,
+      "description": "End timestamp of the post-intervention observation window (seconds)."
+    },
+    "primary_zone": {
+      "type": "string",
+      "description": "Identifier of the primary facility zone where the intervention was intended to mitigate risk."
+    },
+    "secondary_zones": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of secondary zones where spillover risk or displaced hazards were monitored."
+    },
+    "intervention_type": {
+      "type": "string",
+      "description": "Nature of the safety intervention (e.g., FORKLIFT_DECELERATION, WORKER_AVOIDANCE, OPERATOR_STOP, HAZARD_RESPONSE, UNKNOWN)."
+    },
+    "affected_person_ids": {
+      "type": "array",
+      "items": {
+        "type": ["string", "integer"]
+      },
+      "description": "Identifiers or track IDs of workers/pedestrians directly involved."
+    },
+    "affected_vehicle_ids": {
+      "type": "array",
+      "items": {
+        "type": ["string", "integer"]
+      },
+      "description": "Identifiers or track IDs of industrial vehicles directly involved."
+    },
+    "primary_risk_before": {
+      "type": "object",
+      "description": "Measurable risk metrics in the primary zone during the pre-intervention window."
+    },
+    "primary_risk_after": {
+      "type": "object",
+      "description": "Measurable risk metrics in the primary zone during the post-intervention window."
+    },
+    "secondary_risk_before": {
+      "type": "object",
+      "description": "Measurable risk metrics in the secondary zone during the pre-intervention window."
+    },
+    "secondary_risk_after": {
+      "type": "object",
+      "description": "Measurable risk metrics in the secondary zone during the post-intervention window."
+    },
+    "risk_transfer_mechanism": {
+      "type": "string",
+      "description": "Detailed description of the hypothesized or observed causal mechanism transferring risk across spatial zones."
+    },
+    "reviewer_1_label": {
+      "type": "string",
+      "enum": [
+        "BACKFIRE",
+        "NO_BACKFIRE",
+        "AMBIGUOUS",
+        "PENDING"
+      ],
+      "description": "First independent safety assessor label."
+    },
+    "reviewer_2_label": {
+      "type": "string",
+      "enum": [
+        "BACKFIRE",
+        "NO_BACKFIRE",
+        "AMBIGUOUS",
+        "PENDING"
+      ],
+      "description": "Second independent safety assessor label."
+    },
+    "adjudicated_label": {
+      "type": "string",
+      "enum": [
+        "BACKFIRE",
+        "NO_BACKFIRE",
+        "AMBIGUOUS",
+        "PENDING_HUMAN_REVIEW"
+      ],
+      "description": "Consensus adjudicated ground-truth label."
+    },
+    "adjudication_notes": {
+      "type": "string",
+      "description": "Detailed notes documenting reviewer consensus, disagreements, and evidence rationale."
+    },
+    "evidence_quality": {
+      "type": "string",
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW",
+        "UNKNOWN"
+      ],
+      "description": "Quality and completeness rating of the underlying multi-camera and sensor evidence."
+    },
+    "causal_link_confidence": {
+      "type": "string",
+      "enum": [
+        "DIRECTLY_OBSERVED",
+        "TELEMETRY_SUPPORTED",
+        "PLAUSIBLE_BUT_UNCONFIRMED",
+        "NOT_ESTABLISHED"
+      ],
+      "description": "Confidence level in the causal link between the primary intervention and secondary risk alteration."
+    },
+    "review_status": {
+      "type": "string",
+      "enum": [
+        "CANDIDATE_DISCOVERED",
+        "PENDING_HUMAN_REVIEW",
+        "UNDER_REVIEW",
+        "ADJUDICATED",
+        "REJECTED"
+      ],
+      "description": "Lifecycle governance status of this event record."
+    }
+  }
+}

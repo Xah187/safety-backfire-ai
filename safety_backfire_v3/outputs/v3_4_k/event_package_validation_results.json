@@ -1,0 +1,61 @@
+{
+  "milestone": "V3.4-K",
+  "deterministic_reproducibility_verified": true,
+  "reproducibility_package_hash_1": "494669090b8dfc1f6488d7211d978d92bbda7d27b51c9358fcd11e96cb553caf",
+  "reproducibility_package_hash_2": "494669090b8dfc1f6488d7211d978d92bbda7d27b51c9358fcd11e96cb553caf",
+  "failure_recovery_verified": true,
+  "recovery_tests": [
+    {
+      "failure_scenario": "CAMERA_C_DISCONNECT",
+      "produced_ready_for_review": false,
+      "actual_state": "NOT_READY",
+      "expected_state": "NOT_READY",
+      "test_passed": true
+    },
+    {
+      "failure_scenario": "CAN_TRANSCEIVER_DISCONNECT",
+      "produced_ready_for_review": false,
+      "actual_state": "NOT_READY",
+      "expected_state": "NOT_READY",
+      "test_passed": true
+    },
+    {
+      "failure_scenario": "PTP_MASTER_CLOCK_UNLOCKED",
+      "produced_ready_for_review": false,
+      "actual_state": "NOT_READY",
+      "expected_state": "NOT_READY",
+      "test_passed": true
+    }
+  ],
+  "sample_packaged_event": {
+    "event_id": "REPRO_001",
+    "facility_id": "Wh_Pilot_001",
+    "windows": {
+      "t_pre_s": 4.0,
+      "t_interv_s": 2.0,
+      "t_post_s": 5.0
+    },
+    "camera_hashes": {
+      "CAMERA_A": "9f0b9d7c3b965ade5f1b36b41f9dde552a893143ee3311d5bb1d36e056e4356b",
+      "CAMERA_B": "e7a9d57cb125830ac71d5a2098244f321a29340ab15a25ee17586fad688603f9",
+      "CAMERA_C": "908c422f2d629117c4750c728b319c04fecd7a029f7c934719aa59ffa0e48f58",
+      "CAMERA_D": "14129c8bdaf138c537c3a33db62090137d3a0decf1c304c13f7782fed659fcf2"
+    },
+    "telemetry_hash": "e7bc3a97e94c09f85ecd9159fe3bde655ed91f41a168f10a74d29d932006df74",
+    "secondary_sensor_hash": "f64e61978ecce7f0bbc98d90528cce5320b64c56af68f2e98554333106c22023",
+    "calibration_hash": "3ea34e5866dcc3c9fb006a4ce6ab8c03cd2625b3e8b629973b4df56abe141afa",
+    "geometry_hash": "1850b392810ef41246b8d00433d02980727d7401096d0af021101222c44b0b81",
+    "software_version": "V3.4-K-PILOT-01",
+    "counts": {
+      "cameras": {
+        "CAMERA_A": 1,
+        "CAMERA_B": 1,
+        "CAMERA_C": 1,
+        "CAMERA_D": 1
+      },
+      "telemetry_packets": 1,
+      "secondary_packets": 1
+    },
+    "event_package_hash": "494669090b8dfc1f6488d7211d978d92bbda7d27b51c9358fcd11e96cb553caf"
+  }
+}

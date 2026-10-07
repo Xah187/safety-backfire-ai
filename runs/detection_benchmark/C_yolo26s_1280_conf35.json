@@ -1,0 +1,29 @@
+{
+  "name": "C_yolo26s_1280_conf35",
+  "model": "yolo26s.pt",
+  "conf": 0.35,
+  "iou": 0.7,
+  "imgsz": 1280,
+  "video": "test.mp4",
+  "frames": 426,
+  "source_fps": 29.97002997002997,
+  "resolution": [
+    640,
+    360
+  ],
+  "total_detections": 635,
+  "detections_per_frame": 1.491,
+  "inference_seconds": 12.682,
+  "inference_fps": 33.59,
+  "class_counts": {
+    "boat": 507,
+    "suitcase": 26,
+    "person": 102
+  },
+  "max_confidence_by_class": {
+    "boat": 0.818,
+    "suitcase": 0.475,
+    "person": 0.835
+  },
+  "annotated_video": "runs/detection_benchmark/C_yolo26s_1280_conf35.mp4"
+}

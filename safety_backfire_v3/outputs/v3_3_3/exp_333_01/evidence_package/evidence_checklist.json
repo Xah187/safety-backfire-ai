@@ -1,0 +1,173 @@
+{
+  "manifest_version": "EXP_333_01_EXTERNAL_EVIDENCE_CHECKLIST_V2",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "schema_version": "2026-09-28",
+  "governance_note": "Every field must be resolved to VERIFIED, DECLARED, EXTRACTED, INFERRED, or NOT_AVAILABLE. Missing fields must remain NOT_AVAILABLE \u2014 never inferred as TRUE.",
+  "evidence_status_taxonomy": {
+    "VERIFIED": "Directly confirmed via physical measurement, cryptographic hash, or independent witness.",
+    "EXTRACTED": "Directly extracted from authenticated video file container/stream metadata.",
+    "DECLARED": "Reported by site operator or source provider without independent verification.",
+    "INFERRED": "Estimated from other available data. Must not be used as ground truth in any evaluation.",
+    "NOT_AVAILABLE": "No evidence of any kind exists."
+  },
+  "checklist_items": [
+    {
+      "id": "CL_01",
+      "field": "facility_id",
+      "status": "DECLARED",
+      "value": "FACILITY_E_COLD_STORAGE_REGIONAL_HUB",
+      "note": "Declared by source provider"
+    },
+    {
+      "id": "CL_02",
+      "field": "building_independence",
+      "status": "DECLARED",
+      "value": true,
+      "note": "Declared independent from Central 01"
+    },
+    {
+      "id": "CL_03",
+      "field": "acquisition_date",
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "note": "No embedded timestamp in container metadata"
+    },
+    {
+      "id": "CL_04",
+      "field": "acquisition_session_id",
+      "status": "DECLARED",
+      "value": "SESS_EXT_0_TE11",
+      "note": "Independent from V3.3.x sessions"
+    },
+    {
+      "id": "CL_05",
+      "field": "camera_identifiers",
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "note": "No camera hardware ID in container metadata"
+    },
+    {
+      "id": "CL_06",
+      "field": "raw_source_file",
+      "status": "VERIFIED",
+      "value": "0_te11.mp4",
+      "note": "SHA-256 verified"
+    },
+    {
+      "id": "CL_07",
+      "field": "original_file_hash_sha256",
+      "status": "VERIFIED",
+      "value": "170a97c819e668d899e378e4ec1c417d89df8da3eff4373bf08f9698152babe1",
+      "note": "Reproducible hash"
+    },
+    {
+      "id": "CL_08",
+      "field": "file_duration_seconds",
+      "status": "EXTRACTED",
+      "value": 6.98,
+      "note": "Extracted from video container"
+    },
+    {
+      "id": "CL_09",
+      "field": "frame_count",
+      "status": "EXTRACTED",
+      "value": 173,
+      "note": "Extracted from video container"
+    },
+    {
+      "id": "CL_10",
+      "field": "fps",
+      "status": "EXTRACTED",
+      "value": 24.8,
+      "note": "Extracted from video container"
+    },
+    {
+      "id": "CL_11",
+      "field": "resolution",
+      "status": "EXTRACTED",
+      "value": "1920x1080",
+      "note": "Extracted from video container"
+    },
+    {
+      "id": "CL_12",
+      "field": "codec",
+      "status": "EXTRACTED",
+      "value": "h264",
+      "note": "Extracted from video container"
+    },
+    {
+      "id": "CL_13",
+      "field": "camera_mounting_height_m",
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "note": "Requires physical measurement"
+    },
+    {
+      "id": "CL_14",
+      "field": "camera_pitch_deg",
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "note": "Requires physical measurement"
+    },
+    {
+      "id": "CL_15",
+      "field": "camera_roll_deg",
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "note": "Requires physical measurement"
+    },
+    {
+      "id": "CL_16",
+      "field": "lighting_lux",
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "note": "Requires physical lux meter"
+    },
+    {
+      "id": "CL_17",
+      "field": "geometry_survey",
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "note": "No ground survey conducted"
+    },
+    {
+      "id": "CL_18",
+      "field": "ground_truth_bboxes",
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "note": "No annotations available"
+    },
+    {
+      "id": "CL_19",
+      "field": "annotation_provenance",
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "note": "No annotator assigned"
+    },
+    {
+      "id": "CL_20",
+      "field": "frame_overlap_verification",
+      "status": "VERIFIED",
+      "value": "CLEAR",
+      "note": "0 overlapping frames with V3.3.x datasets"
+    }
+  ],
+  "summary": {
+    "VERIFIED": 3,
+    "EXTRACTED": 5,
+    "DECLARED": 3,
+    "INFERRED": 0,
+    "NOT_AVAILABLE": 9,
+    "total": 20
+  },
+  "metadata_overclaim_prohibition": {
+    "rule": "Metadata alone does not generate performance claims.",
+    "prohibited_claims_from_metadata_only": [
+      "external generalization",
+      "production readiness",
+      "cross-warehouse validity",
+      "95% uncertainty guarantee",
+      "multi-site safety"
+    ]
+  }
+}

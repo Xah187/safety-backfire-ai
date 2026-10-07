@@ -1,0 +1,69 @@
+{
+  "run_id": "RUN_001_INVALIDATED_RUNTIME_MISMATCH",
+  "evaluation_mode": "ZERO_ADAPTATION_EXTERNAL_FACILITY",
+  "target_video": "0_te11.mp4",
+  "target_video_sha256": "170a97c819e668d899e378e4ec1c417d89df8da3eff4373bf08f9698152babe1",
+  "run_status": "INVALIDATED_RUNTIME_MISMATCH",
+  "invalidated_reason": "MODEL_H_RUNTIME_IMPLEMENTATION_NON_CONFORMANT",
+  "runtime_implementation_flaws": [
+    "Applied beta_d * d linearly instead of beta_d * max(0, d - 4.0)",
+    "Substituted uncalibrated L_ambient = 0.50 (+0.06) without photometric lux sensor",
+    "Substituted theta_offset = 0.0 without camera pitch angle measurement",
+    "Conflated buggy runtime k in [2.70, 3.151] with hand-calculated theoretical far-field 3.35"
+  ],
+  "immutable_freeze_timestamp_utc": "2026-09-27T19:20:00Z",
+  "retained_artifacts": {
+    "metrics/zero_adaptation_evaluation.json": {
+      "sha256": "27d8a2d0a6ad0c6b82bef64f2c2787f43de9c35f188b08e993b0eb16658320b7",
+      "size_bytes": 3577
+    },
+    "metrics/perception_metrics.json": {
+      "sha256": "08570f1457060e03780c18eba1f3ef387bb6d6bd707098632288252d46a7ece6",
+      "size_bytes": 2528
+    },
+    "metrics/tracking_metrics.json": {
+      "sha256": "22ef9ba0cf619933af388f6bab4d1f8c955326de9b9e300eac84038d16a73df2",
+      "size_bytes": 905
+    },
+    "metrics/geometry_metrics.json": {
+      "sha256": "34d5450297374a8594b3b23b71e3d2094497fab2e09fb9b36ddbdbf86327b077",
+      "size_bytes": 1128
+    },
+    "metrics/uncertainty_metrics.json": {
+      "sha256": "9fdd909564400ebeea0f35338fa08530e03b54aa67eb9ee2d4dcac5704e51ea8",
+      "size_bytes": 2384
+    },
+    "metrics/policy_metrics.json": {
+      "sha256": "3a2e05619af7bb11f8d63b0873db7bc1696151634ebd5b728459e085b8a98280",
+      "size_bytes": 1749
+    },
+    "metrics/hazard_metrics.json": {
+      "sha256": "82ce6f8ba0c80961e73dd091889d7ad2e10a35bcdf36c732d326d2fcbd41999a",
+      "size_bytes": 1085
+    },
+    "metrics/event_metrics.json": {
+      "sha256": "230b31f863dc08cdad22568e8fb68b42516aa3ddc0bd78d0f028d9806ec34207",
+      "size_bytes": 600
+    },
+    "analysis/observation_level_audit.json": {
+      "sha256": "93ec53055111590ffe419b0bb0345b2b0dd69618a2cb83c7dc60f77cb5d9a8da",
+      "size_bytes": 126512
+    },
+    "analysis/model_h_runtime_audit.json": {
+      "sha256": "98fb359760fd49b404701583df789ce019ccabc678a0048aeb5d65ee69fc2273",
+      "size_bytes": 3864
+    },
+    "analysis/odd_classification_audit.json": {
+      "sha256": "ea1e419f257c2749da5ec681937d17f48a2a6b7e07ad7670a0bccf7ec2ea53b5",
+      "size_bytes": 4489
+    },
+    "analysis/forensic_reconciliation.json": {
+      "sha256": "382305af30a31dfea13bebcc4ac2409857d56ddc798b271d50142f4529f9adff",
+      "size_bytes": 5260
+    },
+    "reports/EXP_333_01_ZERO_ADAPTATION_RECONCILED.md": {
+      "sha256": "b985a677a5c27a16d1bcddbcd2328b08267446f11ebe9a419e73e58edd805c8a",
+      "size_bytes": 19138
+    }
+  }
+}

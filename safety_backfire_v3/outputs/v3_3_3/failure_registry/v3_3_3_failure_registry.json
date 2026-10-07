@@ -1,0 +1,47 @@
+{
+  "registry_version": "V3.3.3_FAILURE_REGISTRY",
+  "release": "V3.3.3",
+  "failures": [
+    {
+      "failure_id": "V3.3.3-FAIL-001",
+      "experiment": "EXP_332_03_MODEL_COMPARISON",
+      "dataset": "DS_V3_3_OOS_INDEPENDENT_EVAL",
+      "expected_behavior": "Nominal coverage >= 95% achieved without expanding uncertainty interval width.",
+      "observed_behavior": "Model H achieved 95.02% nominal coverage, but mean interval width increased by 8.5% (0.2076m vs 0.1913m), and 24.28% of cases exceeded the 0.25m autonomous threshold.",
+      "classification": "STATISTICAL_LIMITATION",
+      "safety_impact": "LOW (MITIGATED): Elevated uncertainty cases are safely downgraded to ADVISORY_ONLY by action policy.",
+      "reproducibility": "100% Deterministic (Model H evaluation script)",
+      "mitigation": "Action-gating policy enforces ADVISORY_ONLY on widths between 0.25m and 0.40m.",
+      "underlying_limitation": "PRESENT",
+      "safety_exposure": "MITIGATED",
+      "mitigation_state": "MITIGATED_BY_REFUSAL",
+      "regression_test": "test_04_model_h_oos_count_reconstruction"
+    },
+    {
+      "failure_id": "V3.3.3-FAIL-002",
+      "experiment": "EXP_333_01_EXTERNAL_FACILITY",
+      "dataset": "DS_V3_3_UNAVAILABLE_EXTERNAL_FACILITY_E",
+      "expected_behavior": "Independent external facility validation data available for multi-facility generalization testing.",
+      "observed_behavior": "External facility footage remains physically unavailable due to pending site sensor acquisition.",
+      "classification": "DATASET_LIMITATION / EVIDENCE_GAP",
+      "safety_impact": "MEDIUM: Multi-facility generalization cannot be claimed; system restricted to Facility Central 01.",
+      "reproducibility": "N/A (Data Unavailable)",
+      "mitigation": "Operational pilot strictly restricted to Facility Central 01 sector architecture.",
+      "mitigation_state": "NOT_ESTABLISHED",
+      "regression_test": "test_16_external_facility_gate"
+    },
+    {
+      "failure_id": "V3.3.3-FAIL-003",
+      "experiment": "EXP_333_02_PROSPECTIVE_BACKFIRE",
+      "dataset": "DS_V3_3_INTERVENTION_CORPUS",
+      "expected_behavior": "Broad population-level causal backfire frequency distribution established across facilities.",
+      "observed_behavior": "Sample size is N=6 discrete case studies (1 PHYSICAL_NEW), which prevents population-level statistical frequency inference.",
+      "classification": "EVIDENCE_GAP",
+      "safety_impact": "LOW: System refrains from claiming generalized causal effect distributions.",
+      "reproducibility": "100% Deterministic on documented case records",
+      "mitigation": "Claims strictly limited to discrete case studies; population inference prohibited.",
+      "mitigation_state": "NOT_ESTABLISHED",
+      "regression_test": "test_17_prospective_intervention_gate"
+    }
+  ]
+}

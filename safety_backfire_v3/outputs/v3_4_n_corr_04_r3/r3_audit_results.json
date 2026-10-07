@@ -1,0 +1,70 @@
+{
+  "audit_result": "PASS_INTERNAL_CONSISTENCY_ONLY",
+  "blockers_closed": 0,
+  "blockers_open": 13,
+  "checks_failed": 0,
+  "checks_total": 100,
+  "document_hashes_sha256": {
+    "BLOCKED.md": "870e8e8521dc41c12fbe441d6015817e2beb7f43392f2c582ea6239220b20753",
+    "anti_aliasing_audit.md": "826d326a46ea64f248a8312fd2a5b6d188226f42f3e77433da55c5d6dbc69622",
+    "controller_motor_compatibility_reconciliation_v3.md": "5d7b639f76c887d968477e3b1bae6483670d7f7e7a1199a8180902ca6a71de56",
+    "current_probe_range_reconciliation.md": "bbbc75833d3c31ea2782ba66be6917b70d872fb5e24c14de913db3ffe995a61e",
+    "discrete_rms_specification.md": "c201557f41f1fc990fa5963daef6398dd6ee18cd6ee45d87ced91b177e9a54b5",
+    "discrete_rms_verification.py": "1f6f66e2d9066de045481e3ede3b35a05a823e697319a5bab46db270e40feba1",
+    "historical_trial_evidence_reconciliation.md": "b118a2e3c580b3b6e21b5bd63e1997ebc944a87a576da09f9e9f30a7629e4451",
+    "persistence_modeb_reference.py": "166cf46086780cff5212c0c6c62113d7a0bc9339b5e6a316b9ae96c35f914cf0",
+    "persistence_semantics_v5.md": "44fb51f2b3fefcf8d30b259219ed9846fb1ac8596049bdde60858f01498c1810",
+    "production_hash_baseline_r3.json": "9dc4ac3ad193dec1a5fe3bad82349069b663ec4b562bb7c0015d1db4c737a501",
+    "release_blockers_v3.md": "c27afe85bdfc3359ee92aa5c71defa4cc2effa008417d07afdc9fffd381c0ac0",
+    "rms_boundary_v2.md": "09ea6cc94584f25464ed3747c9499645994e0b90f300435d8743136617a6ecce",
+    "rms_crossing_general_solution.md": "b05c278b2ee0bea914f936a867f6849686f71cadd01a755ccb596589cb7f8c73",
+    "rms_model_scope_reconciliation.md": "48373c088e4eba681cc3da3ddc96f3712f66a93622923565c17db50568574c91",
+    "timing_timestamp_governance.md": "0bed1a1ae429d44af40642862b9ac0b5408875437eb1887be081b3a12435b625"
+  },
+  "failed_checks": [],
+  "final_status": "BLOCKED",
+  "governance": {
+    "FIELD_DATA": "ZERO",
+    "GROUND_TRUTH": "NOT_ESTABLISHED",
+    "MODEL_H": "FROZEN",
+    "PHYSICAL_CAPTURE_AUTHORIZATION": "NOT_GRANTED",
+    "PRODUCTION_MODEL": "UNCHANGED",
+    "REAL_WORLD_VALIDATION": "NOT_ESTABLISHED",
+    "RESEARCH_DAQ_ACTUATION_AUTHORITY": "ZERO"
+  },
+  "milestone": "V3.4-N-CORR-04-R3",
+  "numbers": {
+    "B": 0.7295507347,
+    "C": 1.4902730349,
+    "I0_0p5": {
+      "delta_ms": 1.057129,
+      "region": "REGION_2",
+      "t_phys_ms": 13.555663,
+      "t_rms_ms": 14.612792
+    },
+    "I0_0p8": {
+      "delta_ms": 1.117086,
+      "region": "REGION_3",
+      "t_phys_ms": 14.871673,
+      "t_rms_ms": 15.988759
+    },
+    "I0crit_A_at_0p410": 0.561989702,
+    "tau_ln_C_ms": 1.1170861746
+  },
+  "scope_statement": "Internal consistency checks only. Not physical validation, not safety certification, not ISO/PL/SIL compliance, not production readiness.",
+  "status_tokens": {
+    "anti_alias_validation": "BLOCKED",
+    "historical_current_scale": "UNRESOLVED",
+    "motor_controller_compatibility": "BLOCKED",
+    "persistence_mode_b": "DEFINED_PENDING_IMPLEMENTATION_AUDIT",
+    "physical_timestamp_semantics": "NOT_VERIFIED",
+    "rms_boundary_for_rms_proc_v1_0": "NOT_VERIFIED",
+    "rms_continuous_model": "VERIFIED_CONDITIONALLY",
+    "rms_proc_v1_0_definition": "INCONSISTENT_ACROSS_MILESTONES",
+    "rms_proc_v1_0_implementation": "NOT_LOCATED",
+    "rms_region_boundary_symbolic": "VERIFIED_CONTINUOUS_TIME_MODEL",
+    "tau_eff_generalization": "PROHIBITED",
+    "timing_evidence": "REPORT_BASED",
+    "vehicle_functional_safety_claim": "NOT_ESTABLISHED"
+  }
+}

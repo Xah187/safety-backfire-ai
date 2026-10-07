@@ -1,0 +1,177 @@
+{
+  "artifact": "MODEL_H_GOLDEN_VALUES",
+  "timestamp_utc": "2026-09-27T19:25:00Z",
+  "status": "PASS",
+  "cases_evaluated": 6,
+  "cases_passed": 6,
+  "results": [
+    {
+      "case_id": "CASE_01_NEAR_OPTIMAL",
+      "description": "d=3.0m (below hinge), L=300 lux (at nominal), pitch=45 deg (>=40 deg), occ=NONE",
+      "inputs": {
+        "distance_m": 3.0,
+        "illumination_lux": 300.0,
+        "camera_pitch_deg": 45.0,
+        "occlusion_state": "NONE"
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "k_H": 2.4,
+        "distance_term": 0.0,
+        "illumination_term": 0.0,
+        "pitch_term": 0.0,
+        "occlusion_term": 0.0
+      },
+      "actual": {
+        "status": "SUCCESS",
+        "k_H": 2.4,
+        "k0": 2.4,
+        "distance_term": 0.0,
+        "illumination_term": 0.0,
+        "pitch_term": 0.0,
+        "occlusion_term": 0.0,
+        "reason": null
+      },
+      "passed": true
+    },
+    {
+      "case_id": "CASE_02_HINGE_BOUNDARY",
+      "description": "d=4.0m (exact hinge boundary), L=300 lux, pitch=40 deg (exact threshold), occ=NONE",
+      "inputs": {
+        "distance_m": 4.0,
+        "illumination_lux": 300.0,
+        "camera_pitch_deg": 40.0,
+        "occlusion_state": "NONE"
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "k_H": 2.4,
+        "distance_term": 0.0,
+        "illumination_term": 0.0,
+        "pitch_term": 0.0,
+        "occlusion_term": 0.0
+      },
+      "actual": {
+        "status": "SUCCESS",
+        "k_H": 2.4,
+        "k0": 2.4,
+        "distance_term": 0.0,
+        "illumination_term": 0.0,
+        "pitch_term": 0.0,
+        "occlusion_term": 0.0,
+        "reason": null
+      },
+      "passed": true
+    },
+    {
+      "case_id": "CASE_03_MID_FIELD_DISTANCE_ONLY",
+      "description": "d=8.0m (4m beyond hinge: 0.08*4=0.32), L=300 lux, pitch>=40 deg, occ=NONE -> 2.40+0.32=2.72",
+      "inputs": {
+        "distance_m": 8.0,
+        "illumination_lux": 300.0,
+        "camera_pitch_deg": 42.0,
+        "occlusion_state": "NONE"
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "k_H": 2.72,
+        "distance_term": 0.32,
+        "illumination_term": 0.0,
+        "pitch_term": 0.0,
+        "occlusion_term": 0.0
+      },
+      "actual": {
+        "status": "SUCCESS",
+        "k_H": 2.72,
+        "k0": 2.4,
+        "distance_term": 0.32,
+        "illumination_term": 0.0,
+        "pitch_term": 0.0,
+        "occlusion_term": 0.0,
+        "reason": null
+      },
+      "passed": true
+    },
+    {
+      "case_id": "CASE_04_WORST_CASE_COMBINED",
+      "description": "d=8.0m (+0.32), L=0 lux (+0.36), pitch=35 deg (<40 deg: +0.22), occ=HEAVY (+0.40) -> 2.40+0.32+0.36+0.22+0.40=3.70",
+      "inputs": {
+        "distance_m": 8.0,
+        "illumination_lux": 0.0,
+        "camera_pitch_deg": 35.0,
+        "occlusion_state": "HEAVY"
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "k_H": 3.7,
+        "distance_term": 0.32,
+        "illumination_term": 0.36,
+        "pitch_term": 0.22,
+        "occlusion_term": 0.4
+      },
+      "actual": {
+        "status": "SUCCESS",
+        "k_H": 3.7,
+        "k0": 2.4,
+        "distance_term": 0.32,
+        "illumination_term": 0.36,
+        "pitch_term": 0.22,
+        "occlusion_term": 0.4,
+        "reason": null
+      },
+      "passed": true
+    },
+    {
+      "case_id": "CASE_05_MISSING_LUX_BLOCKING",
+      "description": "Missing photometric lux must return INPUT_INSUFFICIENT and block evaluation without guessing",
+      "inputs": {
+        "distance_m": 5.0,
+        "illumination_lux": null,
+        "camera_pitch_deg": 45.0,
+        "occlusion_state": "NONE"
+      },
+      "expected": {
+        "status": "INPUT_INSUFFICIENT",
+        "k_H": null,
+        "reason": "MISSING_ILLUMINATION_LUX"
+      },
+      "actual": {
+        "status": "INPUT_INSUFFICIENT",
+        "k_H": null,
+        "k0": 2.4,
+        "distance_term": 0.08,
+        "illumination_term": null,
+        "pitch_term": null,
+        "occlusion_term": null,
+        "reason": "MISSING_ILLUMINATION_LUX"
+      },
+      "passed": true
+    },
+    {
+      "case_id": "CASE_06_MISSING_PITCH_BLOCKING",
+      "description": "Missing camera pitch angle must return INPUT_INSUFFICIENT and block evaluation without guessing",
+      "inputs": {
+        "distance_m": 5.0,
+        "illumination_lux": 300.0,
+        "camera_pitch_deg": null,
+        "occlusion_state": "NONE"
+      },
+      "expected": {
+        "status": "INPUT_INSUFFICIENT",
+        "k_H": null,
+        "reason": "MISSING_CAMERA_PITCH_DEG"
+      },
+      "actual": {
+        "status": "INPUT_INSUFFICIENT",
+        "k_H": null,
+        "k0": 2.4,
+        "distance_term": 0.08,
+        "illumination_term": 0.0,
+        "pitch_term": null,
+        "occlusion_term": null,
+        "reason": "MISSING_CAMERA_PITCH_DEG"
+      },
+      "passed": true
+    }
+  ]
+}

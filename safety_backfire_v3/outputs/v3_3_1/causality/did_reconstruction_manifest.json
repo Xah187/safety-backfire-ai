@@ -1,0 +1,43 @@
+{
+  "did_formula": "DiD = (TreatedPost - TreatedPre) - (ControlPost - ControlPre)",
+  "control_drift_tolerance": 0.15,
+  "shock_tolerance": 0.2,
+  "reconstructed_cases": [
+    {
+      "case_id": "CASE_BARRIER_01",
+      "did": -0.51,
+      "parallel_trend_p": 0.52,
+      "causal_status": "ATTRIBUTED_UNDER_TESTED_DID_ASSUMPTIONS"
+    },
+    {
+      "case_id": "CASE_SPEED_02",
+      "did": -0.35,
+      "parallel_trend_p": 0.68,
+      "causal_status": "ATTRIBUTED_UNDER_TESTED_DID_ASSUMPTIONS"
+    },
+    {
+      "case_id": "CASE_ROUTING_03",
+      "did": -0.28,
+      "parallel_trend_p": 0.45,
+      "causal_status": "ATTRIBUTED_UNDER_TESTED_DID_ASSUMPTIONS"
+    },
+    {
+      "case_id": "CASE_STAGING_04",
+      "did": -0.34,
+      "parallel_trend_p": 0.38,
+      "causal_status": "ATTRIBUTED_UNDER_TESTED_DID_ASSUMPTIONS"
+    },
+    {
+      "case_id": "CASE_SHOCK_05",
+      "did": -0.47,
+      "parallel_trend_p": 0.008,
+      "causal_status": "INSUFFICIENT_EVIDENCE_PARALLEL_TREND_VIOLATED"
+    },
+    {
+      "case_id": "CASE_ONEWAY_06",
+      "did": -0.46,
+      "parallel_trend_p": 0.42,
+      "causal_status": "ATTRIBUTED_UNDER_TESTED_DID_ASSUMPTIONS"
+    }
+  ]
+}

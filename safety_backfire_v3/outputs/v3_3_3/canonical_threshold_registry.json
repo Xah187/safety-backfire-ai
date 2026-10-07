@@ -1,0 +1,20 @@
+{
+  "registry_version": "V3.3.3_CANONICAL_THRESHOLD_REGISTRY",
+  "release": "V3.3.3",
+  "thresholds": [
+    {"threshold_id": "TH_001", "name": "uncertainty_coverage_target", "value": 0.95, "unit": "proportion", "purpose": "Nominal OOS uncertainty coverage target", "source": "PREREGISTERED_SPEC", "preregistered": true, "selection_method": "SAFETY_STANDARDS", "release": "V3.3.3"},
+    {"threshold_id": "TH_002", "name": "nominal_odd_max_distance", "value": 8.0, "unit": "meters", "purpose": "Boundary distance for nominal optical operating domain", "source": "SENSOR_LIMITS", "preregistered": true, "selection_method": "EMPIRICAL_BOUND", "release": "V3.3.3"},
+    {"threshold_id": "TH_003", "name": "nominal_odd_min_distance", "value": 0.5, "unit": "meters", "purpose": "Minimum distance for planar ground tracking", "source": "SENSOR_LIMITS", "preregistered": true, "selection_method": "EMPIRICAL_BOUND", "release": "V3.3.3"},
+    {"threshold_id": "TH_004", "name": "confident_interval_width_ceiling", "value": 0.25, "unit": "meters", "purpose": "Maximum uncertainty interval width for autonomous intervention", "source": "KINEMATIC_SAFETY", "preregistered": true, "selection_method": "BRAKING_DISTANCE_ANALYSIS", "release": "V3.3.3"},
+    {"threshold_id": "TH_005", "name": "degraded_interval_width_ceiling", "value": 0.40, "unit": "meters", "purpose": "Maximum interval width before forced safe refusal", "source": "KINEMATIC_SAFETY", "preregistered": true, "selection_method": "BRAKING_DISTANCE_ANALYSIS", "release": "V3.3.3"},
+    {"threshold_id": "TH_006", "name": "camera_pitch_safe_floor", "value": 20.0, "unit": "degrees", "purpose": "Minimum mounting pitch for homography stability", "source": "OPTICAL_CALIBRATION", "preregistered": true, "selection_method": "GEOMETRY_ERROR_PROPAGATION", "release": "V3.3.3"},
+    {"threshold_id": "TH_007", "name": "floor_slope_safe_ceiling", "value": 3.0, "unit": "degrees", "purpose": "Maximum ground plane slope for planar homography", "source": "FACILITY_SURVEY", "preregistered": true, "selection_method": "PLANARITY_TOLERANCE", "release": "V3.3.3"},
+    {"threshold_id": "TH_008", "name": "safe_illumination_floor", "value": 50.0, "unit": "lux", "purpose": "Critical illumination threshold below which sensor refuses", "source": "PHOTOMETRIC_LIMIT", "preregistered": true, "selection_method": "SENSOR_NOISE_FLOOR", "release": "V3.3.3"},
+    {"threshold_id": "TH_009", "name": "nominal_illumination_floor", "value": 250.0, "unit": "lux", "purpose": "Nominal illumination floor for full autonomous action", "source": "PHOTOMETRIC_LIMIT", "preregistered": true, "selection_method": "WAREHOUSE_LIGHTING_SPEC", "release": "V3.3.3"},
+    {"threshold_id": "TH_010", "name": "pipeline_latency_safe_ceiling", "value": 500.0, "unit": "milliseconds", "purpose": "Maximum allowable end-to-end inference latency", "source": "CONTROL_LOOP_LIMIT", "preregistered": true, "selection_method": "DECELERATION_ENVELOPE", "release": "V3.3.3"},
+    {"threshold_id": "TH_011", "name": "planar_geometry_residual_limit", "value": 0.025, "unit": "meters", "purpose": "Maximum mean planar reprojection error", "source": "SURVEY_VALIDATION", "preregistered": true, "selection_method": "LASER_CALIBRATION", "release": "V3.3.3"},
+    {"threshold_id": "TH_012", "name": "false_refusal_rate_ceiling", "value": 0.05, "unit": "proportion", "purpose": "Maximum allowable false refusal rate on nominal frames", "source": "OPERATIONAL_SPEC", "preregistered": true, "selection_method": "UPTIME_REQUIREMENT", "release": "V3.3.3"},
+    {"threshold_id": "TH_013", "name": "unsafe_non_refusal_rate_ceiling", "value": 0.01, "unit": "proportion", "purpose": "Maximum allowable unsafe non-refusal on boundary frames", "source": "SAFETY_INTEGRITY", "preregistered": true, "selection_method": "SAFETY_GOAL", "release": "V3.3.3"},
+    {"threshold_id": "TH_014", "name": "tracking_confidence_floor", "value": 0.85, "unit": "score", "purpose": "Minimum track continuity confidence for autonomous action", "source": "TRACKING_FILTER", "preregistered": true, "selection_method": "IDF1_CORRELATION", "release": "V3.3.3"}
+  ]
+}

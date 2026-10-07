@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TractionCurrentGuardedThresholdV2",
+  "milestone": "V3.4-N-CORR-04-R1",
+  "description": "Reassessed guarded threshold for electrical traction de-energization derived from the corrected GUM uncertainty budget, invalidating the legacy 0.413 A RMS value.",
+  "governance_classification": "METROLOGY_THRESHOLD_RECONCILIATION",
+  "derivation_status": "DERIVED_CONDITIONALLY_PENDING_CHAIN_CALIBRATION",
+  "legacy_threshold_audit": {
+    "legacy_threshold_value_a_rms": 0.413,
+    "legacy_expanded_uncertainty_a": 0.087,
+    "audit_verdict": "REJECTED_AS_ARITHMETICALLY_INCONSISTENT",
+    "rationale": "The legacy threshold 0.413 A RMS was derived from an unverified U = 0.087 A (0.500 - 0.087 = 0.413). However, recomputation of the seven component standard uncertainties yields u_c = 0.04520 A and U = 0.0904 A. Under GUM and ISO 14253-1, preserving 0.413 A is inadmissible."
+  },
+  "corrected_threshold_derivation": {
+    "nominal_unenergized_limit_I_nominal_a_rms": 0.500,
+    "recalculated_combined_uncertainty_u_c_a": 0.04520,
+    "coverage_factor_k": 2.00,
+    "recalculated_expanded_uncertainty_U_a": 0.0904,
+    "guard_band_g_a": 0.0904,
+    "decision_rule_standard": "ISO 14253-1:2017 Clause 8 / ILAC G8:09/2019 Binary Guarded Decision Rule",
+    "derivation_formula": "I_guarded = I_nominal - U = 0.500 A - 0.0904 A = 0.4096 A RMS",
+    "derived_guarded_threshold_exact_a_rms": 0.4096,
+    "derived_guarded_threshold_engineering_rounded_a_rms": 0.410,
+    "formal_marking": "DERIVED"
+  },
+  "instrument_chain_dependency": {
+    "instrument_chain_status": "BLOCKED",
+    "dependency_note": "While the numerical derivation of 0.410 A RMS is mathematically exact from the component model, the input component U1_CAL_PROBE assumes a verified 0.1 V/A or 0.2 V/A transfer ratio. Because the TCPA300 amplifier does not support 10 A/V with a TCP303 probe, the guarded threshold cannot be certified for physical capture until physical calibration on the 5 A/V (0.2 V/A) range is completed on the bench.",
+    "operational_threshold_status": "UNRESOLVED_PENDING_CHAIN_CALIBRATION"
+  }
+}

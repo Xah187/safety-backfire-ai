@@ -1,0 +1,14 @@
+{
+  "tracking_metrics_status": "DESCRIPTIVE_TOPOLOGY_ONLY_NO_GROUND_TRUTH",
+  "tracking_idf1": "NOT_ESTABLISHED",
+  "mota": "NOT_ESTABLISHED",
+  "total_active_tracks": 81,
+  "forklift_tracks": 24,
+  "person_tracks": 57,
+  "per_camera_track_counts": {
+    "Camera_0000": 20,
+    "Camera_0001": 16,
+    "Camera_0002": 24,
+    "Camera_0003": 21
+  }
+}

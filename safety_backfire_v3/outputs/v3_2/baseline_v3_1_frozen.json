@@ -1,0 +1,264 @@
+{
+  "baseline_version": "V3.1_FROZEN_BASELINE",
+  "freeze_timestamp_utc": "2026-09-24T11:45:00Z",
+  "total_tracked_files": 57,
+  "file_manifest": {
+    "reports/v3_1/V3.1_ARCHITECTURE.md": {
+      "sha256": "9141cd48832730823fde4f0eb642191d9eea532bd63768c69231b3850f1b1885",
+      "size_bytes": 7395
+    },
+    "reports/v3_1/V3.1_BACKFIRE_MODEL.md": {
+      "sha256": "2b396e4d178c111c3bede4e742054cd80ea9587eb1829a3eb0329777ab45e392",
+      "size_bytes": 5022
+    },
+    "reports/v3_1/V3.1_BASELINE_VS_IMPROVED.md": {
+      "sha256": "673f7a125fff3c3537b026f170e5bcfa3048789bedf2031d0dd35347406f76d4",
+      "size_bytes": 4097
+    },
+    "reports/v3_1/V3.1_CORE_STATUS.md": {
+      "sha256": "99cd14b1dc6b3231b7867517b3a5bc472d2909804fdfa55e981839a3a62ed338",
+      "size_bytes": 5857
+    },
+    "reports/v3_1/V3.1_ENTITY_MODEL.md": {
+      "sha256": "45d7418fbe3b01af0dcf5d51540acb05af09ad76944c1b9e4d0fad51133da693",
+      "size_bytes": 5498
+    },
+    "reports/v3_1/V3.1_FAILURE_REGISTRY.md": {
+      "sha256": "81e768780acbfaf687daaa27864094c3956114254d9e57c40f9674b745e7e607",
+      "size_bytes": 10843
+    },
+    "reports/v3_1/V3.1_HAZARD_MODEL.md": {
+      "sha256": "9373fedb641b5e27a38d8eb2bd1c05623f7180e439100dbbe04a567daf771b17",
+      "size_bytes": 5024
+    },
+    "reports/v3_1/V3.1_INTERACTION_MODEL.md": {
+      "sha256": "a21f2654cb7f5d0eef132939e081de80da1a2885f6e108153740c934b622c176",
+      "size_bytes": 4132
+    },
+    "reports/v3_1/V3.1_INTERVENTION_MODEL.md": {
+      "sha256": "5c353ac171627f166f4e03dff163aae7ae28d630d7c7982f765012caa6c7edfc",
+      "size_bytes": 3508
+    },
+    "reports/v3_1/V3.1_ODD_SPEC.md": {
+      "sha256": "2c34a655c435f8d0d4cd80494450b48d8c0304615cbcae621cafc4179e5db59d",
+      "size_bytes": 4534
+    },
+    "reports/v3_1/V3.1_ONTOLOGY_SPEC.md": {
+      "sha256": "fce2131b840dd16529505097e97e185aa312adc8795098a936fa9debbf58e679",
+      "size_bytes": 7125
+    },
+    "reports/v3_1/V3.1_RELATION_MODEL.md": {
+      "sha256": "a527011e3a9ac926a8513009321de2d8b56d0d1731f91c82694e6ab549b77bc6",
+      "size_bytes": 5107
+    },
+    "reports/v3_1/V3.1_RISK_ENGINE_SPEC.md": {
+      "sha256": "f65f495ad32457a03ca5a01106e74138a7d26da197ff87bfc0f22f167305df6d",
+      "size_bytes": 5351
+    },
+    "reports/v3_1/V3.1_VALIDATION_REPORT.md": {
+      "sha256": "f95c6630336c00a35ebe60e4ce0662603449a5881686b208aed370b11f229b6c",
+      "size_bytes": 6128
+    },
+    "safety_backfire_v3/core/async_ingest.py": {
+      "sha256": "845abd11306810764230d3def1d7e047e5d212ebe818881971b658c9c076dfb0",
+      "size_bytes": 10248
+    },
+    "safety_backfire_v3/core/async_pipeline.py": {
+      "sha256": "797184ecda54611bf3dada71e2af1ef9888112ea31dad632c3a9f8b6afad8fca",
+      "size_bytes": 30048
+    },
+    "safety_backfire_v3/core/event_engine_v3.py": {
+      "sha256": "da460c1aacd86315698b13caf937ca574e4cc94e0504b3d6e3a84dc55dddaf39",
+      "size_bytes": 18066
+    },
+    "safety_backfire_v3/core/geometry_v3.py": {
+      "sha256": "a99b380755e09206bca613f33f741a73fed0e1f1406dbc157bc06fa50f32f023",
+      "size_bytes": 27005
+    },
+    "safety_backfire_v3/core/identity_layer.py": {
+      "sha256": "6ef77c5ad952c95628ce059f9963b511617a1cc32e1cde7f30a2d348623e542e",
+      "size_bytes": 10620
+    },
+    "safety_backfire_v3/core/uncertainty_risk_engine.py": {
+      "sha256": "c6078f7cf9f51f6fd8b1bdcac148254200439a05d0389745b7c54676ec70c02a",
+      "size_bytes": 13371
+    },
+    "safety_backfire_v3/core/universal_risk_engine.py": {
+      "sha256": "33e1eff11054a2484719bd33325b08403c0e31803b5160359af7a49c0e33eb01",
+      "size_bytes": 20748
+    },
+    "safety_backfire_v3/ontology/__init__.py": {
+      "sha256": "0b91146e2669905130164141862694e3e3409f4dd062bb867dade06bfa987ead",
+      "size_bytes": 1458
+    },
+    "safety_backfire_v3/ontology/backfire/__init__.py": {
+      "sha256": "8f429a80a77561b76f7154f8322125d5768942717789535c3a0ded4084d37e04",
+      "size_bytes": 284
+    },
+    "safety_backfire_v3/ontology/backfire/engine.py": {
+      "sha256": "cbcc963b36334eae66c8ebbd6f7488f24ece3679425c01a6c6b4f4196379d1ac",
+      "size_bytes": 6469
+    },
+    "safety_backfire_v3/ontology/backfire/redistribution.py": {
+      "sha256": "7869a566cd4bb09848f30806ab550eb11bd68901bd2738c985430436c2acacec",
+      "size_bytes": 2952
+    },
+    "safety_backfire_v3/ontology/entities/__init__.py": {
+      "sha256": "d75687965ac601c635e3566b2505de5573cc2a425b88f347565e20343c679942",
+      "size_bytes": 634
+    },
+    "safety_backfire_v3/ontology/entities/base.py": {
+      "sha256": "5e377b08e961e53d4ab7db0fd38b3d1941fa407b6ad58eec806d91c8205d089d",
+      "size_bytes": 2596
+    },
+    "safety_backfire_v3/ontology/entities/infrastructure.py": {
+      "sha256": "d6db08fe9cb68d828de7098591fe4a06d387fc862c5e066a8afc93ce85d25ffb",
+      "size_bytes": 2232
+    },
+    "safety_backfire_v3/ontology/entities/machinery.py": {
+      "sha256": "801ce2d1cb3a9ec8e9d43545326ac36b0d21aafee8581a3079bbad5279172df4",
+      "size_bytes": 1570
+    },
+    "safety_backfire_v3/ontology/entities/people.py": {
+      "sha256": "564214af2398e9966a6b0806110f341f918ea1857bc713f6729147dd7fc15178",
+      "size_bytes": 1853
+    },
+    "safety_backfire_v3/ontology/entities/storage.py": {
+      "sha256": "cb5ba8b182716f465afc7aa832d5eae8618775d5d8f7750d1b55d79e7d8a5fc9",
+      "size_bytes": 2721
+    },
+    "safety_backfire_v3/ontology/entities/vehicles.py": {
+      "sha256": "fa810fe7fb2cff0b085317bb91fe76ae78befca4709ce3139458698ff60ca2a4",
+      "size_bytes": 2140
+    },
+    "safety_backfire_v3/ontology/evidence/__init__.py": {
+      "sha256": "d71f74cad053cacb41b074728eae069d2ca5bed9198adf054efb5814438d9641",
+      "size_bytes": 178
+    },
+    "safety_backfire_v3/ontology/evidence/contracts.py": {
+      "sha256": "7b84f2ca875ba4467e09f598790f72af03b6e0e50bb2394b86660f640b206e3f",
+      "size_bytes": 3689
+    },
+    "safety_backfire_v3/ontology/hazards/__init__.py": {
+      "sha256": "0f6f73cda0124a794161acd369f651ba2015b8266780b8ba4dd1f140bbb163dd",
+      "size_bytes": 231
+    },
+    "safety_backfire_v3/ontology/hazards/evaluator.py": {
+      "sha256": "7d001708299c68fd5082c36ceb9dc35d5f6bce55f6c6beecccc815738f531de9",
+      "size_bytes": 7137
+    },
+    "safety_backfire_v3/ontology/hazards/taxonomy.py": {
+      "sha256": "3731c9097169f90ed9d8fb719a98d90b1bc7597ef53ae46f831751a57066e770",
+      "size_bytes": 2688
+    },
+    "safety_backfire_v3/ontology/interactions/__init__.py": {
+      "sha256": "c6c82f56c76dbee020ce5153962dc3690270bc28f8025aab7928139e93f768a5",
+      "size_bytes": 297
+    },
+    "safety_backfire_v3/ontology/interactions/matrix.py": {
+      "sha256": "61f6da98b60d9b5dce26f92441c46d25c363109b47e544e2d9914f752f5802b8",
+      "size_bytes": 16099
+    },
+    "safety_backfire_v3/ontology/interactions/types.py": {
+      "sha256": "1fc6ba33036eee022104c4a544118f1dcea238b0f1b3a664288de7034738ceef",
+      "size_bytes": 2495
+    },
+    "safety_backfire_v3/ontology/interventions/__init__.py": {
+      "sha256": "6fc1f0efb2de5147508efa7e3a687d90f8b7c4213a7cb5d825b2fc84674210fa",
+      "size_bytes": 242
+    },
+    "safety_backfire_v3/ontology/interventions/model.py": {
+      "sha256": "fce646fdf50cfbd7ca850846df400486fc0cc3660ad2ff2b94d06c88ebd51683",
+      "size_bytes": 2616
+    },
+    "safety_backfire_v3/ontology/interventions/types.py": {
+      "sha256": "ac28c83594f6b902189ca2b34dc05382d52ec86130dd43045c42ce95113d1690",
+      "size_bytes": 1667
+    },
+    "safety_backfire_v3/ontology/relations/__init__.py": {
+      "sha256": "d3003cbc11dda6c47e03f8f779da553bd0e1284e5ae6890a3d4a9885851b76d9",
+      "size_bytes": 398
+    },
+    "safety_backfire_v3/ontology/relations/evaluator.py": {
+      "sha256": "0ed21992e8d9dc167307802cf867ea94240fc79a407726f1c94c91a597c49231",
+      "size_bytes": 8214
+    },
+    "safety_backfire_v3/ontology/relations/types.py": {
+      "sha256": "1bf8ad0560329c8e4f67bf1b0e65a36c5c5fc50e8bf545177a45563e5597b685",
+      "size_bytes": 2916
+    },
+    "safety_backfire_v3/ontology/schemas/__init__.py": {
+      "sha256": "36774636f158ec9850a7775af0599372f57c68b499f8f74afbc9ae21c5081c45",
+      "size_bytes": 422
+    },
+    "safety_backfire_v3/ontology/schemas/versioned.py": {
+      "sha256": "a92cf6178c9124f34c875a7c72fbaccd5d46fda901f2c7904ef7e5e1c94f55f9",
+      "size_bytes": 3013
+    },
+    "safety_backfire_v3/ontology/states/__init__.py": {
+      "sha256": "3310ccf5ca6fce946977bd172d34df2e697a30de608e97be3d961fde421551f4",
+      "size_bytes": 339
+    },
+    "safety_backfire_v3/ontology/states/states.py": {
+      "sha256": "f165fbccb766ef25321c9c501280cc1ca297fd1c16f4a76dad05b1b87c098782",
+      "size_bytes": 2754
+    },
+    "safety_backfire_v3/ontology/zones/__init__.py": {
+      "sha256": "f9ca3844d38742dc07998e19773e31647efeec1750ea1350c75aa15d37983b2a",
+      "size_bytes": 94
+    },
+    "safety_backfire_v3/ontology/zones/manager.py": {
+      "sha256": "2bd9fcd277e1f3787f8f4be2bd99f87a6443f9bc89592b3934bab6d23a6a7cb5",
+      "size_bytes": 2393
+    },
+    "safety_backfire_v3/validation/v3_1/export_schemas_and_metrics.py": {
+      "sha256": "3e246f1bb0d9fc0a85a05783e4b640dcd8d0850d7b80632ba6735d199324d064",
+      "size_bytes": 21738
+    },
+    "safety_backfire_v3/validation/v3_1/test_adversarial_failures_v3_1.py": {
+      "sha256": "5d3b9de867a41637df4096852b6dad0f33b6c5e7211341409ea9f3a7893eb0a1",
+      "size_bytes": 15870
+    },
+    "safety_backfire_v3/validation/v3_1/test_ontology_integrity.py": {
+      "sha256": "88f61df902d1c008f26eb7406f0aed83690e2d4549de6e2a51c3c3c65b2c9c3a",
+      "size_bytes": 5345
+    },
+    "safety_backfire_v3/validation/v3_1/test_safety_backfire_scenarios.py": {
+      "sha256": "3e82a3c04adb748801be95a54e980e6849f198452403c19e8009f6ee33c2beaf",
+      "size_bytes": 16811
+    },
+    "safety_backfire_v3/validation/v3_1/test_universal_risk_engine.py": {
+      "sha256": "e6f82a025c5a12b55f5118be93e4daea5db9905fe0399c659427210936e720bf",
+      "size_bytes": 8956
+    }
+  },
+  "test_suite_status": {
+    "test_ontology_integrity": "PASSED (100%)",
+    "test_universal_risk_engine": "PASSED (100%)",
+    "test_safety_backfire_scenarios": "PASSED (15/15, 100%)",
+    "test_adversarial_failures_v3_1": "PASSED (7/7, 100%)"
+  },
+  "failure_lineage": {
+    "catalog": "FAIL-01 through FAIL-37",
+    "total_failures": 37,
+    "resolved": 33,
+    "documented_boundaries": 4,
+    "open_defects": 0
+  },
+  "invariants": {
+    "UNKNOWN_NOT_SAFE": true,
+    "INSUFFICIENT_EVIDENCE_NOT_SAFE": true,
+    "UNKNOWN_NOT_SUPPRESS": true,
+    "LOW_CONFIDENCE_NOT_NO_HAZARD": true,
+    "NO_OBSERVATION_NOT_NO_OBJECT": true,
+    "TEMPORAL_MONOTONICITY": true,
+    "DECOUPLED_ID_NAMESPACES": [
+      "EntityID",
+      "PairID",
+      "EpisodeID",
+      "EventID",
+      "HazardID",
+      "AlertID"
+    ]
+  }
+}

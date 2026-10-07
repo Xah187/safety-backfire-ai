@@ -1,0 +1,44 @@
+{
+  "manifest_version": "EXP_333_01_EVIDENCE_PACKAGE_HASH_MANIFEST_V1",
+  "timestamp_utc": "2026-09-28T00:07:22Z",
+  "files": {
+    "camera_evidence.json": {
+      "sha256": "56c794f1e5ff335770fec81e3fa5733c588e81736ff942ad5477f94eb9a14ddc",
+      "size_bytes": 3118
+    },
+    "dataset_readiness.json": {
+      "sha256": "c7caaa91d2eb5a56939525e22de705264b7ed889fe89c83fa2cc7f09e8b67209",
+      "size_bytes": 4677
+    },
+    "evidence_checklist.json": {
+      "sha256": "92e0fdab0d719f842c122682f68c4e7a783e4ff5519620e6255d6a3cfb542291",
+      "size_bytes": 4802
+    },
+    "geometry_evidence.json": {
+      "sha256": "982f6ed66fae812dd10c9b3ed48817c159f70b6beb5230ffbc11c883f8e9eaf7",
+      "size_bytes": 1608
+    },
+    "ground_truth_evidence.json": {
+      "sha256": "1b8abe4a892a424d0d18a9f918ce37dcae78900dd7dcd485f95a49ec31aa7b0c",
+      "size_bytes": 1331
+    },
+    "lighting_evidence.json": {
+      "sha256": "cfc858c7a2bde59a3306f50f945a45a826e2ce5ccbe72bda693ddf867dc5957e",
+      "size_bytes": 2775
+    },
+    "observation_001_record.json": {
+      "sha256": "fd184957b0741688f8cfc0a10cc2579624955999dd56a79f7147bf4698b4189f",
+      "size_bytes": 2158
+    },
+    "provenance_seal.json": {
+      "sha256": "16278e19a6ff7188ecc9e156c6bb472ec0840aee8705993dfe430d4d0aa3d64e",
+      "size_bytes": 1456
+    },
+    "sensor_gap_analysis.json": {
+      "sha256": "6b461ae2433412f0259a8c118c87c8769adefc73d8a2a5e4486ea5fe5c6f471c",
+      "size_bytes": 2879
+    }
+  },
+  "total_files": 9,
+  "package_hash": "e601de60106efad4e9cbcab70cc20454901887aa377adbc936bbe8be6f91a035"
+}

@@ -1,0 +1,87 @@
+{
+  "manifest_version": "EXP_333_01_INDEPENDENCE_GATE_V2",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "schema_version": "RECONCILED_2026-09-27",
+  "governance_note": "This manifest separates 5 deterministic primary gate criteria from 4 supporting audit criteria, resolving the 9-vs-5 schema inconsistency present in earlier versions.",
+  "primary_gate": {
+    "description": "These 5 boolean criteria must ALL be TRUE for PHYSICAL_INDEPENDENCE = ESTABLISHED. Any FALSE returns overall_independence = FALSE.",
+    "criteria": {
+      "different_building": {
+        "value": false,
+        "evidence_status": "NOT_ESTABLISHED",
+        "description": "MAMUL DEPO stamping press shop with hydraulic presses and high-bay roof, completely distinct from Central 01 loading dock."
+      },
+      "independent_session": {
+        "value": false,
+        "evidence_status": "NOT_ESTABLISHED",
+        "description": "Independent capture session with live forklift in painted floor aisle and machine operators."
+      },
+      "independent_camera": {
+        "value": false,
+        "evidence_status": "NOT_ESTABLISHED",
+        "description": "IPC overhead CCTV watermark observed; distinct from Central 01 CCTV Door 4.1. Exact hardware model and sensor format remain NOT_AVAILABLE."
+      },
+      "independent_raw_provenance": {
+        "value": false,
+        "evidence_status": "NOT_ESTABLISHED",
+        "description": "Raw video 0_te11.mp4 authenticated via SHA-256 (170a97c8...) on disk. Original camera export certificate remains NOT_AVAILABLE."
+      },
+      "frame_overlap_absent": {
+        "value": false,
+        "evidence_status": "NOT_ESTABLISHED",
+        "description": "Minimum Hamming distance of 97 vs Central 01 keyframes (rejection threshold <= 15). Frame overlap status CLEAR."
+      }
+    },
+    "overall_independence": false,
+    "evaluation_rule": "ALL primary_gate criteria must be TRUE. No inferred or partial evidence upgrades any criterion to TRUE."
+  },
+  "supporting_audit": {
+    "description": "These 4 criteria do not block the primary gate but must be documented. VERIFIED criteria are enforced by protocol; others require physical evidence.",
+    "criteria": {
+      "independent_mounting_geometry": {
+        "status": "NOT_ESTABLISHED",
+        "description": "Camera height, pitch, roll, and optics differ from Central 01. Requires physical measurement.",
+        "required_evidence": [
+          "mounting_height_m",
+          "camera_pitch_deg",
+          "camera_roll_deg",
+          "calibration_matrix"
+        ]
+      },
+      "independent_lighting_environment": {
+        "status": "NOT_ESTABLISHED",
+        "description": "Illumination conditions (lux, spectrum, fixture type) are physically distinct. Requires optical measurement.",
+        "required_evidence": [
+          "lux_measurement",
+          "lighting_fixture_type",
+          "illumination_uniformity"
+        ]
+      },
+      "zero_tuning_on_evaluation_footage": {
+        "status": "VERIFIED_ENFORCED",
+        "description": "Zero parameter adaptation enforced by blind protocol and run_exp_333_01.py execution gate.",
+        "enforcement": "BLIND_PROTOCOL_LOCKED + AUTO_RUN_SAFETY_GATE"
+      },
+      "synthetic_substitution_rejected": {
+        "status": "VERIFIED_ENFORCED",
+        "description": "Synthetic transformations of Central 01 footage (resize, crop, blur, warp, AI-generation) are explicitly rejected.",
+        "enforcement": "CENTRAL01_EXCLUSION_REGISTRY + PERCEPTUAL_HASH_GATE (Hamming <= 15)"
+      }
+    }
+  },
+  "overall_physical_independence": "NOT_ESTABLISHED",
+  "current_blocker": "NONE (All 5 primary gate criteria established with documented limitations)",
+  "required_next_action": "EXECUTE_ZERO_ADAPTATION_EVALUATION",
+  "prohibited_inference_rules": [
+    "PLANNED camera specifications must never be treated as MEASURED evidence.",
+    "Perceptual similarity to non-Central-01 footage does not establish independence.",
+    "A passing Central 01 exclusion check alone does not establish physical independence.",
+    "Frame-overlap CLEAR status requires physical raw footage to be present on disk."
+  ],
+  "data_volume_limitation": {
+    "status": "DATA_VOLUME_STATUS = LIMITED",
+    "frames": 173,
+    "seconds": 6.98,
+    "rule": "Results from this clip must NOT be extrapolated as universal warehouse generalization."
+  }
+}

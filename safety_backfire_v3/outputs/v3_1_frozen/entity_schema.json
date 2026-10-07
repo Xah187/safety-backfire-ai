@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EntityV1Schema",
+  "description": "Schema for warehouse entities: people, vehicles, storage, machinery, infrastructure",
+  "type": "object",
+  "required": [
+    "entity_id",
+    "category",
+    "subtype",
+    "world_pos_m",
+    "odd_status"
+  ],
+  "properties": {
+    "entity_id": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "PERSON",
+        "VEHICLE",
+        "STORAGE_STRUCTURE",
+        "LOAD",
+        "MACHINE",
+        "INFRASTRUCTURE",
+        "ENVIRONMENTAL_HAZARD",
+        "UNKNOWN"
+      ]
+    },
+    "subtype": {
+      "type": "string"
+    },
+    "track_id": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "bbox_2d": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "world_pos_m": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "elevation_z_m": {
+      "type": "number"
+    },
+    "velocity_m_s": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "speed_m_s": {
+      "type": "number"
+    },
+    "position_uncertainty_m": {
+      "type": "number"
+    },
+    "posture": {
+      "type": "string",
+      "enum": [
+        "UPRIGHT_WALKING",
+        "UPRIGHT_STANDING",
+        "BENDING",
+        "CROUCHING",
+        "KNEELING",
+        "PRONE",
+        "SUPINE",
+        "FALLING",
+        "SEATED",
+        "UNKNOWN"
+      ]
+    },
+    "odd_status": {
+      "type": "string",
+      "enum": [
+        "VALID",
+        "DEGRADED",
+        "OUT_OF_DOMAIN",
+        "UNKNOWN"
+      ]
+    }
+  }
+}

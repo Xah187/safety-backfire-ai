@@ -1,0 +1,22 @@
+[
+  {
+    "facility_id": "FACILITY_PILOT_01",
+    "trajectory_id": "TRAJ_W401",
+    "object_id": "WORKER_401",
+    "timestamp": 0.0,
+    "world_x": 8.52,
+    "world_y": 14.30,
+    "world_z": 0.0,
+    "zone_id": "MAIN_CORRIDOR_A"
+  },
+  {
+    "facility_id": "FACILITY_PILOT_01",
+    "trajectory_id": "TRAJ_F01",
+    "object_id": "FORKLIFT_01",
+    "timestamp": 0.0,
+    "world_x": 12.10,
+    "world_y": 18.45,
+    "world_z": 0.0,
+    "zone_id": "INTERSECTION_CENTRAL"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "runtime_implementation_status": "CONFORMANT_TO_FROZEN_SPECIFICATION",
+  "model_h_evaluation_status": "NOT_ESTABLISHED",
+  "model_h_status": "INPUT_INSUFFICIENT",
+  "missing_inputs": [
+    "illumination_lux",
+    "camera_pitch_deg",
+    "occlusion_state"
+  ],
+  "default_substitution_performed": false,
+  "coverage_factor_k_values_emitted": null,
+  "governing_rationale": "In accordance with Section 5 and 6, missing photometric lux and camera pitch angle block canonical Model H evaluation. No guess or default values substituted."
+}

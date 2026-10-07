@@ -1,0 +1,7 @@
+{
+  "memory_leak_detected": false,
+  "unbounded_queue_growth": false,
+  "zombie_episode_accumulation": 0,
+  "id_namespace_drift": false,
+  "max_queue_depth": 100
+}

@@ -1,0 +1,18 @@
+{
+  "sample_unit": "Trajectory_Sequence",
+  "N_trajectories": 28,
+  "total_frames_evaluated": 3332,
+  "IDF1": 0.918,
+  "IDF1_confidence_interval_95": [
+    0.9057,
+    0.9295
+  ],
+  "IDF1_CI_method": "Trajectory_Bootstrap_Percentile_CI",
+  "bootstrap_unit": "Trajectory_Sequence",
+  "bootstrap_replicates": 1000,
+  "bootstrap_seed": 1337,
+  "identity_switches_total": 23,
+  "fragmentation_events_total": 21,
+  "occlusion_recovery_rate": 0.5,
+  "identity_survival_rate": 0.1786
+}

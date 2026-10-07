@@ -1,0 +1,53 @@
+{
+  "event_identifier": "UNION_CAND_Warehouse_026_008",
+  "protocol": "INDEPENDENT_DOUBLE_BLIND_ADJUDICATION",
+  "instructions": "Examine before.mp4, intervention.mp4, after.mp4, and contact_sheet.jpg. Score each criterion as YES, NO, or UNKNOWN. Do not infer AI risk or rely on unverified assumptions.",
+  "criteria_scoring_rubric": {
+    "criterion_1_physical_intervention": "Is an active physical intervention or avoidance maneuver visible? [YES / NO / UNKNOWN]",
+    "criterion_2_measurable_pre_risk": "Was there measurable hazard in the primary zone prior to intervention? [YES / NO / UNKNOWN]",
+    "criterion_3_primary_risk_mitigated": "Did risk in the primary zone decrease or mitigate as intended? [YES / NO / UNKNOWN]",
+    "criterion_4_secondary_risk_escalated": "Did measurable risk escalate in a secondary or adjacent zone? [YES / NO / UNKNOWN]",
+    "criterion_5_causal_mechanism": "Is there a plausible causal relationship connecting the intervention to the secondary hazard? [YES / NO / UNKNOWN]",
+    "criterion_6_independent_evidence": "Is evidence grounded in direct observation rather than speculation? [YES / NO / UNKNOWN]",
+    "criterion_7_inter_rater_consensus": "Do at least two independent evaluators concur? [YES / NO / UNKNOWN]"
+  },
+  "reviewer_evaluations": {
+    "reviewer_1": {
+      "reviewer_id": null,
+      "review_timestamp_utc": null,
+      "criteria_scores": {
+        "criterion_1": null,
+        "criterion_2": null,
+        "criterion_3": null,
+        "criterion_4": null,
+        "criterion_5": null,
+        "criterion_6": null,
+        "criterion_7": null
+      },
+      "label_decision": null,
+      "causal_link_confidence": null,
+      "notes": ""
+    },
+    "reviewer_2": {
+      "reviewer_id": null,
+      "review_timestamp_utc": null,
+      "criteria_scores": {
+        "criterion_1": null,
+        "criterion_2": null,
+        "criterion_3": null,
+        "criterion_4": null,
+        "criterion_5": null,
+        "criterion_6": null,
+        "criterion_7": null
+      },
+      "label_decision": null,
+      "causal_link_confidence": null,
+      "notes": ""
+    }
+  },
+  "adjudication_consensus": {
+    "adjudication_required": true,
+    "adjudicated_label": "PENDING_HUMAN_REVIEW",
+    "adjudication_notes": ""
+  }
+}

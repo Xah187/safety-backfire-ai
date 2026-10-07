@@ -1,0 +1,96 @@
+{
+  "state_machine_name": "PilotReadinessStateMachineV2",
+  "milestone": "V3.4-M",
+  "governance_classification": "ENGINEERING_LIFECYCLE_SPECIFICATION",
+  "authoritative_state_taxonomy": {
+    "PLANNED": {
+      "definition": "Engineering protocols, sensor architectures, and safety specifications drafted; site requirements formalized.",
+      "achieved_by": "Milestone V3.4-J / V3.4-L / V3.4-M"
+    },
+    "INSTALLATION_READY": {
+      "definition": "Facility leased; structural rigging mounted; sensors, PTP grandmaster, network, and storage physically staged.",
+      "achieved_by": "Physical Site Preparation"
+    },
+    "COMMISSIONING": {
+      "definition": "Active on-site hardware burn-in, optical extrinsics survey, PTP lock, CAN decoding, and secondary target tests underway.",
+      "achieved_by": "Field Engineering Team Execution"
+    },
+    "INSTRUMENTATION_DESIGN_COMPLETE": {
+      "definition": "All engineering specifications, schemas, synchronization budgets, and safety taxonomies audited and mathematically reconciled.",
+      "current_milestone_state": "ACHIEVED_BY_V3_4_M"
+    },
+    "INSTRUMENTATION_READY_FOR_CAPTURE": {
+      "definition": "All physical Pre-Capture Commissioning Gates (C1 through C6) verified and signed PASS on physical hardware.",
+      "prerequisites": ["Gate C1 = PASS", "Gate C2 = PASS", "Gate C3 = PASS", "Gate C4 = PASS", "Gate C5 = PASS", "Gate C6 = PASS"]
+    },
+    "PHYSICAL_CAPTURE_AUTHORIZED": {
+      "definition": "Operational authorization granted by Safety Marshal and Facility Management following site inspection, E-Stop testing, and permit signoff. (SEPARATE FROM INSTRUMENTATION READINESS).",
+      "authorizing_authority": "Safety Marshal + Facility Director (NOT GRANTED BY V3.4-M)"
+    },
+    "CAPTURE_IN_PROGRESS": {
+      "definition": "Active multi-modal data acquisition during a controlled trial run (L01-L09) or naturalistic operational shift under live safety monitoring.",
+      "prerequisites": ["INSTRUMENTATION_READY_FOR_CAPTURE = TRUE", "PHYSICAL_CAPTURE_AUTHORIZED = TRUE"]
+    },
+    "CAPTURE_ABORTED": {
+      "definition": "Active trial terminated due to a Safety Abort or Data Invalidation Abort condition.",
+      "routing": "Mandatory transition to ABORTED_RUN_ARCHIVED"
+    },
+    "ABORTED_RUN_ARCHIVED": {
+      "definition": "Aborted trial package quarantined in aborted_runs/ with diagnostic telemetry; permanently marked NON_EVIDENTIARY; cannot advance to review or GT.",
+      "evidentiary_value": "ZERO_NON_EVIDENTIARY"
+    },
+    "CAPTURE_COMPLETED": {
+      "definition": "Physical trial run or naturalistic recording concluded nominally without triggering any safety or data abort conditions.",
+      "next_step": "Execution of Post-Capture Data Quality Gates D1 through D6"
+    },
+    "DATASET_READY_FOR_REVIEW": {
+      "definition": "Post-capture gates D1 through D6 verified PASS; sanitized review packages compiled with zero algorithmic scores or model outputs.",
+      "prerequisites": ["Gate D1 = PASS", "Gate D2 = PASS", "Gate D3 = PASS", "Gate D4 = PASS", "Gate D5 = PASS", "Gate D6 = PASS"]
+    },
+    "VALIDATION_READY": {
+      "definition": "Double-blind human panel adjudication complete; inter-rater agreement verified; Ground Truth committed with cryptographic signoff.",
+      "prerequisites": ["Reviewer 1 + Reviewer 2 Ballots", "Cohen's Kappa Computed", "Lead Adjudication Signed", "SHA-256 Merkle Provenance Locked"]
+    }
+  },
+  "transitions": [
+    { "from": "PLANNED", "to": "INSTALLATION_READY", "condition": "Facility lease executed & hardware staged" },
+    { "from": "INSTALLATION_READY", "to": "COMMISSIONING", "condition": "Physical rigging & cabling complete" },
+    { "from": "COMMISSIONING", "to": "INSTRUMENTATION_READY_FOR_CAPTURE", "condition": "Pre-Capture Commissioning Gates C1-C6 = PASS" },
+    { "from": "COMMISSIONING", "to": "INSTALLATION_READY", "condition": "Hardware fault or mechanical remount required" },
+    { "from": "INSTRUMENTATION_READY_FOR_CAPTURE", "to": "PHYSICAL_CAPTURE_AUTHORIZED", "condition": "Site safety permits, E-Stop verification, Safety Marshal signoff" },
+    { "from": "PHYSICAL_CAPTURE_AUTHORIZED", "to": "CAPTURE_IN_PROGRESS", "condition": "Run armed by Safety Marshal & Data Operations Lead" },
+    { "from": "CAPTURE_IN_PROGRESS", "to": "CAPTURE_ABORTED", "condition": "Safety Abort or Data Invalidation Abort triggered" },
+    { "from": "CAPTURE_ABORTED", "to": "ABORTED_RUN_ARCHIVED", "condition": "Immediate automated quarantine to outputs/aborted_runs/" },
+    { "from": "ABORTED_RUN_ARCHIVED", "to": "INSTRUMENTATION_READY_FOR_CAPTURE", "condition": "Root cause logged; fault cleared; C1-C6 re-verified" },
+    { "from": "CAPTURE_IN_PROGRESS", "to": "CAPTURE_COMPLETED", "condition": "Run completes nominally with zero abort conditions tripped" },
+    { "from": "CAPTURE_COMPLETED", "to": "DATASET_READY_FOR_REVIEW", "condition": "Post-Capture Gates D1-D6 = PASS" },
+    { "from": "DATASET_READY_FOR_REVIEW", "to": "VALIDATION_READY", "condition": "Blinded human panel adjudication consensus committed" }
+  ],
+  "strictly_forbidden_transitions": [
+    {
+      "from": "INSTRUMENTATION_DESIGN_COMPLETE",
+      "to": "PHYSICAL_CAPTURE_AUTHORIZED",
+      "rule": "CRITICAL_VIOLATION: Design completeness does not authorize physical capture. Requires physical hardware deployment, commissioning, and Safety Marshal approval."
+    },
+    {
+      "from": "INSTRUMENTATION_READY_FOR_CAPTURE",
+      "to": "VALIDATION_READY",
+      "rule": "CRITICAL_VIOLATION: Cannot leapfrog physical capture, data quality verification, and blinded human Ground Truth adjudication."
+    },
+    {
+      "from": "COMMISSIONING",
+      "to": "DATASET_READY_FOR_REVIEW",
+      "rule": "CRITICAL_VIOLATION: Calibration and bench test artifacts cannot be reviewed as operational dataset."
+    },
+    {
+      "from": "CAPTURE_COMPLETED",
+      "to": "VALIDATION_READY",
+      "rule": "CRITICAL_VIOLATION: Raw unadjudicated captures cannot establish validation without sanitized human GT review."
+    },
+    {
+      "from": "ABORTED_RUN_ARCHIVED",
+      "to": "DATASET_READY_FOR_REVIEW",
+      "rule": "CRITICAL_VIOLATION: Aborted runs are strictly non-evidentiary and cannot be reviewed as valid experimental data."
+    }
+  ]
+}

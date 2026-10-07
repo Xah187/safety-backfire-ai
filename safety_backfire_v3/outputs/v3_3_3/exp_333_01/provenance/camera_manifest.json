@@ -1,0 +1,178 @@
+{
+  "manifest_version": "EXP_333_01_CAMERA_MANIFEST_V2",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "schema_version": "PLANNED_ACTUAL_SEPARATED_2026-09-27",
+  "governance_note": "Planned and actual camera data are explicitly separated. Planned values are TARGET specifications only and must NEVER be used in perception evaluation, uncertainty calibration, OOD classification, geometry metrics, statistical analysis, or claims.",
+  "total_cameras_specified": 4,
+  "cameras_authenticated": 1,
+  "cameras": [
+    {
+      "camera_id": "CAM_EXT_01",
+      "authentication_status": "OBSERVED_IN_STREAM",
+      "planned": {
+        "description": "TARGET specifications only \u2014 values not confirmed by physical measurement",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "mounting_height_m": 8.0,
+        "pitch_deg": 35.0,
+        "roll_deg": 0.0,
+        "model": "HIGH_MOUNT_IP_CAMERA",
+        "focal_length_mm": null,
+        "sensor_format": null
+      },
+      "actual": {
+        "description": "Measured values from physical deployment \u2014 all NOT_AVAILABLE until footage ingested",
+        "resolution": null,
+        "fps": null,
+        "frame_count": null,
+        "mounting_height_m": null,
+        "pitch_deg": null,
+        "roll_deg": null,
+        "model": null,
+        "focal_length_mm": null,
+        "sensor_format": null,
+        "optical_center_x": null,
+        "optical_center_y": null,
+        "calibration_matrix": null,
+        "sha256_source_file": null,
+        "status": "NOT_AVAILABLE"
+      }
+    },
+    {
+      "camera_id": "CAM_EXT_02",
+      "authentication_status": "NOT_AVAILABLE",
+      "planned": {
+        "description": "TARGET specifications only \u2014 values not confirmed by physical measurement",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "mounting_height_m": 8.5,
+        "pitch_deg": 31.0,
+        "roll_deg": 0.0,
+        "model": "HIGH_MOUNT_IP_CAMERA",
+        "focal_length_mm": null,
+        "sensor_format": null
+      },
+      "actual": {
+        "description": "Measured values from physical deployment \u2014 all NOT_AVAILABLE until footage ingested",
+        "resolution": null,
+        "fps": null,
+        "frame_count": null,
+        "mounting_height_m": null,
+        "pitch_deg": null,
+        "roll_deg": null,
+        "model": null,
+        "focal_length_mm": null,
+        "sensor_format": null,
+        "optical_center_x": null,
+        "optical_center_y": null,
+        "calibration_matrix": null,
+        "sha256_source_file": null,
+        "status": "NOT_AVAILABLE"
+      }
+    },
+    {
+      "camera_id": "CAM_EXT_03",
+      "authentication_status": "NOT_AVAILABLE",
+      "planned": {
+        "description": "TARGET specifications only \u2014 values not confirmed by physical measurement",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "mounting_height_m": 7.5,
+        "pitch_deg": 38.0,
+        "roll_deg": 0.0,
+        "model": "HIGH_MOUNT_IP_CAMERA",
+        "focal_length_mm": null,
+        "sensor_format": null
+      },
+      "actual": {
+        "description": "Measured values from physical deployment \u2014 all NOT_AVAILABLE until footage ingested",
+        "resolution": null,
+        "fps": null,
+        "frame_count": null,
+        "mounting_height_m": null,
+        "pitch_deg": null,
+        "roll_deg": null,
+        "model": null,
+        "focal_length_mm": null,
+        "sensor_format": null,
+        "optical_center_x": null,
+        "optical_center_y": null,
+        "calibration_matrix": null,
+        "sha256_source_file": null,
+        "status": "NOT_AVAILABLE"
+      }
+    },
+    {
+      "camera_id": "CAM_EXT_04",
+      "authentication_status": "NOT_AVAILABLE",
+      "planned": {
+        "description": "TARGET specifications only \u2014 values not confirmed by physical measurement",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "mounting_height_m": 9.0,
+        "pitch_deg": 28.0,
+        "roll_deg": 0.0,
+        "model": "HIGH_MOUNT_IP_CAMERA",
+        "focal_length_mm": null,
+        "sensor_format": null
+      },
+      "actual": {
+        "description": "Measured values from physical deployment \u2014 all NOT_AVAILABLE until footage ingested",
+        "resolution": null,
+        "fps": null,
+        "frame_count": null,
+        "mounting_height_m": null,
+        "pitch_deg": null,
+        "roll_deg": null,
+        "model": null,
+        "focal_length_mm": null,
+        "sensor_format": null,
+        "optical_center_x": null,
+        "optical_center_y": null,
+        "calibration_matrix": null,
+        "sha256_source_file": null,
+        "status": "NOT_AVAILABLE"
+      }
+    }
+  ],
+  "camera_independence_status": "NOT_ESTABLISHED",
+  "metadata_provenance_taxonomy": {
+    "supported_categories": [
+      "MEASURED",
+      "DECLARED",
+      "INFERRED",
+      "NOT_AVAILABLE"
+    ],
+    "category_definitions": {
+      "MEASURED": "Directly recorded from physical sensor or instrument at the time of acquisition.",
+      "DECLARED": "Reported by the source operator or facility manager without direct sensor verification.",
+      "INFERRED": "Estimated or computed from other available data. Must NOT be used as ground truth.",
+      "NOT_AVAILABLE": "No evidence of any kind exists for this field."
+    },
+    "rule": "Never silently convert INFERRED or DECLARED values into MEASURED values. Never convert NOT_AVAILABLE to any positive claim. Planned target values are not DECLARED unless confirmed by a site operator in writing."
+  },
+  "planned_value_prohibition": {
+    "rule": "planned.* fields must never be used in: perception evaluation, uncertainty calibration, OOD classification, geometry metrics, statistical analysis, or performance claims.",
+    "rationale": "Planned camera specifications are engineering targets. Actual optics, mounting, and geometry must be measured on-site."
+  },
+  "lighting_metadata": {
+    "lux": null,
+    "illumination_category": "NOT_ESTABLISHED",
+    "measurement_source": "NOT_AVAILABLE",
+    "measurement_method": "NOT_AVAILABLE",
+    "evidence_category": "NOT_AVAILABLE"
+  },
+  "geometry_metadata": {
+    "floor_geometry_classification": "UNKNOWN",
+    "supported_classifications": [
+      "PLANAR",
+      "NON_PLANAR",
+      "RAMP",
+      "UNKNOWN"
+    ],
+    "rule": "Do not assume planarity. Do not force a homography when floor geometry is not demonstrated planar via ground survey.",
+    "fiducial_count": 0,
+    "survey_available": false
+  },
+  "audit_notes": "Camera hardware specifications, intrinsic and extrinsic matrices, and optical parameters cannot be populated without physical site deployment and direct measurement."
+}

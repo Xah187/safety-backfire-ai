@@ -1,0 +1,3039 @@
+{
+  "milestone": "V3.4-E",
+  "document_title": "Observability & Candidate Disposition Audit Matrix",
+  "timestamp_utc": "2026-10-01T08:58:14.145577+00:00",
+  "governance_status": {
+    "human_review": "BYPASSED",
+    "safety_backfire_gt": "NOT_ESTABLISHED",
+    "safety_backfire_validation": "NOT_ESTABLISHED",
+    "perception_metrics": "NOT_ESTABLISHED"
+  },
+  "summary_statistics": {
+    "n_total": 51,
+    "n_eligible": 38,
+    "n_ineligible": 13,
+    "intervention": {
+      "FULL": 25,
+      "PARTIAL": 13,
+      "NONE": 0,
+      "UNKNOWN": 0
+    },
+    "primary_zone": {
+      "FULL": 33,
+      "PARTIAL": 5,
+      "NONE": 0,
+      "UNKNOWN": 0
+    },
+    "secondary_zone": {
+      "FULL": 0,
+      "PARTIAL": 36,
+      "NONE": 2,
+      "UNKNOWN": 0
+    },
+    "post_event": {
+      "ADEQUATE": 35,
+      "PARTIAL": 1,
+      "INADEQUATE": 2,
+      "UNKNOWN": 0
+    },
+    "causal_sequence": {
+      "FULL": 14,
+      "PARTIAL": 10,
+      "NONE": 14,
+      "UNKNOWN": 0
+    },
+    "causal_confounder": {
+      "YES": 14,
+      "NO": 24,
+      "UNKNOWN": 0
+    },
+    "detector_dependence": {
+      "LOW": 16,
+      "MEDIUM": 9,
+      "HIGH": 13
+    },
+    "disposition": {
+      "BACKFIRE_CANDIDATE_RETAINED": 0,
+      "NO_BACKFIRE_OBSERVED": 15,
+      "INSUFFICIENT_OBSERVABILITY": 23,
+      "INELIGIBLE_WINDOW": 13
+    },
+    "secondary_zone_visibility_counts": {
+      "entry_visible_count": 36,
+      "depth_visible_count": 0
+    }
+  },
+  "records": [
+    {
+      "event_id": "UNION_CAND_Warehouse_026_008",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0002",
+      "eligibility": "INELIGIBLE_WINDOW",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 0,
+          "end_frame": 0,
+          "duration_s": 0.03
+        },
+        "intervention": {
+          "start_frame": 1,
+          "end_frame": 430,
+          "duration_s": 14.33
+        },
+        "post": {
+          "start_frame": 431,
+          "end_frame": 670,
+          "duration_s": 8.0
+        }
+      },
+      "invalidation_reasons": [
+        "PRE = INSUFFICIENT (start_frame < 30; baseline window truncated at stream start)"
+      ],
+      "intervention_observability": "UNKNOWN",
+      "primary_zone_observability": "UNKNOWN",
+      "secondary_zone_observability": "UNKNOWN",
+      "post_event_observability": "UNKNOWN",
+      "causal_sequence_observability": "UNKNOWN",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": false,
+      "occlusion_status": "UNKNOWN",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "UNKNOWN",
+      "background_context": "Baseline window truncated at stream boundary.",
+      "causal_confounder": "UNKNOWN",
+      "confounder_reason": "Temporal window invalid; causal analysis excluded.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INELIGIBLE_WINDOW",
+      "observability_codes": [
+        "OBS_05_POST_WINDOW_INADEQUATE"
+      ],
+      "evidence_quality": "UNKNOWN",
+      "critical_frames": [],
+      "critical_timestamps": []
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_009",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0002",
+      "eligibility": "INELIGIBLE_WINDOW",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 0,
+          "end_frame": 0,
+          "duration_s": 0.03
+        },
+        "intervention": {
+          "start_frame": 1,
+          "end_frame": 922,
+          "duration_s": 30.73
+        },
+        "post": {
+          "start_frame": 923,
+          "end_frame": 1162,
+          "duration_s": 8.0
+        }
+      },
+      "invalidation_reasons": [
+        "PRE = INSUFFICIENT (start_frame < 30; baseline window truncated at stream start)"
+      ],
+      "intervention_observability": "UNKNOWN",
+      "primary_zone_observability": "UNKNOWN",
+      "secondary_zone_observability": "UNKNOWN",
+      "post_event_observability": "UNKNOWN",
+      "causal_sequence_observability": "UNKNOWN",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": false,
+      "occlusion_status": "UNKNOWN",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "UNKNOWN",
+      "background_context": "Baseline window truncated at stream boundary.",
+      "causal_confounder": "UNKNOWN",
+      "confounder_reason": "Temporal window invalid; causal analysis excluded.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INELIGIBLE_WINDOW",
+      "observability_codes": [
+        "OBS_05_POST_WINDOW_INADEQUATE"
+      ],
+      "evidence_quality": "UNKNOWN",
+      "critical_frames": [],
+      "critical_timestamps": []
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_028",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0006",
+      "eligibility": "INELIGIBLE_WINDOW",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 0,
+          "end_frame": 0,
+          "duration_s": 0.03
+        },
+        "intervention": {
+          "start_frame": 1,
+          "end_frame": 342,
+          "duration_s": 11.4
+        },
+        "post": {
+          "start_frame": 343,
+          "end_frame": 582,
+          "duration_s": 8.0
+        }
+      },
+      "invalidation_reasons": [
+        "PRE = INSUFFICIENT (start_frame < 30; baseline window truncated at stream start)"
+      ],
+      "intervention_observability": "UNKNOWN",
+      "primary_zone_observability": "UNKNOWN",
+      "secondary_zone_observability": "UNKNOWN",
+      "post_event_observability": "UNKNOWN",
+      "causal_sequence_observability": "UNKNOWN",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": false,
+      "occlusion_status": "UNKNOWN",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "UNKNOWN",
+      "background_context": "Baseline window truncated at stream boundary.",
+      "causal_confounder": "UNKNOWN",
+      "confounder_reason": "Temporal window invalid; causal analysis excluded.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INELIGIBLE_WINDOW",
+      "observability_codes": [
+        "OBS_05_POST_WINDOW_INADEQUATE"
+      ],
+      "evidence_quality": "UNKNOWN",
+      "critical_frames": [],
+      "critical_timestamps": []
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_001",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0002",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 342,
+          "end_frame": 491,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 492,
+          "end_frame": 720,
+          "duration_s": 7.63
+        },
+        "post": {
+          "start_frame": 721,
+          "end_frame": 960,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "PARTIAL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "PARTIAL",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "HIGH",
+      "post_vehicle_displacement_px": 5.1,
+      "background_context": "Person 367 yields to Forklift 378; independent pedestrian cluster enters in POST.",
+      "causal_confounder": "YES",
+      "confounder_reason": "Independent shift routine pedestrian cluster (8+ workers) enters adjacent aisle during POST window.",
+      "detector_dependence": "MEDIUM",
+      "screening_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_09_MULTIPLE_ACTORS",
+        "OBS_10_NEW_ACTOR_ARRIVAL",
+        "OBS_11_CONFOUNDER"
+      ],
+      "evidence_quality": "MEDIUM",
+      "critical_frames": [
+        492,
+        720,
+        721,
+        960
+      ],
+      "critical_timestamps": [
+        16.4,
+        24.0,
+        24.03,
+        32.0
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_003",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0002",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 562,
+          "end_frame": 711,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 712,
+          "end_frame": 857,
+          "duration_s": 4.87
+        },
+        "post": {
+          "start_frame": 858,
+          "end_frame": 1097,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "NONE",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "PARTIAL",
+      "edge_truncation": false,
+      "actor_handoff": true,
+      "multiple_actor_density": "HIGH",
+      "post_vehicle_displacement_px": 0.0,
+      "background_context": "Forklift 378 departs scene; entirely new Forklift 418 enters corridor in POST.",
+      "causal_confounder": "YES",
+      "confounder_reason": "Vehicle turnover and tracker conflation (new incoming forklift replaces departed vehicle).",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_08_TRACK_HANDOFF",
+        "OBS_10_NEW_ACTOR_ARRIVAL",
+        "OBS_11_CONFOUNDER"
+      ],
+      "evidence_quality": "MEDIUM",
+      "critical_frames": [
+        712,
+        857,
+        858,
+        1097
+      ],
+      "critical_timestamps": [
+        23.73,
+        28.57,
+        28.6,
+        36.57
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_004",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0002",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 843,
+          "end_frame": 992,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 993,
+          "end_frame": 1123,
+          "duration_s": 4.37
+        },
+        "post": {
+          "start_frame": 1124,
+          "end_frame": 1363,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "FULL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "NONE",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "LOW",
+      "post_vehicle_displacement_px": 0.0,
+      "background_context": "Nominal clearing: Forklift 418 passes Person 417; both exit frame cleanly.",
+      "causal_confounder": "NO",
+      "confounder_reason": null,
+      "detector_dependence": "MEDIUM",
+      "screening_disposition": "NO_BACKFIRE_OBSERVED",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_12_SCENE_CLEARANCE",
+        "OBS_13_NO_OBSERVABLE_SECONDARY_CHANGE"
+      ],
+      "evidence_quality": "HIGH",
+      "critical_frames": [
+        993,
+        1123,
+        1124,
+        1363
+      ],
+      "critical_timestamps": [
+        33.1,
+        37.43,
+        37.47,
+        45.43
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_010",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0002",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 91,
+          "end_frame": 240,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 241,
+          "end_frame": 313,
+          "duration_s": 2.43
+        },
+        "post": {
+          "start_frame": 314,
+          "end_frame": 553,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "PARTIAL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "PARTIAL",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "LOW",
+      "post_vehicle_displacement_px": 2.55,
+      "background_context": "Workers 134 and 135 stationary at adjacent rack aisle; Forklift 136 executes full stop (disp 2.5px).",
+      "causal_confounder": "NO",
+      "confounder_reason": null,
+      "detector_dependence": "LOW",
+      "screening_disposition": "NO_BACKFIRE_OBSERVED",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_06_OCCLUSION",
+        "OBS_13_NO_OBSERVABLE_SECONDARY_CHANGE"
+      ],
+      "evidence_quality": "HIGH",
+      "critical_frames": [
+        241,
+        313,
+        314,
+        553
+      ],
+      "critical_timestamps": [
+        8.03,
+        10.43,
+        10.47,
+        18.43
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_014",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0002",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 1144,
+          "end_frame": 1293,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 1294,
+          "end_frame": 1364,
+          "duration_s": 2.37
+        },
+        "post": {
+          "start_frame": 1365,
+          "end_frame": 1604,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "PARTIAL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "NONE",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "HEAVY",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "HIGH",
+      "post_vehicle_displacement_px": 0.64,
+      "background_context": "Extreme visual clutter: 5 concurrent forklifts active across intersection.",
+      "causal_confounder": "YES",
+      "confounder_reason": "Multi-forklift congestion and intersecting vehicle trajectories preclude causal isolation.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_06_OCCLUSION",
+        "OBS_09_MULTIPLE_ACTORS",
+        "OBS_11_CONFOUNDER"
+      ],
+      "evidence_quality": "LOW",
+      "critical_frames": [
+        1294,
+        1364,
+        1365,
+        1604
+      ],
+      "critical_timestamps": [
+        43.13,
+        45.47,
+        45.5,
+        53.47
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_012",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0002",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 1070,
+          "end_frame": 1219,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 1220,
+          "end_frame": 1296,
+          "duration_s": 2.57
+        },
+        "post": {
+          "start_frame": 1297,
+          "end_frame": 1536,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "PARTIAL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "NONE",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "HEAVY",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "HIGH",
+      "post_vehicle_displacement_px": 0.0,
+      "background_context": "Multi-vehicle congestion window in Camera_0002.",
+      "causal_confounder": "YES",
+      "confounder_reason": "High forklift traffic density and rack occlusions prevent causal tracking.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_06_OCCLUSION",
+        "OBS_09_MULTIPLE_ACTORS",
+        "OBS_11_CONFOUNDER"
+      ],
+      "evidence_quality": "LOW",
+      "critical_frames": [
+        1220,
+        1296,
+        1297,
+        1536
+      ],
+      "critical_timestamps": [
+        40.67,
+        43.2,
+        43.23,
+        51.2
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_013",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0002",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 1075,
+          "end_frame": 1224,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 1225,
+          "end_frame": 1323,
+          "duration_s": 3.3
+        },
+        "post": {
+          "start_frame": 1324,
+          "end_frame": 1563,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "PARTIAL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "NONE",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "HEAVY",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "HIGH",
+      "post_vehicle_displacement_px": 11.2,
+      "background_context": "Multi-vehicle congestion window in Camera_0002.",
+      "causal_confounder": "YES",
+      "confounder_reason": "High forklift traffic density and rack occlusions prevent causal tracking.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_06_OCCLUSION",
+        "OBS_09_MULTIPLE_ACTORS",
+        "OBS_11_CONFOUNDER"
+      ],
+      "evidence_quality": "LOW",
+      "critical_frames": [
+        1225,
+        1323,
+        1324,
+        1563
+      ],
+      "critical_timestamps": [
+        40.83,
+        44.1,
+        44.13,
+        52.1
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_011",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0002",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 1046,
+          "end_frame": 1195,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 1196,
+          "end_frame": 1247,
+          "duration_s": 1.73
+        },
+        "post": {
+          "start_frame": 1248,
+          "end_frame": 1487,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "PARTIAL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "NONE",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "HEAVY",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "HIGH",
+      "post_vehicle_displacement_px": 174.81,
+      "background_context": "Multi-vehicle congestion window in Camera_0002.",
+      "causal_confounder": "YES",
+      "confounder_reason": "High forklift traffic density and rack occlusions prevent causal tracking.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_06_OCCLUSION",
+        "OBS_09_MULTIPLE_ACTORS",
+        "OBS_11_CONFOUNDER"
+      ],
+      "evidence_quality": "LOW",
+      "critical_frames": [
+        1196,
+        1247,
+        1248,
+        1487
+      ],
+      "critical_timestamps": [
+        39.87,
+        41.57,
+        41.6,
+        49.57
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_006",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0003",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 1499,
+          "end_frame": 1648,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 1649,
+          "end_frame": 1746,
+          "duration_s": 3.27
+        },
+        "post": {
+          "start_frame": 1747,
+          "end_frame": 1799,
+          "duration_s": 1.77
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0003_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0003_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "INADEQUATE",
+      "causal_sequence_observability": "NONE",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "PARTIAL",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "LOW",
+      "post_vehicle_displacement_px": 0.0,
+      "background_context": "Nominal warehouse operation.",
+      "causal_confounder": "NO",
+      "confounder_reason": "Post window ends at stream boundary (1.8s duration).",
+      "detector_dependence": "MEDIUM",
+      "screening_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_05_POST_WINDOW_INADEQUATE"
+      ],
+      "evidence_quality": "MEDIUM",
+      "critical_frames": [
+        1649,
+        1746,
+        1747,
+        1799
+      ],
+      "critical_timestamps": [
+        54.97,
+        58.2,
+        58.23,
+        59.97
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_022",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "eligibility": "INELIGIBLE_WINDOW",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 1189,
+          "end_frame": 1338,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 1339,
+          "end_frame": 1799,
+          "duration_s": 15.37
+        },
+        "post": {
+          "start_frame": 1799,
+          "end_frame": 1799,
+          "duration_s": 0.0
+        }
+      },
+      "invalidation_reasons": [
+        "POST = INSUFFICIENT (end_frame > 1770; follow-on window truncated at stream end)"
+      ],
+      "intervention_observability": "UNKNOWN",
+      "primary_zone_observability": "UNKNOWN",
+      "secondary_zone_observability": "UNKNOWN",
+      "post_event_observability": "UNKNOWN",
+      "causal_sequence_observability": "UNKNOWN",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": false,
+      "occlusion_status": "UNKNOWN",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "UNKNOWN",
+      "background_context": "Baseline window truncated at stream boundary.",
+      "causal_confounder": "UNKNOWN",
+      "confounder_reason": "Temporal window invalid; causal analysis excluded.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INELIGIBLE_WINDOW",
+      "observability_codes": [
+        "OBS_05_POST_WINDOW_INADEQUATE"
+      ],
+      "evidence_quality": "UNKNOWN",
+      "critical_frames": [],
+      "critical_timestamps": []
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_001",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0000",
+      "eligibility": "INELIGIBLE_WINDOW",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 0,
+          "end_frame": 0,
+          "duration_s": 0.0
+        },
+        "intervention": {
+          "start_frame": 0,
+          "end_frame": 830,
+          "duration_s": 27.7
+        },
+        "post": {
+          "start_frame": 831,
+          "end_frame": 1070,
+          "duration_s": 8.0
+        }
+      },
+      "invalidation_reasons": [
+        "PRE = INSUFFICIENT (start_frame < 30; baseline window truncated at stream start)"
+      ],
+      "intervention_observability": "UNKNOWN",
+      "primary_zone_observability": "UNKNOWN",
+      "secondary_zone_observability": "UNKNOWN",
+      "post_event_observability": "UNKNOWN",
+      "causal_sequence_observability": "UNKNOWN",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": false,
+      "occlusion_status": "UNKNOWN",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "UNKNOWN",
+      "background_context": "Baseline window truncated at stream boundary.",
+      "causal_confounder": "UNKNOWN",
+      "confounder_reason": "Temporal window invalid; causal analysis excluded.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INELIGIBLE_WINDOW",
+      "observability_codes": [
+        "OBS_05_POST_WINDOW_INADEQUATE"
+      ],
+      "evidence_quality": "UNKNOWN",
+      "critical_frames": [],
+      "critical_timestamps": []
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_002",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0000",
+      "eligibility": "INELIGIBLE_WINDOW",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 0,
+          "end_frame": 0,
+          "duration_s": 0.0
+        },
+        "intervention": {
+          "start_frame": 0,
+          "end_frame": 200,
+          "duration_s": 6.7
+        },
+        "post": {
+          "start_frame": 201,
+          "end_frame": 440,
+          "duration_s": 8.0
+        }
+      },
+      "invalidation_reasons": [
+        "PRE = INSUFFICIENT (start_frame < 30; baseline window truncated at stream start)"
+      ],
+      "intervention_observability": "UNKNOWN",
+      "primary_zone_observability": "UNKNOWN",
+      "secondary_zone_observability": "UNKNOWN",
+      "post_event_observability": "UNKNOWN",
+      "causal_sequence_observability": "UNKNOWN",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": false,
+      "occlusion_status": "UNKNOWN",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "UNKNOWN",
+      "background_context": "Baseline window truncated at stream boundary.",
+      "causal_confounder": "UNKNOWN",
+      "confounder_reason": "Temporal window invalid; causal analysis excluded.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INELIGIBLE_WINDOW",
+      "observability_codes": [
+        "OBS_05_POST_WINDOW_INADEQUATE"
+      ],
+      "evidence_quality": "UNKNOWN",
+      "critical_frames": [],
+      "critical_timestamps": []
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_008",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "eligibility": "INELIGIBLE_WINDOW",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 0,
+          "end_frame": 0,
+          "duration_s": 0.03
+        },
+        "intervention": {
+          "start_frame": 1,
+          "end_frame": 1492,
+          "duration_s": 49.73
+        },
+        "post": {
+          "start_frame": 1493,
+          "end_frame": 1732,
+          "duration_s": 8.0
+        }
+      },
+      "invalidation_reasons": [
+        "PRE = INSUFFICIENT (start_frame < 30; baseline window truncated at stream start)"
+      ],
+      "intervention_observability": "UNKNOWN",
+      "primary_zone_observability": "UNKNOWN",
+      "secondary_zone_observability": "UNKNOWN",
+      "post_event_observability": "UNKNOWN",
+      "causal_sequence_observability": "UNKNOWN",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": false,
+      "occlusion_status": "UNKNOWN",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "UNKNOWN",
+      "background_context": "Baseline window truncated at stream boundary.",
+      "causal_confounder": "UNKNOWN",
+      "confounder_reason": "Temporal window invalid; causal analysis excluded.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INELIGIBLE_WINDOW",
+      "observability_codes": [
+        "OBS_05_POST_WINDOW_INADEQUATE"
+      ],
+      "evidence_quality": "UNKNOWN",
+      "critical_frames": [],
+      "critical_timestamps": []
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_009",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "eligibility": "INELIGIBLE_WINDOW",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 0,
+          "end_frame": 0,
+          "duration_s": 0.03
+        },
+        "intervention": {
+          "start_frame": 1,
+          "end_frame": 172,
+          "duration_s": 5.73
+        },
+        "post": {
+          "start_frame": 173,
+          "end_frame": 412,
+          "duration_s": 8.0
+        }
+      },
+      "invalidation_reasons": [
+        "PRE = INSUFFICIENT (start_frame < 30; baseline window truncated at stream start)"
+      ],
+      "intervention_observability": "UNKNOWN",
+      "primary_zone_observability": "UNKNOWN",
+      "secondary_zone_observability": "UNKNOWN",
+      "post_event_observability": "UNKNOWN",
+      "causal_sequence_observability": "UNKNOWN",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": false,
+      "occlusion_status": "UNKNOWN",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "UNKNOWN",
+      "background_context": "Baseline window truncated at stream boundary.",
+      "causal_confounder": "UNKNOWN",
+      "confounder_reason": "Temporal window invalid; causal analysis excluded.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INELIGIBLE_WINDOW",
+      "observability_codes": [
+        "OBS_05_POST_WINDOW_INADEQUATE"
+      ],
+      "evidence_quality": "UNKNOWN",
+      "critical_frames": [],
+      "critical_timestamps": []
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_017",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 805,
+          "end_frame": 954,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 955,
+          "end_frame": 1268,
+          "duration_s": 10.47
+        },
+        "post": {
+          "start_frame": 1269,
+          "end_frame": 1508,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "PARTIAL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "PARTIAL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "PARTIAL",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "MEDIUM",
+      "post_vehicle_displacement_px": 1.38,
+      "background_context": "Pedestrian moves near pallet shelving interface in Camera_0005.",
+      "causal_confounder": "NO",
+      "confounder_reason": null,
+      "detector_dependence": "MEDIUM",
+      "screening_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_06_OCCLUSION"
+      ],
+      "evidence_quality": "MEDIUM",
+      "critical_frames": [
+        955,
+        1268,
+        1269,
+        1508
+      ],
+      "critical_timestamps": [
+        31.83,
+        42.27,
+        42.3,
+        50.27
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_027",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0006",
+      "eligibility": "INELIGIBLE_WINDOW",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 0,
+          "end_frame": 0,
+          "duration_s": 0.03
+        },
+        "intervention": {
+          "start_frame": 1,
+          "end_frame": 342,
+          "duration_s": 11.4
+        },
+        "post": {
+          "start_frame": 343,
+          "end_frame": 582,
+          "duration_s": 8.0
+        }
+      },
+      "invalidation_reasons": [
+        "PRE = INSUFFICIENT (start_frame < 30; baseline window truncated at stream start)"
+      ],
+      "intervention_observability": "UNKNOWN",
+      "primary_zone_observability": "UNKNOWN",
+      "secondary_zone_observability": "UNKNOWN",
+      "post_event_observability": "UNKNOWN",
+      "causal_sequence_observability": "UNKNOWN",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": false,
+      "occlusion_status": "UNKNOWN",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "UNKNOWN",
+      "background_context": "Baseline window truncated at stream boundary.",
+      "causal_confounder": "UNKNOWN",
+      "confounder_reason": "Temporal window invalid; causal analysis excluded.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INELIGIBLE_WINDOW",
+      "observability_codes": [
+        "OBS_05_POST_WINDOW_INADEQUATE"
+      ],
+      "evidence_quality": "UNKNOWN",
+      "critical_frames": [],
+      "critical_timestamps": []
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_029",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0006",
+      "eligibility": "INELIGIBLE_WINDOW",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 0,
+          "end_frame": 0,
+          "duration_s": 0.03
+        },
+        "intervention": {
+          "start_frame": 1,
+          "end_frame": 342,
+          "duration_s": 11.4
+        },
+        "post": {
+          "start_frame": 343,
+          "end_frame": 582,
+          "duration_s": 8.0
+        }
+      },
+      "invalidation_reasons": [
+        "PRE = INSUFFICIENT (start_frame < 30; baseline window truncated at stream start)"
+      ],
+      "intervention_observability": "UNKNOWN",
+      "primary_zone_observability": "UNKNOWN",
+      "secondary_zone_observability": "UNKNOWN",
+      "post_event_observability": "UNKNOWN",
+      "causal_sequence_observability": "UNKNOWN",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": false,
+      "occlusion_status": "UNKNOWN",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "UNKNOWN",
+      "background_context": "Baseline window truncated at stream boundary.",
+      "causal_confounder": "UNKNOWN",
+      "confounder_reason": "Temporal window invalid; causal analysis excluded.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INELIGIBLE_WINDOW",
+      "observability_codes": [
+        "OBS_05_POST_WINDOW_INADEQUATE"
+      ],
+      "evidence_quality": "UNKNOWN",
+      "critical_frames": [],
+      "critical_timestamps": []
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_030",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0006",
+      "eligibility": "INELIGIBLE_WINDOW",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 0,
+          "end_frame": 0,
+          "duration_s": 0.03
+        },
+        "intervention": {
+          "start_frame": 1,
+          "end_frame": 342,
+          "duration_s": 11.4
+        },
+        "post": {
+          "start_frame": 343,
+          "end_frame": 582,
+          "duration_s": 8.0
+        }
+      },
+      "invalidation_reasons": [
+        "PRE = INSUFFICIENT (start_frame < 30; baseline window truncated at stream start)"
+      ],
+      "intervention_observability": "UNKNOWN",
+      "primary_zone_observability": "UNKNOWN",
+      "secondary_zone_observability": "UNKNOWN",
+      "post_event_observability": "UNKNOWN",
+      "causal_sequence_observability": "UNKNOWN",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": false,
+      "occlusion_status": "UNKNOWN",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "UNKNOWN",
+      "background_context": "Baseline window truncated at stream boundary.",
+      "causal_confounder": "UNKNOWN",
+      "confounder_reason": "Temporal window invalid; causal analysis excluded.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INELIGIBLE_WINDOW",
+      "observability_codes": [
+        "OBS_05_POST_WINDOW_INADEQUATE"
+      ],
+      "evidence_quality": "UNKNOWN",
+      "critical_frames": [],
+      "critical_timestamps": []
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_031",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0006",
+      "eligibility": "INELIGIBLE_WINDOW",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 0,
+          "end_frame": 0,
+          "duration_s": 0.03
+        },
+        "intervention": {
+          "start_frame": 1,
+          "end_frame": 230,
+          "duration_s": 7.67
+        },
+        "post": {
+          "start_frame": 231,
+          "end_frame": 470,
+          "duration_s": 8.0
+        }
+      },
+      "invalidation_reasons": [
+        "PRE = INSUFFICIENT (start_frame < 30; baseline window truncated at stream start)"
+      ],
+      "intervention_observability": "UNKNOWN",
+      "primary_zone_observability": "UNKNOWN",
+      "secondary_zone_observability": "UNKNOWN",
+      "post_event_observability": "UNKNOWN",
+      "causal_sequence_observability": "UNKNOWN",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": false,
+      "occlusion_status": "UNKNOWN",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "UNKNOWN",
+      "background_context": "Baseline window truncated at stream boundary.",
+      "causal_confounder": "UNKNOWN",
+      "confounder_reason": "Temporal window invalid; causal analysis excluded.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INELIGIBLE_WINDOW",
+      "observability_codes": [
+        "OBS_05_POST_WINDOW_INADEQUATE"
+      ],
+      "evidence_quality": "UNKNOWN",
+      "critical_frames": [],
+      "critical_timestamps": []
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_005",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0002",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 843,
+          "end_frame": 992,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 993,
+          "end_frame": 1039,
+          "duration_s": 1.57
+        },
+        "post": {
+          "start_frame": 1040,
+          "end_frame": 1279,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "PARTIAL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "NONE",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "PARTIAL",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "MEDIUM",
+      "post_vehicle_displacement_px": 15.07,
+      "background_context": "Transient corridor interaction during multi-actor transition.",
+      "causal_confounder": "YES",
+      "confounder_reason": "Intersecting pedestrian movements and brief interaction duration.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_09_MULTIPLE_ACTORS",
+        "OBS_11_CONFOUNDER"
+      ],
+      "evidence_quality": "MEDIUM",
+      "critical_frames": [
+        993,
+        1039,
+        1040,
+        1279
+      ],
+      "critical_timestamps": [
+        33.1,
+        34.63,
+        34.67,
+        42.63
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_002",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0002",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 455,
+          "end_frame": 604,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 605,
+          "end_frame": 677,
+          "duration_s": 2.43
+        },
+        "post": {
+          "start_frame": 678,
+          "end_frame": 917,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "PARTIAL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "NONE",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "PARTIAL",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "MEDIUM",
+      "post_vehicle_displacement_px": 2.41,
+      "background_context": "Transient corridor interaction during multi-actor transition.",
+      "causal_confounder": "YES",
+      "confounder_reason": "Intersecting pedestrian movements and brief interaction duration.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_09_MULTIPLE_ACTORS",
+        "OBS_11_CONFOUNDER"
+      ],
+      "evidence_quality": "MEDIUM",
+      "critical_frames": [
+        605,
+        677,
+        678,
+        917
+      ],
+      "critical_timestamps": [
+        20.17,
+        22.57,
+        22.6,
+        30.57
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_007",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0000",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 1206,
+          "end_frame": 1355,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 1356,
+          "end_frame": 1391,
+          "duration_s": 1.2
+        },
+        "post": {
+          "start_frame": 1392,
+          "end_frame": 1631,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0000_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0000_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "PARTIAL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "NONE",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "HEAVY",
+      "edge_truncation": true,
+      "actor_handoff": false,
+      "multiple_actor_density": "LOW",
+      "post_vehicle_displacement_px": 148.63,
+      "background_context": "Nominal warehouse operation.",
+      "causal_confounder": "YES",
+      "confounder_reason": "Forklift 2 operates along bottom frame boundary with severe edge truncation; background workers separated by pallet rows.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "observability_codes": [
+        "OBS_02_PRIMARY_ZONE_PARTIAL",
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_06_OCCLUSION",
+        "OBS_07_EDGE_TRUNCATION"
+      ],
+      "evidence_quality": "LOW",
+      "critical_frames": [
+        1356,
+        1391,
+        1392,
+        1631
+      ],
+      "critical_timestamps": [
+        45.2,
+        46.37,
+        46.4,
+        54.37
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_006",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0000",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 149,
+          "end_frame": 298,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 299,
+          "end_frame": 377,
+          "duration_s": 2.63
+        },
+        "post": {
+          "start_frame": 378,
+          "end_frame": 617,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0000_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0000_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "PARTIAL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "NONE",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "HEAVY",
+      "edge_truncation": true,
+      "actor_handoff": false,
+      "multiple_actor_density": "LOW",
+      "post_vehicle_displacement_px": 9.9,
+      "background_context": "Nominal warehouse operation.",
+      "causal_confounder": "YES",
+      "confounder_reason": "Forklift 2 operates along bottom frame boundary with severe edge truncation; background workers separated by pallet rows.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "observability_codes": [
+        "OBS_02_PRIMARY_ZONE_PARTIAL",
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_06_OCCLUSION",
+        "OBS_07_EDGE_TRUNCATION"
+      ],
+      "evidence_quality": "LOW",
+      "critical_frames": [
+        299,
+        377,
+        378,
+        617
+      ],
+      "critical_timestamps": [
+        9.97,
+        12.57,
+        12.6,
+        20.57
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_014",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 558,
+          "end_frame": 707,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 708,
+          "end_frame": 786,
+          "duration_s": 2.63
+        },
+        "post": {
+          "start_frame": 787,
+          "end_frame": 1026,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "PARTIAL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "PARTIAL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "PARTIAL",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "MEDIUM",
+      "post_vehicle_displacement_px": 3.15,
+      "background_context": "Pedestrian moves near pallet shelving interface in Camera_0005.",
+      "causal_confounder": "NO",
+      "confounder_reason": null,
+      "detector_dependence": "MEDIUM",
+      "screening_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_06_OCCLUSION"
+      ],
+      "evidence_quality": "MEDIUM",
+      "critical_frames": [
+        708,
+        786,
+        787,
+        1026
+      ],
+      "critical_timestamps": [
+        23.6,
+        26.2,
+        26.23,
+        34.2
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_015",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 637,
+          "end_frame": 786,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 787,
+          "end_frame": 884,
+          "duration_s": 3.27
+        },
+        "post": {
+          "start_frame": 885,
+          "end_frame": 1124,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "PARTIAL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "PARTIAL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "PARTIAL",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "MEDIUM",
+      "post_vehicle_displacement_px": 5.93,
+      "background_context": "Pedestrian moves near pallet shelving interface in Camera_0005.",
+      "causal_confounder": "NO",
+      "confounder_reason": null,
+      "detector_dependence": "MEDIUM",
+      "screening_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_06_OCCLUSION"
+      ],
+      "evidence_quality": "MEDIUM",
+      "critical_frames": [
+        787,
+        884,
+        885,
+        1124
+      ],
+      "critical_timestamps": [
+        26.23,
+        29.47,
+        29.5,
+        37.47
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_003",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0000",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 0,
+          "end_frame": 52,
+          "duration_s": 1.77
+        },
+        "intervention": {
+          "start_frame": 53,
+          "end_frame": 214,
+          "duration_s": 5.4
+        },
+        "post": {
+          "start_frame": 215,
+          "end_frame": 454,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0000_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0000_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "PARTIAL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "NONE",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "HEAVY",
+      "edge_truncation": true,
+      "actor_handoff": false,
+      "multiple_actor_density": "LOW",
+      "post_vehicle_displacement_px": 8.61,
+      "background_context": "Nominal warehouse operation.",
+      "causal_confounder": "YES",
+      "confounder_reason": "Forklift 2 operates along bottom frame boundary with severe edge truncation; background workers separated by pallet rows.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "observability_codes": [
+        "OBS_02_PRIMARY_ZONE_PARTIAL",
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_06_OCCLUSION",
+        "OBS_07_EDGE_TRUNCATION"
+      ],
+      "evidence_quality": "LOW",
+      "critical_frames": [
+        53,
+        214,
+        215,
+        454
+      ],
+      "critical_timestamps": [
+        1.77,
+        7.13,
+        7.17,
+        15.13
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_004",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0000",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 33,
+          "end_frame": 182,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 183,
+          "end_frame": 257,
+          "duration_s": 2.5
+        },
+        "post": {
+          "start_frame": 258,
+          "end_frame": 497,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0000_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0000_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "PARTIAL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "NONE",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "HEAVY",
+      "edge_truncation": true,
+      "actor_handoff": false,
+      "multiple_actor_density": "LOW",
+      "post_vehicle_displacement_px": 15.09,
+      "background_context": "Nominal warehouse operation.",
+      "causal_confounder": "YES",
+      "confounder_reason": "Forklift 2 operates along bottom frame boundary with severe edge truncation; background workers separated by pallet rows.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "observability_codes": [
+        "OBS_02_PRIMARY_ZONE_PARTIAL",
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_06_OCCLUSION",
+        "OBS_07_EDGE_TRUNCATION"
+      ],
+      "evidence_quality": "LOW",
+      "critical_frames": [
+        183,
+        257,
+        258,
+        497
+      ],
+      "critical_timestamps": [
+        6.1,
+        8.57,
+        8.6,
+        16.57
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_020",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 1056,
+          "end_frame": 1205,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 1206,
+          "end_frame": 1338,
+          "duration_s": 4.43
+        },
+        "post": {
+          "start_frame": 1339,
+          "end_frame": 1578,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "PARTIAL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "PARTIAL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "PARTIAL",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "MEDIUM",
+      "post_vehicle_displacement_px": 6.75,
+      "background_context": "Pedestrian moves near pallet shelving interface in Camera_0005.",
+      "causal_confounder": "NO",
+      "confounder_reason": null,
+      "detector_dependence": "MEDIUM",
+      "screening_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_06_OCCLUSION"
+      ],
+      "evidence_quality": "MEDIUM",
+      "critical_frames": [
+        1206,
+        1338,
+        1339,
+        1578
+      ],
+      "critical_timestamps": [
+        40.2,
+        44.6,
+        44.63,
+        52.6
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_026",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 1502,
+          "end_frame": 1651,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 1652,
+          "end_frame": 1727,
+          "duration_s": 2.53
+        },
+        "post": {
+          "start_frame": 1728,
+          "end_frame": 1799,
+          "duration_s": 2.4
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "PARTIAL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "INADEQUATE",
+      "causal_sequence_observability": "PARTIAL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "PARTIAL",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "MEDIUM",
+      "post_vehicle_displacement_px": 8.06,
+      "background_context": "Pedestrian moves near pallet shelving interface in Camera_0005.",
+      "causal_confounder": "NO",
+      "confounder_reason": null,
+      "detector_dependence": "MEDIUM",
+      "screening_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_05_POST_WINDOW_INADEQUATE",
+        "OBS_06_OCCLUSION"
+      ],
+      "evidence_quality": "MEDIUM",
+      "critical_frames": [
+        1652,
+        1727,
+        1728,
+        1799
+      ],
+      "critical_timestamps": [
+        55.07,
+        57.57,
+        57.6,
+        59.97
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_016",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 672,
+          "end_frame": 821,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 822,
+          "end_frame": 926,
+          "duration_s": 3.5
+        },
+        "post": {
+          "start_frame": 927,
+          "end_frame": 1166,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "PARTIAL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "PARTIAL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "PARTIAL",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "MEDIUM",
+      "post_vehicle_displacement_px": 4.34,
+      "background_context": "Pedestrian moves near pallet shelving interface in Camera_0005.",
+      "causal_confounder": "NO",
+      "confounder_reason": null,
+      "detector_dependence": "MEDIUM",
+      "screening_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_06_OCCLUSION"
+      ],
+      "evidence_quality": "MEDIUM",
+      "critical_frames": [
+        822,
+        926,
+        927,
+        1166
+      ],
+      "critical_timestamps": [
+        27.4,
+        30.87,
+        30.9,
+        38.87
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_005",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0000",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 69,
+          "end_frame": 218,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 219,
+          "end_frame": 267,
+          "duration_s": 1.63
+        },
+        "post": {
+          "start_frame": 268,
+          "end_frame": 507,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0000_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0000_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "PARTIAL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "NONE",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "HEAVY",
+      "edge_truncation": true,
+      "actor_handoff": false,
+      "multiple_actor_density": "LOW",
+      "post_vehicle_displacement_px": 9.43,
+      "background_context": "Nominal warehouse operation.",
+      "causal_confounder": "YES",
+      "confounder_reason": "Forklift 2 operates along bottom frame boundary with severe edge truncation; background workers separated by pallet rows.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "observability_codes": [
+        "OBS_02_PRIMARY_ZONE_PARTIAL",
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_06_OCCLUSION",
+        "OBS_07_EDGE_TRUNCATION"
+      ],
+      "evidence_quality": "LOW",
+      "critical_frames": [
+        219,
+        267,
+        268,
+        507
+      ],
+      "critical_timestamps": [
+        7.3,
+        8.9,
+        8.93,
+        16.9
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_033",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0006",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 107,
+          "end_frame": 256,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 257,
+          "end_frame": 342,
+          "duration_s": 2.87
+        },
+        "post": {
+          "start_frame": 343,
+          "end_frame": 582,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0006_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0006_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "PARTIAL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "NONE",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "HEAVY",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "HIGH",
+      "post_vehicle_displacement_px": 0.0,
+      "background_context": "Vehicle departs immediately into occluded rack zone in Camera_0006.",
+      "causal_confounder": "YES",
+      "confounder_reason": "Vehicle turns into unobservable rack aisle behind structural column.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_06_OCCLUSION",
+        "OBS_11_CONFOUNDER"
+      ],
+      "evidence_quality": "LOW",
+      "critical_frames": [
+        257,
+        342,
+        343,
+        582
+      ],
+      "critical_timestamps": [
+        8.57,
+        11.4,
+        11.43,
+        19.4
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_012",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 428,
+          "end_frame": 577,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 578,
+          "end_frame": 634,
+          "duration_s": 1.9
+        },
+        "post": {
+          "start_frame": 635,
+          "end_frame": 874,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "FULL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "NONE",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "LOW",
+      "post_vehicle_displacement_px": 0.37,
+      "background_context": "Forklift 557 idling/parked in corridor; pedestrian passes with wide clearance.",
+      "causal_confounder": "NO",
+      "confounder_reason": null,
+      "detector_dependence": "LOW",
+      "screening_disposition": "NO_BACKFIRE_OBSERVED",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_13_NO_OBSERVABLE_SECONDARY_CHANGE"
+      ],
+      "evidence_quality": "HIGH",
+      "critical_frames": [
+        578,
+        634,
+        635,
+        874
+      ],
+      "critical_timestamps": [
+        19.27,
+        21.13,
+        21.17,
+        29.13
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_025",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 1479,
+          "end_frame": 1628,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 1629,
+          "end_frame": 1686,
+          "duration_s": 1.93
+        },
+        "post": {
+          "start_frame": 1687,
+          "end_frame": 1799,
+          "duration_s": 3.77
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "PARTIAL",
+      "causal_sequence_observability": "FULL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "NONE",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "LOW",
+      "post_vehicle_displacement_px": 5.65,
+      "background_context": "Forklift 557 idling/parked in corridor; pedestrian passes with wide clearance.",
+      "causal_confounder": "NO",
+      "confounder_reason": null,
+      "detector_dependence": "LOW",
+      "screening_disposition": "NO_BACKFIRE_OBSERVED",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_05_POST_WINDOW_INADEQUATE",
+        "OBS_13_NO_OBSERVABLE_SECONDARY_CHANGE"
+      ],
+      "evidence_quality": "HIGH",
+      "critical_frames": [
+        1629,
+        1686,
+        1687,
+        1799
+      ],
+      "critical_timestamps": [
+        54.3,
+        56.2,
+        56.23,
+        59.97
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_019",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 1003,
+          "end_frame": 1152,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 1153,
+          "end_frame": 1200,
+          "duration_s": 1.6
+        },
+        "post": {
+          "start_frame": 1201,
+          "end_frame": 1440,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "FULL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "NONE",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "LOW",
+      "post_vehicle_displacement_px": 1.03,
+      "background_context": "Forklift 557 idling/parked in corridor; pedestrian passes with wide clearance.",
+      "causal_confounder": "NO",
+      "confounder_reason": null,
+      "detector_dependence": "LOW",
+      "screening_disposition": "NO_BACKFIRE_OBSERVED",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_13_NO_OBSERVABLE_SECONDARY_CHANGE"
+      ],
+      "evidence_quality": "HIGH",
+      "critical_frames": [
+        1153,
+        1200,
+        1201,
+        1440
+      ],
+      "critical_timestamps": [
+        38.43,
+        40.0,
+        40.03,
+        48.0
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_032",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0006",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 0,
+          "end_frame": 110,
+          "duration_s": 3.7
+        },
+        "intervention": {
+          "start_frame": 111,
+          "end_frame": 166,
+          "duration_s": 1.87
+        },
+        "post": {
+          "start_frame": 167,
+          "end_frame": 406,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0006_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0006_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "FULL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "NONE",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "LOW",
+      "post_vehicle_displacement_px": 21.37,
+      "background_context": "Safe clearance passage in transit corridor Camera_0006.",
+      "causal_confounder": "NO",
+      "confounder_reason": null,
+      "detector_dependence": "LOW",
+      "screening_disposition": "NO_BACKFIRE_OBSERVED",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_13_NO_OBSERVABLE_SECONDARY_CHANGE"
+      ],
+      "evidence_quality": "HIGH",
+      "critical_frames": [
+        111,
+        166,
+        167,
+        406
+      ],
+      "critical_timestamps": [
+        3.7,
+        5.53,
+        5.57,
+        13.53
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_021",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 1138,
+          "end_frame": 1287,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 1288,
+          "end_frame": 1337,
+          "duration_s": 1.67
+        },
+        "post": {
+          "start_frame": 1338,
+          "end_frame": 1577,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "FULL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "NONE",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "LOW",
+      "post_vehicle_displacement_px": 7.9,
+      "background_context": "Forklift 557 idling/parked in corridor; pedestrian passes with wide clearance.",
+      "causal_confounder": "NO",
+      "confounder_reason": null,
+      "detector_dependence": "LOW",
+      "screening_disposition": "NO_BACKFIRE_OBSERVED",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_13_NO_OBSERVABLE_SECONDARY_CHANGE"
+      ],
+      "evidence_quality": "HIGH",
+      "critical_frames": [
+        1288,
+        1337,
+        1338,
+        1577
+      ],
+      "critical_timestamps": [
+        42.93,
+        44.57,
+        44.6,
+        52.57
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_034",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0006",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 140,
+          "end_frame": 289,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 290,
+          "end_frame": 334,
+          "duration_s": 1.5
+        },
+        "post": {
+          "start_frame": 335,
+          "end_frame": 574,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0006_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0006_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "FULL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "NONE",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "LOW",
+      "post_vehicle_displacement_px": 4.92,
+      "background_context": "Safe clearance passage in transit corridor Camera_0006.",
+      "causal_confounder": "NO",
+      "confounder_reason": null,
+      "detector_dependence": "LOW",
+      "screening_disposition": "NO_BACKFIRE_OBSERVED",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_13_NO_OBSERVABLE_SECONDARY_CHANGE"
+      ],
+      "evidence_quality": "HIGH",
+      "critical_frames": [
+        290,
+        334,
+        335,
+        574
+      ],
+      "critical_timestamps": [
+        9.67,
+        11.13,
+        11.17,
+        19.13
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_010",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 110,
+          "end_frame": 259,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 260,
+          "end_frame": 293,
+          "duration_s": 1.13
+        },
+        "post": {
+          "start_frame": 294,
+          "end_frame": 533,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "FULL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "NONE",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "LOW",
+      "post_vehicle_displacement_px": 1.21,
+      "background_context": "Forklift 557 idling/parked in corridor; pedestrian passes with wide clearance.",
+      "causal_confounder": "NO",
+      "confounder_reason": null,
+      "detector_dependence": "LOW",
+      "screening_disposition": "NO_BACKFIRE_OBSERVED",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_13_NO_OBSERVABLE_SECONDARY_CHANGE"
+      ],
+      "evidence_quality": "HIGH",
+      "critical_frames": [
+        260,
+        293,
+        294,
+        533
+      ],
+      "critical_timestamps": [
+        8.67,
+        9.77,
+        9.8,
+        17.77
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_018",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 973,
+          "end_frame": 1122,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 1123,
+          "end_frame": 1151,
+          "duration_s": 0.97
+        },
+        "post": {
+          "start_frame": 1152,
+          "end_frame": 1391,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "FULL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "NONE",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "LOW",
+      "post_vehicle_displacement_px": 2.09,
+      "background_context": "Forklift 557 idling/parked in corridor; pedestrian passes with wide clearance.",
+      "causal_confounder": "NO",
+      "confounder_reason": null,
+      "detector_dependence": "LOW",
+      "screening_disposition": "NO_BACKFIRE_OBSERVED",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_13_NO_OBSERVABLE_SECONDARY_CHANGE"
+      ],
+      "evidence_quality": "HIGH",
+      "critical_frames": [
+        1123,
+        1151,
+        1152,
+        1391
+      ],
+      "critical_timestamps": [
+        37.43,
+        38.37,
+        38.4,
+        46.37
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_007",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0003",
+      "eligibility": "INELIGIBLE_WINDOW",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 1605,
+          "end_frame": 1754,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 1755,
+          "end_frame": 1782,
+          "duration_s": 0.93
+        },
+        "post": {
+          "start_frame": 1783,
+          "end_frame": 1799,
+          "duration_s": 0.57
+        }
+      },
+      "invalidation_reasons": [
+        "POST = INSUFFICIENT (end_frame > 1770; follow-on window truncated at stream end)"
+      ],
+      "intervention_observability": "UNKNOWN",
+      "primary_zone_observability": "UNKNOWN",
+      "secondary_zone_observability": "UNKNOWN",
+      "post_event_observability": "UNKNOWN",
+      "causal_sequence_observability": "UNKNOWN",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": false,
+      "occlusion_status": "UNKNOWN",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "UNKNOWN",
+      "background_context": "Baseline window truncated at stream boundary.",
+      "causal_confounder": "UNKNOWN",
+      "confounder_reason": "Temporal window invalid; causal analysis excluded.",
+      "detector_dependence": "HIGH",
+      "screening_disposition": "INELIGIBLE_WINDOW",
+      "observability_codes": [
+        "OBS_05_POST_WINDOW_INADEQUATE"
+      ],
+      "evidence_quality": "UNKNOWN",
+      "critical_frames": [],
+      "critical_timestamps": []
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_011",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 202,
+          "end_frame": 351,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 352,
+          "end_frame": 417,
+          "duration_s": 2.2
+        },
+        "post": {
+          "start_frame": 418,
+          "end_frame": 657,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "FULL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "NONE",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "LOW",
+      "post_vehicle_displacement_px": 7.23,
+      "background_context": "Forklift 557 idling/parked in corridor; pedestrian passes with wide clearance.",
+      "causal_confounder": "NO",
+      "confounder_reason": null,
+      "detector_dependence": "LOW",
+      "screening_disposition": "NO_BACKFIRE_OBSERVED",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_13_NO_OBSERVABLE_SECONDARY_CHANGE"
+      ],
+      "evidence_quality": "HIGH",
+      "critical_frames": [
+        352,
+        417,
+        418,
+        657
+      ],
+      "critical_timestamps": [
+        11.73,
+        13.9,
+        13.93,
+        21.9
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_024",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 1309,
+          "end_frame": 1458,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 1459,
+          "end_frame": 1486,
+          "duration_s": 0.93
+        },
+        "post": {
+          "start_frame": 1487,
+          "end_frame": 1726,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "FULL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "NONE",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "LOW",
+      "post_vehicle_displacement_px": 7.6,
+      "background_context": "Forklift 557 idling/parked in corridor; pedestrian passes with wide clearance.",
+      "causal_confounder": "NO",
+      "confounder_reason": null,
+      "detector_dependence": "LOW",
+      "screening_disposition": "NO_BACKFIRE_OBSERVED",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_13_NO_OBSERVABLE_SECONDARY_CHANGE"
+      ],
+      "evidence_quality": "HIGH",
+      "critical_frames": [
+        1459,
+        1486,
+        1487,
+        1726
+      ],
+      "critical_timestamps": [
+        48.63,
+        49.53,
+        49.57,
+        57.53
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_035",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0006",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 156,
+          "end_frame": 305,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 306,
+          "end_frame": 342,
+          "duration_s": 1.23
+        },
+        "post": {
+          "start_frame": 343,
+          "end_frame": 582,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0006_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0006_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "FULL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "NONE",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "LOW",
+      "post_vehicle_displacement_px": 0.0,
+      "background_context": "Safe clearance passage in transit corridor Camera_0006.",
+      "causal_confounder": "NO",
+      "confounder_reason": null,
+      "detector_dependence": "LOW",
+      "screening_disposition": "NO_BACKFIRE_OBSERVED",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_13_NO_OBSERVABLE_SECONDARY_CHANGE"
+      ],
+      "evidence_quality": "HIGH",
+      "critical_frames": [
+        306,
+        342,
+        343,
+        582
+      ],
+      "critical_timestamps": [
+        10.2,
+        11.4,
+        11.43,
+        19.4
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_013",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 488,
+          "end_frame": 637,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 638,
+          "end_frame": 676,
+          "duration_s": 1.3
+        },
+        "post": {
+          "start_frame": 677,
+          "end_frame": 916,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "FULL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "NONE",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "LOW",
+      "post_vehicle_displacement_px": 1.42,
+      "background_context": "Forklift 557 idling/parked in corridor; pedestrian passes with wide clearance.",
+      "causal_confounder": "NO",
+      "confounder_reason": null,
+      "detector_dependence": "LOW",
+      "screening_disposition": "NO_BACKFIRE_OBSERVED",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_13_NO_OBSERVABLE_SECONDARY_CHANGE"
+      ],
+      "evidence_quality": "HIGH",
+      "critical_frames": [
+        638,
+        676,
+        677,
+        916
+      ],
+      "critical_timestamps": [
+        21.27,
+        22.53,
+        22.57,
+        30.53
+      ]
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_023",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 1236,
+          "end_frame": 1385,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 1386,
+          "end_frame": 1408,
+          "duration_s": 0.77
+        },
+        "post": {
+          "start_frame": 1409,
+          "end_frame": 1648,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+        "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "PARTIAL",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "FULL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": true,
+      "occlusion_status": "NONE",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "LOW",
+      "post_vehicle_displacement_px": 3.24,
+      "background_context": "Forklift 557 idling/parked in corridor; pedestrian passes with wide clearance.",
+      "causal_confounder": "NO",
+      "confounder_reason": null,
+      "detector_dependence": "LOW",
+      "screening_disposition": "NO_BACKFIRE_OBSERVED",
+      "observability_codes": [
+        "OBS_03_SECONDARY_ZONE_PARTIAL",
+        "OBS_13_NO_OBSERVABLE_SECONDARY_CHANGE"
+      ],
+      "evidence_quality": "HIGH",
+      "critical_frames": [
+        1386,
+        1408,
+        1409,
+        1648
+      ],
+      "critical_timestamps": [
+        46.2,
+        46.93,
+        46.97,
+        54.93
+      ]
+    },
+    {
+      "event_id": "UNION_HEVT_Warehouse_026_003",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0000",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 510,
+          "end_frame": 659,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 660,
+          "end_frame": 795,
+          "duration_s": 4.53
+        },
+        "post": {
+          "start_frame": 796,
+          "end_frame": 1035,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0000_INTERSECTION",
+        "secondary_zone": "UNKNOWN"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "NONE",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "PARTIAL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": false,
+      "occlusion_status": "PARTIAL",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "MEDIUM",
+      "post_vehicle_displacement_px": 0.0,
+      "background_context": "Pedestrian pauses near column intersection upon observing distant forklift turning radius (> 12m).",
+      "causal_confounder": "NO",
+      "confounder_reason": null,
+      "detector_dependence": "LOW",
+      "screening_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "observability_codes": [
+        "OBS_04_SECONDARY_ZONE_NOT_VISIBLE",
+        "OBS_06_OCCLUSION"
+      ],
+      "evidence_quality": "MEDIUM",
+      "critical_frames": [
+        660,
+        795,
+        796,
+        1035
+      ],
+      "critical_timestamps": [
+        22.0,
+        26.5,
+        26.53,
+        34.5
+      ]
+    },
+    {
+      "event_id": "UNION_HEVT_Warehouse_027_002",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0003",
+      "eligibility": "ELIGIBLE_FOR_ADJUDICATION",
+      "screening_windows": {
+        "pre": {
+          "start_frame": 390,
+          "end_frame": 539,
+          "duration_s": 5.0
+        },
+        "intervention": {
+          "start_frame": 540,
+          "end_frame": 690,
+          "duration_s": 5.03
+        },
+        "post": {
+          "start_frame": 691,
+          "end_frame": 930,
+          "duration_s": 8.0
+        }
+      },
+      "spatial_zones": {
+        "primary_zone": "Camera_0003_BLIND_CORNER",
+        "secondary_zone": "UNKNOWN"
+      },
+      "intervention_observability": "FULL",
+      "primary_zone_observability": "FULL",
+      "secondary_zone_observability": "NONE",
+      "post_event_observability": "ADEQUATE",
+      "causal_sequence_observability": "PARTIAL",
+      "secondary_zone_depth_visible": false,
+      "secondary_zone_entry_visible": false,
+      "occlusion_status": "PARTIAL",
+      "edge_truncation": false,
+      "actor_handoff": false,
+      "multiple_actor_density": "MEDIUM",
+      "post_vehicle_displacement_px": 0.0,
+      "background_context": "Worker on foot alerts second worker carrying hand load to step back at blind corner.",
+      "causal_confounder": "NO",
+      "confounder_reason": null,
+      "detector_dependence": "LOW",
+      "screening_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "observability_codes": [
+        "OBS_04_SECONDARY_ZONE_NOT_VISIBLE",
+        "OBS_06_OCCLUSION"
+      ],
+      "evidence_quality": "MEDIUM",
+      "critical_frames": [
+        540,
+        690,
+        691,
+        930
+      ],
+      "critical_timestamps": [
+        18.0,
+        23.0,
+        23.03,
+        31.0
+      ]
+    }
+  ]
+}

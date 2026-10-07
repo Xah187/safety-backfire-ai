@@ -1,0 +1,45 @@
+{
+  "all_passed": true,
+  "scenarios": [
+    {
+      "scenario": "Direct Approach",
+      "expected_ttc": 5.0,
+      "actual_ttc": 5.0,
+      "expected_status": "VALID",
+      "actual_status": "VALID",
+      "passed": true
+    },
+    {
+      "scenario": "Diverging",
+      "expected_ttc": null,
+      "actual_ttc": null,
+      "expected_status": "NO_APPROACH",
+      "actual_status": "NO_APPROACH",
+      "passed": true
+    },
+    {
+      "scenario": "Stationary Objects",
+      "expected_ttc": null,
+      "actual_ttc": null,
+      "expected_status": "NO_APPROACH",
+      "actual_status": "NO_APPROACH",
+      "passed": true
+    },
+    {
+      "scenario": "Zero Relative Velocity (Same Direction)",
+      "expected_ttc": null,
+      "actual_ttc": null,
+      "expected_status": "NO_APPROACH",
+      "actual_status": "NO_APPROACH",
+      "passed": true
+    },
+    {
+      "scenario": "Angled Approach",
+      "expected_ttc": 10.0,
+      "actual_ttc": 10.0,
+      "expected_status": "VALID",
+      "actual_status": "VALID",
+      "passed": true
+    }
+  ]
+}

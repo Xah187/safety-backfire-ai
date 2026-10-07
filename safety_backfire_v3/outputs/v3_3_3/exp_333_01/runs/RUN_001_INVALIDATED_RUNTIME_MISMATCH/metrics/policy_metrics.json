@@ -1,0 +1,31 @@
+{
+  "artifact_name": "EXP_333_01_POLICY_METRICS",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "facility_id": "FACILITY_E_COLD_STORAGE",
+  "decision_layer": "POLICY",
+  "action_distribution": {
+    "FULL_AUTONOMOUS_ACTION": {"count": null, "percentage": null, "status": "NOT_ESTABLISHED"},
+    "ADVISORY_ONLY": {"count": null, "percentage": null, "status": "NOT_ESTABLISHED"},
+    "SAFE_REFUSAL": {"count": null, "percentage": null, "status": "NOT_ESTABLISHED"}
+  },
+  "refusal_performance": {
+    "appropriate_refusal_count": null,
+    "appropriate_refusal_rate": null,
+    "false_refusal_count": null,
+    "false_refusal_rate": null,
+    "unsafe_non_refusal_count": null,
+    "unsafe_non_refusal_rate": null,
+    "advisory_downgrade_count": null,
+    "status": "NOT_ESTABLISHED"
+  },
+  "odd_boundary_handling": {
+    "distance_gt_8m": {"expected_action": "SAFE_REFUSAL", "observed_action": "NOT_ESTABLISHED"},
+    "pitch_outside_odd": {"expected_action": "SAFE_REFUSAL", "observed_action": "NOT_ESTABLISHED"},
+    "floor_slope_gt_3deg": {"expected_action": "SAFE_REFUSAL", "observed_action": "NOT_ESTABLISHED"},
+    "illumination_collapse_lt_50lux": {"expected_action": "SAFE_REFUSAL", "observed_action": "NOT_ESTABLISHED"},
+    "latency_spike_gt_500ms": {"expected_action": "SAFE_REFUSAL", "observed_action": "NOT_ESTABLISHED"},
+    "ambiguous_identity": {"expected_action": "ADVISORY_DOWNGRADE", "observed_action": "NOT_ESTABLISHED"},
+    "width_gt_0_40m": {"expected_action": "SAFE_REFUSAL", "observed_action": "NOT_ESTABLISHED"}
+  },
+  "separation_rule_enforced": "Statistical undercoverage is strictly isolated from operational action outcomes. Uncovered points are never assumed to be unsafe actions without direct actuator logs."
+}

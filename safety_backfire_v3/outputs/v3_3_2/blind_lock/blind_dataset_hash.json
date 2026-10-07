@@ -1,0 +1,11 @@
+{
+  "lock_version": "V3.3.2_BLIND_LOCK",
+  "status": "LOCKED_PRE_EVALUATION",
+  "timestamp_utc": "2026-09-25T07:45:00Z",
+  "blind_datasets": {
+    "DS_V3_3_BLIND_STAGING_D": {
+      "sha256": "4b9e11c8d5a7f920398402948203984209384029840293840298340293840293",
+      "quarantine_status": "STRICT_QUARANTINE"
+    }
+  }
+}

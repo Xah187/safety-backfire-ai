@@ -1,0 +1,108 @@
+{
+  "milestone": "V3.4-N-CORR-02",
+  "document_title": "Standards Applicability Framework for Warehouse Automated Industrial Truck DAQ",
+  "audit_date": "2026-10-03T22:35:00Z",
+  "governance_classification": "ENGINEERING_STANDARDS_GOVERNANCE",
+  "framework_replacement_mandate": "The term 'GOVERNING STANDARD' is superseded. In a pre-deployment research DAQ pilot, labeling road-vehicle standards (ISO 26262, ISO 21448) as 'governing' is an epistemic category error. All relevant safety, industrial truck, and metrology standards are reclassified into four distinct applicability tiers.",
+  "compliance_claim_disclaimer": "ABSOLUTE DISCLAIMER: Zero claims of formal regulatory compliance, safety certification, or statutory conformity are made. This matrix classifies technical applicability and reference utility only.",
+  "standards_classification_tiers": {
+    "tier_1_authoritative_applicable_standards": [
+      {
+        "standard_id": "ISO 13849-1:2023",
+        "standard_title": "Safety of machinery - Safety-related parts of control systems - Part 1: General principles for design",
+        "classification": "AUTHORITATIVE_APPLICABLE_STANDARD",
+        "jurisdiction": "Industrial machinery safety circuits, emergency stop loops, and interlock architectures.",
+        "applicability_rationale": "Directly applicable to the vehicle hardware safety loops (dual-channel emergency stop, contactor isolation, and safety relay logic). Guides Category 4 and Performance Level e (PLe) architectural requirements.",
+        "compliance_status": "DESIGN_ALIGNED_ONLY (Formal certification not performed)"
+      },
+      {
+        "standard_id": "ISO 13849-2:2012",
+        "standard_title": "Safety of machinery - Safety-related parts of control systems - Part 2: Validation",
+        "classification": "AUTHORITATIVE_APPLICABLE_STANDARD",
+        "jurisdiction": "Validation procedures, fault simulation, and testing of safety-related parts of control systems.",
+        "applicability_rationale": "Governs the validation methodology required for testing E-Stop latency and contactor cross-fault detection.",
+        "compliance_status": "PROCEDURE_REFERENCED_ONLY"
+      },
+      {
+        "standard_id": "ISO 3691-4:2023",
+        "standard_title": "Industrial trucks - Safety requirements and verification - Part 4: Driverless industrial trucks and their systems",
+        "classification": "AUTHORITATIVE_APPLICABLE_STANDARD",
+        "jurisdiction": "Automated guided industrial trucks (AGVs), autonomous mobile robots (AMRs), and driverless transport vehicles operating in industrial facilities.",
+        "applicability_rationale": "Authoritative standard for driverless industrial truck safety functions (person detection zones, emergency stop deceleration, bumper/scanner fields, and operating modes).",
+        "scope_boundary_qualification": "Applies strictly when the industrial truck operates in driverless/autonomous mode. If the truck operates under manual attendant control or external tethered pendant override, specific clauses of ISO 3691-1 or ISO 3691-4 Annex A apply. Driverless mode must not be claimed if operating outside ISO 3691-4 boundary conditions.",
+        "compliance_status": "REQUIREMENTS_BENCHMARKED_ONLY (No formal compliance claim)"
+      }
+    ],
+    "tier_2_reference_standards": [
+      {
+        "standard_id": "IEC 61508:2010 (Parts 1-7)",
+        "standard_title": "Functional safety of electrical/electronic/programmable electronic safety-related systems",
+        "classification": "REFERENCE_STANDARD",
+        "jurisdiction": "Generic functional safety meta-standard across industrial domains.",
+        "applicability_rationale": "Reference standard governing vendor component SIL certification (e.g. SIL-3 ratings for Pilz safety relays or Sick safety scanners). Used as foundational engineering reference for random hardware failure rates (PFHd) and architectural constraints.",
+        "compliance_status": "COMPONENT_CERTIFICATION_REFERENCE_ONLY"
+      },
+      {
+        "standard_id": "IEEE 1588-2019 / IEEE 802.1AS",
+        "standard_title": "Standard for a Precision Clock Synchronization Protocol for Networked Measurement and Control Systems",
+        "classification": "REFERENCE_STANDARD",
+        "jurisdiction": "Sub-microsecond network clock synchronization (PTP / TSN).",
+        "applicability_rationale": "Authoritative technical reference for multi-modal sensor time distribution (Gate C1 Grandmaster and slave clocks).",
+        "compliance_status": "PROTOCOL_IMPLEMENTATION_ONLY"
+      },
+      {
+        "standard_id": "IEEE 1789-2015",
+        "standard_title": "IEEE Recommended Practices for Modulating Current in High-Brightness LEDs for Mitigating Health Risks to Viewers",
+        "classification": "REFERENCE_STANDARD",
+        "jurisdiction": "Temporal light modulation and flicker index metrics for solid-state lighting.",
+        "applicability_rationale": "Provides the mathematical definitions for Flicker Index and Percent Flicker used in Gate C7 Path 2.",
+        "compliance_status": "METRIC_DEFINITION_REFERENCE"
+      },
+      {
+        "standard_id": "DIN 5032-7",
+        "standard_title": "Photometry - Classification of illuminance meters and luminance meters",
+        "classification": "REFERENCE_STANDARD",
+        "jurisdiction": "Metrological accuracy grades for lux meters.",
+        "applicability_rationale": "Specifies Class B precision requirements (cosine response f2 <= 3%, V(lambda) match f1' <= 6%) for Gate C7 Path 1.",
+        "compliance_status": "INSTRUMENT_SPECIFICATION_REFERENCE"
+      }
+    ],
+    "tier_3_potentially_applicable_standards": [
+      {
+        "standard_id": "ISO/DIS 3691-4",
+        "standard_title": "Draft International Standard Revision of ISO 3691-4",
+        "classification": "POTENTIALLY_APPLICABLE_STANDARD",
+        "jurisdiction": "Emerging revisions to driverless industrial truck safety requirements.",
+        "applicability_rationale": "Informative forward-looking reference. Must NOT be cited as a published or enforceable standard.",
+        "compliance_status": "INFORMATIVE_DRAFT_REFERENCE_ONLY"
+      },
+      {
+        "standard_id": "ANSI/ITSDF B56.5-2019",
+        "standard_title": "Safety Standard for Driverless, Automatic Guided Industrial Vehicles and Automated Functions of Manned Industrial Vehicles",
+        "classification": "POTENTIALLY_APPLICABLE_STANDARD",
+        "jurisdiction": "North American regional standard for AGV/AMR safety.",
+        "applicability_rationale": "Secondary cross-jurisdictional reference for vehicle clearances, acoustic warnings, and emergency stop interfaces.",
+        "compliance_status": "INFORMATIVE_REFERENCE_ONLY"
+      }
+    ],
+    "tier_4_out_of_scope_standards": [
+      {
+        "standard_id": "ISO 26262:2018 (Parts 1-12)",
+        "standard_title": "Road vehicles - Functional safety",
+        "classification": "OUT_OF_SCOPE_STANDARD",
+        "jurisdiction": "Series production road vehicles (passenger cars, commercial road vehicles up to 3.5 tonnes).",
+        "out_of_scope_rationale": "Explicitly excluded by standard scope. The vehicle under test is an industrial warehouse truck operating in a closed logistics facility, NOT an on-road passenger vehicle. ISO 26262 cannot govern this platform. Concepts (ASIL) are used solely as informative analogies.",
+        "compliance_status": "NOT_APPLICABLE"
+      },
+      {
+        "standard_id": "ISO 21448:2022",
+        "standard_title": "Road vehicles - Safety of the intended functionality (SOTIF)",
+        "classification": "OUT_OF_SCOPE_STANDARD",
+        "jurisdiction": "Series production road vehicle automated driving systems facing complex open-world road traffic.",
+        "out_of_scope_rationale": "Explicitly excluded by standard scope (road vehicles only). SOTIF hazard identification methods (triggering conditions, functional insufficiencies) provide helpful conceptual guidance for perception edge cases, but ISO 21448 has zero statutory or regulatory applicability to industrial warehouse DAQ.",
+        "compliance_status": "NOT_APPLICABLE"
+      }
+    ]
+  },
+  "audit_conclusion": "The standards landscape is fully categorized. Historical references to ISO 26262 / ISO 21448 as 'governing standards' are formally deprecated and replaced by the Standards Applicability Framework."
+}

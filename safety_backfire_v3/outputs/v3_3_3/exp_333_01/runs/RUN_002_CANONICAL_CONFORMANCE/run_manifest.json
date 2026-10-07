@@ -1,0 +1,23 @@
+{
+  "run_id": "RUN_002_CANONICAL_CONFORMANCE",
+  "timestamp_utc": "2026-09-27T19:30:00Z",
+  "source_video": "0_te11.mp4",
+  "source_video_hash": "170a97c819e668d899e378e4ec1c417d89df8da3eff4373bf08f9698152babe1",
+  "runtime_git_commit": "COMMIT_V3_3_3_CONFORMANCE_REPAIR_20260927",
+  "model_h_lineage_hash": "dcffe6669c656df93668e7d001f55d41faeef7df08b1ca996642426a0ce1030c",
+  "parameter_hash": "e8c2b74051a87b1c34a2e5d8b74e19039d91f4a5c0e1892d7f8a1e2b4c5d6e7f",
+  "configuration_hash": "fbab617e0271e3a5b53538fe65dc91eaba8b44997f9fce6be7dd7b88f38d2d74",
+  "input_availability": {
+    "distance_m": "MODEL_ESTIMATE",
+    "illumination_lux": "NOT_AVAILABLE",
+    "camera_pitch_deg": "NOT_AVAILABLE",
+    "occlusion_state": "NOT_AVAILABLE",
+    "ground_survey": "NOT_AVAILABLE",
+    "human_ground_truth": "NOT_AVAILABLE"
+  },
+  "execution_status": "COMPLETED_INPUT_INSUFFICIENT_FOR_MODEL_H",
+  "model_h_runtime_implementation": "CONFORMANT",
+  "canonical_model_h_evaluation": "NOT_ESTABLISHED",
+  "total_detection_instances": 251,
+  "total_frames_processed": 173
+}

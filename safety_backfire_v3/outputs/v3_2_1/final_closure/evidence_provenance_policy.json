@@ -1,0 +1,21 @@
+{
+  "historical_source_release": "V3.2",
+  "canonical_audit_release": "V3.2.1",
+  "historical_artifacts_are_frozen": true,
+  "canonical_metrics_derive_from_frozen_evidence": true,
+  "provenance_mapping": {
+    "V3.2 HISTORICAL EVIDENCE ARTIFACT": "FROZEN SOURCE EVIDENCE INPUT",
+    "V3.2.1": "AUDITED / RECONCILED RELEASE DERIVED FROM FROZEN EVIDENCE"
+  },
+  "frozen_evidence_artifacts": [
+    "outputs/v3_2/perception_metrics.json",
+    "outputs/v3_2/tracking_metrics.json",
+    "outputs/v3_2/geometry_metrics.json",
+    "outputs/v3_2/hazard_metrics.json"
+  ],
+  "classification_rules": {
+    "source_artifact_class_v3_2": "V3_2_FROZEN_EVIDENCE",
+    "source_artifact_class_v3_2_1": "V3_2_1_AUDIT_DERIVED",
+    "canonical_release": "V3.2.1"
+  }
+}

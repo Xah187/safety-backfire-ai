@@ -1,0 +1,15 @@
+{
+  "experiment_id": "EXP_33_03",
+  "title": "INTERVENTION_BACKFIRE_EXPANSION",
+  "sample_size_planned": 8,
+  "sample_size_evaluated": 5,
+  "reason_for_difference": "Limited by verified physical intervention fixtures in repository (5 documented episodes). Expanding further without physical telemetry would violate claim governance.",
+  "taxonomy": [
+    "RISK_REDUCED",
+    "PARTIAL_BACKFIRE",
+    "NEW_HAZARD_CREATED",
+    "RISK_REDISTRIBUTED",
+    "NO_DETECTABLE_EFFECT",
+    "INSUFFICIENT_EVIDENCE"
+  ]
+}

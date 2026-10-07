@@ -1,0 +1,35 @@
+{
+  "manifest_version": "EXP_333_01_SPLIT_MANIFEST",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "split_strategy": "ZERO_ADAPTATION_TRANSFER_TEST",
+  "splits": {
+    "EXTERNAL_CALIBRATION": {
+      "purpose": "QUARANTINED_FOR_LATER_ADAPTATION_STUDY",
+      "target_proportion": 0.20,
+      "allocated_frames": 0,
+      "accessible_during_zero_adaptation_test": false,
+      "status": "QUARANTINED"
+    },
+    "EXTERNAL_VALIDATION": {
+      "purpose": "PRIMARY_ZERO_ADAPTATION_OOS_EVALUATION",
+      "target_proportion": 0.40,
+      "allocated_frames": 0,
+      "accessible_during_zero_adaptation_test": true,
+      "status": "AWAITING_INGESTION"
+    },
+    "EXTERNAL_BLIND": {
+      "purpose": "QUARANTINED_FINAL_GENERALIZATION_CONFIRMATION",
+      "target_proportion": 0.40,
+      "allocated_frames": 0,
+      "accessible_during_zero_adaptation_test": false,
+      "status": "LOCKED_PRE_EVALUATION"
+    }
+  },
+  "zero_adaptation_pipeline": {
+    "input_model": "MODEL_H_FROZEN_V3_3_2",
+    "evaluation_target": "EXTERNAL_VALIDATION",
+    "parameter_adaptation": "ZERO_PARAMETER_ADAPTATION",
+    "primary_reported_result": "ZERO_ADAPTATION_EXTERNAL_OOS"
+  },
+  "governance_rule": "Recalibration on the external facility is strictly prohibited during EXP_333_01. Model H weights and factors must remain identical to V3.3.2 baseline."
+}

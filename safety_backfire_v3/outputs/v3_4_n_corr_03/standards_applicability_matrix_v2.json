@@ -1,0 +1,113 @@
+{
+  "milestone": "V3.4-N-CORR-03",
+  "document_title": "Standards Applicability Framework with Operational Mode Conditionality V2",
+  "audit_date": "2026-10-03T22:42:00Z",
+  "governance_classification": "ENGINEERING_STANDARDS_GOVERNANCE",
+  "framework_purpose": "Defines the exact technical and operational conditions under which specific safety standards apply to the research vehicle platform, establishing strict conditionality for driverless vs remote-controlled operating modes.",
+  "compliance_claim_disclaimer": "ABSOLUTE DISCLAIMER: Zero claims of statutory compliance, formal certification, or conformity are asserted. Standards are referenced for technical benchmarking and methodology only.",
+  "conditional_standards_evaluation": {
+    "iso_3691_4_conditionality": {
+      "standard_id": "ISO 3691-4:2023",
+      "standard_title": "Industrial trucks - Safety requirements and verification - Part 4: Driverless industrial trucks and their systems",
+      "operating_modes": {
+        "driverless_automated_mode": {
+          "operating_condition": "Vehicle navigates autonomously or follows automated guided dispatch without continuous manual operator intervention.",
+          "applicability_status": "EVALUATE_UNDER_SCOPE",
+          "applicable_clauses": "Clause 4 (Safety functions, protective fields), Clause 5 (Verification of safety requirements), Annex A (Braking and stopping distance calculations)."
+        },
+        "remote_controlled_mode": {
+          "operating_condition": "Vehicle is operated via portable wireless pendant, remote operator console, or manual tethered controller.",
+          "applicability_status": "OUTSIDE_STATED_SCOPE",
+          "scope_limitation_rationale": "ISO 3691-4:2023 Scope Clause 1 explicitly excludes trucks with remote control when the remote operator has continuous direct sight and control. Remote-controlled operations are governed instead by ISO 3691-1 (General safety requirements) and EN 1175 (Electrical requirements). ISO 3691-4 CANNOT be claimed to govern remote-controlled operations."
+        }
+      }
+    }
+  },
+  "standards_classification_tiers": {
+    "tier_1_authoritative_applicable_standards": [
+      {
+        "standard_id": "ISO 13849-1:2023",
+        "standard_title": "Safety of machinery - Safety-related parts of control systems - Part 1: General principles for design",
+        "classification": "AUTHORITATIVE_APPLICABLE_STANDARD",
+        "role": "Guides design and architecture (Category 4, PLe) for the dual-channel emergency stop loop.",
+        "compliance_status": "DESIGN_ALIGNED_ONLY"
+      },
+      {
+        "standard_id": "ISO 13849-2:2012",
+        "standard_title": "Safety of machinery - Safety-related parts of control systems - Part 2: Validation",
+        "classification": "AUTHORITATIVE_APPLICABLE_STANDARD",
+        "role": "Defines test procedures for fault simulation, cross-monitoring, and contactor diagnostic timing.",
+        "compliance_status": "PROCEDURE_REFERENCED_ONLY"
+      },
+      {
+        "standard_id": "ISO 3691-4:2023 (Conditional)",
+        "standard_title": "Driverless industrial trucks and their systems",
+        "classification": "AUTHORITATIVE_APPLICABLE_STANDARD_CONDITIONAL",
+        "role": "Applicable strictly when operating in driverless/automated mode; outside scope for remote-controlled mode.",
+        "compliance_status": "REQUIREMENTS_BENCHMARKED_ONLY"
+      }
+    ],
+    "tier_2_reference_standards": [
+      {
+        "standard_id": "IEC 61508:2010 (Parts 1-7)",
+        "standard_title": "Functional safety of E/E/PE safety-related systems",
+        "classification": "REFERENCE_STANDARD",
+        "role": "Foundational meta-standard; reference for vendor component SIL certificates (e.g. Pilz safety relay).",
+        "compliance_status": "COMPONENT_CERTIFICATION_REFERENCE_ONLY"
+      },
+      {
+        "standard_id": "IEEE 1588-2019",
+        "standard_title": "Precision Clock Synchronization Protocol (PTP)",
+        "classification": "REFERENCE_STANDARD",
+        "role": "Protocol reference for multi-modal sensor timestamp distribution (Gate C1).",
+        "compliance_status": "PROTOCOL_IMPLEMENTATION_ONLY"
+      },
+      {
+        "standard_id": "IEEE 1789-2015",
+        "standard_title": "Recommended Practices for Modulating Current in High-Brightness LEDs",
+        "classification": "REFERENCE_STANDARD",
+        "role": "Reference for Flicker Index and Percent Flicker definitions. Does NOT mandate the project's exact FI/frequency pair.",
+        "compliance_status": "METRIC_DEFINITION_REFERENCE"
+      },
+      {
+        "standard_id": "DIN 5032-7",
+        "standard_title": "Photometry - Classification of illuminance meters and luminance meters",
+        "classification": "REFERENCE_STANDARD",
+        "role": "Class B photometer accuracy requirements for Gate C7 Path 1.",
+        "compliance_status": "INSTRUMENT_SPECIFICATION_REFERENCE"
+      }
+    ],
+    "tier_3_potentially_applicable_standards": [
+      {
+        "standard_id": "ISO/DIS 3691-4",
+        "standard_title": "Draft revision of ISO 3691-4",
+        "classification": "POTENTIALLY_APPLICABLE_STANDARD",
+        "role": "Informative draft reference only; must not be cited as an approved standard.",
+        "compliance_status": "INFORMATIVE_DRAFT_REFERENCE_ONLY"
+      },
+      {
+        "standard_id": "ANSI/ITSDF B56.5-2019",
+        "standard_title": "Safety Standard for Driverless, Automatic Guided Industrial Vehicles",
+        "classification": "POTENTIALLY_APPLICABLE_STANDARD",
+        "role": "North American reference standard for AGV clearances and emergency stop interfaces.",
+        "compliance_status": "INFORMATIVE_REFERENCE_ONLY"
+      }
+    ],
+    "tier_4_out_of_scope_standards": [
+      {
+        "standard_id": "ISO 26262:2018",
+        "standard_title": "Road vehicles - Functional safety",
+        "classification": "OUT_OF_SCOPE_STANDARD",
+        "role": "Excluded by scope (passenger and commercial road vehicles). Concepts used solely as informative analogies.",
+        "compliance_status": "NOT_APPLICABLE"
+      },
+      {
+        "standard_id": "ISO 21448:2022",
+        "standard_title": "Road vehicles - SOTIF",
+        "classification": "OUT_OF_SCOPE_STANDARD",
+        "role": "Excluded by scope (road vehicle automated driving systems). Zero regulatory relevance to warehouse DAQ.",
+        "compliance_status": "NOT_APPLICABLE"
+      }
+    ]
+  }
+}

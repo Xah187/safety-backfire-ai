@@ -1,0 +1,83 @@
+{
+  "manifest_version": "EXP_333_01_RUN_003_STATUS_V1",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "run_id": "RUN_003_NVIDIA_WAREHOUSE_026",
+  "timestamp_utc": "2026-09-28T08:39:58Z",
+  "dataset": {
+    "source": "nvidia/PhysicalAI-SmartSpaces (HuggingFace Hub)",
+    "subset": "MTMC_Tracking_2026/test/Warehouse_026",
+    "license": "CC-BY-4.0",
+    "publisher": "NVIDIA Corporation",
+    "cameras_count": 4,
+    "total_frames": 7200,
+    "total_duration_s": 240.0,
+    "frames_per_camera": 1800,
+    "fps": 30.0,
+    "resolution": "1920x1080"
+  },
+  "calibration": {
+    "status": "CALIBRATED_INTRINSIC_EXTRINSIC_HOMOGRAPHY",
+    "reprojection_rmse": 0.0542,
+    "calibration_quality": "HIGH_PRECISION",
+    "points_evaluated": 1000
+  },
+  "executions_summary": {
+    "RUN_001": "INVALIDATED_RUNTIME_MISMATCH (preserved)",
+    "RUN_002": "CANONICAL_CONFORMANCE_INPUT_INSUFFICIENT (preserved, 173f)",
+    "RUN_003": "COMPLETED_MODEL_H_PARTIAL_THREE_OF_FOUR (7200f)"
+  },
+  "model_h_inputs_status": {
+    "camera_pitch_deg": {
+      "status": "FROM_CALIBRATED_EXTRINSIC",
+      "values": {
+        "Camera_0000": 56.51,
+        "Camera_0001": 53.84,
+        "Camera_0002": 4.42,
+        "Camera_0003": 1.59
+      },
+      "penalties": {
+        "Camera_0000": 0.0,
+        "Camera_0001": 0.0,
+        "Camera_0002": 0.22,
+        "Camera_0003": 0.22
+      }
+    },
+    "distance_m": {
+      "status": "FROM_CALIBRATED_HOMOGRAPHY",
+      "measurements_count": 10942,
+      "mean_m": 6.923,
+      "range_m": [1.876, 25.407],
+      "rmse_units": 0.0542
+    },
+    "occlusion_state": {
+      "status": "DERIVED_FROM_BBOX_IOU",
+      "distribution": {
+        "NONE": 10056,
+        "PARTIAL": 635,
+        "HEAVY": 251
+      }
+    },
+    "illumination_lux": {
+      "status": "NOT_AVAILABLE",
+      "reason": "Physical lux meter log absent from benchmark",
+      "substitutions_permitted": false
+    }
+  },
+  "governance_assessment": {
+    "model_h_formal_status": "INPUT_INSUFFICIENT",
+    "primary_blocker": "MISSING_ILLUMINATION_LUX",
+    "model_h_frozen": true,
+    "k0": 2.40,
+    "beta_d": 0.08,
+    "beta_l": 0.12,
+    "beta_pitch": 0.22,
+    "perception_metrics": "OBSERVATIONAL_ONLY_NO_GROUND_TRUTH",
+    "tracking_metrics": "DESCRIPTIVE_TOPOLOGY_ONLY_NO_GROUND_TRUTH",
+    "zero_adaptation_compliance": true
+  },
+  "data_volume_expansion": {
+    "vs_run_002_frames": "41.6x (7,200 vs 173)",
+    "vs_run_002_detections": "43.6x (10,942 vs 251)",
+    "vs_run_002_cameras": "4x (4 vs 1)"
+  }
+}

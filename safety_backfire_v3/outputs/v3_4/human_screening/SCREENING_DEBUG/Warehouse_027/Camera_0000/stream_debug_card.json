@@ -1,0 +1,10 @@
+{
+  "scene_id": "Warehouse_027",
+  "camera_id": "Camera_0000",
+  "stream_duration_seconds": 60.0,
+  "total_frames": 1800,
+  "fps": 30.0,
+  "protocol": "DEBUG_AUDIT_TIMELINE",
+  "ai_candidate_count": 0,
+  "ai_candidates": []
+}

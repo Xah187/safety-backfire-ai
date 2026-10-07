@@ -1,0 +1,22 @@
+{
+  "event_id": "UNION_CAND_Warehouse_026_001",
+  "adjudicator_id": null,
+  "session_id": null,
+  "decision_timestamp_utc": null,
+  "status": "PENDING_HUMAN_REVIEW",
+  "reviewer_1_label": null,
+  "reviewer_2_label": null,
+  "disagreement": false,
+  "disagreement_reason": "",
+  "adjudicator_label": "PENDING_HUMAN_REVIEW",
+  "adjudicator_notes": {
+    "disagreement_analysis": "",
+    "causal_assessment": "",
+    "final_decision_rationale": ""
+  },
+  "final_evidence_quality": null,
+  "final_causal_link": null,
+  "submission_locked": false,
+  "submission_hash": null,
+  "revisions": []
+}

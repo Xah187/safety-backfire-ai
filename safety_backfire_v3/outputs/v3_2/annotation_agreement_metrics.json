@@ -1,0 +1,21 @@
+{
+  "audit_version": "V3.2_INTER_ANNOTATOR_AGREEMENT",
+  "entity_classification_cohens_kappa": 0.9531,
+  "hazard_classification_cohens_kappa": 0.913,
+  "continuous_footpoint_agreement": {
+    "sample_count": 50,
+    "mae_x": 0.025914333711950118,
+    "mae_y": 0.03988729231499818,
+    "mae_euclidean": 0.05294758620375081,
+    "rmse": 0.05920991604036056,
+    "median_euclidean": 0.0504021282936927,
+    "max_euclidean": 0.11255981686813966,
+    "bias_y": -0.003600870189438794
+  },
+  "disagreement_cases_identified": {
+    "occluded_pedestrian_boundary": 2,
+    "caution_vs_imminent_threat_boundary": 3,
+    "rack_vs_staged_pallet_ambiguity": 2
+  },
+  "ambiguity_preservation_policy": "Flagged as AMBIGUOUS_CASE in ground truth rather than forced binary certainty"
+}

@@ -1,0 +1,14 @@
+{
+  "tracking_metrics": {
+    "total_unique_ids_generated": 3,
+    "long_continuous_tracks": 2,
+    "fragmented_tracks": 1,
+    "average_track_duration_frames": 32.0,
+    "frames_with_no_detections": 5,
+    "IDF1": 0.561,
+    "ID_switches_absolute": 1,
+    "recall": 0.95,
+    "precision": 0.99,
+    "note": "Metrics computed mathematically against synthetic single-object occlusion scenario."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "total_oos": 663,
+  "autonomous_frames": 502,
+  "autonomous_uncovered": 26,
+  "provenance_status": "RECONSTRUCTED",
+  "actual_unsafe_actions_confirmed": 0,
+  "actual_unsafe_actions_unconfirmed": 26,
+  "blocked_by_other_policy_layer": 0,
+  "evaluation_only": 26,
+  "operational_safety_status": "NOT_ESTABLISHED_FOR_THE_26_UNCOVERED_OOS_POINTS",
+  "semantic_classification": "UNCERTAINTY_COVERAGE_FAILURE_WITHIN_AUTONOMOUS_POLICY_REGION",
+  "audit_answers": {
+    "1_actual_autonomous_control_decisions": false,
+    "2_uncertainty_evaluation_points_only": true,
+    "3_replayed_frames": true,
+    "4_evaluation_only_samples": true,
+    "5_produced_actual_unsafe_command": false,
+    "6_blocked_by_other_policy_layer": "DOWNSTREAM_FILTERS_NOT_SIMULATED_CLOSED_LOOP",
+    "7_outside_statistical_interval_only": true,
+    "8_corresponded_to_safety_refusal_condition": false
+  },
+  "notes": [
+    "All 26 points were offline ground-plane spatial uncertainty evaluation samples from DS_V3_3_OOS_INDEPENDENT_EVAL.",
+    "No physical vehicle actuators or autonomous drive controls were coupled during offline uncertainty evaluation.",
+    "Being outside the statistical k_H confidence ellipse means measurement error exceeded the 95% boundary (Mahalanobis distance > k_H), which represents a statistical uncertainty calibration failure, not an established physical collision hazard.",
+    "Downstream safety filters (temporal hazard debounce, TTC time-to-collision threshold, multi-frame tracking persistence) were not simulated closed-loop for these static points.",
+    "In accordance with Section 4 and Section 6 governance rules, these 26 points are strictly classified as UNCERTAINTY_COVERAGE_FAILURE_WITHIN_AUTONOMOUS_POLICY_REGION and must never be reported as UNSAFE_ACTION or UNSAFE_NON_REFUSAL without physical actuator evidence.",
+    "OPERATIONAL_SAFETY_STATUS: NOT_ESTABLISHED_FOR_THE_26_UNCOVERED_OOS_POINTS."
+  ]
+}

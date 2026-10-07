@@ -1,0 +1,138 @@
+{
+  "distance_strata": {
+    "NEAR_FIELD": {
+      "distance_range_m": [
+        0.5,
+        3.5
+      ],
+      "N": 482,
+      "precision": 0.9419,
+      "recall": 0.9232,
+      "f1": 0.9325,
+      "failures": 37,
+      "environment": "Multi_Sector_A_B_C_D"
+    },
+    "MID_FIELD": {
+      "distance_range_m": [
+        3.5,
+        7.0
+      ],
+      "N": 894,
+      "precision": 0.9015,
+      "recall": 0.8848,
+      "f1": 0.8931,
+      "failures": 103,
+      "environment": "Multi_Sector_A_B_C_D"
+    },
+    "FAR_FIELD": {
+      "distance_range_m": [
+        7.0,
+        10.0
+      ],
+      "N": 296,
+      "precision": 0.7905,
+      "recall": 0.7297,
+      "f1": 0.7589,
+      "failures": 80,
+      "environment": "Sector_B_and_D_Deep_Aisles",
+      "finding": "Degraded precision/recall in far field due to low pixel resolution per entity."
+    }
+  },
+  "occlusion_strata": {
+    "LOW_OCCLUSION": {
+      "N": 940,
+      "precision": 0.9382,
+      "recall": 0.9319,
+      "f1": 0.935,
+      "failures": 64
+    },
+    "MEDIUM_OCCLUSION": {
+      "N": 512,
+      "precision": 0.8711,
+      "recall": 0.8203,
+      "f1": 0.8449,
+      "failures": 92
+    },
+    "HIGH_OCCLUSION": {
+      "N": 220,
+      "precision": 0.7636,
+      "recall": 0.6818,
+      "f1": 0.7204,
+      "failures": 70,
+      "finding": "Substantial missed detections when pedestrians are heavily occluded by pallet stacks."
+    }
+  },
+  "illumination_strata": {
+    "NORMAL_LIGHT": {
+      "lux_range": [
+        300.0,
+        520.0
+      ],
+      "N": 1050,
+      "precision": 0.9219,
+      "recall": 0.9105,
+      "f1": 0.9162,
+      "failures": 94
+    },
+    "LOW_LIGHT": {
+      "lux_range": [
+        180.0,
+        250.0
+      ],
+      "N": 420,
+      "precision": 0.8429,
+      "recall": 0.8048,
+      "f1": 0.8234,
+      "failures": 82,
+      "environment": "Sector_D_Outbound_Staging"
+    },
+    "HIGH_CONTRAST": {
+      "lux_range": [
+        200.0,
+        650.0
+      ],
+      "N": 202,
+      "precision": 0.8663,
+      "recall": 0.8317,
+      "f1": 0.8486,
+      "failures": 34,
+      "environment": "Sector_A_Dock_Door_Glare"
+    }
+  },
+  "density_strata": {
+    "LOW_DENSITY": {
+      "entities_per_frame": [
+        1,
+        2
+      ],
+      "N": 620,
+      "precision": 0.9452,
+      "recall": 0.9355,
+      "f1": 0.9403,
+      "failures": 40
+    },
+    "MEDIUM_DENSITY": {
+      "entities_per_frame": [
+        3,
+        4
+      ],
+      "N": 750,
+      "precision": 0.892,
+      "recall": 0.876,
+      "f1": 0.8839,
+      "failures": 93
+    },
+    "HIGH_DENSITY": {
+      "entities_per_frame": [
+        5,
+        8
+      ],
+      "N": 302,
+      "precision": 0.8212,
+      "recall": 0.7781,
+      "f1": 0.7991,
+      "failures": 67,
+      "environment": "Sector_D_Outbound_Staging"
+    }
+  }
+}

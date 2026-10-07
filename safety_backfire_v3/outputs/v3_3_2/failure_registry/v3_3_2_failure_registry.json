@@ -1,0 +1,27 @@
+{
+  "registry_version": "V3.3.2_FAILURE_REGISTRY",
+  "release": "V3.3.2",
+  "failures": [
+    {
+      "failure_id": "V3.3.2-FAIL-001",
+      "classification": "STATISTICAL_LIMITATION",
+      "description": "Historical V3.3.1 nominal OOS coverage point estimate (93.67%) failed the 95.0% target on frozen dataset. While Model H achieves 95.17%, mean interval width expanded by 11.0% (0.2312m vs 0.2083m) and required pitch-specific localized variance scaling.",
+      "mitigation_state": "MITIGATED_BY_REFUSAL",
+      "operational_boundary": "Uncertainty action-gating degrades autonomous actions to ADVISORY_ONLY when interval width exceeds 0.25m."
+    },
+    {
+      "failure_id": "V3.3.2-FAIL-002",
+      "classification": "DATASET_LIMITATION",
+      "description": "Independent multi-facility generalization remains unverified due to physical absence of external facility footage (Facility E unavailable). All physical evidence originates from Facility Central 01.",
+      "mitigation_state": "BOUNDED_BY_ODD",
+      "operational_boundary": "Release approved exclusively for bounded pilot within Facility Central sector architecture."
+    },
+    {
+      "failure_id": "V3.3.2-FAIL-003",
+      "classification": "EVIDENCE_GAP",
+      "description": "Intervention evidence sample size (N=6 discrete cases with N=1 PHYSICAL_NEW) is insufficient to support population-level causal frequency or effect distribution claims.",
+      "mitigation_state": "BOUNDED_BY_ODD",
+      "operational_boundary": "Claims restricted to discrete case study descriptions; population-level causal extrapolation is prohibited."
+    }
+  ]
+}

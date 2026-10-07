@@ -1,0 +1,17 @@
+{
+  "perception_metrics_status": "OBSERVATIONAL_ONLY_NO_GROUND_TRUTH",
+  "ground_truth_available": false,
+  "perception_f1": "NOT_ESTABLISHED",
+  "precision": "NOT_ESTABLISHED",
+  "recall": "NOT_ESTABLISHED",
+  "gate_85_status": "NOT_ESTABLISHED",
+  "forklift_detections_count": 3983,
+  "forklift_mean_confidence": 0.5874,
+  "forklift_min_confidence": 0.2502,
+  "forklift_max_confidence": 0.8535,
+  "person_detections_count": 6959,
+  "person_mean_confidence": 0.713,
+  "person_min_confidence": 0.25,
+  "person_max_confidence": 0.9425,
+  "note": "Ground truth bbox annotations are not available for NVIDIA Warehouse_026. Detection counts are observational; F1/precision/recall require GT."
+}

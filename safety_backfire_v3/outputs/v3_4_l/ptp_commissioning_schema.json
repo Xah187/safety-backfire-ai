@@ -1,0 +1,136 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PTPCommissioningReportSchema",
+  "description": "Validation schema for Precision Time Protocol (IEEE 1588-2019 / PTPv2) synchronization commissioning across multi-modal sensor nodes.",
+  "type": "object",
+  "required": [
+    "commissioning_id",
+    "timestamp_utc",
+    "facility_id",
+    "grandmaster_status",
+    "allocated_component_budgets",
+    "composite_system_targets",
+    "node_synchronization_audit",
+    "stability_metrics",
+    "commissioning_outcome"
+  ],
+  "properties": {
+    "commissioning_id": {
+      "type": "string",
+      "pattern": "^PTP-COMM-[0-9]{8}-[0-9]{4}$"
+    },
+    "timestamp_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "facility_id": {
+      "type": "string"
+    },
+    "grandmaster_status": {
+      "type": "object",
+      "required": [
+        "device_identity",
+        "clock_class",
+        "clock_accuracy",
+        "gnss_fix_status",
+        "satellites_locked",
+        "holdover_capability_seconds",
+        "current_state"
+      ],
+      "properties": {
+        "device_identity": { "type": "string" },
+        "clock_class": { "type": "integer", "enum": [6, 7] },
+        "clock_accuracy": { "type": "string", "enum": ["ACC_WITHIN_25NS", "ACC_WITHIN_100NS"] },
+        "gnss_fix_status": { "type": "string", "enum": ["FIX_3D_DGPS", "FIX_RTK_FLOAT", "FIX_RTK_FIXED"] },
+        "satellites_locked": { "type": "integer", "minimum": 8 },
+        "holdover_capability_seconds": { "type": "number", "minimum": 3600 },
+        "current_state": { "type": "string", "enum": ["LOCKED_AND_CALIBRATED", "HOLDOVER", "UNLOCKED"] }
+      }
+    },
+    "allocated_component_budgets": {
+      "type": "object",
+      "description": "Per-subsystem offset limits (DESIGN_REQUIREMENT). Exceeding these fails component gate regardless of composite total.",
+      "required": [
+        "camera_max_offset_ms",
+        "can_telemetry_max_offset_ms",
+        "secondary_sensor_max_offset_ms"
+      ],
+      "properties": {
+        "camera_max_offset_ms": { "type": "number", "const": 5.0 },
+        "can_telemetry_max_offset_ms": { "type": "number", "const": 10.0 },
+        "secondary_sensor_max_offset_ms": { "type": "number", "const": 5.0 },
+        "status_classification": { "type": "string", "const": "DESIGN_REQUIREMENT" }
+      }
+    },
+    "composite_system_targets": {
+      "type": "object",
+      "description": "Total multi-modal skew envelope (CURRENT_ACCEPTANCE_TARGET). Distinct from component limits.",
+      "required": [
+        "composite_max_skew_ms",
+        "unallocated_budget_margin_ms",
+        "status_classification"
+      ],
+      "properties": {
+        "composite_max_skew_ms": { "type": "number", "const": 33.33 },
+        "unallocated_budget_margin_ms": { "type": "number", "const": 13.33 },
+        "status_classification": { "type": "string", "const": "CURRENT_ACCEPTANCE_TARGET" }
+      }
+    },
+    "node_synchronization_audit": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "node_id",
+          "sensor_type",
+          "interface_type",
+          "ptp_state",
+          "measured_offset_mean_us",
+          "measured_offset_p99_us",
+          "clock_drift_ppb",
+          "path_delay_mean_us",
+          "component_limit_check"
+        ],
+        "properties": {
+          "node_id": { "type": "string" },
+          "sensor_type": { "type": "string", "enum": ["CAMERA_A", "CAMERA_B", "CAMERA_C", "CAMERA_D", "CAN_GATEWAY", "SECONDARY_LIDAR", "SECONDARY_RADAR"] },
+          "interface_type": { "type": "string", "enum": ["HARDWARE_PTP_NIC", "PTP_BRIDGE_CAN", "TSN_SWITCH"] },
+          "ptp_state": { "type": "string", "enum": ["SLAVE_SYNCHRONIZED", "TRACKING", "FAULT_UNSYNC"] },
+          "measured_offset_mean_us": { "type": "number" },
+          "measured_offset_p99_us": { "type": "number" },
+          "clock_drift_ppb": { "type": "number" },
+          "path_delay_mean_us": { "type": "number" },
+          "component_limit_check": { "type": "string", "enum": ["PASS", "FAIL_COMPONENT_LIMIT_EXCEEDED"] }
+        }
+      }
+    },
+    "stability_metrics": {
+      "type": "object",
+      "required": [
+        "burn_in_duration_seconds",
+        "clock_dropout_count",
+        "step_corrections_count",
+        "max_observed_jitter_us"
+      ],
+      "properties": {
+        "burn_in_duration_seconds": { "type": "number", "minimum": 1800 },
+        "clock_dropout_count": { "type": "integer", "maximum": 0 },
+        "step_corrections_count": { "type": "integer", "maximum": 0 },
+        "max_observed_jitter_us": { "type": "number", "maximum": 250.0 }
+      }
+    },
+    "commissioning_outcome": {
+      "type": "object",
+      "required": [
+        "gate_c1_clock_status",
+        "commissioning_engineer",
+        "signature_hash_sha256"
+      ],
+      "properties": {
+        "gate_c1_clock_status": { "type": "string", "enum": ["GATE_PASS", "GATE_REJECTED"] },
+        "commissioning_engineer": { "type": "string" },
+        "signature_hash_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    }
+  }
+}

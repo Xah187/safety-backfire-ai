@@ -1,0 +1,40 @@
+{
+  "lock_version": "V3.3_PARAMETER_LOCK_MANIFEST",
+  "lock_status": "LOCKED_BEFORE_BLIND_EVALUATION",
+  "timestamp_utc": "2026-09-25T01:15:00Z",
+  "engineer": "Lead AI Safety Validation & Computer Vision Research Engineer",
+  "commit": "COMMIT_V3_3_0_PHASE1_PRE_LOCK_9b8e4f2a",
+  "models": {
+    "detector": "YOLOv8n-pose / YOLO26n Edge Frozen",
+    "detector_hash": "4a7b9c1d2e3f405162738495a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5"
+  },
+  "parameters": {
+    "uncertainty_factor_k": 2.24,
+    "k_target_coverage": 0.9500,
+    "calibration_split": "V3.3_CALIBRATION",
+    "calibration_dataset_id": "DS_V3_3_CALIB_SECTOR_B",
+    "iou_threshold": 0.30,
+    "confidence_threshold": 0.25,
+    "homography_max_reprojection_residual_m": 0.05,
+    "max_floor_slope_deg": 1.5,
+    "max_allowable_latency_ms": 500.0,
+    "nominal_distance_range_m": [0.5, 8.0],
+    "hard_distance_refusal_m": 10.0,
+    "min_illumination_lux": 150.0,
+    "max_velocity_mps": 4.5,
+    "did_risk_redistribution_threshold": 0.15,
+    "did_parallel_trend_p_threshold": 0.05,
+    "odd_policy": "ODD_POLICY_V3_3_NOMINAL_ENVELOPE"
+  },
+  "random_seeds": {
+    "calibration_seed": 42,
+    "validation_seed": 1337,
+    "bootstrap_seed": 2026
+  },
+  "dataset_hashes": {
+    "DS_V3_3_CALIB_SECTOR_B": "eebcbec58caebef3615aee75631232aab3bf46b04997047ca1e6486b14482e38",
+    "DS_V3_3_VAL_INTERSECTION_C": "c3d4e5f6a1b2030405060708090a1b2c3d4e5f6a1b2030405060708090a1b2c3",
+    "DS_V3_3_BLIND_STAGING_D": "d4e5f6a1b2c30405060708090a1b2c3d4e5f6a1b2c30405060708090a1b2c3d4"
+  },
+  "governance_rule": "Post-unblinding parameter modification or cherry-picking is strictly prohibited. Observed weaknesses must be cataloged as experimental findings in V3.3 Failure Registry."
+}

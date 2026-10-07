@@ -1,0 +1,206 @@
+{
+  "metadata": {
+    "timestamp_utc": "2026-09-22T15:47:48Z",
+    "os": "macOS-27.0-arm64-arm-64bit",
+    "machine": "arm64",
+    "python_version": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+    "torch_version": "2.8.0",
+    "mps_available": true,
+    "ultralytics_version": "8.4.150",
+    "detector_path": "/Users/xah187/Projects/safety-backfire-ai/safety_backfire_v07/runs/forklift_person_yolo26n_v07/weights/best.pt",
+    "detector_sha256": "43450ad3033ab5d1251b9b19fffed9b32a1567ea7c754759029e1a4b94e3810f",
+    "pose_path": "/Users/xah187/Projects/safety-backfire-ai/safety_backfire_v2/yolov8n-pose.pt",
+    "pose_sha256": "c6fa93dd1ee4a2c18c900a45c1d864a1c6f7aba75d84f91648a30b7fb641d212",
+    "calibration_path": "/Users/xah187/Projects/safety-backfire-ai/safety_backfire_v2/config/calibration/warehouse_test2.json",
+    "calibration_sha256": "ed579ef9882a66f11e10d13130cd9a459ead7b22f2f3f0e19dae594600c7fec3",
+    "video_path": "/Users/xah187/Projects/safety-backfire-ai/test2.mp4",
+    "video_sha256": "eebcbec58caebef3615aee75631232aab3bf46b04997047ca1e6486b14482e38",
+    "detector_classes": {
+      "0": "forklift",
+      "1": "person"
+    },
+    "pose_classes": {
+      "0": "person"
+    },
+    "video_properties": {
+      "frames": 1246,
+      "fps": 25.0,
+      "width": 1274,
+      "height": 720
+    }
+  },
+  "performance": {
+    "decode_time_s": 1.5666897296905518,
+    "detect_time_s": 41.68600559234619,
+    "pose_time_s": 36.93837833404541,
+    "track_manager_time_s": 0.04369091987609863,
+    "relation_time_s": 0.012665987014770508,
+    "proximity_event_time_s": 0.0061492919921875,
+    "total_pipeline_time_s": 80.3,
+    "overall_fps": 15.5,
+    "decode_fps": 794.67,
+    "detect_fps": 29.87,
+    "pose_fps": 33.7
+  },
+  "counts": {
+    "raw_detections": {
+      "forklift": 369,
+      "person": 600
+    },
+    "observation_gate": {
+      "VALID": 967,
+      "WEAK": 2,
+      "INVALID": 0
+    },
+    "safety_eligible": {
+      "true": 942,
+      "false": 27
+    },
+    "track_states": {
+      "OBSERVED": 941,
+      "PREDICTED": 1,
+      "STALE": 27
+    },
+    "motion_states": {
+      "MOVING": 705,
+      "PARKED": 264
+    },
+    "relations": {
+      "OPERATOR_ON_VEHICLE": 36,
+      "INDEPENDENT_PEDESTRIAN": 530,
+      "UNKNOWN": 12
+    },
+    "unique_raw_tracks": 21,
+    "unique_safety_tracks": 21
+  },
+  "event_summary": {
+    "total_events": 5,
+    "by_state": {
+      "CONFIRMED_EVENT": 2,
+      "SUPPRESSED_OPERATOR_EVENT": 3
+    },
+    "by_zone": {
+      "DANGER": 2,
+      "CAUTION": 3
+    },
+    "by_relation": {
+      "INDEPENDENT_PEDESTRIAN": 2,
+      "OPERATOR_ON_VEHICLE": 3
+    },
+    "by_alert_state": {
+      "ALERTED": 1,
+      "REVOKED": 1,
+      "NONE": 2,
+      "PENDING": 1
+    },
+    "events_details": [
+      {
+        "event_id": "EVT_0001",
+        "person_id": 25,
+        "forklift_id": 22,
+        "status": "ENDED",
+        "start_frame": 565,
+        "end_frame": 568,
+        "duration_sec": 0.12,
+        "min_distance_m": 0.255,
+        "zone": "DANGER",
+        "relation_state": "INDEPENDENT_PEDESTRIAN",
+        "event_state": "CONFIRMED_EVENT",
+        "alert_state": "ALERTED",
+        "safety_state": "INSUFFICIENT_EVIDENCE",
+        "reason": "confirmed_pedestrian_risk",
+        "promotion_evidence": {},
+        "revision_history": [],
+        "suppression_allowed": false,
+        "requires_review": false
+      },
+      {
+        "event_id": "EVT_0002",
+        "person_id": 39,
+        "forklift_id": 36,
+        "status": "ENDED",
+        "start_frame": 814,
+        "end_frame": 855,
+        "duration_sec": 1.64,
+        "min_distance_m": 0.824,
+        "zone": "DANGER",
+        "relation_state": "OPERATOR_ON_VEHICLE",
+        "event_state": "SUPPRESSED_OPERATOR_EVENT",
+        "alert_state": "REVOKED",
+        "safety_state": "SAFE",
+        "reason": "operator_rule_promoted",
+        "promotion_evidence": {},
+        "revision_history": [
+          {
+            "frame": 844,
+            "initial_state": "CONFIRMED_EVENT",
+            "final_state": "SUPPRESSED_OPERATOR_EVENT",
+            "revision_reason": "operator_relation_recovered"
+          }
+        ],
+        "suppression_allowed": true,
+        "requires_review": false
+      },
+      {
+        "event_id": "EVT_0003",
+        "person_id": 59,
+        "forklift_id": 77,
+        "status": "ENDED",
+        "start_frame": 976,
+        "end_frame": 1001,
+        "duration_sec": 1.0,
+        "min_distance_m": 2.01,
+        "zone": "CAUTION",
+        "relation_state": "OPERATOR_ON_VEHICLE",
+        "event_state": "SUPPRESSED_OPERATOR_EVENT",
+        "alert_state": "NONE",
+        "safety_state": "SAFE",
+        "reason": "operator_rule_promoted",
+        "promotion_evidence": {},
+        "revision_history": [],
+        "suppression_allowed": true,
+        "requires_review": false
+      },
+      {
+        "event_id": "EVT_0004",
+        "person_id": 92,
+        "forklift_id": 93,
+        "status": "ENDED",
+        "start_frame": 1088,
+        "end_frame": 1098,
+        "duration_sec": 0.4,
+        "min_distance_m": 2.265,
+        "zone": "CAUTION",
+        "relation_state": "OPERATOR_ON_VEHICLE",
+        "event_state": "SUPPRESSED_OPERATOR_EVENT",
+        "alert_state": "NONE",
+        "safety_state": "SAFE",
+        "reason": "operator_rule_promoted",
+        "promotion_evidence": {},
+        "revision_history": [],
+        "suppression_allowed": true,
+        "requires_review": false
+      },
+      {
+        "event_id": "EVT_0005",
+        "person_id": 92,
+        "forklift_id": 89,
+        "status": "ENDED",
+        "start_frame": 1143,
+        "end_frame": 1144,
+        "duration_sec": 0.04,
+        "min_distance_m": 2.425,
+        "zone": "CAUTION",
+        "relation_state": "INDEPENDENT_PEDESTRIAN",
+        "event_state": "CONFIRMED_EVENT",
+        "alert_state": "PENDING",
+        "safety_state": "INSUFFICIENT_EVIDENCE",
+        "reason": "confirmed_pedestrian_risk",
+        "promotion_evidence": {},
+        "revision_history": [],
+        "suppression_allowed": false,
+        "requires_review": false
+      }
+    ]
+  }
+}

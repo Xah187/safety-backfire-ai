@@ -1,0 +1,90 @@
+{
+  "manifest_version": "EXTERNAL_FIELD_OBSERVATION_001_RECORD",
+  "observation_id": "EXTERNAL_FIELD_OBSERVATION_001",
+  "timestamp_utc": "2026-09-28T00:07:22Z",
+  "status": "PRESERVED",
+  "classification": "LIMITED_FIELD_OBSERVATION",
+  "generalization_claim": "NOT_ESTABLISHED",
+  "file": {
+    "filename": "0_te11.mp4",
+    "path_relative": "data/external_facility/raw/0_te11.mp4",
+    "sha256": "170a97c819e668d899e378e4ec1c417d89df8da3eff4373bf08f9698152babe1",
+    "size_bytes": 13004617,
+    "codec": "h264",
+    "resolution": "1920x1080",
+    "fps": 24.8,
+    "frame_count": 173,
+    "duration_seconds": 6.98,
+    "bitrate_kbps": 14913.0
+  },
+  "luminance_profile": [
+    {
+      "frame": 0,
+      "mean": 107.25,
+      "std": 45.96,
+      "p5": 32.0,
+      "p95": 177.0
+    },
+    {
+      "frame": 30,
+      "mean": 108.01,
+      "std": 45.82,
+      "p5": 34.0,
+      "p95": 178.0
+    },
+    {
+      "frame": 60,
+      "mean": 107.8,
+      "std": 45.23,
+      "p5": 35.0,
+      "p95": 177.0
+    },
+    {
+      "frame": 90,
+      "mean": 108.31,
+      "std": 45.26,
+      "p5": 35.0,
+      "p95": 178.0
+    },
+    {
+      "frame": 120,
+      "mean": 108.23,
+      "std": 45.45,
+      "p5": 35.0,
+      "p95": 178.0
+    },
+    {
+      "frame": 150,
+      "mean": 108.07,
+      "std": 45.21,
+      "p5": 35.0,
+      "p95": 177.0
+    },
+    {
+      "frame": 172,
+      "mean": 108.58,
+      "std": 45.27,
+      "p5": 35.0,
+      "p95": 178.0
+    }
+  ],
+  "luminance_summary": {
+    "mean_across_samples": 108.04,
+    "std_across_samples": 0.39,
+    "temporal_stability": "STABLE",
+    "note": "Pixel luminance is NOT lux. Cannot be used as illuminance measurement."
+  },
+  "sensor_telemetry": {
+    "lux_measurement": "NOT_AVAILABLE",
+    "pitch_measurement": "NOT_AVAILABLE",
+    "height_measurement": "NOT_AVAILABLE",
+    "geometry_survey": "NOT_AVAILABLE",
+    "status": "NO_SENSOR_TELEMETRY_RECORDED"
+  },
+  "governance": {
+    "do_not_delete": true,
+    "do_not_overwrite": true,
+    "do_not_use_as_generalization_evidence": true,
+    "note": "This clip is a limited field observation (~6.98s). It does NOT establish external generalization."
+  }
+}

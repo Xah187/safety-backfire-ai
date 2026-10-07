@@ -1,0 +1,273 @@
+{
+  "all_checks_passed": true,
+  "audit_version": "1.0.0",
+  "failed_checks": 0,
+  "governance_state": {
+    "ANTI_ALIAS_VALIDATION": "BLOCKED",
+    "FIELD_DATA": "ZERO",
+    "FINAL_STATUS": "BLOCKED",
+    "FROZEN_RMS_IMPLEMENTATION_VERIFIED": false,
+    "GROUND_TRUTH": "NOT_ESTABLISHED",
+    "HISTORICAL_CURRENT_SCALE": "UNRESOLVED",
+    "MODEL_H": {
+      "beta_d": 0.08,
+      "beta_l": 0.12,
+      "beta_pitch": 0.22,
+      "k0": 2.4
+    },
+    "MOTOR_CONTROLLER_COMPATIBILITY": "BLOCKED",
+    "PHYSICAL_CAPTURE_AUTHORIZATION": "NOT_GRANTED",
+    "PRODUCTION_MODEL": "UNCHANGED",
+    "REAL_WORLD_VALIDATION": "NOT_ESTABLISHED",
+    "REFERENCE_MODEL_VERIFIED": true,
+    "RESEARCH_DAQ_ACTUATION_AUTHORITY": "ZERO",
+    "RMS_IMPLEMENTATION_STATUS": "RMS_IMPLEMENTATION_MISSING",
+    "TAU_EFF_STATUS": "DESCRIPTIVE_UNTRACEABLE_FIT",
+    "TIMING_EVIDENCE": "REPORT_BASED"
+  },
+  "milestone": "V3.4-N-CORR-04-R4",
+  "passed_checks": 48,
+  "results": [
+    {
+      "check": "MODEL_H invariants",
+      "detail": "k0=2.40, beta_d=0.08, beta_l=0.12, beta_pitch=0.22",
+      "passed": true
+    },
+    {
+      "check": "Exists: scripts/v3_4/discover_event_candidates.py",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "SHA-256: scripts/v3_4/discover_event_candidates.py",
+      "detail": "hash=656f2fb79f8bef48c53c752f1a51c409e24762d9989c719c3de1ee111a1c7623",
+      "passed": true
+    },
+    {
+      "check": "Exists: scripts/v3_4/automated_evidence_screening.py",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "SHA-256: scripts/v3_4/automated_evidence_screening.py",
+      "detail": "hash=4e19e411207e7be7b39096ee0aca701415da19f8216f807e2a030201678c9896",
+      "passed": true
+    },
+    {
+      "check": "R3 directory exists",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "R4 file exists: evidence_dependency_graph.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "R4 file exists: rms_implementation_forensic_search.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "R4 file exists: discrete_rms_index_contract.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "R4 file exists: reference_vs_historical_rms_gap.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "R4 file exists: anti_aliasing_evidence_matrix.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "R4 file exists: current_measurement_traceability.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "R4 file exists: oscilloscope_configuration_traceability.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "R4 file exists: powertrain_identity_chain.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "R4 file exists: tau_eff_reproducibility_audit.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "R4 file exists: historical_trial_provenance_v2.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "R4 file exists: measurement_acceptance_contract.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "R4 file exists: measurement_uncertainty_decision_framework.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "R4 file exists: blocker_dependency_matrix.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "R4 file exists: minimum_traceable_evidence_package.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "R4 file exists: capture_readiness_gate.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "R4 file exists: master_status_r4.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "R4 file exists: audit_r4.py",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "Immutable: scripts/v3_4/discover_event_candidates.py",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "Immutable: scripts/v3_4/automated_evidence_screening.py",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "Forbidden safety claims absent from positive assertions",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "No active circular acceptance criteria",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "Field data asserted ZERO",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "Ground truth NOT_ESTABLISHED",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "Real world validation NOT_ESTABLISHED",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "RMS status in forensic report is MISSING",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "RMS status in master status is MISSING",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "Reference model verified is TRUE",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "Frozen RMS implementation verified is FALSE",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "Anti-aliasing validation is BLOCKED in matrix",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "Anti-aliasing validation is BLOCKED in master",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "Historical current scale UNRESOLVED in current report",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "Historical current scale UNRESOLVED in master",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "Powertrain compatibility BLOCKED in identity chain",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "Powertrain compatibility BLOCKED in master",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "tau_eff status is DESCRIPTIVE_UNTRACEABLE_FIT",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "tau_eff in master is DESCRIPTIVE_UNTRACEABLE_FIT",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "Historical timing evidence is REPORT_BASED",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "Raw waveforms reported missing for all trials",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "Physical capture authorization NOT_GRANTED in gate",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "Physical capture authorization NOT_GRANTED in master",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "Readiness gate level is NOT_READY",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "Final status is BLOCKED in master",
+      "detail": "",
+      "passed": true
+    }
+  ],
+  "total_checks": 48
+}

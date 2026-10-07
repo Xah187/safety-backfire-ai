@@ -1,0 +1,2288 @@
+{
+  "version": "V2.5",
+  "video": "test2.mp4",
+  "total_annotated_frames": 50,
+  "methodology": {
+    "description": "Ground truth created by visual inspection of raw video frames WITHOUT showing YOLO detection output. Annotator examined each frame independently and marked visible persons and forklifts based on visual observation only.",
+    "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+    "is_independent_of_yolo": true,
+    "consecutive_sequence": {
+      "start_frame": 800,
+      "end_frame": 829,
+      "length": 30,
+      "purpose": "IDF1 and tracking metric computation"
+    },
+    "limitations": [
+      "Annotator is the same agent that built the system (inherent bias)",
+      "Bbox coordinates are approximate visual estimates",
+      "Some frames may have objects missed due to visual difficulty",
+      "Operator/Pedestrian distinction based on visual context only"
+    ]
+  },
+  "frames": [
+    {
+      "frame": 50,
+      "image_file": "raw_00050.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Forklift at left edge"
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": null,
+        "person_relation": null
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": false,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 100,
+      "image_file": "raw_00100.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Forklift at left edge"
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": null,
+        "person_relation": null
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": false,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 150,
+      "image_file": "raw_00150.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Forklift at left edge"
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": null,
+        "person_relation": null
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": false,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 250,
+      "image_file": "raw_00250.jpg",
+      "objects": [],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": null,
+        "person_relation": null
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": false,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 350,
+      "image_file": "raw_00350.jpg",
+      "objects": [],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": null,
+        "person_relation": null
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": false,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 450,
+      "image_file": "raw_00450.jpg",
+      "objects": [],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": null,
+        "person_relation": null
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": false,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 500,
+      "image_file": "raw_00500.jpg",
+      "objects": [],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": null,
+        "person_relation": null
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": false,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 550,
+      "image_file": "raw_00550.jpg",
+      "objects": [],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": null,
+        "person_relation": null
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": false,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 650,
+      "image_file": "raw_00650.jpg",
+      "objects": [],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": null,
+        "person_relation": null
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": false,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 750,
+      "image_file": "raw_00750.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green EPJ, approximate bbox from visual"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator on EPJ"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": false,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 800,
+      "image_file": "raw_00800.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 801,
+      "image_file": "raw_00801.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 802,
+      "image_file": "raw_00802.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 803,
+      "image_file": "raw_00803.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 804,
+      "image_file": "raw_00804.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 805,
+      "image_file": "raw_00805.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 806,
+      "image_file": "raw_00806.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 807,
+      "image_file": "raw_00807.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 808,
+      "image_file": "raw_00808.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 809,
+      "image_file": "raw_00809.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 810,
+      "image_file": "raw_00810.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 811,
+      "image_file": "raw_00811.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 812,
+      "image_file": "raw_00812.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 813,
+      "image_file": "raw_00813.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 814,
+      "image_file": "raw_00814.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 815,
+      "image_file": "raw_00815.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 816,
+      "image_file": "raw_00816.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 817,
+      "image_file": "raw_00817.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 818,
+      "image_file": "raw_00818.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 819,
+      "image_file": "raw_00819.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 820,
+      "image_file": "raw_00820.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 821,
+      "image_file": "raw_00821.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 822,
+      "image_file": "raw_00822.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 823,
+      "image_file": "raw_00823.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 824,
+      "image_file": "raw_00824.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 825,
+      "image_file": "raw_00825.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 826,
+      "image_file": "raw_00826.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 827,
+      "image_file": "raw_00827.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 828,
+      "image_file": "raw_00828.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 829,
+      "image_file": "raw_00829.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green electric pallet jack, right side"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator sitting on/behind the green EPJ"
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            180,
+            168,
+            540
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Small forklift/EPJ parked at far left edge"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE",
+        "notes": "Person IS the operator, not independent pedestrian"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": true,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 855,
+      "image_file": "raw_00855.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green EPJ, approximate bbox from visual"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator on EPJ"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": false,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 900,
+      "image_file": "raw_00900.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green EPJ, approximate bbox from visual"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator on EPJ"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": false,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 950,
+      "image_file": "raw_00950.jpg",
+      "objects": [],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": null,
+        "person_relation": null
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": false,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 1000,
+      "image_file": "raw_01000.jpg",
+      "objects": [],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": null,
+        "person_relation": null
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": false,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 1050,
+      "image_file": "raw_01050.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green EPJ, approximate bbox from visual"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator on EPJ"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": false,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 1090,
+      "image_file": "raw_01090.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green EPJ, approximate bbox from visual"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator on EPJ"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": false,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 1100,
+      "image_file": "raw_01100.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green EPJ, approximate bbox from visual"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator on EPJ"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": false,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 1150,
+      "image_file": "raw_01150.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green EPJ, approximate bbox from visual"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator on EPJ"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": false,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 1200,
+      "image_file": "raw_01200.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            860,
+            0,
+            1273,
+            620
+          ],
+          "occlusion": "none",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "notes": "Green EPJ, approximate bbox from visual"
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            900,
+            280,
+            1060,
+            510
+          ],
+          "occlusion": "partial",
+          "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "vehicle_id": "forklift_01",
+          "notes": "Operator on EPJ"
+        }
+      ],
+      "interaction": {
+        "status": "STATIONARY_PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "person_relation": "OPERATOR_ON_VEHICLE"
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": false,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    },
+    {
+      "frame": 1230,
+      "image_file": "raw_01230.jpg",
+      "objects": [],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": null,
+        "person_relation": null
+      },
+      "annotation_source": "VISUAL_INSPECTION_INDEPENDENT",
+      "is_consecutive_sequence": false,
+      "annotation_notes": "Created by examining raw frames without YOLO overlay"
+    }
+  ]
+}

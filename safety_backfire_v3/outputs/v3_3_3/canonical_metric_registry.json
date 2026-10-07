@@ -1,0 +1,114 @@
+{
+  "registry_version": "V3.3.3_CANONICAL_METRIC_REGISTRY",
+  "release": "V3.3.3",
+  "metrics": [
+    {
+      "metric_id": "METRIC_V3_3_3_NOMINAL_OOS_COVERAGE",
+      "name": "Nominal Out-of-Sample Uncertainty Coverage",
+      "historical_v3_3_1_value": 0.9367,
+      "value": 0.9502,
+      "exact_fraction": "630 / 663",
+      "ci_95": [0.9309, 0.9643],
+      "ci_method": "Wilson_Score_Interval",
+      "target": 0.9500,
+      "meets_target": true,
+      "sample_size": 663,
+      "model_selected": "MODEL_H",
+      "dataset_id": "DS_V3_3_OOS_INDEPENDENT_EVAL",
+      "test": "test_04_model_h_oos_count_reconstruction"
+    },
+    {
+      "metric_id": "METRIC_V3_3_3_WORST_STRATUM_COVERAGE",
+      "name": "Worst Stratum Nominal Uncertainty Coverage",
+      "historical_v3_3_1_value": 0.8978,
+      "value": 0.9586,
+      "exact_fraction": "278 / 290",
+      "ci_95": [0.9288, 0.9763],
+      "ci_method": "Wilson_Score_Interval",
+      "target": 0.9000,
+      "meets_target": true,
+      "stratum": "Sector_D_Outbound_Staging",
+      "sample_size": 290,
+      "test": "test_04_model_h_oos_count_reconstruction"
+    },
+    {
+      "metric_id": "METRIC_V3_3_3_APPROPRIATE_REFUSAL_RATE",
+      "name": "Boundary Appropriate Refusal Rate",
+      "value": 1.000,
+      "decision_level_value": 1.000,
+      "scenario_level_value": 1.000,
+      "exact_decision_counts": "150 / 150",
+      "exact_scenario_counts": "10 / 10",
+      "ci_95": [0.9751, 1.0000],
+      "ci_method": "Wilson_Score_Interval",
+      "target": 0.980,
+      "meets_target": true,
+      "test": "test_08_refusal_independence"
+    },
+    {
+      "metric_id": "METRIC_V3_3_3_UNSAFE_NON_REFUSAL_RATE",
+      "name": "Boundary Unsafe Non-Refusal Rate",
+      "value": 0.000,
+      "decision_level_value": 0.000,
+      "scenario_level_value": 0.000,
+      "target": 0.010,
+      "meets_target": true,
+      "test": "test_08_refusal_independence"
+    },
+    {
+      "metric_id": "METRIC_V3_3_3_FALSE_REFUSAL_RATE",
+      "name": "Nominal Operational False Refusal Rate",
+      "value": 0.000,
+      "decision_level_value": 0.000,
+      "scenario_level_value": 0.000,
+      "exact_decision_counts": "0 / 500",
+      "exact_scenario_counts": "0 / 25",
+      "target": 0.050,
+      "meets_target": true,
+      "test": "test_08_refusal_independence"
+    },
+    {
+      "metric_id": "METRIC_V3_3_3_PERCEPTION_F1",
+      "name": "Cross-Sector Generalization Mean Perception F1",
+      "value": 0.8845,
+      "class_macro_f1": 0.8983,
+      "object_micro_f1": 0.9029,
+      "micro_precision": 0.9136,
+      "micro_recall": 0.8924,
+      "denominators": "exact_object_instances_TP1850_FP175_FN223",
+      "target": 0.850,
+      "meets_target": true,
+      "total_ground_truth_objects": 2073,
+      "test": "test_10_perception_micro_macro"
+    },
+    {
+      "metric_id": "METRIC_V3_3_3_TRACKING_IDF1",
+      "name": "Trajectory-Level Tracking IDF1",
+      "value": 0.9180,
+      "ci_95": [0.9057, 0.9295],
+      "ci_recording_cluster_95": [0.8942, 0.9385],
+      "ci_method": "Non_Parametric_Trajectory_Block_Bootstrap",
+      "target": 0.900,
+      "meets_target": true,
+      "trajectories_evaluated": 28,
+      "recordings_evaluated": 4,
+      "test": "test_11_idf1_bootstrap_sensitivity"
+    },
+    {
+      "metric_id": "METRIC_V3_3_3_PHYSICAL_NEW_INTERVENTIONS",
+      "name": "Newly Documented Physical Intervention Cases",
+      "value": 1,
+      "historical_physical_cases": 2,
+      "replayed_cases": 3,
+      "total_documented_cases": 6,
+      "test": "test_12_intervention_provenance"
+    },
+    {
+      "metric_id": "METRIC_V3_3_3_DID_CAUSAL_REFUSALS",
+      "name": "DiD Parallel Trend Refusal Under Exogenous Shock",
+      "value": 1,
+      "status": "CAUSALITY_REFUSED_UNDER_PARALLEL_TREND_FAILURE",
+      "test": "test_14_did_assumption_semantics"
+    }
+  ]
+}

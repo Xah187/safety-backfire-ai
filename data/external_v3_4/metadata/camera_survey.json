@@ -1,0 +1,25 @@
+[
+  {
+    "facility_id": "FACILITY_PILOT_01",
+    "camera_id": "Camera_0001",
+    "camera_height_m": 3.40,
+    "optical_axis_vector": [0.0, 0.88701, -0.46175],
+    "depression_angle_deg": 27.5,
+    "roll_deg": 0.0,
+    "yaw_deg": 90.0,
+    "intrinsics": [
+      [1150.0, 0.0, 960.0],
+      [0.0, 1150.0, 540.0],
+      [0.0, 0.0, 1.0]
+    ],
+    "distortion": [0.0, 0.0, 0.0, 0.0],
+    "extrinsics": [
+      [1.0, 0.0, 0.0, 0.0],
+      [0.0, 0.887, -0.462, 0.0],
+      [0.0, 0.462, 0.887, -3.40]
+    ],
+    "coordinate_system": "RIGHT_HAND_Z_UP",
+    "survey_timestamp": "2026-09-28T12:00:00Z",
+    "survey_source": "TOTAL_STATION_LEICA_TS16"
+  }
+]

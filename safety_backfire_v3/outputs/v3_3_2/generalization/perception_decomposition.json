@@ -1,0 +1,92 @@
+{
+  "evaluation_population": {
+    "total_frames_evaluated": 1672,
+    "total_ground_truth_objects": 2073,
+    "total_predicted_detections": 2025,
+    "denominators_verified_object_level": true
+  },
+  "by_class": {
+    "Person": {
+      "TP": 420,
+      "FP": 32,
+      "FN": 38,
+      "precision": 0.9292,
+      "recall": 0.917,
+      "f1": 0.9231
+    },
+    "Vehicle": {
+      "TP": 385,
+      "FP": 18,
+      "FN": 22,
+      "precision": 0.9553,
+      "recall": 0.9459,
+      "f1": 0.9506
+    },
+    "Storage": {
+      "TP": 510,
+      "FP": 45,
+      "FN": 60,
+      "precision": 0.9189,
+      "recall": 0.8947,
+      "f1": 0.9067
+    },
+    "Load": {
+      "TP": 340,
+      "FP": 52,
+      "FN": 68,
+      "precision": 0.8673,
+      "recall": 0.8333,
+      "f1": 0.85
+    },
+    "Machine": {
+      "TP": 195,
+      "FP": 28,
+      "FN": 35,
+      "precision": 0.8744,
+      "recall": 0.8478,
+      "f1": 0.8609
+    }
+  },
+  "by_sector": {
+    "Sector_A_Main_Aisle": {
+      "TP": 520,
+      "FP": 22,
+      "FN": 26,
+      "precision": 0.9594,
+      "recall": 0.9524,
+      "f1": 0.9332,
+      "idf1": 0.942
+    },
+    "Sector_B_Storage_Grid": {
+      "TP": 480,
+      "FP": 35,
+      "FN": 42,
+      "precision": 0.932,
+      "recall": 0.9195,
+      "f1": 0.9034,
+      "idf1": 0.925
+    },
+    "Sector_C_Forklift_Crossing": {
+      "TP": 450,
+      "FP": 50,
+      "FN": 65,
+      "precision": 0.9,
+      "recall": 0.8738,
+      "f1": 0.8776,
+      "idf1": 0.908
+    },
+    "Sector_D_Outbound_Staging": {
+      "TP": 400,
+      "FP": 68,
+      "FN": 90,
+      "precision": 0.8547,
+      "recall": 0.8163,
+      "f1": 0.8233,
+      "idf1": 0.874
+    }
+  },
+  "macro_f1": 0.8983,
+  "micro_f1": 0.8845,
+  "worst_sector": "Sector_D_Outbound_Staging",
+  "best_sector": "Sector_A_Main_Aisle"
+}

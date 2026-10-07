@@ -1,0 +1,50 @@
+{
+  "audit_version": "V3.2.1_REPRODUCIBILITY_SCOPE",
+  "timestamp_utc": "2026-09-25T00:00:00Z",
+  "core_code": {
+    "status": "PASS",
+    "description": "Core computer vision algorithms, risk engine, and test suites are fully deterministic and pass 100%."
+  },
+  "canonical_artifacts": {
+    "status": "PASS",
+    "description": "All canonical JSON artifacts and reconciled reports are mathematically verified and reproducible from repository code."
+  },
+  "full_annotated_corpus_raw_footage": {
+    "status": "PARTIAL",
+    "description": "Only 1,672 physical raw frames (64.05 seconds) exist on disk. Full 39,900-frame raw video reproduction requires external archive retrieval."
+  },
+  "overall_release_reproducibility": {
+    "status": "PARTIAL_WITH_REPRODUCIBLE_CODE_AND_ARTIFACTS",
+    "canonical_statement": "The V3.2.1 codebase and canonical derived artifacts are reproducible from the repository. Full raw-footage reproduction of the 39,900-frame annotated corpus is not currently possible because only 1,672 physical raw frames are present locally."
+  },
+  "layered_reproducibility_statement": {
+    "CORE_CODE_REPRODUCIBILITY": "PASS",
+    "CANONICAL_ARTIFACT_REPRODUCIBILITY": "PASS",
+    "FULL_23_MIN_CORPUS_REPRODUCIBILITY": "PARTIAL / ANNOTATED_CORPUS_SOURCE_NOT_FULLY_REPRODUCIBLE"
+  },
+  "physical_evidence_on_disk": {
+    "raw_frames_total": 1672,
+    "raw_duration_sec": 64.05,
+    "files": ["test.mp4", "test2.mp4"],
+    "sha256_verified": true
+  },
+  "subsystem_audit": {
+    "core_algorithms_and_ontology": {
+      "status": "PASS",
+      "findings": "All pipeline components (geometry homography, UniversalRiskEngine, tracking state machines, event detectors) execute deterministically with 100% test pass rate."
+    },
+    "canonical_json_artifacts": {
+      "status": "PASS",
+      "findings": "All JSON artifacts in outputs/v3_2_1/ are cryptographically hashed, validated against JSON schema, and linked to execution tests."
+    },
+    "physical_video_data_on_disk": {
+      "status": "PASS (BOUNDED)",
+      "findings": "1,672 uncompressed raw physical video frames (64.05 seconds) across test.mp4 and test2.mp4 verified with immutable SHA256 hashes."
+    },
+    "extended_39900_frame_corpus": {
+      "status": "PARTIAL (ANNOTATED_CORPUS_SOURCE_NOT_FULLY_REPRODUCIBLE)",
+      "findings": "The 39,900 frames (23.0 minutes) are archived as simulated metadata and annotated telemetry streams in test suites. The physical raw MP4 camera feeds beyond 1,672 frames are not on local disk. Fully reproducing the raw uncompressed video stream requires re-ingesting external archive footage."
+    }
+  },
+  "mandatory_release_claim_rule": "The release must NEVER claim FULL REPRODUCIBILITY for the complete 23-minute raw footage. It must strictly use the layered reproducibility statement."
+}

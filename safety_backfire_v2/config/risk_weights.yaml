@@ -1,0 +1,22 @@
+# Risk Exposure Weights (V2.0)
+# DO NOT hardcode these in Python. Used by RiskEngine to compute the final risk exposure score.
+
+distance:
+  # The base weight for spatial proximity
+  min_distance_weight: 40.0
+  median_distance_weight: 15.0
+  # Exponential decay constant: closer distances scale up rapidly
+  exponential_scale: 1.5
+
+duration:
+  # Base weight for total interaction time
+  base_weight: 5.0
+  # Additional weight for time spent in high-risk zones
+  caution_zone_multiplier: 1.5
+  danger_zone_multiplier: 3.0
+
+kinematics:
+  # Weight for approach velocity
+  peak_approach_speed_weight: 10.0
+  # Cap for velocity contribution to prevent tracking noise from overwhelming the score
+  max_velocity_contribution: 25.0

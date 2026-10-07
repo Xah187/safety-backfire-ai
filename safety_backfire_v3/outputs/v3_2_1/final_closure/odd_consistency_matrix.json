@@ -1,0 +1,195 @@
+{
+  "audit_version": "V3.2.1_ODD_CONSISTENCY_MATRIX",
+  "canonical_source": "outputs/v3_2_1/canonical_odd.json",
+  "status": "CONSISTENT_ACROSS_CANONICAL_SPECIFICATION",
+  "thresholds": [
+    {
+      "parameter": "camera_height_m",
+      "nominal_range": [
+        3.5,
+        6.0
+      ],
+      "degraded_range": [
+        [
+          3.0,
+          3.5
+        ],
+        [
+          6.0,
+          7.5
+        ]
+      ],
+      "out_of_domain": [
+        "< 3.0",
+        "> 7.5"
+      ],
+      "canonical_status": "VALIDATED",
+      "code_enforced": true,
+      "report_consistent": true
+    },
+    {
+      "parameter": "camera_pitch_deg",
+      "nominal_range": [
+        35.0,
+        55.0
+      ],
+      "degraded_range": [
+        20.0,
+        35.0
+      ],
+      "out_of_domain": [
+        "< 20.0",
+        "> 65.0"
+      ],
+      "canonical_status": "VALIDATED",
+      "code_enforced": true,
+      "report_consistent": true,
+      "special_case": "CAM_DOCK_SOUTH at 22.5 deg is DEGRADED_ODD, NOT nominal ODD."
+    },
+    {
+      "parameter": "camera_pitch_drift_tolerance_deg",
+      "nominal_range": [
+        0.0,
+        0.35
+      ],
+      "degraded_range": [
+        0.35,
+        0.75
+      ],
+      "out_of_domain": "> 0.75",
+      "canonical_status": "DOCUMENTED_BOUNDARY_FAIL-30_FAIL-44",
+      "code_enforced": true,
+      "report_consistent": true
+    },
+    {
+      "parameter": "camera_roll_deg",
+      "nominal_range": [
+        0.0,
+        1.5
+      ],
+      "degraded_range": [
+        1.5,
+        3.0
+      ],
+      "out_of_domain": "> 3.0",
+      "canonical_status": "VALIDATED",
+      "code_enforced": true,
+      "report_consistent": true
+    },
+    {
+      "parameter": "spatial_distance_policy_m",
+      "nominal_range": [
+        0.5,
+        8.0
+      ],
+      "degraded_range": [
+        8.0,
+        10.0
+      ],
+      "out_of_domain": "> 10.0",
+      "policy_enforcement": {
+        "0.5_to_8.0m": "FULL_DEFENSIVE_SAFETY_INTERVENTION (Autonomous braking enabled)",
+        "8.0_to_10.0m": "ADVISORY_WARNINGS_ONLY (Autonomous braking strictly refused per FAIL-26/FAIL-38)",
+        "above_10.0m": "REFUSAL_TO_ASSERT_SAFETY_CLAIMS (Out of domain)"
+      },
+      "canonical_status": "VALIDATED",
+      "code_enforced": true,
+      "report_consistent": true
+    },
+    {
+      "parameter": "floor_slope_planarity_deg",
+      "nominal_range": [
+        0.0,
+        1.5
+      ],
+      "degraded_range": [
+        1.5,
+        3.0
+      ],
+      "out_of_domain": "> 3.0 (Ramps)",
+      "canonical_status": "VALIDATED",
+      "code_enforced": true,
+      "report_consistent": true,
+      "boundary_reference": "FAIL-27 / FAIL-45 (Ramp elevation warp)"
+    },
+    {
+      "parameter": "ambient_illumination_lux",
+      "nominal_range": [
+        150,
+        1200
+      ],
+      "degraded_range": [
+        50,
+        150
+      ],
+      "out_of_domain": "< 50 (Darkness)",
+      "canonical_status": "VALIDATED",
+      "code_enforced": true,
+      "report_consistent": true
+    },
+    {
+      "parameter": "pts_latency_ms",
+      "nominal_range": [
+        0.0,
+        50.0
+      ],
+      "degraded_range": [
+        50.0,
+        500.0
+      ],
+      "out_of_domain": "> 500.0 (Starvation / Failsafe trigger)",
+      "canonical_status": "VALIDATED",
+      "code_enforced": true,
+      "report_consistent": true,
+      "boundary_reference": "FAIL-51 (PTS freshness contract)"
+    },
+    {
+      "parameter": "max_entity_velocity_mps",
+      "nominal_range": [
+        0.0,
+        4.5
+      ],
+      "degraded_range": [
+        4.5,
+        6.0
+      ],
+      "out_of_domain": "> 6.0",
+      "canonical_status": "VALIDATED",
+      "code_enforced": true,
+      "report_consistent": true
+    }
+  ],
+  "blind_dataset_odd_classification": {
+    "evaluation_id": "BLIND_TEST_EVALUATION",
+    "aggregate_classification": "MIXED_ODD_BLIND_RESULT",
+    "aggregate_interpretation": "mixed-ODD blind evaluation (must NOT be cited as nominal-ODD autonomous braking performance)",
+    "streams": [
+      {
+        "stream_id": "VID_TEST_001",
+        "camera_alias": "CAM02_RACK_CORRIDOR_BLIND",
+        "pitch_deg": 45.0,
+        "odd_tier": "NOMINAL_ODD",
+        "braking_enabled": true
+      },
+      {
+        "stream_id": "VID_TEST_002",
+        "camera_alias": "CAM03_LOADING_BAY_BLIND_OVERHEAD / CAM_DOCK_SOUTH",
+        "pitch_deg": 22.5,
+        "odd_tier": "DEGRADED_ODD",
+        "braking_enabled": false,
+        "advisory_only": true,
+        "degraded_reason": "Pitch 22.5 deg is within degraded range [20.0, 35.0] deg (outside nominal [35.0, 55.0] deg)."
+      }
+    ],
+    "metrics_breakdown": {
+      "blind_event_precision": {
+        "aggregate_value": 0.9375,
+        "aggregate_tier": "MIXED_ODD_BLIND_RESULT"
+      },
+      "blind_event_recall": {
+        "aggregate_value": 0.9375,
+        "aggregate_tier": "MIXED_ODD_BLIND_RESULT"
+      }
+    }
+  }
+}

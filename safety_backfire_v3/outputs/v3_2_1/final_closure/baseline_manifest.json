@@ -1,0 +1,69 @@
+{
+  "manifest_version": "V3.2.1_FINAL_CLOSURE_BASELINE",
+  "timestamp_utc": "2026-09-24T18:07:00Z",
+  "git_info": {
+    "commit": "GIT_NOT_INITIALIZED_OR_UNAVAILABLE",
+    "status": "WORKING_TREE_UNTRACKED"
+  },
+  "environment": {
+    "operating_system": "macOS-27.0-arm64-arm-64bit",
+    "python_version": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+    "executable": "/Users/xah187/Projects/safety-backfire-ai/.venv/bin/python"
+  },
+  "pre_repair_test_suite": {
+    "command": "/Users/xah187/Projects/safety-backfire-ai/.venv/bin/python /Users/xah187/Projects/safety-backfire-ai/validation/v3_2_1/test_audit_v3_2_1_suite.py",
+    "return_code": 1,
+    "stdout": "================================================================================\n   V3.2.1 VALIDATION INTEGRITY & STATISTICAL RECONCILIATION SUITE   \n================================================================================\n================================================================================\n   [FAILURE] V3.2.1 AUDIT SUITE DETECTED UNRECONCILED CLAIMS.   \n================================================================================\n",
+    "passed": false
+  },
+  "source_files_sha256": {
+    "merge_v3_2_1_reports.py": "7e02fde3b201466856e2d4ef06c24c32196c7b05f85c56948fb4751eb8394ab3",
+    "reconcile_all.py": "b77c09abaa282344b4df597f525eab750b044ae8682d005e89d12f76ccfccab9",
+    "test_audit_v3_2_1_suite.py": "9fb0478e8383fb04e418ab0b7f903c07c2d8c2a2ed457a375d9c453256ad58b9",
+    "test_backfire_case_lineage.py": "63537edcec0e87d46df0fbad188e682cda5b959a748dc94209106d97ac062a2c",
+    "test_causality_evidence_integrity.py": "171c21ad998f11b0a3225b5702cc168837d1acc2743e2dd0c5894bd390a05509",
+    "test_claim_evidence_traceability.py": "9c5a20bdd0e07455b8bdb5a1eb7f225ca05acb45608789c15e69b89d58ecd44a",
+    "test_dataset_duration_consistency.py": "2a74b1bd0c066b835e3c124090976e24802c5f5ea8670ca309e0419b439abb07",
+    "test_denominator_integrity.py": "24f25aeb293b04eb68d2fe7ac2e9e5d3c2c05b616ac2f0a1c0b5ea5f98296c62",
+    "test_event_rate_statistics.py": "95fbd49a9ba240a14a76a4a0a93eed6508875e20a8eab8f7dd18e47c26c6cf34",
+    "test_failure_registry_integrity.py": "e0089ac25ceda2ed7dfe65c84116335de4dec812359dc1061f0f10cfa3dccb68",
+    "test_hazard_metric_definitions.py": "151e4c8a3cd682bc8688918a3eb3ab256a6a22628ab3efedc03c200d902a0eeb",
+    "test_long_duration_label_integrity.py": "e09c6bff25968f5b212e00d38a15edeb5decde6a1959365631aa15e10d91403e",
+    "test_odd_consistency.py": "183fe0583f2afcff51f6e1cb0fee5a92b320156ae41de5dbc30ddc5cb2a53375",
+    "test_report_metric_consistency.py": "603c92fed36a5e85d469bd3adbb6831d6ea77a1270668e96bdc19e5e88be45e0",
+    "test_uncertainty_lineage.py": "4652fd9b4abc74ab4742a58553aea7461b0c5a4e650bb6ac877b27ec7dd79aeb"
+  },
+  "json_artifacts_sha256": {
+    "backfire_case_audit.json": "b2dbb46931f3479be6f00a02f8bcaa44b6d84108b4fc2366e96fcc0ef783a0c6",
+    "baseline_v3_2_frozen.json": "5061124507d5f28b9f2a57fc423bc5136c76a0ba0e478c07fec7618becdf78b2",
+    "canonical_metric_registry.json": "e55dff3cab642b3ccc7b16281772550f29a1336d36436fd6bc22e62c830e01fd",
+    "canonical_odd.json": "341c1a24c6cf7f2d2f81cd9352ac4727f99765c5e6209172e4de46e7d0949dc4",
+    "causality_audit.json": "f26b00657094a2a679fdefa57771c7b4ff7803a43da9d3b7b3c7d2532bb9c627",
+    "claim_evidence_registry.json": "474efc7961c87640ddd0f4d777bfa054072fd37b4bd0bf04874e058f259c7b24",
+    "dataset_duration_audit.json": "0c99ac814905e1135ee5b4187d4f03ed042bd6f7f40e1edec3133427fa8e4c66",
+    "dataset_independence_audit.json": "dd664a7dd738c4d5c0dad293e75af33877d416280c2c08a163fd782b890b82f4",
+    "event_metric_audit.json": "e7abee53606779906e4bc8f76743df986ae0f311c63b01e739d5ce7794e6eadd",
+    "failure_registry_audit.json": "a1f80f89e4dd52a3214ce7425adb1c46266f1ee76b7629216791ebbff7748ed2",
+    "final_reconciliation_status.json": "cf72e5baf52ada1c5b83aa5657fe2859d6ceadf04611a9f45fca84c02618da18",
+    "hazard_metric_audit.json": "fa4bd1a543611b8a591616c5bd09773b01d57a50489e3f790d66d703cff622c7",
+    "metric_consistency_audit.json": "8922b257459d1ee38265f1e4dc8a7c0d14709579d0efb5487b806ee7c899542d",
+    "uncertainty_lineage_audit.json": "0e0083ea581674280b13d9ce3b24fabbb2aabcd2eaa2739ee9304c1c4f325cc7"
+  },
+  "reports_sha256": {
+    "V3.2.1_BACKFIRE_EVIDENCE_AUDIT.md": "37a25c9aed65b4a6473303fa8afb808ab45b77eddae0763ca00ade988bb815fe",
+    "V3.2.1_CAUSALITY_AUDIT.md": "4d9d24d29976070ce68fe108ec2e32a926d03e8d45d531bf2fa63dc79b6de71d",
+    "V3.2.1_CLAIM_EVIDENCE_TRACEABILITY.md": "b1764d8d5ab0d5a2146b92b30c164d067a28639480a9ab2685be05968b15eb69",
+    "V3.2.1_CORE_STATUS.md": "f48910cbaa014c2a6a96564687354814d626ddea3040a139e55ec223f0be5d8b",
+    "V3.2.1_DATASET_RECONCILIATION.md": "2b4ae5b550328dbc472751891e78b6ba68bea31a3779c22d46c51dcaf3e8999e",
+    "V3.2.1_EVENT_METRIC_AUDIT.md": "3a5c2e9160f941254cc532f9cd7b43d70a6c948685462fde66f8fb9a009b81e8",
+    "V3.2.1_FAILURE_REGISTRY_AUDIT.md": "a0cf2c9e7a12588bc2931d6561ca90e13950ed2cf1fc07b132b0d13659977fc1",
+    "V3.2.1_FINAL_RELEASE_AUDIT.md": "55b3fddbf2814aea4998ee637c944460e234b1c3dd9fec20c43f24855a669527",
+    "V3.2.1_HAZARD_METRIC_AUDIT.md": "f25fa781a08402a6905824908d3f582e0e40381f10934829a14a53107c208722",
+    "V3.2.1_MASTER_RECONCILED_AUDIT_REPORT.md": "a5ba4793c4becdb87062b57d0c684f8cc4da1ed99c3348adf96c459186acd7c6",
+    "V3.2.1_METRIC_RECONCILIATION.md": "184e11eec6a0f936c6b06e9a035f6ef1184641a5f89a14fb8a593d986f9e73b7",
+    "V3.2.1_ODD_RECONCILIATION.md": "0aeefc03dc5d77199078965f53d778600ea4f38bc131db0db48caafe96eb36e0",
+    "V3.2.1_REPRODUCIBILITY_AUDIT.md": "ed25a8ad5d2a701ac3152b8f92a4bdc477d9a45721bbcba2b89a92ed03059deb",
+    "V3.2.1_STATISTICAL_TERMINOLOGY_AUDIT.md": "32786a5de3e32052bf59489df3ec800bb066f8dc9c74478f0d14c99daf8fd782",
+    "V3.2.1_UNCERTAINTY_LINEAGE_AUDIT.md": "8e5c7d76c9e769fe97b383c00ed388f4062e477afb5884999803fd83a5f86432"
+  }
+}

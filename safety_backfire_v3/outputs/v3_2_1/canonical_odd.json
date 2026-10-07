@@ -1,0 +1,143 @@
+{
+  "odd_specification_version": "V3.2.1_CANONICAL_ODD",
+  "governing_principles": {
+    "fail_closed_contract": "Any condition outside validated boundaries strictly refuses safety claims and outputs INSUFFICIENT_EVIDENCE.",
+    "rule_unknown_not_safe": "UNKNOWN != SAFE and OUT_OF_ODD != NORMAL_OPERATION."
+  },
+  "camera_extrinsic_geometry": {
+    "camera_height_m": {
+      "nominal": 4.5,
+      "valid_range": [
+        3.5,
+        6.0
+      ],
+      "degraded_range": [
+        [
+          3.0,
+          3.5
+        ],
+        [
+          6.0,
+          7.5
+        ]
+      ],
+      "out_of_domain": [
+        "< 3.0",
+        "> 7.5"
+      ],
+      "status": "VALIDATED"
+    },
+    "camera_pitch_deg": {
+      "nominal": 45.0,
+      "valid_range": [
+        35.0,
+        55.0
+      ],
+      "degraded_range": [
+        20.0,
+        35.0
+      ],
+      "out_of_domain": [
+        "< 20.0",
+        "> 65.0"
+      ],
+      "audit_note": "Reconciled: CAM_DOCK_SOUTH at 22.5 deg is classified as DEGRADED ODD shallow stress test, NOT nominal ODD.",
+      "status": "RECONCILED_CANONICAL"
+    },
+    "camera_pitch_drift_tolerance_deg": {
+      "max_allowed_drift": 0.35,
+      "degraded_drift": [
+        0.35,
+        0.75
+      ],
+      "out_of_domain": "> 0.75",
+      "status": "DOCUMENTED_BOUNDARY_FAIL-30_FAIL-44"
+    },
+    "camera_roll_tolerance_deg": {
+      "valid_max": 1.5,
+      "degraded_range": [
+        1.5,
+        3.0
+      ],
+      "out_of_domain": "> 3.0",
+      "status": "VALIDATED"
+    }
+  },
+  "spatial_distance_policy": {
+    "nominal_autonomous_braking_range_m": {
+      "range": [
+        0.5,
+        8.0
+      ],
+      "policy": "FULL_DEFENSIVE_SAFETY_INTERVENTION",
+      "status": "VALIDATED"
+    },
+    "certified_autonomous_braking_range_m": {
+      "range": [
+        0.5,
+        8.0
+      ],
+      "policy": "FULL_DEFENSIVE_SAFETY_INTERVENTION",
+      "status": "VALIDATED"
+    },
+    "degraded_surveillance_advisory_range_m": {
+      "range": [
+        8.0,
+        10.0
+      ],
+      "policy": "ADVISORY_WARNINGS_ONLY_AUTONOMOUS_BRAKING_REFUSED",
+      "defect_reference": "FAIL-26_FAIL-38_MONOCULAR_RAY_DILUTION",
+      "status": "DEGRADED"
+    },
+    "out_of_domain_range_m": {
+      "range": "> 10.0",
+      "policy": "REFUSAL_TO_ASSERT_SAFETY_CLAIMS",
+      "status": "OUT_OF_DOMAIN"
+    }
+  },
+  "floor_and_environmental_conditions": {
+    "floor_planarity": {
+      "valid_max_slope_deg": 1.5,
+      "degraded_slope_deg": [
+        1.5,
+        3.0
+      ],
+      "out_of_domain_slope_deg": "> 3.0 (Ramps)",
+      "defect_reference": "FAIL-27_FAIL-45_RAMP_ELEVATION_WARP",
+      "status": "VALIDATED"
+    },
+    "ambient_illumination_lux": {
+      "valid_range": [
+        150,
+        1200
+      ],
+      "degraded_low_light": [
+        50,
+        150
+      ],
+      "out_of_domain": "< 50 (Darkness)",
+      "status": "VALIDATED"
+    }
+  },
+  "temporal_and_dynamic_limits": {
+    "hardware_pts_latency_ms": {
+      "valid_max": 50.0,
+      "degraded_range": [
+        50.0,
+        500.0
+      ],
+      "out_of_domain": "> 500.0 (Starvation)",
+      "defect_reference": "FAIL-51_PTS_FRESHNESS_CONTRACT",
+      "status": "VALIDATED"
+    },
+    "max_entity_velocity_mps": {
+      "valid_max": 4.5,
+      "degraded_range": [
+        4.5,
+        6.0
+      ],
+      "out_of_domain": "> 6.0",
+      "status": "VALIDATED"
+    }
+  }
+}

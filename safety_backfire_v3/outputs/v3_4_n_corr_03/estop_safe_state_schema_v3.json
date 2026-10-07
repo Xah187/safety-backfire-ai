@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EStopSafeStateAndElectricalTractionDeenergizationSchemaV3",
+  "milestone": "V3.4-N-CORR-03",
+  "description": "Comprehensive safety cutoff specification establishing decoupled electrical, mechanical, and kinetic endpoints, defining independent measurement methods, and enforcing deterministic persistence auditing.",
+  "governance_classification": "PHYSICAL_COMMISSIONING_GATE_C8",
+  "authoritative_endpoint_naming": {
+    "electrical_endpoint_name": "ELECTRICAL_TRACTION_DEENERGIZED",
+    "superseded_name": "TRACTION_CURRENT_SAFE",
+    "naming_rationale": "Renamed to explicitly denote an electrical power-stage de-energization state rather than a broad systemic safe state. Current drop below 0.5 A does not guarantee vehicle stopping or DC-bus discharge."
+  },
+  "decoupled_safety_endpoints": {
+    "electrical_traction_deenergized": {
+      "endpoint_id": "ELECTRICAL_TRACTION_DEENERGIZED",
+      "physical_phenomenon": "Motor inverter Phase U line current falls below safe threshold (I_motor < 0.5 A RMS), extinguishing electrodynamic motor torque.",
+      "measurement_method": "Calibrated Hall-effect current probe (Tektronix TCP303 / A622) clamped to Motor Phase U conductor, monitored on Keysight DSO Channel 3.",
+      "acceptance_limit_ms": 50.0,
+      "does_not_prove": [
+        "VEHICLE_MOTION_STOPPED (Vehicle continues rolling due to forward inertia)",
+        "MECHANICAL_BRAKE_APPLIED (Friction pads have not necessarily closed air gap)",
+        "DC_BUS_ISOLATED (Inverter bulk DC link capacitors remain energized)"
+      ]
+    },
+    "contactor_open": {
+      "endpoint_id": "CONTACTOR_OPEN",
+      "physical_phenomenon": "Main traction contactor armature mechanical separation and opening of auxiliary status microswitch contact.",
+      "measurement_method": "Normally-open auxiliary microswitch continuity monitored via 24VDC logic probe on DSO Channel 2.",
+      "diagnostic_limit_ms": 35.0,
+      "role": "DIAGNOSTIC_PRECURSOR (Does not prove arc extinction or motor de-energization)"
+    },
+    "dc_bus_isolated": {
+      "endpoint_id": "DC_BUS_ISOLATED",
+      "physical_phenomenon": "Galvanic disconnection of battery pack and complete voltage discharge of inverter DC link bulk capacitors (V_bus < 50.0 VDC).",
+      "measurement_method": "High-voltage isolated differential probe (e.g. Tektronix THDP0200) across inverter DC+ and DC- bus terminals.",
+      "relationship_to_motor_current": "I_motor < 0.5 A DOES NOT EQUAL DC_BUS_ISOLATED. Inverter IGBTs gate off in < 1 ms, but DC bus capacitors can hold hazardous voltage (> 50 V) for up to several minutes."
+    },
+    "brake_control_deenergized": {
+      "endpoint_id": "BRAKE_CONTROL_DEENERGIZED",
+      "physical_phenomenon": "Electrical de-energization of the fail-safe spring-applied mechanical brake solenoid coil (V_brake drops from 24VDC to 0VDC).",
+      "measurement_method": "Voltage probe across brake coil driver output terminals.",
+      "nature": "CONTROL_ACTUATION_SIGNAL (Precedes mechanical movement; does not prove pad contact)"
+    },
+    "mechanical_brake_applied": {
+      "endpoint_id": "MECHANICAL_BRAKE_APPLIED",
+      "physical_phenomenon": "Mechanical displacement of brake shoe/pad across air gap and physical clamping against drive wheel or rotor.",
+      "measurement_method": "Caliper mechanical proximity travel sensor OR IMU longitudinal deceleration onset trace.",
+      "latency_envelope": "Mechanical lag typically introduces 15 to 35 ms delay after BRAKE_CONTROL_DEENERGIZED."
+    },
+    "vehicle_motion_stopped": {
+      "endpoint_id": "VEHICLE_MOTION_STOPPED",
+      "physical_phenomenon": "Kinetic energy of vehicle completely dissipated; wheel angular velocity = 0 rad/s and chassis velocity = 0.0 m/s.",
+      "measurement_method": "Wheel speed quadrature encoder frequency = 0 Hz AND vehicle longitudinal IMU acceleration returned to static bias.",
+      "stopping_distance_governance": "Governed by vehicle initial kinetic energy (0.5 * m * v^2) and floor friction coefficient, evaluated per ISO 3691-4 stopping distance formula."
+    }
+  },
+  "endpoint_persistence_audit": {
+    "persistence_parameter_name": "TRACTION_CURRENT_ENDPOINT_PERSISTENCE",
+    "problem_statement": "An instantaneous single-sample dip where I_motor < 0.5 A can occur due to sinusoidal zero-crossing or high-frequency inverter PWM switching noise. A deterministic persistence window T_persist is required during which I_motor must remain continuously < 0.5 A.",
+    "current_status": "TBD",
+    "epistemic_qualification": "No project-approved empirical persistence window has been established in prior project specifications. In accordance with Section 8 mandate ('Do NOT invent an arbitrary persistence value. Otherwise mark: TRACTION_CURRENT_ENDPOINT_PERSISTENCE = TBD and do not claim the endpoint semantics are fully closed'), this field is formally designated TBD pending physical inverter bench characterization.",
+    "closure_blocker_note": "Because TRACTION_CURRENT_ENDPOINT_PERSISTENCE is TBD, Gate C8 endpoint semantics remain OPEN and physical commissioning is formally BLOCKED."
+  },
+  "gate_c8_acceptance_rule": {
+    "rule": "delta_t_electrical_traction (t_electrical_traction_deenergized - t_estop_command) <= 50.0 ms WITH verified TRACTION_CURRENT_ENDPOINT_PERSISTENCE AND contactor opening <= 35.0 ms AND vendor component certificate on file.",
+    "current_status": "UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING"
+  }
+}

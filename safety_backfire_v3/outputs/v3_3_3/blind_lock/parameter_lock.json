@@ -1,0 +1,18 @@
+{
+  "lock_version": "V3.3.3_PARAMETER_LOCK",
+  "timestamp_utc": "2026-09-25T14:45:00Z",
+  "status": "LOCKED_PRE_EVALUATION",
+  "model_h_locked_parameters": {
+    "k0": 2.40,
+    "beta_d": 0.08,
+    "beta_l": 0.12,
+    "beta_pitch": 0.22,
+    "pitch_threshold_deg": 40.0,
+    "gamma_occ": {
+      "NONE": 0.0,
+      "PARTIAL": 0.20,
+      "HEAVY": 0.40
+    }
+  },
+  "random_seeds": [42, 1337, 2026, 9999]
+}

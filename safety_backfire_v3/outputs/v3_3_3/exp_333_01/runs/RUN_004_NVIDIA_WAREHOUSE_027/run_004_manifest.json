@@ -1,0 +1,22 @@
+{
+  "manifest_version": "V3.3.3_RUN_004_MANIFEST_V1",
+  "run_id": "RUN_004_NVIDIA_WAREHOUSE_027",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "timestamp_utc": "2026-09-28T09:59:50.258695+00:00",
+  "scene": "Warehouse_027",
+  "dataset_source": "nvidia/PhysicalAI-SmartSpaces (MTMC_Tracking_2026/test/Warehouse_027)",
+  "license": "CC-BY-4.0",
+  "publisher": "NVIDIA Corporation",
+  "cameras_count": 7,
+  "frames_per_camera": 1800,
+  "total_frames": 12600,
+  "total_duration_seconds": 420.0,
+  "fps": 30.0,
+  "resolution": "1920x1080",
+  "total_detections": 34894,
+  "forklift_detections": 3968,
+  "person_detections": 30926,
+  "unique_tracks": 237,
+  "model_h_status": "INPUT_INSUFFICIENT",
+  "lux_status": "NOT_AVAILABLE"
+}

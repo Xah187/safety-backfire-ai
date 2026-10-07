@@ -1,0 +1,990 @@
+{
+  "registry_version": "V3.4_B_CANDIDATE_EVENTS_REGISTRY_V1",
+  "timestamp_utc": "2026-10-05T08:20:12.845677+00:00",
+  "total_candidates": 49,
+  "candidates_wh026": 14,
+  "candidates_wh027": 35,
+  "governance_note": "Candidate generator only. No ground-truth backfire labels assigned by model.",
+  "candidates": [
+    {
+      "candidate_id": "CAND_Warehouse_026_008",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_026",
+      "video_id": "Camera_0002.mp4",
+      "camera_id": "Camera_0002",
+      "start_time": 0.03,
+      "end_time": 14.33,
+      "duration_seconds": 14.3,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 134,
+        "forklift_track_id": 136
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.861,
+      "reason": "Sustained spatial convergence between forklift track 136 and pedestrian track 134 (closest approach: 138.6px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_026_009",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_026",
+      "video_id": "Camera_0002.mp4",
+      "camera_id": "Camera_0002",
+      "start_time": 0.03,
+      "end_time": 30.73,
+      "duration_seconds": 30.7,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 135,
+        "forklift_track_id": 136
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.824,
+      "reason": "Sustained spatial convergence between forklift track 136 and pedestrian track 135 (closest approach: 175.8px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_028",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0006.mp4",
+      "camera_id": "Camera_0006",
+      "start_time": 0.03,
+      "end_time": 11.4,
+      "duration_seconds": 11.37,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 680,
+        "forklift_track_id": 685
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0006_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0006_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.766,
+      "reason": "Sustained spatial convergence between forklift track 685 and pedestrian track 680 (closest approach: 234.3px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_001",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0002.mp4",
+      "camera_id": "Camera_0002",
+      "start_time": 16.4,
+      "end_time": 24.0,
+      "duration_seconds": 7.6,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 367,
+        "forklift_track_id": 378
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.757,
+      "reason": "Sustained spatial convergence between forklift track 378 and pedestrian track 367 (closest approach: 242.9px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_003",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0002.mp4",
+      "camera_id": "Camera_0002",
+      "start_time": 23.73,
+      "end_time": 28.57,
+      "duration_seconds": 4.83,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 397,
+        "forklift_track_id": 378
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.75,
+      "reason": "Sustained spatial convergence between forklift track 378 and pedestrian track 397 (closest approach: 231.8px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_004",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0002.mp4",
+      "camera_id": "Camera_0002",
+      "start_time": 33.1,
+      "end_time": 37.43,
+      "duration_seconds": 4.33,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 417,
+        "forklift_track_id": 418
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.658,
+      "reason": "Sustained spatial convergence between forklift track 418 and pedestrian track 417 (closest approach: 225.1px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_026_010",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_026",
+      "video_id": "Camera_0002.mp4",
+      "camera_id": "Camera_0002",
+      "start_time": 8.03,
+      "end_time": 10.43,
+      "duration_seconds": 2.4,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 148,
+        "forklift_track_id": 136
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.642,
+      "reason": "Sustained spatial convergence between forklift track 136 and pedestrian track 148 (closest approach: 115.1px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_026_014",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_026",
+      "video_id": "Camera_0002.mp4",
+      "camera_id": "Camera_0002",
+      "start_time": 43.13,
+      "end_time": 45.47,
+      "duration_seconds": 2.33,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 195,
+        "forklift_track_id": 188
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.619,
+      "reason": "Sustained spatial convergence between forklift track 188 and pedestrian track 195 (closest approach: 117.1px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_026_012",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_026",
+      "video_id": "Camera_0002.mp4",
+      "camera_id": "Camera_0002",
+      "start_time": 40.67,
+      "end_time": 43.2,
+      "duration_seconds": 2.53,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 186,
+        "forklift_track_id": 176
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.55,
+      "reason": "Sustained spatial convergence between forklift track 176 and pedestrian track 186 (closest approach: 188.6px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_026_013",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_026",
+      "video_id": "Camera_0002.mp4",
+      "camera_id": "Camera_0002",
+      "start_time": 40.83,
+      "end_time": 44.1,
+      "duration_seconds": 3.27,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 186,
+        "forklift_track_id": 188
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.537,
+      "reason": "Sustained spatial convergence between forklift track 188 and pedestrian track 186 (closest approach: 135.3px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_026_011",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_026",
+      "video_id": "Camera_0002.mp4",
+      "camera_id": "Camera_0002",
+      "start_time": 39.87,
+      "end_time": 41.57,
+      "duration_seconds": 1.7,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 181,
+        "forklift_track_id": 176
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.506,
+      "reason": "Sustained spatial convergence between forklift track 176 and pedestrian track 181 (closest approach: 222.2px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_006",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0003.mp4",
+      "camera_id": "Camera_0003",
+      "start_time": 54.97,
+      "end_time": 58.2,
+      "duration_seconds": 3.23,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 502,
+        "forklift_track_id": 490
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0003_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0003_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.428,
+      "reason": "Sustained spatial convergence between forklift track 490 and pedestrian track 502 (closest approach: 351.1px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_022",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0005.mp4",
+      "camera_id": "Camera_0005",
+      "start_time": 44.63,
+      "end_time": 59.97,
+      "duration_seconds": 15.33,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 652,
+        "forklift_track_id": 557
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.427,
+      "reason": "Sustained spatial convergence between forklift track 557 and pedestrian track 652 (closest approach: 572.9px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_026_001",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_026",
+      "video_id": "Camera_0000.mp4",
+      "camera_id": "Camera_0000",
+      "start_time": 0.0,
+      "end_time": 27.67,
+      "duration_seconds": 27.67,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 1,
+        "forklift_track_id": 2
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0000_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0000_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.4,
+      "reason": "Sustained spatial convergence between forklift track 2 and pedestrian track 1 (closest approach: 646.4px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_026_002",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_026",
+      "video_id": "Camera_0000.mp4",
+      "camera_id": "Camera_0000",
+      "start_time": 0.0,
+      "end_time": 6.67,
+      "duration_seconds": 6.67,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 3,
+        "forklift_track_id": 2
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0000_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0000_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.4,
+      "reason": "Sustained spatial convergence between forklift track 2 and pedestrian track 3 (closest approach: 699.2px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_008",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0005.mp4",
+      "camera_id": "Camera_0005",
+      "start_time": 0.03,
+      "end_time": 49.73,
+      "duration_seconds": 49.7,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 556,
+        "forklift_track_id": 557
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.4,
+      "reason": "Sustained spatial convergence between forklift track 557 and pedestrian track 556 (closest approach: 769.0px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_009",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0005.mp4",
+      "camera_id": "Camera_0005",
+      "start_time": 0.03,
+      "end_time": 5.73,
+      "duration_seconds": 5.7,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 558,
+        "forklift_track_id": 557
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.4,
+      "reason": "Sustained spatial convergence between forklift track 557 and pedestrian track 558 (closest approach: 691.6px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_017",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0005.mp4",
+      "camera_id": "Camera_0005",
+      "start_time": 31.83,
+      "end_time": 42.27,
+      "duration_seconds": 10.43,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 608,
+        "forklift_track_id": 557
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.4,
+      "reason": "Sustained spatial convergence between forklift track 557 and pedestrian track 608 (closest approach: 692.8px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_027",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0006.mp4",
+      "camera_id": "Camera_0006",
+      "start_time": 0.03,
+      "end_time": 11.4,
+      "duration_seconds": 11.37,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 679,
+        "forklift_track_id": 685
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0006_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0006_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.4,
+      "reason": "Sustained spatial convergence between forklift track 685 and pedestrian track 679 (closest approach: 662.5px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_029",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0006.mp4",
+      "camera_id": "Camera_0006",
+      "start_time": 0.03,
+      "end_time": 11.4,
+      "duration_seconds": 11.37,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 681,
+        "forklift_track_id": 685
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0006_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0006_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.4,
+      "reason": "Sustained spatial convergence between forklift track 685 and pedestrian track 681 (closest approach: 679.8px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_030",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0006.mp4",
+      "camera_id": "Camera_0006",
+      "start_time": 0.03,
+      "end_time": 11.4,
+      "duration_seconds": 11.37,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 682,
+        "forklift_track_id": 685
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0006_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0006_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.4,
+      "reason": "Sustained spatial convergence between forklift track 685 and pedestrian track 682 (closest approach: 669.6px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_031",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0006.mp4",
+      "camera_id": "Camera_0006",
+      "start_time": 0.03,
+      "end_time": 7.67,
+      "duration_seconds": 7.63,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 683,
+        "forklift_track_id": 685
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0006_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0006_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.4,
+      "reason": "Sustained spatial convergence between forklift track 685 and pedestrian track 683 (closest approach: 772.2px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_005",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0002.mp4",
+      "camera_id": "Camera_0002",
+      "start_time": 33.1,
+      "end_time": 34.63,
+      "duration_seconds": 1.53,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 401,
+        "forklift_track_id": 418
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.329,
+      "reason": "Sustained spatial convergence between forklift track 418 and pedestrian track 401 (closest approach: 388.3px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_002",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0002.mp4",
+      "camera_id": "Camera_0002",
+      "start_time": 20.17,
+      "end_time": 22.57,
+      "duration_seconds": 2.4,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 392,
+        "forklift_track_id": 378
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.305,
+      "reason": "Sustained spatial convergence between forklift track 378 and pedestrian track 392 (closest approach: 393.3px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_026_007",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_026",
+      "video_id": "Camera_0000.mp4",
+      "camera_id": "Camera_0000",
+      "start_time": 45.2,
+      "end_time": 46.37,
+      "duration_seconds": 1.17,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 66,
+        "forklift_track_id": 2
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0000_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0000_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.289,
+      "reason": "Sustained spatial convergence between forklift track 2 and pedestrian track 66 (closest approach: 369.4px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_026_006",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_026",
+      "video_id": "Camera_0000.mp4",
+      "camera_id": "Camera_0000",
+      "start_time": 9.97,
+      "end_time": 12.57,
+      "duration_seconds": 2.6,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 39,
+        "forklift_track_id": 2
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0000_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0000_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.25,
+      "reason": "Sustained spatial convergence between forklift track 2 and pedestrian track 39 (closest approach: 558.4px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_014",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0005.mp4",
+      "camera_id": "Camera_0005",
+      "start_time": 23.6,
+      "end_time": 26.2,
+      "duration_seconds": 2.6,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 586,
+        "forklift_track_id": 557
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.203,
+      "reason": "Sustained spatial convergence between forklift track 557 and pedestrian track 586 (closest approach: 717.9px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_015",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0005.mp4",
+      "camera_id": "Camera_0005",
+      "start_time": 26.23,
+      "end_time": 29.47,
+      "duration_seconds": 3.23,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 598,
+        "forklift_track_id": 557
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.203,
+      "reason": "Sustained spatial convergence between forklift track 557 and pedestrian track 598 (closest approach: 805.0px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_026_003",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_026",
+      "video_id": "Camera_0000.mp4",
+      "camera_id": "Camera_0000",
+      "start_time": 1.77,
+      "end_time": 7.13,
+      "duration_seconds": 5.37,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 7,
+        "forklift_track_id": 2
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0000_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0000_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.185,
+      "reason": "Sustained spatial convergence between forklift track 2 and pedestrian track 7 (closest approach: 579.9px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_026_004",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_026",
+      "video_id": "Camera_0000.mp4",
+      "camera_id": "Camera_0000",
+      "start_time": 6.1,
+      "end_time": 8.57,
+      "duration_seconds": 2.47,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 23,
+        "forklift_track_id": 2
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0000_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0000_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.184,
+      "reason": "Sustained spatial convergence between forklift track 2 and pedestrian track 23 (closest approach: 573.0px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_020",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0005.mp4",
+      "camera_id": "Camera_0005",
+      "start_time": 40.2,
+      "end_time": 44.6,
+      "duration_seconds": 4.4,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 642,
+        "forklift_track_id": 557
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.184,
+      "reason": "Sustained spatial convergence between forklift track 557 and pedestrian track 642 (closest approach: 812.2px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_026",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0005.mp4",
+      "camera_id": "Camera_0005",
+      "start_time": 55.07,
+      "end_time": 57.57,
+      "duration_seconds": 2.5,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 676,
+        "forklift_track_id": 557
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.181,
+      "reason": "Sustained spatial convergence between forklift track 557 and pedestrian track 676 (closest approach: 1307.8px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_016",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0005.mp4",
+      "camera_id": "Camera_0005",
+      "start_time": 27.4,
+      "end_time": 30.87,
+      "duration_seconds": 3.47,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 601,
+        "forklift_track_id": 557
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.171,
+      "reason": "Sustained spatial convergence between forklift track 557 and pedestrian track 601 (closest approach: 830.5px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_026_005",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_026",
+      "video_id": "Camera_0000.mp4",
+      "camera_id": "Camera_0000",
+      "start_time": 7.3,
+      "end_time": 8.9,
+      "duration_seconds": 1.6,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 27,
+        "forklift_track_id": 2
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0000_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0000_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.162,
+      "reason": "Sustained spatial convergence between forklift track 2 and pedestrian track 27 (closest approach: 531.5px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_033",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0006.mp4",
+      "camera_id": "Camera_0006",
+      "start_time": 8.57,
+      "end_time": 11.4,
+      "duration_seconds": 2.83,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 695,
+        "forklift_track_id": 685
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0006_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0006_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.16,
+      "reason": "Sustained spatial convergence between forklift track 685 and pedestrian track 695 (closest approach: 935.0px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_012",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0005.mp4",
+      "camera_id": "Camera_0005",
+      "start_time": 19.27,
+      "end_time": 21.13,
+      "duration_seconds": 1.87,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 580,
+        "forklift_track_id": 557
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.115,
+      "reason": "Sustained spatial convergence between forklift track 557 and pedestrian track 580 (closest approach: 763.0px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_025",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0005.mp4",
+      "camera_id": "Camera_0005",
+      "start_time": 54.3,
+      "end_time": 56.2,
+      "duration_seconds": 1.9,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 672,
+        "forklift_track_id": 557
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.115,
+      "reason": "Sustained spatial convergence between forklift track 557 and pedestrian track 672 (closest approach: 789.7px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_019",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0005.mp4",
+      "camera_id": "Camera_0005",
+      "start_time": 38.43,
+      "end_time": 40.0,
+      "duration_seconds": 1.57,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 636,
+        "forklift_track_id": 557
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.112,
+      "reason": "Sustained spatial convergence between forklift track 557 and pedestrian track 636 (closest approach: 789.2px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_032",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0006.mp4",
+      "camera_id": "Camera_0006",
+      "start_time": 3.7,
+      "end_time": 5.53,
+      "duration_seconds": 1.83,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 689,
+        "forklift_track_id": 685
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0006_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0006_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.099,
+      "reason": "Sustained spatial convergence between forklift track 685 and pedestrian track 689 (closest approach: 815.9px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_021",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0005.mp4",
+      "camera_id": "Camera_0005",
+      "start_time": 42.93,
+      "end_time": 44.57,
+      "duration_seconds": 1.63,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 646,
+        "forklift_track_id": 557
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.093,
+      "reason": "Sustained spatial convergence between forklift track 557 and pedestrian track 646 (closest approach: 712.2px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_034",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0006.mp4",
+      "camera_id": "Camera_0006",
+      "start_time": 9.67,
+      "end_time": 11.13,
+      "duration_seconds": 1.47,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 696,
+        "forklift_track_id": 685
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0006_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0006_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.091,
+      "reason": "Sustained spatial convergence between forklift track 685 and pedestrian track 696 (closest approach: 786.4px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_010",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0005.mp4",
+      "camera_id": "Camera_0005",
+      "start_time": 8.67,
+      "end_time": 9.77,
+      "duration_seconds": 1.1,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 559,
+        "forklift_track_id": 557
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.083,
+      "reason": "Sustained spatial convergence between forklift track 557 and pedestrian track 559 (closest approach: 1268.4px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_018",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0005.mp4",
+      "camera_id": "Camera_0005",
+      "start_time": 37.43,
+      "end_time": 38.37,
+      "duration_seconds": 0.93,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 627,
+        "forklift_track_id": 557
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.077,
+      "reason": "Sustained spatial convergence between forklift track 557 and pedestrian track 627 (closest approach: 846.2px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_007",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0003.mp4",
+      "camera_id": "Camera_0003",
+      "start_time": 58.5,
+      "end_time": 59.4,
+      "duration_seconds": 0.9,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 502,
+        "forklift_track_id": 505
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0003_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0003_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.072,
+      "reason": "Sustained spatial convergence between forklift track 505 and pedestrian track 502 (closest approach: 714.6px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_011",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0005.mp4",
+      "camera_id": "Camera_0005",
+      "start_time": 11.73,
+      "end_time": 13.9,
+      "duration_seconds": 2.17,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 568,
+        "forklift_track_id": 557
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.069,
+      "reason": "Sustained spatial convergence between forklift track 557 and pedestrian track 568 (closest approach: 949.2px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_024",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0005.mp4",
+      "camera_id": "Camera_0005",
+      "start_time": 48.63,
+      "end_time": 49.53,
+      "duration_seconds": 0.9,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 662,
+        "forklift_track_id": 557
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.069,
+      "reason": "Sustained spatial convergence between forklift track 557 and pedestrian track 662 (closest approach: 811.3px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_035",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0006.mp4",
+      "camera_id": "Camera_0006",
+      "start_time": 10.2,
+      "end_time": 11.4,
+      "duration_seconds": 1.2,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 700,
+        "forklift_track_id": 685
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0006_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0006_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.064,
+      "reason": "Sustained spatial convergence between forklift track 685 and pedestrian track 700 (closest approach: 773.6px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_013",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0005.mp4",
+      "camera_id": "Camera_0005",
+      "start_time": 21.27,
+      "end_time": 22.53,
+      "duration_seconds": 1.27,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 581,
+        "forklift_track_id": 557
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.053,
+      "reason": "Sustained spatial convergence between forklift track 557 and pedestrian track 581 (closest approach: 860.7px)."
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_023",
+      "source": "nvidia/PhysicalAI-SmartSpaces",
+      "scene_id": "Warehouse_027",
+      "video_id": "Camera_0005.mp4",
+      "camera_id": "Camera_0005",
+      "start_time": 46.2,
+      "end_time": 46.93,
+      "duration_seconds": 0.73,
+      "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+      "objects_involved": {
+        "person_track_id": 654,
+        "forklift_track_id": 557
+      },
+      "possible_intervention": "FORKLIFT_DECELERATION_OR_PEDESTRIAN_AVOIDANCE",
+      "possible_primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+      "possible_secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+      "candidate_relevance_score": 0.053,
+      "reason": "Sustained spatial convergence between forklift track 557 and pedestrian track 654 (closest approach: 852.4px)."
+    }
+  ]
+}

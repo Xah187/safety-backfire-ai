@@ -1,0 +1,110 @@
+{
+  "distance": {
+    "NEAR_0_4M": {
+      "N": 284,
+      "coverage": 0.919,
+      "ci_95": {
+        "low": 0.8814,
+        "high": 0.9454,
+        "point": 0.919,
+        "method": "Wilson_Score_Interval"
+      }
+    },
+    "MID_4_8M": {
+      "N": 379,
+      "coverage": 0.9499,
+      "ci_95": {
+        "low": 0.923,
+        "high": 0.9677,
+        "point": 0.9499,
+        "method": "Wilson_Score_Interval"
+      }
+    },
+    "FAR_GT_8M": {
+      "N": 82,
+      "coverage": 0.7683,
+      "ci_95": {
+        "low": 0.6662,
+        "high": 0.8463,
+        "point": 0.7683,
+        "method": "Wilson_Score_Interval"
+      }
+    }
+  },
+  "illumination": {
+    "LOW_LT_250_LUX": {
+      "N": 372,
+      "coverage": 0.8978,
+      "ci_95": {
+        "low": 0.8629,
+        "high": 0.9247,
+        "point": 0.8978,
+        "method": "Wilson_Score_Interval"
+      }
+    },
+    "NORMAL_GE_250_LUX": {
+      "N": 373,
+      "coverage": 0.9383,
+      "ci_95": {
+        "low": 0.9092,
+        "high": 0.9586,
+        "point": 0.9383,
+        "method": "Wilson_Score_Interval"
+      }
+    }
+  },
+  "occlusion": {
+    "NONE": {
+      "N": 477,
+      "coverage": 0.9266,
+      "ci_95": {
+        "low": 0.8997,
+        "high": 0.9468,
+        "point": 0.9266,
+        "method": "Wilson_Score_Interval"
+      }
+    },
+    "PARTIAL": {
+      "N": 195,
+      "coverage": 0.9385,
+      "ci_95": {
+        "low": 0.8955,
+        "high": 0.9645,
+        "point": 0.9385,
+        "method": "Wilson_Score_Interval"
+      }
+    },
+    "HEAVY": {
+      "N": 73,
+      "coverage": 0.8082,
+      "ci_95": {
+        "low": 0.7034,
+        "high": 0.8822,
+        "point": 0.8082,
+        "method": "Wilson_Score_Interval"
+      }
+    }
+  },
+  "camera": {
+    "CAM_SECTOR_C_03": {
+      "N": 373,
+      "coverage": 0.9383,
+      "ci_95": {
+        "low": 0.9092,
+        "high": 0.9586,
+        "point": 0.9383,
+        "method": "Wilson_Score_Interval"
+      }
+    },
+    "CAM_SECTOR_D_04": {
+      "N": 372,
+      "coverage": 0.8978,
+      "ci_95": {
+        "low": 0.8629,
+        "high": 0.9247,
+        "point": 0.8978,
+        "method": "Wilson_Score_Interval"
+      }
+    }
+  }
+}

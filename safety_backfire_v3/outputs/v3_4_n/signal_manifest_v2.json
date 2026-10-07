@@ -1,0 +1,90 @@
+{
+  "milestone": "V3.4-N",
+  "document_title": "Vehicle Telemetry Signal Classification & Derivation Manifest V2",
+  "governance_classification": "PHYSICAL_TELEMETRY_SPECIFICATION",
+  "signals": {
+    "vehicle_speed": {
+      "classification": "MANDATORY_RAW_SIGNAL",
+      "can_source": "WHEEL_TRANSMISSION_SPEED_ID",
+      "raw_units": "km/h or count",
+      "engineering_units": "m/s",
+      "sample_rate_hz": 50.0,
+      "physical_range": [0.0, 10.0],
+      "required_for_commissioning": true,
+      "validation_rules": ["monotonicity_per_sample", "continuity_no_gaps_gt_20ms"]
+    },
+    "brake_state": {
+      "classification": "MANDATORY_RAW_SIGNAL",
+      "can_source": "BRAKE_PEDAL_SWITCH_ID",
+      "raw_units": "boolean_0_1",
+      "engineering_units": "boolean",
+      "sample_rate_hz": 50.0,
+      "physical_range": [0, 1],
+      "required_for_commissioning": true,
+      "validation_rules": ["no_floating_state", "response_latency_lt_50ms"]
+    },
+    "longitudinal_acceleration": {
+      "classification": "MANDATORY_RAW_SIGNAL",
+      "can_source": "CAN_IMU_BODY_ACCEL_X_ID",
+      "raw_units": "mg or m/s^2",
+      "engineering_units": "m/s^2",
+      "sample_rate_hz": 50.0,
+      "physical_range": [-10.0, 10.0],
+      "required_for_commissioning": true,
+      "validation_rules": ["zero_offset_calibrated", "filtered_with_butterworth_10hz"]
+    },
+    "steering_angle": {
+      "classification": "MANDATORY_RAW_SIGNAL",
+      "can_source": "STEERING_COLUMN_ENCODER_ID",
+      "raw_units": "deg",
+      "engineering_units": "deg",
+      "sample_rate_hz": 50.0,
+      "physical_range": [-90.0, 90.0],
+      "required_for_commissioning": true,
+      "validation_rules": ["straight_line_center_calibrated"]
+    },
+    "yaw_rate": {
+      "classification": "MANDATORY_RAW_SIGNAL",
+      "can_source": "CAN_IMU_GYRO_Z_ID",
+      "raw_units": "deg/s",
+      "engineering_units": "deg/s",
+      "sample_rate_hz": 50.0,
+      "physical_range": [-60.0, 60.0],
+      "required_for_commissioning": true,
+      "validation_rules": ["static_bias_drift_lt_0.5_deg_s"]
+    },
+    "throttle_position": {
+      "classification": "MANDATORY_RAW_SIGNAL",
+      "can_source": "ACCELERATOR_PEDAL_POT_ID",
+      "raw_units": "percent_0_100",
+      "engineering_units": "percent",
+      "sample_rate_hz": 50.0,
+      "physical_range": [0.0, 100.0],
+      "required_for_commissioning": true,
+      "validation_rules": ["idle_check_at_rest"]
+    },
+    "steering_rate": {
+      "classification": "DERIVED_SIGNAL",
+      "derivation_rule": "Central numerical difference derivative of steering_angle: d_theta/dt = (theta[t+1] - theta[t-1]) / (2 * delta_t)",
+      "filtering_applied": "2nd-order low-pass digital Butterworth filter (cutoff fc = 10.0 Hz, sample rate fs = 50.0 Hz)",
+      "engineering_units": "deg/s",
+      "sample_rate_hz": 50.0,
+      "physical_range": [-180.0, 180.0],
+      "required_for_commissioning": true,
+      "derivation_deterministic": true
+    },
+    "wheel_speed": {
+      "classification": "OPTIONAL_SIGNAL",
+      "can_source": "INDIVIDUAL_WHEEL_TICKS_ID",
+      "engineering_units": "rad/s",
+      "sample_rate_hz": 50.0,
+      "required_for_commissioning": false,
+      "usage": "Used for slip estimation if vehicle model provides individual wheel encoders."
+    },
+    "brake_pressure_bar": {
+      "classification": "UNAVAILABLE_SIGNAL",
+      "reason": "Standard industrial warehouse forklifts lack analog hydraulic line pressure transducers on stock CAN bus. Unless auxiliary transducer is physically installed, brake_pressure is UNAVAILABLE.",
+      "fallback_policy": "All intervention gating logic MUST rely exclusively on MANDATORY_RAW_SIGNAL 'brake_state' (boolean) and 'longitudinal_acceleration' (m/s^2). The code MUST NOT assume or require brake_pressure_bar."
+    }
+  }
+}

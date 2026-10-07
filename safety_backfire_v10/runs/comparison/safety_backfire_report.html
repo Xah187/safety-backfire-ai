@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Safety Backfire AI — V0.9 Report</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+  :root {
+    --bg: #0A0A0F;
+    --surface: #13131A;
+    --border: rgba(255,255,255,0.08);
+    --text: #E8E8F0;
+    --muted: #8E8E9A;
+    --accent: #007AFF;
+    --red: #FF3B30;
+    --green: #34C759;
+    --yellow: #FF9500;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; padding:40px 24px; }
+  .container { max-width:960px; margin:0 auto; }
+
+  .header { text-align:center; margin-bottom:48px; }
+  .header h1 { font-size:13px; font-weight:500; letter-spacing:0.12em; color:var(--muted); text-transform:uppercase; margin-bottom:16px; }
+  .header h2 { font-size:36px; font-weight:900; letter-spacing:-0.03em; color:var(--text); margin-bottom:8px; }
+  .header p { color:var(--muted); font-size:14px; }
+
+  .verdict-card {
+    background: #FF2D5518;
+    border: 2px solid #FF2D5560;
+    border-radius:20px;
+    padding:32px;
+    text-align:center;
+    margin-bottom:40px;
+  }
+  .verdict-label { font-size:13px; font-weight:500; color:#FF2D55; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px; }
+  .verdict-main { font-size:32px; font-weight:900; color:#FF2D55; margin-bottom:8px; }
+  .verdict-score { font-size:14px; color:#FF2D55aa; }
+
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:40px; }
+  .stat-card { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:24px; }
+  .stat-label { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-bottom:8px; }
+  .stat-value { font-size:28px; font-weight:800; color:var(--text); margin-bottom:4px; }
+  .stat-sub { font-size:12px; color:var(--muted); }
+
+  .section { background:var(--surface); border:1px solid var(--border); border-radius:16px; overflow:hidden; margin-bottom:24px; }
+  .section-header { padding:20px 24px; border-bottom:1px solid var(--border); }
+  .section-title { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); }
+
+  table { width:100%; border-collapse:collapse; }
+  th { padding:12px 20px; text-align:left; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); border-bottom:1px solid var(--border); }
+  td { padding:14px 20px; border-bottom:1px solid var(--border); font-size:14px; }
+  tr:last-child td { border-bottom:none; }
+  .metric-name { font-weight:500; color:var(--text); font-size:13px; }
+  .val { font-family:'SF Mono','Fira Code',monospace; font-size:13px; color:var(--text); }
+  .before { color:var(--muted); }
+  .after  { color:var(--text); font-weight:600; }
+  .change { color:var(--muted); }
+  .verdict-cell { font-size:12px; }
+
+  .segments { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:24px; }
+  .seg-card { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:24px; }
+  .seg-label { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-bottom:12px; }
+  .seg-period { font-size:16px; font-weight:700; color:var(--text); margin-bottom:16px; }
+  .seg-metric { display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border); font-size:13px; }
+  .seg-metric:last-child { border:none; }
+  .seg-metric-label { color:var(--muted); }
+  .seg-metric-val { font-weight:600; font-family:monospace; }
+
+  .note { background:#007AFF10; border:1px solid #007AFF30; border-radius:12px; padding:16px 20px; font-size:12px; color:var(--muted); line-height:1.6; }
+
+  .bar-container { display:flex; align-items:center; gap:12px; margin:8px 0; }
+  .bar-label { width:180px; font-size:12px; color:var(--muted); flex-shrink:0; }
+  .bar-track { flex:1; height:8px; background:#ffffff0a; border-radius:4px; overflow:hidden; }
+  .bar-fill { height:100%; border-radius:4px; transition:width 0.8s ease; }
+  .bar-val { width:60px; font-size:12px; font-family:monospace; text-align:right; flex-shrink:0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>Safety Backfire AI · V0.9 · Pre/Post Analysis</h1>
+    <h2>Spatial Risk Comparison Report</h2>
+    <p>Segment A (Frames 1-213, 7.1s) vs Segment B (Frames 214-426, 7.1s)</p>
+  </div>
+
+  <div class="verdict-card">
+    <div class="verdict-label">Overall Verdict</div>
+    <div class="verdict-main">SAFETY BACKFIRE DETECTED</div>
+    <div class="verdict-score">Net Backfire Score: +2.659 · 2 backfire indicators vs 1 improvements</div>
+  </div>
+
+  <div class="segments">
+    <div class="seg-card">
+      <div class="seg-label">⬅ Before (Segment A)</div>
+      <div class="seg-period">Segment A (Frames 1-213, 7.1s)</div>
+      <div class="seg-metric"><span class="seg-metric-label">Min Passing Distance Meters</span><span class="seg-metric-val">3.26</span></div><div class="seg-metric"><span class="seg-metric-label">Min Passing Distance Pixels</span><span class="seg-metric-val">121.20</span></div><div class="seg-metric"><span class="seg-metric-label">Frames In Danger Zone</span><span class="seg-metric-val">0</span></div><div class="seg-metric"><span class="seg-metric-label">Frames In Caution Zone</span><span class="seg-metric-val">0</span></div><div class="seg-metric"><span class="seg-metric-label">Percent Time In Risk Zones</span><span class="seg-metric-val">0.00</span></div><div class="seg-metric"><span class="seg-metric-label">Total Near Miss Incidents</span><span class="seg-metric-val">0</span></div><div class="seg-metric"><span class="seg-metric-label">Total Proximity Warnings</span><span class="seg-metric-val">0</span></div><div class="seg-metric"><span class="seg-metric-label">Peak Approach Speed Px S</span><span class="seg-metric-val">36.30</span></div>
+    </div>
+    <div class="seg-card">
+      <div class="seg-label">➡ After (Segment B)</div>
+      <div class="seg-period">Segment B (Frames 214-426, 7.1s)</div>
+      <div class="seg-metric"><span class="seg-metric-label">Min Passing Distance Meters</span><span class="seg-metric-val">1.49</span></div><div class="seg-metric"><span class="seg-metric-label">Min Passing Distance Pixels</span><span class="seg-metric-val">71.80</span></div><div class="seg-metric"><span class="seg-metric-label">Frames In Danger Zone</span><span class="seg-metric-val">0</span></div><div class="seg-metric"><span class="seg-metric-label">Frames In Caution Zone</span><span class="seg-metric-val">0</span></div><div class="seg-metric"><span class="seg-metric-label">Percent Time In Risk Zones</span><span class="seg-metric-val">0.00</span></div><div class="seg-metric"><span class="seg-metric-label">Total Near Miss Incidents</span><span class="seg-metric-val">0</span></div><div class="seg-metric"><span class="seg-metric-label">Total Proximity Warnings</span><span class="seg-metric-val">0</span></div><div class="seg-metric"><span class="seg-metric-label">Peak Approach Speed Px S</span><span class="seg-metric-val">1.10</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Metric-by-Metric Comparison</div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Before</th>
+          <th>After</th>
+          <th>Change</th>
+          <th>Verdict</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="metric-name">Total Near Miss Incidents</td>
+        <td class="val before">0</td>
+        <td class="val after">0</td>
+        <td class="val change">—</td>
+        <td class="verdict-cell" style="color:#8E8E93;font-weight:700">— UNCHANGED</td>
+      </tr>
+      <tr>
+        <td class="metric-name">Total Proximity Warnings</td>
+        <td class="val before">0</td>
+        <td class="val after">0</td>
+        <td class="val change">—</td>
+        <td class="verdict-cell" style="color:#8E8E93;font-weight:700">— UNCHANGED</td>
+      </tr>
+      <tr>
+        <td class="metric-name">Percent Time In Risk Zones</td>
+        <td class="val before">0.00</td>
+        <td class="val after">0.00</td>
+        <td class="val change">—</td>
+        <td class="verdict-cell" style="color:#8E8E93;font-weight:700">— UNCHANGED</td>
+      </tr>
+      <tr>
+        <td class="metric-name">Frames In Danger Zone</td>
+        <td class="val before">0</td>
+        <td class="val after">0</td>
+        <td class="val change">—</td>
+        <td class="verdict-cell" style="color:#8E8E93;font-weight:700">— UNCHANGED</td>
+      </tr>
+      <tr>
+        <td class="metric-name">Frames In Caution Zone</td>
+        <td class="val before">0</td>
+        <td class="val after">0</td>
+        <td class="val change">—</td>
+        <td class="verdict-cell" style="color:#8E8E93;font-weight:700">— UNCHANGED</td>
+      </tr>
+      <tr>
+        <td class="metric-name">Peak Approach Speed Px S</td>
+        <td class="val before">36.30</td>
+        <td class="val after">1.10</td>
+        <td class="val change">-97.0%</td>
+        <td class="verdict-cell" style="color:#34C759;font-weight:700">▼ IMPROVEMENT</td>
+      </tr>
+      <tr>
+        <td class="metric-name">Min Passing Distance Meters</td>
+        <td class="val before">3.26</td>
+        <td class="val after">1.49</td>
+        <td class="val change">-54.3%</td>
+        <td class="verdict-cell" style="color:#FF3B30;font-weight:700">▲ BACKFIRE</td>
+      </tr>
+      <tr>
+        <td class="metric-name">Min Passing Distance Pixels</td>
+        <td class="val before">121.20</td>
+        <td class="val after">71.80</td>
+        <td class="val change">-40.8%</td>
+        <td class="verdict-cell" style="color:#FF3B30;font-weight:700">▲ BACKFIRE</td>
+      </tr></tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Scientific Disclaimer:</strong> Comparison is valid only if both segments were processed through the same V0.8 pipeline configuration and camera calibration. Metric distances and TTC values are image-space proxies. Safety Backfire detection is preliminary subject to V0.7 model recall limitations (~17% person detection rate on this CCTV angle).
+  </div>
+
+</div>
+</body>
+</html>

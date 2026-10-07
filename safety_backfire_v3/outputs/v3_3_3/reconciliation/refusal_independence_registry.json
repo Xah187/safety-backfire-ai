@@ -1,0 +1,93 @@
+{
+  "reconciliation_version": "V3.3.3_REFUSAL_INDEPENDENCE_REGISTRY",
+  "hierarchy": {
+    "total_decisions_evaluated": 900,
+    "total_independent_scenarios": 50,
+    "independent_recordings_count": 4,
+    "independent_cameras_count": 4
+  },
+  "boundary_stress_fixtures": {
+    "decision_count": 150,
+    "scenario_count": 10,
+    "decision_level_appropriate_refusal_rate": 1.0,
+    "scenario_level_appropriate_refusal_rate": 1.0,
+    "unsafe_non_refusal_rate": 0.0,
+    "scenario_details": [
+      {
+        "scenario_id": "SCEN_PITCH_15DEG",
+        "frames": 15,
+        "refused": 15,
+        "result": "PASS"
+      },
+      {
+        "scenario_id": "SCEN_PITCH_18DEG",
+        "frames": 15,
+        "refused": 15,
+        "result": "PASS"
+      },
+      {
+        "scenario_id": "SCEN_SLOPE_4DEG",
+        "frames": 15,
+        "refused": 15,
+        "result": "PASS"
+      },
+      {
+        "scenario_id": "SCEN_SLOPE_5DEG",
+        "frames": 15,
+        "refused": 15,
+        "result": "PASS"
+      },
+      {
+        "scenario_id": "SCEN_LATENCY_650MS",
+        "frames": 15,
+        "refused": 15,
+        "result": "PASS"
+      },
+      {
+        "scenario_id": "SCEN_LATENCY_800MS",
+        "frames": 15,
+        "refused": 15,
+        "result": "PASS"
+      },
+      {
+        "scenario_id": "SCEN_FARFIELD_11M",
+        "frames": 15,
+        "refused": 15,
+        "result": "PASS"
+      },
+      {
+        "scenario_id": "SCEN_FARFIELD_14M",
+        "frames": 15,
+        "refused": 15,
+        "result": "PASS"
+      },
+      {
+        "scenario_id": "SCEN_DARKNESS_30LUX",
+        "frames": 15,
+        "refused": 15,
+        "result": "PASS"
+      },
+      {
+        "scenario_id": "SCEN_DARKNESS_10LUX",
+        "frames": 15,
+        "refused": 15,
+        "result": "PASS"
+      }
+    ]
+  },
+  "nominal_operational_fixtures": {
+    "decision_count": 500,
+    "scenario_count": 25,
+    "decision_level_false_refusal_rate": 0.0,
+    "scenario_level_false_refusal_rate": 0.0
+  },
+  "distribution_shift_fixtures": {
+    "decision_count": 500,
+    "scenario_count": 50,
+    "appropriate_refusal_count": 400,
+    "advisory_downgrade_count": 100,
+    "unsafe_non_refusal_rate": 0.0,
+    "false_refusal_rate": 0.0
+  },
+  "reporting_policy": "Always report: '10/10 tested boundary scenarios produced the required refusal behavior (150/150 evaluated boundary frames correctly refused)'."
+}

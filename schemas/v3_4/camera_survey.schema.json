@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safety-backfire-ai.org/schemas/v3_4/camera_survey.schema.json",
+  "title": "V3.4 Camera Survey Schema",
+  "description": "Schema for physical camera surveying, extrinsic mounting geometry, and optical calibration.",
+  "type": "object",
+  "required": [
+    "facility_id",
+    "camera_id",
+    "camera_height_m",
+    "optical_axis_vector",
+    "depression_angle_deg",
+    "roll_deg",
+    "yaw_deg",
+    "intrinsics",
+    "distortion",
+    "extrinsics",
+    "coordinate_system",
+    "survey_timestamp",
+    "survey_source"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "facility_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Facility unique identifier."
+    },
+    "camera_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Camera stream identifier."
+    },
+    "camera_height_m": {
+      "type": "number",
+      "exclusiveMinimum": 0.0,
+      "description": "Physical height of camera optical center above ground plane in meters."
+    },
+    "optical_axis_vector": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "number"
+      },
+      "description": "Unit vector [vx, vy, vz] in world coordinates defining optical axis gaze direction."
+    },
+    "depression_angle_deg": {
+      "type": "number",
+      "minimum": -90.0,
+      "maximum": 90.0,
+      "description": "True physical depression angle below horizontal plane (degrees)."
+    },
+    "roll_deg": {
+      "oneOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string",
+          "enum": ["UNKNOWN"]
+        }
+      ],
+      "description": "Camera roll angle in degrees or UNKNOWN."
+    },
+    "yaw_deg": {
+      "oneOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string",
+          "enum": ["UNKNOWN"]
+        }
+      ],
+      "description": "Camera azimuth/yaw angle relative to facility coordinate origin in degrees or UNKNOWN."
+    },
+    "intrinsics": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "array",
+        "minItems": 3,
+        "maxItems": 3,
+        "items": {
+          "type": "number"
+        }
+      },
+      "description": "3x3 intrinsic calibration matrix K."
+    },
+    "distortion": {
+      "oneOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        {
+          "type": "string",
+          "enum": ["UNKNOWN"]
+        }
+      ],
+      "description": "Radial and tangential distortion coefficients or UNKNOWN."
+    },
+    "extrinsics": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "array",
+        "minItems": 4,
+        "maxItems": 4,
+        "items": {
+          "type": "number"
+        }
+      },
+      "description": "3x4 world-to-camera extrinsic matrix [R | t]."
+    },
+    "coordinate_system": {
+      "type": "string",
+      "enum": [
+        "RIGHT_HAND_Z_UP",
+        "RIGHT_HAND_Y_DOWN",
+        "ISO_8855_VEHICLE",
+        "FACILITY_LOCAL_GRID"
+      ],
+      "description": "Declared geometric coordinate convention."
+    },
+    "survey_timestamp": {
+      "type": "string",
+      "description": "ISO 8601 timestamp of surveying completion."
+    },
+    "survey_source": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Surveying methodology or equipment (e.g. TOTAL_STATION_LEICA_TS16)."
+    }
+  }
+}

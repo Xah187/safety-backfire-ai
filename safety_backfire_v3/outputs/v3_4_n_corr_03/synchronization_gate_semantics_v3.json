@@ -1,0 +1,74 @@
+{
+  "milestone": "V3.4-N-CORR-03",
+  "document_title": "Multi-Modal Synchronization Semantics & Decoupled Margin Ledger V3",
+  "audit_date": "2026-10-03T22:38:00Z",
+  "governance_classification": "ENGINEERING_SEMANTIC_BASELINE",
+  "abstract": "Decouples component-level margin consumption from system composite reserve consumption. Eliminates the erroneous concept that individual channel jitter (e.g. camera at 3.5 ms) directly consumes composite design reserve (15.33 ms). Establishes independent component_margin_state and composite_margin_state evaluations.",
+  "budget_identity_preservation": {
+    "nominal_subsystem_allocation_ms": 18.00,
+    "composite_design_target_ms": 33.33,
+    "unallocated_design_reserve_ms": 15.33,
+    "identity_formula": "18.00 ms + 15.33 ms == 33.33 ms (nominal 30.0 fps video frame period)",
+    "epistemic_classification": "DESIGN_BUDGET_IDENTITY (System design allocation; not evaluated per component channel)"
+  },
+  "separation_of_margin_states": {
+    "component_margin_state": {
+      "definition": "Evaluation of an individual hardware/network stream against its subsystem nominal target and hard component acceptance limit.",
+      "channels": {
+        "camera_optical_sync": {
+          "nominal_target_ms": 2.0,
+          "component_hard_limit_ms": 5.0,
+          "states": {
+            "NOMINAL": "P99 <= 2.0 ms (Full nominal margin preserved)",
+            "COMPONENT_MARGIN_CONSUMED": "2.0 ms < P99 <= 5.0 ms (Component margin partially consumed; within hard limit; triggers warning; does NOT deduct from composite reserve)",
+            "FAIL": "P99 > 5.0 ms (Component hard limit breached; triggers DATA_INVALIDATION_ABORT)"
+          }
+        },
+        "can_telemetry_gateway": {
+          "nominal_target_ms": 5.0,
+          "component_hard_limit_ms": 10.0,
+          "states": {
+            "NOMINAL": "P99 <= 5.0 ms",
+            "COMPONENT_MARGIN_CONSUMED": "5.0 ms < P99 <= 10.0 ms",
+            "FAIL": "P99 > 10.0 ms"
+          }
+        },
+        "secondary_sensor": {
+          "nominal_target_ms": 5.0,
+          "component_hard_limit_ms": 8.0,
+          "states": {
+            "NOMINAL": "P99 <= 5.0 ms",
+            "COMPONENT_MARGIN_CONSUMED": "5.0 ms < P99 <= 8.0 ms",
+            "FAIL": "P99 > 8.0 ms"
+          }
+        },
+        "host_os_thread_jitter": {
+          "nominal_target_ms": 1.0,
+          "component_hard_limit_ms": 5.0,
+          "states": {
+            "NOMINAL": "P99 <= 1.0 ms",
+            "COMPONENT_MARGIN_CONSUMED": "1.0 ms < P99 <= 5.0 ms",
+            "FAIL": "P99 > 5.0 ms"
+          }
+        }
+      }
+    },
+    "composite_margin_state": {
+      "definition": "Evaluation of the end-to-end multi-modal physical synchronization skew, measured directly between optical strobe and physical impactor accelerometer.",
+      "evaluation_method": "Empirically measured actual_composite_skew_ms from DSO co-calibration rig.",
+      "composite_design_target_ms": 33.33,
+      "allocated_subsystems_total_ms": 18.00,
+      "unallocated_design_reserve_ms": 15.33,
+      "states": {
+        "COMPOSITE_NOMINAL_PASS": "actual_composite_skew_ms <= 18.00 ms (Zero composite design reserve consumed)",
+        "COMPOSITE_RESERVE_CONSUMED": "18.00 ms < actual_composite_skew_ms <= 33.33 ms (Composite design reserve partially consumed by actual measured end-to-end physical skew)",
+        "COMPOSITE_FAIL": "actual_composite_skew_ms > 33.33 ms (Composite budget breached; multi-modal alignment invalidated)"
+      },
+      "independence_mandate": "Composite reserve consumption is determined SOLELY by actual_composite_skew_ms. Component jitter excursions into COMPONENT_MARGIN_CONSUMED do NOT algebraically deplete the 15.33 ms composite reserve."
+    }
+  },
+  "gate_c1_evaluation_rule": {
+    "rule": "Gate C1 PASS requires: (1) ALL deployed individual channels are in NOMINAL or COMPONENT_MARGIN_CONSUMED state AND (2) composite_margin_state is either COMPOSITE_NOMINAL_PASS or COMPOSITE_RESERVE_CONSUMED. No channel may bypass its component limit because composite skew is low.",
+    "current_status": "UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING"
+  }
+}

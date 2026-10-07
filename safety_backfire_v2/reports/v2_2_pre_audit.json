@@ -1,0 +1,131 @@
+{
+  "v2_2_audit": {
+    "audit_date": "2026-09-21",
+    "auditor": "automated_code_analysis",
+    "physical_ground_truth_available": false,
+    "physical_ground_truth_note": "No physical measurements of the filming location are available. Distance validation (Phases 3-4, 9) cannot be performed against real-world ground truth.",
+
+    "pipeline_components": {
+
+      "detection": {
+        "model": "YOLOv8 custom fine-tuned (safety_backfire_v07)",
+        "classes": ["person (0)", "forklift (1)"],
+        "inference_config": {
+          "imgsz": 960,
+          "conf_threshold": 0.08,
+          "iou_threshold": 0.70,
+          "device": "cpu"
+        },
+        "cabin_suppression": "Persons whose centroid falls inside a forklift bounding box are suppressed to prevent operator false detections.",
+        "known_limitation": "Low confidence threshold (0.08) increases recall but risks more false positives."
+      },
+
+      "tracking": {
+        "tracker": "ByteTrack (bytetrack.yaml)",
+        "id_assignment": "ByteTrack assigns integer Track IDs via IoU matching + re-identification. IDs persist across frames via the `persist=True` flag.",
+        "missing_detection_handling": "EventEngine tolerates up to max_gap_frames=15 consecutive missed frames before closing an event. ByteTrack itself has internal lost-track buffer.",
+        "id_switch_risk": "When tracking is lost for >15 frames, a new ID is assigned on re-detection, causing fragmentation.",
+        "known_limitation": "No manual Track ID to physical identity mapping. Fallback IDs are anonymous integers."
+      },
+
+      "ground_plane_homography": {
+        "calibration_type": "Manual 4-point homography (src_pts hardcoded to video-specific coordinates)",
+        "src_pts_pixel": [[210.0, 180.0], [340.0, 180.0], [150.0, 340.0], [430.0, 340.0]],
+        "dst_pts_world_m": [[0.0, 6.0], [3.5, 6.0], [0.0, 0.0], [3.5, 0.0]],
+        "implied_world_region": "3.5m wide x 6.0m deep",
+        "calibration_bounds_margin_px": 100,
+        "out_of_bounds_handling": "Returns calibration_status=EXTRAPOLATED_OUT_OF_BOUNDS and distance_m=None",
+        "critical_limitation": "src_pts are HARDCODED estimates, NOT verified against physical measurements. The 3.5m x 6.0m world space is an ASSUMPTION, not a measured ground truth.",
+        "physical_validation_status": "NOT VALIDATED — No physical measurements available"
+      },
+
+      "footprint_extraction": {
+        "method": "Bottom-center of bounding box (cx, y2) is used as ground contact point",
+        "formula": "cx = (x1+x2)/2, foot_y = y2",
+        "known_limitation": "Does not account for perspective foreshortening, object height, or camera angle. For tall objects (forklifts), the foot point may be significantly offset from true ground contact."
+      },
+
+      "distance_calculation": {
+        "method": "Euclidean distance in world coordinates after homography projection",
+        "code_path": "geometry.py → compute_metric_distance → calibrator.compute_world_distance",
+        "validity_check": "Both footpoints must be within calibrated bounds (src_pts ± 100px margin)",
+        "output_fields": ["distance_px", "distance_m", "calibration_status", "calibration_confidence"],
+        "physical_validation_status": "NOT VALIDATED — Homography parameters unverified against physical measurements"
+      },
+
+      "trajectory": {
+        "coordinate_space": "World coordinates (meters) after homography",
+        "velocity_smoothing": "Rolling window of smoothing_window=5 points to suppress jitter",
+        "direction_calculation": "atan2(vy, vx) → degrees",
+        "known_limitation": "Smoothing may mask sudden direction changes in real scenarios"
+      },
+
+      "ttc_calculation": {
+        "method": "Metric TTC = distance_m / approach_velocity_m_s",
+        "approach_velocity": "Dot product of relative velocity vector with normalized position vector",
+        "undefined_conditions": ["v_approach <= 0.1 m/s → NO_APPROACH", "distance <= 0.1m → edge case", "No valid position data → UNDEFINED"],
+        "physical_validation_status": "ALGORITHMICALLY VALIDATED — No real-world ground truth for relative motion available"
+      },
+
+      "interaction_event": {
+        "creation_trigger": "Any frame where distance_m < calibration max AND calibration_status=VALID",
+        "continuation_logic": "Event continues if same P-F pair seen within max_gap_frames=15 frames",
+        "fields": ["event_id", "person_id", "forklift_id", "start_frame", "end_frame", "duration_sec", "min_distance_m", "median_distance_m", "peak_approach_speed", "dominant_zone"],
+        "known_limitation": "Only person-forklift pairs generate events. Person-person or forklift-forklift interactions are ignored."
+      },
+
+      "risk_exposure": {
+        "model": "Multi-factor exponential model",
+        "components": {
+          "distance_risk": "exp(-scale * min_dist) + exp(-scale * median_dist) with configurable weights",
+          "duration_risk": "base_weight * duration + caution_multiplier * time_in_caution + danger_multiplier * time_in_danger",
+          "kinematic_risk": "peak_approach_speed * weight (capped at max_velocity_contribution)"
+        },
+        "config_file": "config/risk_weights.yaml",
+        "known_limitation": "Weights are PROJECT-DEFINED, not derived from industrial safety standards or empirical data."
+      },
+
+      "evidence_engine": {
+        "penalty_criteria": [
+          {"criterion": "Zero events observed", "penalty": 0.4},
+          {"criterion": ">50% events shorter than 0.2s (fragmentation)", "penalty": 0.3},
+          {"criterion": "Events outside calibration bounds (per event)", "penalty": 0.1},
+          {"criterion": "Tracking failure rate > 20%", "penalty": 0.4}
+        ],
+        "level_thresholds": {
+          "HIGH": ">= 0.8",
+          "MODERATE": ">= 0.6",
+          "LOW": ">= 0.4",
+          "INSUFFICIENT": "< 0.4"
+        },
+        "critical_note": "High YOLO detection confidence does NOT influence Evidence Level. Only data completeness and structural quality matter."
+      },
+
+      "decision_engine": {
+        "signals": ["INSUFFICIENT_EVIDENCE", "SAFETY_BACKFIRE", "RISK_IMPROVEMENT", "NO_SIGNIFICANT_CHANGE"],
+        "logic": [
+          "If evidence=INSUFFICIENT → block verdict immediately",
+          "strength += 0.3 if risk_exposure_change > 0",
+          "strength += 0.3 if high_severity_change > 0",
+          "strength += 0.2 if risk_displaced",
+          "strength += 0.2 if counterfactual=CONSISTENT_WITH_BACKFIRE",
+          "SAFETY_BACKFIRE if strength >= 0.7",
+          "RISK_IMPROVEMENT if risk_change < 0 AND counterfactual=IMPROVEMENT",
+          "NO_SIGNIFICANT_CHANGE otherwise"
+        ],
+        "final_confidence": "evidence_confidence * min(1.0, strength + 0.2)"
+      }
+    },
+
+    "identified_gaps": [
+      "Homography src_pts are hardcoded estimates — NOT physically measured",
+      "World space dimensions (3.5m x 6.0m) are assumed, not verified",
+      "No human-annotated Ground Truth exists for test.mp4 or test2.mp4",
+      "IDF1/Recall/Precision for real CCTV tracking = NOT COMPUTABLE without GT annotations",
+      "Physical distance validation = NOT COMPUTABLE without field measurements",
+      "TTC real-world validation = NOT COMPUTABLE without controlled relative motion GT",
+      "Risk weights are project-defined, not validated against safety standards",
+      "No before/after intervention metadata exists for test videos"
+    ]
+  }
+}

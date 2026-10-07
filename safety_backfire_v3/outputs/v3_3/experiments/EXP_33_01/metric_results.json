@@ -1,0 +1,44 @@
+{
+  "experiment_id": "EXP_33_01",
+  "target_coverage": 0.95,
+  "N_total": 745,
+  "covered_count": 669,
+  "not_covered_count": 76,
+  "out_of_sample_coverage_rate": 0.898,
+  "confidence_interval_95": [
+    0.8742,
+    0.9177
+  ],
+  "CI_method": "Wilson_Score_Interval",
+  "independence_unit": "Track_Coordinate_Measurement",
+  "nominal_odd_strata": {
+    "N": 663,
+    "covered": 614,
+    "coverage_rate": 0.9261,
+    "confidence_interval_95": [
+      0.9036,
+      0.9436
+    ],
+    "target": 0.95,
+    "meets_target": false
+  },
+  "out_of_odd_boundary_strata": {
+    "N": 82,
+    "covered": 55,
+    "coverage_rate": 0.6707,
+    "safety_note": "Undercoverage occurs in far-field (>8.0m); triggers SAFE_REFUSAL under V3.3 boundary rules."
+  },
+  "camera_strata": {
+    "CAM_SECTOR_C_03": {
+      "covered": 354,
+      "total": 373,
+      "coverage": 0.9491
+    },
+    "CAM_SECTOR_D_04": {
+      "covered": 315,
+      "total": 372,
+      "coverage": 0.8468
+    }
+  },
+  "interpretation": "Locked calibration factor k=2.42 achieved 95.00% in-sample, but demonstrated empirical undercoverage on out-of-sample data: nominal ODD coverage observed at 92.61% [95% CI: 90.36%-94.36%], falling below the 95.0% pre-registered target. In far-field boundary (>8.0m), coverage degraded to 67.07%. This constitutes an empirical safety finding requiring safe refusal gating rather than assumed universal coverage."
+}

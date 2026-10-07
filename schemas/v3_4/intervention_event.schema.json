@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safety-backfire-ai.org/schemas/v3_4/intervention_event.schema.json",
+  "title": "V3.4 Intervention Event Schema",
+  "description": "Schema for physical safety interventions, multi-reviewer adjudication, and backfire ground-truth labels.",
+  "type": "object",
+  "required": [
+    "event_id",
+    "facility_id",
+    "intervention_id",
+    "intervention_type",
+    "pre_start",
+    "pre_end",
+    "intervention_start",
+    "intervention_end",
+    "post_start",
+    "post_end",
+    "primary_zone",
+    "secondary_zones",
+    "affected_person_ids",
+    "affected_vehicle_ids",
+    "gt_label",
+    "reviewer_count",
+    "adjudicated_label",
+    "adjudication_notes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique identifier for this safety event."
+    },
+    "facility_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Facility identifier."
+    },
+    "intervention_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Automated system or human operator intervention record ID."
+    },
+    "intervention_type": {
+      "type": "string",
+      "enum": [
+        "AGV_EMERGENCY_STOP",
+        "AGV_SPEED_REDUCTION",
+        "AUDIBLE_HORN_ALERT",
+        "VISUAL_FLASHING_BEACON",
+        "OPERATOR_MANUAL_OVERRIDE",
+        "GATE_INTERLOCK_ENGAGED",
+        "UNKNOWN"
+      ],
+      "description": "Type of physical intervention executed."
+    },
+    "pre_start": {
+      "type": "number",
+      "minimum": 0.0,
+      "description": "Start timestamp of baseline pre-intervention window (seconds)."
+    },
+    "pre_end": {
+      "type": "number",
+      "minimum": 0.0,
+      "description": "End timestamp of baseline pre-intervention window (seconds)."
+    },
+    "intervention_start": {
+      "type": "number",
+      "minimum": 0.0,
+      "description": "Start timestamp of active intervention engagement (seconds)."
+    },
+    "intervention_end": {
+      "type": "number",
+      "minimum": 0.0,
+      "description": "End timestamp of active intervention engagement (seconds)."
+    },
+    "post_start": {
+      "type": "number",
+      "minimum": 0.0,
+      "description": "Start timestamp of post-intervention operational window (seconds)."
+    },
+    "post_end": {
+      "type": "number",
+      "minimum": 0.0,
+      "description": "End timestamp of post-intervention operational window (seconds)."
+    },
+    "primary_zone": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Primary facility zone where intervention occurred."
+    },
+    "secondary_zones": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Adjacent zones affected by traffic diversion or stopping."
+    },
+    "affected_person_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Identities of pedestrians/workers directly involved."
+    },
+    "affected_vehicle_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Identities of industrial vehicles directly involved."
+    },
+    "gt_label": {
+      "type": "string",
+      "enum": [
+        "BACKFIRE",
+        "NO_BACKFIRE",
+        "AMBIGUOUS"
+      ],
+      "description": "Primary ground truth label."
+    },
+    "reviewer_count": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Number of safety assurance engineers participating in adjudication."
+    },
+    "adjudicated_label": {
+      "type": "string",
+      "enum": [
+        "BACKFIRE",
+        "NO_BACKFIRE",
+        "AMBIGUOUS"
+      ],
+      "description": "Consensus adjudicated label."
+    },
+    "adjudication_notes": {
+      "type": "string",
+      "description": "Detailed engineering rationale and review notes."
+    }
+  }
+}

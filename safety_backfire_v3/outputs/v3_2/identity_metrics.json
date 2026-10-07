@@ -1,0 +1,52 @@
+{
+  "validation_layer": "LEVEL_C_REAL_IDENTITY",
+  "total_stress_encounters_N": 18,
+  "overall_identity_accuracy_pct": 88.88,
+  "total_identity_swaps": 2,
+  "total_false_merges": 1,
+  "total_false_splits": 2,
+  "mean_identity_age_survival_sec": 38.4,
+  "stress_categories": {
+    "SIMILAR_PPE_NEON_VESTS": {
+      "encounters": 6,
+      "swaps_detected": 1,
+      "false_merges": 0,
+      "false_splits": 1,
+      "reid_cosine_similarity_margin": 0.12,
+      "accuracy_pct": 83.3
+    },
+    "IDENTICAL_FORKLIFTS_CROSSING": {
+      "encounters": 5,
+      "swaps_detected": 0,
+      "false_merges": 0,
+      "false_splits": 0,
+      "reid_cosine_similarity_margin": 0.28,
+      "accuracy_pct": 100.0
+    },
+    "PROLONGED_OCCLUSION_GT_3S": {
+      "encounters": 4,
+      "swaps_detected": 1,
+      "false_merges": 1,
+      "false_splits": 1,
+      "reid_cosine_similarity_margin": 0.08,
+      "accuracy_pct": 75.0
+    },
+    "LIGHTING_TRANSITION_ZONES": {
+      "encounters": 3,
+      "swaps_detected": 0,
+      "false_merges": 0,
+      "false_splits": 0,
+      "reid_cosine_similarity_margin": 0.22,
+      "accuracy_pct": 100.0
+    }
+  },
+  "documented_boundary_reaffirmed": "FAIL-13 & FAIL-40: Visual embeddings alone cannot differentiate identical uniforms without continuous spatial trajectory gating.",
+  "failure_candidates_audited": {
+    "CANDIDATE-40": {
+      "description": "Identity swap on identical high-vis PPE uniforms during crossing pass",
+      "status": "CONFIRMED_AS_FAIL-40",
+      "safety_impact": "Swapping identity between operator and pedestrian risks false alarm suppression.",
+      "remediation": "Spatial Kalman gating enforced; appearance similarity alone cannot override trajectory separation."
+    }
+  }
+}

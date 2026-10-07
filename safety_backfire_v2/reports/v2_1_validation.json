@@ -1,0 +1,166 @@
+{
+  "geometry": {
+    "overall_metrics": {
+      "MAE": 0.0,
+      "RMSE": 0.0
+    },
+    "point_tests": [
+      {
+        "zone": "foreground_center",
+        "known_distance_m": 3.5,
+        "estimated_distance_m": 3.5,
+        "absolute_error_m": 0.0,
+        "relative_error_percent": 0.0,
+        "status": "VALID"
+      },
+      {
+        "zone": "foreground_left",
+        "known_distance_m": 1.75,
+        "estimated_distance_m": 1.75,
+        "absolute_error_m": 0.0,
+        "relative_error_percent": 0.0,
+        "status": "VALID"
+      },
+      {
+        "zone": "background_center",
+        "known_distance_m": 3.5,
+        "estimated_distance_m": 3.5,
+        "absolute_error_m": 0.0,
+        "relative_error_percent": 0.0,
+        "status": "VALID"
+      },
+      {
+        "zone": "depth_left",
+        "known_distance_m": 6.0,
+        "estimated_distance_m": 6.0,
+        "absolute_error_m": 0.0,
+        "relative_error_percent": 0.0,
+        "status": "VALID"
+      },
+      {
+        "zone": "depth_right",
+        "known_distance_m": 6.0,
+        "estimated_distance_m": 6.0,
+        "absolute_error_m": 0.0,
+        "relative_error_percent": 0.0,
+        "status": "VALID"
+      },
+      {
+        "zone": "middle_ground",
+        "known_distance_m": 3.5,
+        "estimated_distance_m": 3.5,
+        "absolute_error_m": 0.0,
+        "relative_error_percent": 0.0,
+        "status": "VALID"
+      },
+      {
+        "zone": "diagonal_cross",
+        "known_distance_m": 6.946,
+        "estimated_distance_m": 6.946,
+        "absolute_error_m": 0.0,
+        "relative_error_percent": 0.0,
+        "status": "VALID"
+      },
+      {
+        "zone": "out_of_bounds_left",
+        "known_distance_m": 1.25,
+        "estimated_distance_m": 1.25,
+        "absolute_error_m": 0.0,
+        "relative_error_percent": 0.0,
+        "status": "VALID"
+      }
+    ]
+  },
+  "tracking": {
+    "tracking_metrics": {
+      "total_unique_ids_generated": 3,
+      "long_continuous_tracks": 2,
+      "fragmented_tracks": 1,
+      "average_track_duration_frames": 32.0,
+      "frames_with_no_detections": 5,
+      "IDF1": 0.561,
+      "ID_switches_absolute": 1,
+      "recall": 0.95,
+      "precision": 0.99,
+      "note": "Metrics computed mathematically against synthetic single-object occlusion scenario."
+    }
+  },
+  "ttc": {
+    "all_passed": true,
+    "scenarios": [
+      {
+        "scenario": "Direct Approach",
+        "expected_ttc": 5.0,
+        "actual_ttc": 5.0,
+        "expected_status": "VALID",
+        "actual_status": "VALID",
+        "passed": true
+      },
+      {
+        "scenario": "Diverging",
+        "expected_ttc": null,
+        "actual_ttc": null,
+        "expected_status": "NO_APPROACH",
+        "actual_status": "NO_APPROACH",
+        "passed": true
+      },
+      {
+        "scenario": "Stationary Objects",
+        "expected_ttc": null,
+        "actual_ttc": null,
+        "expected_status": "NO_APPROACH",
+        "actual_status": "NO_APPROACH",
+        "passed": true
+      },
+      {
+        "scenario": "Zero Relative Velocity (Same Direction)",
+        "expected_ttc": null,
+        "actual_ttc": null,
+        "expected_status": "NO_APPROACH",
+        "actual_status": "NO_APPROACH",
+        "passed": true
+      },
+      {
+        "scenario": "Angled Approach",
+        "expected_ttc": 10.0,
+        "actual_ttc": 10.0,
+        "expected_status": "VALID",
+        "actual_status": "VALID",
+        "passed": true
+      }
+    ]
+  },
+  "events": {
+    "event_validation_passed": true,
+    "errors": [],
+    "total_events": 1
+  },
+  "risk": {
+    "risk_validation_passed": true,
+    "errors": []
+  },
+  "evidence": {
+    "evidence_validation_passed": true,
+    "errors": [],
+    "excellent_score": 1.0,
+    "partial_score": 0.6,
+    "poor_score": 0.5,
+    "missing_score": 0.2
+  },
+  "backfire": {
+    "backfire_validation_passed": true,
+    "errors": []
+  },
+  "baseline_result": {
+    "signal": "INSUFFICIENT_EVIDENCE",
+    "strength": 0.0,
+    "evidence_level": "INSUFFICIENT",
+    "confidence": 0.2,
+    "reasoning": [
+      "Data quality is too poor to render a verdict.",
+      "No interaction events observed. Analysis relies on zero-event baseline.",
+      "High tracking failure rate (29.1% of frames lacked detections).",
+      "CRITICAL: Evidence is insufficient to support any causal or comparative claims."
+    ]
+  }
+}

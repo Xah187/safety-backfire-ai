@@ -1,0 +1,303 @@
+{
+  "total_scenarios": 18,
+  "all_matched": true,
+  "results": [
+    {
+      "event_id": "CASE_H01_SAFE_COMPLETE_STOP",
+      "scenario_type": "SAFE_COMPLETE_STOP",
+      "gate_results": {
+        "G1_Intervention_Confirmation": "PASS",
+        "G2_Observability": "FAIL",
+        "G3_Secondary_Risk_Delta": "FAIL",
+        "G4_Causal_Isolation": "FAIL"
+      },
+      "actual_candidate_class": "PRIMARY_NEAR_MISS",
+      "expected_candidate_class": "PRIMARY_NEAR_MISS",
+      "logic_verification_match": true,
+      "failure_reasons": [
+        "G2: Secondary zone interior depth is occluded (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3: Secondary risk did not increase (Delta_R_sec = 0.0000 <= 0).",
+        "G4: No continuous physical trajectory linking intervention to secondary exposure."
+      ]
+    },
+    {
+      "event_id": "CASE_H02_TRUE_SYNTHETIC_BACKFIRE",
+      "scenario_type": "PROTOTYPICAL_BACKFIRE_CASCADE",
+      "gate_results": {
+        "G1_Intervention_Confirmation": "PASS",
+        "G2_Observability": "PASS",
+        "G3_Secondary_Risk_Delta": "PASS",
+        "G4_Causal_Isolation": "PASS"
+      },
+      "actual_candidate_class": "BACKFIRE_CANDIDATE",
+      "expected_candidate_class": "BACKFIRE_CANDIDATE",
+      "logic_verification_match": true,
+      "failure_reasons": []
+    },
+    {
+      "event_id": "CASE_H03_OCCLUDED_SECONDARY",
+      "scenario_type": "OBSERVABILITY_BOTTLENECK",
+      "gate_results": {
+        "G1_Intervention_Confirmation": "PASS",
+        "G2_Observability": "FAIL",
+        "G3_Secondary_Risk_Delta": "UNKNOWN",
+        "G4_Causal_Isolation": "PASS"
+      },
+      "actual_candidate_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "expected_candidate_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "logic_verification_match": true,
+      "failure_reasons": [
+        "G2: Secondary zone interior depth is occluded (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3: Secondary zone hazard state is unavailable in PRE or POST window."
+      ]
+    },
+    {
+      "event_id": "CASE_H04_NEW_FORKLIFT_CONFOUNDER",
+      "scenario_type": "CONFOUNDER_TURNOVER",
+      "gate_results": {
+        "G1_Intervention_Confirmation": "PASS",
+        "G2_Observability": "PASS",
+        "G3_Secondary_Risk_Delta": "PASS",
+        "G4_Causal_Isolation": "FAIL"
+      },
+      "actual_candidate_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "expected_candidate_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "logic_verification_match": true,
+      "failure_reasons": [
+        "G4: No continuous physical trajectory linking intervention to secondary exposure."
+      ]
+    },
+    {
+      "event_id": "CASE_H05_INDEPENDENT_WORKER_CLUSTER",
+      "scenario_type": "CONFOUNDER_PEDESTRIAN_CROWD",
+      "gate_results": {
+        "G1_Intervention_Confirmation": "PASS",
+        "G2_Observability": "PASS",
+        "G3_Secondary_Risk_Delta": "PASS",
+        "G4_Causal_Isolation": "FAIL"
+      },
+      "actual_candidate_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "expected_candidate_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "logic_verification_match": true,
+      "failure_reasons": [
+        "G4: No continuous physical trajectory linking intervention to secondary exposure."
+      ]
+    },
+    {
+      "event_id": "CASE_H06_POSITIVE_DELTA_LATENCY_VIOLATION",
+      "scenario_type": "TEMPORAL_LATENCY_VIOLATION",
+      "gate_results": {
+        "G1_Intervention_Confirmation": "PASS",
+        "G2_Observability": "PASS",
+        "G3_Secondary_Risk_Delta": "PASS",
+        "G4_Causal_Isolation": "FAIL"
+      },
+      "actual_candidate_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "expected_candidate_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "logic_verification_match": true,
+      "failure_reasons": [
+        "G4: Propagation latency (5.50s) exceeds maximum causal threshold (2.00s)."
+      ]
+    },
+    {
+      "event_id": "CASE_H07_TEMPORAL_LINK_DISCONNECTED_PATH",
+      "scenario_type": "DISCONNECTED_PHYSICAL_TRAJECTORY",
+      "gate_results": {
+        "G1_Intervention_Confirmation": "PASS",
+        "G2_Observability": "PASS",
+        "G3_Secondary_Risk_Delta": "PASS",
+        "G4_Causal_Isolation": "FAIL"
+      },
+      "actual_candidate_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "expected_candidate_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "logic_verification_match": true,
+      "failure_reasons": [
+        "G4: No continuous physical trajectory linking intervention to secondary exposure."
+      ]
+    },
+    {
+      "event_id": "CASE_H08_SECONDARY_DELTA_ZERO",
+      "scenario_type": "ZERO_DELTA_NEAR_MISS",
+      "gate_results": {
+        "G1_Intervention_Confirmation": "PASS",
+        "G2_Observability": "PASS",
+        "G3_Secondary_Risk_Delta": "FAIL",
+        "G4_Causal_Isolation": "FAIL"
+      },
+      "actual_candidate_class": "PRIMARY_NEAR_MISS",
+      "expected_candidate_class": "PRIMARY_NEAR_MISS",
+      "logic_verification_match": true,
+      "failure_reasons": [
+        "G3: Secondary risk did not increase (Delta_R_sec = 0.0000 <= 0).",
+        "G4: No continuous physical trajectory linking intervention to secondary exposure."
+      ]
+    },
+    {
+      "event_id": "CASE_H09_SECONDARY_DELTA_NEGATIVE",
+      "scenario_type": "NEGATIVE_DELTA_NEAR_MISS",
+      "gate_results": {
+        "G1_Intervention_Confirmation": "PASS",
+        "G2_Observability": "PASS",
+        "G3_Secondary_Risk_Delta": "FAIL",
+        "G4_Causal_Isolation": "FAIL"
+      },
+      "actual_candidate_class": "PRIMARY_NEAR_MISS",
+      "expected_candidate_class": "PRIMARY_NEAR_MISS",
+      "logic_verification_match": true,
+      "failure_reasons": [
+        "G3: Secondary risk did not increase (Delta_R_sec = -0.4000 <= 0).",
+        "G4: No continuous physical trajectory linking intervention to secondary exposure."
+      ]
+    },
+    {
+      "event_id": "CASE_H10_INTERVENTION_NOT_CONFIRMED",
+      "scenario_type": "UNCONFIRMED_INTERVENTION",
+      "gate_results": {
+        "G1_Intervention_Confirmation": "FAIL",
+        "G2_Observability": "PASS",
+        "G3_Secondary_Risk_Delta": "FAIL",
+        "G4_Causal_Isolation": "FAIL"
+      },
+      "actual_candidate_class": "PRIMARY_NEAR_MISS",
+      "expected_candidate_class": "PRIMARY_NEAR_MISS",
+      "logic_verification_match": true,
+      "failure_reasons": [
+        "G1: No confirmed intervention signal observed.",
+        "G3: Secondary risk did not increase (Delta_R_sec = 0.0000 <= 0).",
+        "G4: No continuous physical trajectory linking intervention to secondary exposure."
+      ]
+    },
+    {
+      "event_id": "CASE_H11_SECONDARY_ZONE_UNKNOWN",
+      "scenario_type": "UNDEFINED_SECONDARY_GEOMETRY",
+      "gate_results": {
+        "G1_Intervention_Confirmation": "PASS",
+        "G2_Observability": "FAIL",
+        "G3_Secondary_Risk_Delta": "UNKNOWN",
+        "G4_Causal_Isolation": "FAIL"
+      },
+      "actual_candidate_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "expected_candidate_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "logic_verification_match": true,
+      "failure_reasons": [
+        "G2: Secondary zone is undefined or unobservable (NONE).",
+        "G3: Secondary zone hazard state is unavailable in PRE or POST window.",
+        "G4: No continuous physical trajectory linking intervention to secondary exposure."
+      ]
+    },
+    {
+      "event_id": "CASE_H12_PARTIAL_OBSERVABILITY_SUSPECTED_HAZARD",
+      "scenario_type": "PARTIAL_DEPTH_OBSERVABILITY",
+      "gate_results": {
+        "G1_Intervention_Confirmation": "PASS",
+        "G2_Observability": "FAIL",
+        "G3_Secondary_Risk_Delta": "PASS",
+        "G4_Causal_Isolation": "PASS"
+      },
+      "actual_candidate_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "expected_candidate_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "logic_verification_match": true,
+      "failure_reasons": [
+        "G2: Secondary zone interior depth is occluded (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE)."
+      ]
+    },
+    {
+      "event_id": "CASE_H13_EXACT_DELTA_ZERO_EDGE",
+      "scenario_type": "EXACT_ZERO_DELTA_EDGE",
+      "gate_results": {
+        "G1_Intervention_Confirmation": "PASS",
+        "G2_Observability": "PASS",
+        "G3_Secondary_Risk_Delta": "FAIL",
+        "G4_Causal_Isolation": "FAIL"
+      },
+      "actual_candidate_class": "PRIMARY_NEAR_MISS",
+      "expected_candidate_class": "PRIMARY_NEAR_MISS",
+      "logic_verification_match": true,
+      "failure_reasons": [
+        "G3: Secondary risk did not increase (Delta_R_sec = 0.0000 <= 0).",
+        "G4: No continuous physical trajectory linking intervention to secondary exposure."
+      ]
+    },
+    {
+      "event_id": "CASE_H14_NEGLIGIBLE_SENSOR_NOISE_DELTA",
+      "scenario_type": "NOISE_DELTA_EDGE",
+      "gate_results": {
+        "G1_Intervention_Confirmation": "PASS",
+        "G2_Observability": "PASS",
+        "G3_Secondary_Risk_Delta": "FAIL",
+        "G4_Causal_Isolation": "FAIL"
+      },
+      "actual_candidate_class": "PRIMARY_NEAR_MISS",
+      "expected_candidate_class": "PRIMARY_NEAR_MISS",
+      "logic_verification_match": true,
+      "failure_reasons": [
+        "G3: Secondary risk increase is within negligible sensor noise threshold (Delta_R_sec = 0.0050).",
+        "G4: No continuous physical trajectory linking intervention to secondary exposure."
+      ]
+    },
+    {
+      "event_id": "CASE_H15_CONFOUNDER_STATUS_UNKNOWN",
+      "scenario_type": "UNKNOWN_CONFOUNDER_STATE",
+      "gate_results": {
+        "G1_Intervention_Confirmation": "PASS",
+        "G2_Observability": "PASS",
+        "G3_Secondary_Risk_Delta": "PASS",
+        "G4_Causal_Isolation": "UNKNOWN"
+      },
+      "actual_candidate_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "expected_candidate_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "logic_verification_match": true,
+      "failure_reasons": [
+        "G4: Confounder status is unknown; causal isolation cannot be verified."
+      ]
+    },
+    {
+      "event_id": "CASE_H16_TEMPORAL_ORDERING_VIOLATED",
+      "scenario_type": "STAGE_SEQUENCE_INVERSION",
+      "gate_results": {
+        "G1_Intervention_Confirmation": "PASS",
+        "G2_Observability": "PASS",
+        "G3_Secondary_Risk_Delta": "PASS",
+        "G4_Causal_Isolation": "FAIL"
+      },
+      "actual_candidate_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "expected_candidate_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "logic_verification_match": true,
+      "failure_reasons": [
+        "G4: Temporal stage precedence violated (T0 < T1 < T2 <= T3 <= T4 < T5 not satisfied)."
+      ]
+    },
+    {
+      "event_id": "CASE_H17_POST_WINDOW_INADEQUATE",
+      "scenario_type": "TRUNCATED_POST_WINDOW",
+      "gate_results": {
+        "G1_Intervention_Confirmation": "PASS",
+        "G2_Observability": "FAIL",
+        "G3_Secondary_Risk_Delta": "PASS",
+        "G4_Causal_Isolation": "PASS"
+      },
+      "actual_candidate_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "expected_candidate_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "logic_verification_match": true,
+      "failure_reasons": [
+        "G2: Post-intervention observation window is INADEQUATE."
+      ]
+    },
+    {
+      "event_id": "CASE_H18_TRACK_HANDOFF_DURING_PROPAGATION",
+      "scenario_type": "TRACKER_ID_SWAP",
+      "gate_results": {
+        "G1_Intervention_Confirmation": "PASS",
+        "G2_Observability": "PASS",
+        "G3_Secondary_Risk_Delta": "PASS",
+        "G4_Causal_Isolation": "FAIL"
+      },
+      "actual_candidate_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "expected_candidate_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "logic_verification_match": true,
+      "failure_reasons": [
+        "G4: No continuous physical trajectory linking intervention to secondary exposure."
+      ]
+    }
+  ]
+}

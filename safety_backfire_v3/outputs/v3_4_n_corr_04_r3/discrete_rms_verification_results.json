@@ -1,0 +1,329 @@
+{
+  "boundary_vectors": [
+    {
+      "I0_A": 0.5619891400324082,
+      "delta_ms": 1.1170861745708525,
+      "label": "below_crit_1e-6",
+      "region": "REGION_2",
+      "root_iterations": 51,
+      "root_residual": 2.220446049250313e-16,
+      "t_phys_ms": 13.882911025424065,
+      "t_rms_ms": 14.999997199994917
+    },
+    {
+      "I0_A": 0.5619897020221102,
+      "delta_ms": 1.1170861745745349,
+      "label": "equal_crit",
+      "region": "BOUNDARY_AT_T0_PLUS_TW",
+      "root_iterations": 0,
+      "t_phys_ms": 13.882913825425465,
+      "t_rms_ms": 15.0
+    },
+    {
+      "I0_A": 0.5619902640118122,
+      "delta_ms": 1.1170861745745366,
+      "label": "above_crit_1e-6",
+      "region": "REGION_3",
+      "root_iterations": 0,
+      "t_phys_ms": 13.882916625424064,
+      "t_rms_ms": 15.000002799998601
+    }
+  ],
+  "comparisons_on_grid_t0_13p0ms": [
+    {
+      "I0_A": 0.5,
+      "continuous": {
+        "I0_A": 0.5,
+        "delta_ms": 1.0571289209715609,
+        "region": "REGION_2",
+        "root_iterations": 51,
+        "root_residual": 2.220446049250313e-16,
+        "t_phys_ms": 13.555662628426747,
+        "t_rms_ms": 14.612791549398308
+      },
+      "diff_grid_quantization_ms": 0.08700000000000152,
+      "diff_riemann_subgridA_minus_continuous_ms": 0.00020845060169172314,
+      "diff_total_grid_minus_continuous_ms": 0.08720845060169324,
+      "diff_window_variant_B_minus_A_ms": 0.0,
+      "diff_window_variant_C_minus_A_ms": 0.0,
+      "discrete_grid_frame": {
+        "below_at_first_valid_frame": false,
+        "k": 147,
+        "n": 14700,
+        "rms_A": 0.4006179081811758,
+        "t_ms": 14.700000000000001
+      },
+      "discrete_subgrid_A": {
+        "n": 14613,
+        "t_ms": 14.613
+      },
+      "discrete_subgrid_B": {
+        "n": 14613,
+        "t_ms": 14.613
+      },
+      "discrete_subgrid_C": {
+        "n": 14613,
+        "t_ms": 14.613
+      },
+      "precision_margin_to_threshold_A": 0.009382091818824156,
+      "precision_prefix_vs_fsum_abs_A": 3.774758283725532e-15,
+      "previous_frame_rms_A": 0.41127702245055875,
+      "t0_ms": 13.0
+    },
+    {
+      "I0_A": 0.55,
+      "continuous": {
+        "I0_A": 0.55,
+        "delta_ms": 1.1153238462708135,
+        "region": "REGION_2",
+        "root_iterations": 51,
+        "root_residual": 2.220446049250313e-16,
+        "t_phys_ms": 13.822531131878858,
+        "t_rms_ms": 14.937854978149671
+      },
+      "diff_grid_quantization_ms": 0.06199999999999939,
+      "diff_riemann_subgridA_minus_continuous_ms": 0.00014502185032938542,
+      "diff_total_grid_minus_continuous_ms": 0.062145021850328774,
+      "diff_window_variant_B_minus_A_ms": 0.0,
+      "diff_window_variant_C_minus_A_ms": 0.0,
+      "discrete_grid_frame": {
+        "below_at_first_valid_frame": false,
+        "k": 150,
+        "n": 15000,
+        "rms_A": 0.40118125390961185,
+        "t_ms": 15.0
+      },
+      "discrete_subgrid_A": {
+        "n": 14938,
+        "t_ms": 14.938
+      },
+      "discrete_subgrid_B": {
+        "n": 14938,
+        "t_ms": 14.938
+      },
+      "discrete_subgrid_C": {
+        "n": 14938,
+        "t_ms": 14.938
+      },
+      "precision_margin_to_threshold_A": 0.00881874609038813,
+      "precision_prefix_vs_fsum_abs_A": 8.1601392309949e-15,
+      "previous_frame_rms_A": 0.41510893252692144,
+      "t0_ms": 13.0
+    },
+    {
+      "I0_A": 0.6,
+      "continuous": {
+        "I0_A": 0.6,
+        "delta_ms": 1.1170861745745366,
+        "region": "REGION_3",
+        "root_iterations": 0,
+        "t_phys_ms": 14.06616298744982,
+        "t_rms_ms": 15.183249162024357
+      },
+      "diff_grid_quantization_ms": 0.017000000000001236,
+      "diff_riemann_subgridA_minus_continuous_ms": -0.0002491620243567638,
+      "diff_total_grid_minus_continuous_ms": 0.016750837975644473,
+      "diff_window_variant_B_minus_A_ms": 0.0010000000000012221,
+      "diff_window_variant_C_minus_A_ms": 0.0010000000000012221,
+      "discrete_grid_frame": {
+        "below_at_first_valid_frame": false,
+        "k": 152,
+        "n": 15200,
+        "rms_A": 0.4074817455602493,
+        "t_ms": 15.200000000000001
+      },
+      "discrete_subgrid_A": {
+        "n": 15183,
+        "t_ms": 15.183
+      },
+      "discrete_subgrid_B": {
+        "n": 15184,
+        "t_ms": 15.184000000000001
+      },
+      "discrete_subgrid_C": {
+        "n": 15184,
+        "t_ms": 15.184000000000001
+      },
+      "precision_margin_to_threshold_A": 0.002518254439750678,
+      "precision_prefix_vs_fsum_abs_A": 7.438494264988549e-15,
+      "previous_frame_rms_A": 0.4222976601607469,
+      "t0_ms": 13.0
+    },
+    {
+      "I0_A": 0.8,
+      "continuous": {
+        "I0_A": 0.8,
+        "delta_ms": 1.1170861745745349,
+        "region": "REGION_3",
+        "root_iterations": 0,
+        "t_phys_ms": 14.871672790314808,
+        "t_rms_ms": 15.988758964889342
+      },
+      "diff_grid_quantization_ms": 0.010999999999999233,
+      "diff_riemann_subgridA_minus_continuous_ms": 0.0002410351106583164,
+      "diff_total_grid_minus_continuous_ms": 0.011241035110657549,
+      "diff_window_variant_B_minus_A_ms": 0.0,
+      "diff_window_variant_C_minus_A_ms": 0.0,
+      "discrete_grid_frame": {
+        "below_at_first_valid_frame": false,
+        "k": 160,
+        "n": 16000,
+        "rms_A": 0.40828437217494473,
+        "t_ms": 16.0
+      },
+      "discrete_subgrid_A": {
+        "n": 15989,
+        "t_ms": 15.989
+      },
+      "discrete_subgrid_B": {
+        "n": 15989,
+        "t_ms": 15.989
+      },
+      "discrete_subgrid_C": {
+        "n": 15989,
+        "t_ms": 15.989
+      },
+      "precision_margin_to_threshold_A": 0.0017156278250552437,
+      "precision_prefix_vs_fsum_abs_A": 6.106226635438361e-15,
+      "previous_frame_rms_A": 0.4231294700395001,
+      "t0_ms": 13.0
+    },
+    {
+      "I0_A": 1.0,
+      "continuous": {
+        "I0_A": 1.0,
+        "delta_ms": 1.1170861745745366,
+        "region": "REGION_3",
+        "root_iterations": 0,
+        "t_phys_ms": 15.496474733994594,
+        "t_rms_ms": 16.61356090856913
+      },
+      "diff_grid_quantization_ms": 0.08599999999999852,
+      "diff_riemann_subgridA_minus_continuous_ms": 0.0004390914308700644,
+      "diff_total_grid_minus_continuous_ms": 0.08643909143086859,
+      "diff_window_variant_B_minus_A_ms": 0.0,
+      "diff_window_variant_C_minus_A_ms": 0.0,
+      "discrete_grid_frame": {
+        "below_at_first_valid_frame": false,
+        "k": 167,
+        "n": 16700,
+        "rms_A": 0.39746523595707983,
+        "t_ms": 16.7
+      },
+      "discrete_subgrid_A": {
+        "n": 16614,
+        "t_ms": 16.614
+      },
+      "discrete_subgrid_B": {
+        "n": 16614,
+        "t_ms": 16.614
+      },
+      "discrete_subgrid_C": {
+        "n": 16614,
+        "t_ms": 16.614
+      },
+      "precision_margin_to_threshold_A": 0.012534764042920143,
+      "precision_prefix_vs_fsum_abs_A": 6.439293542825908e-15,
+      "previous_frame_rms_A": 0.41191695325918903,
+      "t0_ms": 13.0
+    },
+    {
+      "I0_A": 0.5619897020221102,
+      "continuous": {
+        "I0_A": 0.5619897020221102,
+        "delta_ms": 1.1170861745745349,
+        "region": "BOUNDARY_AT_T0_PLUS_TW",
+        "root_iterations": 0,
+        "t_phys_ms": 13.882913825425465,
+        "t_rms_ms": 15.0
+      },
+      "diff_grid_quantization_ms": 0.0,
+      "diff_riemann_subgridA_minus_continuous_ms": 0.0,
+      "diff_total_grid_minus_continuous_ms": 0.0,
+      "diff_window_variant_B_minus_A_ms": 0.0009999999999994458,
+      "diff_window_variant_C_minus_A_ms": 0.0009999999999994458,
+      "discrete_grid_frame": {
+        "below_at_first_valid_frame": false,
+        "k": 150,
+        "n": 15000,
+        "rms_A": 0.40992678789367143,
+        "t_ms": 15.0
+      },
+      "discrete_subgrid_A": {
+        "n": 15000,
+        "t_ms": 15.0
+      },
+      "discrete_subgrid_B": {
+        "n": 15001,
+        "t_ms": 15.001
+      },
+      "discrete_subgrid_C": {
+        "n": 15001,
+        "t_ms": 15.001
+      },
+      "precision_margin_to_threshold_A": 7.321210632854624e-05,
+      "precision_prefix_vs_fsum_abs_A": 1.4988010832439613e-15,
+      "previous_frame_rms_A": 0.4241580823591287,
+      "t0_ms": 13.0
+    }
+  ],
+  "continuous": {
+    "B": 0.7295507346927675,
+    "C": 1.4902730348894686,
+    "I0crit_A_at_Iguarded": 0.5619897020221102,
+    "delta_flush_region3_ms": 1.1170861745745353
+  },
+  "continuous_examples": {
+    "0.500": {
+      "I0_A": 0.5,
+      "delta_ms": 1.0571289209715609,
+      "region": "REGION_2",
+      "root_iterations": 51,
+      "root_residual": 2.220446049250313e-16,
+      "t_phys_ms": 13.555662628426747,
+      "t_rms_ms": 14.612791549398308
+    },
+    "0.800": {
+      "I0_A": 0.8,
+      "delta_ms": 1.1170861745745349,
+      "region": "REGION_3",
+      "root_iterations": 0,
+      "t_phys_ms": 14.871672790314808,
+      "t_rms_ms": 15.988758964889342
+    }
+  },
+  "definition": {
+    "M_samples": 100,
+    "N_samples": 2000,
+    "earliest_possible_full_window_sample_n": 1999,
+    "first_valid_frame_k": 20,
+    "first_valid_sample_index_n": 2000,
+    "first_valid_timestamp_ms": 2.0,
+    "fs_Hz": 1000000,
+    "window_at_first_valid_frame_samples": [
+      1,
+      2000
+    ]
+  },
+  "phase_sweeps": [
+    {
+      "I0_A": 0.5,
+      "riemann_max_ms": 0.0002084506016934995,
+      "riemann_min_ms": 0.00020845060169172314,
+      "steps": 20,
+      "total_max_ms": 0.09720845060169303,
+      "total_min_ms": 0.002208450601692391
+    },
+    {
+      "I0_A": 0.8,
+      "riemann_max_ms": 0.0002410351106618691,
+      "riemann_min_ms": 0.00024103511065476368,
+      "steps": 20,
+      "total_max_ms": 0.0962410351106584,
+      "total_min_ms": 0.0012410351106577622
+    }
+  ],
+  "scope_statement": "Self-consistency of a reference model against closed-form equations. Not validation of RMS-PROC-V1.0, hardware, or any physical measurement.",
+  "status_label": "REFERENCE_MODEL_OF_DOCUMENTED_SPEC_NOT_FROZEN_IMPLEMENTATION",
+  "verification": "ALL_INTERNAL_SELF_CONSISTENCY_CHECKS_PASSED"
+}

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BackfireAssessmentV1Schema",
+  "description": "Counterfactual assessment of safety backfire, risk redistribution, and collateral hazards",
+  "type": "object",
+  "required": [
+    "assessment_id",
+    "intervention_id",
+    "primary_category",
+    "backfire_signal",
+    "intended_hazard_reduced"
+  ],
+  "properties": {
+    "assessment_id": {
+      "type": "string"
+    },
+    "intervention_id": {
+      "type": "string"
+    },
+    "primary_category": {
+      "type": "string",
+      "enum": [
+        "RISK_ELIMINATED",
+        "RISK_REDUCED",
+        "RISK_UNCHANGED",
+        "RISK_INCREASED",
+        "RISK_SHIFTED",
+        "NEW_HAZARD_CREATED",
+        "RISK_LATENT",
+        "INDETERMINATE"
+      ]
+    },
+    "backfire_signal": {
+      "type": "string",
+      "enum": [
+        "GENUINE_SAFETY_GAIN",
+        "BENIGN_EQUIVALENCE",
+        "PARTIAL_BACKFIRE",
+        "TRUE_BACKFIRE",
+        "SEVERE_BACKFIRE",
+        "NEUTRAL"
+      ]
+    },
+    "risk_delta_percent": {
+      "type": "number"
+    },
+    "intended_hazard_reduced": {
+      "type": "boolean"
+    },
+    "new_hazards_introduced": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "shifted_zones": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "explanation": {
+      "type": "string"
+    }
+  }
+}

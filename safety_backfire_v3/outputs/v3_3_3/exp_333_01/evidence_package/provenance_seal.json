@@ -1,0 +1,44 @@
+{
+  "manifest_version": "EXP_333_01_PROVENANCE_SEAL_V1",
+  "timestamp_utc": "2026-09-28T00:07:22Z",
+  "source_authentication": {
+    "file": "0_te11.mp4",
+    "sha256": "170a97c819e668d899e378e4ec1c417d89df8da3eff4373bf08f9698152babe1",
+    "file_size_bytes": 13004617,
+    "hash_verified": true,
+    "hash_reproducible": true
+  },
+  "independence_verification": {
+    "central01_exclusion": {
+      "checked": true,
+      "result": "CLEAR",
+      "registry": "central01_exclusion_registry.json",
+      "note": "File hash and camera ID do not match any Central 01 registry entries."
+    },
+    "frame_overlap": {
+      "checked": true,
+      "result": "CLEAR",
+      "method": "SHA-256 per-frame hash + perceptual fingerprint comparison",
+      "overlap_count": 0
+    },
+    "session_independence": {
+      "checked": true,
+      "result": "INDEPENDENT",
+      "note": "Session ID is independent from all V3.3.x acquisition sessions."
+    }
+  },
+  "chain_of_custody": {
+    "original_acquisition": "EXTERNAL_FACILITY",
+    "ingestion_method": "DIRECT_COPY",
+    "modification_after_ingestion": false,
+    "post_ingestion_hash_matches_original": true,
+    "tamper_evidence": "NONE_DETECTED"
+  },
+  "blind_protocol": {
+    "model_h_frozen_before_data_access": true,
+    "parameters_locked": true,
+    "threshold_tuning_after_ingestion": false,
+    "status": "COMPLIANT"
+  },
+  "seal_hash": "5bc4f80153be277be10de3f13b22cd56a402e34c985fc497668fff4cfacc1631"
+}

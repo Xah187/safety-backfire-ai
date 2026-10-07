@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safety-backfire-ai.org/schemas/v3_4/detection_gt.schema.json",
+  "title": "V3.4 Detection Ground Truth Schema",
+  "description": "Schema for independent human ground-truth 2D bounding boxes and footpoints in industrial camera streams.",
+  "type": "object",
+  "required": [
+    "facility_id",
+    "camera_id",
+    "frame_id",
+    "timestamp",
+    "object_id",
+    "class",
+    "bbox",
+    "foot_point",
+    "visibility",
+    "occlusion"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "facility_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique identifier of the physical facility (e.g. WH_EUROPE_01)."
+    },
+    "camera_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique identifier of the surveying camera stream (e.g. Camera_0001)."
+    },
+    "frame_id": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Zero-indexed frame sequential number within the camera stream."
+    },
+    "timestamp": {
+      "type": "number",
+      "minimum": 0.0,
+      "description": "Stream timestamp in seconds relative to synchronization zero."
+    },
+    "object_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique alphanumeric identifier of the annotated entity."
+    },
+    "class": {
+      "type": "string",
+      "enum": [
+        "person",
+        "forklift",
+        "agv",
+        "pallet_jack",
+        "vehicle"
+      ],
+      "description": "Entity category label."
+    },
+    "bbox": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "number",
+        "minimum": 0.0
+      },
+      "description": "Bounding box coordinates formatted as [x_min, y_min, x_max, y_max] in pixels."
+    },
+    "foot_point": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "number",
+        "minimum": 0.0
+      },
+      "description": "Ground contact point formatted as [u, v] in pixel coordinates."
+    },
+    "visibility": {
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        {
+          "type": "string",
+          "enum": ["UNKNOWN"]
+        }
+      ],
+      "description": "Proportion of entity visible [0.0, 1.0], or UNKNOWN if obscured/indeterminate."
+    },
+    "occlusion": {
+      "type": "string",
+      "enum": [
+        "NONE",
+        "PARTIAL",
+        "HEAVY",
+        "UNKNOWN"
+      ],
+      "description": "Discrete occlusion rating or UNKNOWN."
+    }
+  }
+}

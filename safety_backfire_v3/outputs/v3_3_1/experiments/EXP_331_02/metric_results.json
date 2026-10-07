@@ -1,0 +1,16 @@
+{
+  "appropriate_refusal": 1.0,
+  "unsafe_non_refusal": 0.0,
+  "false_refusal": 0.0,
+  "advisory_downgrade_count": 200,
+  "early_refusal_count": 0,
+  "late_refusal_count": 0,
+  "trigger_breakdown": {
+    "uncertainty_triggered_refusal": 30,
+    "ODD_triggered_refusal": 60,
+    "latency_triggered_refusal": 30,
+    "geometry_triggered_refusal": 30,
+    "identity_triggered_refusal": 0
+  },
+  "acceptance_criteria_met": true
+}

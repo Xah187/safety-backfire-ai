@@ -1,0 +1,49 @@
+{
+  "validation_layer": "CAUSALITY_VS_CORRELATION_AUDIT",
+  "scenarios_evaluated": {
+    "CLEAN_BARRIER_INSTALL": {
+      "observed_temporal_delta_pct": -45.0,
+      "causal_attribution_status": "ATTRIBUTED_DIRECT_EFFECT",
+      "is_causally_conclusive": true,
+      "confounders_detected": [],
+      "explanation": "Controlled spatial isolation confirmed; observed risk delta attributable to physical/policy intervention."
+    },
+    "TRAFFIC_SURGE_CONFOUNDER": {
+      "observed_temporal_delta_pct": -10.0,
+      "causal_attribution_status": "INSUFFICIENT_EVIDENCE",
+      "is_causally_conclusive": false,
+      "confounders_detected": [
+        "Exogenous traffic volume shifted by +42.0%"
+      ],
+      "explanation": "Observed temporal change cannot be conclusively attributed to the intervention due to active operational confounders: Exogenous traffic volume shifted by +42.0%"
+    },
+    "SHIFT_CHANGE_CONFOUNDER": {
+      "observed_temporal_delta_pct": -25.0,
+      "causal_attribution_status": "INSUFFICIENT_EVIDENCE",
+      "is_causally_conclusive": false,
+      "confounders_detected": [
+        "Concurrent shift change occurred; staff and equipment turnover present"
+      ],
+      "explanation": "Observed temporal change cannot be conclusively attributed to the intervention due to active operational confounders: Concurrent shift change occurred; staff and equipment turnover present"
+    },
+    "GLOBAL_SITE_SLOWDOWN": {
+      "observed_temporal_delta_pct": -60.0,
+      "causal_attribution_status": "INSUFFICIENT_EVIDENCE",
+      "is_causally_conclusive": false,
+      "confounders_detected": [
+        "Exogenous traffic volume shifted by -55.0%",
+        "Control zone exhibited parallel risk shift (-58.0%), indicating site-wide exogenous driver"
+      ],
+      "explanation": "Observed temporal change cannot be conclusively attributed to the intervention due to active operational confounders: Exogenous traffic volume shifted by -55.0%; Control zone exhibited parallel risk shift (-58.0%), indicating site-wide exogenous driver"
+    }
+  },
+  "causal_safety_rule": "TEMPORAL_CORRELATION != CAUSAL_EFFECT enforced. Confounded observations strictly emit CAUSALITY = INSUFFICIENT_EVIDENCE.",
+  "failure_candidates_audited": {
+    "CANDIDATE-53": {
+      "description": "Backfire causality ambiguity during exogenous site traffic volume shifts",
+      "status": "CONFIRMED_AS_FAIL-53",
+      "safety_impact": "Naive models falsely label external volume spikes as intervention backfires.",
+      "remediation": "Exogenous volume normalization and control-zone Difference-in-Differences audit implemented."
+    }
+  }
+}

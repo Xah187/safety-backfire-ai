@@ -1,0 +1,50 @@
+{
+  "validation_layer": "LEVEL_D_REAL_GEOMETRY",
+  "total_physically_surveyed_points_N": 100,
+  "planar_floor_overall_metrics": {
+    "sample_count": 90,
+    "mae_x_m": 0.0074,
+    "mae_y_m": 0.014,
+    "mae_euclidean_m": 0.0169,
+    "rmse_m": 0.0237,
+    "median_error_m": 0.0113,
+    "max_error_m": 0.103,
+    "bias_y_m": 5.8828
+  },
+  "stratified_by_depth_zone": {
+    "near_zone_1_5_to_4m": {
+      "count": 30,
+      "mae_m": 0.0089,
+      "max_m": 0.0241
+    },
+    "mid_zone_4_to_8m": {
+      "count": 40,
+      "mae_m": 0.0144,
+      "max_m": 0.0523
+    },
+    "far_zone_8_to_12m": {
+      "count": 20,
+      "mae_m": 0.0338,
+      "max_m": 0.103,
+      "odd_boundary_flag": "Error scales quadratically; D > 10m is strictly degraded."
+    },
+    "ramp_incline_zone_3_5deg": {
+      "count": 10,
+      "mae_m": 0.0176,
+      "max_m": 0.0296,
+      "defect_flag": "FAIL-45_CONFIRMED"
+    }
+  },
+  "failure_candidates_audited": {
+    "CANDIDATE-45": {
+      "description": "Floor incline ramp violates planar Z_w = 0 assumption",
+      "status": "CONFIRMED_AS_FAIL-45",
+      "safety_impact": "Elevated floor coordinates project up to 0.74m forward; ramps must be modeled with 3D slope polygons or marked OUT_OF_ODD."
+    },
+    "CANDIDATE-46": {
+      "description": "Peripheral lens distortion unmodeled error",
+      "status": "CONFIRMED_AS_FAIL-46",
+      "safety_impact": "Peripheral pixels (X > 1100) experience radial displacement; requires camera intrinsic distortion correction."
+    }
+  }
+}

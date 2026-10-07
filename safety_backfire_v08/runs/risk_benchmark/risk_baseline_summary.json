@@ -1,0 +1,28 @@
+{
+  "pre_intervention_baseline": {
+    "min_passing_distance_meters": 0.82,
+    "min_passing_distance_pixels": 44.0,
+    "closest_interacting_pair": {
+      "person_id": 327001,
+      "forklift_id": 327000
+    },
+    "total_frames_analyzed": 426,
+    "frames_in_danger_zone": 0,
+    "frames_in_caution_zone": 5,
+    "percent_time_in_risk_zones": 1.17,
+    "total_near_miss_incidents": 0,
+    "total_proximity_warnings": 5,
+    "peak_approach_speed_px_s": 0.0,
+    "track_id_reliability": {
+      "near_misses_with_confirmed_ids": 0,
+      "near_misses_with_fallback_ids": 0,
+      "warnings_with_confirmed_ids": 0,
+      "warnings_with_fallback_ids": 5,
+      "note": "IDs >= 9990 are ByteTrack fallbacks. Events with fallback IDs reflect valid spatial detections but lack confirmed trajectory identity."
+    }
+  },
+  "scientific_statement": "Baseline \u2014 Pre-Intervention CCTV Segment\nAcross 426 analyzed frames (14.2 seconds), the system recorded a minimum interaction distance of 0.82 m and classified 0 interaction(s) as near-miss incidents under the V0.8 event-detection rules. A total of 5 unique frames were identified as occurring within defined caution/danger risk zones, corresponding to 1.17% of analyzed frames.\n\nMetric distance is derived from the current warehouse CCTV ground-plane perspective model and planar homography reference. The 0.82 m value should be treated as a calibrated system estimate rather than an independently validated physical measurement until camera calibration is verified against known ground distances.\n\nApproach speed and TTC are currently calculated in image space; therefore, TTC should be interpreted as a screen-space temporal risk proxy (ttc_image_proxy_sec), not yet as a physically calibrated time-to-collision measurement.\n\nThis baseline is suitable for before/after comparative analysis within the same calibrated camera setup, subject to validation of object tracking, identity continuity, and metric calibration.",
+  "calibration_model": "Warehouse CCTV Ground-Plane Perspective Model + 4-pt Planar Homography",
+  "ttc_note": "ttc_image_proxy_sec = distance_px / approach_speed_px_s. Unit is seconds in image-space, not physical TTC.",
+  "status": "Risk Baseline Established (Ready for Safety Backfire Comparison \u2014 Experimental)"
+}

@@ -1,0 +1,82 @@
+{
+  "registry_version": "V3.3.3_RECONCILIATION_INTERVENTION_PROVENANCE",
+  "issue_id": "CRITICAL_ISSUE_13_INTERVENTION_PROVENANCE_SEMANTICS",
+  "audit_timestamp_utc": "2026-09-25T14:34:00Z",
+  "provenance_semantics_rule": "The release evidence statement must explicitly distinguish between newly observed physical interventions, historical physical interventions, and replayed software interventions. Never describe the six documented cases as 'six new physical experiments'.",
+  "counts": {
+    "new_physical_evidence_count": 1,
+    "historical_physical_evidence_count": 2,
+    "replayed_evidence_count": 3,
+    "total_documented_cases_count": 6
+  },
+  "documented_cases": [
+    {
+      "intervention_id": "INT_331_01",
+      "case_name": "Guardrail Barrier Installation",
+      "provenance_category": "HISTORICAL_PHYSICAL_EVIDENCE",
+      "treated_zone": "Zone_A_Main_Aisle",
+      "control_zone": "Zone_B_Storage",
+      "pre_hazard_rate": 0.85,
+      "post_hazard_rate": 0.35,
+      "did_coefficient": -0.51,
+      "outcome": "RISK_REDISTRIBUTED"
+    },
+    {
+      "intervention_id": "INT_331_02",
+      "case_name": "Telematics Speed Limiter 8 km/h",
+      "provenance_category": "HISTORICAL_PHYSICAL_EVIDENCE",
+      "treated_zone": "Zone_B_Intersection",
+      "control_zone": "Zone_C_Transit",
+      "pre_hazard_rate": 0.72,
+      "post_hazard_rate": 0.36,
+      "did_coefficient": -0.35,
+      "outcome": "RISK_REDUCED"
+    },
+    {
+      "intervention_id": "INT_331_03",
+      "case_name": "Painted Pedestrian Detour",
+      "provenance_category": "REPLAYED_EVIDENCE",
+      "treated_zone": "Zone_C_Walkway",
+      "control_zone": "Zone_D_Buffer",
+      "pre_hazard_rate": 0.60,
+      "post_hazard_rate": 0.33,
+      "did_coefficient": -0.27,
+      "outcome": "NEW_HAZARD_CREATED"
+    },
+    {
+      "intervention_id": "INT_331_04",
+      "case_name": "Staging Buffer Relocation",
+      "provenance_category": "REPLAYED_EVIDENCE",
+      "treated_zone": "Zone_D_Staging",
+      "control_zone": "Zone_A_Buffer",
+      "pre_hazard_rate": 0.65,
+      "post_hazard_rate": 0.33,
+      "did_coefficient": -0.30,
+      "outcome": "RISK_REDISTRIBUTED"
+    },
+    {
+      "intervention_id": "INT_331_05",
+      "case_name": "Shift Schedule Surge Modification",
+      "provenance_category": "REPLAYED_EVIDENCE",
+      "treated_zone": "Zone_E_Inbound",
+      "control_zone": "Zone_F_Control",
+      "pre_hazard_rate": 0.55,
+      "post_hazard_rate": 0.40,
+      "did_coefficient": -0.50,
+      "parallel_trend_test": "FAILED (p = 0.008)",
+      "outcome": "INSUFFICIENT_EVIDENCE (Causal Refusal)"
+    },
+    {
+      "intervention_id": "INT_331_06",
+      "case_name": "One-Way High-Bay Aisle Restriction",
+      "provenance_category": "NEW_PHYSICAL_EVIDENCE",
+      "treated_zone": "Zone_B_HighBay",
+      "control_zone": "Zone_A_Main_Aisle",
+      "pre_hazard_rate": 0.78,
+      "post_hazard_rate": 0.34,
+      "did_coefficient": -0.46,
+      "parallel_trend_test": "VALID (p = 0.42)",
+      "outcome": "RISK_REDISTRIBUTED"
+    }
+  ]
+}

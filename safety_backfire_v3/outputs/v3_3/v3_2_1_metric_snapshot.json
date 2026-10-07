@@ -1,0 +1,659 @@
+{
+  "snapshot_version": "V3.2.1_CANONICAL_METRIC_SNAPSHOT",
+  "total_metrics": 18,
+  "metrics": [
+    {
+      "metric_id": "METRIC_01_PERCEPTION_PRECISION",
+      "metric_name": "perception_precision",
+      "name": "perception_precision",
+      "value": 0.9442,
+      "numerator": 474,
+      "denominator": 502,
+      "sample_unit": "bounding_box",
+      "dataset_id": "DS_BLIND_TEST",
+      "dataset_ids": [
+        "DS_BLIND_TEST"
+      ],
+      "split": "BLIND_TEST_EVALUATION",
+      "odd_tier": "MIXED_ODD",
+      "ci": {
+        "method": "Wilson score interval",
+        "confidence_level": 0.95,
+        "lower": 0.9206,
+        "upper": 0.9611
+      },
+      "ci_method": "Wilson score interval",
+      "ci_lower": 0.9206,
+      "ci_upper": 0.9611,
+      "source_artifact": "outputs/v3_2/perception_metrics.json",
+      "source_code": "safety_backfire_v3/validation/v3_2/evaluate_perception.py",
+      "computation": "474 / 502 = 0.9442",
+      "validation_test": "test_01_no_conflicting_perception_metrics",
+      "evidence_status": "CANONICAL_VERIFIED",
+      "interpretation_limit": "Blind test evaluation across VID_TEST_001 (Nominal) and VID_TEST_002 (Degraded pitch 22.5 deg).",
+      "limitations": [
+        "Evaluated under stationary CCTV perspectives; shallow pitch reduces far-field IoU."
+      ],
+      "source_artifact_class": "V3_2_FROZEN_EVIDENCE",
+      "canonical_release": "V3.2.1"
+    },
+    {
+      "metric_id": "METRIC_02_PERCEPTION_RECALL",
+      "metric_name": "perception_recall",
+      "name": "perception_recall",
+      "value": 0.948,
+      "numerator": 474,
+      "denominator": 500,
+      "sample_unit": "annotation",
+      "dataset_id": "DS_BLIND_TEST",
+      "dataset_ids": [
+        "DS_BLIND_TEST"
+      ],
+      "split": "BLIND_TEST_EVALUATION",
+      "odd_tier": "MIXED_ODD",
+      "ci": {
+        "method": "Wilson score interval",
+        "confidence_level": 0.95,
+        "lower": 0.9249,
+        "upper": 0.9643
+      },
+      "ci_method": "Wilson score interval",
+      "ci_lower": 0.9249,
+      "ci_upper": 0.9643,
+      "source_artifact": "outputs/v3_2/perception_metrics.json",
+      "source_code": "safety_backfire_v3/validation/v3_2/evaluate_perception.py",
+      "computation": "474 / 500 = 0.9480",
+      "validation_test": "test_01_no_conflicting_perception_metrics",
+      "evidence_status": "CANONICAL_VERIFIED",
+      "interpretation_limit": "Blind test evaluation across VID_TEST_001 and VID_TEST_002.",
+      "limitations": [
+        "Missed detections concentrate in far-field > 8m."
+      ],
+      "source_artifact_class": "V3_2_FROZEN_EVIDENCE",
+      "canonical_release": "V3.2.1"
+    },
+    {
+      "metric_id": "METRIC_03_TRACKING_IDF1",
+      "metric_name": "tracking_idf1",
+      "name": "tracking_idf1",
+      "value": 0.9141,
+      "numerator": null,
+      "denominator": null,
+      "calculation_definition": "Global Hungarian bipartite trajectory matching assignment score (CLEAR MOT / IDF1 protocol)",
+      "sample_unit": "tracking association evaluation",
+      "dataset_id": "DS_TRACKING_CORPUS",
+      "dataset_ids": [
+        "DS_TRACKING_CORPUS"
+      ],
+      "split": "FULL_TRACKING_CORPUS",
+      "odd_tier": "NOMINAL_ODD",
+      "ci": {
+        "method": "NONE",
+        "status": "NOT_REPORTED",
+        "lower": null,
+        "upper": null,
+        "justification": "Wilson interval mathematically invalid for bipartite matching. No cluster bootstrap implemented."
+      },
+      "ci_method": "NONE",
+      "ci_lower": null,
+      "ci_upper": null,
+      "source_artifact": "outputs/v3_2/tracking_metrics.json",
+      "source_code": "safety_backfire_v3/validation/v3_2/evaluate_tracking.py",
+      "computation": "IDF1 = 0.9141 (instance count 3450, GT trajectories 24)",
+      "validation_test": "test_02_idf1_formula_integrity",
+      "evidence_status": "NOT_RECONSTRUCTIBLE_FROM_CURRENT_ARTIFACTS",
+      "interpretation_limit": "Global Hungarian bipartite matching. IDTP/IDFP/IDFN decomposition marked NOT_RECONSTRUCTIBLE_FROM_CURRENT_ARTIFACTS. 3,450 is entity-frame instances, not denominator.",
+      "limitations": [
+        "Wilson score interval mathematically invalid. Decomposition not reconstructible from current artifacts."
+      ],
+      "source_artifact_class": "V3_2_FROZEN_EVIDENCE",
+      "canonical_release": "V3.2.1"
+    },
+    {
+      "metric_id": "METRIC_04_GEOMETRY_PLANAR_MAE",
+      "metric_name": "planar_floor_projection_mae",
+      "name": "planar_floor_projection_mae",
+      "value": 0.0169,
+      "numerator": 1.521,
+      "denominator": 90,
+      "calculation_definition": "MAE = 1.521 m / 90 planar surveyed markers = 0.0169 m",
+      "unit": "meters",
+      "sample_unit": "planar point",
+      "dataset_id": "DS_SURVEYED_GRID_100",
+      "dataset_ids": [
+        "DS_SURVEYED_GRID_100"
+      ],
+      "split": "SURVEYED_PLANAR_GRID",
+      "odd_tier": "NOMINAL_ODD",
+      "ci": {
+        "method": "NONE",
+        "status": "NOT_REPORTED",
+        "lower": null,
+        "upper": null,
+        "justification": "Student-t invalid due to spatial autocorrelation across floor grid."
+      },
+      "ci_method": "NONE",
+      "ci_lower": null,
+      "ci_upper": null,
+      "source_artifact": "outputs/v3_2/geometry_metrics.json",
+      "source_code": "safety_backfire_v3/validation/v3_2/evaluate_geometry.py",
+      "computation": "1.521 / 90 = 0.0169 m (1.69 cm)",
+      "validation_test": "test_04_geometry_mae_single_source_of_truth",
+      "evidence_status": "CANONICAL_VERIFIED",
+      "interpretation_limit": "Mean absolute error across 90 surveyed planar markers. 10 ramp incline markers excluded per FAIL-45.",
+      "limitations": [
+        "Homography invalid on non-planar surfaces (e.g. 3.5 deg ramp). Student-t CI retracted due to spatial correlation."
+      ],
+      "source_artifact_class": "V3_2_FROZEN_EVIDENCE",
+      "canonical_release": "V3.2.1"
+    },
+    {
+      "metric_id": "METRIC_05_HAZARD_MICRO_PRECISION",
+      "metric_name": "hazard_micro_precision",
+      "name": "hazard_micro_precision",
+      "value": 0.9537,
+      "numerator": 268,
+      "denominator": 281,
+      "sample_unit": "hazard_assertion",
+      "dataset_id": "DS_HAZARD_12_CLASS",
+      "dataset_ids": [
+        "DS_HAZARD_12_CLASS"
+      ],
+      "split": "HAZARD_VALIDATION_SUITE",
+      "odd_tier": "NOMINAL_ODD",
+      "ci": {
+        "method": "Wilson score interval",
+        "confidence_level": 0.95,
+        "lower": 0.9225,
+        "upper": 0.9728
+      },
+      "ci_method": "Wilson score interval",
+      "ci_lower": 0.9225,
+      "ci_upper": 0.9728,
+      "source_artifact": "outputs/v3_2/hazard_metrics.json",
+      "source_code": "safety_backfire_v3/validation/v3_2/evaluate_hazards.py",
+      "computation": "268 / 281 = 0.9537",
+      "validation_test": "test_06_hazard_micro_macro_integrity",
+      "evidence_status": "CANONICAL_VERIFIED",
+      "interpretation_limit": "Micro/pooled precision across 12 hazard classes in nominal CCTV operational cells.",
+      "limitations": [
+        "Liquid spills and unstable loads have limited real-world trials."
+      ],
+      "source_artifact_class": "V3_2_FROZEN_EVIDENCE",
+      "canonical_release": "V3.2.1"
+    },
+    {
+      "metric_id": "METRIC_06_HAZARD_MICRO_RECALL",
+      "metric_name": "hazard_micro_recall",
+      "name": "hazard_micro_recall",
+      "value": 0.9371,
+      "numerator": 268,
+      "denominator": 286,
+      "sample_unit": "hazard_trial",
+      "dataset_id": "DS_HAZARD_12_CLASS",
+      "dataset_ids": [
+        "DS_HAZARD_12_CLASS"
+      ],
+      "split": "HAZARD_VALIDATION_SUITE",
+      "odd_tier": "NOMINAL_ODD",
+      "ci": {
+        "method": "Wilson score interval",
+        "confidence_level": 0.95,
+        "lower": 0.9027,
+        "upper": 0.9598
+      },
+      "ci_method": "Wilson score interval",
+      "ci_lower": 0.9027,
+      "ci_upper": 0.9598,
+      "source_artifact": "outputs/v3_2/hazard_metrics.json",
+      "source_code": "safety_backfire_v3/validation/v3_2/evaluate_hazards.py",
+      "computation": "268 / 286 = 0.9371",
+      "validation_test": "test_06_hazard_micro_macro_integrity",
+      "evidence_status": "CANONICAL_VERIFIED",
+      "interpretation_limit": "Micro/pooled recall across 12 hazard classes (268 TP / 286 GT trials).",
+      "limitations": [
+        "Conveyor exposure and spill detection show lower individual recall."
+      ],
+      "source_artifact_class": "V3_2_FROZEN_EVIDENCE",
+      "canonical_release": "V3.2.1"
+    },
+    {
+      "metric_id": "METRIC_07_HAZARD_MACRO_PRECISION",
+      "metric_name": "hazard_macro_precision",
+      "name": "hazard_macro_precision",
+      "value": 0.948,
+      "numerator": null,
+      "denominator": 12,
+      "calculation_definition": "Unweighted arithmetic mean of precision across 12 hazard classes",
+      "sample_unit": "hazard_class_mean",
+      "dataset_id": "DS_HAZARD_12_CLASS",
+      "dataset_ids": [
+        "DS_HAZARD_12_CLASS"
+      ],
+      "split": "HAZARD_VALIDATION_SUITE",
+      "odd_tier": "NOMINAL_ODD",
+      "ci": {
+        "method": "NONE",
+        "status": "NOT_REPORTED",
+        "lower": null,
+        "upper": null,
+        "justification": "Arithmetic mean across heterogeneous hazard distributions."
+      },
+      "ci_method": "NONE",
+      "ci_lower": null,
+      "ci_upper": null,
+      "source_artifact": "outputs/v3_2/hazard_metrics.json",
+      "source_code": "safety_backfire_v3/validation/v3_2/evaluate_hazards.py",
+      "computation": "mean(class_precisions) = 0.9480",
+      "validation_test": "test_06_hazard_micro_macro_integrity",
+      "evidence_status": "CANONICAL_VERIFIED",
+      "interpretation_limit": "Unweighted arithmetic macro precision across 12 hazard classes.",
+      "limitations": [
+        "Small sample sizes in rare hazard categories."
+      ],
+      "source_artifact_class": "V3_2_FROZEN_EVIDENCE",
+      "canonical_release": "V3.2.1"
+    },
+    {
+      "metric_id": "METRIC_08_HAZARD_MACRO_RECALL",
+      "metric_name": "hazard_macro_recall",
+      "name": "hazard_macro_recall",
+      "value": 0.9288,
+      "numerator": null,
+      "denominator": 12,
+      "calculation_definition": "Unweighted arithmetic mean of recall across 12 hazard classes",
+      "sample_unit": "hazard_class_mean",
+      "dataset_id": "DS_HAZARD_12_CLASS",
+      "dataset_ids": [
+        "DS_HAZARD_12_CLASS"
+      ],
+      "split": "HAZARD_VALIDATION_SUITE",
+      "odd_tier": "NOMINAL_ODD",
+      "ci": {
+        "method": "NONE",
+        "status": "NOT_REPORTED",
+        "lower": null,
+        "upper": null,
+        "justification": "Arithmetic mean across heterogeneous hazard distributions."
+      },
+      "ci_method": "NONE",
+      "ci_lower": null,
+      "ci_upper": null,
+      "source_artifact": "outputs/v3_2/hazard_metrics.json",
+      "source_code": "safety_backfire_v3/validation/v3_2/evaluate_hazards.py",
+      "computation": "mean(class_recalls) = 0.9288",
+      "validation_test": "test_06_hazard_micro_macro_integrity",
+      "evidence_status": "CANONICAL_VERIFIED",
+      "interpretation_limit": "Unweighted arithmetic macro recall across 12 hazard classes.",
+      "limitations": [
+        "Lower sensitivity on low-reflectivity liquid spills."
+      ],
+      "source_artifact_class": "V3_2_FROZEN_EVIDENCE",
+      "canonical_release": "V3.2.1"
+    },
+    {
+      "metric_id": "METRIC_09_EVENT_PRECISION_CORPUS",
+      "metric_name": "event_precision_full_corpus",
+      "name": "event_precision_full_corpus",
+      "value": 0.94,
+      "numerator": 47,
+      "denominator": 50,
+      "sample_unit": "detected_safety_event",
+      "dataset_id": "DS_FULL_CORPUS_23MIN",
+      "dataset_ids": [
+        "DS_FULL_CORPUS_23MIN"
+      ],
+      "split": "FULL_EVALUATION_CORPUS",
+      "odd_tier": "MIXED_ODD",
+      "ci": {
+        "method": "Wilson score interval",
+        "confidence_level": 0.95,
+        "lower": 0.8378,
+        "upper": 0.9794
+      },
+      "ci_method": "Wilson score interval",
+      "ci_lower": 0.8378,
+      "ci_upper": 0.9794,
+      "source_artifact": "outputs/v3_2_1/event_metric_audit.json",
+      "source_code": "safety_backfire_v3/validation/v3_2/evaluate_events.py",
+      "computation": "47 / 50 = 0.9400",
+      "validation_test": "test_10_event_matching_integrity",
+      "evidence_status": "CANONICAL_VERIFIED",
+      "interpretation_limit": "Matching requires temporal IoU >= 0.5 and identical hazard classification.",
+      "limitations": [
+        "Extended corpus source files not fully reproducible on local disk."
+      ],
+      "source_artifact_class": "V3_2_1_AUDIT_DERIVED",
+      "canonical_release": "V3.2.1"
+    },
+    {
+      "metric_id": "METRIC_10_EVENT_RECALL_CORPUS",
+      "metric_name": "event_recall_full_corpus",
+      "name": "event_recall_full_corpus",
+      "value": 0.94,
+      "numerator": 47,
+      "denominator": 50,
+      "sample_unit": "ground_truth_safety_event",
+      "dataset_id": "DS_FULL_CORPUS_23MIN",
+      "dataset_ids": [
+        "DS_FULL_CORPUS_23MIN"
+      ],
+      "split": "FULL_EVALUATION_CORPUS",
+      "odd_tier": "MIXED_ODD",
+      "ci": {
+        "method": "Wilson score interval",
+        "confidence_level": 0.95,
+        "lower": 0.8378,
+        "upper": 0.9794
+      },
+      "ci_method": "Wilson score interval",
+      "ci_lower": 0.8378,
+      "ci_upper": 0.9794,
+      "source_artifact": "outputs/v3_2_1/event_metric_audit.json",
+      "source_code": "safety_backfire_v3/validation/v3_2/evaluate_events.py",
+      "computation": "47 / 50 = 0.9400",
+      "validation_test": "test_10_event_matching_integrity",
+      "evidence_status": "CANONICAL_VERIFIED",
+      "interpretation_limit": "Matching requires temporal IoU >= 0.5 and identical hazard classification.",
+      "limitations": [
+        "Extended corpus source files not fully reproducible on local disk."
+      ],
+      "source_artifact_class": "V3_2_1_AUDIT_DERIVED",
+      "canonical_release": "V3.2.1"
+    },
+    {
+      "metric_id": "METRIC_11_EVENT_PRECISION_BLIND",
+      "metric_name": "event_precision_blind_test",
+      "name": "event_precision_blind_test",
+      "value": 0.9375,
+      "numerator": 15,
+      "denominator": 16,
+      "sample_unit": "detected_safety_event",
+      "dataset_id": "DS_BLIND_TEST",
+      "dataset_ids": [
+        "DS_BLIND_TEST"
+      ],
+      "split": "BLIND_TEST",
+      "odd_tier": "MIXED_ODD",
+      "ci": {
+        "method": "Wilson score interval",
+        "confidence_level": 0.95,
+        "lower": 0.7167,
+        "upper": 0.9889
+      },
+      "ci_method": "Wilson score interval",
+      "ci_lower": 0.7167,
+      "ci_upper": 0.9889,
+      "source_artifact": "outputs/v3_2_1/event_metric_audit.json",
+      "source_code": "safety_backfire_v3/validation/v3_2/evaluate_events.py",
+      "computation": "15 / 16 = 0.9375",
+      "validation_test": "test_10_event_matching_integrity",
+      "evidence_status": "CANONICAL_VERIFIED",
+      "interpretation_limit": "Blind test event precision (15 TP / 16 detections).",
+      "limitations": [
+        "Evaluated across nominal and degraded camera perspectives."
+      ],
+      "source_artifact_class": "V3_2_1_AUDIT_DERIVED",
+      "canonical_release": "V3.2.1"
+    },
+    {
+      "metric_id": "METRIC_12_EVENT_RECALL_BLIND",
+      "metric_name": "event_recall_blind_test",
+      "name": "event_recall_blind_test",
+      "value": 0.9375,
+      "numerator": 15,
+      "denominator": 16,
+      "sample_unit": "ground_truth_safety_event",
+      "dataset_id": "DS_BLIND_TEST",
+      "dataset_ids": [
+        "DS_BLIND_TEST"
+      ],
+      "split": "BLIND_TEST",
+      "odd_tier": "MIXED_ODD",
+      "ci": {
+        "method": "Wilson score interval",
+        "confidence_level": 0.95,
+        "lower": 0.7167,
+        "upper": 0.9889
+      },
+      "ci_method": "Wilson score interval",
+      "ci_lower": 0.7167,
+      "ci_upper": 0.9889,
+      "source_artifact": "outputs/v3_2_1/event_metric_audit.json",
+      "source_code": "safety_backfire_v3/validation/v3_2/evaluate_events.py",
+      "computation": "15 / 16 = 0.9375",
+      "validation_test": "test_10_event_matching_integrity",
+      "evidence_status": "CANONICAL_VERIFIED",
+      "interpretation_limit": "Blind test event recall (15 TP / 16 GT events).",
+      "limitations": [
+        "1 missed event on shallow-angle camera."
+      ],
+      "source_artifact_class": "V3_2_1_AUDIT_DERIVED",
+      "canonical_release": "V3.2.1"
+    },
+    {
+      "metric_id": "METRIC_13_FALSE_EVENT_RATE_CORPUS",
+      "metric_name": "false_event_count_rate_corpus",
+      "name": "false_event_count_rate_corpus",
+      "value": 7.83,
+      "numerator": 3,
+      "denominator": 0.3833,
+      "exposure_seconds": 1380,
+      "exposure_hours_exact": 0.38333333333333336,
+      "calculation_definition": "3 events / (1380 / 3600 hours) = 7.8261 events/hour",
+      "unit": "events/hour",
+      "sample_unit": "observation_hours",
+      "dataset_id": "DS_FULL_CORPUS_23MIN",
+      "dataset_ids": [
+        "DS_FULL_CORPUS_23MIN"
+      ],
+      "split": "FULL_EVALUATION_CORPUS",
+      "odd_tier": "MIXED_ODD",
+      "ci": {
+        "method": "Exact Poisson count-rate interval (Garwood Chi2)",
+        "confidence_level": 0.95,
+        "lower": 1.614,
+        "upper": 22.871
+      },
+      "ci_method": "Exact Poisson count-rate interval (Garwood Chi2)",
+      "ci_lower": 1.614,
+      "ci_upper": 22.871,
+      "source_artifact": "outputs/v3_2_1/final_closure/event_rate_canonical_calculation.json",
+      "source_code": "safety_backfire_v3/validation/v3_2_1/test_event_rate_statistics.py",
+      "computation": "3 / (1380/3600) = 7.83 events/hr",
+      "validation_test": "test_08_event_rate_exact_recomputation",
+      "evidence_status": "CANONICAL_VERIFIED",
+      "interpretation_limit": "OBSERVED_COUNT_RATE_OVER_TESTED_EXPOSURE: Rate over 1,380s (23.0 min). Not stable operational rate.",
+      "limitations": [
+        "Short exposure leads to wide confidence intervals."
+      ],
+      "source_artifact_class": "V3_2_1_AUDIT_DERIVED",
+      "canonical_release": "V3.2.1"
+    },
+    {
+      "metric_id": "METRIC_14_FALSE_EVENT_RATE_BLIND",
+      "metric_name": "false_event_count_rate_blind",
+      "name": "false_event_count_rate_blind",
+      "value": 5.45,
+      "numerator": 1,
+      "denominator": 0.1833,
+      "exposure_seconds": 660,
+      "exposure_hours_exact": 0.18333333333333332,
+      "calculation_definition": "1 event / (660 / 3600 hours) = 5.4545 events/hour",
+      "unit": "events/hour",
+      "sample_unit": "observation_hours",
+      "dataset_id": "DS_BLIND_TEST",
+      "dataset_ids": [
+        "DS_BLIND_TEST"
+      ],
+      "split": "BLIND_TEST",
+      "odd_tier": "MIXED_ODD",
+      "ci": {
+        "method": "Exact Poisson count-rate interval (Garwood Chi2)",
+        "confidence_level": 0.95,
+        "lower": 0.138,
+        "upper": 30.391
+      },
+      "ci_method": "Exact Poisson count-rate interval (Garwood Chi2)",
+      "ci_lower": 0.138,
+      "ci_upper": 30.391,
+      "source_artifact": "outputs/v3_2_1/final_closure/event_rate_canonical_calculation.json",
+      "source_code": "safety_backfire_v3/validation/v3_2_1/test_event_rate_statistics.py",
+      "computation": "1 / (660/3600) = 5.45 events/hr",
+      "validation_test": "test_08_event_rate_exact_recomputation",
+      "evidence_status": "CANONICAL_VERIFIED",
+      "interpretation_limit": "OBSERVED_COUNT_RATE_OVER_TESTED_EXPOSURE: Rate over 660s (11.0 min). Exact Poisson CI from seconds.",
+      "limitations": [
+        "Wide interval [0.138, 30.391] due to limited exposure."
+      ],
+      "source_artifact_class": "V3_2_1_AUDIT_DERIVED",
+      "canonical_release": "V3.2.1"
+    },
+    {
+      "metric_id": "METRIC_15_UNCERTAINTY_COVERAGE",
+      "metric_name": "uncertainty_factor_coverage",
+      "name": "uncertainty_factor_coverage",
+      "value": 0.976,
+      "numerator": 488,
+      "denominator": 500,
+      "sample_unit": "calibration_point",
+      "dataset_id": "DS_CALIBRATION_STREAM",
+      "dataset_ids": [
+        "DS_CALIBRATION_STREAM"
+      ],
+      "split": "CALIBRATION_SPLIT",
+      "odd_tier": "NOMINAL_ODD",
+      "ci": {
+        "method": "Wilson score interval (descriptive in-sample)",
+        "confidence_level": 0.95,
+        "lower": 0.9585,
+        "upper": 0.9862
+      },
+      "ci_method": "Wilson score interval (descriptive in-sample)",
+      "ci_lower": 0.9585,
+      "ci_upper": 0.9862,
+      "source_artifact": "outputs/v3_2_1/final_closure/uncertainty_split_audit.json",
+      "source_code": "safety_backfire_v3/validation/v3_2_1/final_closure/audit_uncertainty_lineage.py",
+      "computation": "488 / 500 = 0.9760",
+      "validation_test": "test_13_uncertainty_calibration_lineage",
+      "evidence_status": "CANONICAL_VERIFIED",
+      "interpretation_limit": "IN_SAMPLE_CALIBRATION_COVERAGE: 488/500 measured on calibration split. Data reused for factor selection.",
+      "limitations": [
+        "Independent out-of-sample coverage on blind data is unverified."
+      ],
+      "source_artifact_class": "V3_2_1_AUDIT_DERIVED",
+      "canonical_release": "V3.2.1"
+    },
+    {
+      "metric_id": "METRIC_16_BACKFIRE_CASE_CLASSIFICATION",
+      "metric_name": "backfire_case_study_classification",
+      "name": "backfire_case_study_classification",
+      "value": 1.0,
+      "numerator": 2,
+      "denominator": 2,
+      "calculation_definition": "Observed case study qualitative and causal classification count",
+      "unit": "case_success_rate",
+      "sample_unit": "intervention_case_study",
+      "dataset_id": "DS_BACKFIRE_CASES",
+      "dataset_ids": [
+        "DS_BACKFIRE_CASES"
+      ],
+      "split": "OBSERVED_CASE_STUDIES",
+      "odd_tier": "NOMINAL_ODD",
+      "ci": {
+        "method": "NONE",
+        "status": "NOT_REPORTED",
+        "lower": null,
+        "upper": null,
+        "justification": "N=2 cases statistically insufficient for interval estimation."
+      },
+      "ci_method": "NONE",
+      "ci_lower": null,
+      "ci_upper": null,
+      "source_artifact": "outputs/v3_2_1/backfire_case_audit.json",
+      "source_code": "safety_backfire_v3/validation/v3_2_1/test_backfire_case_lineage.py",
+      "computation": "2 / 2 = 1.0000 (100% in-sample)",
+      "validation_test": "test_12_uncertainty_factor_semantics",
+      "evidence_status": "CANONICAL_VERIFIED",
+      "interpretation_limit": "2/2 observed case classifications. Population generalization strictly prohibited from N=2.",
+      "limitations": [
+        "Limited to mirror barrier and speed governor scenarios."
+      ],
+      "source_artifact_class": "V3_2_1_AUDIT_DERIVED",
+      "canonical_release": "V3.2.1"
+    },
+    {
+      "metric_id": "METRIC_17_DID_COEFFICIENT",
+      "metric_name": "did_risk_redistribution_coefficient",
+      "name": "did_risk_redistribution_coefficient",
+      "value": -0.42,
+      "numerator": null,
+      "denominator": null,
+      "calculation_definition": "DiD = (treated_post - treated_pre) - (control_post - control_pre) = (-0.4500) - (-0.0300) = -0.4200",
+      "unit": "risk_index_delta",
+      "sample_unit": "two_zone_aggregate",
+      "dataset_id": "DS_DID_QUASI_EXPERIMENT",
+      "dataset_ids": [
+        "DS_DID_QUASI_EXPERIMENT"
+      ],
+      "split": "TWO_ZONE_QUASI_EXPERIMENT",
+      "odd_tier": "NOMINAL_ODD",
+      "ci": {
+        "method": "NONE",
+        "status": "NOT_REPORTED",
+        "lower": null,
+        "upper": null
+      },
+      "ci_method": "NONE",
+      "ci_lower": null,
+      "ci_upper": null,
+      "source_artifact": "outputs/v3_2_1/final_closure/did_coefficient_lineage.json",
+      "source_code": "safety_backfire_v3/validation/v3_2_1/test_causality_evidence_integrity.py",
+      "computation": "DiD = -0.4200 (normalized risk index scale [0, 1])",
+      "validation_test": "test_16_causality_language_integrity",
+      "evidence_status": "CANONICAL_VERIFIED",
+      "interpretation_limit": "SCENARIO_SPECIFIC_DERIVED_RESULT: ATTRIBUTED_UNDER_TESTED_DID_ASSUMPTIONS (parallel trends held, control shifted -3%).",
+      "limitations": [
+        "Confounded shifts automatically output INSUFFICIENT_EVIDENCE."
+      ],
+      "source_artifact_class": "V3_2_1_AUDIT_DERIVED",
+      "canonical_release": "V3.2.1"
+    },
+    {
+      "metric_id": "METRIC_18_PTS_LATENCY_MEAN",
+      "metric_name": "pts_processing_latency_mean_ms",
+      "name": "pts_processing_latency_mean_ms",
+      "value": 11.6,
+      "numerator": null,
+      "denominator": 1672,
+      "calculation_definition": "mean(pts_processing_time_ms) across 1,672 physical raw video frames",
+      "unit": "milliseconds",
+      "sample_unit": "frame",
+      "dataset_id": "DS_PHYSICAL_RAW_1672",
+      "dataset_ids": [
+        "DS_PHYSICAL_RAW_1672"
+      ],
+      "split": "PHYSICAL_STREAM_REPLAY",
+      "odd_tier": "NOMINAL_ODD",
+      "ci": {
+        "method": "Empirical percentiles",
+        "lower": 11.2,
+        "upper": 12.0
+      },
+      "ci_method": "Empirical percentiles",
+      "ci_lower": 11.2,
+      "ci_upper": 12.0,
+      "source_artifact": "outputs/v3_2/perception_metrics.json",
+      "source_code": "safety_backfire_v3/validation/v3_2/evaluate_perception.py",
+      "computation": "mean = 11.60ms over 1,672 frames",
+      "validation_test": "test_11_odd_tier_integrity",
+      "evidence_status": "CANONICAL_VERIFIED",
+      "interpretation_limit": "Nominal hardware PTS processing latency over 1,672 physical raw frames.",
+      "limitations": [
+        "Hardware latency measured on local benchmark workstation."
+      ],
+      "source_artifact_class": "V3_2_FROZEN_EVIDENCE",
+      "canonical_release": "V3.2.1"
+    }
+  ]
+}

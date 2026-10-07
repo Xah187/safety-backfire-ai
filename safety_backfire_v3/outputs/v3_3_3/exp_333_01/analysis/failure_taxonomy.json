@@ -1,0 +1,43 @@
+{
+  "artifact_name": "EXP_333_01_FAILURE_TAXONOMY",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "primary_categories_allowed": [
+    "PERCEPTION",
+    "TRACKING",
+    "GEOMETRY",
+    "UNCERTAINTY",
+    "HAZARD",
+    "EVENT",
+    "POLICY",
+    "LATENCY",
+    "DATA_PROVENANCE",
+    "ODD"
+  ],
+  "governance_rule": "Every failure must be assigned to exactly one primary category. Failures caused by missing data or sensor unreliability must not be misclassified as model algorithmic failures.",
+  "audited_failures": [
+    {
+      "failure_id": "FAIL_EXP333_01_001",
+      "primary_category": "DATA_PROVENANCE",
+      "secondary_causal_label": "EVIDENCE_GAP",
+      "description": "Physical footage and ground truth for external warehouse facility (Facility E) unavailable on disk at evaluation time.",
+      "operational_impact": "Blocks empirical execution of EXP_333_01 zero-adaptation generalization gate.",
+      "mitigation_state": "NOT_ESTABLISHED",
+      "governance_handling": "System refrains from claiming cross-facility generalization; marks experiment status NOT_ESTABLISHED and holds progression to EXP_333_02 until authenticated data is captured."
+    }
+  ],
+  "summary": {
+    "total_failures_logged": 1,
+    "primary_category_breakdown": {
+      "DATA_PROVENANCE": 1,
+      "PERCEPTION": 0,
+      "TRACKING": 0,
+      "GEOMETRY": 0,
+      "UNCERTAINTY": 0,
+      "HAZARD": 0,
+      "EVENT": 0,
+      "POLICY": 0,
+      "LATENCY": 0,
+      "ODD": 0
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TractionCurrentGuardedThresholdV3",
+  "milestone": "V3.4-N-CORR-04-R2",
+  "description": "Reassessment of guarded threshold derivation, establishing range-dependent values and explicitly marking the threshold as UNRESOLVED due to lack of historical probe range evidence.",
+  "governance_classification": "METROLOGY_THRESHOLD_RECONCILIATION",
+  "formal_marking": "UNRESOLVED_PENDING_BENCH_SCALE_CONFIRMATION",
+  "threshold_derivations_by_range": {
+    "manufacturer_5A_per_V_calibrated_model": {
+      "nominal_threshold_I_nominal_a_rms": 0.500,
+      "recalculated_combined_uncertainty_u_c_a": 0.01985,
+      "coverage_factor_k": 2.00,
+      "expanded_uncertainty_U_a": 0.03970,
+      "decision_rule": "ISO 14253-1:2017 / ILAC G8:09/2019 Binary Guarded Rule (g = U)",
+      "derived_guarded_threshold_exact_a_rms": 0.4603,
+      "derived_guarded_threshold_engineering_rounded_a_rms": 0.460,
+      "status": "VALID_ANALYTICAL_DERIVATION_FOR_5A_PER_V_RANGE"
+    },
+    "historical_reconciled_heuristic_model": {
+      "nominal_threshold_I_nominal_a_rms": 0.500,
+      "historical_recalculated_u_c_a": 0.04520,
+      "coverage_factor_k": 2.00,
+      "historical_recalculated_U_a": 0.0904,
+      "derived_guarded_threshold_exact_a_rms": 0.4096,
+      "derived_guarded_threshold_engineering_rounded_a_rms": 0.410,
+      "status": "REJECTED_AS_UNVERIFIED_HEURISTIC_INPUTS"
+    }
+  },
+  "audit_conclusion": {
+    "preservation_ruling": "The legacy threshold 0.410 A RMS (and older 0.413 A RMS) is NOT PRESERVED as an authoritative engineering threshold.",
+    "rationale": "Under the verified manufacturer specifications of the Tektronix TCP303 / TCPA300 on its low range (5 A/V), the true expanded uncertainty is U = 0.0397 A, yielding a guarded threshold of 0.460 A RMS. However, because the historical 10 trials failed to record the physical range switch position, the actual operating scale remains ungrounded.",
+    "final_status": "THRESHOLD_UNRESOLVED_PENDING_PHYSICAL_BENCH_COMMISSIONING"
+  }
+}

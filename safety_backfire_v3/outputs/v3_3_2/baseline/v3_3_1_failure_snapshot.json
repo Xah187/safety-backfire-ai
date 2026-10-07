@@ -1,0 +1,50 @@
+{
+  "registry_version": "V3.3.1_FAILURE_REGISTRY",
+  "timestamp_utc": "2026-09-25T06:55:00Z",
+  "policy": "Catalog all newly observed empirical failures in V3.3.1 without altering historical V3.3.0 or V3.2.1 failure records.",
+  "total_failures": 3,
+  "failures": [
+    {
+      "failure_id": "V3.3.1-FAIL-001",
+      "experiment_id": "EXP_331_01",
+      "dataset_id": "DS_V3_3_BLIND_STAGING_D",
+      "category": "STATISTICAL_LIMITATION",
+      "description": "Nominal out-of-sample coverage point estimate remains below 95.0% target under condition-aware Model D (observed 93.67% vs 95.00% target).",
+      "trigger": "Unseen sensor noise distributions in heavy occlusion pallet staging areas.",
+      "observed_behavior": "While 95% CI [91.55%, 95.28%] spans the target, the point estimate does not reach 95.00%, leaving a 1.33% nominal undercoverage residual.",
+      "safety_impact": "Slight coordinate undercoverage under heavy occlusion if autonomous braking is triggered at full confidence.",
+      "mitigation_state": "MITIGATED_BY_REFUSAL",
+      "mitigation_notes": "Mitigated by RefusalQualityEngine gating heavy occlusion (>60%) to ADVISORY_WARNING_ONLY state.",
+      "reproducible": true,
+      "regression_test": "validation/v3_3_1/test_v3_3_1_integrity.py::test_06_oos_coverage_recomputation"
+    },
+    {
+      "failure_id": "V3.3.1-FAIL-002",
+      "experiment_id": "EXP_331_04",
+      "dataset_id": "DS_V3_3_VAL_INTERSECTION_C",
+      "category": "ODD_BOUNDARY",
+      "description": "Continuous parallel walking of workers in identical high-vis PPE sustains an ambiguous identity state beyond 3 seconds.",
+      "trigger": "Two workers walking side-by-side within 0.6m in identical PPE for prolonged duration (>75 frames).",
+      "observed_behavior": "Engine maintains UNKNOWN_AMBIGUOUS_PAIR state, preventing track resolution until spatial divergence occurs.",
+      "safety_impact": "Autonomous personalized hazard warning is suppressed to generic advisory broadcast.",
+      "mitigation_state": "BOUNDED_BY_ODD",
+      "mitigation_notes": "Explicitly bounded by ODD policy: dense co-walking with identical attire is designated DEGRADED_ODD, enforcing advisory audio warnings.",
+      "reproducible": true,
+      "regression_test": "validation/v3_3_1/test_v3_3_1_integrity.py::test_13_identity_ambiguity_safety"
+    },
+    {
+      "failure_id": "V3.3.1-FAIL-003",
+      "experiment_id": "EXP_331_05",
+      "dataset_id": "DS_PHYSICAL_RAW_TEST2_MP4",
+      "category": "EVIDENCE_GAP",
+      "description": "Spatio-temporal spillover lag in physical one-way aisle restriction delays downstream hazard manifestation.",
+      "trigger": "Vehicles diverted from one-way aisle accumulate at downstream junction 15 seconds after intervention onset.",
+      "observed_behavior": "Immediate pre/post window fails to capture delayed downstream queue formation without extended evaluation horizon.",
+      "safety_impact": "Risk of underestimating secondary backfire hazard if observation window is truncated prematurely.",
+      "mitigation_state": "UNDER_INVESTIGATION",
+      "mitigation_notes": "Added to active evidence gap matrix (GAP_V3_3_06) requiring extended longitudinal recording horizons.",
+      "reproducible": true,
+      "regression_test": "validation/v3_3_1/test_v3_3_1_integrity.py::test_15_intervention_provenance"
+    }
+  ]
+}

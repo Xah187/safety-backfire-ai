@@ -1,0 +1,289 @@
+{
+  "run_manifest": {
+    "run_id": "RUN_004_NVIDIA_WAREHOUSE_027",
+    "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+    "timestamp_utc": "2026-09-28T09:59:50.258695+00:00",
+    "data_source": "nvidia/PhysicalAI-SmartSpaces (Warehouse_027)",
+    "total_frames_processed": 12600,
+    "cameras_processed": 7,
+    "total_detection_instances": 34894,
+    "per_camera_summary": {
+      "Camera_0000": {
+        "camera_id": "Camera_0000",
+        "frames_processed": 1800,
+        "total_detections": 10135,
+        "forklift_detections": 20,
+        "person_detections": 10115,
+        "unique_tracks": 52,
+        "camera_height_m": 2.864,
+        "optical_depression_deg": 32.37,
+        "mean_luminance": 100.21,
+        "distance_stats": {
+          "mean_m": 5.024,
+          "min_m": 1.736,
+          "max_m": 18.385,
+          "in_odd_le_8m": 9714,
+          "in_odd_pct": 95.85,
+          "degraded_8_to_10m": 168,
+          "degraded_pct": 1.66,
+          "out_of_odd_gt_10m": 253,
+          "out_of_odd_pct": 2.5
+        }
+      },
+      "Camera_0001": {
+        "camera_id": "Camera_0001",
+        "frames_processed": 1800,
+        "total_detections": 4816,
+        "forklift_detections": 0,
+        "person_detections": 4816,
+        "unique_tracks": 44,
+        "camera_height_m": 2.517,
+        "optical_depression_deg": 20.63,
+        "mean_luminance": 109.78,
+        "distance_stats": {
+          "mean_m": 12.831,
+          "min_m": 2.315,
+          "max_m": 20.158,
+          "in_odd_le_8m": 900,
+          "in_odd_pct": 18.69,
+          "degraded_8_to_10m": 178,
+          "degraded_pct": 3.7,
+          "out_of_odd_gt_10m": 3738,
+          "out_of_odd_pct": 77.62
+        }
+      },
+      "Camera_0002": {
+        "camera_id": "Camera_0002",
+        "frames_processed": 1800,
+        "total_detections": 2253,
+        "forklift_detections": 479,
+        "person_detections": 1774,
+        "unique_tracks": 27,
+        "camera_height_m": 2.712,
+        "optical_depression_deg": 35.69,
+        "mean_luminance": 108.7,
+        "distance_stats": {
+          "mean_m": 4.384,
+          "min_m": 1.69,
+          "max_m": 8.771,
+          "in_odd_le_8m": 1952,
+          "in_odd_pct": 86.64,
+          "degraded_8_to_10m": 301,
+          "degraded_pct": 13.36,
+          "out_of_odd_gt_10m": 0,
+          "out_of_odd_pct": 0.0
+        }
+      },
+      "Camera_0003": {
+        "camera_id": "Camera_0003",
+        "frames_processed": 1800,
+        "total_detections": 1538,
+        "forklift_detections": 1335,
+        "person_detections": 203,
+        "unique_tracks": 9,
+        "camera_height_m": 2.566,
+        "optical_depression_deg": 20.75,
+        "mean_luminance": 106.08,
+        "distance_stats": {
+          "mean_m": 3.03,
+          "min_m": 2.715,
+          "max_m": 7.109,
+          "in_odd_le_8m": 1538,
+          "in_odd_pct": 100.0,
+          "degraded_8_to_10m": 0,
+          "degraded_pct": 0.0,
+          "out_of_odd_gt_10m": 0,
+          "out_of_odd_pct": 0.0
+        }
+      },
+      "Camera_0004": {
+        "camera_id": "Camera_0004",
+        "frames_processed": 1800,
+        "total_detections": 1635,
+        "forklift_detections": 0,
+        "person_detections": 1635,
+        "unique_tracks": 14,
+        "camera_height_m": 2.556,
+        "optical_depression_deg": 20.56,
+        "mean_luminance": 105.94,
+        "distance_stats": {
+          "mean_m": 9.302,
+          "min_m": 2.327,
+          "max_m": 25.666,
+          "in_odd_le_8m": 658,
+          "in_odd_pct": 40.24,
+          "degraded_8_to_10m": 82,
+          "degraded_pct": 5.02,
+          "out_of_odd_gt_10m": 895,
+          "out_of_odd_pct": 54.74
+        }
+      },
+      "Camera_0005": {
+        "camera_id": "Camera_0005",
+        "frames_processed": 1800,
+        "total_detections": 5060,
+        "forklift_detections": 1791,
+        "person_detections": 3269,
+        "unique_tracks": 41,
+        "camera_height_m": 2.71,
+        "optical_depression_deg": 28.15,
+        "mean_luminance": 103.76,
+        "distance_stats": {
+          "mean_m": 6.801,
+          "min_m": 1.839,
+          "max_m": 15.257,
+          "in_odd_le_8m": 2215,
+          "in_odd_pct": 43.77,
+          "degraded_8_to_10m": 2304,
+          "degraded_pct": 45.53,
+          "out_of_odd_gt_10m": 541,
+          "out_of_odd_pct": 10.69
+        }
+      },
+      "Camera_0006": {
+        "camera_id": "Camera_0006",
+        "frames_processed": 1800,
+        "total_detections": 9457,
+        "forklift_detections": 343,
+        "person_detections": 9114,
+        "unique_tracks": 50,
+        "camera_height_m": 2.988,
+        "optical_depression_deg": 33.77,
+        "mean_luminance": 105.49,
+        "distance_stats": {
+          "mean_m": 4.698,
+          "min_m": 1.562,
+          "max_m": 11.867,
+          "in_odd_le_8m": 8956,
+          "in_odd_pct": 94.7,
+          "degraded_8_to_10m": 200,
+          "degraded_pct": 2.11,
+          "out_of_odd_gt_10m": 301,
+          "out_of_odd_pct": 3.18
+        }
+      }
+    }
+  },
+  "geometry": {
+    "distance_evidence_type": "FROM_CALIBRATED_HOMOGRAPHY",
+    "calibration_source": "NVIDIA_PROVIDED_INTRINSIC_EXTRINSIC_P_INV",
+    "reprojection_rmse": 0.0925,
+    "total_distance_measurements": 34894,
+    "distance_range_m": [
+      1.562,
+      25.666
+    ],
+    "distance_mean_m": 6.342,
+    "distance_std_m": 4.008,
+    "in_odd_le_8m": 25933,
+    "in_odd_pct": 74.32,
+    "degraded_8_to_10m": 3233,
+    "degraded_pct": 9.27,
+    "out_of_odd_gt_10m": 5728,
+    "out_of_odd_pct": 16.42
+  },
+  "odd": {
+    "overall_odd_status": "PARTIALLY_CHARACTERIZED_WITH_SHIFTS",
+    "camera_pitch_characterized": true,
+    "distance_range_characterized": true,
+    "lighting_characterized": false,
+    "camera_height_status": "ODD_SHIFT (All cameras mounted between 2.52m and 2.99m, below nominal 3.5m)",
+    "per_camera_pitch_assessment": {
+      "Camera_0000": {
+        "optical_depression_deg": 32.37,
+        "below_40_threshold": true,
+        "pitch_penalty": 0.22
+      },
+      "Camera_0001": {
+        "optical_depression_deg": 20.63,
+        "below_40_threshold": true,
+        "pitch_penalty": 0.22
+      },
+      "Camera_0002": {
+        "optical_depression_deg": 35.69,
+        "below_40_threshold": true,
+        "pitch_penalty": 0.22
+      },
+      "Camera_0003": {
+        "optical_depression_deg": 20.75,
+        "below_40_threshold": true,
+        "pitch_penalty": 0.22
+      },
+      "Camera_0004": {
+        "optical_depression_deg": 20.56,
+        "below_40_threshold": true,
+        "pitch_penalty": 0.22
+      },
+      "Camera_0005": {
+        "optical_depression_deg": 28.15,
+        "below_40_threshold": true,
+        "pitch_penalty": 0.22
+      },
+      "Camera_0006": {
+        "optical_depression_deg": 33.77,
+        "below_40_threshold": true,
+        "pitch_penalty": 0.22
+      }
+    }
+  },
+  "perception": {
+    "perception_metrics_status": "OBSERVATIONAL_ONLY_NO_GROUND_TRUTH",
+    "ground_truth_available": false,
+    "perception_f1": "NOT_ESTABLISHED",
+    "precision": "NOT_ESTABLISHED",
+    "recall": "NOT_ESTABLISHED",
+    "forklift_detections_count": 3968,
+    "forklift_mean_confidence": 0.3669,
+    "person_detections_count": 30926,
+    "person_mean_confidence": 0.7658,
+    "governance_note": "Ground truth withheld by NVIDIA. F1, precision, and recall are strictly NOT_ESTABLISHED."
+  },
+  "tracking": {
+    "tracking_metrics_status": "DESCRIPTIVE_TOPOLOGY_ONLY_NO_GROUND_TRUTH",
+    "tracking_idf1": "NOT_ESTABLISHED",
+    "mota": "NOT_ESTABLISHED",
+    "total_active_tracks": 237,
+    "per_camera_track_counts": {
+      "Camera_0000": 52,
+      "Camera_0001": 44,
+      "Camera_0002": 27,
+      "Camera_0003": 9,
+      "Camera_0004": 14,
+      "Camera_0005": 41,
+      "Camera_0006": 50
+    }
+  },
+  "uncertainty_model_h": {
+    "runtime_implementation_status": "CONFORMANT_TO_FROZEN_SPECIFICATION",
+    "model_h_evaluation_status": "PARTIAL_THREE_OF_FOUR_INPUTS_AVAILABLE",
+    "model_h_formal_status": "INPUT_INSUFFICIENT",
+    "model_h_reason": "MISSING_ILLUMINATION_LUX",
+    "missing_inputs": [
+      "illumination_lux"
+    ],
+    "available_inputs": {
+      "distance_m": "FROM_CALIBRATED_HOMOGRAPHY",
+      "camera_pitch_deg": "FROM_CALIBRATED_EXTRINSIC_OPTICAL_AXIS",
+      "occlusion_state": "DERIVED_FROM_BBOX_IOU"
+    },
+    "mode_a_no_occlusion": {
+      "definition": "k0 + dist_penalty + pitch_penalty (gamma_occ = 0)",
+      "mean_k_partial": 2.8404,
+      "min_k_partial": 2.62,
+      "max_k_partial": 4.3533,
+      "std_k_partial": 0.2921
+    },
+    "mode_b_with_occlusion_proxy": {
+      "definition": "k0 + dist_penalty + pitch_penalty + gamma_occ[occ]",
+      "mean_k_partial": 2.908,
+      "min_k_partial": 2.62,
+      "max_k_partial": 4.7533,
+      "std_k_partial": 0.3152
+    },
+    "worst_case_bounds": {
+      "rationale": "If L=0 (total darkness), illumination penalty = 0.12 * 300/100 = 0.36",
+      "worst_case_illumination_penalty": 0.36,
+      "governance_note": "Risk quantification bound only; not substituted into canonical ledger."
+    }
+  }
+}

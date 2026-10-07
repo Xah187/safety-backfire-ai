@@ -1,0 +1,543 @@
+{
+  "metadata": {
+    "timestamp_utc": "2026-09-22T16:16:37Z",
+    "video_source": "test2.mp4 (frames 550-800)",
+    "total_frames_evaluated_per_exp": 250,
+    "python_version": "3.9.6",
+    "os": "Darwin 27.0.0 (arm64)"
+  },
+  "experiments": {
+    "BASELINE_V2_9": {
+      "experiment": "BASELINE_V2_9",
+      "frames_evaluated": 250,
+      "total_time_s": 5.63,
+      "overall_fps": 44.42,
+      "percentiles_ms": {
+        "decode_ms": {
+          "P50": 0.0,
+          "P95": 0.0,
+          "P99": 0.0,
+          "mean": 0.0,
+          "max": 0.0
+        },
+        "detection_ms": {
+          "P50": 16.47,
+          "P95": 43.19,
+          "P99": 45.36,
+          "mean": 22.05,
+          "max": 530.94
+        },
+        "tracking_id_ms": {
+          "P50": 0.0,
+          "P95": 0.0,
+          "P99": 0.0,
+          "mean": 0.0,
+          "max": 0.01
+        },
+        "pose_worker_ms": {
+          "P50": 0.0,
+          "P95": 0.0,
+          "P99": 23.66,
+          "mean": 0.54,
+          "max": 45.91
+        },
+        "safety_eval_ms": {
+          "P50": 0.01,
+          "P95": 0.04,
+          "P99": 0.09,
+          "mean": 0.01,
+          "max": 0.22
+        },
+        "end_to_end_ms": {
+          "P50": -2078.37,
+          "P95": 256.83,
+          "P99": 279.19,
+          "mean": -2031.44,
+          "max": 571.15
+        }
+      },
+      "pose_mode": "sequential_continuous",
+      "pose_target_hz": 25.0,
+      "enable_identity_reid": false,
+      "geometry_method": "METHOD_A_HOMOGRAPHY_BBOX",
+      "total_entities_spawned": 0,
+      "total_events_recorded": 1,
+      "confirmed_events_count": 1,
+      "mean_track_lineage_per_entity": 1.0,
+      "max_track_lineage_per_entity": 1,
+      "min_encounter_distance_m": 0.209,
+      "events_summary": [
+        {
+          "event_id": "EVT_V3_0001",
+          "person_entity_id": "P_6",
+          "forklift_entity_id": "F_3",
+          "duration_sec": 0.08,
+          "min_distance_m": 0.209,
+          "event_state": "CONFIRMED_EVENT",
+          "track_pair_lineage": [
+            [
+              6,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    "EXPERIMENT_A_ASYNC_ONLY": {
+      "experiment": "EXPERIMENT_A_ASYNC_ONLY",
+      "frames_evaluated": 250,
+      "total_time_s": 5.58,
+      "overall_fps": 44.81,
+      "percentiles_ms": {
+        "decode_ms": {
+          "P50": 0.0,
+          "P95": 0.0,
+          "P99": 0.0,
+          "mean": 0.0,
+          "max": 0.0
+        },
+        "detection_ms": {
+          "P50": 16.6,
+          "P95": 42.25,
+          "P99": 60.29,
+          "mean": 21.42,
+          "max": 88.71
+        },
+        "tracking_id_ms": {
+          "P50": 0.0,
+          "P95": 0.0,
+          "P99": 0.0,
+          "mean": 0.0,
+          "max": 0.01
+        },
+        "pose_worker_ms": {
+          "P50": 76.0,
+          "P95": 108.89,
+          "P99": 111.81,
+          "mean": 79.81,
+          "max": 112.54
+        },
+        "safety_eval_ms": {
+          "P50": 0.01,
+          "P95": 0.05,
+          "P99": 0.11,
+          "mean": 0.01,
+          "max": 0.19
+        },
+        "end_to_end_ms": {
+          "P50": -2007.07,
+          "P95": 188.52,
+          "P99": 212.76,
+          "mean": -1983.45,
+          "max": 222.1
+        }
+      },
+      "pose_mode": "async_decoupled",
+      "pose_target_hz": 8.0,
+      "enable_identity_reid": false,
+      "geometry_method": "METHOD_A_HOMOGRAPHY_BBOX",
+      "total_entities_spawned": 0,
+      "total_events_recorded": 1,
+      "confirmed_events_count": 0,
+      "mean_track_lineage_per_entity": 1.0,
+      "max_track_lineage_per_entity": 1,
+      "min_encounter_distance_m": 0.255,
+      "events_summary": [
+        {
+          "event_id": "EVT_V3_0001",
+          "person_entity_id": "P_8",
+          "forklift_entity_id": "F_5",
+          "duration_sec": 0.12,
+          "min_distance_m": 0.255,
+          "event_state": "CANDIDATE_EVENT",
+          "track_pair_lineage": [
+            [
+              8,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    "EXPERIMENT_B_IDENTITY_ONLY": {
+      "experiment": "EXPERIMENT_B_IDENTITY_ONLY",
+      "frames_evaluated": 250,
+      "total_time_s": 5.79,
+      "overall_fps": 43.21,
+      "percentiles_ms": {
+        "decode_ms": {
+          "P50": 0.0,
+          "P95": 0.0,
+          "P99": 0.0,
+          "mean": 0.0,
+          "max": 0.0
+        },
+        "detection_ms": {
+          "P50": 17.02,
+          "P95": 42.94,
+          "P99": 56.1,
+          "mean": 21.57,
+          "max": 86.99
+        },
+        "tracking_id_ms": {
+          "P50": 0.01,
+          "P95": 0.17,
+          "P99": 0.3,
+          "mean": 0.05,
+          "max": 6.05
+        },
+        "pose_worker_ms": {
+          "P50": 0.0,
+          "P95": 0.0,
+          "P99": 43.05,
+          "mean": 0.8,
+          "max": 63.13
+        },
+        "safety_eval_ms": {
+          "P50": 0.0,
+          "P95": 0.04,
+          "P99": 0.08,
+          "mean": 0.01,
+          "max": 0.23
+        },
+        "end_to_end_ms": {
+          "P50": -1905.65,
+          "P95": 197.68,
+          "P99": 266.49,
+          "mean": -1888.67,
+          "max": 325.41
+        }
+      },
+      "pose_mode": "sequential_continuous",
+      "pose_target_hz": 25.0,
+      "enable_identity_reid": true,
+      "geometry_method": "METHOD_A_HOMOGRAPHY_BBOX",
+      "total_entities_spawned": 6,
+      "total_events_recorded": 1,
+      "confirmed_events_count": 1,
+      "mean_track_lineage_per_entity": 1.0,
+      "max_track_lineage_per_entity": 1,
+      "min_encounter_distance_m": 0.255,
+      "events_summary": [
+        {
+          "event_id": "EVT_V3_0001",
+          "person_entity_id": "P_ENT_0004",
+          "forklift_entity_id": "F_ENT_0003",
+          "duration_sec": 0.04,
+          "min_distance_m": 0.255,
+          "event_state": "CONFIRMED_EVENT",
+          "track_pair_lineage": [
+            [
+              8,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    "EXPERIMENT_C_GEOMETRY_ONLY": {
+      "experiment": "EXPERIMENT_C_GEOMETRY_ONLY",
+      "frames_evaluated": 250,
+      "total_time_s": 6.41,
+      "overall_fps": 39.0,
+      "percentiles_ms": {
+        "decode_ms": {
+          "P50": 0.0,
+          "P95": 0.0,
+          "P99": 0.0,
+          "mean": 0.0,
+          "max": 0.0
+        },
+        "detection_ms": {
+          "P50": 19.6,
+          "P95": 48.26,
+          "P99": 86.01,
+          "mean": 24.39,
+          "max": 188.37
+        },
+        "tracking_id_ms": {
+          "P50": 0.0,
+          "P95": 0.0,
+          "P99": 0.0,
+          "mean": 0.0,
+          "max": 0.02
+        },
+        "pose_worker_ms": {
+          "P50": 0.0,
+          "P95": 0.0,
+          "P99": 51.78,
+          "mean": 0.93,
+          "max": 68.31
+        },
+        "safety_eval_ms": {
+          "P50": 0.01,
+          "P95": 0.05,
+          "P99": 0.13,
+          "mean": 0.01,
+          "max": 0.21
+        },
+        "end_to_end_ms": {
+          "P50": -1683.23,
+          "P95": 173.06,
+          "P99": 299.33,
+          "mean": -1623.3,
+          "max": 332.49
+        }
+      },
+      "pose_mode": "sequential_continuous",
+      "pose_target_hz": 25.0,
+      "enable_identity_reid": false,
+      "geometry_method": "METHOD_E_3D_VEHICLE_OFFSET",
+      "total_entities_spawned": 0,
+      "total_events_recorded": 1,
+      "confirmed_events_count": 1,
+      "mean_track_lineage_per_entity": 1.0,
+      "max_track_lineage_per_entity": 1,
+      "min_encounter_distance_m": 0.255,
+      "events_summary": [
+        {
+          "event_id": "EVT_V3_0001",
+          "person_entity_id": "P_8",
+          "forklift_entity_id": "F_5",
+          "duration_sec": 0.12,
+          "min_distance_m": 0.255,
+          "event_state": "CONFIRMED_EVENT",
+          "track_pair_lineage": [
+            [
+              8,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    "EXPERIMENT_D_ASYNC_IDENTITY": {
+      "experiment": "EXPERIMENT_D_ASYNC_IDENTITY",
+      "frames_evaluated": 250,
+      "total_time_s": 5.66,
+      "overall_fps": 44.14,
+      "percentiles_ms": {
+        "decode_ms": {
+          "P50": 0.0,
+          "P95": 0.0,
+          "P99": 0.0,
+          "mean": 0.0,
+          "max": 0.0
+        },
+        "detection_ms": {
+          "P50": 16.69,
+          "P95": 45.73,
+          "P99": 56.05,
+          "mean": 21.83,
+          "max": 132.05
+        },
+        "tracking_id_ms": {
+          "P50": 0.01,
+          "P95": 0.15,
+          "P99": 0.26,
+          "mean": 0.03,
+          "max": 0.34
+        },
+        "pose_worker_ms": {
+          "P50": 78.19,
+          "P95": 97.71,
+          "P99": 99.44,
+          "mean": 76.49,
+          "max": 99.88
+        },
+        "safety_eval_ms": {
+          "P50": 0.01,
+          "P95": 0.04,
+          "P99": 0.12,
+          "mean": 0.01,
+          "max": 0.18
+        },
+        "end_to_end_ms": {
+          "P50": -1937.33,
+          "P95": 238.9,
+          "P99": 284.25,
+          "mean": -1911.71,
+          "max": 290.51
+        }
+      },
+      "pose_mode": "async_decoupled",
+      "pose_target_hz": 8.0,
+      "enable_identity_reid": true,
+      "geometry_method": "METHOD_A_HOMOGRAPHY_BBOX",
+      "total_entities_spawned": 6,
+      "total_events_recorded": 1,
+      "confirmed_events_count": 0,
+      "mean_track_lineage_per_entity": 1.0,
+      "max_track_lineage_per_entity": 1,
+      "min_encounter_distance_m": 0.255,
+      "events_summary": [
+        {
+          "event_id": "EVT_V3_0001",
+          "person_entity_id": "P_ENT_0004",
+          "forklift_entity_id": "F_ENT_0003",
+          "duration_sec": 0.12,
+          "min_distance_m": 0.255,
+          "event_state": "CANDIDATE_EVENT",
+          "track_pair_lineage": [
+            [
+              8,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    "EXPERIMENT_E_ASYNC_GEOMETRY": {
+      "experiment": "EXPERIMENT_E_ASYNC_GEOMETRY",
+      "frames_evaluated": 250,
+      "total_time_s": 5.67,
+      "overall_fps": 44.11,
+      "percentiles_ms": {
+        "decode_ms": {
+          "P50": 0.0,
+          "P95": 0.0,
+          "P99": 0.0,
+          "mean": 0.0,
+          "max": 0.0
+        },
+        "detection_ms": {
+          "P50": 16.99,
+          "P95": 44.82,
+          "P99": 57.11,
+          "mean": 21.76,
+          "max": 80.72
+        },
+        "tracking_id_ms": {
+          "P50": 0.0,
+          "P95": 0.0,
+          "P99": 0.0,
+          "mean": 0.0,
+          "max": 0.0
+        },
+        "pose_worker_ms": {
+          "P50": 52.23,
+          "P95": 115.17,
+          "P99": 120.76,
+          "mean": 74.73,
+          "max": 122.16
+        },
+        "safety_eval_ms": {
+          "P50": 0.01,
+          "P95": 0.04,
+          "P99": 0.12,
+          "mean": 0.01,
+          "max": 0.19
+        },
+        "end_to_end_ms": {
+          "P50": -1985.79,
+          "P95": 163.45,
+          "P99": 219.01,
+          "mean": -1960.2,
+          "max": 219.83
+        }
+      },
+      "pose_mode": "async_decoupled",
+      "pose_target_hz": 8.0,
+      "enable_identity_reid": false,
+      "geometry_method": "METHOD_E_3D_VEHICLE_OFFSET",
+      "total_entities_spawned": 0,
+      "total_events_recorded": 1,
+      "confirmed_events_count": 0,
+      "mean_track_lineage_per_entity": 1.0,
+      "max_track_lineage_per_entity": 1,
+      "min_encounter_distance_m": 0.255,
+      "events_summary": [
+        {
+          "event_id": "EVT_V3_0001",
+          "person_entity_id": "P_8",
+          "forklift_entity_id": "F_5",
+          "duration_sec": 0.12,
+          "min_distance_m": 0.255,
+          "event_state": "CANDIDATE_EVENT",
+          "track_pair_lineage": [
+            [
+              8,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    "EXPERIMENT_F_FULL_CANDIDATE": {
+      "experiment": "EXPERIMENT_F_FULL_CANDIDATE",
+      "frames_evaluated": 250,
+      "total_time_s": 5.74,
+      "overall_fps": 43.56,
+      "percentiles_ms": {
+        "decode_ms": {
+          "P50": 0.0,
+          "P95": 0.0,
+          "P99": 0.0,
+          "mean": 0.0,
+          "max": 0.0
+        },
+        "detection_ms": {
+          "P50": 16.89,
+          "P95": 46.75,
+          "P99": 60.49,
+          "mean": 22.03,
+          "max": 90.15
+        },
+        "tracking_id_ms": {
+          "P50": 0.01,
+          "P95": 0.19,
+          "P99": 0.23,
+          "mean": 0.03,
+          "max": 0.38
+        },
+        "pose_worker_ms": {
+          "P50": 79.49,
+          "P95": 100.2,
+          "P99": 102.04,
+          "mean": 80.02,
+          "max": 102.5
+        },
+        "safety_eval_ms": {
+          "P50": 0.01,
+          "P95": 0.04,
+          "P99": 0.08,
+          "mean": 0.01,
+          "max": 0.16
+        },
+        "end_to_end_ms": {
+          "P50": -1920.65,
+          "P95": 224.21,
+          "P99": 280.19,
+          "mean": -1894.01,
+          "max": 289.24
+        }
+      },
+      "pose_mode": "async_decoupled",
+      "pose_target_hz": 8.0,
+      "enable_identity_reid": true,
+      "geometry_method": "METHOD_E_3D_VEHICLE_OFFSET",
+      "total_entities_spawned": 6,
+      "total_events_recorded": 1,
+      "confirmed_events_count": 0,
+      "mean_track_lineage_per_entity": 1.0,
+      "max_track_lineage_per_entity": 1,
+      "min_encounter_distance_m": 0.255,
+      "events_summary": [
+        {
+          "event_id": "EVT_V3_0001",
+          "person_entity_id": "P_ENT_0004",
+          "forklift_entity_id": "F_ENT_0003",
+          "duration_sec": 0.12,
+          "min_distance_m": 0.255,
+          "event_state": "CANDIDATE_EVENT",
+          "track_pair_lineage": [
+            [
+              8,
+              5
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

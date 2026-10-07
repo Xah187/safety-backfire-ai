@@ -1,0 +1,69 @@
+{
+  "registry_version": "V3.3.3_CANONICAL_CLAIM_EVIDENCE_REGISTRY",
+  "release": "V3.3.3",
+  "claims": [
+    {
+      "claim_id": "CLAIM_333_01",
+      "claim": "Model H achieved 95.02% observed OOS coverage on the tested nominal evaluation population.",
+      "evidence_class": "STATISTICAL",
+      "metric_id": "METRIC_V3_3_3_NOMINAL_OOS_COVERAGE",
+      "test": "test_04_model_h_oos_count_reconstruction",
+      "allowed_wording": "Observed 95.02% under Model H on tested OOS population.",
+      "prohibited_wording": "95% safety coverage guaranteed across warehouses."
+    },
+    {
+      "claim_id": "CLAIM_333_02",
+      "claim": "The tested action policy downgraded all observed boundary scenarios appropriately.",
+      "evidence_class": "OBSERVED",
+      "metric_id": "METRIC_V3_3_3_APPROPRIATE_REFUSAL_RATE",
+      "test": "test_08_refusal_independence",
+      "allowed_wording": "Action policy downgraded all 10 observed boundary scenarios (150 frames) appropriately.",
+      "prohibited_wording": "100% safe refusal guaranteed across general population."
+    },
+    {
+      "claim_id": "CLAIM_333_03",
+      "claim": "The system maintained 0 observed unsafe non-refusals in the tested refusal set.",
+      "evidence_class": "OBSERVED",
+      "metric_id": "METRIC_V3_3_3_UNSAFE_NON_REFUSAL_RATE",
+      "test": "test_08_refusal_independence",
+      "allowed_wording": "0 observed unsafe non-refusals across tested boundary set.",
+      "prohibited_wording": "Zero failure probability."
+    },
+    {
+      "claim_id": "CLAIM_333_04",
+      "claim": "The system evaluated four sectors within Facility Central 01.",
+      "evidence_class": "OBSERVED",
+      "metric_id": "METRIC_V3_3_3_PERCEPTION_F1",
+      "test": "test_10_perception_micro_macro",
+      "allowed_wording": "Cross-sector generalization established across four sectors in Facility Central 01.",
+      "prohibited_wording": "Multi-facility cross-warehouse validated."
+    },
+    {
+      "claim_id": "CLAIM_333_05",
+      "claim": "One newly observed physical intervention was added.",
+      "evidence_class": "CASE_STUDY",
+      "metric_id": "METRIC_V3_3_3_PHYSICAL_NEW_INTERVENTIONS",
+      "test": "test_12_intervention_provenance",
+      "allowed_wording": "One newly observed physical intervention was added (INT_331_06).",
+      "prohibited_wording": "Six new physical interventions validated."
+    },
+    {
+      "claim_id": "CLAIM_333_06",
+      "claim": "Model H is a non-dominated Pareto-frontier model providing the best observed trade-off among tested candidate models.",
+      "evidence_class": "DERIVED",
+      "metric_id": "METRIC_V3_3_3_NOMINAL_OOS_COVERAGE",
+      "test": "test_06_pareto_claim_integrity",
+      "allowed_wording": "Non-dominated Pareto-frontier solution with best observed coverage trade-off.",
+      "prohibited_wording": "Globally Pareto-optimal over all possible models."
+    },
+    {
+      "claim_id": "CLAIM_333_07",
+      "claim": "Multi-facility warehouse generalization remains unverified pending external facility data.",
+      "evidence_class": "LIMITATION",
+      "metric_id": "METRIC_V3_3_3_PERCEPTION_F1",
+      "test": "test_16_external_facility_gate",
+      "allowed_wording": "Multi-facility generalization is unverified.",
+      "prohibited_wording": "Universal warehouse deployment approved."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "release": "V3.3.3",
+  "readiness_status": "V3.3.3_READY_WITH_LIMITATIONS",
+  "v3_3_2_reconciled_status": "V3.3.2_FINAL_RECONCILED",
+  "reconciliation_gate": "FULL_RECONCILIATION_PASSED",
+  "timestamp_utc": "2026-09-25T15:10:00Z",
+  "governing_rationale": "V3.3.2 reconciliation gate is 100% satisfied: all metric denominators are explicit, statistical coverage and operational safety policy metrics are strictly separated, autonomous uncovered provenance is audited (operational safety status: NOT_ESTABLISHED_FOR_THE_26_UNCOVERED_OOS_POINTS), calibration lineage is preserved, Model H lineage is locked, perception aggregation levels are explicit, bootstrap dependence is documented, intervention provenance is preserved (1 prospective physical, 2 historical physical, 3 replay), DiD semantics are preserved, and evidence gaps remain NOT_ESTABLISHED. V3.3.2 is frozen as V3.3.2_FINAL_RECONCILED and V3.3.3 is authorized as V3.3.3_READY_WITH_LIMITATIONS.",
+  "active_unsupported_claims": 0,
+  "known_evidence_gaps": 6
+}

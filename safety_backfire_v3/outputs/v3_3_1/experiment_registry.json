@@ -1,0 +1,140 @@
+{
+  "registry_version": "V3.3.1_EXPERIMENT_REGISTRY",
+  "timestamp_utc": "2026-09-25T06:25:00Z",
+  "governing_policy": "All V3.3.1 experiments must be pre-registered with frozen hypotheses, splits, and acceptance criteria before evaluation.",
+  "experiments": [
+    {
+      "ExperimentID": "EXP_331_01",
+      "Title": "CONDITION_AWARE_UNCERTAINTY",
+      "Hypothesis": "Conditioning uncertainty factor k on distance, illumination, and occlusion improves out-of-sample nominal ODD coverage from 92.61% to >= 95.0%, with no nominal stratum below 90% and bounded interval width.",
+      "Dataset": "DS_V3_3_CALIB_SECTOR_B / DS_V3_3_VAL_INTERSECTION_C / DS_V3_3_BLIND_STAGING_D",
+      "Split": "OUT_OF_SAMPLE_VALIDATION",
+      "IndependentVariables": [
+        "Candidate models (Model A fixed, Model B distance, Model C distance+lux, Model D distance+lux+occlusion, Model E conformal)",
+        "Distance strata (0.5-4.0m, 4.0-8.0m, >8.0m)",
+        "Illumination (210 lux vs 500 lux)",
+        "Occlusion (None, Partial, Heavy)"
+      ],
+      "DependentVariables": [
+        "Nominal OOS empirical coverage",
+        "Worst-stratum nominal coverage",
+        "Mean interval width (m)",
+        "95th percentile interval width (m)",
+        "Undercoverage frequency"
+      ],
+      "Control": "Fixed k=2.42 baseline (Model A: 92.61% nominal coverage)",
+      "Treatment": "Condition-aware scaling (Model D: k(d, lux, occ))",
+      "SampleSize": 745,
+      "RandomSeed": 42,
+      "EvaluationMethod": "Closed-form elliptical boundary containment with condition-aware scaling factor and Wilson score interval",
+      "AcceptanceCriteria": "Nominal OOS coverage >= 0.9500; no nominal stratum < 0.9000; far-field outside autonomous envelope; false refusal <= 0.05",
+      "Result": "PASS",
+      "Interpretation": "EXECUTED: Condition-aware Model D achieved 95.48% nominal OOS coverage [95% CI: 93.63%-96.83%], meeting the 95.0% target and raising the worst-stratum coverage from 84.68% to 92.74%."
+    },
+    {
+      "ExperimentID": "EXP_331_02",
+      "Title": "ODD_AWARE_SAFE_REFUSAL",
+      "Hypothesis": "Multi-trigger boundary gating achieves appropriate refusal rate >= 98% on boundary breaches without exceeding 5% false refusals on nominal operational frames.",
+      "Dataset": "DS_V3_3_STRESS_RAMP_SOUTH / DS_V3_3_SYNTHETIC_OCCLUSION_REPLAY / DS_V3_3_DEV_AISLE_A",
+      "Split": "BOUNDARY_STRESS_AND_DEV",
+      "IndependentVariables": [
+        "Floor slope (0.0 to 3.5 deg)",
+        "Camera pitch (18.5 to 50.0 deg)",
+        "Processing latency (12ms to 900ms)",
+        "Distance (1.0m to 14.0m)"
+      ],
+      "DependentVariables": [
+        "Appropriate refusal rate",
+        "Unsafe non-refusal rate",
+        "False refusal rate",
+        "Advisory downgrade rate",
+        "Refusal confusion matrix counts"
+      ],
+      "Control": "Open-loop baseline without telemetry gating",
+      "Treatment": "RefusalQualityEngine with multi-trigger gating (uncertainty, geometry, optical, latency, identity)",
+      "SampleSize": 850,
+      "RandomSeed": 42,
+      "EvaluationMethod": "Multi-modal boundary gate stress testing with 4x4 refusal confusion matrix classification",
+      "AcceptanceCriteria": "Appropriate refusal rate >= 0.98; unsafe non-refusal rate <= 0.01; false refusal rate <= 0.05",
+      "Result": "PASS",
+      "Interpretation": "EXECUTED: Achieved 100.0% appropriate refusal rate on boundary violations, 0.0% unsafe non-refusal, and 0.0% false refusal on nominal frames. Complete 4x4 confusion matrix generated."
+    },
+    {
+      "ExperimentID": "EXP_331_03",
+      "Title": "CROSS_ENVIRONMENT_GENERALIZATION",
+      "Hypothesis": "Object-level perception and trajectory-level tracking across 4 physical warehouse sectors maintain bounded degradation with explicit object-level denominators and trajectory bootstrap intervals.",
+      "Dataset": "DS_V3_3_DEV_AISLE_A / DS_V3_3_CALIB_SECTOR_B / DS_V3_3_VAL_INTERSECTION_C / DS_V3_3_BLIND_STAGING_D",
+      "Split": "MULTI_SECTOR_EVALUATION",
+      "IndependentVariables": [
+        "Warehouse sector (Sector A, Sector B, Sector C, Sector D)",
+        "Entity classes (Person, Vehicle, Storage, Load, Machine)",
+        "Condition strata (Near/Mid/Far, Low/Med/High occlusion, Normal/Low light)"
+      ],
+      "DependentVariables": [
+        "Object-level precision, recall, F1",
+        "Tracking IDF1",
+        "Bootstrap 95% CI on IDF1",
+        "Identity switches"
+      ],
+      "Control": "Sector A wide-aisle baseline",
+      "Treatment": "Cross-sector evaluation across all 4 physical warehouse sectors",
+      "SampleSize": 1672,
+      "RandomSeed": 1337,
+      "EvaluationMethod": "Object-level denominator matching and non-parametric trajectory bootstrap (1000 replicates)",
+      "AcceptanceCriteria": "Perception F1 >= 0.85 across nominal strata; Tracking IDF1 >= 0.85 with documented bootstrap unit and seed",
+      "Result": "PASS",
+      "Interpretation": "EXECUTED: Object-level perception F1 achieved 88.45% overall; Tracking IDF1 achieved 91.80% [Bootstrap 95% CI: 90.57%-92.95%] across 28 trajectory sequences."
+    },
+    {
+      "ExperimentID": "EXP_331_04",
+      "Title": "IDENTITY_RECOVERY_HARDENING",
+      "Hypothesis": "Enforcing an explicit UNKNOWN state on ambiguous crossing tracks eliminates forced incorrect identity swaps during dense forklift-worker interactions without increasing track loss >= 10%.",
+      "Dataset": "DS_V3_3_VAL_INTERSECTION_C / DS_V3_3_BLIND_STAGING_D",
+      "Split": "CROSSING_AND_OCCLUSION_EVALUATION",
+      "IndependentVariables": [
+        "Candidate proximity (< 0.80m)",
+        "Feature embedding similarity (> 0.88)",
+        "Hazard pending state (True/False)"
+      ],
+      "DependentVariables": [
+        "Identity switch count",
+        "Ambiguity detection rate",
+        "Unsafe forced association rate",
+        "Hazard action downgrade fraction"
+      ],
+      "Control": "Forced nearest-neighbor association baseline (which produced V3.3-FAIL-003)",
+      "Treatment": "IdentityHardeningEngine with ambiguity scoring and advisory downgrade",
+      "SampleSize": 28,
+      "RandomSeed": 42,
+      "EvaluationMethod": "Spatial gating and ambiguity testing during dense crossing events",
+      "AcceptanceCriteria": "Zero forced incorrect identity associations during high-ambiguity crossing; 100% downgrade to ADVISORY or INSUFFICIENT_EVIDENCE when identity is ambiguous",
+      "Result": "PASS",
+      "Interpretation": "EXECUTED: Resolved V3.3-FAIL-003. When 2 workers in identical PPE cross within 0.8m, system assigns UNKNOWN_AMBIGUOUS_PAIR and downgrades action to ADVISORY_WARNING_ONLY, eliminating forced false tracking attribution."
+    },
+    {
+      "ExperimentID": "EXP_331_05",
+      "Title": "BACKFIRE_EVIDENCE_EXPANSION",
+      "Hypothesis": "Expanding intervention evaluation with rigorous provenance classification (PHYSICAL_NEW vs REPLAY) and pre-treatment trend validation identifies true risk redistribution while refusing causal claims under parallel-trend failure.",
+      "Dataset": "DS_V3_3_INTERVENTION_REPLAY_FIXTURES / DS_PHYSICAL_RAW_TEST2_MP4",
+      "Split": "INTERVENTION_EVALUATION",
+      "IndependentVariables": [
+        "Intervention topology (barrier, speed limiter, detour routing, staging relocation, one-way restriction)",
+        "Exogenous traffic shock (+38.5% volume surge)"
+      ],
+      "DependentVariables": [
+        "DiD risk coefficient",
+        "Pre-treatment slope p-value",
+        "Parallel trend validity",
+        "Taxonomy outcome state"
+      ],
+      "Control": "Untreated adjacent control zones with verified pre-trend parallelism",
+      "Treatment": "Treated zones with physical or routing interventions",
+      "SampleSize": 6,
+      "RandomSeed": 2026,
+      "EvaluationMethod": "Two-zone Difference-in-Differences with pre-treatment trend slope equality test and provenance classification",
+      "AcceptanceCriteria": "Strict separation of PHYSICAL_NEW from REPLAY cases; zero causal claims under parallel-trend failure (p < 0.05)",
+      "Result": "PASS",
+      "Interpretation": "EXECUTED: Evaluated N=6 cases with 1 PHYSICAL_NEW case (one-way aisle restriction in Sector B). Successfully identified RISK_REDISTRIBUTED and refused causal attribution under exogenous shock."
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "gate_name": "ObservabilityGateSpecification",
+  "milestone": "V3.4-G",
+  "version": "1.0.0",
+  "provenance_link": "Milestone V3.4-E Observability Audit",
+  "governance_invariants": {
+    "safety_backfire_gt": "NOT_ESTABLISHED",
+    "prohibit_partial_to_no_risk": "SECONDARY_ZONE = PARTIAL must NEVER be mapped to NO_SECONDARY_RISK.",
+    "prohibit_none_to_no_backfire": "SECONDARY_ZONE = NONE must NEVER be mapped to NO_BACKFIRE."
+  },
+  "gate_objective": "Determine whether the physical surveillance infrastructure provides unbroken visual coverage of the interaction, the primary zone, and the secondary zone before permitting candidate admission.",
+  "input_dimensions": {
+    "primary_zone_observability": {
+      "type": "string",
+      "allowed_values": ["FULL", "PARTIAL", "NONE", "UNKNOWN"],
+      "minimum_required_for_backfire_candidate": ["FULL", "PARTIAL_WITH_CLEAR_CORRIDOR"],
+      "failure_action": "Route to INSUFFICIENT_BACKFIRE_EVIDENCE"
+    },
+    "secondary_zone_observability": {
+      "type": "string",
+      "allowed_values": ["FULL", "PARTIAL", "NONE", "UNKNOWN"],
+      "entry_visibility_required": true,
+      "interior_depth_visibility_required": true,
+      "handling_rules": {
+        "rule_part_depth_occluded": {
+          "condition": "entry_visible == true AND interior_depth_visible == false",
+          "classification": "SECONDARY_ZONE_OBSERVABILITY = PARTIAL",
+          "depth_evidence_status": "SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE",
+          "permitted_outcomes": [
+            "If vehicle halts in primary zone without moving toward secondary zone: NO_BACKFIRE_OBSERVED_IN_PRIMARY_LANE",
+            "If vehicle swerves toward secondary aisle but depth is occluded: INSUFFICIENT_BACKFIRE_EVIDENCE",
+            "FORBIDDEN: NO_SECONDARY_RISK"
+          ]
+        },
+        "rule_none_undefined": {
+          "condition": "secondary_zone == 'UNKNOWN' OR secondary_zone_observability == 'NONE'",
+          "classification": "SECONDARY_ZONE_OBSERVABILITY = NONE",
+          "permitted_outcomes": [
+            "INSUFFICIENT_BACKFIRE_EVIDENCE",
+            "FORBIDDEN: NO_BACKFIRE"
+          ]
+        }
+      }
+    },
+    "post_event_observability": {
+      "type": "string",
+      "allowed_values": ["ADEQUATE", "PARTIAL", "INADEQUATE", "UNKNOWN"],
+      "minimum_duration_seconds": 4.0,
+      "nominal_duration_seconds": 8.0,
+      "handling_rules": {
+        "rule_inadequate_post": {
+          "condition": "post_duration_s < 2.0 OR post_truncated_at_stream_boundary",
+          "classification": "POST_EVENT_OBSERVABILITY = INADEQUATE",
+          "outcome": "Route to INSUFFICIENT_BACKFIRE_EVIDENCE"
+        }
+      }
+    },
+    "causal_sequence_observability": {
+      "type": "string",
+      "allowed_values": ["FULL", "PARTIAL", "NONE", "UNKNOWN"],
+      "minimum_required_for_backfire_candidate": ["FULL", "PARTIAL_COHERENT"],
+      "handling_rules": {
+        "rule_sequence_none": {
+          "condition": "causal_sequence_observability == 'NONE'",
+          "outcome": "Route to INSUFFICIENT_BACKFIRE_EVIDENCE or PRIMARY_NEAR_MISS"
+        }
+      }
+    }
+  },
+  "sensor_sufficiency_contract": {
+    "monocular_cctv_limitations": {
+      "finding_from_v3_4_e": "In 38/38 eligible warehouse events, secondary zone depth was completely occluded (depth_visible = 0/38) by pallet racks.",
+      "specification": "Monocular CCTV is sufficient ONLY to confirm primary near-misses, complete vehicle stops, or nominal corridor clearances. Monocular CCTV is INSUFFICIENT to definitively rule out secondary risk within deep pallet rack aisles."
+    },
+    "multi_camera_requirement": {
+      "trigger": "When secondary zone depth is occluded from primary camera view.",
+      "requirement": "Secondary cross-aisle must have calibrated overlapping camera coverage mapped via 3D ground homography.",
+      "status_when_absent": "SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE"
+    }
+  }
+}

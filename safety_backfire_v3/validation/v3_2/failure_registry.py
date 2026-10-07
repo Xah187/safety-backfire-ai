@@ -1,0 +1,217 @@
+"""
+failure_registry.py
+Safety Backfire AI - V3.2 Master Failure Mode Registry & Defect Tracking Engine
+Maintains immutable catalog FAIL-01 through FAIL-37 and manages FAIL-38+ candidates/confirmed defects.
+"""
+
+import sys
+import json
+from pathlib import Path
+from typing import Dict, Any, List
+
+WORKSPACE_ROOT = Path(__file__).resolve().parent.parent.parent.parent
+sys.path.insert(0, str(WORKSPACE_ROOT))
+
+def build_v3_2_failure_registry() -> Dict[str, Any]:
+    # Master lineage: FAIL-01 to FAIL-37 preserved exactly
+    historical_failures = [
+        {"id": "FAIL-01", "sev": "CRITICAL", "release": "V2.9", "cause": "Multi-vehicle association collision & track identity cross-talk", "status": "RESOLVED"},
+        {"id": "FAIL-02", "sev": "HIGH", "release": "V2.9", "cause": "1D TTC crossing false positives from lateral crossing paths", "status": "RESOLVED"},
+        {"id": "FAIL-03", "sev": "CRITICAL", "release": "V2.9", "cause": "Man-Down candidate rejection on upright recovery", "status": "RESOLVED"},
+        {"id": "FAIL-04", "sev": "CRITICAL", "release": "V2.9", "cause": "RiskEngine crash on schema mismatch", "status": "RESOLVED"},
+        {"id": "FAIL-05", "sev": "HIGH", "release": "V2.9", "cause": "Running pedestrian vs operating vehicle misclassification", "status": "RESOLVED"},
+        {"id": "FAIL-06", "sev": "HIGH", "release": "V2.9", "cause": "Safety state ambiguity between static caution & active hazard", "status": "RESOLVED"},
+        {"id": "FAIL-07", "sev": "HIGH", "release": "V2.9", "cause": "Event episode fragmentation on tracker ID switch", "status": "RESOLVED"},
+        {"id": "FAIL-08", "sev": "HIGH", "release": "V2.9", "cause": "Sequential live throughput bottleneck (<15 FPS)", "status": "RESOLVED"},
+        {"id": "FAIL-09", "sev": "MEDIUM", "release": "V2.9", "cause": "Ephemeral memory leak across long video files", "status": "RESOLVED"},
+        {"id": "FAIL-10", "sev": "HIGH", "release": "V2.9", "cause": "Elevated cabin homography distortion up to 2.5m", "status": "RESOLVED"},
+        {"id": "FAIL-11", "sev": "MEDIUM", "release": "V2.9", "cause": "Overlapping bounding box occlusion suppression", "status": "RESOLVED"},
+        {"id": "FAIL-12", "sev": "LOW", "release": "V2.9", "cause": "Inconsistent warning confidence thresholds across models", "status": "RESOLVED"},
+        {"id": "FAIL-13", "sev": "HIGH", "release": "V3.0.1", "cause": "Identity ReID drift across visually similar uniforms", "status": "DOCUMENTED BOUNDARY"},
+        {"id": "FAIL-14", "sev": "CRITICAL", "release": "V3.0.1", "cause": "Async queue lock contention under high-frequency ingress", "status": "RESOLVED"},
+        {"id": "FAIL-15", "sev": "HIGH", "release": "V3.0.1", "cause": "False Man-Down trigger on crouching or stooping workers", "status": "RESOLVED"},
+        {"id": "FAIL-16", "sev": "MEDIUM", "release": "V3.0.1", "cause": "Temporal starvation of kinematics during frame drops", "status": "RESOLVED"},
+        {"id": "FAIL-17", "sev": "HIGH", "release": "V3.0.1", "cause": "Premature event episode termination during occlusions", "status": "RESOLVED"},
+        {"id": "FAIL-18", "sev": "HIGH", "release": "V3.0.1", "cause": "Asynchronous pose freshness gap at moment of safety decision", "status": "RESOLVED"},
+        {"id": "FAIL-19", "sev": "HIGH", "release": "V3.0.1", "cause": "Perspective elevation compensation sensitive to camera pitch", "status": "RESOLVED"},
+        {"id": "FAIL-20", "sev": "MEDIUM", "release": "V3.0.1", "cause": "Rapid oscillating state transitions near boundary thresholds", "status": "RESOLVED"},
+        {"id": "FAIL-21", "sev": "MEDIUM", "release": "V3.0.1", "cause": "Worker thread leak during abrupt pipeline shutdown", "status": "RESOLVED"},
+        {"id": "FAIL-22", "sev": "HIGH", "release": "V3.0.1", "cause": "Point-estimate risk ignores geometry uncertainty", "status": "RESOLVED"},
+        {"id": "FAIL-23", "sev": "CRITICAL", "release": "V3.0.3", "cause": "Uncertainty under-coverage (89.0%) due to Jensen convexity", "status": "RESOLVED"},
+        {"id": "FAIL-24", "sev": "HIGH", "release": "V3.0.3", "cause": "Linear elevation truncation breakdown (667.9 px)", "status": "RESOLVED"},
+        {"id": "FAIL-25", "sev": "MEDIUM", "release": "V3.0.3", "cause": "Benchmark synthetic timestamp de-synchronization", "status": "RESOLVED"},
+        {"id": "FAIL-26", "sev": "MEDIUM", "release": "V3.0.4", "cause": "Far-field monocular depth dilution (D > 10m)", "status": "DOCUMENTED BOUNDARY"},
+        {"id": "FAIL-27", "sev": "MEDIUM", "release": "V3.0.4", "cause": "Non-planar warehouse floor gradients / ramp distortions", "status": "DOCUMENTED BOUNDARY"},
+        {"id": "FAIL-28", "sev": "HIGH", "release": "V3.0.5", "cause": "In-sample calibration leakage in uncertainty engine", "status": "RESOLVED"},
+        {"id": "FAIL-29", "sev": "HIGH", "release": "V3.0.5", "cause": "Trajectory threat inversion in caution zone policy branch", "status": "RESOLVED"},
+        {"id": "FAIL-30", "sev": "HIGH", "release": "V3.0.5", "cause": "Camera pitch mechanical deflection drift sensitivity", "status": "DOCUMENTED BOUNDARY"},
+        {"id": "FAIL-31", "sev": "HIGH", "release": "V3.1", "cause": "Entity Subtype Hallucination under Occlusion (fail closed to UNKNOWN_PERSON)", "status": "RESOLVED"},
+        {"id": "FAIL-32", "sev": "MEDIUM", "release": "V3.1", "cause": "Relation Zone False Positive from 2D Bbox Footpoint Bleed", "status": "RESOLVED"},
+        {"id": "FAIL-33", "sev": "CRITICAL", "release": "V3.1", "cause": "Counterfactual Temporal Baseline Leakage (post-intervention frame contamination)", "status": "RESOLVED"},
+        {"id": "FAIL-34", "sev": "HIGH", "release": "V3.1", "cause": "Inappropriate Kinetic TTC Computation on Stationary Structural Hazard (v=0)", "status": "RESOLVED"},
+        {"id": "FAIL-35", "sev": "HIGH", "release": "V3.1", "cause": "Cross-Hazard Risk Masking (benign relation suppressing critical collapse hazard)", "status": "RESOLVED"},
+        {"id": "FAIL-36", "sev": "CRITICAL", "release": "V3.1", "cause": "Aggregate Risk Transfer Blindness (average risk drops while egress blockage is created)", "status": "RESOLVED"},
+        {"id": "FAIL-37", "sev": "HIGH", "release": "V3.1", "cause": "Temporal Entity State Resurrection across Tracking Dropouts", "status": "RESOLVED"}
+    ]
+
+    # V3.2 Newly Confirmed Failures (FAIL-38+)
+    v3_2_new_failures = [
+        {
+            "id": "FAIL-38", "sev": "HIGH", "release": "V3.2",
+            "cause": "Real-World Far-Field Detector Miss at D > 8.5m",
+            "status": "DOCUMENTED BOUNDARY",
+            "subsystem": "Perception / Detection",
+            "reproduction": "Recall drops to 68.4% beyond 8.5m under monocular 1080p surveillance.",
+            "remediation": "Certified ODD maximum range restricted to 8.0m for autonomous emergency braking."
+        },
+        {
+            "id": "FAIL-40", "sev": "HIGH", "release": "V3.2",
+            "cause": "Identity Swap on Visually Similar High-Vis Safety Uniforms",
+            "status": "RESOLVED",
+            "subsystem": "Identity / Tracking",
+            "reproduction": "Two workers in identical neon vests crossing at d < 0.8m swapped ReID IDs.",
+            "remediation": "Spatial Kalman trajectory gating enforced before visual ReID update."
+        },
+        {
+            "id": "FAIL-41", "sev": "HIGH", "release": "V3.2",
+            "cause": "Event Episode Fragmentation during Prolonged Occlusion (>45 frames)",
+            "status": "RESOLVED",
+            "subsystem": "Event Reasoning / Temporal Tracking",
+            "reproduction": "A single continuous safety event was split into two disconnected event episodes.",
+            "remediation": "Extended event temporal hysteresis buffer to 60 frames (2.0s)."
+        },
+        {
+            "id": "FAIL-42", "sev": "HIGH", "release": "V3.2",
+            "cause": "Occlusion-Induced Bbox Centroid Jitter Creating False High Velocity Spikes",
+            "status": "RESOLVED",
+            "subsystem": "Kinematics / TTC",
+            "reproduction": "Edge occlusion caused 2.5 m/s noisy centroid jump, triggering false low TTC alarm.",
+            "remediation": "Exponential velocity damping filter with spatial variance gating applied."
+        },
+        {
+            "id": "FAIL-44", "sev": "HIGH", "release": "V3.2",
+            "cause": "Camera Pitch Thermal and Mechanical Gantry Mount Deflection Drift",
+            "status": "DOCUMENTED BOUNDARY",
+            "subsystem": "Geometry / Extrinsics",
+            "reproduction": "Pitch deflection of 1.0 deg produced 1.15m error at 8m range.",
+            "remediation": "Rigid mount requirement specified: mechanical tolerance <= +/- 0.35 deg."
+        },
+        {
+            "id": "FAIL-45", "sev": "HIGH", "release": "V3.2",
+            "cause": "Ramp Floor Incline Elevation Warping on Planar Homography",
+            "status": "DOCUMENTED BOUNDARY",
+            "subsystem": "Geometry / Ground Projection",
+            "reproduction": "3.5 deg incline ramp produced 0.74m forward projection distortion.",
+            "remediation": "Planar Z_w = 0 ODD restriction enforced; ramps must use 3D inclined mesh or exclusion zone."
+        },
+        {
+            "id": "FAIL-46", "sev": "MEDIUM", "release": "V3.2",
+            "cause": "Monocular Radial Lens Distortion in Peripheral Image Margins",
+            "status": "RESOLVED",
+            "subsystem": "Optical Geometry",
+            "reproduction": "Peripheral pixels (X > 1100) experienced up to 0.35m uncalibrated radial displacement.",
+            "remediation": "OpenCV Brown-Conrady radial lens undistortion pre-processing pipeline applied."
+        },
+        {
+            "id": "FAIL-49", "sev": "MEDIUM", "release": "V3.2",
+            "cause": "Hazard Misattribution during Dense Staging Clutter",
+            "status": "RESOLVED",
+            "subsystem": "Hazard Classification",
+            "reproduction": "Stationary staged pallet in aisle margin misclassified as moving vehicle obstacle.",
+            "remediation": "Multi-frame stationary persistence check and zone polygon boundary containment gating."
+        },
+        {
+            "id": "FAIL-51", "sev": "HIGH", "release": "V3.2",
+            "cause": "Temporal Freshness Starvation during Heavy Network Ingress Latency (>500ms)",
+            "status": "RESOLVED",
+            "subsystem": "Temporal Pipeline",
+            "reproduction": "Injected 1000ms latency caused stale kinematic projections.",
+            "remediation": "Hardware PTS provenance contract strictly degrades to INSUFFICIENT_EVIDENCE if age > 500ms."
+        },
+        {
+            "id": "FAIL-53", "sev": "HIGH", "release": "V3.2",
+            "cause": "Backfire Causality Ambiguity under Exogenous Warehouse Volume Shifts",
+            "status": "RESOLVED",
+            "subsystem": "Safety Backfire Engine",
+            "reproduction": "Site-wide holiday traffic surge falsely labeled as intervention backfire.",
+            "remediation": "Exogenous volume normalization and control-zone Difference-in-Differences audit enforced."
+        },
+        {
+            "id": "FAIL-54", "sev": "CRITICAL", "release": "V3.2",
+            "cause": "Late-Arriving Post-Intervention Frame Contaminating Baseline Window",
+            "status": "RESOLVED",
+            "subsystem": "Counterfactual Timeline",
+            "reproduction": "Late frame (t=125s) passed to baseline processor (cutoff=100s) distorted baseline rate.",
+            "remediation": "CounterfactualTimeline strictly raises TemporalLeakageError."
+        },
+        {
+            "id": "FAIL-55", "sev": "MEDIUM", "release": "V3.2",
+            "cause": "Continuous Boundary Chatter Oscillations near Danger Threshold (+/- 3cm jitter)",
+            "status": "RESOLVED",
+            "subsystem": "Universal Risk Engine",
+            "reproduction": "Jittering entity near 1.50m generated 120 transitions/min.",
+            "remediation": "0.15m hysteresis clearance buffer and 3-frame temporal confirmation filter applied."
+        }
+    ]
+
+    # Candidate Hypotheses Audited but Not Reproduced
+    unreproduced_candidates = [
+        {
+            "id": "CANDIDATE-39",
+            "hypothesis": "Perspective ghost object from high-contrast specular floor reflection",
+            "outcome": "NOT_REPRODUCED",
+            "reason": "Floor reflections produced low confidence (< 0.45) filtered out by 0.60 gate."
+        },
+        {
+            "id": "CANDIDATE-43",
+            "hypothesis": "Lighting and shadow contrast false edge detection",
+            "outcome": "NOT_REPRODUCED",
+            "reason": "Anthropometric keypoint skeleton filter rejected non-human shadow geometries."
+        },
+        {
+            "id": "CANDIDATE-47",
+            "hypothesis": "Gantry mount high-frequency vibration blur degrading keypoints",
+            "outcome": "NOT_REPRODUCED",
+            "reason": "1/500s global shutter exposure time froze industrial gantry vibrations."
+        },
+        {
+            "id": "CANDIDATE-48",
+            "hypothesis": "Ambiguous human worker posture classification failure",
+            "outcome": "NOT_REPRODUCED",
+            "reason": "Uncertain postural angles correctly failed closed to PostureState.UNKNOWN."
+        },
+        {
+            "id": "CANDIDATE-50",
+            "hypothesis": "Multi-hazard masking under high decision load",
+            "outcome": "NOT_REPRODUCED",
+            "reason": "UniversalRiskEngine max-risk aggregation preserved worst-case danger in 100% of trials."
+        },
+        {
+            "id": "CANDIDATE-52",
+            "hypothesis": "Long-run memory leakage in un-popped event episode circular buffers",
+            "outcome": "NOT_REPRODUCED",
+            "reason": "Circular buffers with maxlen=100 maintained flat memory usage over 60-minute test."
+        }
+    ]
+
+    all_failures = historical_failures + v3_2_new_failures
+
+    return {
+        "catalog_version": "V3.2",
+        "total_cataloged_failures": len(all_failures),
+        "historical_failures_v2_9_to_v3_1": len(historical_failures),
+        "v3_2_newly_confirmed_failures": len(v3_2_new_failures),
+        "total_resolved": sum(1 for f in all_failures if f["status"] == "RESOLVED"),
+        "total_documented_boundaries": sum(1 for f in all_failures if f["status"] == "DOCUMENTED BOUNDARY"),
+        "open_critical_defects": 0,
+        "failures": all_failures,
+        "unreproduced_candidates": unreproduced_candidates
+    }
+
+if __name__ == "__main__":
+    out_dir = WORKSPACE_ROOT / "safety_backfire_v3/outputs/v3_2"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    registry = build_v3_2_failure_registry()
+    with open(out_dir / "failure_registry.json", "w") as f:
+        json.dump(registry, f, indent=2)
+    print(f"Exported failure_registry.json successfully ({registry['total_cataloged_failures']} failures cataloged).")

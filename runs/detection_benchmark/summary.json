@@ -1,0 +1,87 @@
+[
+  {
+    "name": "A_yolo26n_640_conf50",
+    "model": "yolo26n.pt",
+    "conf": 0.5,
+    "iou": 0.7,
+    "imgsz": 640,
+    "video": "test.mp4",
+    "frames": 426,
+    "source_fps": 29.97002997002997,
+    "resolution": [
+      640,
+      360
+    ],
+    "total_detections": 67,
+    "detections_per_frame": 0.157,
+    "inference_seconds": 3.76,
+    "inference_fps": 113.3,
+    "class_counts": {
+      "person": 25,
+      "truck": 42
+    },
+    "max_confidence_by_class": {
+      "person": 0.683,
+      "truck": 0.69
+    },
+    "annotated_video": "runs/detection_benchmark/A_yolo26n_640_conf50.mp4"
+  },
+  {
+    "name": "B_yolo26s_960_conf50",
+    "model": "yolo26s.pt",
+    "conf": 0.5,
+    "iou": 0.7,
+    "imgsz": 960,
+    "video": "test.mp4",
+    "frames": 426,
+    "source_fps": 29.97002997002997,
+    "resolution": [
+      640,
+      360
+    ],
+    "total_detections": 203,
+    "detections_per_frame": 0.477,
+    "inference_seconds": 7.452,
+    "inference_fps": 57.17,
+    "class_counts": {
+      "person": 110,
+      "car": 18,
+      "boat": 75
+    },
+    "max_confidence_by_class": {
+      "person": 0.823,
+      "car": 0.631,
+      "boat": 0.66
+    },
+    "annotated_video": "runs/detection_benchmark/B_yolo26s_960_conf50.mp4"
+  },
+  {
+    "name": "C_yolo26s_1280_conf35",
+    "model": "yolo26s.pt",
+    "conf": 0.35,
+    "iou": 0.7,
+    "imgsz": 1280,
+    "video": "test.mp4",
+    "frames": 426,
+    "source_fps": 29.97002997002997,
+    "resolution": [
+      640,
+      360
+    ],
+    "total_detections": 635,
+    "detections_per_frame": 1.491,
+    "inference_seconds": 12.682,
+    "inference_fps": 33.59,
+    "class_counts": {
+      "boat": 507,
+      "suitcase": 26,
+      "person": 102
+    },
+    "max_confidence_by_class": {
+      "boat": 0.818,
+      "suitcase": 0.475,
+      "person": 0.835
+    },
+    "annotated_video": "runs/detection_benchmark/C_yolo26s_1280_conf35.mp4"
+  }
+]

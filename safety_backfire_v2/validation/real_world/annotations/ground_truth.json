@@ -1,0 +1,364 @@
+{
+  "metadata": {
+    "video": "test2.mp4",
+    "annotation_status": "NEEDS_HUMAN_ANNOTATION",
+    "annotation_instructions": [
+      "For each frame, fill in the 'bbox' field: [x1, y1, x2, y2] in pixels",
+      "Do NOT leave bbox as null for frames you have annotated",
+      "gt_id must be consistent across frames for the same physical entity",
+      "class must be exactly 'person' or 'forklift'",
+      "Remove entries for objects NOT visible in that frame"
+    ],
+    "critical_note": "These annotations are the GROUND TRUTH. The system's metrics depend entirely on the accuracy of these annotations. Incorrect annotations = incorrect metrics."
+  },
+  "frames": [
+    {
+      "frame": 10,
+      "scenario": "person_only",
+      "annotation_status": "NEEDS_ANNOTATION",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if person is visible, remove if not"
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if forklift is visible, remove if not"
+        }
+      ]
+    },
+    {
+      "frame": 20,
+      "scenario": "person_only",
+      "annotation_status": "NEEDS_ANNOTATION",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if person is visible, remove if not"
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if forklift is visible, remove if not"
+        }
+      ]
+    },
+    {
+      "frame": 30,
+      "scenario": "person_only",
+      "annotation_status": "NEEDS_ANNOTATION",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if person is visible, remove if not"
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if forklift is visible, remove if not"
+        }
+      ]
+    },
+    {
+      "frame": 200,
+      "scenario": "person_and_forklift",
+      "annotation_status": "NEEDS_ANNOTATION",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if person is visible, remove if not"
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if forklift is visible, remove if not"
+        }
+      ]
+    },
+    {
+      "frame": 210,
+      "scenario": "person_and_forklift",
+      "annotation_status": "NEEDS_ANNOTATION",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if person is visible, remove if not"
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if forklift is visible, remove if not"
+        }
+      ]
+    },
+    {
+      "frame": 220,
+      "scenario": "forklift_only",
+      "annotation_status": "NEEDS_ANNOTATION",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if person is visible, remove if not"
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if forklift is visible, remove if not"
+        }
+      ]
+    },
+    {
+      "frame": 230,
+      "scenario": "person_and_forklift",
+      "annotation_status": "NEEDS_ANNOTATION",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if person is visible, remove if not"
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if forklift is visible, remove if not"
+        }
+      ]
+    },
+    {
+      "frame": 270,
+      "scenario": "forklift_only",
+      "annotation_status": "NEEDS_ANNOTATION",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if person is visible, remove if not"
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if forklift is visible, remove if not"
+        }
+      ]
+    },
+    {
+      "frame": 330,
+      "scenario": "forklift_only",
+      "annotation_status": "NEEDS_ANNOTATION",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if person is visible, remove if not"
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if forklift is visible, remove if not"
+        }
+      ]
+    },
+    {
+      "frame": 610,
+      "scenario": "no_detections",
+      "annotation_status": "NEEDS_ANNOTATION",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if person is visible, remove if not"
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if forklift is visible, remove if not"
+        }
+      ]
+    },
+    {
+      "frame": 620,
+      "scenario": "no_detections",
+      "annotation_status": "NEEDS_ANNOTATION",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if person is visible, remove if not"
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if forklift is visible, remove if not"
+        }
+      ]
+    },
+    {
+      "frame": 630,
+      "scenario": "no_detections",
+      "annotation_status": "NEEDS_ANNOTATION",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if person is visible, remove if not"
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "note": "Fill if forklift is visible, remove if not"
+        }
+      ]
+    }
+  ]
+}

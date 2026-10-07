@@ -1,0 +1,19 @@
+{
+  "audit_version": "V3.2.1_FAILURE_REGISTRY_AUDIT",
+  "total_cataloged_ids": 55,
+  "confirmed_failures_count": 49,
+  "resolved_failures_count": 42,
+  "documented_boundaries_count": 7,
+  "unreproduced_candidates_count": 6,
+  "open_critical_defects_count": 0,
+  "id_reconciliation_explanation": "Historical FAIL-01..FAIL-37 (37) + Newly confirmed FAIL-38..FAIL-55 (12) = 49 confirmed failures. The 6 unconfirmed IDs (39, 43, 47, 48, 50, 52) were candidate hypotheses that were tested but NOT reproduced, accounting for all 55 IDs without numbering gaps.",
+  "documented_physical_boundaries": [
+    "FAIL-13: Visual ReID uniform drift",
+    "FAIL-26: Far-field monocular ray dilution (D > 10m)",
+    "FAIL-27: Non-planar floor gradients / ramp distortions",
+    "FAIL-30: Camera pitch mechanical deflection drift",
+    "FAIL-38: Real-world far-field detector miss at D > 8.5m",
+    "FAIL-44: Camera pitch gantry deflection tolerance <= 0.35 deg",
+    "FAIL-45: Ramp floor incline elevation warping on planar homography"
+  ]
+}

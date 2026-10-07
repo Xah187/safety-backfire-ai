@@ -1,0 +1,29 @@
+{
+  "splits": {
+    "DEVELOPMENT": [
+      "CAM01_AISLE_TRANSIT_DEV"
+    ],
+    "CALIBRATION": [
+      "CAM02_RACK_CORRIDOR_CALIB"
+    ],
+    "VALIDATION": [
+      "CAM02_RACK_CORRIDOR_VAL"
+    ],
+    "BLIND_TEST": [
+      "CAM02_RACK_CORRIDOR_BLIND",
+      "CAM03_LOADING_BAY_BLIND_OVERHEAD"
+    ]
+  },
+  "audit": {
+    "is_independent": true,
+    "total_videos": 5,
+    "split_distribution": {
+      "DEVELOPMENT": 1,
+      "CALIBRATION": 1,
+      "VALIDATION": 1,
+      "BLIND_TEST": 2
+    },
+    "overlaps": {},
+    "policy_adherence": "STRICT_ISOLATION_ENFORCED"
+  }
+}

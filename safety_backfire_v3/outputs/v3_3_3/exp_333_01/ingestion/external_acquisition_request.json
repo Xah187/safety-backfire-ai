@@ -1,0 +1,83 @@
+{
+  "manifest_version": "EXP_333_01_EXTERNAL_ACQUISITION_REQUEST",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "created_at_utc": "2026-09-27T18:00:00Z",
+  "status": "OPEN_PENDING_ACQUISITION",
+
+  "required_evidence": {
+    "description": "ALL of the following must be present and verified for EXP_333_01 to proceed.",
+    "items": [
+      {
+        "id": "REQ_01",
+        "name": "different_physical_building",
+        "description": "Target facility must occupy a physically distinct building from Facility Central 01.",
+        "verification_method": "Site ID documentation or independent witness attestation."
+      },
+      {
+        "id": "REQ_02",
+        "name": "independent_acquisition_session",
+        "description": "Raw footage captured in a completely separate session from all V3.3.x datasets.",
+        "verification_method": "Session ID and timestamp independent of any known V3.3.x session."
+      },
+      {
+        "id": "REQ_03",
+        "name": "independent_camera_source",
+        "description": "Camera hardware and identifiers not present in central01_exclusion_registry.json.",
+        "verification_method": "Camera ID and SHA-256 hash checked against exclusion registry."
+      },
+      {
+        "id": "REQ_04",
+        "name": "authenticated_raw_video",
+        "description": "Original, unaltered raw video file with reproducible SHA-256 hash.",
+        "verification_method": "SHA-256 hash verified by validate_external_provenance.py."
+      },
+      {
+        "id": "REQ_05",
+        "name": "frame_overlap_clear",
+        "description": "Zero frame overlap with V3.3.x datasets confirmed via cryptographic and perceptual fingerprint comparison.",
+        "verification_method": "validate_external_provenance.py :: check_central01_exclusion() + frame overlap scan."
+      }
+    ]
+  },
+
+  "preferred_evidence": {
+    "description": "Preferred but not required for initial provenance verification.",
+    "items": [
+      {"id": "PREF_01", "name": "camera_metadata", "description": "Camera model, serial, and firmware version."},
+      {"id": "PREF_02", "name": "mounting_height", "description": "Physical mounting height measured in meters."},
+      {"id": "PREF_03", "name": "pitch_measurement", "description": "Camera pitch angle measured in degrees from horizontal."},
+      {"id": "PREF_04", "name": "lighting_measurement", "description": "Illuminance measurement in lux at time of recording."},
+      {"id": "PREF_05", "name": "geometry_survey", "description": "Ground-plane survey with fiducial points for homography calibration."},
+      {"id": "PREF_06", "name": "continuous_raw_recording", "description": "Unlooped, unedited, timestamp-preserving raw recording export."},
+      {"id": "PREF_07", "name": "operational_context", "description": "Notes on operational conditions: forklift activity, pedestrian density, environmental hazards."}
+    ]
+  },
+
+  "raw_recording_recommendations": {
+    "format": "Original export (MP4/MKV/MOV, H.264 or H.265)",
+    "duration": "Record actual duration — no fixed minimum required if unavailable",
+    "continuity": "Continuous, non-looped, unaltered, timestamp-preserving",
+    "modification_prohibited": ["trim", "resize", "color correction", "frame interpolation", "encoding re-compression beyond original"],
+    "minimum_resolution": "Actual resolution recorded — do not upscale",
+    "note": "If only limited footage is available, provide it. DATA_VOLUME_STATUS will be assessed from real counts."
+  },
+
+  "preferred_evidence_package_structure": {
+    "01_raw_video": "Original unaltered video files",
+    "02_camera_metadata": "Camera model, serial, firmware, and lens specifications",
+    "03_acquisition_metadata": "Session ID, timestamps, operator notes, facility ID",
+    "04_geometry": "Ground survey fiducials, floor plan, elevation notes",
+    "05_lighting": "Lux measurements, fixture type, uniformity map",
+    "06_ground_truth": "Frame-level bounding box annotations (if available)",
+    "07_tracking_ground_truth": "Object trajectories and identity labels (if available)",
+    "08_manifest": "Signed or hashed file manifest for the entire package"
+  },
+
+  "governance_constraints": {
+    "synthetic_substitution_allowed": false,
+    "parameter_tuning_before_primary_evaluation": false,
+    "central01_footage_eligible": false,
+    "minimum_duration_rejection": false,
+    "note": "Do not reject valid footage solely because it does not meet a preferred duration. Record actual values."
+  }
+}

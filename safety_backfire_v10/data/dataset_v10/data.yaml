@@ -1,0 +1,7 @@
+path: /Users/xah187/Projects/safety-backfire-ai/safety_backfire_v10/data/dataset_v10
+train: images/train
+val: images/valid
+test: images/test
+names:
+  0: forklift
+  1: person

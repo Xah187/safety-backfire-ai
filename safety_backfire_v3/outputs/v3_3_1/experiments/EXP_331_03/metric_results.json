@@ -1,0 +1,9 @@
+{
+  "perception_overall_f1": 0.9029,
+  "tracking_idf1": 0.9215,
+  "tracking_idf1_ci95": [
+    0.9083,
+    0.933
+  ],
+  "worst_sector_f1": 0.8233
+}

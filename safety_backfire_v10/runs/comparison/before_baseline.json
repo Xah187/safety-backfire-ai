@@ -1,0 +1,22 @@
+{
+  "min_passing_distance_meters": 3.26,
+  "min_passing_distance_pixels": 121.2,
+  "closest_interacting_pair": {
+    "person_id": 2,
+    "forklift_id": 1
+  },
+  "total_frames_analyzed": 213,
+  "frames_in_danger_zone": 0,
+  "frames_in_caution_zone": 0,
+  "percent_time_in_risk_zones": 0.0,
+  "total_near_miss_incidents": 0,
+  "total_proximity_warnings": 0,
+  "peak_approach_speed_px_s": 36.3,
+  "track_id_reliability": {
+    "near_misses_with_confirmed_ids": 0,
+    "near_misses_with_fallback_ids": 0,
+    "warnings_with_confirmed_ids": 0,
+    "warnings_with_fallback_ids": 0,
+    "note": "IDs >= 9990 are ByteTrack fallbacks. Events with fallback IDs reflect valid spatial detections but lack confirmed trajectory identity."
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "snapshot_version": "V3.3.2_FROZEN_BASELINE",
+  "snapshot_timestamp_utc": "2026-09-25T14:15:00Z",
+  "baseline_release": "V3.3.2",
+  "status": "V3.3.2_VALIDATED_WITH_LIMITATIONS",
+  "governing_rationale": "V3.3.2 completed comprehensive uncertainty failure forensics and independent sample-unit audits. Historical V3.3.1 nominal OOS coverage (93.67%) is permanently preserved. Model H achieves 95.02% nominal OOS coverage [95% CI: 93.09%-96.43%] through localized pitch compensation. Multi-trigger action-gating achieves 100% appropriate refusal across 150 boundary decisions (10 distinct scenarios) and safely gates high-uncertainty frames to ADVISORY_ONLY. Intervention provenance strictly distinguishes 1 physical new intervention from 6 total documented cases. Multi-facility generalization remains unverified (GAP_V3_3_01). Active unsupported claims: 0.",
+  "baseline": {
+    "v3_2_1_immutable": true,
+    "v3_3_0_frozen": true,
+    "v3_3_1_frozen": true,
+    "v3_3_1_protected_artifacts": 65
+  },
+  "experiments": {
+    "EXP_332_01": {
+      "title": "NOMINAL_UNDERCOVERAGE_FORENSICS",
+      "status": "COMPLETED_VALIDATED"
+    },
+    "EXP_332_02": {
+      "title": "UNCERTAINTY_ACTION_GATING",
+      "status": "COMPLETED_VALIDATED"
+    },
+    "EXP_332_03": {
+      "title": "OOS_UNCERTAINTY_MODEL_COMPARISON",
+      "status": "COMPLETED_VALIDATED"
+    },
+    "EXP_332_04": {
+      "title": "STATISTICAL_IMPROVEMENT_AUDIT",
+      "status": "COMPLETED_VALIDATED"
+    },
+    "EXP_332_05": {
+      "title": "DISTRIBUTION_SHIFT_REFUSAL",
+      "status": "COMPLETED_VALIDATED"
+    },
+    "EXP_332_06": {
+      "title": "CROSS_SECTOR_REPLICATION",
+      "status": "COMPLETED_VALIDATED"
+    },
+    "EXP_332_07": {
+      "title": "PERCEPTION_DECOMPOSITION",
+      "status": "COMPLETED_VALIDATED"
+    },
+    "EXP_332_08": {
+      "title": "TRACKING_DECOMPOSITION",
+      "status": "COMPLETED_VALIDATED"
+    },
+    "EXP_332_09": {
+      "title": "IDENTITY_SAFETY_AUDIT",
+      "status": "COMPLETED_VALIDATED"
+    }
+  },
+  "metrics": {
+    "total_canonical_metrics": 8,
+    "metric_registry_file": "outputs/v3_3_2/canonical_metric_registry.json"
+  },
+  "failures": {
+    "total_v3_3_2_failures": 3,
+    "failure_registry_file": "outputs/v3_3_2/failure_registry/v3_3_2_failure_registry.json"
+  },
+  "evidence_gaps": {
+    "total_tracked_gaps": 6,
+    "gap_matrix_file": "outputs/v3_3/v3_3_gap_matrix.json"
+  },
+  "claims": {
+    "total_active_claims": 7,
+    "claim_registry_file": "outputs/v3_3_2/canonical_claim_evidence_registry.json"
+  },
+  "active_unsupported_claims": 0,
+  "forensic_closure": {
+    "v3_3_2_metrics_reconstructible": true,
+    "v3_3_2_dataset_provenance_verified": true,
+    "v3_3_2_blind_integrity_verified": true,
+    "v3_3_2_failure_registry_verified": true,
+    "v3_3_2_claim_traceability_verified": true
+  }
+}

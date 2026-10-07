@@ -1,0 +1,33 @@
+{
+  "validation_status": "PASSED",
+  "error_count": 0,
+  "warning_count": 0,
+  "errors": [],
+  "warnings": [],
+  "statistics": {
+    "facilities_count": 1,
+    "facilities": [
+      "FACILITY_PILOT_01"
+    ],
+    "camera_count": 1,
+    "cameras": [
+      "Camera_0001"
+    ],
+    "video_count": 1,
+    "total_frames": 30,
+    "total_duration_s": 1.0,
+    "bbox_gt_coverage": 2,
+    "trajectory_gt_coverage": 2,
+    "lux_telemetry_records": 3,
+    "lux_unknown_records": 1,
+    "camera_survey_records": 1,
+    "intervention_event_count": 1,
+    "label_distribution": {
+      "BACKFIRE": 0,
+      "NO_BACKFIRE": 1,
+      "AMBIGUOUS": 0
+    },
+    "missing_fields": {},
+    "hash_verification_status": "PASSED_VERIFIED"
+  }
+}

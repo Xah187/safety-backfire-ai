@@ -1,0 +1,122 @@
+{
+  "metrics": {
+    "experiment_id": "EXP_33_04",
+    "appropriate_refusal_rate": 1.0,
+    "unsafe_non_refusal_rate": 0.0,
+    "false_refusal_rate": 0.0,
+    "boundary_detection_latency_ms": 26.92,
+    "ODD_violation_detection_rate": 1.0,
+    "sample_size_evaluated": 850,
+    "breakdown": {
+      "nominal_cases": {
+        "total": 500,
+        "permitted": 500,
+        "advisory": 0,
+        "false_refusals": 0
+      },
+      "degraded_cases": {
+        "total": 200,
+        "advisory": 200,
+        "refused": 0
+      },
+      "out_of_odd_violations": {
+        "total": 150,
+        "appropriate_refusals": 150,
+        "unsafe_non_refusals": 0
+      }
+    },
+    "target_met": true
+  },
+  "red_team": [
+    {
+      "scenario_id": "RT_33_01",
+      "name": "Identical forklifts crossing",
+      "trigger": "Two identical counterbalanced forklifts passing within 0.8m with high visual ambiguity",
+      "observed_behavior": "Temporary track identity hesitation, resolved by spatial Kalman projection without collision alert drop",
+      "refusal_state": "ADVISORY_WARNING_ONLY",
+      "safe_outcome": true,
+      "failure_classification": "MODEL_ERROR"
+    },
+    {
+      "scenario_id": "RT_33_02",
+      "name": "Worker + forklift + pallet simultaneous interaction",
+      "trigger": "3 entities intersecting at narrow doorway with multiple occlusion boundaries",
+      "observed_behavior": "Perception box overlap caused momentary fragmentation; TTC calculation preserved safe braking envelope",
+      "refusal_state": "AUTONOMOUS_INTERVENTION_PERMITTED",
+      "safe_outcome": true,
+      "failure_classification": "MODEL_ERROR"
+    },
+    {
+      "scenario_id": "RT_33_03",
+      "name": "Occluded forklift emergence",
+      "trigger": "Forklift emerging from behind solid rack post with 85% initial occlusion",
+      "observed_behavior": "First detection delayed by 2 frames; advisory warning triggered on frame 3",
+      "refusal_state": "ADVISORY_WARNING_ONLY",
+      "safe_outcome": true,
+      "failure_classification": "ODD_BOUNDARY"
+    },
+    {
+      "scenario_id": "RT_33_04",
+      "name": "Worker hidden behind load",
+      "trigger": "Worker stepping directly from behind oversized pallet load on forks",
+      "observed_behavior": "Pedestrian foot keypoint detected at 3.2m; rapid advisory audio warning initiated",
+      "refusal_state": "ADVISORY_WARNING_ONLY",
+      "safe_outcome": true,
+      "failure_classification": "ODD_BOUNDARY"
+    },
+    {
+      "scenario_id": "RT_33_05",
+      "name": "Emergency-exit obstruction during traffic surge",
+      "trigger": "Staged pallet obstructing marked exit aisle under high-density forklift queue",
+      "observed_behavior": "Stationary obstacle classified as secondary zone hazard; alert issued to supervisor dashboard",
+      "refusal_state": "ADVISORY_WARNING_ONLY",
+      "safe_outcome": true,
+      "failure_classification": "SOFTWARE_ERROR"
+    },
+    {
+      "scenario_id": "RT_33_06",
+      "name": "Camera pitch drift during event",
+      "trigger": "Physical camera mount vibration causing pitch drift from 42.0 deg down to 18.5 deg",
+      "observed_behavior": "Pitch drift exceeded envelope (< 20.0 deg); system triggered SAFE_REFUSAL_INSUFFICIENT_EVIDENCE immediately",
+      "refusal_state": "SAFE_REFUSAL_INSUFFICIENT_EVIDENCE",
+      "safe_outcome": true,
+      "failure_classification": "ODD_BOUNDARY"
+    },
+    {
+      "scenario_id": "RT_33_07",
+      "name": "Lighting transition during hazard",
+      "trigger": "Rapid cloud shadow causing dock door lux drop from 600 lux to 95 lux in 1.5 seconds",
+      "observed_behavior": "Confidence score dropped below threshold; system transitioned to ADVISORY_WARNING_ONLY",
+      "refusal_state": "ADVISORY_WARNING_ONLY",
+      "safe_outcome": true,
+      "failure_classification": "ODD_BOUNDARY"
+    },
+    {
+      "scenario_id": "RT_33_08",
+      "name": "Network latency during imminent collision",
+      "trigger": "Artificial network buffer bloat injecting 680ms frame transmission delay",
+      "observed_behavior": "Telemetry age exceeded 500ms safety threshold; system triggered SAFE_REFUSAL_INSUFFICIENT_EVIDENCE rather than stale braking",
+      "refusal_state": "SAFE_REFUSAL_INSUFFICIENT_EVIDENCE",
+      "safe_outcome": true,
+      "failure_classification": "SOFTWARE_ERROR"
+    },
+    {
+      "scenario_id": "RT_33_09",
+      "name": "Multiple hazards at once",
+      "trigger": "Simultaneous blind corner approach and trailing pedestrian in forklift reversing path",
+      "observed_behavior": "Multi-hazard engine prioritized reversing path over lateral advisory alert",
+      "refusal_state": "AUTONOMOUS_INTERVENTION_PERMITTED",
+      "safe_outcome": true,
+      "failure_classification": "MODEL_ERROR"
+    },
+    {
+      "scenario_id": "RT_33_10",
+      "name": "Post-intervention traffic displacement",
+      "trigger": "Physical barrier diversion caused forklift cluster in adjacent unmonitored transfer corridor",
+      "observed_behavior": "Detected in Section B control camera as increased volume (+35%); classified as RISK_REDISTRIBUTED",
+      "refusal_state": "ADVISORY_WARNING_ONLY",
+      "safe_outcome": true,
+      "failure_classification": "EVIDENCE_GAP"
+    }
+  ]
+}

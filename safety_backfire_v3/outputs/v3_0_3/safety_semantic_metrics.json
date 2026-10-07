@@ -1,0 +1,7 @@
+{
+  "stationary_0_9m_hazard_confirmed": true,
+  "stationary_hazard_semantics": "CURRENT_PROXIMITY_HAZARD",
+  "predictive_collision_hazard_confirmed": true,
+  "distance_monotonicity_non_increasing": true,
+  "variance_monotonicity_non_decreasing": true
+}

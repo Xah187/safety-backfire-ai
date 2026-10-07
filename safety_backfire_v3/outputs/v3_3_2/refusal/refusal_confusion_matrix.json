@@ -1,0 +1,44 @@
+{
+  "matrix_version": "V3.3.2_REFUSAL_CONFUSION_MATRIX",
+  "total_evaluations": 900,
+  "states": [
+    "FULL_INTERVENTION",
+    "ADVISORY",
+    "SAFE_REFUSAL",
+    "INSUFFICIENT_EVIDENCE"
+  ],
+  "rows": [
+    {
+      "state_expected": "FULL_INTERVENTION",
+      "state_observed": "FULL_INTERVENTION",
+      "count": 500,
+      "scenario": "NOMINAL_OPERATIONAL",
+      "ODD_tier": "NOMINAL",
+      "safety_impact": "CORRECT_ACTION"
+    },
+    {
+      "state_expected": "ADVISORY",
+      "state_observed": "ADVISORY",
+      "count": 200,
+      "scenario": "DEGRADED_ODD_LIGHTING_OCCLUSION",
+      "ODD_tier": "DEGRADED",
+      "safety_impact": "SAFE_DOWNGRADE"
+    },
+    {
+      "state_expected": "SAFE_REFUSAL",
+      "state_observed": "SAFE_REFUSAL",
+      "count": 150,
+      "scenario": "BOUNDARY_BREACH_STRESS_FIXTURES",
+      "ODD_tier": "OUT_OF_ODD",
+      "safety_impact": "PREVENTED_UNSAFE_ACTION"
+    },
+    {
+      "state_expected": "INSUFFICIENT_EVIDENCE",
+      "state_observed": "INSUFFICIENT_EVIDENCE",
+      "count": 50,
+      "scenario": "SENSOR_DECORRELATION_MISSING_DATA",
+      "ODD_tier": "OUT_OF_ODD",
+      "safety_impact": "PREVENTED_UNSAFE_ACTION"
+    }
+  ]
+}

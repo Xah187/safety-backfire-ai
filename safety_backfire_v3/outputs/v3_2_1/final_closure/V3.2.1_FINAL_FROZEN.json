@@ -1,0 +1,31 @@
+{
+  "release": "Safety Backfire AI V3.2.1",
+  "release_state": "FINAL_FROZEN",
+  "decision": "FINAL_RELEASE_ACCEPTED_WITH_LIMITATIONS",
+  "operational_status": "APPROVED_FOR_BOUNDED_OPERATIONAL_PILOT",
+
+  "test_results": {
+    "previous_closure_tests": "65/65 PASS",
+    "final_freeze_semantics": "PASS"
+  },
+
+  "catalog": {
+    "master_catalog_entries": 55,
+    "confirmed_failure_modes": 49,
+    "resolved": 42,
+    "documented_boundary_ids": 7,
+    "candidate_hypotheses": 6,
+    "open_critical_defects": 0
+  },
+
+  "reproducibility": {
+    "core_code": "PASS",
+    "canonical_artifacts": "PASS",
+    "full_raw_corpus": "PARTIAL",
+    "overall": "PARTIAL_WITH_REPRODUCIBLE_CODE_AND_ARTIFACTS"
+  },
+
+  "known_evidence_gaps": 2,
+  "active_unsupported_claims": 0,
+  "retracted_claims": 10
+}

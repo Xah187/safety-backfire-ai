@@ -1,0 +1,37 @@
+{
+  "calibration_suite": "V3.2_REAL_WORLD_CALIBRATION_AUDIT",
+  "nominal_cameras": {
+    "CAM01": {
+      "height_m": 4.5,
+      "pitch_deg": 45.0,
+      "res": [
+        640,
+        360
+      ]
+    },
+    "CAM02": {
+      "height_m": 5.2,
+      "pitch_deg": 38.5,
+      "res": [
+        1274,
+        720
+      ]
+    },
+    "CAM03": {
+      "height_m": 6.1,
+      "pitch_deg": 52.0,
+      "res": [
+        704,
+        1280
+      ]
+    }
+  },
+  "pitch_sensitivity_analysis": {
+    "tolerance_boundary_deg": 0.35,
+    "max_error_at_0_35_deg_m": 0.385,
+    "max_error_at_1_0_deg_m": 1.152,
+    "max_error_at_2_0_deg_m": 2.584,
+    "quadratic_scaling_confirmed": true
+  },
+  "odd_mount_constraint": "Camera brackets must maintain rigidity within +/- 0.35 deg to prevent ground error > 0.40m at 8.0m range (FAIL-30 / FAIL-44 boundary)."
+}

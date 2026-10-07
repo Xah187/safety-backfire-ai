@@ -1,0 +1,713 @@
+{
+  "summary": {
+    "total_fault_injection_tests": 37,
+    "tests_passed": 37,
+    "tests_failed": 0,
+    "success_rate_pct": 100.0
+  },
+  "test_results": [
+    {
+      "test_id": "K01_NORMAL_SYNC",
+      "fault_category": "TIME_AND_SYNCHRONIZATION",
+      "fault_description": "Normal sync within 18ms allocated budget.",
+      "expected_state": "READY_FOR_PILOT",
+      "actual_state": "READY_FOR_PILOT",
+      "first_blocking_gate": "NONE",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "PASS",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "PASS",
+        "DQ5_CALIBRATION_INTEGRITY": "PASS",
+        "DQ6_ZONE_GEOMETRY": "PASS",
+        "DQ7_EVENT_COMPLETENESS": "PASS",
+        "DQ8_PROVENANCE": "PASS"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "K02_CAMERA_OFFSET_2MS",
+      "fault_category": "TIME_AND_SYNCHRONIZATION",
+      "fault_description": "Camera offset +2ms (within 18ms allocated).",
+      "expected_state": "READY_FOR_PILOT",
+      "actual_state": "READY_FOR_PILOT",
+      "first_blocking_gate": "NONE",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "PASS",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "PASS",
+        "DQ5_CALIBRATION_INTEGRITY": "PASS",
+        "DQ6_ZONE_GEOMETRY": "PASS",
+        "DQ7_EVENT_COMPLETENESS": "PASS",
+        "DQ8_PROVENANCE": "PASS"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "K03_CAMERA_OFFSET_10MS",
+      "fault_category": "TIME_AND_SYNCHRONIZATION",
+      "fault_description": "Camera offset +10ms (exceeds 18ms allocated, within 33.3ms system target).",
+      "expected_state": "PARTIALLY_READY",
+      "actual_state": "PARTIALLY_READY",
+      "first_blocking_gate": "NONE",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PARTIAL",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "PASS",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "PASS",
+        "DQ5_CALIBRATION_INTEGRITY": "PASS",
+        "DQ6_ZONE_GEOMETRY": "PASS",
+        "DQ7_EVENT_COMPLETENESS": "PASS",
+        "DQ8_PROVENANCE": "PASS"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "K04_CAMERA_OFFSET_HIGH",
+      "fault_category": "TIME_AND_SYNCHRONIZATION",
+      "fault_description": "Camera offset exceeds system max target (45ms > 33.3ms).",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ1_CLOCK_SYNC",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "FAIL",
+        "DQ2_CAMERA_INTEGRITY": "NOT_EVALUATED",
+        "DQ3_TELEMETRY_INTEGRITY": "NOT_EVALUATED",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "NOT_EVALUATED",
+        "DQ5_CALIBRATION_INTEGRITY": "NOT_EVALUATED",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "K05_CAN_TIMESTAMP_OFFSET",
+      "fault_category": "TIME_AND_SYNCHRONIZATION",
+      "fault_description": "CAN timestamp offset exceeds allowable skew budget.",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ1_CLOCK_SYNC",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "FAIL",
+        "DQ2_CAMERA_INTEGRITY": "NOT_EVALUATED",
+        "DQ3_TELEMETRY_INTEGRITY": "NOT_EVALUATED",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "NOT_EVALUATED",
+        "DQ5_CALIBRATION_INTEGRITY": "NOT_EVALUATED",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "K06_SENSOR_CLOCK_DRIFT",
+      "fault_category": "TIME_AND_SYNCHRONIZATION",
+      "fault_description": "Master clock synchronization state lost (DRIFTING).",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ1_CLOCK_SYNC",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "FAIL",
+        "DQ2_CAMERA_INTEGRITY": "NOT_EVALUATED",
+        "DQ3_TELEMETRY_INTEGRITY": "NOT_EVALUATED",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "NOT_EVALUATED",
+        "DQ5_CALIBRATION_INTEGRITY": "NOT_EVALUATED",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "K07_NON_MONOTONIC_TIMESTAMPS",
+      "fault_category": "TIME_AND_SYNCHRONIZATION",
+      "fault_description": "Non-monotonic timestamps detected in clock domain.",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ1_CLOCK_SYNC",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "FAIL",
+        "DQ2_CAMERA_INTEGRITY": "NOT_EVALUATED",
+        "DQ3_TELEMETRY_INTEGRITY": "NOT_EVALUATED",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "NOT_EVALUATED",
+        "DQ5_CALIBRATION_INTEGRITY": "NOT_EVALUATED",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "K08_DUPLICATE_TIMESTAMPS",
+      "fault_category": "TIME_AND_SYNCHRONIZATION",
+      "fault_description": "Duplicate hardware timestamps detected.",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ1_CLOCK_SYNC",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "FAIL",
+        "DQ2_CAMERA_INTEGRITY": "NOT_EVALUATED",
+        "DQ3_TELEMETRY_INTEGRITY": "NOT_EVALUATED",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "NOT_EVALUATED",
+        "DQ5_CALIBRATION_INTEGRITY": "NOT_EVALUATED",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "CAM_01_FRAME_DROP_EXCESSIVE",
+      "fault_category": "CAMERA_INTEGRITY",
+      "fault_description": "Frame drop rate exceeds 1.0% limit.",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ2_CAMERA_INTEGRITY",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "FAIL",
+        "DQ3_TELEMETRY_INTEGRITY": "NOT_EVALUATED",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "NOT_EVALUATED",
+        "DQ5_CALIBRATION_INTEGRITY": "NOT_EVALUATED",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "CAM_02_CODEC_CORRUPTION",
+      "fault_category": "CAMERA_INTEGRITY",
+      "fault_description": "Codec frame payload corrupted.",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ2_CAMERA_INTEGRITY",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "FAIL",
+        "DQ3_TELEMETRY_INTEGRITY": "NOT_EVALUATED",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "NOT_EVALUATED",
+        "DQ5_CALIBRATION_INTEGRITY": "NOT_EVALUATED",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "CAM_03_CAMERA_DISCONNECT",
+      "fault_category": "CAMERA_INTEGRITY",
+      "fault_description": "Camera C (depth) disconnected during capture.",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ2_CAMERA_INTEGRITY",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "FAIL",
+        "DQ3_TELEMETRY_INTEGRITY": "NOT_EVALUATED",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "NOT_EVALUATED",
+        "DQ5_CALIBRATION_INTEGRITY": "NOT_EVALUATED",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "CAM_04_BLACK_FRAMES",
+      "fault_category": "CAMERA_INTEGRITY",
+      "fault_description": "Optical sensor blinded; black frames detected.",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ2_CAMERA_INTEGRITY",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "FAIL",
+        "DQ3_TELEMETRY_INTEGRITY": "NOT_EVALUATED",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "NOT_EVALUATED",
+        "DQ5_CALIBRATION_INTEGRITY": "NOT_EVALUATED",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "CAM_05_RESOLUTION_MISMATCH",
+      "fault_category": "CAMERA_INTEGRITY",
+      "fault_description": "Camera resolution mismatch (sub-HD stream).",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ2_CAMERA_INTEGRITY",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "FAIL",
+        "DQ3_TELEMETRY_INTEGRITY": "NOT_EVALUATED",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "NOT_EVALUATED",
+        "DQ5_CALIBRATION_INTEGRITY": "NOT_EVALUATED",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "CAM_06_SEQUENCE_REORDERED",
+      "fault_category": "CAMERA_INTEGRITY",
+      "fault_description": "Video frames delivered out-of-order.",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ2_CAMERA_INTEGRITY",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "FAIL",
+        "DQ3_TELEMETRY_INTEGRITY": "NOT_EVALUATED",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "NOT_EVALUATED",
+        "DQ5_CALIBRATION_INTEGRITY": "NOT_EVALUATED",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "TELEM_01_PACKET_LOSS_HIGH",
+      "fault_category": "VEHICLE_TELEMETRY_INTEGRITY",
+      "fault_description": "CAN packet loss > 5.0%.",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ3_TELEMETRY_INTEGRITY",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "FAIL",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "NOT_EVALUATED",
+        "DQ5_CALIBRATION_INTEGRITY": "NOT_EVALUATED",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "TELEM_02_MISSING_BRAKE_STATE",
+      "fault_category": "VEHICLE_TELEMETRY_INTEGRITY",
+      "fault_description": "Missing mandatory brake_state signal.",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ3_TELEMETRY_INTEGRITY",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "FAIL",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "NOT_EVALUATED",
+        "DQ5_CALIBRATION_INTEGRITY": "NOT_EVALUATED",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "TELEM_03_FLATLINE_SPEED",
+      "fault_category": "VEHICLE_TELEMETRY_INTEGRITY",
+      "fault_description": "Sensor flatline during dynamic maneuver.",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ3_TELEMETRY_INTEGRITY",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "FAIL",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "NOT_EVALUATED",
+        "DQ5_CALIBRATION_INTEGRITY": "NOT_EVALUATED",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "TELEM_04_OUT_OF_RANGE",
+      "fault_category": "VEHICLE_TELEMETRY_INTEGRITY",
+      "fault_description": "Deceleration values physically impossible (-45 m/s2).",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ3_TELEMETRY_INTEGRITY",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "FAIL",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "NOT_EVALUATED",
+        "DQ5_CALIBRATION_INTEGRITY": "NOT_EVALUATED",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "TELEM_05_UNIT_MISMATCH",
+      "fault_category": "VEHICLE_TELEMETRY_INTEGRITY",
+      "fault_description": "Unit mismatch (speed delivered in mph).",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ3_TELEMETRY_INTEGRITY",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "FAIL",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "NOT_EVALUATED",
+        "DQ5_CALIBRATION_INTEGRITY": "NOT_EVALUATED",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "TELEM_06_TELEMETRY_ABSENT",
+      "fault_category": "VEHICLE_TELEMETRY_INTEGRITY",
+      "fault_description": "Complete vehicle CAN bus disconnect.",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ3_TELEMETRY_INTEGRITY",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "FAIL",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "NOT_EVALUATED",
+        "DQ5_CALIBRATION_INTEGRITY": "NOT_EVALUATED",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "SEC_01_SENSOR_DROPOUT",
+      "fault_category": "SECONDARY_SENSOR_INTEGRITY",
+      "fault_description": "Secondary sensor disconnected.",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ4_SECONDARY_SENSOR_INTEGRITY",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "PASS",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "FAIL",
+        "DQ5_CALIBRATION_INTEGRITY": "NOT_EVALUATED",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "SEC_02_DEPTH_OCCLUSION",
+      "fault_category": "SECONDARY_SENSOR_INTEGRITY",
+      "fault_description": "Secondary cross-aisle depth occluded by pallets.",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ4_SECONDARY_SENSOR_INTEGRITY",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "PASS",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "FAIL",
+        "DQ5_CALIBRATION_INTEGRITY": "NOT_EVALUATED",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "SEC_03_TIMESTAMP_MISMATCH",
+      "fault_category": "SECONDARY_SENSOR_INTEGRITY",
+      "fault_description": "Secondary sensor timestamp out-of-sync.",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ4_SECONDARY_SENSOR_INTEGRITY",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "PASS",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "FAIL",
+        "DQ5_CALIBRATION_INTEGRITY": "NOT_EVALUATED",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "CALIB_01_VALID",
+      "fault_category": "CALIBRATION_INTEGRITY",
+      "fault_description": "Calibration reprojection error 1.15px <= 1.5px.",
+      "expected_state": "READY_FOR_PILOT",
+      "actual_state": "READY_FOR_PILOT",
+      "first_blocking_gate": "NONE",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "PASS",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "PASS",
+        "DQ5_CALIBRATION_INTEGRITY": "PASS",
+        "DQ6_ZONE_GEOMETRY": "PASS",
+        "DQ7_EVENT_COMPLETENESS": "PASS",
+        "DQ8_PROVENANCE": "PASS"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "CALIB_02_MISSING",
+      "fault_category": "CALIBRATION_INTEGRITY",
+      "fault_description": "Calibration manifest missing.",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ5_CALIBRATION_INTEGRITY",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "PASS",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "PASS",
+        "DQ5_CALIBRATION_INTEGRITY": "FAIL",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "CALIB_03_STALE",
+      "fault_category": "CALIBRATION_INTEGRITY",
+      "fault_description": "Calibration > 30 days old without survey.",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ5_CALIBRATION_INTEGRITY",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "PASS",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "PASS",
+        "DQ5_CALIBRATION_INTEGRITY": "FAIL",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "CALIB_04_ERROR_HIGH",
+      "fault_category": "CALIBRATION_INTEGRITY",
+      "fault_description": "Reprojection error 2.45px > 1.5px design target.",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ5_CALIBRATION_INTEGRITY",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "PASS",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "PASS",
+        "DQ5_CALIBRATION_INTEGRITY": "FAIL",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "CALIB_05_CAMERA_MISMATCH",
+      "fault_category": "CALIBRATION_INTEGRITY",
+      "fault_description": "Intrinsics hash does not match optical sensor ID.",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ5_CALIBRATION_INTEGRITY",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "PASS",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "PASS",
+        "DQ5_CALIBRATION_INTEGRITY": "FAIL",
+        "DQ6_ZONE_GEOMETRY": "NOT_EVALUATED",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "GEOM_01_VALID",
+      "fault_category": "ZONE_GEOMETRY_INTEGRITY",
+      "fault_description": "Valid 2D/3D facility geometry.",
+      "expected_state": "READY_FOR_PILOT",
+      "actual_state": "READY_FOR_PILOT",
+      "first_blocking_gate": "NONE",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "PASS",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "PASS",
+        "DQ5_CALIBRATION_INTEGRITY": "PASS",
+        "DQ6_ZONE_GEOMETRY": "PASS",
+        "DQ7_EVENT_COMPLETENESS": "PASS",
+        "DQ8_PROVENANCE": "PASS"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "GEOM_02_MISSING_SECONDARY",
+      "fault_category": "ZONE_GEOMETRY_INTEGRITY",
+      "fault_description": "Missing secondary depth polygon.",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ6_ZONE_GEOMETRY",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "PASS",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "PASS",
+        "DQ5_CALIBRATION_INTEGRITY": "PASS",
+        "DQ6_ZONE_GEOMETRY": "FAIL",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "GEOM_03_OVERLAPPING_ZONES",
+      "fault_category": "ZONE_GEOMETRY_INTEGRITY",
+      "fault_description": "Overlapping zone polygons.",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ6_ZONE_GEOMETRY",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "PASS",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "PASS",
+        "DQ5_CALIBRATION_INTEGRITY": "PASS",
+        "DQ6_ZONE_GEOMETRY": "FAIL",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "GEOM_04_SELF_INTERSECTING",
+      "fault_category": "ZONE_GEOMETRY_INTEGRITY",
+      "fault_description": "Bowtie self-intersecting polygon.",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ6_ZONE_GEOMETRY",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "PASS",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "PASS",
+        "DQ5_CALIBRATION_INTEGRITY": "PASS",
+        "DQ6_ZONE_GEOMETRY": "FAIL",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "GEOM_05_WRONG_CRS",
+      "fault_category": "ZONE_GEOMETRY_INTEGRITY",
+      "fault_description": "Relative screen pixel coordinates instead of global datum.",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ6_ZONE_GEOMETRY",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "PASS",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "PASS",
+        "DQ5_CALIBRATION_INTEGRITY": "PASS",
+        "DQ6_ZONE_GEOMETRY": "FAIL",
+        "DQ7_EVENT_COMPLETENESS": "NOT_EVALUATED",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "COMP_01_VALID_DYNAMIC_WINDOWS",
+      "fault_category": "EVENT_COMPLETENESS",
+      "fault_description": "Dynamic windows valid (Pre: 4.5s, Interv: 2.2s, Post: 6.0s).",
+      "expected_state": "READY_FOR_PILOT",
+      "actual_state": "READY_FOR_PILOT",
+      "first_blocking_gate": "NONE",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "PASS",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "PASS",
+        "DQ5_CALIBRATION_INTEGRITY": "PASS",
+        "DQ6_ZONE_GEOMETRY": "PASS",
+        "DQ7_EVENT_COMPLETENESS": "PASS",
+        "DQ8_PROVENANCE": "PASS"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "COMP_02_PRE_TRUNCATED",
+      "fault_category": "EVENT_COMPLETENESS",
+      "fault_description": "PRE window truncated (1.8s < 3.0s minimum).",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ7_EVENT_COMPLETENESS",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "PASS",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "PASS",
+        "DQ5_CALIBRATION_INTEGRITY": "PASS",
+        "DQ6_ZONE_GEOMETRY": "PASS",
+        "DQ7_EVENT_COMPLETENESS": "FAIL",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "COMP_03_INTERV_TRUNCATED",
+      "fault_category": "EVENT_COMPLETENESS",
+      "fault_description": "INTERVENTION window truncated (0.8s < 1.5s minimum).",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ7_EVENT_COMPLETENESS",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "PASS",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "PASS",
+        "DQ5_CALIBRATION_INTEGRITY": "PASS",
+        "DQ6_ZONE_GEOMETRY": "PASS",
+        "DQ7_EVENT_COMPLETENESS": "FAIL",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    },
+    {
+      "test_id": "COMP_04_POST_TRUNCATED",
+      "fault_category": "EVENT_COMPLETENESS",
+      "fault_description": "POST window truncated (2.5s < 4.0s minimum).",
+      "expected_state": "NOT_READY",
+      "actual_state": "NOT_READY",
+      "first_blocking_gate": "DQ7_EVENT_COMPLETENESS",
+      "live_gate_results": {
+        "DQ1_CLOCK_SYNC": "PASS",
+        "DQ2_CAMERA_INTEGRITY": "PASS",
+        "DQ3_TELEMETRY_INTEGRITY": "PASS",
+        "DQ4_SECONDARY_SENSOR_INTEGRITY": "PASS",
+        "DQ5_CALIBRATION_INTEGRITY": "PASS",
+        "DQ6_ZONE_GEOMETRY": "PASS",
+        "DQ7_EVENT_COMPLETENESS": "FAIL",
+        "DQ8_PROVENANCE": "NOT_EVALUATED"
+      },
+      "test_passed": true
+    }
+  ]
+}

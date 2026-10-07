@@ -1,0 +1,41 @@
+[
+  {
+    "event_id": "EV_2026_09_001",
+    "zone_id": "INTERSECTION_CENTRAL",
+    "window": "PRE",
+    "min_human_vehicle_distance": 6.8,
+    "zone_occupancy": 2,
+    "restricted_zone_entries": 0,
+    "human_speed": 1.1,
+    "vehicle_speed": 2.5,
+    "trajectory_conflict": false,
+    "ttc": 4.8,
+    "evidence_notes": "Nominal intersection approach."
+  },
+  {
+    "event_id": "EV_2026_09_001",
+    "zone_id": "INTERSECTION_CENTRAL",
+    "window": "INTERVENTION",
+    "min_human_vehicle_distance": 3.9,
+    "zone_occupancy": 2,
+    "restricted_zone_entries": 0,
+    "human_speed": 1.0,
+    "vehicle_speed": 0.8,
+    "trajectory_conflict": false,
+    "ttc": 6.5,
+    "evidence_notes": "Smooth AGV speed reduction engaged."
+  },
+  {
+    "event_id": "EV_2026_09_001",
+    "zone_id": "INTERSECTION_CENTRAL",
+    "window": "POST",
+    "min_human_vehicle_distance": 5.2,
+    "zone_occupancy": 1,
+    "restricted_zone_entries": 0,
+    "human_speed": 1.2,
+    "vehicle_speed": 1.5,
+    "trajectory_conflict": false,
+    "ttc": 8.0,
+    "evidence_notes": "Worker cleared intersection."
+  }
+]

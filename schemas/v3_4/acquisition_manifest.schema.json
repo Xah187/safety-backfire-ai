@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safety-backfire-ai.org/schemas/v3_4/acquisition_manifest.schema.json",
+  "title": "V3.4 External Facility Acquisition Manifest Schema",
+  "description": "Schema for physical facility data packages, camera parameters, and cryptographic asset integrity manifests.",
+  "type": "object",
+  "required": [
+    "facility_id",
+    "source_name",
+    "source_uri",
+    "acquisition_timestamp",
+    "license",
+    "camera_count",
+    "resolution",
+    "fps",
+    "duration",
+    "synchronization_method",
+    "synchronization_error_ms",
+    "calibration_available",
+    "lux_available",
+    "bbox_gt_available",
+    "trajectory_gt_available",
+    "intervention_gt_available",
+    "provenance_status",
+    "sha256_manifest"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "facility_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique identifier of the facility."
+    },
+    "source_name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Name of the data provider or organization."
+    },
+    "source_uri": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Provenance URI, repository, or archive URL."
+    },
+    "acquisition_timestamp": {
+      "type": "string",
+      "description": "ISO 8601 acquisition timestamp."
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Data license governing research/commercial usage."
+    },
+    "camera_count": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Total number of synchronized camera streams."
+    },
+    "resolution": {
+      "type": "string",
+      "pattern": "^[0-9]+x[0-9]+$",
+      "description": "Standard video resolution formatted as WIDTHxHEIGHT (e.g. 1920x1080)."
+    },
+    "fps": {
+      "type": "number",
+      "exclusiveMinimum": 0.0,
+      "description": "Nominal video acquisition frames per second."
+    },
+    "duration": {
+      "type": "number",
+      "exclusiveMinimum": 0.0,
+      "description": "Stream duration in seconds."
+    },
+    "synchronization_method": {
+      "type": "string",
+      "enum": [
+        "HARDWARE_GENLOCK",
+        "PTP_IEEE_1588",
+        "NTP_SYSTEM_CLOCK",
+        "OPTICAL_TIMECODE",
+        "MANUAL_AUDIO_CLAPPER",
+        "UNKNOWN"
+      ],
+      "description": "Method utilized to synchronize multiple camera streams."
+    },
+    "synchronization_error_ms": {
+      "type": "number",
+      "minimum": 0.0,
+      "description": "Upper bound on inter-camera synchronization error in milliseconds."
+    },
+    "calibration_available": {
+      "type": "boolean",
+      "description": "Whether surveyed camera calibration matrices are supplied."
+    },
+    "lux_available": {
+      "type": "boolean",
+      "description": "Whether physical hardware lux logs are supplied."
+    },
+    "bbox_gt_available": {
+      "type": "boolean",
+      "description": "Whether independent human detection ground truth is supplied."
+    },
+    "trajectory_gt_available": {
+      "type": "boolean",
+      "description": "Whether independent human trajectory ground truth is supplied."
+    },
+    "intervention_gt_available": {
+      "type": "boolean",
+      "description": "Whether adjudicated safety intervention labels are supplied."
+    },
+    "provenance_status": {
+      "type": "string",
+      "enum": [
+        "AUTHENTIC_PHYSICAL_FACILITY_INGESTED",
+        "PROVENANCE_VERIFIED",
+        "PENDING_AUDIT",
+        "REJECTED_UNAUTHENTICATED"
+      ],
+      "description": "Formal provenance gate classification."
+    },
+    "sha256_manifest": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      "description": "Mapping from relative file path to its 64-character lowercase hexadecimal SHA-256 digest."
+    }
+  }
+}

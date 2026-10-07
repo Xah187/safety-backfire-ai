@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RiskDecisionV1Schema",
+  "description": "Universal risk decision schema with decoupled IDs and provenance",
+  "type": "object",
+  "required": [
+    "decision_id",
+    "hazard_id",
+    "risk_decision",
+    "risk_score",
+    "hazard_category",
+    "evidence_quality"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string"
+    },
+    "hazard_id": {
+      "type": "string"
+    },
+    "event_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "episode_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "pair_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "alert_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "entity_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "hazard_type": {
+      "type": "string"
+    },
+    "risk_decision": {
+      "type": "string",
+      "enum": [
+        "CONFIRMED_DANGER",
+        "CAUTION",
+        "CANDIDATE_REVIEW",
+        "SUPPRESSED_OPERATOR",
+        "SAFE",
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    "risk_score": {
+      "type": "number"
+    },
+    "hazard_category": {
+      "type": "string"
+    },
+    "evidence_quality": {
+      "type": "number"
+    },
+    "odd_status": {
+      "type": "string",
+      "enum": [
+        "VALID",
+        "DEGRADED",
+        "OUT_OF_DOMAIN",
+        "UNKNOWN"
+      ]
+    },
+    "provenance": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "metadata": {
+    "video": "test2.mp4",
+    "physical_ground_truth_available": false,
+    "physical_ground_truth_note": "All physical_distance_m values are NULL. These MUST be filled with actual physical measurements from the filming location. Without this data, geometry distance validation CANNOT be performed.",
+    "annotation_instructions": [
+      "For each measurement pair, identify two points in the video frame",
+      "Measure the actual physical distance between those points in the real world",
+      "Enter the real-world distance in physical_distance_m",
+      "The system will compute estimated_distance_m using the homography",
+      "Comparison yields absolute_error_m and relative_error_percent"
+    ]
+  },
+  "calibration_points": [
+    {
+      "id": "fg_center_A",
+      "zone": "foreground_center",
+      "description": "Two points in the near foreground, center of frame",
+      "pixel_A": [
+        null,
+        null
+      ],
+      "pixel_B": [
+        null,
+        null
+      ],
+      "physical_distance_m": null,
+      "status": "NEEDS_ANNOTATION"
+    },
+    {
+      "id": "fg_left_B",
+      "zone": "foreground_left",
+      "description": "Two points in near foreground, left side",
+      "pixel_A": [
+        null,
+        null
+      ],
+      "pixel_B": [
+        null,
+        null
+      ],
+      "physical_distance_m": null,
+      "status": "NEEDS_ANNOTATION"
+    },
+    {
+      "id": "fg_right_C",
+      "zone": "foreground_right",
+      "description": "Two points in near foreground, right side",
+      "pixel_A": [
+        null,
+        null
+      ],
+      "pixel_B": [
+        null,
+        null
+      ],
+      "physical_distance_m": null,
+      "status": "NEEDS_ANNOTATION"
+    },
+    {
+      "id": "mid_center_D",
+      "zone": "midground_center",
+      "description": "Two points in midground, center",
+      "pixel_A": [
+        null,
+        null
+      ],
+      "pixel_B": [
+        null,
+        null
+      ],
+      "physical_distance_m": null,
+      "status": "NEEDS_ANNOTATION"
+    },
+    {
+      "id": "mid_left_E",
+      "zone": "midground_left",
+      "description": "Two points in midground, left side",
+      "pixel_A": [
+        null,
+        null
+      ],
+      "pixel_B": [
+        null,
+        null
+      ],
+      "physical_distance_m": null,
+      "status": "NEEDS_ANNOTATION"
+    },
+    {
+      "id": "mid_right_F",
+      "zone": "midground_right",
+      "description": "Two points in midground, right side",
+      "pixel_A": [
+        null,
+        null
+      ],
+      "pixel_B": [
+        null,
+        null
+      ],
+      "physical_distance_m": null,
+      "status": "NEEDS_ANNOTATION"
+    },
+    {
+      "id": "bg_center_G",
+      "zone": "background_center",
+      "description": "Two points in background",
+      "pixel_A": [
+        null,
+        null
+      ],
+      "pixel_B": [
+        null,
+        null
+      ],
+      "physical_distance_m": null,
+      "status": "NEEDS_ANNOTATION"
+    },
+    {
+      "id": "boundary_H",
+      "zone": "near_calibration_boundary",
+      "description": "Two points near the edge of calibrated zone",
+      "pixel_A": [
+        null,
+        null
+      ],
+      "pixel_B": [
+        null,
+        null
+      ],
+      "physical_distance_m": null,
+      "status": "NEEDS_ANNOTATION"
+    }
+  ],
+  "reference_frames": [
+    {
+      "frame": 62,
+      "file": "gt_geometry_frame_00062.jpg"
+    },
+    {
+      "frame": 186,
+      "file": "gt_geometry_frame_00186.jpg"
+    },
+    {
+      "frame": 373,
+      "file": "gt_geometry_frame_00373.jpg"
+    },
+    {
+      "frame": 560,
+      "file": "gt_geometry_frame_00560.jpg"
+    },
+    {
+      "frame": 747,
+      "file": "gt_geometry_frame_00747.jpg"
+    },
+    {
+      "frame": 934,
+      "file": "gt_geometry_frame_00934.jpg"
+    },
+    {
+      "frame": 1096,
+      "file": "gt_geometry_frame_01096.jpg"
+    },
+    {
+      "frame": 1183,
+      "file": "gt_geometry_frame_01183.jpg"
+    }
+  ]
+}

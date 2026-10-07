@@ -1,0 +1,640 @@
+{
+  "video_source": "test2.mp4",
+  "evaluated_frames_count": 152,
+  "interaction_frames_count": 86,
+  "output_video": "safety_backfire_v3/outputs/v3_0_4/video_test2_v3_0_4_annotated.mp4",
+  "processing_duration_s": 5.58,
+  "effective_fps": 27.2,
+  "telemetry_samples": [
+    {
+      "frame_id": 168,
+      "person_pos_m": [
+        1.0488628390991404,
+        9.404043100060196
+      ],
+      "forklift_pos_m": [
+        -3.247369248047853,
+        4.4350098109742495
+      ],
+      "v3_0_4_distance_m": 6.564,
+      "v3_0_4_interval_m": [
+        6.004,
+        7.124
+      ],
+      "v3_0_3_distance_approx_m": 4.616,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.017026360876961015
+    },
+    {
+      "frame_id": 169,
+      "person_pos_m": [
+        1.0481458786124784,
+        9.380856653236767
+      ],
+      "forklift_pos_m": [
+        -3.247376984709028,
+        4.435071643569669
+      ],
+      "v3_0_4_distance_m": 6.546,
+      "v3_0_4_interval_m": [
+        5.986,
+        7.106
+      ],
+      "v3_0_3_distance_approx_m": 4.613,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.017026360876961015
+    },
+    {
+      "frame_id": 170,
+      "person_pos_m": [
+        1.046844302348391,
+        9.355609009566795
+      ],
+      "forklift_pos_m": [
+        -3.24735907761278,
+        4.435026828998645
+      ],
+      "v3_0_4_distance_m": 6.526,
+      "v3_0_4_interval_m": [
+        5.966,
+        7.086
+      ],
+      "v3_0_3_distance_approx_m": 4.609,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.017026360876961015
+    },
+    {
+      "frame_id": 172,
+      "person_pos_m": [
+        1.0441823120809064,
+        9.39986415317768
+      ],
+      "forklift_pos_m": [
+        -3.247402426331271,
+        4.435095469297559
+      ],
+      "v3_0_4_distance_m": 6.558,
+      "v3_0_4_interval_m": [
+        5.998,
+        7.118
+      ],
+      "v3_0_3_distance_approx_m": 4.612,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.017026360876961015
+    },
+    {
+      "frame_id": 174,
+      "person_pos_m": [
+        1.043785151409359,
+        9.33895130166514
+      ],
+      "forklift_pos_m": [
+        -3.247582480563133,
+        4.435286648928322
+      ],
+      "v3_0_4_distance_m": 6.511,
+      "v3_0_4_interval_m": [
+        5.951,
+        7.071
+      ],
+      "v3_0_3_distance_approx_m": 4.604,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.017026360876961015
+    },
+    {
+      "frame_id": 175,
+      "person_pos_m": [
+        1.0486721125308172,
+        9.356212191428087
+      ],
+      "forklift_pos_m": [
+        -3.2475133356397343,
+        4.4351828318426145
+      ],
+      "v3_0_4_distance_m": 6.528,
+      "v3_0_4_interval_m": [
+        5.968,
+        7.088
+      ],
+      "v3_0_3_distance_approx_m": 4.61,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.017026360876961015
+    },
+    {
+      "frame_id": 176,
+      "person_pos_m": [
+        1.0388203124637423,
+        9.288290791981346
+      ],
+      "forklift_pos_m": [
+        -3.247582786996389,
+        4.435282110404924
+      ],
+      "v3_0_4_distance_m": 6.47,
+      "v3_0_4_interval_m": [
+        5.91,
+        7.03
+      ],
+      "v3_0_3_distance_approx_m": 4.593,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.017026360876961015
+    },
+    {
+      "frame_id": 177,
+      "person_pos_m": [
+        1.0463674570838086,
+        9.286490836264985
+      ],
+      "forklift_pos_m": [
+        -3.2475349640153084,
+        4.435152765238562
+      ],
+      "v3_0_4_distance_m": 6.474,
+      "v3_0_4_interval_m": [
+        5.914,
+        7.034
+      ],
+      "v3_0_3_distance_approx_m": 4.6,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.017026360876961015
+    },
+    {
+      "frame_id": 181,
+      "person_pos_m": [
+        1.0503501113716753,
+        9.144443074150743
+      ],
+      "forklift_pos_m": [
+        -3.2473599040551684,
+        4.434892956358147
+      ],
+      "v3_0_4_distance_m": 6.371,
+      "v3_0_4_interval_m": [
+        5.811,
+        6.931
+      ],
+      "v3_0_3_distance_approx_m": 4.586,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.017026360876961015
+    },
+    {
+      "frame_id": 182,
+      "person_pos_m": [
+        1.0514032944196137,
+        9.105110137463413
+      ],
+      "forklift_pos_m": [
+        -3.2475951324873282,
+        4.435332034522158
+      ],
+      "v3_0_4_distance_m": 6.342,
+      "v3_0_4_interval_m": [
+        5.782,
+        6.902
+      ],
+      "v3_0_3_distance_approx_m": 4.583,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.017026360876961015
+    },
+    {
+      "frame_id": 183,
+      "person_pos_m": [
+        1.0537707266604621,
+        9.080943633582068
+      ],
+      "forklift_pos_m": [
+        -3.247683763130428,
+        4.435540816681582
+      ],
+      "v3_0_4_distance_m": 6.326,
+      "v3_0_4_interval_m": [
+        5.766,
+        6.886
+      ],
+      "v3_0_3_distance_approx_m": 4.582,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.017026360876961015
+    },
+    {
+      "frame_id": 184,
+      "person_pos_m": [
+        1.0561692963843343,
+        9.074878315029888
+      ],
+      "forklift_pos_m": [
+        -3.247619511304927,
+        4.435477272819491
+      ],
+      "v3_0_4_distance_m": 6.323,
+      "v3_0_4_interval_m": [
+        5.763,
+        6.883
+      ],
+      "v3_0_3_distance_approx_m": 4.584,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.017026360876961015
+    },
+    {
+      "frame_id": 185,
+      "person_pos_m": [
+        1.0502193354643887,
+        9.040070314698873
+      ],
+      "forklift_pos_m": [
+        -3.2476552217685173,
+        4.435509611946179
+      ],
+      "v3_0_4_distance_m": 6.294,
+      "v3_0_4_interval_m": [
+        5.734,
+        6.854
+      ],
+      "v3_0_3_distance_approx_m": 4.574,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.017026360876961015
+    },
+    {
+      "frame_id": 186,
+      "person_pos_m": [
+        1.054845458994741,
+        8.999247193280407
+      ],
+      "forklift_pos_m": [
+        -3.247645009497278,
+        4.43545855031903
+      ],
+      "v3_0_4_distance_m": 6.267,
+      "v3_0_4_interval_m": [
+        5.707,
+        6.827
+      ],
+      "v3_0_3_distance_approx_m": 4.574,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.017026360876961015
+    },
+    {
+      "frame_id": 187,
+      "person_pos_m": [
+        1.0561716944685258,
+        8.99999623265147
+      ],
+      "forklift_pos_m": [
+        -3.24763319555232,
+        4.435421672992249
+      ],
+      "v3_0_4_distance_m": 6.269,
+      "v3_0_4_interval_m": [
+        5.709,
+        6.829
+      ],
+      "v3_0_3_distance_approx_m": 4.575,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.017026360876961015
+    },
+    {
+      "frame_id": 188,
+      "person_pos_m": [
+        1.0604054015563165,
+        8.959691225327925
+      ],
+      "forklift_pos_m": [
+        -3.2477589673409093,
+        4.435733725548295
+      ],
+      "v3_0_4_distance_m": 6.242,
+      "v3_0_4_interval_m": [
+        5.682,
+        6.802
+      ],
+      "v3_0_3_distance_approx_m": 4.575,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.017026360876961015
+    },
+    {
+      "frame_id": 189,
+      "person_pos_m": [
+        1.0619272078766733,
+        8.94279380859589
+      ],
+      "forklift_pos_m": [
+        -3.2477331270432037,
+        4.435703086291636
+      ],
+      "v3_0_4_distance_m": 6.231,
+      "v3_0_4_interval_m": [
+        5.671,
+        6.791
+      ],
+      "v3_0_3_distance_approx_m": 4.574,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.017026360876961015
+    },
+    {
+      "frame_id": 190,
+      "person_pos_m": [
+        1.0636814207908485,
+        8.958296060395169
+      ],
+      "forklift_pos_m": [
+        -3.2478502870543893,
+        4.435920404499108
+      ],
+      "v3_0_4_distance_m": 6.243,
+      "v3_0_4_interval_m": [
+        5.683,
+        6.803
+      ],
+      "v3_0_3_distance_approx_m": 4.578,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.017026360876961015
+    },
+    {
+      "frame_id": 191,
+      "person_pos_m": [
+        1.061286515480108,
+        8.980782231751448
+      ],
+      "forklift_pos_m": [
+        -3.2478400232956672,
+        4.435961827164987
+      ],
+      "v3_0_4_distance_m": 6.258,
+      "v3_0_4_interval_m": [
+        5.698,
+        6.818
+      ],
+      "v3_0_3_distance_approx_m": 4.578,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.017026360876961015
+    },
+    {
+      "frame_id": 192,
+      "person_pos_m": [
+        1.0681641011022902,
+        8.991996772344525
+      ],
+      "forklift_pos_m": [
+        -3.247602654658367,
+        4.435425077035086
+      ],
+      "v3_0_4_distance_m": 6.271,
+      "v3_0_4_interval_m": [
+        5.711,
+        6.831
+      ],
+      "v3_0_3_distance_approx_m": 4.585,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.017026360876961015
+    },
+    {
+      "frame_id": 250,
+      "person_pos_m": [
+        0.9797353641333685,
+        8.171323413739366
+      ],
+      "forklift_pos_m": [
+        -3.2240900545065725,
+        4.397914348493842
+      ],
+      "v3_0_4_distance_m": 5.643,
+      "v3_0_4_interval_m": [
+        5.083,
+        6.203
+      ],
+      "v3_0_3_distance_approx_m": 4.395,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.018522595293082852
+    },
+    {
+      "frame_id": 251,
+      "person_pos_m": [
+        0.9692652375211743,
+        8.139419064801087
+      ],
+      "forklift_pos_m": [
+        -3.223683792076074,
+        4.397148661111854
+      ],
+      "v3_0_4_distance_m": 5.615,
+      "v3_0_4_interval_m": [
+        5.055,
+        6.175
+      ],
+      "v3_0_3_distance_approx_m": 4.382,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.018659023721567282
+    },
+    {
+      "frame_id": 252,
+      "person_pos_m": [
+        0.9655610652132448,
+        8.13499653939742
+      ],
+      "forklift_pos_m": [
+        -3.2237107428729015,
+        4.3971621122747795
+      ],
+      "v3_0_4_distance_m": 5.609,
+      "v3_0_4_interval_m": [
+        5.049,
+        6.169
+      ],
+      "v3_0_3_distance_approx_m": 4.378,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.01868865810104356
+    },
+    {
+      "frame_id": 253,
+      "person_pos_m": [
+        0.9535432213326674,
+        8.139856308329893
+      ],
+      "forklift_pos_m": [
+        -3.224245067133362,
+        4.3981688717305385
+      ],
+      "v3_0_4_distance_m": 5.603,
+      "v3_0_4_interval_m": [
+        5.043,
+        6.163
+      ],
+      "v3_0_3_distance_approx_m": 4.367,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.018718435067476252
+    },
+    {
+      "frame_id": 254,
+      "person_pos_m": [
+        0.9493939886617758,
+        8.086969626040643
+      ],
+      "forklift_pos_m": [
+        -3.2242348025316625,
+        4.398185691175763
+      ],
+      "v3_0_4_distance_m": 5.565,
+      "v3_0_4_interval_m": [
+        5.005,
+        6.125
+      ],
+      "v3_0_3_distance_approx_m": 4.358,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.018910378247913723
+    },
+    {
+      "frame_id": 255,
+      "person_pos_m": [
+        0.9427659698444696,
+        8.039927344532561
+      ],
+      "forklift_pos_m": [
+        -3.224205250251077,
+        4.398065153815728
+      ],
+      "v3_0_4_distance_m": 5.529,
+      "v3_0_4_interval_m": [
+        4.969,
+        6.089
+      ],
+      "v3_0_3_distance_approx_m": 4.347,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "hazard_semantics": "CLEAR_SEPARATION",
+      "risk_decision": "SAFE",
+      "risk_score": 0.019097681360056348
+    },
+    {
+      "frame_id": 798,
+      "person_pos_m": [
+        2.176235006630744,
+        4.7106917121468115
+      ],
+      "forklift_pos_m": [
+        2.074781834896147,
+        3.3341135140225004
+      ],
+      "v3_0_4_distance_m": 1.358,
+      "v3_0_4_interval_m": [
+        0.798,
+        1.918
+      ],
+      "v3_0_3_distance_approx_m": 0.479,
+      "clearance_status": "WARNING_VIOLATION",
+      "hazard_semantics": "CURRENT_PROXIMITY_HAZARD",
+      "risk_decision": "HIGH_PRIORITY_CANDIDATE",
+      "risk_score": 0.19808597991105203
+    },
+    {
+      "frame_id": 799,
+      "person_pos_m": [
+        2.1511686118749256,
+        4.6872898507513945
+      ],
+      "forklift_pos_m": [
+        2.123797509863249,
+        3.456005236720248
+      ],
+      "v3_0_4_distance_m": 1.206,
+      "v3_0_4_interval_m": [
+        0.646,
+        1.766
+      ],
+      "v3_0_3_distance_approx_m": 0.42,
+      "clearance_status": "WARNING_VIOLATION",
+      "hazard_semantics": "CURRENT_PROXIMITY_HAZARD",
+      "risk_decision": "HIGH_PRIORITY_CANDIDATE",
+      "risk_score": 0.22208267219970143
+    },
+    {
+      "frame_id": 800,
+      "person_pos_m": [
+        2.154161900674107,
+        4.741613865378727
+      ],
+      "forklift_pos_m": [
+        2.1285890692928127,
+        3.4749238877129396
+      ],
+      "v3_0_4_distance_m": 1.242,
+      "v3_0_4_interval_m": [
+        0.682,
+        1.802
+      ],
+      "v3_0_3_distance_approx_m": 0.431,
+      "clearance_status": "WARNING_VIOLATION",
+      "hazard_semantics": "CURRENT_PROXIMITY_HAZARD",
+      "risk_decision": "HIGH_PRIORITY_CANDIDATE",
+      "risk_score": 0.2161327809254983
+    },
+    {
+      "frame_id": 801,
+      "person_pos_m": [
+        2.153006276617493,
+        4.7168750552538805
+      ],
+      "forklift_pos_m": [
+        2.2052163995142933,
+        3.6491003024196518
+      ],
+      "v3_0_4_distance_m": 1.04,
+      "v3_0_4_interval_m": [
+        0.48,
+        1.6
+      ],
+      "v3_0_3_distance_approx_m": 0.367,
+      "clearance_status": "WARNING_VIOLATION",
+      "hazard_semantics": "CURRENT_PROXIMITY_HAZARD",
+      "risk_decision": "HIGH_PRIORITY_CANDIDATE",
+      "risk_score": 0.2518479325964962
+    }
+  ]
+}

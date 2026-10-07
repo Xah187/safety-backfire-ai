@@ -1,0 +1,104 @@
+{
+  "registry_version": "V3.3.1_CANONICAL_CLAIM_EVIDENCE_REGISTRY",
+  "timestamp_utc": "2026-09-25T07:05:00Z",
+  "policy": "Strict claim governance: every engineering and scientific statement must be traceable to empirical evidence.",
+  "total_claims": 6,
+  "claims": [
+    {
+      "claim_id": "CLAIM_331_01_UNCERTAINTY_CONDITIONING",
+      "claim": "Condition-aware scaling narrows nominal out-of-sample undercoverage and improves worst-stratum coverage to 89.78%.",
+      "metric_id": "METRIC_331_UNCERTAINTY_CONDITION_AWARE_NOMINAL",
+      "dataset": "DS_V3_3_VAL_INTERSECTION_C / DS_V3_3_BLIND_STAGING_D",
+      "experiment": "EXP_331_01",
+      "odd_tier": "NOMINAL_ODD",
+      "source_artifact": "outputs/v3_3_1/uncertainty/condition_aware_oos_results.json",
+      "source_code": "safety_backfire_v3_3_1/uncertainty/condition_evaluator.py",
+      "test": "validation/v3_3_1/test_v3_3_1_integrity.py::test_06_oos_coverage_recomputation",
+      "evidence_class": "EMPIRICAL_BENCHMARK",
+      "limitations": [
+        "Point estimate 93.67% remains below 95.0% target; full safety requires refusal gating beyond 8.0m."
+      ],
+      "allowed_wording": "Condition-aware scaling improved nominal OOS coverage from 92.61% to 93.67% [95% CI: 91.55%-95.28%], narrowing undercoverage."
+    },
+    {
+      "claim_id": "CLAIM_331_02_SAFE_REFUSAL_APPROPRIATE",
+      "claim": "Multi-trigger boundary gating achieves 100% appropriate refusal on tested out-of-ODD violations with zero false refusals on nominal frames.",
+      "metric_id": "METRIC_331_REFUSAL_APPROPRIATE_RATE",
+      "dataset": "DS_V3_3_STRESS_RAMP_SOUTH / DS_V3_3_SYNTHETIC_OCCLUSION_REPLAY",
+      "experiment": "EXP_331_02",
+      "odd_tier": "OUT_OF_ODD",
+      "source_artifact": "outputs/v3_3_1/refusal/refusal_quality_index.json",
+      "source_code": "safety_backfire_v3_3_1/refusal/refusal_quality.py",
+      "test": "validation/v3_3_1/test_v3_3_1_integrity.py::test_18_refusal_metric_integrity",
+      "evidence_class": "DIRECT_OBSERVATION",
+      "limitations": [
+        "Evaluated on N=150 boundary stress fixtures."
+      ],
+      "allowed_wording": "The safe refusal engine achieved 100% appropriate refusal across 150 boundary violations while preserving nominal throughput."
+    },
+    {
+      "claim_id": "CLAIM_331_03_PERCEPTION_GENERALIZATION",
+      "claim": "Perception F1 achieves 88.45% across 4 physical warehouse sectors using exact object-level denominators.",
+      "metric_id": "METRIC_331_GENERALIZATION_PERCEPTION_F1",
+      "dataset": "DS_V3_3_DEV_AISLE_A / DS_V3_3_CALIB_SECTOR_B / DS_V3_3_VAL_INTERSECTION_C / DS_V3_3_BLIND_STAGING_D",
+      "experiment": "EXP_331_03",
+      "odd_tier": "NOMINAL_ODD",
+      "source_artifact": "outputs/v3_3_1/generalization/cross_environment_generalization_summary.json",
+      "source_code": "safety_backfire_v3_3_1/experiments/run_exp_331_03.py",
+      "test": "validation/v3_3_1/test_v3_3_1_integrity.py::test_10_perception_denominator_integrity",
+      "evidence_class": "EMPIRICAL_BENCHMARK",
+      "limitations": [
+        "Evidence is established within 1 physical facility across 4 sectors; multi-facility generalization remains an open gap."
+      ],
+      "allowed_wording": "Object-level perception F1 was 88.45% across 4 sectors within Facility Central."
+    },
+    {
+      "claim_id": "CLAIM_331_04_TRACKING_IDF1",
+      "claim": "Trajectory-level tracking IDF1 achieves 91.80% [95% CI: 90.57%-92.95%] evaluated via non-parametric trajectory bootstrap.",
+      "metric_id": "METRIC_331_GENERALIZATION_TRACKING_IDF1",
+      "dataset": "DS_V3_3_DEV_AISLE_A / DS_V3_3_CALIB_SECTOR_B / DS_V3_3_VAL_INTERSECTION_C / DS_V3_3_BLIND_STAGING_D",
+      "experiment": "EXP_331_03",
+      "odd_tier": "NOMINAL_ODD",
+      "source_artifact": "outputs/v3_3_1/generalization/cross_environment_generalization_summary.json",
+      "source_code": "safety_backfire_v3_3_1/experiments/run_exp_331_03.py",
+      "test": "validation/v3_3_1/test_v3_3_1_integrity.py::test_12_tracking_bootstrap_integrity",
+      "evidence_class": "STATISTICAL_INFERENCE",
+      "limitations": [
+        "28 trajectory sequences evaluated; resampled via 1000 trajectory bootstrap replicates."
+      ],
+      "allowed_wording": "Tracking IDF1 is estimated at 91.80% [Bootstrap 95% CI: 90.57%-92.95%]."
+    },
+    {
+      "claim_id": "CLAIM_331_05_IDENTITY_AMBIGUITY_SAFETY",
+      "claim": "Enforcing UNKNOWN identity state during ambiguous crossing prevents forced incorrect associations and safely downgrades action.",
+      "metric_id": "METRIC_331_IDENTITY_AMBIGUITY_DOWNGRADE_RATE",
+      "dataset": "DS_V3_3_VAL_INTERSECTION_C / DS_V3_3_BLIND_STAGING_D",
+      "experiment": "EXP_331_04",
+      "odd_tier": "NOMINAL_ODD",
+      "source_artifact": "outputs/v3_3_1/identity/identity_hardening_results.json",
+      "source_code": "safety_backfire_v3_3_1/identity/hardening.py",
+      "test": "validation/v3_3_1/test_v3_3_1_integrity.py::test_13_identity_ambiguity_safety",
+      "evidence_class": "DIRECT_OBSERVATION",
+      "limitations": [
+        "Tested on N=10 ambiguous crossing episodes."
+      ],
+      "allowed_wording": "The system assigns an UNKNOWN state and downgrades hazard action to advisory warning when identity is ambiguous."
+    },
+    {
+      "claim_id": "CLAIM_331_06_BACKFIRE_EVIDENCE_EXPANSION",
+      "claim": "Intervention evidence encompasses 6 discrete case studies (including 1 physical new case) with causal refusal under parallel-trend violation.",
+      "metric_id": "METRIC_331_INTERVENTION_TOTAL_CASES",
+      "dataset": "DS_V3_3_INTERVENTION_REPLAY_FIXTURES / DS_PHYSICAL_RAW_TEST2_MP4",
+      "experiment": "EXP_331_05",
+      "odd_tier": "NOMINAL_ODD",
+      "source_artifact": "outputs/v3_3_1/intervention/backfire_case_governance_summary.json",
+      "source_code": "safety_backfire_v3_3_1/causality/backfire_evaluator.py",
+      "test": "validation/v3_3_1/test_v3_3_1_integrity.py::test_16_did_assumption_integrity",
+      "evidence_class": "CASE_STUDY",
+      "limitations": [
+        "N=6 cases represent discrete episodes; population causal inference is not supported."
+      ],
+      "allowed_wording": "Across 6 evaluated intervention case studies, 3 exhibited risk redistribution, 1 reduced risk, 1 created a new hazard, and 1 refused causal attribution."
+    }
+  ]
+}

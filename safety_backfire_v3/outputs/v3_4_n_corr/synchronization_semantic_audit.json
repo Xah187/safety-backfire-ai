@@ -1,0 +1,77 @@
+{
+  "milestone": "V3.4-N-CORR-01",
+  "document_title": "Multi-Modal Synchronization Semantic Audit & Hierarchy Reconciliation",
+  "audit_date": "2026-10-03T01:45:00Z",
+  "governance_classification": "ENGINEERING_SEMANTIC_BASELINE",
+  "abstract": "Definitively resolves the semantic inversion in prior drafts where Secondary Sensor had nominal allocation of 8.0 ms but hard acceptance limit of 5.0 ms. Establishes a strictly monotonic parameter hierarchy: nominal_target <= acceptance_limit <= hard_rejection_limit across all multi-modal channels.",
+  "budget_identity_preservation": {
+    "nominal_subsystem_allocation_ms": 18.00,
+    "composite_design_target_ms": 33.33,
+    "unallocated_design_reserve_ms": 15.33,
+    "identity_formula": "18.00 ms + 15.33 ms == 33.33 ms (nominal 30.0 fps video frame period)",
+    "epistemic_classification": "DESIGN_BUDGET_IDENTITY (Not empirical physical proof of hardware performance)"
+  },
+  "subsystem_hierarchy_reconciliation": {
+    "camera_subsystem": {
+      "channel": "Optical Video Capture (Cameras A, B, C, D Strobe Sync)",
+      "physical_quantity": "Optical sensor exposure hardware trigger jitter relative to PTP 1PPS pulse",
+      "nominal_target_ms": 2.0,
+      "acceptance_limit_ms": 2.0,
+      "hard_rejection_limit_ms": 5.0,
+      "allocation_budget_ms": 2.0,
+      "measured_value_ms": null,
+      "hierarchy_valid": true,
+      "hierarchy_formula": "nominal_target (2.0) <= acceptance_limit (2.0) <= hard_rejection_limit (5.0)",
+      "semantic_definition": "Camera shutter exposure triggers within 2.0 ms of PTP reference; excursions up to 5.0 ms consume reserve; > 5.0 ms fails Gate C1/C2."
+    },
+    "can_gateway_subsystem": {
+      "channel": "Vehicle Telemetry Gateway (CAN Bus to PTP/UDP Ethernet)",
+      "physical_quantity": "Transit buffer latency from CAN frame EOF to UDP egress packet timestamp",
+      "nominal_target_ms": 5.0,
+      "acceptance_limit_ms": 5.0,
+      "hard_rejection_limit_ms": 10.0,
+      "allocation_budget_ms": 5.0,
+      "measured_value_ms": null,
+      "hierarchy_valid": true,
+      "hierarchy_formula": "nominal_target (5.0) <= acceptance_limit (5.0) <= hard_rejection_limit (10.0)",
+      "semantic_definition": "CAN transceiver FIFO queue delivers telemetry within 5.0 ms; excursions up to 10.0 ms consume reserve; > 10.0 ms fails Gate C1/C3."
+    },
+    "secondary_sensor_subsystem": {
+      "channel": "Secondary Zone LiDAR / Radar Node (Ethernet PTP/TSN Stream)",
+      "physical_quantity": "Network packet transit and pointcloud UDP aggregation latency across TSN switch fabric",
+      "nominal_target_ms": 5.0,
+      "acceptance_limit_ms": 8.0,
+      "hard_rejection_limit_ms": 8.0,
+      "allocation_budget_ms": 8.0,
+      "measured_value_ms": null,
+      "hierarchy_valid": true,
+      "hierarchy_formula": "nominal_target (5.0) <= acceptance_limit (8.0) <= hard_rejection_limit (8.0)",
+      "semantic_definition": "RECONCILED: Prior draft had nominal=8ms but hard limit=5ms (inversion). Reconciled so nominal physical network hop target is 5.0 ms, acceptance limit is 8.0 ms (matching the 8.0 ms nominal budget allocation), and hard rejection occurs at > 8.0 ms (or > 10.0 ms in degraded mode)."
+    },
+    "operating_system_process_jitter": {
+      "channel": "Host Linux Kernel & User-Space DAQ Scheduling Queue",
+      "physical_quantity": "Kernel network stack buffering, socket context switch, and thread wakeup jitter",
+      "nominal_target_ms": 1.0,
+      "acceptance_limit_ms": 3.0,
+      "hard_rejection_limit_ms": 5.0,
+      "allocation_budget_ms": 3.0,
+      "measured_value_ms": null,
+      "hierarchy_valid": true,
+      "hierarchy_formula": "nominal_target (1.0) <= acceptance_limit (3.0) <= hard_rejection_limit (5.0)",
+      "semantic_definition": "Process thread wakeup and socket read latency within 1.0 ms nominal, budgeted up to 3.0 ms; > 5.0 ms indicates system CPU overload."
+    }
+  },
+  "composite_multi_modal_envelope": {
+    "composite_acceptance_target_ms": 33.33,
+    "composite_hard_rejection_limit_ms": 33.33,
+    "measurement_method": "Multi-modal optical strobe and physical impactor captured simultaneously by cameras and vehicle accelerometer",
+    "measured_composite_skew_ms": null,
+    "reconciliation_rule": "The composite skew is an independently measured empirical value. It CANNOT be inferred simply by summing component allocations. If any component exceeds its hard_rejection_limit, Gate C1 FAILS regardless of composite total."
+  },
+  "cross_reference_audit_status": {
+    "v3_4_m_reconciled": true,
+    "v3_4_n_reconciled": true,
+    "secondary_inversion_cleared": true,
+    "zero_conflation_of_skew_and_latency": true
+  }
+}

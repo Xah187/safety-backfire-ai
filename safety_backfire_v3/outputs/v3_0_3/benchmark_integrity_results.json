@@ -1,0 +1,103 @@
+{
+  "retraction_statement": "Direct comparison between V3.0.1 115.68ms and V3.0.2 22.00ms is formally retracted due to boundary conflation.",
+  "regime_a_burst": {
+    "regime": "REGIME_A_BURST_OVERFLOW_STRESS",
+    "injected_frames": 100,
+    "queue_capacity": 5,
+    "dropped_overflow": 95,
+    "burst_overflow_drop_rate_pct": 95.0,
+    "bounded_queue_depth": 5
+  },
+  "regime_b_sustained": {
+    "regime": "REGIME_B_SUSTAINED_REPLAY",
+    "total_frames": 250,
+    "target_fps": 25.0,
+    "compute_decision_latency_ms": {
+      "P50": 16.85,
+      "P90": 19.93,
+      "P95": 20.82,
+      "P99": 22.54,
+      "Max": 24.37
+    },
+    "arrival_to_decision_ms": {
+      "P50": 15.45,
+      "P90": 18.52,
+      "P95": 19.39,
+      "P99": 21.14,
+      "Max": 23.01
+    },
+    "source_capture_to_decision_ms": {
+      "P50": 16.95,
+      "P90": 20.02,
+      "P95": 20.89,
+      "P99": 22.64,
+      "Max": 24.51
+    },
+    "pose_source_age_at_decision_ms": {
+      "P50": 73.58,
+      "P90": 103.1,
+      "P95": 107.01,
+      "P99": 108.59,
+      "Max": 109.81
+    }
+  },
+  "regime_c_real_stream": {
+    "regime": "REGIME_C_REAL_STREAM",
+    "video_source": "test2.mp4",
+    "frames_evaluated": 150,
+    "source_fps": 25.0,
+    "decode_duration_ms": {
+      "P50": 2.3,
+      "P95": 4.48,
+      "Max": 19.4
+    },
+    "source_pts_to_decision_ms": {
+      "P50": 0.0,
+      "P95": 0.0,
+      "Max": 25.67
+    }
+  },
+  "regime_d_stability": {
+    "regime": "REGIME_D_LONG_RUNNING_STABILITY",
+    "duration_seconds": 10,
+    "rss_memory_drift_mb": 0.0,
+    "thread_drift": 0,
+    "snapshots": [
+      {
+        "step": 0,
+        "elapsed_s": 0.0,
+        "rss_memory_mb": 270.75,
+        "active_threads": 10,
+        "cpu_percent": 0.1
+      },
+      {
+        "step": 1,
+        "elapsed_s": 2.0,
+        "rss_memory_mb": 270.75,
+        "active_threads": 10,
+        "cpu_percent": 0.1
+      },
+      {
+        "step": 2,
+        "elapsed_s": 4.0,
+        "rss_memory_mb": 270.75,
+        "active_threads": 10,
+        "cpu_percent": 0.1
+      },
+      {
+        "step": 3,
+        "elapsed_s": 6.0,
+        "rss_memory_mb": 270.75,
+        "active_threads": 10,
+        "cpu_percent": 0.1
+      },
+      {
+        "step": 4,
+        "elapsed_s": 8.0,
+        "rss_memory_mb": 270.75,
+        "active_threads": 10,
+        "cpu_percent": 0.1
+      }
+    ]
+  }
+}

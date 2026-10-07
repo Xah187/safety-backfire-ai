@@ -1,0 +1,84 @@
+{
+  "milestone": "V3.4-M",
+  "document_title": "Authoritative Abort & Invalidation Taxonomy",
+  "architectural_mandate": "RESEARCH_DATA_FAILURE != AUTOMATIC_SAFETY_CONTROL_COMMAND",
+  "safety_boundary_declaration": "Experimental research DAQ software and data quality monitoring tools operate strictly OUTSIDE the native vehicle safety-critical control loop. Research software is mathematically and electrically isolated from vehicle throttle, steering, and braking actuators. A data quality failure terminates experimental data logging; it DOES NOT issue automated emergency braking or steering commands to the physical vehicle.",
+  "taxonomies": {
+    "safety_abort": {
+      "category": "SAFETY_ABORT",
+      "purpose": "Protect human life, physical test personnel, and facility assets from mechanical, spatial, or operational hazards.",
+      "control_authority": "Physical Safety Marshal, Hardwired Perimeter Interlocks, Certified Vehicle Operator.",
+      "actuation_mechanism": "Hardwired Cat 4 / SIL-3 physical safety circuit, independent wireless E-Stop power cutoff relay, or vehicle native mechanical brakes.",
+      "triggers": [
+        {
+          "trigger_id": "SAFE_01_ESTOP_DEPRESSED",
+          "condition": "Manual or wireless E-Stop button depressed by Safety Marshal or Operator.",
+          "system_action": "Cuts vehicle traction motor drive power immediately via certified relay; brings vehicle to fail-safe mechanical stop.",
+          "daq_action": "Flags current recording as ABORTED_SAFETY; freezes video and telemetry recording buffer."
+        },
+        {
+          "trigger_id": "SAFE_02_PERIMETER_INTERLOCK_BREACH",
+          "condition": "Perimeter physical barrier gate opened or physical safety light curtain breached.",
+          "system_action": "Hardwired interlock loop breaks; immediate traction power disconnect.",
+          "daq_action": "Flags current recording as ABORTED_SAFETY."
+        },
+        {
+          "trigger_id": "SAFE_03_UNEXPECTED_HUMAN_INTRUSION",
+          "condition": "Any human observed stepping inside the dynamic vehicle travel envelope or test buffer.",
+          "system_action": "Safety Marshal depresses wireless E-Stop instantly.",
+          "daq_action": "Flags current recording as ABORTED_SAFETY."
+        },
+        {
+          "trigger_id": "SAFE_04_VEHICLE_MECHANICAL_KINEMATIC_FAULT",
+          "condition": "Vehicle steering failure, tire blow-out, runaway acceleration, or physical obstacle collision.",
+          "system_action": "Operator / Safety Marshal engages native emergency stop.",
+          "daq_action": "Flags current recording as ABORTED_SAFETY."
+        }
+      ]
+    },
+    "data_invalidation_abort": {
+      "category": "DATA_INVALIDATION_ABORT",
+      "purpose": "Invalidate and isolate experimental data captures that fail scientific integrity, temporal continuity, or sensor completeness requirements.",
+      "control_authority": "Automated DAQ Recording Daemon & Data Operations Lead.",
+      "actuation_mechanism": "Software-level data container tagging and pipeline termination. NO VEHICLE ACTUATOR COMMANDS ISSUED.",
+      "operational_protocol": "Upon data invalidation, DAQ marks recording as ABORTED_DATA_INVALID. The test vehicle continues nominal operation or is brought to a controlled stop by the vehicle operator following standard operational procedures.",
+      "triggers": [
+        {
+          "trigger_id": "DATA_01_CAMERA_FRAME_DROP",
+          "condition": "Any commissioned camera (A, B, or C) drops >= 1 video frame during active trial.",
+          "daq_action": "Terminates active event container; tags package as ABORTED_DATA_FRAME_DROP; moves package to aborted_runs/ archive."
+        },
+        {
+          "trigger_id": "DATA_02_CAN_TELEMETRY_GAP",
+          "condition": "CAN bus message gap > 20.0 ms for vehicle speed, brake state, or yaw rate.",
+          "daq_action": "Tags package as ABORTED_DATA_CAN_TIMEOUT; invalidates event run."
+        },
+        {
+          "trigger_id": "DATA_03_PTP_CLOCK_DESYNCHRONIZATION",
+          "condition": "PTP grandmaster loses GNSS lock, or local slave node drifts > component limit, or step correction detected.",
+          "daq_action": "Tags package as ABORTED_DATA_CLOCK_DESYNC; requires 5-minute burn-in re-lock."
+        },
+        {
+          "trigger_id": "DATA_04_SECONDARY_SENSOR_DROPOUT",
+          "condition": "Secondary LiDAR or Radar stream disconnects or packet loss exceeds 0.01%.",
+          "daq_action": "Tags package as ABORTED_DATA_SECONDARY_DROPOUT; marks secondary zone as UNVERIFIED."
+        },
+        {
+          "trigger_id": "DATA_05_STORAGE_BUFFER_CONGESTION",
+          "condition": "NVMe ingest buffer queue exceeds 80% capacity or disk write latency exceeds 50.0 ms.",
+          "daq_action": "Tags package as ABORTED_DATA_STORAGE_OVERFLOW; halts new capture sessions until flushed."
+        },
+        {
+          "trigger_id": "DATA_06_CRYPTOGRAPHIC_PROVENANCE_MISMATCH",
+          "condition": "SHA-256 hash calculation mismatch during session close or Merkle root computation failure.",
+          "daq_action": "Tags package as ABORTED_DATA_PROVENANCE_FAIL; isolates corrupt block."
+        }
+      ]
+    }
+  },
+  "post_abort_lifecycle": {
+    "archival_state": "ABORTED_RUN_ARCHIVED",
+    "evidentiary_status": "NON_EVIDENTIARY_ISOLATED",
+    "rule": "Aborted runs (both Safety and Data Invalidation) are permanently quarantined in outputs/aborted_runs/ with full diagnostic logs. They CANNOT be promoted to DATASET_READY_FOR_REVIEW and CANNOT be used as valid experimental evidence."
+  }
+}

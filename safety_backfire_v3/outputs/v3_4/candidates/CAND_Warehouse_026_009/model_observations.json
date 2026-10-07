@@ -1,0 +1,206 @@
+{
+  "candidate_id": "CAND_Warehouse_026_009",
+  "total_interaction_observations": 11,
+  "min_pixel_distance": 175.8,
+  "min_metric_distance_diff": 1.39,
+  "samples": [
+    {
+      "frame_id": 1,
+      "time_s": 0.03,
+      "dist_px": 222.2,
+      "metric_diff_m": 6.1,
+      "person_bbox": [
+        811.4,
+        358.2,
+        884.4,
+        567.0
+      ],
+      "forklift_bbox": [
+        812.0,
+        0.0,
+        964.5,
+        348.5
+      ]
+    },
+    {
+      "frame_id": 93,
+      "time_s": 3.1,
+      "dist_px": 231.5,
+      "metric_diff_m": 6.08,
+      "person_bbox": [
+        783.4,
+        366.4,
+        870.1,
+        573.5
+      ],
+      "forklift_bbox": [
+        811.2,
+        0.0,
+        965.0,
+        350.3
+      ]
+    },
+    {
+      "frame_id": 185,
+      "time_s": 6.17,
+      "dist_px": 233.8,
+      "metric_diff_m": 6.06,
+      "person_bbox": [
+        780.1,
+        369.1,
+        867.9,
+        576.5
+      ],
+      "forklift_bbox": [
+        811.4,
+        0.0,
+        963.7,
+        351.5
+      ]
+    },
+    {
+      "frame_id": 277,
+      "time_s": 9.23,
+      "dist_px": 241.5,
+      "metric_diff_m": 6.38,
+      "person_bbox": [
+        780.9,
+        368.0,
+        865.8,
+        579.3
+      ],
+      "forklift_bbox": [
+        813.2,
+        0.0,
+        958.6,
+        346.0
+      ]
+    },
+    {
+      "frame_id": 369,
+      "time_s": 12.3,
+      "dist_px": 207.9,
+      "metric_diff_m": 5.55,
+      "person_bbox": [
+        836.4,
+        361.5,
+        911.6,
+        569.2
+      ],
+      "forklift_bbox": [
+        810.0,
+        0.0,
+        964.3,
+        361.7
+      ]
+    },
+    {
+      "frame_id": 461,
+      "time_s": 15.37,
+      "dist_px": 221.2,
+      "metric_diff_m": 6.03,
+      "person_bbox": [
+        832.1,
+        358.8,
+        911.6,
+        573.4
+      ],
+      "forklift_bbox": [
+        811.5,
+        0.0,
+        964.5,
+        352.8
+      ]
+    },
+    {
+      "frame_id": 553,
+      "time_s": 18.43,
+      "dist_px": 221.5,
+      "metric_diff_m": 5.91,
+      "person_bbox": [
+        835.5,
+        360.5,
+        914.3,
+        578.1
+      ],
+      "forklift_bbox": [
+        810.2,
+        0.0,
+        965.3,
+        357.0
+      ]
+    },
+    {
+      "frame_id": 645,
+      "time_s": 21.5,
+      "dist_px": 219.8,
+      "metric_diff_m": 6.03,
+      "person_bbox": [
+        853.4,
+        362.4,
+        933.8,
+        573.1
+      ],
+      "forklift_bbox": [
+        810.2,
+        0.0,
+        964.4,
+        353.4
+      ]
+    },
+    {
+      "frame_id": 737,
+      "time_s": 24.57,
+      "dist_px": 217.6,
+      "metric_diff_m": 5.94,
+      "person_bbox": [
+        854.6,
+        364.0,
+        937.6,
+        572.6
+      ],
+      "forklift_bbox": [
+        811.2,
+        0.0,
+        966.1,
+        355.1
+      ]
+    },
+    {
+      "frame_id": 829,
+      "time_s": 27.63,
+      "dist_px": 178.8,
+      "metric_diff_m": 4.91,
+      "person_bbox": [
+        952.9,
+        314.8,
+        1020.5,
+        500.4
+      ],
+      "forklift_bbox": [
+        810.9,
+        0.0,
+        964.8,
+        351.4
+      ]
+    },
+    {
+      "frame_id": 922,
+      "time_s": 30.73,
+      "dist_px": 223.8,
+      "metric_diff_m": 1.56,
+      "person_bbox": [
+        1079.7,
+        253.0,
+        1140.2,
+        387.4
+      ],
+      "forklift_bbox": [
+        812.3,
+        0.0,
+        964.3,
+        356.2
+      ]
+    }
+  ]
+}

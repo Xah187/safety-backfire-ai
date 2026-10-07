@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "document_id": "V3_4_L_FACILITY_SELECTION_REQUIREMENTS",
+  "version": "1.0.0",
+  "status": "APPROVED_SPECIFICATION",
+  "description": "Standardized Architectural, Safety, and Sensor Infrastructure Selection Criteria for Physical Pilot Facilities.",
+  "governance": {
+    "milestone": "V3.4-L",
+    "vendor_neutrality_policy": "NO_COMMERCIAL_COMPANY_OR_SPECIFIC_WAREHOUSE_NAMED",
+    "ground_truth_policy": "FACILITY_SELECTION_DOES_NOT_ESTABLISH_VALIDATION"
+  },
+  "spatial_and_architectural_criteria": {
+    "primary_corridor": {
+      "minimum_unobstructed_length_m": 35.0,
+      "minimum_aisle_width_m": 4.2,
+      "clear_ceiling_height_m": [6.0, 12.0],
+      "traffic_direction": "BIDIRECTIONAL_DESIGNATED_LANES"
+    },
+    "secondary_cross_aisle": {
+      "minimum_interior_depth_m": 25.0,
+      "minimum_aisle_width_m": 3.0,
+      "junction_angle_deg": 90.0,
+      "rack_upright_height_m": [4.5, 8.5],
+      "racking_type": "STANDARD_SELECTIVE_PALLET_RACKING"
+    },
+    "floor_slab_specifications": {
+      "surface_material": "SEALED_REINFORCED_CONCRETE_SLAB",
+      "floor_flatness_tolerance": "DIN_18202_GROUP_4 (<= 5mm elevation variance across 3m straightedge)",
+      "static_friction_coefficient": ">= 0.55 (Dry, clean concrete)",
+      "expansion_joints": "Flush-filled joints; maximum step height <= 2mm"
+    }
+  },
+  "safety_and_containment_infrastructure": {
+    "exclusion_zone": {
+      "required": true,
+      "description": "Physical barricade perimeter enclosing the entire test junction and runout zones.",
+      "minimum_buffer_margin_m": 5.0,
+      "barrier_type": "INDUSTRIAL_HEAVY_DUTY_SAFETY_FENCING (Height >= 1.8m) with interlocked access gates"
+    },
+    "emergency_shutdown_systems": {
+      "perimeter_hardwired_e_stops": "Minimum 4 illuminated mushroom-head E-Stop buttons along fence boundary",
+      "wireless_safety_marshal_e_stop": "Dual-channel SIL-3 / Cat-4 certified wireless safety remote held by dedicated marshal",
+      "automatic_vehicle_cutoff": "Vehicle CAN bus ignition cut-off circuit triggered within <= 100ms of E-Stop command"
+    },
+    "lighting_and_environmental_control": {
+      "ambient_illuminance_range_lux": [150.0, 600.0],
+      "luminaire_flicker_frequency_hz": ">= 1000 Hz (High-frequency LED drivers to eliminate camera rolling-shutter banding)",
+      "operating_temperature_celsius": [10.0, 30.0],
+      "maximum_relative_humidity_pct": 75.0
+    }
+  },
+  "sensor_mounting_and_network_infrastructure": {
+    "mounting_locations": {
+      "camera_a_mount": "Rigid structural column or roof truss at 5.0m height along primary corridor centerline",
+      "camera_b_mount": "Structural rack upright at 4.5m height overlooking intersection threshold",
+      "camera_c_mount": "Interior aisle apex mount at 4.0m height facing down secondary cross-aisle",
+      "camera_d_mount": "High diagonal corner ceiling mount at 6.5m height",
+      "structural_vibration_damping": "Spring-isolated camera mounting brackets rated for <= 0.05g RMS ambient vibration"
+    },
+    "network_and_clock_infrastructure": {
+      "network_topology": "Dedicated isolated 10GbE fiber backbone with Category 6A Shielded Twisted Pair (STP) drops",
+      "ptp_grandmaster_location": "Secured IT equipment rack within <= 50m cable run of primary network switch",
+      "uninterrupted_power_supply": "Dedicated online double-conversion UPS (minimum runtime >= 60 minutes under full sensor load)",
+      "local_storage_array": "Redundant NVMe RAID-10 storage server with sustained write bandwidth >= 2.5 GB/s"
+    }
+  }
+}

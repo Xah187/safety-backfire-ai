@@ -1,0 +1,22 @@
+{
+  "artifact_name": "EXP_333_01_TRACKING_METRICS",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "tracker_evaluated": "BYTE_TRACK_FROZEN_V3_3_2",
+  "target_facility": "FACILITY_E_COLD_STORAGE",
+  "metrics": {
+    "idf1": null,
+    "target_idf1": 0.8500,
+    "identity_switches": null,
+    "track_fragmentations": null,
+    "false_tracks": null,
+    "missed_tracks": null,
+    "forced_wrong_identity_count": null,
+    "forced_wrong_identity_rate": null,
+    "target_forced_wrong_identity_rate": 0.0000,
+    "safe_identity_ambiguity_count": null,
+    "trajectories_evaluated": 0,
+    "status": "NOT_ESTABLISHED"
+  },
+  "ambiguity_handling_rule": "Under wide-baseline handoff or visual occlusion, identity ambiguity is classified as SAFE_IDENTITY_AMBIGUITY and is strictly distinguished from forced incorrect identity swaps.",
+  "governance_classification": "NOT_ESTABLISHED_PENDING_EXTERNAL_DATA"
+}

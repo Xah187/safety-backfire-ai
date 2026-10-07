@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "schema_version": "2.0",
+    "engine_version": "1.0.0",
+    "data_type": "BeforeAfterComparison"
+  },
+  "data": {
+    "metrics": {
+      "min_distance_m": {
+        "before": 0.0,
+        "after": 0.0,
+        "absolute_change": 0.0,
+        "percentage_change": 0.0,
+        "direction": "NO_CHANGE"
+      },
+      "median_distance_m": {
+        "before": 0.0,
+        "after": 0.0,
+        "absolute_change": 0.0,
+        "percentage_change": 0.0,
+        "direction": "NO_CHANGE"
+      },
+      "total_risk_exposure": {
+        "before": 0.0,
+        "after": 0.0,
+        "absolute_change": 0.0,
+        "percentage_change": 0.0,
+        "direction": "NO_CHANGE"
+      },
+      "num_events": {
+        "before": 0.0,
+        "after": 0.0,
+        "absolute_change": 0.0,
+        "percentage_change": 0.0,
+        "direction": "NO_CHANGE"
+      },
+      "high_severity_events": {
+        "before": 0.0,
+        "after": 0.0,
+        "absolute_change": 0.0,
+        "percentage_change": 0.0,
+        "direction": "NO_CHANGE"
+      },
+      "avg_interaction_duration_sec": {
+        "before": 0.0,
+        "after": 0.0,
+        "absolute_change": 0.0,
+        "percentage_change": 0.0,
+        "direction": "NO_CHANGE"
+      },
+      "peak_approach_velocity": {
+        "before": 0.0,
+        "after": 0.0,
+        "absolute_change": 0.0,
+        "percentage_change": 0.0,
+        "direction": "NO_CHANGE"
+      },
+      "trajectory_crossings": {
+        "before": 0.0,
+        "after": 0.0,
+        "absolute_change": 0.0,
+        "percentage_change": 0.0,
+        "direction": "NO_CHANGE"
+      }
+    },
+    "summary": "Comparison completed. See Phase 13 (Decision Engine) for backfire assessment."
+  }
+}

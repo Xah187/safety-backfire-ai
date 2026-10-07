@@ -1,0 +1,125 @@
+{
+  "failure_case_count": 76,
+  "failure_cases": [
+    {
+      "point_id": "SECTOR_C_VAL_0016",
+      "distance_m": 1.38,
+      "illumination_lux": 293.6,
+      "occlusion_state": "NONE",
+      "mahalanobis_sq": 6.1011,
+      "threshold_k_sq": 5.8564
+    },
+    {
+      "point_id": "SECTOR_D_BLIND_0027",
+      "distance_m": 8.0,
+      "illumination_lux": 185.1,
+      "occlusion_state": "NONE",
+      "mahalanobis_sq": 9.4233,
+      "threshold_k_sq": 5.8564
+    },
+    {
+      "point_id": "SECTOR_D_BLIND_0031",
+      "distance_m": 8.93,
+      "illumination_lux": 214.8,
+      "occlusion_state": "HEAVY",
+      "mahalanobis_sq": 15.3645,
+      "threshold_k_sq": 5.8564
+    },
+    {
+      "point_id": "SECTOR_D_BLIND_0037",
+      "distance_m": 4.91,
+      "illumination_lux": 227.5,
+      "occlusion_state": "HEAVY",
+      "mahalanobis_sq": 6.4766,
+      "threshold_k_sq": 5.8564
+    },
+    {
+      "point_id": "SECTOR_D_BLIND_0041",
+      "distance_m": 5.91,
+      "illumination_lux": 208.4,
+      "occlusion_state": "HEAVY",
+      "mahalanobis_sq": 9.6536,
+      "threshold_k_sq": 5.8564
+    },
+    {
+      "point_id": "SECTOR_D_BLIND_0055",
+      "distance_m": 7.02,
+      "illumination_lux": 203.9,
+      "occlusion_state": "HEAVY",
+      "mahalanobis_sq": 20.1062,
+      "threshold_k_sq": 5.8564
+    },
+    {
+      "point_id": "SECTOR_C_VAL_0056",
+      "distance_m": 1.27,
+      "illumination_lux": 329.2,
+      "occlusion_state": "NONE",
+      "mahalanobis_sq": 9.6665,
+      "threshold_k_sq": 5.8564
+    },
+    {
+      "point_id": "SECTOR_D_BLIND_0095",
+      "distance_m": 5.76,
+      "illumination_lux": 198.5,
+      "occlusion_state": "PARTIAL",
+      "mahalanobis_sq": 15.2431,
+      "threshold_k_sq": 5.8564
+    },
+    {
+      "point_id": "SECTOR_C_VAL_0096",
+      "distance_m": 4.43,
+      "illumination_lux": 314.8,
+      "occlusion_state": "PARTIAL",
+      "mahalanobis_sq": 9.4346,
+      "threshold_k_sq": 5.8564
+    },
+    {
+      "point_id": "SECTOR_D_BLIND_0101",
+      "distance_m": 4.79,
+      "illumination_lux": 239.9,
+      "occlusion_state": "NONE",
+      "mahalanobis_sq": 5.9751,
+      "threshold_k_sq": 5.8564
+    },
+    {
+      "point_id": "SECTOR_D_BLIND_0113",
+      "distance_m": 5.55,
+      "illumination_lux": 199.9,
+      "occlusion_state": "NONE",
+      "mahalanobis_sq": 8.8023,
+      "threshold_k_sq": 5.8564
+    },
+    {
+      "point_id": "SECTOR_D_BLIND_0123",
+      "distance_m": 6.56,
+      "illumination_lux": 220.6,
+      "occlusion_state": "HEAVY",
+      "mahalanobis_sq": 7.533,
+      "threshold_k_sq": 5.8564
+    },
+    {
+      "point_id": "SECTOR_D_BLIND_0127",
+      "distance_m": 5.77,
+      "illumination_lux": 239.3,
+      "occlusion_state": "HEAVY",
+      "mahalanobis_sq": 10.7342,
+      "threshold_k_sq": 5.8564
+    },
+    {
+      "point_id": "SECTOR_D_BLIND_0143",
+      "distance_m": 2.27,
+      "illumination_lux": 204.6,
+      "occlusion_state": "NONE",
+      "mahalanobis_sq": 9.3155,
+      "threshold_k_sq": 5.8564
+    },
+    {
+      "point_id": "SECTOR_D_BLIND_0151",
+      "distance_m": 8.12,
+      "illumination_lux": 194.0,
+      "occlusion_state": "NONE",
+      "mahalanobis_sq": 10.7372,
+      "threshold_k_sq": 5.8564
+    }
+  ]
+}

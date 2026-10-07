@@ -1,0 +1,9 @@
+{
+  "manifest_version": "EXP_333_01_BLIND_PROTOCOL_HASH",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "blind_protocol_locked": true,
+  "protocol_lock_hash": "b8d14e7a2c0915f3e4a8b7921c3d0f6e5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d",
+  "blind_data_locked": false,
+  "blind_data_hash": "NOT_AVAILABLE",
+  "status": "BLIND_PROTOCOL_LOCKED"
+}

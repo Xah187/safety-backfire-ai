@@ -1,0 +1,50 @@
+{
+  "audit_version": "EXP_333_01_MODEL_H_REEXECUTION_AUDIT_V2",
+  "timestamp_utc": "2026-09-28T08:30:42Z",
+  "runs_comparison": {
+    "RUN_001_INVALIDATED_RUNTIME_MISMATCH": {
+      "status": "INVALIDATED",
+      "reason": "MODEL_H_RUNTIME_IMPLEMENTATION_NON_CONFORMANT"
+    },
+    "RUN_002_CANONICAL_CONFORMANCE": {
+      "status": "CONFORMANT_INPUT_INSUFFICIENT",
+      "missing_inputs": [
+        "illumination_lux",
+        "camera_pitch_deg",
+        "occlusion_state"
+      ],
+      "distance_source": "MODEL_ESTIMATE",
+      "data_volume": "173 frames, 1 camera"
+    },
+    "RUN_003_NVIDIA_WAREHOUSE_026": {
+      "status": "CONFORMANT_INPUT_INSUFFICIENT_LUX_ONLY",
+      "missing_inputs": [
+        "illumination_lux"
+      ],
+      "resolved_vs_run_002": [
+        "camera_pitch_deg",
+        "occlusion_state"
+      ],
+      "distance_source": "FROM_CALIBRATED_HOMOGRAPHY",
+      "pitch_source": "FROM_CALIBRATED_EXTRINSIC",
+      "occlusion_source": "DERIVED_FROM_BBOX_IOU",
+      "data_volume": "7200 frames, 4 cameras",
+      "total_detections": 10942,
+      "total_tracks": 81
+    }
+  },
+  "progression": {
+    "inputs_resolved_run_002_to_003": {
+      "camera_pitch_deg": "None \u2192 FROM_CALIBRATED_EXTRINSIC (4 cameras)",
+      "occlusion_state": "UNAVAILABLE \u2192 DERIVED_FROM_BBOX_IOU",
+      "distance_m": "MODEL_ESTIMATE \u2192 FROM_CALIBRATED_HOMOGRAPHY",
+      "illumination_lux": "NOT_AVAILABLE \u2192 NOT_AVAILABLE (unchanged)"
+    },
+    "data_volume_progression": {
+      "RUN_001": "173 frames \u00d7 1 camera",
+      "RUN_002": "173 frames \u00d7 1 camera",
+      "RUN_003": "7200 frames \u00d7 4 cameras"
+    }
+  },
+  "scientific_conclusion": "RUN_003 resolves 3 of 4 Model H blocking inputs from physically calibrated sources (NVIDIA Warehouse_026 calibration data). Camera pitch angles (56.51\u00b0, 53.84\u00b0, 4.42\u00b0, 1.59\u00b0) are measured from extrinsic matrices. Metric distances are computed from calibrated homography (RMSE=0.054 units). Occlusion is derived from per-frame bbox IoU analysis. Only illumination_lux remains NOT_AVAILABLE, keeping Model H formally INPUT_INSUFFICIENT. No defaults were substituted."
+}

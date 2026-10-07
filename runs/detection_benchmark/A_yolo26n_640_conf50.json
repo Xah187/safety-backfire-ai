@@ -1,0 +1,27 @@
+{
+  "name": "A_yolo26n_640_conf50",
+  "model": "yolo26n.pt",
+  "conf": 0.5,
+  "iou": 0.7,
+  "imgsz": 640,
+  "video": "test.mp4",
+  "frames": 426,
+  "source_fps": 29.97002997002997,
+  "resolution": [
+    640,
+    360
+  ],
+  "total_detections": 67,
+  "detections_per_frame": 0.157,
+  "inference_seconds": 3.76,
+  "inference_fps": 113.3,
+  "class_counts": {
+    "person": 25,
+    "truck": 42
+  },
+  "max_confidence_by_class": {
+    "person": 0.683,
+    "truck": 0.69
+  },
+  "annotated_video": "runs/detection_benchmark/A_yolo26n_640_conf50.mp4"
+}

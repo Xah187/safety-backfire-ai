@@ -1,0 +1,8 @@
+path: /Users/xah187/Projects/safety-backfire-ai/safety_backfire_v03/dataset/yolo
+train: images/train
+val: images/valid
+test: images/test
+
+names:
+  0: forklift
+  1: person

@@ -1,0 +1,87 @@
+{
+  "manifest_version": "EXP_333_01_HASH_MANIFEST",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "status": "NOT_ESTABLISHED",
+  "artifacts": {
+    "analysis/failure_taxonomy.json": {
+      "sha256": "6e4b56b4265aef4c7d42461d0ef5b2c9b5815faf14acc07aa610f772fcb8de9b",
+      "size_bytes": 1483
+    },
+    "analysis/red_team_results.json": {
+      "sha256": "a7808ef5064d7607f74c05ba4a49957354cbe93c03137aafafbbdaf1bc1cab26",
+      "size_bytes": 4643
+    },
+    "analysis/statistical_analysis.json": {
+      "sha256": "7bc5c01d1ff9984b2eaab4dcb8542e366bb307ed5a4475e362ee5ad8ffda5155",
+      "size_bytes": 2637
+    },
+    "analysis/stratified_analysis.json": {
+      "sha256": "0d8ac6f796e7b0d9bb68d4322c2c6c3f100ad3d5ddc07a2e10f13cf8583eaa00",
+      "size_bytes": 2318
+    },
+    "metrics/event_metrics.json": {
+      "sha256": "230b31f863dc08cdad22568e8fb68b42516aa3ddc0bd78d0f028d9806ec34207",
+      "size_bytes": 600
+    },
+    "metrics/geometry_metrics.json": {
+      "sha256": "34d5450297374a8594b3b23b71e3d2094497fab2e09fb9b36ddbdbf86327b077",
+      "size_bytes": 1128
+    },
+    "metrics/hazard_metrics.json": {
+      "sha256": "82ce6f8ba0c80961e73dd091889d7ad2e10a35bcdf36c732d326d2fcbd41999a",
+      "size_bytes": 1085
+    },
+    "metrics/perception_metrics.json": {
+      "sha256": "08570f1457060e03780c18eba1f3ef387bb6d6bd707098632288252d46a7ece6",
+      "size_bytes": 2528
+    },
+    "metrics/policy_metrics.json": {
+      "sha256": "3a2e05619af7bb11f8d63b0873db7bc1696151634ebd5b728459e085b8a98280",
+      "size_bytes": 1749
+    },
+    "metrics/tracking_metrics.json": {
+      "sha256": "22ef9ba0cf619933af388f6bab4d1f8c955326de9b9e300eac84038d16a73df2",
+      "size_bytes": 905
+    },
+    "metrics/uncertainty_metrics.json": {
+      "sha256": "9fdd909564400ebeea0f35338fa08530e03b54aa67eb9ee2d4dcac5704e51ea8",
+      "size_bytes": 2384
+    },
+    "provenance/acquisition_manifest.json": {
+      "sha256": "fd315c94b1d528af03253df1b2d26c0f915ee96e3bd24a4f39cc8c6da6bf9c5b",
+      "size_bytes": 1513
+    },
+    "provenance/camera_manifest.json": {
+      "sha256": "cd58033b2ba11aa098141c3cba755160595aa9cd08703da659055a99bddabf49",
+      "size_bytes": 6678
+    },
+    "provenance/external_facility_manifest.json": {
+      "sha256": "a522f1f0b82d4c5325deb1b5a402244d43dca8df65e25adf75bc384090e01690",
+      "size_bytes": 3524
+    },
+    "provenance/integrity_hash_manifest.json": {
+      "sha256": "b32df0f3211dc30fefa94a1aa82489646ba3777e405562c8a65fac71e56cdffb",
+      "size_bytes": 757
+    },
+    "release/exp_333_01_release_status.json": {
+      "sha256": "b261e749dc0858760b5c87eb2fa5d17defa29d7a1d0add57e987a7fd3f68bb85",
+      "size_bytes": 1090
+    },
+    "reports/EXP_333_01_EXTERNAL_FACILITY_REPORT.md": {
+      "sha256": "bf8d3e49b080e5e58b036917045bc943e68bffbf9af9d5d4265b21e16fbb643c",
+      "size_bytes": 16471
+    },
+    "splits/blind_hash.json": {
+      "sha256": "7b8d74cd31d95bac3563314f39057170f545f74241ebd18421f51de9fd115d58",
+      "size_bytes": 275
+    },
+    "splits/blind_manifest.json": {
+      "sha256": "823c975e9697c7ca5560e72252802e8e6cfc5f142ffd7cef52680c0f1974f6e5",
+      "size_bytes": 1063
+    },
+    "splits/split_manifest.json": {
+      "sha256": "bf815498a662a122f4038da8f870575ab8e758790015e5ea5ae21c79d668ef43",
+      "size_bytes": 1344
+    }
+  }
+}

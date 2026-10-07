@@ -1,0 +1,35 @@
+{
+  "audit_version": "V3.2.1_METRIC_CONSISTENCY",
+  "inconsistencies_identified_and_corrected": [
+    {
+      "issue": "Event Monitoring Duration",
+      "original_claim": "2.5 hours",
+      "corrected_value": "23.0 minutes (0.3833 hr) full corpus; 11.0 minutes (0.1833 hr) blind test",
+      "impact": "False events/hr corrected from 1.20/hr to 7.83/hr (corpus) and 5.45/hr (blind test)."
+    },
+    {
+      "issue": "Hazard Precision Terminology",
+      "original_claim": "Macro Precision = 0.9537",
+      "corrected_value": "Micro / Pooled Precision = 0.9537; Unweighted Macro Precision = 0.9480",
+      "impact": "Clarified pooled vs macro average naming."
+    },
+    {
+      "issue": "ID Switch Rate Denominator",
+      "original_claim": "2.03 per 1000 frames",
+      "corrected_value": "2.03 per 1000 entity-frame instances; 4.19 per 1000 physical frames",
+      "impact": "Eliminated denominator confusion."
+    },
+    {
+      "issue": "Real-World Validated Hazard Count",
+      "original_claim": "5 Real-World Validated",
+      "corrected_value": "6 Real-World Validated (Person-Forklift, Forklift-Rack, Blocked Aisle, Blocked Exit, Restricted Zone, Multi-Hazard)",
+      "impact": "Corrected off-by-one summary text error."
+    },
+    {
+      "issue": "Backfire 100% Generalization",
+      "original_claim": "100% Backfire Accuracy",
+      "corrected_value": "2/2 observed case classification success; population performance cannot be inferred from N=2",
+      "impact": "Prevented false population generalization."
+    }
+  ]
+}

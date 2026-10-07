@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "schema_version": "2.0",
+    "engine_version": "1.0.0",
+    "data_type": "EvidenceQuality"
+  },
+  "data": {
+    "evidence_confidence": 0.6,
+    "evidence_level": "MODERATE",
+    "limitations": [
+      "No interaction events observed. Analysis relies on zero-event baseline."
+    ]
+  }
+}

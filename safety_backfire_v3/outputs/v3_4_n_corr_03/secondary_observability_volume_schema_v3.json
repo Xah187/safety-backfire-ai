@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SecondaryObservabilityVolumeAndSampledCoverageSchemaV3",
+  "milestone": "V3.4-N-CORR-03",
+  "description": "Corrected spatial observability specification explicitly resolving the 20m depth threshold scope (Option A: 36/36 visibility, 9/9 at 20m >= 65 px/m), enforcing OBSERVABILITY_SAMPLE_POINTS terminology, and restricting claims to BOUNDED_SAMPLED_OBSERVABILITY.",
+  "governance_classification": "PHYSICAL_COMMISSIONING_GATE_C4",
+  "spatial_sampling_grid_structure": {
+    "total_sample_points_count": 36,
+    "depth_planes_m": [5.0, 10.0, 15.0, 20.0],
+    "lateral_positions_m": [-1.2, 0.0, 1.2],
+    "target_heights_m": [0.8, 1.4, 1.8],
+    "distribution_by_depth": {
+      "depth_plane_5m": {"depth_m": 5.0, "points_count": 9, "point_ids": ["PT_01", "PT_02", "PT_03", "PT_04", "PT_05", "PT_06", "PT_07", "PT_08", "PT_09"]},
+      "depth_plane_10m": {"depth_m": 10.0, "points_count": 9, "point_ids": ["PT_10", "PT_11", "PT_12", "PT_13", "PT_14", "PT_15", "PT_16", "PT_17", "PT_18"]},
+      "depth_plane_15m": {"depth_m": 15.0, "points_count": 9, "point_ids": ["PT_19", "PT_20", "PT_21", "PT_22", "PT_23", "PT_24", "PT_25", "PT_26", "PT_27"]},
+      "depth_plane_20m": {"depth_m": 20.0, "points_count": 9, "point_ids": ["PT_28", "PT_29", "PT_30", "PT_31", "PT_32", "PT_33", "PT_34", "PT_35", "PT_36"]}
+    },
+    "terminology_standard": "OBSERVABILITY_SAMPLE_POINTS (Voxel terminology permanently purged; points represent discrete spatial test locations, not volume elements)."
+  },
+  "authoritative_resolution_policy": {
+    "selected_policy": "OPTION_A",
+    "rationale": "Only 9 of the 36 sample points are physically located at the 20m depth plane. Asserting that '36/36 points are >= 65 px/m at 20m' is geometrically false. Under optical perspective projection (px/m proportional to 1/d), points closer than 20m naturally exceed 65 px/m. Policy Option A establishes explicit, distinct rules for visibility across all 36 points and spatial resolution at the 20m boundary.",
+    "acceptance_criteria": {
+      "visibility_rule_all_36_points": {
+        "applicable_points": "ALL_36_SAMPLE_POINTS (PT_01 through PT_36)",
+        "requirement": "Line-of-sight from Camera C unoccluded by permanent structural pillars or fixed infrastructure; SPMT-01 mannequin fully detectable.",
+        "pass_condition": "visibility_pass_count == 36"
+      },
+      "resolution_rule_20m_depth_plane": {
+        "applicable_points": "THE_9_POINTS_AT_20M (PT_28 through PT_36)",
+        "depth_m": 20.0,
+        "requirement": "Target optical pixel density >= 65.0 px/m measured across mannequin torso.",
+        "pass_condition": "resolution_pass_count_at_20m == 9"
+      }
+    }
+  },
+  "coverage_claims_and_limitations": {
+    "observability_claim": "BOUNDED_SAMPLED_OBSERVABILITY",
+    "prohibited_claims": ["FULL_VOLUME_PROVEN", "ZERO_BLIND_VOLUME", "ZERO_BLIND_POCKETS"],
+    "continuous_corridor_coverage": "UNVERIFIED_BOUNDED_INTERPOLATION",
+    "limitation_statement": "Passing the 36-point grid sweep establishes BOUNDED_SAMPLED_OBSERVABILITY along tested line-of-sight rays. Continuous volumetric coverage of the full 70.0 m^2 corridor floor and lateral 0.55m clearance margins (|Y| in [1.2, 1.75] m) remains UNVERIFIED_BOUNDED_INTERPOLATION pending continuous LiDAR surface scanning."
+  },
+  "gate_c4_acceptance_rule": {
+    "rule": "Gate C4 PASS requires: (1) visibility_pass_count == 36 AND (2) resolution_pass_count_at_20m == 9 (each >= 65.0 px/m) AND (3) zero surveyed permanent obstructions inside dynamic vehicle diversion path.",
+    "current_status": "UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING"
+  }
+}

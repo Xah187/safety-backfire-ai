@@ -1,0 +1,134 @@
+{
+  "registry_version": "V3.3.1_CANONICAL_THRESHOLD_REGISTRY",
+  "timestamp_utc": "2026-09-25T06:15:00Z",
+  "governing_policy": "All safety thresholds must be pre-registered with defined purpose and engineering source authority before evaluation.",
+  "total_thresholds": 14,
+  "thresholds": [
+    {
+      "threshold_id": "THRESH_UNCERTAINTY_K_BASELINE",
+      "value": 2.42,
+      "unit": "standard_deviations",
+      "purpose": "Fixed baseline uncertainty scaling factor fitted on Sector B calibration split.",
+      "source": "outputs/v3_3/uncertainty/calibration_record.json",
+      "version": "V3.3.0",
+      "preregistered": true
+    },
+    {
+      "threshold_id": "THRESH_UNCERTAINTY_K0_CONDITION_AWARE",
+      "value": 2.35,
+      "unit": "standard_deviations",
+      "purpose": "Base scaling factor for condition-aware uncertainty models B, C, D.",
+      "source": "safety_backfire_v3_3_1/uncertainty/condition_evaluator.py",
+      "version": "V3.3.1",
+      "preregistered": true
+    },
+    {
+      "threshold_id": "THRESH_PERCEPTION_IOU",
+      "value": 0.30,
+      "unit": "iou_fraction",
+      "purpose": "Minimum bounding box intersection-over-union for true positive detection match.",
+      "source": "outputs/v3_3/blind_lock/parameter_lock.json",
+      "version": "V3.2.1",
+      "preregistered": true
+    },
+    {
+      "threshold_id": "THRESH_PERCEPTION_CONFIDENCE",
+      "value": 0.25,
+      "unit": "confidence_score",
+      "purpose": "Minimum detector classification confidence for entity track initialization.",
+      "source": "outputs/v3_3/blind_lock/parameter_lock.json",
+      "version": "V3.2.1",
+      "preregistered": true
+    },
+    {
+      "threshold_id": "THRESH_LATENCY_NOMINAL_MAX",
+      "value": 50.0,
+      "unit": "milliseconds",
+      "purpose": "Nominal real-time frame processing and transmission ceiling.",
+      "source": "safety_backfire_v3_3/refusal/engine.py",
+      "version": "V3.3.0",
+      "preregistered": true
+    },
+    {
+      "threshold_id": "THRESH_LATENCY_HARD_REFUSAL",
+      "value": 500.0,
+      "unit": "milliseconds",
+      "purpose": "Critical latency ceiling triggering SAFE_REFUSAL_INSUFFICIENT_EVIDENCE to prevent stale intervention.",
+      "source": "outputs/v3_3/blind_lock/parameter_lock.json",
+      "version": "V3.3.0",
+      "preregistered": true
+    },
+    {
+      "threshold_id": "THRESH_DISTANCE_NOMINAL_MAX",
+      "value": 8.0,
+      "unit": "meters",
+      "purpose": "Upper boundary for nominal autonomous intervention envelope.",
+      "source": "outputs/v3_3/blind_lock/parameter_lock.json",
+      "version": "V3.3.0",
+      "preregistered": true
+    },
+    {
+      "threshold_id": "THRESH_DISTANCE_HARD_REFUSAL",
+      "value": 10.0,
+      "unit": "meters",
+      "purpose": "Optical envelope limit beyond which distance estimation is unsafe; triggers safe refusal.",
+      "source": "outputs/v3_3/blind_lock/parameter_lock.json",
+      "version": "V3.3.0",
+      "preregistered": true
+    },
+    {
+      "threshold_id": "THRESH_CAMERA_PITCH_MIN",
+      "value": 20.0,
+      "unit": "degrees",
+      "purpose": "Minimum camera pitch below which foreshortening invalidates planar homography.",
+      "source": "safety_backfire_v3_3/refusal/engine.py",
+      "version": "V3.3.0",
+      "preregistered": true
+    },
+    {
+      "threshold_id": "THRESH_CAMERA_PITCH_MAX",
+      "value": 65.0,
+      "unit": "degrees",
+      "purpose": "Maximum steep camera pitch above which vertical occlusions exceed model training domain.",
+      "source": "safety_backfire_v3_3/refusal/engine.py",
+      "version": "V3.3.0",
+      "preregistered": true
+    },
+    {
+      "threshold_id": "THRESH_FLOOR_SLOPE_MAX",
+      "value": 1.5,
+      "unit": "degrees",
+      "purpose": "Maximum floor slope for planar homography validity; > 3.0 deg triggers NON_PLANAR_REFUSAL.",
+      "source": "outputs/v3_3/blind_lock/parameter_lock.json",
+      "version": "V3.3.0",
+      "preregistered": true
+    },
+    {
+      "threshold_id": "THRESH_ILLUMINATION_MIN",
+      "value": 150.0,
+      "unit": "lux",
+      "purpose": "Minimum ambient illumination for nominal ODD; < 50 lux triggers safe refusal.",
+      "source": "outputs/v3_3/blind_lock/parameter_lock.json",
+      "version": "V3.3.0",
+      "preregistered": true
+    },
+    {
+      "threshold_id": "THRESH_DID_CONTROL_DRIFT_TOLERANCE",
+      "value": 0.15,
+      "unit": "fraction",
+      "purpose": "Maximum permissible baseline risk shift in control zone before parallel trends are deemed invalid.",
+      "source": "safety_backfire_v3_3/causality/did_engine.py",
+      "version": "V3.2.1",
+      "preregistered": true
+    },
+    {
+      "threshold_id": "THRESH_DID_EXOGENOUS_SHOCK_LIMIT",
+      "value": 0.20,
+      "unit": "fraction",
+      "purpose": "Maximum allowable site-wide traffic volume shock before confounding causal attribution.",
+      "source": "safety_backfire_v3_3/causality/did_engine.py",
+      "version": "V3.3.0",
+      "preregistered": true
+    }
+  ]
+}

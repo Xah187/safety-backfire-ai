@@ -1,0 +1,72 @@
+{
+  "overall_metrics": {
+    "MAE": 0.0,
+    "RMSE": 0.0
+  },
+  "point_tests": [
+    {
+      "zone": "foreground_center",
+      "known_distance_m": 3.5,
+      "estimated_distance_m": 3.5,
+      "absolute_error_m": 0.0,
+      "relative_error_percent": 0.0,
+      "status": "VALID"
+    },
+    {
+      "zone": "foreground_left",
+      "known_distance_m": 1.75,
+      "estimated_distance_m": 1.75,
+      "absolute_error_m": 0.0,
+      "relative_error_percent": 0.0,
+      "status": "VALID"
+    },
+    {
+      "zone": "background_center",
+      "known_distance_m": 3.5,
+      "estimated_distance_m": 3.5,
+      "absolute_error_m": 0.0,
+      "relative_error_percent": 0.0,
+      "status": "VALID"
+    },
+    {
+      "zone": "depth_left",
+      "known_distance_m": 6.0,
+      "estimated_distance_m": 6.0,
+      "absolute_error_m": 0.0,
+      "relative_error_percent": 0.0,
+      "status": "VALID"
+    },
+    {
+      "zone": "depth_right",
+      "known_distance_m": 6.0,
+      "estimated_distance_m": 6.0,
+      "absolute_error_m": 0.0,
+      "relative_error_percent": 0.0,
+      "status": "VALID"
+    },
+    {
+      "zone": "middle_ground",
+      "known_distance_m": 3.5,
+      "estimated_distance_m": 3.5,
+      "absolute_error_m": 0.0,
+      "relative_error_percent": 0.0,
+      "status": "VALID"
+    },
+    {
+      "zone": "diagonal_cross",
+      "known_distance_m": 6.946,
+      "estimated_distance_m": 6.946,
+      "absolute_error_m": 0.0,
+      "relative_error_percent": 0.0,
+      "status": "VALID"
+    },
+    {
+      "zone": "out_of_bounds_left",
+      "known_distance_m": 1.25,
+      "estimated_distance_m": 1.25,
+      "absolute_error_m": 0.0,
+      "relative_error_percent": 0.0,
+      "status": "VALID"
+    }
+  ]
+}

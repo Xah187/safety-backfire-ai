@@ -1,0 +1,21 @@
+{
+  "phase": "Spatial Coverage Audit (Phase 10)",
+  "video": "test2.mp4",
+  "total_detections_analyzed": 2032,
+  "old_calibration_v2_2": {
+    "inside_strict_hull": 0,
+    "outside_strict_hull": 2032,
+    "coverage_percent": 0.0
+  },
+  "new_calibration_v2_3": {
+    "inside_calibration": 723,
+    "edge_region": 1035,
+    "outside_calibration": 274,
+    "coverage_percent": 86.5
+  },
+  "improvement": {
+    "absolute_coverage_increase_pct": 86.5,
+    "outside_reduction_pct": 86.5
+  },
+  "conclusion": "The V2.3 calibration significantly expanded the valid spatial zone, reducing out-of-bounds detections from 100% (strict hull) to 13.5%."
+}

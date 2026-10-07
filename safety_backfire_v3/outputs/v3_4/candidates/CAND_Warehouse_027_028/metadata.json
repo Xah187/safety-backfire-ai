@@ -1,0 +1,56 @@
+{
+  "candidate_id": "CAND_Warehouse_027_028",
+  "scene_id": "Warehouse_027",
+  "camera_id": "Camera_0006",
+  "source_dataset": "nvidia/PhysicalAI-SmartSpaces",
+  "source_video": "Camera_0006.mp4",
+  "source_sha256": "175816231eced5e215d1733640a65757ad9c0429b3c846966342d142aed54b1a",
+  "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+  "candidate_relevance_score": 0.766,
+  "temporal_windows": {
+    "pre": {
+      "start_frame": 0,
+      "end_frame": 0,
+      "start_time_s": 0.0,
+      "end_time_s": 0.0,
+      "duration_s": 0.03,
+      "clip_filename": "before.mp4"
+    },
+    "intervention": {
+      "start_frame": 1,
+      "end_frame": 342,
+      "start_time_s": 0.03,
+      "end_time_s": 11.4,
+      "duration_s": 11.4,
+      "clip_filename": "intervention.mp4"
+    },
+    "post": {
+      "start_frame": 343,
+      "end_frame": 582,
+      "start_time_s": 11.43,
+      "end_time_s": 19.4,
+      "duration_s": 8.0,
+      "clip_filename": "after.mp4"
+    },
+    "window_definition_method": "FIXED_OFFSET_BOUNDED_BY_STREAM"
+  },
+  "spatial_zones": {
+    "primary_zone": {
+      "zone_id": "Camera_0006_CENTRAL_CORRIDOR",
+      "zone_status": "PROVISIONAL_OPTICAL_CORRIDOR",
+      "zone_definition_source": "CAMERA_HOMOGRAPHY_GRID",
+      "zone_confidence": "MEDIUM"
+    },
+    "secondary_zone": {
+      "zone_id": "Camera_0006_ADJACENT_RACK_AISLE",
+      "zone_status": "PROVISIONAL_ADJACENT_CELL",
+      "zone_definition_source": "PROXIMITY_TOPOLOGY",
+      "zone_confidence": "LOW"
+    }
+  },
+  "involved_entities": {
+    "person_track_id": 680,
+    "forklift_track_id": 685
+  },
+  "governance_status": "PREPARED_FOR_INDEPENDENT_HUMAN_REVIEW"
+}

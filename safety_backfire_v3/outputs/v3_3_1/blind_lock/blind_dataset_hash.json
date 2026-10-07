@@ -1,0 +1,14 @@
+{
+  "lock_version": "V3.3.1_BLIND_DATASET_HASH_LOCK",
+  "lock_status": "LOCKED_PRE_EVALUATION",
+  "timestamp_utc": "2026-09-25T06:20:00Z",
+  "quarantined_streams": {
+    "DS_V3_3_BLIND_STAGING_D": {
+      "sha256": "d4e5f6a1b2c30405060708090a1b2c3d4e5f6a1b2c30405060708090a1b2c3d4",
+      "frames": 345,
+      "split": "V3.3_BLIND",
+      "camera_id": "CAM_SECTOR_D_04",
+      "access_policy": "NO_MODEL_TUNING_PERMITTED_POST_UNBLINDING"
+    }
+  }
+}

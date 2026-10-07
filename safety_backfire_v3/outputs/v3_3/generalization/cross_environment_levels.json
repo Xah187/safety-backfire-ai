@@ -1,0 +1,65 @@
+{
+  "PERCEPTION": {
+    "metric": "mAP_50_95 / F1_score",
+    "overall_f1": 0.8845,
+    "sample_unit": "Video_Frame",
+    "N": 1672,
+    "failures": 220,
+    "environments_evaluated": [
+      "Sector_A",
+      "Sector_B",
+      "Sector_C",
+      "Sector_D"
+    ],
+    "odd_tier": "NOMINAL_ODD (0.5-8.0m) / DEGRADED (>8.0m)"
+  },
+  "TRACKING": {
+    "metric": "IDF1",
+    "value": 0.918,
+    "confidence_interval_95": [
+      0.9057,
+      0.9295
+    ],
+    "sample_unit": "Trajectory_Sequence",
+    "N": 28,
+    "failures": 23,
+    "odd_tier": "NOMINAL_ODD"
+  },
+  "IDENTITY": {
+    "metric": "Identity_Survival_Rate / Occlusion_Recovery",
+    "survival_rate": 0.1786,
+    "occlusion_recovery_rate": 0.5,
+    "sample_unit": "Crossing_Interaction_Event",
+    "N": 18,
+    "failures": 23,
+    "odd_tier": "NOMINAL_ODD"
+  },
+  "GEOMETRY": {
+    "metric": "Mean_Reprojection_Residual_m",
+    "mean_residual_m": 0.0215,
+    "p95_residual_m": 0.0418,
+    "homography_valid_fraction": 0.988,
+    "sample_unit": "Ground_Point_Observation",
+    "N": 2032,
+    "failures": 24,
+    "odd_tier": "NOMINAL_ODD_FLAT_FLOOR"
+  },
+  "HAZARD": {
+    "metric": "Near_Miss_Hazard_Recall",
+    "hazard_recall": 0.9412,
+    "false_alert_rate_per_min": 0.38,
+    "sample_unit": "Hazard_Episode",
+    "N": 34,
+    "failures": 2,
+    "odd_tier": "NOMINAL_ODD"
+  },
+  "EVENT": {
+    "metric": "Event_Classification_Accuracy",
+    "event_accuracy": 0.9167,
+    "boundary_detection_latency_ms": 32.4,
+    "sample_unit": "Interaction_Event",
+    "N": 48,
+    "failures": 4,
+    "odd_tier": "NOMINAL_ODD"
+  }
+}

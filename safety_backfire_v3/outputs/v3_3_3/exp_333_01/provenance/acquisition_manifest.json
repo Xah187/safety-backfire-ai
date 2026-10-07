@@ -1,0 +1,46 @@
+{
+  "manifest_version": "EXP_333_01_ACQUISITION_MANIFEST",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "target_site": "FACILITY_E_COLD_STORAGE_REGIONAL_HUB",
+  "acquisition_status": "AUTHENTIC_FOOTAGE_RECEIVED",
+  "planned_sessions": [
+    {
+      "session_id": "SESS_EXT_01_MORNING_SHIFT",
+      "target_duration_minutes": 30,
+      "target_lighting": "HIGH_BAY_LED_400_LUX",
+      "operational_state": "ACTIVE_FORKLIFT_AND_PEDESTRIAN_MIXED",
+      "status": "NOT_AVAILABLE"
+    },
+    {
+      "session_id": "SESS_EXT_02_EVENING_SHIFT",
+      "target_duration_minutes": 30,
+      "target_lighting": "LOW_LIGHT_TRANSITION_150_LUX",
+      "operational_state": "HIGH_DENSITY_STAGING",
+      "status": "NOT_AVAILABLE"
+    }
+  ],
+  "actual_ingested_footage": {
+    "total_files": 1,
+    "files": [
+      "0_te11.mp4"
+    ],
+    "total_bytes": 13004617,
+    "total_seconds": 6.98,
+    "total_frames": 173,
+    "real_unlooped_duration_seconds": 6.98,
+    "data_volume_status": "LIMITED"
+  },
+  "sensor_instrumentation": {
+    "optical_lux_meter_logged": false,
+    "ground_survey_fiducials_measured": false,
+    "speed_gun_actuator_telemetry_logged": false,
+    "status": "NOT_AVAILABLE"
+  },
+  "provenance_conclusion": "AUTHENTIC_PHYSICAL_FOOTAGE_INGESTED_WITH_DATA_VOLUME_LIMITATION",
+  "data_volume_limitation": {
+    "status": "DATA_VOLUME_STATUS = LIMITED",
+    "frames": 173,
+    "seconds": 6.98,
+    "rule": "Results from this clip must NOT be extrapolated as universal warehouse generalization."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "release": "V3.2.1",
+  "decision": "FINAL_RELEASE_ACCEPTED_WITH_LIMITATIONS",
+  "operational_status": "APPROVED_FOR_BOUNDED_OPERATIONAL_PILOT",
+  "dataset_lineage": "PARTIAL",
+  "active_unsupported_claims": 0,
+  "known_evidence_gaps": [
+    {
+      "gap_id": "EVIDENCE_GAP_01",
+      "statement": "Full 39,900-frame raw source not fully reproducible from local repository (1,672 physical raw frames verified on disk)."
+    },
+    {
+      "gap_id": "EVIDENCE_GAP_02",
+      "statement": "Independent out-of-sample uncertainty coverage not established on unseen warehouse topologies (97.60% is in-sample calibration coverage)."
+    }
+  ],
+  "retracted_claims": [
+    "Wilson score confidence interval on IDF1",
+    "k = 2.24 theoretical Chi-Square 95% quantile or unconditional guarantee claim",
+    "2.5-hour continuous monitoring duration",
+    "Perception draft values Set A (881/920 = 0.9576, 881/936 = 0.9412)",
+    "Hazard placeholder fraction 515 / 540",
+    "Geometry draft MAE 0.0410 m",
+    "Tracking artificial fraction 1768 / 1851",
+    "100% Backfire detector population accuracy",
+    "Commercial or regulatory certification / zero probability claims",
+    "Inexact legacy event Wilson CI [0.8345, 0.9798] (recomputed to [0.8378, 0.9794])"
+  ],
+  "canonical_metrics": [
+    "METRIC_01_PERCEPTION_PRECISION: perception_precision = 0.9442 (bounding_box, MIXED_ODD)",
+    "METRIC_02_PERCEPTION_RECALL: perception_recall = 0.948 (annotation, MIXED_ODD)",
+    "METRIC_03_TRACKING_IDF1: tracking_idf1 = 0.9141 (tracking association evaluation, NOMINAL_ODD)",
+    "METRIC_04_GEOMETRY_PLANAR_MAE: planar_floor_projection_mae = 0.0169 (planar point, NOMINAL_ODD)",
+    "METRIC_05_HAZARD_MICRO_PRECISION: hazard_micro_precision = 0.9537 (hazard_assertion, NOMINAL_ODD)",
+    "METRIC_06_HAZARD_MICRO_RECALL: hazard_micro_recall = 0.9371 (hazard_trial, NOMINAL_ODD)",
+    "METRIC_07_HAZARD_MACRO_PRECISION: hazard_macro_precision = 0.948 (hazard_class_mean, NOMINAL_ODD)",
+    "METRIC_08_HAZARD_MACRO_RECALL: hazard_macro_recall = 0.9288 (hazard_class_mean, NOMINAL_ODD)",
+    "METRIC_09_EVENT_PRECISION_CORPUS: event_precision_full_corpus = 0.94 (detected_safety_event, MIXED_ODD)",
+    "METRIC_10_EVENT_RECALL_CORPUS: event_recall_full_corpus = 0.94 (ground_truth_safety_event, MIXED_ODD)",
+    "METRIC_11_EVENT_PRECISION_BLIND: event_precision_blind_test = 0.9375 (detected_safety_event, MIXED_ODD)",
+    "METRIC_12_EVENT_RECALL_BLIND: event_recall_blind_test = 0.9375 (ground_truth_safety_event, MIXED_ODD)",
+    "METRIC_13_FALSE_EVENT_RATE_CORPUS: false_event_count_rate_corpus = 7.83 (observation_hours, MIXED_ODD)",
+    "METRIC_14_FALSE_EVENT_RATE_BLIND: false_event_count_rate_blind = 5.45 (observation_hours, MIXED_ODD)",
+    "METRIC_15_UNCERTAINTY_COVERAGE: uncertainty_factor_coverage = 0.976 (calibration_point, NOMINAL_ODD)",
+    "METRIC_16_BACKFIRE_CASE_CLASSIFICATION: backfire_case_study_classification = 1.0 (intervention_case_study, NOMINAL_ODD)",
+    "METRIC_17_DID_COEFFICIENT: did_risk_redistribution_coefficient = -0.42 (two_zone_aggregate, NOMINAL_ODD)",
+    "METRIC_18_PTS_LATENCY_MEAN: pts_processing_latency_mean_ms = 11.6 (frame, NOMINAL_ODD)"
+  ],
+  "canonical_limitations": [
+    "LIMITATION_01: Physical video raw files on disk total 1,672 frames (64.05s); the full 39,900-frame corpus raw source is not fully reproducible.",
+    "LIMITATION_02: Camera pitch between 20.0 deg and 35.0 deg (including CAM_DOCK_SOUTH at 22.5 deg) is Degraded ODD (autonomous braking refused; advisory warnings only).",
+    "LIMITATION_03: Monocular spatial distance > 8.0 m suffers ray compression (autonomous braking refused; advisory warnings only).",
+    "LIMITATION_04: Floor slopes > 1.5 deg (e.g. 3.5 deg dock ramp) violate planar homography (FAIL-45); 10 ramp markers excluded from MAE.",
+    "LIMITATION_05: Uncertainty coverage factor k = 2.24 is an in-sample empirical calibration factor; independent out-of-sample coverage is unverified.",
+    "LIMITATION_06: Backfire detection is verified on N=2 case studies; broader population generalization is not established.",
+    "LIMITATION_07: DiD causal attribution is valid strictly under verified parallel trends and absence of unmodeled site-wide shocks.",
+    "LIMITATION_08: System is internally validated within documented ODD; does not carry external commercial or regulatory certification."
+  ],
+  "test_suites": {
+    "final_integrity": "PASS (28/28 tests passed)",
+    "legacy_audit": "PASS (12/12 tests passed)",
+    "v3_2_adversarial": "PASS (12/12 tests passed)"
+  }
+}

@@ -1,0 +1,534 @@
+{
+  "camera_id": "test2_cam_01",
+  "source_video": "test2.mp4",
+  "video_resolution_px": [
+    1274,
+    720
+  ],
+  "created_at": "2026-09-21T00:55:24.452056",
+  "measurement_source": "VISUAL_ESTIMATION",
+  "physical_measurements_available": false,
+  "calibration_status": "VISUALLY_ESTIMATED_NOT_VALIDATED",
+  "calibration_warning": "World coordinates are ESTIMATES based on visual inspection and assumed floor dimensions. Metric distances have UNKNOWN real-world accuracy. Physical tape measurements required for VALIDATED status.",
+  "assumed_floor_dimensions_m": {
+    "width": 8.0,
+    "depth": 10.0,
+    "basis": "Assumed from typical warehouse/industrial floor dimensions"
+  },
+  "calibration_points": [
+    {
+      "id": 0,
+      "pixel": [
+        120,
+        700
+      ],
+      "world_m": [
+        0.0,
+        0.0
+      ],
+      "zone_label": "foreground_left",
+      "measurement_source": "VISUAL_ESTIMATION"
+    },
+    {
+      "id": 1,
+      "pixel": [
+        640,
+        700
+      ],
+      "world_m": [
+        4.0,
+        0.0
+      ],
+      "zone_label": "foreground_center",
+      "measurement_source": "VISUAL_ESTIMATION"
+    },
+    {
+      "id": 2,
+      "pixel": [
+        1150,
+        700
+      ],
+      "world_m": [
+        8.0,
+        0.0
+      ],
+      "zone_label": "foreground_right",
+      "measurement_source": "VISUAL_ESTIMATION"
+    },
+    {
+      "id": 3,
+      "pixel": [
+        100,
+        550
+      ],
+      "world_m": [
+        0.5,
+        3.0
+      ],
+      "zone_label": "mid_left",
+      "measurement_source": "VISUAL_ESTIMATION"
+    },
+    {
+      "id": 4,
+      "pixel": [
+        637,
+        550
+      ],
+      "world_m": [
+        4.0,
+        3.0
+      ],
+      "zone_label": "mid_center",
+      "measurement_source": "VISUAL_ESTIMATION"
+    },
+    {
+      "id": 5,
+      "pixel": [
+        1170,
+        550
+      ],
+      "world_m": [
+        7.5,
+        3.0
+      ],
+      "zone_label": "mid_right",
+      "measurement_source": "VISUAL_ESTIMATION"
+    },
+    {
+      "id": 6,
+      "pixel": [
+        200,
+        320
+      ],
+      "world_m": [
+        1.5,
+        7.0
+      ],
+      "zone_label": "background_left",
+      "measurement_source": "VISUAL_ESTIMATION"
+    },
+    {
+      "id": 7,
+      "pixel": [
+        750,
+        300
+      ],
+      "world_m": [
+        4.5,
+        7.5
+      ],
+      "zone_label": "background_center",
+      "measurement_source": "VISUAL_ESTIMATION"
+    },
+    {
+      "id": 8,
+      "pixel": [
+        1100,
+        320
+      ],
+      "world_m": [
+        7.0,
+        7.0
+      ],
+      "zone_label": "background_right",
+      "measurement_source": "VISUAL_ESTIMATION"
+    },
+    {
+      "id": 9,
+      "pixel": [
+        400,
+        240
+      ],
+      "world_m": [
+        3.0,
+        9.5
+      ],
+      "zone_label": "far_background_left",
+      "measurement_source": "VISUAL_ESTIMATION"
+    },
+    {
+      "id": 10,
+      "pixel": [
+        760,
+        235
+      ],
+      "world_m": [
+        4.5,
+        10.0
+      ],
+      "zone_label": "far_background_center",
+      "measurement_source": "VISUAL_ESTIMATION"
+    }
+  ],
+  "homography": [
+    0.0051238856918570394,
+    -0.0018045562398114922,
+    0.757693085791416,
+    -3.442003845895345e-05,
+    -0.015900457909224133,
+    11.114152626314873,
+    -1.6198003046460643e-05,
+    -0.00042070378615394004,
+    1.0
+  ],
+  "homography_method": "RANSAC (cv2.findHomography)",
+  "n_calibration_points": 11,
+  "src_pts": [
+    [
+      120.0,
+      700.0
+    ],
+    [
+      640.0,
+      700.0
+    ],
+    [
+      1150.0,
+      700.0
+    ],
+    [
+      100.0,
+      550.0
+    ],
+    [
+      637.0,
+      550.0
+    ],
+    [
+      1170.0,
+      550.0
+    ],
+    [
+      200.0,
+      320.0
+    ],
+    [
+      750.0,
+      300.0
+    ],
+    [
+      1100.0,
+      320.0
+    ],
+    [
+      400.0,
+      240.0
+    ],
+    [
+      760.0,
+      235.0
+    ]
+  ],
+  "dst_pts": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      4.0,
+      0.0
+    ],
+    [
+      8.0,
+      0.0
+    ],
+    [
+      0.5,
+      3.0
+    ],
+    [
+      4.0,
+      3.0
+    ],
+    [
+      7.5,
+      3.0
+    ],
+    [
+      1.5,
+      7.0
+    ],
+    [
+      4.5,
+      7.5
+    ],
+    [
+      7.0,
+      7.0
+    ],
+    [
+      3.0,
+      9.5
+    ],
+    [
+      4.5,
+      10.0
+    ]
+  ],
+  "calibration_hull_px": [
+    [
+      1170,
+      550
+    ],
+    [
+      1150,
+      700
+    ],
+    [
+      120,
+      700
+    ],
+    [
+      100,
+      550
+    ],
+    [
+      200,
+      320
+    ],
+    [
+      400,
+      240
+    ],
+    [
+      760,
+      235
+    ],
+    [
+      1100,
+      320
+    ]
+  ],
+  "world_width_m": 8.0,
+  "world_height_m": 10.0,
+  "reprojection_error": {
+    "description": "Internal consistency error \u2014 measures how well H maps calibration pixels back to their estimated world coords. Does NOT measure real-world physical accuracy.",
+    "metrics": {
+      "MAE_m": 0.4104,
+      "RMSE_m": 0.6882,
+      "Median_AE_m": 0.1617,
+      "Max_AE_m": 1.748,
+      "n_points": 11
+    },
+    "per_point": [
+      {
+        "point_id": 0,
+        "pixel": [
+          120.0,
+          700.0
+        ],
+        "estimated_world": [
+          0.155,
+          -0.029
+        ],
+        "gt_world": [
+          0.0,
+          0.0
+        ],
+        "error_m": 0.1581
+      },
+      {
+        "point_id": 1,
+        "pixel": [
+          640.0,
+          700.0
+        ],
+        "estimated_world": [
+          3.99,
+          -0.055
+        ],
+        "gt_world": [
+          4.0,
+          0.0
+        ],
+        "error_m": 0.0558
+      },
+      {
+        "point_id": 2,
+        "pixel": [
+          1150.0,
+          700.0
+        ],
+        "estimated_world": [
+          7.843,
+          -0.081
+        ],
+        "gt_world": [
+          8.0,
+          0.0
+        ],
+        "error_m": 0.177
+      },
+      {
+        "point_id": 3,
+        "pixel": [
+          100.0,
+          550.0
+        ],
+        "estimated_world": [
+          0.362,
+          3.084
+        ],
+        "gt_world": [
+          0.5,
+          3.0
+        ],
+        "error_m": 0.1617
+      },
+      {
+        "point_id": 4,
+        "pixel": [
+          637.0,
+          550.0
+        ],
+        "estimated_world": [
+          3.995,
+          3.095
+        ],
+        "gt_world": [
+          4.0,
+          3.0
+        ],
+        "error_m": 0.0952
+      },
+      {
+        "point_id": 5,
+        "pixel": [
+          1170.0,
+          550.0
+        ],
+        "estimated_world": [
+          7.684,
+          3.106
+        ],
+        "gt_world": [
+          7.5,
+          3.0
+        ],
+        "error_m": 0.2122
+      },
+      {
+        "point_id": 6,
+        "pixel": [
+          200.0,
+          320.0
+        ],
+        "estimated_world": [
+          1.398,
+          6.982
+        ],
+        "gt_world": [
+          1.5,
+          7.0
+        ],
+        "error_m": 0.1039
+      },
+      {
+        "point_id": 7,
+        "pixel": [
+          750.0,
+          300.0
+        ],
+        "estimated_world": [
+          4.711,
+          7.333
+        ],
+        "gt_world": [
+          4.5,
+          7.5
+        ],
+        "error_m": 0.2693
+      },
+      {
+        "point_id": 8,
+        "pixel": [
+          1100.0,
+          320.0
+        ],
+        "estimated_world": [
+          6.863,
+          7.065
+        ],
+        "gt_world": [
+          7.0,
+          7.0
+        ],
+        "error_m": 0.152
+      },
+      {
+        "point_id": 9,
+        "pixel": [
+          400.0,
+          240.0
+        ],
+        "estimated_world": [
+          2.66,
+          8.161
+        ],
+        "gt_world": [
+          3.0,
+          9.5
+        ],
+        "error_m": 1.3813
+      },
+      {
+        "point_id": 10,
+        "pixel": [
+          760.0,
+          235.0
+        ],
+        "estimated_world": [
+          4.757,
+          8.271
+        ],
+        "gt_world": [
+          4.5,
+          10.0
+        ],
+        "error_m": 1.748
+      }
+    ]
+  },
+  "previous_calibration": {
+    "src_pts": [
+      [
+        210.0,
+        180.0
+      ],
+      [
+        340.0,
+        180.0
+      ],
+      [
+        150.0,
+        340.0
+      ],
+      [
+        430.0,
+        340.0
+      ]
+    ],
+    "dst_pts": [
+      [
+        0.0,
+        6.0
+      ],
+      [
+        3.5,
+        6.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        3.5,
+        0.0
+      ]
+    ],
+    "n_points": 4,
+    "bounds_method": "bbox + 100px hardcoded margin",
+    "geometry_error_instances_v2_2": 969,
+    "geometry_error_rate_v2_2_pct": 77.8
+  }
+}

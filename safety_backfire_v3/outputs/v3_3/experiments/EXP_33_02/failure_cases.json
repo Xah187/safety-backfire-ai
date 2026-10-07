@@ -1,0 +1,22 @@
+[
+  {
+    "level": "PERCEPTION",
+    "failure_type": "FAR_FIELD_MISSED_DETECTION",
+    "environment": "Sector_D_Outbound_Staging",
+    "distance_m": 8.7,
+    "illumination_lux": 210.0,
+    "entity": "pedestrian_behind_pallets",
+    "category": "ODD_BOUNDARY"
+  },
+  {
+    "level": "TRACKING",
+    "failure_type": "IDENTITY_SWITCH_CROSSING",
+    "environment": "Sector_C_Forklift_Cross",
+    "entities_involved": [
+      "WORKER_04",
+      "FORKLIFT_02"
+    ],
+    "trigger": "Simultaneous proximity (<0.8m) under high visual occlusion",
+    "category": "MODEL_ERROR"
+  }
+]

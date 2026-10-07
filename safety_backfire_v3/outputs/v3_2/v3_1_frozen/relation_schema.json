@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RelationV1Schema",
+  "description": "Generic relation representation between arbitrary pairs of warehouse entities",
+  "type": "object",
+  "required": [
+    "relation_id",
+    "subject_entity_id",
+    "object_entity_id",
+    "relation_types",
+    "distance_m"
+  ],
+  "properties": {
+    "relation_id": {
+      "type": "string"
+    },
+    "subject_entity_id": {
+      "type": "string"
+    },
+    "object_entity_id": {
+      "type": "string"
+    },
+    "relation_types": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "distance_m": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "distance_uncertainty_m": {
+      "type": "number"
+    },
+    "approach_speed_m_s": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "ttc_sec": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "cpa_distance_m": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "zone_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "is_occluded": {
+      "type": "boolean"
+    },
+    "is_actionable": {
+      "type": "boolean"
+    }
+  }
+}

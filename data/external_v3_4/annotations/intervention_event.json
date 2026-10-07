@@ -1,0 +1,22 @@
+[
+  {
+    "event_id": "EV_2026_09_001",
+    "facility_id": "FACILITY_PILOT_01",
+    "intervention_id": "INT_AGV_SLOWDOWN_101",
+    "intervention_type": "AGV_SPEED_REDUCTION",
+    "pre_start": 0.0,
+    "pre_end": 5.0,
+    "intervention_start": 5.5,
+    "intervention_end": 8.0,
+    "post_start": 8.5,
+    "post_end": 15.0,
+    "primary_zone": "INTERSECTION_CENTRAL",
+    "secondary_zones": ["MAIN_CORRIDOR_A"],
+    "affected_person_ids": ["WORKER_401"],
+    "affected_vehicle_ids": ["FORKLIFT_01"],
+    "gt_label": "NO_BACKFIRE",
+    "reviewer_count": 2,
+    "adjudicated_label": "NO_BACKFIRE",
+    "adjudication_notes": "AGV slowed smoothly without load shifting or worker panic."
+  }
+]

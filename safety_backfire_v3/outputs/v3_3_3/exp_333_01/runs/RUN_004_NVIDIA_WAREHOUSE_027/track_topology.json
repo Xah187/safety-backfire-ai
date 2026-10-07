@@ -1,0 +1,14 @@
+{
+  "run_id": "RUN_004_NVIDIA_WAREHOUSE_027",
+  "total_active_tracks": 237,
+  "cameras_count": 7,
+  "per_camera_track_counts": {
+    "Camera_0000": 52,
+    "Camera_0001": 44,
+    "Camera_0002": 27,
+    "Camera_0003": 9,
+    "Camera_0004": 14,
+    "Camera_0005": 41,
+    "Camera_0006": 50
+  }
+}

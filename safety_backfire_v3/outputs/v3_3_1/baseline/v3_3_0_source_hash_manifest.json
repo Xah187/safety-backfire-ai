@@ -1,0 +1,324 @@
+{
+  "manifest_version": "V3.3.0_SOURCE_HASH_MANIFEST",
+  "timestamp_utc": "2026-09-25T06:10:00Z",
+  "description": "Cryptographic SHA-256 baseline hashes for all V3.3.0 protected artifacts.",
+  "files": {
+    "outputs/v3_3/canonical_metric_registry.json": {
+      "sha256": "a7489d9f08bcc6b17145afabdd7f951df22feb8c90c52cbd9dbd94831deb94c6",
+      "size_bytes": 7167
+    },
+    "outputs/v3_3/experiment_registry.json": {
+      "sha256": "2200384a6c64e457f1e3587fc3badc5b6d90a5a4f611e1b54e5bb35d7c8e2c4b",
+      "size_bytes": 6808
+    },
+    "outputs/v3_3/phase1_release_decision.json": {
+      "sha256": "a0ead949d1189b017258789578cb0f3af1b2e86384d72e6b708ba454dbe09612",
+      "size_bytes": 3328
+    },
+    "outputs/v3_3/stream_registry.json": {
+      "sha256": "14307096a96fbb95e09eb910bbc62d8851ea059ebedb42f7302cb1f3bfa4c9bd",
+      "size_bytes": 3614
+    },
+    "outputs/v3_3/v3_2_1_baseline_reference.json": {
+      "sha256": "581ad320041dbc5e1db2c0be62c7016bd07d1419624f7f3ab6aea37834abcda6",
+      "size_bytes": 885
+    },
+    "outputs/v3_3/v3_2_1_failure_registry_snapshot.json": {
+      "sha256": "fe2300b7b357ff991a4195950fb763b5991e60dcaddd808a110401bdb32073aa",
+      "size_bytes": 793
+    },
+    "outputs/v3_3/v3_2_1_metric_snapshot.json": {
+      "sha256": "d5bc876a6516f19f88a11dcf4b71d9eb47d21d64ba357213b52b2db9b437e14b",
+      "size_bytes": 25555
+    },
+    "outputs/v3_3/v3_2_1_source_hash_manifest.json": {
+      "sha256": "042ef0ed891ce792cbe8ae34d1b2f6d5d1445c2345bd50ef309d242f8a344d3e",
+      "size_bytes": 7260
+    },
+    "outputs/v3_3/v3_3_gap_matrix.json": {
+      "sha256": "cce6cb2c50e40f2dce6793ec3be0c81037bb62ece847856b4b52a0ebb8325523",
+      "size_bytes": 7902
+    },
+    "outputs/v3_3/intervention/intervention_backfire_summary.json": {
+      "sha256": "e44d1f58afc609d536c07ccb42ba80cab27deb4eea1ba3c9d12107457d18c44d",
+      "size_bytes": 8952
+    },
+    "outputs/v3_3/dataset_audit/dataset_availability_audit.json": {
+      "sha256": "5893fa2e3be99f9c86dfa2332caea280c19d8960013e816d5c1a1e058076266b",
+      "size_bytes": 10503
+    },
+    "outputs/v3_3/generalization/cross_environment_levels.json": {
+      "sha256": "b87ca17e76103b33fa741b7f20436e6f21eb027773f2b1b9ad7ccaef0b41b6cf",
+      "size_bytes": 1579
+    },
+    "outputs/v3_3/generalization/perception_by_condition.json": {
+      "sha256": "754d3e201cc61ef64cc3ede1980563f6ca506fda92915c0bc26d0b66d7ee6bf0",
+      "size_bytes": 2794
+    },
+    "outputs/v3_3/generalization/tracking_generalization.json": {
+      "sha256": "2fe9dcdb6844830d04814db38135d4d4c03ea00d1cb303d7737e2d27fa63009f",
+      "size_bytes": 478
+    },
+    "outputs/v3_3/refusal/red_team_scenarios.json": {
+      "sha256": "d5f9ffa749b76024748f57f4786eb455786cf97b6b40a45ef18842794226fe56",
+      "size_bytes": 4341
+    },
+    "outputs/v3_3/refusal/safe_refusal_metrics.json": {
+      "sha256": "6e0c304c891e7e7de42e55eebb6c2d20942dc6dc1661b5a06e9f62770b62d751",
+      "size_bytes": 626
+    },
+    "outputs/v3_3/experiments/EXP_33_04/execution_manifest.json": {
+      "sha256": "60536ecfe2cbee1f8acb46566120c0ca2c07a4ac25a219f747809fbce92752f7",
+      "size_bytes": 261
+    },
+    "outputs/v3_3/experiments/EXP_33_04/experiment_definition.json": {
+      "sha256": "fbddfe776ce25fdbf4474ed0d9320c3caf321ef4d00912428ae60a000f948499",
+      "size_bytes": 278
+    },
+    "outputs/v3_3/experiments/EXP_33_04/failure_cases.json": {
+      "sha256": "df794630b5911249f0c6e3a24e151181b5f85d6c29b7432c15b15cfad6e5836b",
+      "size_bytes": 327
+    },
+    "outputs/v3_3/experiments/EXP_33_04/metric_results.json": {
+      "sha256": "6e0c304c891e7e7de42e55eebb6c2d20942dc6dc1661b5a06e9f62770b62d751",
+      "size_bytes": 626
+    },
+    "outputs/v3_3/experiments/EXP_33_04/raw_results.json": {
+      "sha256": "eb072341d6e58d5f6f3eabdcd616eb34746e9d4be3f046e0cb5dd16a937795ba",
+      "size_bytes": 5236
+    },
+    "outputs/v3_3/experiments/EXP_33_04/reproducibility_manifest.json": {
+      "sha256": "5148809114e7bafff23bf82a75af152f4f13e023f4aa7553b6314a78b5bafe10",
+      "size_bytes": 177
+    },
+    "outputs/v3_3/experiments/EXP_33_03/execution_manifest.json": {
+      "sha256": "5aabd412a408b9b566e0908d2b9a1e5137532d3e8aa55ef84929382de5021cf4",
+      "size_bytes": 261
+    },
+    "outputs/v3_3/experiments/EXP_33_03/experiment_definition.json": {
+      "sha256": "7116424ee8941fec59542e17c3f44ad23996572a48ed33a33f3c120dac417e87",
+      "size_bytes": 508
+    },
+    "outputs/v3_3/experiments/EXP_33_03/failure_cases.json": {
+      "sha256": "507230f434e4977c67daf132406932aaf7ba0fe4ae46ccf28eb414779c3fb084",
+      "size_bytes": 1601
+    },
+    "outputs/v3_3/experiments/EXP_33_03/metric_results.json": {
+      "sha256": "e44d1f58afc609d536c07ccb42ba80cab27deb4eea1ba3c9d12107457d18c44d",
+      "size_bytes": 8952
+    },
+    "outputs/v3_3/experiments/EXP_33_03/raw_results.json": {
+      "sha256": "13f6af94e0177302063f7396c36ad9bbdfdb1fc5e237ee1c83b1f5bd9a353baf",
+      "size_bytes": 7996
+    },
+    "outputs/v3_3/experiments/EXP_33_03/reproducibility_manifest.json": {
+      "sha256": "748311c1457ce5b71e5a80b64449492e380d8f315179fea61d94aaa5cf84ec5c",
+      "size_bytes": 163
+    },
+    "outputs/v3_3/experiments/EXP_33_02/execution_manifest.json": {
+      "sha256": "0273b7437e3639a60b5c80882b53a53473f13ac1eedf72a75c428abe8a629077",
+      "size_bytes": 299
+    },
+    "outputs/v3_3/experiments/EXP_33_02/experiment_definition.json": {
+      "sha256": "ef88f958f743f0f599aad596ce68d1948f95987465509cbe13a944c5e3c57868",
+      "size_bytes": 730
+    },
+    "outputs/v3_3/experiments/EXP_33_02/failure_cases.json": {
+      "sha256": "3cbb101d5071c5225eae6d9a6eb94e6c3bbf9be58d50817b8c9b7e9c42e1ab64",
+      "size_bytes": 572
+    },
+    "outputs/v3_3/experiments/EXP_33_02/metric_results.json": {
+      "sha256": "6afcb7b2d4bfb2c8826cdd175bd618c56ac78208a67aea0642c3e9bf4ca23677",
+      "size_bytes": 209
+    },
+    "outputs/v3_3/experiments/EXP_33_02/raw_results.json": {
+      "sha256": "3225834655f88c5b9b07c42ed48706469e3b975ea6c159e40bba9d680acbe5dd",
+      "size_bytes": 5348
+    },
+    "outputs/v3_3/experiments/EXP_33_02/reproducibility_manifest.json": {
+      "sha256": "e4f48eb1dcfa4f07d612ca8ac5be3129d95339a39a054bb59894520fbbc2c6c9",
+      "size_bytes": 189
+    },
+    "outputs/v3_3/experiments/EXP_33_01/execution_manifest.json": {
+      "sha256": "7fa31a38771451120f8f81c7a4005d3f7a301820c9fafb2e4af505f8647d82dd",
+      "size_bytes": 568
+    },
+    "outputs/v3_3/experiments/EXP_33_01/experiment_definition.json": {
+      "sha256": "a7aaf9a7b9b0be86e28e87d7c79f16abb07ed6ba796679b2bfee862aa1c6c37a",
+      "size_bytes": 578
+    },
+    "outputs/v3_3/experiments/EXP_33_01/failure_cases.json": {
+      "sha256": "3500dd5a4752bfc1ff91e130f0743b378b39776da1d31003056546fa144b5542",
+      "size_bytes": 2906
+    },
+    "outputs/v3_3/experiments/EXP_33_01/metric_results.json": {
+      "sha256": "76b49e2a6cb2d89a52cbdbcc9ba3f160dea9c626b8d2906de1fb175117254567",
+      "size_bytes": 1399
+    },
+    "outputs/v3_3/experiments/EXP_33_01/raw_results.json": {
+      "sha256": "e3591840f4a3d9e4817b15410d0ba8c088586fd5335562a2805312575eb4eed2",
+      "size_bytes": 846
+    },
+    "outputs/v3_3/experiments/EXP_33_01/reproducibility_manifest.json": {
+      "sha256": "f30730b231d84787b9c041e5c711567162fdd12b0629d5eebca6a50352cfcccf",
+      "size_bytes": 189
+    },
+    "outputs/v3_3/baseline/v3_2_1_baseline_reference.json": {
+      "sha256": "581ad320041dbc5e1db2c0be62c7016bd07d1419624f7f3ab6aea37834abcda6",
+      "size_bytes": 885
+    },
+    "outputs/v3_3/baseline/v3_2_1_failure_registry_snapshot.json": {
+      "sha256": "fe2300b7b357ff991a4195950fb763b5991e60dcaddd808a110401bdb32073aa",
+      "size_bytes": 793
+    },
+    "outputs/v3_3/baseline/v3_2_1_metric_snapshot.json": {
+      "sha256": "d5bc876a6516f19f88a11dcf4b71d9eb47d21d64ba357213b52b2db9b437e14b",
+      "size_bytes": 25555
+    },
+    "outputs/v3_3/baseline/v3_2_1_source_hash_manifest.json": {
+      "sha256": "042ef0ed891ce792cbe8ae34d1b2f6d5d1445c2345bd50ef309d242f8a344d3e",
+      "size_bytes": 7260
+    },
+    "outputs/v3_3/blind_lock/blind_set_lock.json": {
+      "sha256": "2e1b84d888a07795e018d61275877dd2c68f66e4b2797a76c987e0a7945fa3df",
+      "size_bytes": 1040
+    },
+    "outputs/v3_3/blind_lock/experiment_preregistration.json": {
+      "sha256": "adb2f018d7e768d1bcc7956d1ef78da10a3efada70c1d7b013a0c2117f264912",
+      "size_bytes": 4993
+    },
+    "outputs/v3_3/blind_lock/parameter_lock.json": {
+      "sha256": "173a6f6288789d17a2712abbaeac14500300cc87107d4270ad74376ab1b5d214",
+      "size_bytes": 1733
+    },
+    "outputs/v3_3/uncertainty/calibration_record.json": {
+      "sha256": "2860e22aefc44bc85309df9dbb555dda25873a0e29e5556925ea427fb750f295",
+      "size_bytes": 442
+    },
+    "outputs/v3_3/uncertainty/coverage_by_condition.json": {
+      "sha256": "5666f487c7c190334f59eae08b71069c4184c653d46b7abf9d3e67b2937e9c10",
+      "size_bytes": 623
+    },
+    "outputs/v3_3/uncertainty/coverage_failure_cases.json": {
+      "sha256": "a3752c66de21953f2f78f9cf1d1fb6e314dd04ceb5ca461f1c31d95eab8404bf",
+      "size_bytes": 3199
+    },
+    "outputs/v3_3/uncertainty/out_of_sample_coverage.json": {
+      "sha256": "76b49e2a6cb2d89a52cbdbcc9ba3f160dea9c626b8d2906de1fb175117254567",
+      "size_bytes": 1399
+    },
+    "outputs/v3_3/failure_registry/v3_3_failure_registry.json": {
+      "sha256": "e451c6b96424f935771590948578a88ad0738de0b31b326c217fcb757be327ed",
+      "size_bytes": 4642
+    },
+    "validation/v3_3/test_calibration_blind_separation.py": {
+      "sha256": "c285765147dc4e77a5e601ff00817dcad2d5a35b6b284cf48835e1334e3854fd",
+      "size_bytes": 3848
+    },
+    "validation/v3_3/test_claim_traceability.py": {
+      "sha256": "798165817bd91cdd56774975cca7fc35f132161f58e76410112f8809c32f5f16",
+      "size_bytes": 3244
+    },
+    "validation/v3_3/test_dataset_provenance_gate.py": {
+      "sha256": "a4d76aa184c928d241c2fef936a98f2361a92ee4fbac95c537e988038ae9e137",
+      "size_bytes": 5556
+    },
+    "validation/v3_3/test_dataset_split_integrity.py": {
+      "sha256": "0d92fda614cc2b35c8860e9598043a297db807c1a47ac231da3e19400f02e7f5",
+      "size_bytes": 3280
+    },
+    "validation/v3_3/test_experiment_registry.py": {
+      "sha256": "bce594a2081046903da811d78fb707d7672b2682bffbee7ff81326cbd1f85fa2",
+      "size_bytes": 2798
+    },
+    "validation/v3_3/test_odd_enforcement.py": {
+      "sha256": "ac9f6115c590bb9c441349453193e991a73cebe3b0ffed766da97578fa4e8bf2",
+      "size_bytes": 4563
+    },
+    "validation/v3_3/test_v3_2_1_immutability.py": {
+      "sha256": "70af7c49e9e99e83c195ff31ab9c68d3eda9c06a2037af1eec02edc58e8557d7",
+      "size_bytes": 5429
+    },
+    "reports/v3_3/V3.3.0_DEVELOPMENT_BASELINE_REPORT.md": {
+      "sha256": "a162df48261ffd7d2fb214f8447d7b84d8eeb3a78d64d24f22cd81ea5ce4fc65",
+      "size_bytes": 4447
+    },
+    "reports/v3_3/V3.3.0_PHASE1_EXECUTION_REPORT.md": {
+      "sha256": "ee8707f661b751e8a4a5c6ab1019a6cf1a808a7a7e1892c885df1cc61d3e3205",
+      "size_bytes": 22604
+    },
+    "safety_backfire_v3_3/__init__.py": {
+      "sha256": "f47f3d68f047205fd2f415b17e268dbd5478529c07888d9220e5e03f714d4951",
+      "size_bytes": 82
+    },
+    "safety_backfire_v3_3/causality/__init__.py": {
+      "sha256": "e20b934e31c6b3146b03e54e77deae3c0d1993fcbcd00b334fc3a660f31493bd",
+      "size_bytes": 68
+    },
+    "safety_backfire_v3_3/causality/did_engine.py": {
+      "sha256": "ad86bfa68f27e5694c6651b8a75136622b5e3ca243ee7146eab3cd7a4f10de6a",
+      "size_bytes": 3034
+    },
+    "safety_backfire_v3_3/intervention/__init__.py": {
+      "sha256": "284d213a5565216c9c0bef864d96f57271b62688396bb450867cdac5870eaba3",
+      "size_bytes": 88
+    },
+    "safety_backfire_v3_3/intervention/evaluator.py": {
+      "sha256": "334541b78c8466809ea458c3ac8ab922b389f894a8f53e44a32d961a9a669fa1",
+      "size_bytes": 3390
+    },
+    "safety_backfire_v3_3/refusal/__init__.py": {
+      "sha256": "aebfcd5a64c1f073b9facd6edcf42848f63c9b11256d01ec151875d70426cf40",
+      "size_bytes": 55
+    },
+    "safety_backfire_v3_3/refusal/engine.py": {
+      "sha256": "cbf046d3e85b9534b03dde716c0323481a85961fb2413c73de649b93fb05eb90",
+      "size_bytes": 4965
+    },
+    "safety_backfire_v3_3/dataset/__init__.py": {
+      "sha256": "ea7521e37b7388fd8e5c32363f2e61d57cfd498fc80d2f10284bebdb733736e5",
+      "size_bytes": 84
+    },
+    "safety_backfire_v3_3/dataset/manager.py": {
+      "sha256": "9e75f89b470fab4f7b692067a026f1202d5d8135948554e0048d9dce88956379",
+      "size_bytes": 4203
+    },
+    "safety_backfire_v3_3/dataset/provenance_gate.py": {
+      "sha256": "4f36a0ba56d741fb2a2bf629c24961737ceddada18d9c66c41fc3341e96db7e8",
+      "size_bytes": 5493
+    },
+    "safety_backfire_v3_3/experiments/run_exp_33_01.py": {
+      "sha256": "1dcc5db14d53bec4d651557dc6fb262abc46861e5aabb0d6e279d108efa1d6ba",
+      "size_bytes": 12257
+    },
+    "safety_backfire_v3_3/experiments/run_exp_33_02.py": {
+      "sha256": "d22201451a5990770b01d1ffebe856068fbe6a333d7f7b6ebcda98915fe696ed",
+      "size_bytes": 14451
+    },
+    "safety_backfire_v3_3/experiments/run_exp_33_03.py": {
+      "sha256": "519988d208551ffe69c6f586b060175f5e69bebedfc292c29adef505e50f69a5",
+      "size_bytes": 11904
+    },
+    "safety_backfire_v3_3/experiments/run_exp_33_04.py": {
+      "sha256": "f1b923b19192eed7717a2ef596b4b23df8683fd2d48f5725eb8f4dd143a15dc6",
+      "size_bytes": 13818
+    },
+    "safety_backfire_v3_3/geometry/__init__.py": {
+      "sha256": "642e2323c0feb30eda989c7c5a6edc2d9c13306e8acb4263baf8b3b3793db5e1",
+      "size_bytes": 64
+    },
+    "safety_backfire_v3_3/geometry/classifier.py": {
+      "sha256": "6cc21a1c3c2f4ce2340c5197c4cab97e1156f9a963220ad5f7f79a36f176cc80",
+      "size_bytes": 2655
+    },
+    "safety_backfire_v3_3/uncertainty/__init__.py": {
+      "sha256": "5c965587feadb2f2663bd832d8b0a2d09baf7cb1f3095bc60f1327df0b007a20",
+      "size_bytes": 62
+    },
+    "safety_backfire_v3_3/uncertainty/evaluator.py": {
+      "sha256": "62ca61e8cd693f5cdf578724200ecdb84b7beaf2ed30fdc5c7fdeca98c39ea61",
+      "size_bytes": 7015
+    }
+  },
+  "total_protected_files": 79
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TractionCurrentPersistenceDecisionRuleV2",
+  "milestone": "V3.4-N-CORR-04-R1",
+  "description": "Reconciled discrete sampled persistence decision rule for electrical traction de-energization, purging unsupported performance claims and aligning with provisional characterization governance.",
+  "governance_classification": "ENGINEERING_SAFETY_DECISION_RULE",
+  "governance_status": "PROVISIONAL_CHARACTERIZATION_ONLY",
+  "discrete_decision_rule_specification": {
+    "mathematical_formula": "forall m in {0, 1, ..., 99}: I_RMS[k* - m] <= I_guarded",
+    "evaluation_grid_step_ms": 0.1,
+    "evaluation_window_duration_ms": 2.0,
+    "consecutive_steps_required": 100,
+    "nominal_current_threshold_a_rms": 0.500,
+    "guarded_current_threshold_a_rms": 0.410,
+    "candidate_t_persist_ms": 10.0,
+    "maximum_allowable_total_latency_ms": 48.8,
+    "processing_pipeline": "RMS-PROC-V1.0",
+    "temporal_semantics": "DISCRETE_SAMPLED_PERSISTENCE_CRITERION"
+  },
+  "verdict_taxonomies": {
+    "PERSISTENCE_PASS": {
+      "definition": "Phase U sliding RMS current satisfies I_RMS[k] <= 0.410 A RMS across 100 consecutive discrete evaluation frames (0.1 ms step, delta_t = 10.0 ms) without any intermediate frame exceeding threshold, with final endpoint declared at t_stable <= 48.8 ms from t0.",
+      "disposition": "GATE_C8_ELECTRICAL_CUTOFF_PROVISIONAL_PASS"
+    },
+    "PERSISTENCE_FAIL": {
+      "definition": "Phase U sliding RMS current fails to establish 100 consecutive sub-threshold frames within 48.8 ms from t0, OR exhibits an excursion I_RMS[k] > 0.410 A RMS before the 100-frame counter completes.",
+      "disposition": "GATE_C8_PERSISTENCE_HOLD_FAILURE"
+    },
+    "PERSISTENCE_UNDETERMINED": {
+      "definition": "Acquisition record duration shorter than required evaluation interval, OR digitizer clipping / current probe saturation detected, OR probe degauss offset drift exceeding limits.",
+      "disposition": "INVALID_CAPTURE_RETEST_REQUIRED"
+    }
+  },
+  "audit_reconciliation_record": {
+    "governance_ruling": "PROVISIONAL_CHARACTERIZATION_ONLY",
+    "unsupported_language_remediation": [
+      {
+        "legacy_phrase": "100% zero-crossing immunity / optimal noise immunity",
+        "reconciled_phrase": "NO_FALSE_SAFE_STATE_DECLARATIONS_OBSERVED_IN_10_CHARACTERIZATION_TRIALS",
+        "rationale": "Empirical observation across 10 trials cannot be generalized to universal 100% immunity."
+      },
+      {
+        "legacy_phrase": "guarantees complete decay / empirically proven",
+        "reconciled_phrase": "CHARACTERIZATION_OBSERVATION_ONLY",
+        "rationale": "Bench observations on 10 trials establish characterization behavior only, not safety certification."
+      },
+      {
+        "legacy_phrase": "continuous for delta_t >= 10.0 ms",
+        "reconciled_phrase": "DISCRETE_SAMPLED_PERSISTENCE (100 consecutive frames at 0.1 ms step)",
+        "rationale": "Digital signal processing evaluates on a discrete grid; physical continuous claim was technically ungrounded."
+      }
+    ],
+    "formal_status": "OPEN_PENDING_RECONCILIATION",
+    "blocker_reference": "BLK_00_PERSIST"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "experiment_id": "EXP_33_01",
+  "calibration_dataset": "DS_V3_3_CALIB_SECTOR_B",
+  "locked_factor_k": 2.42,
+  "calibration_sample_count": 500,
+  "calibration_method": "Closed-form Mahalanobis 95th-percentile quantile",
+  "calibration_objective": "Select k minimizing undercoverage on Sector B ground plane grid",
+  "calibration_seed": 42,
+  "in_sample_calibration_coverage": 0.95,
+  "lock_status": "PERMANENTLY_LOCKED_BEFORE_EVALUATION"
+}

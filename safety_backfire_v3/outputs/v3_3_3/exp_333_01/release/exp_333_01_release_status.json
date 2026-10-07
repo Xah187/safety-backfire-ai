@@ -1,0 +1,23 @@
+{
+  "release_version": "V3.3.3",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "experiment_status": "NOT_ESTABLISHED",
+  "external_facility_id": "FACILITY_E_COLD_STORAGE",
+  "physical_independence": "NOT_ESTABLISHED",
+  "raw_video_frames": 0,
+  "raw_video_duration_seconds": 0.0,
+  "cameras_evaluated": 0,
+  "perception_f1": "NOT_ESTABLISHED",
+  "tracking_idf1": "NOT_ESTABLISHED",
+  "geometry_mae": "NOT_ESTABLISHED",
+  "model_h_coverage": "NOT_ESTABLISHED",
+  "policy_appropriate_refusal": "NOT_ESTABLISHED",
+  "unsafe_non_refusal": "NOT_ESTABLISHED",
+  "event_f1": "NOT_ESTABLISHED",
+  "critical_failures": 1,
+  "evidence_gaps": 6,
+  "baseline_hash_drift": "0 / 39",
+  "blind_integrity": "PASS",
+  "v3_3_3_next_experiment": "HOLD",
+  "governance_rationale": "Physical footage and ground truth for the external facility are not available on disk. In accordance with Section 2 and Section 21 rules, external facility independence and evaluation metrics cannot be established without physical data. The experiment status is strictly marked NOT_ESTABLISHED and EXP_333_02 is held."
+}

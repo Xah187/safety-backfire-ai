@@ -1,0 +1,94 @@
+{
+  "manifest_version": "EXP_333_01_LIGHTING_EVIDENCE_V1",
+  "timestamp_utc": "2026-09-28T00:07:22Z",
+  "source_file": "0_te11.mp4",
+  "source_hash": "170a97c819e668d899e378e4ec1c417d89df8da3eff4373bf08f9698152babe1",
+  "physical_measurement": {
+    "lux_value": null,
+    "lux_instrument": null,
+    "lux_measurement_position": null,
+    "lux_measurement_timestamp": null,
+    "measurement_category": "NOT_AVAILABLE",
+    "status": "NO_PHYSICAL_LUX_MEASUREMENT_EXISTS"
+  },
+  "pixel_luminance_observation": {
+    "description": "Mean pixel luminance computed from grayscale conversion. This is an IMAGE PROPERTY, not a physical illuminance measurement.",
+    "mean_pixel_luminance": 108.04,
+    "std_pixel_luminance": 0.39,
+    "temporal_stability": "STABLE",
+    "sample_count": 7,
+    "samples": [
+      {
+        "frame": 0,
+        "mean": 107.25,
+        "std": 45.96,
+        "p5": 32.0,
+        "p95": 177.0
+      },
+      {
+        "frame": 30,
+        "mean": 108.01,
+        "std": 45.82,
+        "p5": 34.0,
+        "p95": 178.0
+      },
+      {
+        "frame": 60,
+        "mean": 107.8,
+        "std": 45.23,
+        "p5": 35.0,
+        "p95": 177.0
+      },
+      {
+        "frame": 90,
+        "mean": 108.31,
+        "std": 45.26,
+        "p5": 35.0,
+        "p95": 178.0
+      },
+      {
+        "frame": 120,
+        "mean": 108.23,
+        "std": 45.45,
+        "p5": 35.0,
+        "p95": 178.0
+      },
+      {
+        "frame": 150,
+        "mean": 108.07,
+        "std": 45.21,
+        "p5": 35.0,
+        "p95": 177.0
+      },
+      {
+        "frame": 172,
+        "mean": 108.58,
+        "std": 45.27,
+        "p5": 35.0,
+        "p95": 178.0
+      }
+    ],
+    "category": "IMAGE_PROPERTY",
+    "conversion_to_lux_allowed": false,
+    "note": "Pixel luminance cannot be converted to lux without camera response curve calibration, which is NOT_AVAILABLE."
+  },
+  "illumination_category_for_model_h": {
+    "value": null,
+    "category": "NOT_AVAILABLE",
+    "rule": "Model H illumination input requires physical lux measurement. Pixel luminance substitution is PROHIBITED.",
+    "effect_on_model_h": "illumination_lux = None \u2192 penalty_l = MISSING \u2192 H_score = None (INPUT_INSUFFICIENT)"
+  },
+  "visual_assessment": {
+    "description": "Qualitative visual assessment from frame review \u2014 NOT a measurement",
+    "apparent_lighting": "INDOOR_ARTIFICIAL",
+    "apparent_uniformity": "MODERATE",
+    "apparent_shadows": "PRESENT",
+    "category": "QUALITATIVE_OBSERVATION",
+    "usable_for_evaluation": false
+  },
+  "governance": {
+    "rule": "No lux value may be substituted, inferred, or defaulted. Missing lux \u2192 Model H INPUT_INSUFFICIENT.",
+    "pixel_luminance_is_not_lux": true,
+    "qualitative_is_not_quantitative": true
+  }
+}

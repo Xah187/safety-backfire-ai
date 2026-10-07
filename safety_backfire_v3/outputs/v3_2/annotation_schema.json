@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GroundTruthAnnotationV1Schema",
+  "description": "Independent multi-annotator ground truth schema for entities, states, relations, and hazards",
+  "type": "object",
+  "required": [
+    "annotation_id",
+    "video_id",
+    "frame_index",
+    "entity_id",
+    "entity_class",
+    "visibility",
+    "state"
+  ],
+  "properties": {
+    "annotation_id": {
+      "type": "string"
+    },
+    "video_id": {
+      "type": "string"
+    },
+    "frame_index": {
+      "type": "integer"
+    },
+    "timestamp_sec": {
+      "type": "number"
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "entity_class": {
+      "type": "string",
+      "enum": [
+        "person",
+        "forklift",
+        "vehicle",
+        "rack",
+        "rack_upright",
+        "beam",
+        "pallet",
+        "load",
+        "conveyor",
+        "machine",
+        "dock",
+        "exit",
+        "barrier",
+        "zone",
+        "other_supported_entity"
+      ]
+    },
+    "visibility": {
+      "type": "string",
+      "enum": [
+        "VISIBLE",
+        "OCCLUDED",
+        "AMBIGUOUS",
+        "NOT_VISIBLE",
+        "UNKNOWN"
+      ]
+    },
+    "annotation_confidence": {
+      "type": "string",
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
+    }
+  }
+}

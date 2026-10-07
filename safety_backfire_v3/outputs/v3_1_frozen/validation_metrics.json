@@ -1,0 +1,150 @@
+{
+  "release": "V3.1",
+  "timestamp_utc": "2026-09-23T21:32:14.085794+00:00",
+  "summary": {
+    "total_scenarios_tested": 15,
+    "scenarios_passed": 15,
+    "scenario_pass_rate": 1.0,
+    "adversarial_tests_tested": 7,
+    "adversarial_tests_passed": 7,
+    "adversarial_pass_rate": 1.0,
+    "p0_p1_defects": 0
+  },
+  "deterministic_scenarios": {
+    "SCEN_A": {
+      "name": "Person + Forklift Collision",
+      "hazard": "COLLISION_HAZARD",
+      "decision": "CONFIRMED_DANGER",
+      "status": "PASS"
+    },
+    "SCEN_B": {
+      "name": "Forklift + Rack Impact",
+      "hazard": "COLLISION_HAZARD",
+      "decision": "CONFIRMED_DANGER",
+      "status": "PASS"
+    },
+    "SCEN_C": {
+      "name": "Pallet + Rack Collapse",
+      "hazard": "COLLAPSE_HAZARD",
+      "decision": "CONFIRMED_DANGER",
+      "status": "PASS"
+    },
+    "SCEN_D": {
+      "name": "Person + Conveyor Exposure",
+      "hazard": "MACHINERY_EXPOSURE_HAZARD",
+      "decision": "CONFIRMED_DANGER",
+      "status": "PASS"
+    },
+    "SCEN_E": {
+      "name": "Truck + Dock Edge Crush",
+      "hazard": "DOCK_EDGE_HAZARD",
+      "decision": "CONFIRMED_DANGER",
+      "status": "PASS"
+    },
+    "SCEN_F": {
+      "name": "Blocked Aisle Pallet",
+      "hazard": "BLOCKED_AISLE_HAZARD",
+      "decision": "CAUTION",
+      "status": "PASS"
+    },
+    "SCEN_G": {
+      "name": "Blocked Emergency Exit",
+      "hazard": "BLOCKED_EGRESS_HAZARD",
+      "decision": "CONFIRMED_DANGER",
+      "status": "PASS"
+    },
+    "SCEN_H": {
+      "name": "Unstable Load (Static Threat)",
+      "hazard": "FALLING_OBJECT_HAZARD",
+      "decision": "CONFIRMED_DANGER",
+      "status": "PASS"
+    },
+    "SCEN_I": {
+      "name": "Fallen Object in Lane",
+      "hazard": "OBSTRUCTION_HAZARD",
+      "decision": "CANDIDATE_REVIEW",
+      "status": "PASS"
+    },
+    "SCEN_J": {
+      "name": "Spill + Pedestrian Slip",
+      "hazard": "SPILL_SLIP_HAZARD",
+      "decision": "CONFIRMED_DANGER",
+      "status": "PASS"
+    },
+    "SCEN_K": {
+      "name": "Spill + Forklift Traction Loss",
+      "hazard": "SPILL_SLIP_HAZARD",
+      "decision": "CONFIRMED_DANGER",
+      "status": "PASS"
+    },
+    "SCEN_L": {
+      "name": "Restricted Zone Intrusion",
+      "hazard": "PEDESTRIAN_ZONE_INTRUSION",
+      "decision": "CONFIRMED_DANGER",
+      "status": "PASS"
+    },
+    "SCEN_M": {
+      "name": "Machine Entrapment Maintenance",
+      "hazard": "MACHINERY_EXPOSURE_HAZARD",
+      "decision": "CONFIRMED_DANGER",
+      "status": "PASS"
+    },
+    "SCEN_N": {
+      "name": "Simultaneous Multiple Hazards",
+      "hazard": "DUAL_HAZARDS",
+      "decision": "CONFIRMED_DANGER",
+      "status": "PASS"
+    },
+    "SCEN_O": {
+      "name": "Intervention Safety Backfire",
+      "hazard": "NEW_HAZARD_CREATED",
+      "decision": "PARTIAL_BACKFIRE",
+      "status": "PASS"
+    }
+  },
+  "adversarial_redteam": {
+    "FAIL-31": {
+      "name": "Entity Subtype Hallucination Under Occlusion",
+      "status": "RESOLVED_AND_VERIFIED",
+      "passed": true
+    },
+    "FAIL-32": {
+      "name": "Relation Zone FP From 2D Bbox Footpoint Bleed",
+      "status": "RESOLVED_AND_VERIFIED",
+      "passed": true
+    },
+    "FAIL-33": {
+      "name": "Counterfactual Temporal Baseline Leakage",
+      "status": "RESOLVED_AND_VERIFIED",
+      "passed": true
+    },
+    "FAIL-34": {
+      "name": "Inappropriate Kinetic TTC on Stationary Hazard",
+      "status": "RESOLVED_AND_VERIFIED",
+      "passed": true
+    },
+    "FAIL-35": {
+      "name": "Cross-Hazard Risk Masking Prevention",
+      "status": "RESOLVED_AND_VERIFIED",
+      "passed": true
+    },
+    "FAIL-36": {
+      "name": "Aggregate Risk Transfer Blindness",
+      "status": "RESOLVED_AND_VERIFIED",
+      "passed": true
+    },
+    "FAIL-37": {
+      "name": "Temporal Entity State Resurrection on Dropouts",
+      "status": "RESOLVED_AND_VERIFIED",
+      "passed": true
+    }
+  },
+  "preservation_of_v3_0_5_benchmarks": {
+    "rice_coverage_factor_k": 2.24,
+    "jensen_second_order_debias": true,
+    "out_of_sample_empirical_coverage": 0.968,
+    "fail_29_kinetic_trajectory_decoupling": true,
+    "operator_cabin_suppression": true,
+    "decoupled_id_model_enforced": true
+  }
+}

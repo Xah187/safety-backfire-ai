@@ -1,0 +1,17 @@
+{
+  "experiment_id": "EXP_33_01",
+  "title": "OUT_OF_SAMPLE_UNCERTAINTY",
+  "hypothesis": "A coverage factor selected exclusively using calibration data maintains acceptable empirical coverage on previously unseen evaluation data drawn from the same declared ODD population.",
+  "calibration_dataset": "DS_V3_3_CALIB_SECTOR_B",
+  "evaluation_datasets": [
+    "DS_V3_3_VAL_INTERSECTION_C",
+    "DS_V3_3_BLIND_STAGING_D"
+  ],
+  "locked_k": 2.42,
+  "sample_size_planned": 1000,
+  "sample_size_evaluated": 745,
+  "random_seeds": {
+    "calibration": 42,
+    "evaluation": 1337
+  }
+}

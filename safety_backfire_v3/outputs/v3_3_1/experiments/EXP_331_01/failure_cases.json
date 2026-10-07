@@ -1,0 +1,122 @@
+[
+  {
+    "point_id": "OOS_Sector_C_0016",
+    "distance_m": 1.38,
+    "illumination_lux": 293.6,
+    "occlusion_state": "NONE",
+    "mahalanobis_sq": 6.1011,
+    "eff_k_sq": 5.5466
+  },
+  {
+    "point_id": "OOS_Sector_D_0027",
+    "distance_m": 8.0,
+    "illumination_lux": 185.1,
+    "occlusion_state": "NONE",
+    "mahalanobis_sq": 9.4233,
+    "eff_k_sq": 7.1927
+  },
+  {
+    "point_id": "OOS_Sector_D_0031",
+    "distance_m": 8.93,
+    "illumination_lux": 214.8,
+    "occlusion_state": "HEAVY",
+    "mahalanobis_sq": 15.3645,
+    "eff_k_sq": 9.3879
+  },
+  {
+    "point_id": "OOS_Sector_D_0041",
+    "distance_m": 5.91,
+    "illumination_lux": 208.4,
+    "occlusion_state": "HEAVY",
+    "mahalanobis_sq": 9.6536,
+    "eff_k_sq": 8.3399
+  },
+  {
+    "point_id": "OOS_Sector_D_0055",
+    "distance_m": 7.02,
+    "illumination_lux": 203.9,
+    "occlusion_state": "HEAVY",
+    "mahalanobis_sq": 20.1062,
+    "eff_k_sq": 8.7502
+  },
+  {
+    "point_id": "OOS_Sector_C_0056",
+    "distance_m": 1.27,
+    "illumination_lux": 329.2,
+    "occlusion_state": "NONE",
+    "mahalanobis_sq": 9.6665,
+    "eff_k_sq": 5.5225
+  },
+  {
+    "point_id": "OOS_Sector_C_0066",
+    "distance_m": 2.3,
+    "illumination_lux": 294.8,
+    "occlusion_state": "NONE",
+    "mahalanobis_sq": 5.7346,
+    "eff_k_sq": 5.5421
+  },
+  {
+    "point_id": "OOS_Sector_D_0095",
+    "distance_m": 5.76,
+    "illumination_lux": 198.5,
+    "occlusion_state": "PARTIAL",
+    "mahalanobis_sq": 15.2431,
+    "eff_k_sq": 7.381
+  },
+  {
+    "point_id": "OOS_Sector_C_0096",
+    "distance_m": 4.43,
+    "illumination_lux": 314.8,
+    "occlusion_state": "PARTIAL",
+    "mahalanobis_sq": 9.4346,
+    "eff_k_sq": 6.5321
+  },
+  {
+    "point_id": "OOS_Sector_D_0113",
+    "distance_m": 5.55,
+    "illumination_lux": 199.9,
+    "occlusion_state": "NONE",
+    "mahalanobis_sq": 8.8023,
+    "eff_k_sq": 6.3659
+  },
+  {
+    "point_id": "OOS_Sector_C_0114",
+    "distance_m": 3.97,
+    "illumination_lux": 314.6,
+    "occlusion_state": "NONE",
+    "mahalanobis_sq": 5.664,
+    "eff_k_sq": 5.5225
+  },
+  {
+    "point_id": "OOS_Sector_D_0127",
+    "distance_m": 5.77,
+    "illumination_lux": 239.3,
+    "occlusion_state": "HEAVY",
+    "mahalanobis_sq": 10.7342,
+    "eff_k_sq": 8.1497
+  },
+  {
+    "point_id": "OOS_Sector_D_0143",
+    "distance_m": 2.27,
+    "illumination_lux": 204.6,
+    "occlusion_state": "NONE",
+    "mahalanobis_sq": 9.3155,
+    "eff_k_sq": 5.887
+  },
+  {
+    "point_id": "OOS_Sector_D_0151",
+    "distance_m": 8.12,
+    "illumination_lux": 194.0,
+    "occlusion_state": "NONE",
+    "mahalanobis_sq": 10.7372,
+    "eff_k_sq": 7.1931
+  },
+  {
+    "point_id": "OOS_Sector_D_0161",
+    "distance_m": 3.7,
+    "illumination_lux": 182.4,
+    "occlusion_state": "NONE",
+    "mahalanobis_sq": 9.1011,
+    "eff_k_sq": 5.9735
+  }
+]

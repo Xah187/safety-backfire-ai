@@ -1,0 +1,816 @@
+{
+  "run_id": "RUN_003_NVIDIA_WAREHOUSE_026",
+  "total_tracks": 81,
+  "topology": {
+    "Camera_0000_1": {
+      "camera_id": "Camera_0000",
+      "class": "person",
+      "first_frame": 0,
+      "last_frame": 830,
+      "frames_active": 825,
+      "duration_seconds": 27.667,
+      "mean_confidence": 0.767,
+      "mean_distance_m": 5.619
+    },
+    "Camera_0000_18": {
+      "camera_id": "Camera_0000",
+      "class": "person",
+      "first_frame": 147,
+      "last_frame": 149,
+      "frames_active": 2,
+      "duration_seconds": 0.067,
+      "mean_confidence": 0.3741,
+      "mean_distance_m": 6.76
+    },
+    "Camera_0000_2": {
+      "camera_id": "Camera_0000",
+      "class": "forklift",
+      "first_frame": 0,
+      "last_frame": 1418,
+      "frames_active": 1419,
+      "duration_seconds": 47.267,
+      "mean_confidence": 0.6906,
+      "mean_distance_m": 3.071
+    },
+    "Camera_0000_23": {
+      "camera_id": "Camera_0000",
+      "class": "person",
+      "first_frame": 183,
+      "last_frame": 257,
+      "frames_active": 59,
+      "duration_seconds": 2.467,
+      "mean_confidence": 0.5074,
+      "mean_distance_m": 5.962
+    },
+    "Camera_0000_27": {
+      "camera_id": "Camera_0000",
+      "class": "person",
+      "first_frame": 219,
+      "last_frame": 267,
+      "frames_active": 35,
+      "duration_seconds": 1.6,
+      "mean_confidence": 0.4097,
+      "mean_distance_m": 6.846
+    },
+    "Camera_0000_3": {
+      "camera_id": "Camera_0000",
+      "class": "person",
+      "first_frame": 0,
+      "last_frame": 200,
+      "frames_active": 197,
+      "duration_seconds": 6.667,
+      "mean_confidence": 0.6218,
+      "mean_distance_m": 8.213
+    },
+    "Camera_0000_37": {
+      "camera_id": "Camera_0000",
+      "class": "person",
+      "first_frame": 233,
+      "last_frame": 241,
+      "frames_active": 9,
+      "duration_seconds": 0.267,
+      "mean_confidence": 0.618,
+      "mean_distance_m": 7.02
+    },
+    "Camera_0000_39": {
+      "camera_id": "Camera_0000",
+      "class": "person",
+      "first_frame": 299,
+      "last_frame": 377,
+      "frames_active": 78,
+      "duration_seconds": 2.6,
+      "mean_confidence": 0.6619,
+      "mean_distance_m": 5.54
+    },
+    "Camera_0000_47": {
+      "camera_id": "Camera_0000",
+      "class": "person",
+      "first_frame": 453,
+      "last_frame": 457,
+      "frames_active": 5,
+      "duration_seconds": 0.133,
+      "mean_confidence": 0.342,
+      "mean_distance_m": 4.682
+    },
+    "Camera_0000_48": {
+      "camera_id": "Camera_0000",
+      "class": "person",
+      "first_frame": 497,
+      "last_frame": 499,
+      "frames_active": 3,
+      "duration_seconds": 0.067,
+      "mean_confidence": 0.4029,
+      "mean_distance_m": 4.725
+    },
+    "Camera_0000_50": {
+      "camera_id": "Camera_0000",
+      "class": "person",
+      "first_frame": 818,
+      "last_frame": 822,
+      "frames_active": 2,
+      "duration_seconds": 0.133,
+      "mean_confidence": 0.4095,
+      "mean_distance_m": 7.348
+    },
+    "Camera_0000_53": {
+      "camera_id": "Camera_0000",
+      "class": "person",
+      "first_frame": 829,
+      "last_frame": 833,
+      "frames_active": 5,
+      "duration_seconds": 0.133,
+      "mean_confidence": 0.5123,
+      "mean_distance_m": 6.904
+    },
+    "Camera_0000_56": {
+      "camera_id": "Camera_0000",
+      "class": "forklift",
+      "first_frame": 985,
+      "last_frame": 1118,
+      "frames_active": 107,
+      "duration_seconds": 4.433,
+      "mean_confidence": 0.4892,
+      "mean_distance_m": 11.122
+    },
+    "Camera_0000_6": {
+      "camera_id": "Camera_0000",
+      "class": "person",
+      "first_frame": 53,
+      "last_frame": 56,
+      "frames_active": 4,
+      "duration_seconds": 0.1,
+      "mean_confidence": 0.3019,
+      "mean_distance_m": 5.825
+    },
+    "Camera_0000_62": {
+      "camera_id": "Camera_0000",
+      "class": "person",
+      "first_frame": 1149,
+      "last_frame": 1172,
+      "frames_active": 8,
+      "duration_seconds": 0.767,
+      "mean_confidence": 0.6493,
+      "mean_distance_m": 5.201
+    },
+    "Camera_0000_63": {
+      "camera_id": "Camera_0000",
+      "class": "forklift",
+      "first_frame": 1190,
+      "last_frame": 1363,
+      "frames_active": 96,
+      "duration_seconds": 5.767,
+      "mean_confidence": 0.3875,
+      "mean_distance_m": 4.507
+    },
+    "Camera_0000_66": {
+      "camera_id": "Camera_0000",
+      "class": "person",
+      "first_frame": 1356,
+      "last_frame": 1391,
+      "frames_active": 22,
+      "duration_seconds": 1.167,
+      "mean_confidence": 0.4348,
+      "mean_distance_m": 4.645
+    },
+    "Camera_0000_7": {
+      "camera_id": "Camera_0000",
+      "class": "person",
+      "first_frame": 53,
+      "last_frame": 214,
+      "frames_active": 62,
+      "duration_seconds": 5.367,
+      "mean_confidence": 0.4118,
+      "mean_distance_m": 6.381
+    },
+    "Camera_0000_70": {
+      "camera_id": "Camera_0000",
+      "class": "forklift",
+      "first_frame": 1413,
+      "last_frame": 1799,
+      "frames_active": 386,
+      "duration_seconds": 12.867,
+      "mean_confidence": 0.685,
+      "mean_distance_m": 3.047
+    },
+    "Camera_0000_8": {
+      "camera_id": "Camera_0000",
+      "class": "person",
+      "first_frame": 53,
+      "last_frame": 66,
+      "frames_active": 5,
+      "duration_seconds": 0.433,
+      "mean_confidence": 0.3445,
+      "mean_distance_m": 5.456
+    },
+    "Camera_0001_107": {
+      "camera_id": "Camera_0001",
+      "class": "forklift",
+      "first_frame": 1139,
+      "last_frame": 1181,
+      "frames_active": 37,
+      "duration_seconds": 1.4,
+      "mean_confidence": 0.3622,
+      "mean_distance_m": 4.113
+    },
+    "Camera_0001_112": {
+      "camera_id": "Camera_0001",
+      "class": "forklift",
+      "first_frame": 1189,
+      "last_frame": 1192,
+      "frames_active": 4,
+      "duration_seconds": 0.1,
+      "mean_confidence": 0.343,
+      "mean_distance_m": 4.851
+    },
+    "Camera_0001_118": {
+      "camera_id": "Camera_0001",
+      "class": "forklift",
+      "first_frame": 1206,
+      "last_frame": 1222,
+      "frames_active": 17,
+      "duration_seconds": 0.533,
+      "mean_confidence": 0.3234,
+      "mean_distance_m": 5.158
+    },
+    "Camera_0001_122": {
+      "camera_id": "Camera_0001",
+      "class": "forklift",
+      "first_frame": 1219,
+      "last_frame": 1220,
+      "frames_active": 2,
+      "duration_seconds": 0.033,
+      "mean_confidence": 0.3289,
+      "mean_distance_m": 5.05
+    },
+    "Camera_0001_132": {
+      "camera_id": "Camera_0001",
+      "class": "forklift",
+      "first_frame": 1670,
+      "last_frame": 1674,
+      "frames_active": 5,
+      "duration_seconds": 0.133,
+      "mean_confidence": 0.297,
+      "mean_distance_m": 8.957
+    },
+    "Camera_0001_133": {
+      "camera_id": "Camera_0001",
+      "class": "forklift",
+      "first_frame": 1722,
+      "last_frame": 1770,
+      "frames_active": 42,
+      "duration_seconds": 1.6,
+      "mean_confidence": 0.3542,
+      "mean_distance_m": 24.976
+    },
+    "Camera_0001_71": {
+      "camera_id": "Camera_0001",
+      "class": "person",
+      "first_frame": 1,
+      "last_frame": 822,
+      "frames_active": 822,
+      "duration_seconds": 27.367,
+      "mean_confidence": 0.8288,
+      "mean_distance_m": 7.607
+    },
+    "Camera_0001_72": {
+      "camera_id": "Camera_0001",
+      "class": "person",
+      "first_frame": 1,
+      "last_frame": 209,
+      "frames_active": 208,
+      "duration_seconds": 6.933,
+      "mean_confidence": 0.7122,
+      "mean_distance_m": 8.815
+    },
+    "Camera_0001_75": {
+      "camera_id": "Camera_0001",
+      "class": "person",
+      "first_frame": 56,
+      "last_frame": 57,
+      "frames_active": 2,
+      "duration_seconds": 0.033,
+      "mean_confidence": 0.3304,
+      "mean_distance_m": 8.029
+    },
+    "Camera_0001_76": {
+      "camera_id": "Camera_0001",
+      "class": "person",
+      "first_frame": 310,
+      "last_frame": 787,
+      "frames_active": 469,
+      "duration_seconds": 15.9,
+      "mean_confidence": 0.6536,
+      "mean_distance_m": 8.971
+    },
+    "Camera_0001_81": {
+      "camera_id": "Camera_0001",
+      "class": "person",
+      "first_frame": 820,
+      "last_frame": 823,
+      "frames_active": 4,
+      "duration_seconds": 0.1,
+      "mean_confidence": 0.3738,
+      "mean_distance_m": 9.057
+    },
+    "Camera_0001_82": {
+      "camera_id": "Camera_0001",
+      "class": "person",
+      "first_frame": 902,
+      "last_frame": 923,
+      "frames_active": 22,
+      "duration_seconds": 0.7,
+      "mean_confidence": 0.3998,
+      "mean_distance_m": 9.109
+    },
+    "Camera_0001_83": {
+      "camera_id": "Camera_0001",
+      "class": "person",
+      "first_frame": 962,
+      "last_frame": 988,
+      "frames_active": 27,
+      "duration_seconds": 0.867,
+      "mean_confidence": 0.5141,
+      "mean_distance_m": 9.051
+    },
+    "Camera_0001_87": {
+      "camera_id": "Camera_0001",
+      "class": "forklift",
+      "first_frame": 1070,
+      "last_frame": 1083,
+      "frames_active": 3,
+      "duration_seconds": 0.433,
+      "mean_confidence": 0.3664,
+      "mean_distance_m": 1.943
+    },
+    "Camera_0001_92": {
+      "camera_id": "Camera_0001",
+      "class": "forklift",
+      "first_frame": 1087,
+      "last_frame": 1088,
+      "frames_active": 2,
+      "duration_seconds": 0.033,
+      "mean_confidence": 0.3143,
+      "mean_distance_m": 2.452
+    },
+    "Camera_0001_94": {
+      "camera_id": "Camera_0001",
+      "class": "forklift",
+      "first_frame": 1089,
+      "last_frame": 1109,
+      "frames_active": 13,
+      "duration_seconds": 0.667,
+      "mean_confidence": 0.3406,
+      "mean_distance_m": 2.931
+    },
+    "Camera_0002_134": {
+      "camera_id": "Camera_0002",
+      "class": "person",
+      "first_frame": 1,
+      "last_frame": 430,
+      "frames_active": 422,
+      "duration_seconds": 14.3,
+      "mean_confidence": 0.7844,
+      "mean_distance_m": 8.143
+    },
+    "Camera_0002_135": {
+      "camera_id": "Camera_0002",
+      "class": "person",
+      "first_frame": 1,
+      "last_frame": 922,
+      "frames_active": 921,
+      "duration_seconds": 30.7,
+      "mean_confidence": 0.8121,
+      "mean_distance_m": 6.486
+    },
+    "Camera_0002_136": {
+      "camera_id": "Camera_0002",
+      "class": "forklift",
+      "first_frame": 1,
+      "last_frame": 1184,
+      "frames_active": 1184,
+      "duration_seconds": 39.433,
+      "mean_confidence": 0.5537,
+      "mean_distance_m": 12.168
+    },
+    "Camera_0002_139": {
+      "camera_id": "Camera_0002",
+      "class": "person",
+      "first_frame": 132,
+      "last_frame": 135,
+      "frames_active": 4,
+      "duration_seconds": 0.1,
+      "mean_confidence": 0.3529,
+      "mean_distance_m": 8.091
+    },
+    "Camera_0002_140": {
+      "camera_id": "Camera_0002",
+      "class": "person",
+      "first_frame": 137,
+      "last_frame": 154,
+      "frames_active": 17,
+      "duration_seconds": 0.567,
+      "mean_confidence": 0.3151,
+      "mean_distance_m": 8.12
+    },
+    "Camera_0002_143": {
+      "camera_id": "Camera_0002",
+      "class": "person",
+      "first_frame": 178,
+      "last_frame": 201,
+      "frames_active": 12,
+      "duration_seconds": 0.767,
+      "mean_confidence": 0.4411,
+      "mean_distance_m": 6.823
+    },
+    "Camera_0002_144": {
+      "camera_id": "Camera_0002",
+      "class": "person",
+      "first_frame": 190,
+      "last_frame": 196,
+      "frames_active": 7,
+      "duration_seconds": 0.2,
+      "mean_confidence": 0.4515,
+      "mean_distance_m": 6.615
+    },
+    "Camera_0002_148": {
+      "camera_id": "Camera_0002",
+      "class": "person",
+      "first_frame": 241,
+      "last_frame": 313,
+      "frames_active": 59,
+      "duration_seconds": 2.4,
+      "mean_confidence": 0.4968,
+      "mean_distance_m": 7.445
+    },
+    "Camera_0002_152": {
+      "camera_id": "Camera_0002",
+      "class": "person",
+      "first_frame": 340,
+      "last_frame": 357,
+      "frames_active": 17,
+      "duration_seconds": 0.567,
+      "mean_confidence": 0.5017,
+      "mean_distance_m": 6.915
+    },
+    "Camera_0002_155": {
+      "camera_id": "Camera_0002",
+      "class": "person",
+      "first_frame": 350,
+      "last_frame": 367,
+      "frames_active": 18,
+      "duration_seconds": 0.567,
+      "mean_confidence": 0.5591,
+      "mean_distance_m": 6.846
+    },
+    "Camera_0002_158": {
+      "camera_id": "Camera_0002",
+      "class": "person",
+      "first_frame": 390,
+      "last_frame": 391,
+      "frames_active": 2,
+      "duration_seconds": 0.033,
+      "mean_confidence": 0.3468,
+      "mean_distance_m": 8.863
+    },
+    "Camera_0002_167": {
+      "camera_id": "Camera_0002",
+      "class": "forklift",
+      "first_frame": 929,
+      "last_frame": 940,
+      "frames_active": 12,
+      "duration_seconds": 0.367,
+      "mean_confidence": 0.3379,
+      "mean_distance_m": 17.084
+    },
+    "Camera_0002_168": {
+      "camera_id": "Camera_0002",
+      "class": "forklift",
+      "first_frame": 1008,
+      "last_frame": 1015,
+      "frames_active": 5,
+      "duration_seconds": 0.233,
+      "mean_confidence": 0.308,
+      "mean_distance_m": 12.647
+    },
+    "Camera_0002_173": {
+      "camera_id": "Camera_0002",
+      "class": "person",
+      "first_frame": 1168,
+      "last_frame": 1169,
+      "frames_active": 2,
+      "duration_seconds": 0.033,
+      "mean_confidence": 0.6683,
+      "mean_distance_m": 6.931
+    },
+    "Camera_0002_176": {
+      "camera_id": "Camera_0002",
+      "class": "forklift",
+      "first_frame": 1170,
+      "last_frame": 1296,
+      "frames_active": 111,
+      "duration_seconds": 4.2,
+      "mean_confidence": 0.4939,
+      "mean_distance_m": 5.017
+    },
+    "Camera_0002_177": {
+      "camera_id": "Camera_0002",
+      "class": "forklift",
+      "first_frame": 1184,
+      "last_frame": 1191,
+      "frames_active": 8,
+      "duration_seconds": 0.233,
+      "mean_confidence": 0.407,
+      "mean_distance_m": 4.994
+    },
+    "Camera_0002_181": {
+      "camera_id": "Camera_0002",
+      "class": "person",
+      "first_frame": 1196,
+      "last_frame": 1247,
+      "frames_active": 52,
+      "duration_seconds": 1.7,
+      "mean_confidence": 0.7593,
+      "mean_distance_m": 8.411
+    },
+    "Camera_0002_183": {
+      "camera_id": "Camera_0002",
+      "class": "forklift",
+      "first_frame": 1205,
+      "last_frame": 1231,
+      "frames_active": 14,
+      "duration_seconds": 0.867,
+      "mean_confidence": 0.3338,
+      "mean_distance_m": 4.982
+    },
+    "Camera_0002_186": {
+      "camera_id": "Camera_0002",
+      "class": "person",
+      "first_frame": 1220,
+      "last_frame": 1323,
+      "frames_active": 67,
+      "duration_seconds": 3.433,
+      "mean_confidence": 0.6062,
+      "mean_distance_m": 8.086
+    },
+    "Camera_0002_188": {
+      "camera_id": "Camera_0002",
+      "class": "forklift",
+      "first_frame": 1223,
+      "last_frame": 1799,
+      "frames_active": 430,
+      "duration_seconds": 19.2,
+      "mean_confidence": 0.4909,
+      "mean_distance_m": 12.322
+    },
+    "Camera_0002_193": {
+      "camera_id": "Camera_0002",
+      "class": "forklift",
+      "first_frame": 1284,
+      "last_frame": 1289,
+      "frames_active": 6,
+      "duration_seconds": 0.167,
+      "mean_confidence": 0.3964,
+      "mean_distance_m": 5.23
+    },
+    "Camera_0002_195": {
+      "camera_id": "Camera_0002",
+      "class": "person",
+      "first_frame": 1288,
+      "last_frame": 1364,
+      "frames_active": 57,
+      "duration_seconds": 2.533,
+      "mean_confidence": 0.5373,
+      "mean_distance_m": 11.995
+    },
+    "Camera_0002_198": {
+      "camera_id": "Camera_0002",
+      "class": "person",
+      "first_frame": 1364,
+      "last_frame": 1368,
+      "frames_active": 5,
+      "duration_seconds": 0.133,
+      "mean_confidence": 0.3075,
+      "mean_distance_m": 12.981
+    },
+    "Camera_0002_200": {
+      "camera_id": "Camera_0002",
+      "class": "forklift",
+      "first_frame": 1469,
+      "last_frame": 1475,
+      "frames_active": 7,
+      "duration_seconds": 0.2,
+      "mean_confidence": 0.3048,
+      "mean_distance_m": 18.431
+    },
+    "Camera_0003_204": {
+      "camera_id": "Camera_0003",
+      "class": "person",
+      "first_frame": 1,
+      "last_frame": 426,
+      "frames_active": 426,
+      "duration_seconds": 14.167,
+      "mean_confidence": 0.8174,
+      "mean_distance_m": 5.089
+    },
+    "Camera_0003_205": {
+      "camera_id": "Camera_0003",
+      "class": "person",
+      "first_frame": 1,
+      "last_frame": 222,
+      "frames_active": 222,
+      "duration_seconds": 7.367,
+      "mean_confidence": 0.7849,
+      "mean_distance_m": 7.474
+    },
+    "Camera_0003_213": {
+      "camera_id": "Camera_0003",
+      "class": "person",
+      "first_frame": 8,
+      "last_frame": 11,
+      "frames_active": 4,
+      "duration_seconds": 0.1,
+      "mean_confidence": 0.3236,
+      "mean_distance_m": 3.663
+    },
+    "Camera_0003_223": {
+      "camera_id": "Camera_0003",
+      "class": "person",
+      "first_frame": 35,
+      "last_frame": 189,
+      "frames_active": 104,
+      "duration_seconds": 5.133,
+      "mean_confidence": 0.3219,
+      "mean_distance_m": 3.623
+    },
+    "Camera_0003_226": {
+      "camera_id": "Camera_0003",
+      "class": "person",
+      "first_frame": 216,
+      "last_frame": 329,
+      "frames_active": 112,
+      "duration_seconds": 3.767,
+      "mean_confidence": 0.7569,
+      "mean_distance_m": 6.197
+    },
+    "Camera_0003_250": {
+      "camera_id": "Camera_0003",
+      "class": "person",
+      "first_frame": 264,
+      "last_frame": 365,
+      "frames_active": 70,
+      "duration_seconds": 3.367,
+      "mean_confidence": 0.2944,
+      "mean_distance_m": 3.672
+    },
+    "Camera_0003_251": {
+      "camera_id": "Camera_0003",
+      "class": "person",
+      "first_frame": 324,
+      "last_frame": 960,
+      "frames_active": 634,
+      "duration_seconds": 21.2,
+      "mean_confidence": 0.7818,
+      "mean_distance_m": 6.638
+    },
+    "Camera_0003_255": {
+      "camera_id": "Camera_0003",
+      "class": "person",
+      "first_frame": 416,
+      "last_frame": 750,
+      "frames_active": 288,
+      "duration_seconds": 11.133,
+      "mean_confidence": 0.3093,
+      "mean_distance_m": 3.678
+    },
+    "Camera_0003_257": {
+      "camera_id": "Camera_0003",
+      "class": "person",
+      "first_frame": 421,
+      "last_frame": 428,
+      "frames_active": 8,
+      "duration_seconds": 0.233,
+      "mean_confidence": 0.4052,
+      "mean_distance_m": 2.819
+    },
+    "Camera_0003_266": {
+      "camera_id": "Camera_0003",
+      "class": "person",
+      "first_frame": 811,
+      "last_frame": 821,
+      "frames_active": 11,
+      "duration_seconds": 0.333,
+      "mean_confidence": 0.3085,
+      "mean_distance_m": 3.578
+    },
+    "Camera_0003_268": {
+      "camera_id": "Camera_0003",
+      "class": "person",
+      "first_frame": 838,
+      "last_frame": 838,
+      "frames_active": 1,
+      "duration_seconds": 0.0,
+      "mean_confidence": 0.3298,
+      "mean_distance_m": 3.583
+    },
+    "Camera_0003_270": {
+      "camera_id": "Camera_0003",
+      "class": "person",
+      "first_frame": 841,
+      "last_frame": 846,
+      "frames_active": 6,
+      "duration_seconds": 0.167,
+      "mean_confidence": 0.2956,
+      "mean_distance_m": 3.93
+    },
+    "Camera_0003_278": {
+      "camera_id": "Camera_0003",
+      "class": "person",
+      "first_frame": 960,
+      "last_frame": 965,
+      "frames_active": 6,
+      "duration_seconds": 0.167,
+      "mean_confidence": 0.7168,
+      "mean_distance_m": 3.571
+    },
+    "Camera_0003_279": {
+      "camera_id": "Camera_0003",
+      "class": "person",
+      "first_frame": 964,
+      "last_frame": 971,
+      "frames_active": 8,
+      "duration_seconds": 0.233,
+      "mean_confidence": 0.6654,
+      "mean_distance_m": 3.743
+    },
+    "Camera_0003_286": {
+      "camera_id": "Camera_0003",
+      "class": "person",
+      "first_frame": 1184,
+      "last_frame": 1315,
+      "frames_active": 131,
+      "duration_seconds": 4.367,
+      "mean_confidence": 0.8426,
+      "mean_distance_m": 3.756
+    },
+    "Camera_0003_287": {
+      "camera_id": "Camera_0003",
+      "class": "forklift",
+      "first_frame": 1229,
+      "last_frame": 1247,
+      "frames_active": 10,
+      "duration_seconds": 0.6,
+      "mean_confidence": 0.3343,
+      "mean_distance_m": 7.853
+    },
+    "Camera_0003_290": {
+      "camera_id": "Camera_0003",
+      "class": "person",
+      "first_frame": 1259,
+      "last_frame": 1301,
+      "frames_active": 38,
+      "duration_seconds": 1.4,
+      "mean_confidence": 0.5164,
+      "mean_distance_m": 12.472
+    },
+    "Camera_0003_294": {
+      "camera_id": "Camera_0003",
+      "class": "forklift",
+      "first_frame": 1284,
+      "last_frame": 1323,
+      "frames_active": 22,
+      "duration_seconds": 1.3,
+      "mean_confidence": 0.3341,
+      "mean_distance_m": 8.073
+    },
+    "Camera_0003_299": {
+      "camera_id": "Camera_0003",
+      "class": "person",
+      "first_frame": 1434,
+      "last_frame": 1439,
+      "frames_active": 6,
+      "duration_seconds": 0.167,
+      "mean_confidence": 0.412,
+      "mean_distance_m": 3.871
+    },
+    "Camera_0003_301": {
+      "camera_id": "Camera_0003",
+      "class": "person",
+      "first_frame": 1471,
+      "last_frame": 1799,
+      "frames_active": 325,
+      "duration_seconds": 10.933,
+      "mean_confidence": 0.7067,
+      "mean_distance_m": 3.475
+    },
+    "Camera_0003_302": {
+      "camera_id": "Camera_0003",
+      "class": "person",
+      "first_frame": 1541,
+      "last_frame": 1542,
+      "frames_active": 2,
+      "duration_seconds": 0.033,
+      "mean_confidence": 0.3044,
+      "mean_distance_m": 3.716
+    }
+  }
+}

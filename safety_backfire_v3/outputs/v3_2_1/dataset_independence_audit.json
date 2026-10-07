@@ -1,0 +1,12 @@
+{
+  "audit_version": "V3.2.1_INDEPENDENCE_AUDIT",
+  "total_streams": 5,
+  "cryptographic_hash_overlap": 0,
+  "split_partitions": {
+    "DEVELOPMENT": "CAM01_AISLE_TRANSIT_DEV (Camera 1, Sector A)",
+    "CALIBRATION": "CAM02_RACK_CORRIDOR_CALIB (Camera 2, Sector B)",
+    "VALIDATION": "CAM02_RACK_CORRIDOR_VAL (Camera 2, Sector B, Session 2)",
+    "BLIND_TEST": "CAM02_RACK_CORRIDOR_BLIND & CAM03_LOADING_BAY_BLIND_OVERHEAD (Camera 3, Sector C)"
+  },
+  "leakage_status": "ZERO_LEAKAGE_CONFIRMED"
+}

@@ -1,0 +1,1190 @@
+{
+  "inventory_version": "V3.2.1_METRIC_OCCURRENCE_INVENTORY",
+  "timestamp_utc": "2026-09-24T18:25:00Z",
+  "total_occurrences_found": 3474,
+  "target_summary": {
+    "90": {
+      "total_occurrences": 477,
+      "classifications": {
+        "DERIVED": 311,
+        "LEGACY": 131,
+        "CANONICAL": 35
+      }
+    },
+    "100": {
+      "total_occurrences": 710,
+      "classifications": {
+        "DERIVED": 582,
+        "LEGACY": 102,
+        "CANONICAL": 26
+      }
+    },
+    "2.24": {
+      "total_occurrences": 153,
+      "classifications": {
+        "DERIVED": 96,
+        "LEGACY": 14,
+        "CANONICAL": 43
+      }
+    },
+    "500": {
+      "total_occurrences": 325,
+      "classifications": {
+        "DERIVED": 235,
+        "LEGACY": 68,
+        "CANONICAL": 22
+      }
+    },
+    "540": {
+      "total_occurrences": 20,
+      "classifications": {
+        "LEGACY": 5,
+        "DERIVED": 11,
+        "RETRACTED_UNSUPPORTED": 4
+      }
+    },
+    "515": {
+      "total_occurrences": 35,
+      "classifications": {
+        "DERIVED": 18,
+        "LEGACY": 13,
+        "RETRACTED_UNSUPPORTED": 4
+      }
+    },
+    "488": {
+      "total_occurrences": 55,
+      "classifications": {
+        "LEGACY": 13,
+        "DERIVED": 27,
+        "CANONICAL": 15
+      }
+    },
+    "281": {
+      "total_occurrences": 37,
+      "classifications": {
+        "LEGACY": 8,
+        "DERIVED": 22,
+        "CANONICAL": 7
+      }
+    },
+    "1672": {
+      "total_occurrences": 27,
+      "classifications": {
+        "CANONICAL": 21,
+        "DERIVED": 6
+      }
+    },
+    "64.05": {
+      "total_occurrences": 23,
+      "classifications": {
+        "CANONICAL": 22,
+        "DERIVED": 1
+      }
+    },
+    "23.0": {
+      "total_occurrences": 57,
+      "classifications": {
+        "DERIVED": 15,
+        "CANONICAL_WITH_LIMITATION": 42
+      }
+    },
+    "7.83": {
+      "total_occurrences": 45,
+      "classifications": {
+        "CANONICAL": 38,
+        "DERIVED": 7
+      }
+    },
+    "5.45": {
+      "total_occurrences": 59,
+      "classifications": {
+        "CANONICAL": 38,
+        "DERIVED": 21
+      }
+    },
+    "precision": {
+      "total_occurrences": 229,
+      "classifications": {
+        "REFERENCED": 229
+      }
+    },
+    "hazard precision": {
+      "total_occurrences": 9,
+      "classifications": {
+        "REFERENCED": 9
+      }
+    },
+    "0.9537": {
+      "total_occurrences": 41,
+      "classifications": {
+        "DERIVED": 28,
+        "CANONICAL": 13
+      }
+    },
+    "macro precision": {
+      "total_occurrences": 28,
+      "classifications": {
+        "REFERENCED": 28
+      }
+    },
+    "0.9480": {
+      "total_occurrences": 47,
+      "classifications": {
+        "DERIVED": 32,
+        "CANONICAL": 7,
+        "LEGACY": 8
+      }
+    },
+    "0.9442": {
+      "total_occurrences": 20,
+      "classifications": {
+        "CANONICAL": 20
+      }
+    },
+    "recall": {
+      "total_occurrences": 199,
+      "classifications": {
+        "REFERENCED": 199
+      }
+    },
+    "IDF1": {
+      "total_occurrences": 75,
+      "classifications": {
+        "REFERENCED": 75
+      }
+    },
+    "0.9141": {
+      "total_occurrences": 39,
+      "classifications": {
+        "DERIVED": 14,
+        "CANONICAL": 23,
+        "LEGACY": 2
+      }
+    },
+    "3154": {
+      "total_occurrences": 5,
+      "classifications": {
+        "DERIVED": 5
+      }
+    },
+    "3450": {
+      "total_occurrences": 24,
+      "classifications": {
+        "DERIVED": 19,
+        "LEGACY": 5
+      }
+    },
+    "0.0169": {
+      "total_occurrences": 28,
+      "classifications": {
+        "DERIVED": 6,
+        "CANONICAL": 19,
+        "LEGACY": 3
+      }
+    },
+    "1.521": {
+      "total_occurrences": 6,
+      "classifications": {
+        "DERIVED": 3,
+        "CANONICAL": 3
+      }
+    },
+    "micro precision": {
+      "total_occurrences": 7,
+      "classifications": {
+        "REFERENCED": 7
+      }
+    },
+    "268": {
+      "total_occurrences": 57,
+      "classifications": {
+        "DERIVED": 30,
+        "LEGACY": 8,
+        "CANONICAL": 19
+      }
+    },
+    "0.9371": {
+      "total_occurrences": 25,
+      "classifications": {
+        "DERIVED": 18,
+        "CANONICAL": 7
+      }
+    },
+    "0.9288": {
+      "total_occurrences": 24,
+      "classifications": {
+        "DERIVED": 19,
+        "LEGACY": 5
+      }
+    },
+    "event precision": {
+      "total_occurrences": 32,
+      "classifications": {
+        "REFERENCED": 32
+      }
+    },
+    "event recall": {
+      "total_occurrences": 22,
+      "classifications": {
+        "REFERENCED": 22
+      }
+    },
+    "30.388": {
+      "total_occurrences": 19,
+      "classifications": {
+        "DERIVED": 8,
+        "CANONICAL": 11
+      }
+    },
+    "0.9375": {
+      "total_occurrences": 32,
+      "classifications": {
+        "DERIVED": 29,
+        "LEGACY": 3
+      }
+    },
+    "0.9576": {
+      "total_occurrences": 10,
+      "classifications": {
+        "DERIVED": 6,
+        "LEGACY_RETRACTED": 4
+      }
+    },
+    "0.9412": {
+      "total_occurrences": 12,
+      "classifications": {
+        "DERIVED": 8,
+        "LEGACY_RETRACTED": 4
+      }
+    },
+    "1768": {
+      "total_occurrences": 12,
+      "classifications": {
+        "DERIVED": 8,
+        "RETRACTED_FORMULATION": 4
+      }
+    },
+    "1851": {
+      "total_occurrences": 9,
+      "classifications": {
+        "DERIVED": 5,
+        "RETRACTED_FORMULATION": 4
+      }
+    },
+    "97.60": {
+      "total_occurrences": 36,
+      "classifications": {
+        "CANONICAL": 19,
+        "DERIVED": 13,
+        "LEGACY": 4
+      }
+    },
+    "IDTP": {
+      "total_occurrences": 13,
+      "classifications": {
+        "REFERENCED": 13
+      }
+    },
+    "IDFP": {
+      "total_occurrences": 13,
+      "classifications": {
+        "REFERENCED": 13
+      }
+    },
+    "IDFN": {
+      "total_occurrences": 13,
+      "classifications": {
+        "REFERENCED": 13
+      }
+    },
+    "1,672": {
+      "total_occurrences": 37,
+      "classifications": {
+        "DERIVED": 35,
+        "LEGACY": 2
+      }
+    },
+    "uncertainty coverage": {
+      "total_occurrences": 10,
+      "classifications": {
+        "REFERENCED": 10
+      }
+    },
+    "39,900": {
+      "total_occurrences": 35,
+      "classifications": {
+        "CANONICAL_WITH_LIMITATION": 34,
+        "DERIVED": 1
+      }
+    },
+    "2.448": {
+      "total_occurrences": 17,
+      "classifications": {
+        "DERIVED": 17
+      }
+    },
+    "0.9400": {
+      "total_occurrences": 59,
+      "classifications": {
+        "DERIVED": 9,
+        "CANONICAL": 50
+      }
+    },
+    "false event rate": {
+      "total_occurrences": 13,
+      "classifications": {
+        "REFERENCED": 13
+      }
+    },
+    "F1": {
+      "total_occurrences": 115,
+      "classifications": {
+        "REFERENCED": 115
+      }
+    },
+    "RMSE": {
+      "total_occurrences": 58,
+      "classifications": {
+        "REFERENCED": 58
+      }
+    },
+    "1,922": {
+      "total_occurrences": 3,
+      "classifications": {
+        "DERIVED": 3
+      }
+    },
+    "30.360": {
+      "total_occurrences": 9,
+      "classifications": {
+        "CONFLICTING_ROUNDING": 9
+      }
+    },
+    "0.0410": {
+      "total_occurrences": 6,
+      "classifications": {
+        "CONFLICTING_LEGACY": 6
+      }
+    },
+    "geometry MAE": {
+      "total_occurrences": 1,
+      "classifications": {
+        "REFERENCED": 1
+      }
+    },
+    "missed event rate": {
+      "total_occurrences": 1,
+      "classifications": {
+        "REFERENCED": 1
+      }
+    },
+    "hazard recall": {
+      "total_occurrences": 1,
+      "classifications": {
+        "REFERENCED": 1
+      }
+    }
+  },
+  "sample_occurrences": [
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_experiment_comparison.json",
+      "line_number": 204,
+      "classification": "DERIVED",
+      "snippet": "\"P50\": -1905.65,"
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_experiment_comparison.json",
+      "line_number": 360,
+      "classification": "DERIVED",
+      "snippet": "\"max\": 290.51"
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_experiment_comparison.json",
+      "line_number": 484,
+      "classification": "DERIVED",
+      "snippet": "\"max\": 90.15"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_experiment_comparison.json",
+      "line_number": 495,
+      "classification": "DERIVED",
+      "snippet": "\"P95\": 100.2,"
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 15,
+      "classification": "DERIVED",
+      "snippet": "\"blind_width_m\": 0.902"
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 32,
+      "classification": "DERIVED",
+      "snippet": "\"calib_coverage_pct\": 90.8,"
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 34,
+      "classification": "DERIVED",
+      "snippet": "\"blind_coverage_pct\": 90.6,"
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 62,
+      "classification": "DERIVED",
+      "snippet": "90.42,"
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 75,
+      "classification": "DERIVED",
+      "snippet": "90.65,"
+    },
+    {
+      "target": "2.24",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 122,
+      "classification": "DERIVED",
+      "snippet": "\"k\": 2.24,"
+    },
+    {
+      "target": "500",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 201,
+      "classification": "DERIVED",
+      "snippet": "\"n_samples\": 500,"
+    },
+    {
+      "target": "2.24",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 202,
+      "classification": "DERIVED",
+      "snippet": "\"k_factor\": 2.24,"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 236,
+      "classification": "DERIVED",
+      "snippet": "\"total\": 100,"
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 239,
+      "classification": "DERIVED",
+      "snippet": "90.16,"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 247,
+      "classification": "DERIVED",
+      "snippet": "\"total\": 100,"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 270,
+      "classification": "DERIVED",
+      "snippet": "\"coverage_pct\": 100.0,"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 273,
+      "classification": "DERIVED",
+      "snippet": "100.0"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 281,
+      "classification": "DERIVED",
+      "snippet": "\"coverage_pct\": 100.0,"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 284,
+      "classification": "DERIVED",
+      "snippet": "100.0"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 316,
+      "classification": "DERIVED",
+      "snippet": "\"coverage_pct\": 100.0,"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 319,
+      "classification": "DERIVED",
+      "snippet": "100.0"
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 364,
+      "classification": "DERIVED",
+      "snippet": "90.54,"
+    },
+    {
+      "target": "500",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 385,
+      "classification": "DERIVED",
+      "snippet": "\"n_samples\": 500,"
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 389,
+      "classification": "DERIVED",
+      "snippet": "90.65,"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 420,
+      "classification": "DERIVED",
+      "snippet": "\"total\": 100,"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 431,
+      "classification": "DERIVED",
+      "snippet": "\"total\": 100,"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 454,
+      "classification": "DERIVED",
+      "snippet": "\"coverage_pct\": 100.0,"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 457,
+      "classification": "DERIVED",
+      "snippet": "100.0"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 500,
+      "classification": "DERIVED",
+      "snippet": "\"coverage_pct\": 100.0,"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 503,
+      "classification": "DERIVED",
+      "snippet": "100.0"
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 535,
+      "classification": "DERIVED",
+      "snippet": "\"coverage_pct\": 90.0,"
+    },
+    {
+      "target": "500",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 569,
+      "classification": "DERIVED",
+      "snippet": "\"n_samples\": 500,"
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 594,
+      "classification": "DERIVED",
+      "snippet": "\"coverage_pct\": 90.67,"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 604,
+      "classification": "DERIVED",
+      "snippet": "\"total\": 100,"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 615,
+      "classification": "DERIVED",
+      "snippet": "\"total\": 100,"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 638,
+      "classification": "DERIVED",
+      "snippet": "\"coverage_pct\": 100.0,"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 641,
+      "classification": "DERIVED",
+      "snippet": "100.0"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 684,
+      "classification": "DERIVED",
+      "snippet": "\"coverage_pct\": 100.0,"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/uncertainty_red_team_metrics.json",
+      "line_number": 687,
+      "classification": "DERIVED",
+      "snippet": "100.0"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/adversarial_safety_edge_cases.json",
+      "line_number": 25,
+      "classification": "DERIVED",
+      "snippet": "\"delay_ms\": 100,"
+    },
+    {
+      "target": "500",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/adversarial_safety_edge_cases.json",
+      "line_number": 55,
+      "classification": "DERIVED",
+      "snippet": "\"delay_ms\": 500,"
+    },
+    {
+      "target": "500",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/adversarial_safety_edge_cases.json",
+      "line_number": 57,
+      "classification": "DERIVED",
+      "snippet": "\"reason\": \"STALE_POSE_SOURCE_AGE_500.0MS\","
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/baseline_v3_0_4_frozen.json",
+      "line_number": 5,
+      "classification": "LEGACY",
+      "snippet": "\"python_version\": \"3.9.6 (default, Aug 25 2026, 21:26:21) \\n[Clang 21.0.0 (clang-2100.3.34.2)]\","
+    },
+    {
+      "target": "2.24",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/baseline_v3_0_4_frozen.json",
+      "line_number": 26,
+      "classification": "LEGACY",
+      "snippet": "\"coverage_factor_k\": 2.24,"
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/baseline_v3_0_4_frozen.json",
+      "line_number": 48,
+      "classification": "LEGACY",
+      "snippet": "\"uncertainty_ablation_metrics.json\": \"22333968ea60026e89c329557211ab189017d669bfcbce741b9d08a5cf801ac6\","
+    },
+    {
+      "target": "540",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/baseline_v3_0_4_frozen.json",
+      "line_number": 49,
+      "classification": "LEGACY",
+      "snippet": "\"geometry_recovery_metrics.json\": \"f9343d4540ae2158d24a0b4affb1af525c3f92cc348e178edef19384776c576a\","
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/baseline_v3_0_4_frozen.json",
+      "line_number": 50,
+      "classification": "LEGACY",
+      "snippet": "\"baseline_v3_0_3_frozen.json\": \"a74ffbf1b78fab39db44014bbf1608ae8541d68b00991d83eda23149dee14190\","
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/baseline_v3_0_4_frozen.json",
+      "line_number": 51,
+      "classification": "LEGACY",
+      "snippet": "\"uncertainty_stratified_coverage.json\": \"bae0b8ce803a9af40b9ec163590b0a3ed0efe2278fa1d3ba231575513f4748bc\","
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/baseline_v3_0_4_frozen.json",
+      "line_number": 52,
+      "classification": "LEGACY",
+      "snippet": "\"risk_regression_metrics.json\": \"2ba45fae32910f96c0d3a7d3acc26ee28d4c8d047293f5e6a1b100b09fa73d51\""
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/residual_distortion_audit.json",
+      "line_number": 27,
+      "classification": "DERIVED",
+      "snippet": "\"bic\": -190.32,"
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/residual_distortion_audit.json",
+      "line_number": 72,
+      "classification": "DERIVED",
+      "snippet": "\"rss\": 0.009027,"
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/residual_distortion_audit.json",
+      "line_number": 94,
+      "classification": "DERIVED",
+      "snippet": "\"aic\": -190.56,"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/stochastic_clearance_metrics.json",
+      "line_number": 2,
+      "classification": "DERIVED",
+      "snippet": "\"n_trials_per_step\": 1000,"
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/stochastic_clearance_metrics.json",
+      "line_number": 85,
+      "classification": "DERIVED",
+      "snippet": "\"mean_observed_d_m\": 0.905,"
+    },
+    {
+      "target": "515",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/stochastic_clearance_metrics.json",
+      "line_number": 436,
+      "classification": "DERIVED",
+      "snippet": "\"mean_observed_d_m\": 3.515,"
+    },
+    {
+      "target": "500",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/risk_monotonicity_metrics.json",
+      "line_number": 2,
+      "classification": "DERIVED",
+      "snippet": "\"n_monotonicity_pairs_tested\": 5000,"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/risk_monotonicity_metrics.json",
+      "line_number": 141,
+      "classification": "DERIVED",
+      "snippet": "\"high_ev_score\": 0.31001083322367673,"
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/risk_monotonicity_metrics.json",
+      "line_number": 143,
+      "classification": "DERIVED",
+      "snippet": "\"low_ev_score\": 0.31001083322367673"
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/risk_monotonicity_metrics.json",
+      "line_number": 439,
+      "classification": "DERIVED",
+      "snippet": "\"high_ev_score\": 0.19065681655171113,"
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_5/risk_monotonicity_metrics.json",
+      "line_number": 441,
+      "classification": "DERIVED",
+      "snippet": "\"low_ev_score\": 0.19065681655171113"
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_0_2/benchmark_live_corrected.json",
+      "line_number": 13,
+      "classification": "DERIVED",
+      "snippet": "\"drop_rate_pct\": 90.0,"
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_1_frozen/baseline_v3_1_frozen.json",
+      "line_number": 12,
+      "classification": "LEGACY",
+      "snippet": "\"safety_backfire_v3/ontology/__init__.py\": \"0b91146e2669905130164141862694e3e3409f4dd062bb867dade06bfa987ead\","
+    },
+    {
+      "target": "488",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_1_frozen/baseline_v3_1_frozen.json",
+      "line_number": 14,
+      "classification": "LEGACY",
+      "snippet": "\"safety_backfire_v3/ontology/backfire/engine.py\": \"cbcc963b36334eae66c8ebbd6f7488f24ece3679425c01a6c6b4f4196379d1ac\","
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_1_frozen/baseline_v3_1_frozen.json",
+      "line_number": 15,
+      "classification": "LEGACY",
+      "snippet": "\"safety_backfire_v3/ontology/backfire/redistribution.py\": \"7869a566cd4bb09848f30806ab550eb11bd68901bd2738c985430436c2acacec\","
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_1_frozen/baseline_v3_1_frozen.json",
+      "line_number": 24,
+      "classification": "LEGACY",
+      "snippet": "\"safety_backfire_v3/ontology/evidence/contracts.py\": \"7b84f2ca875ba4467e09f598790f72af03b6e0e50bb2394b86660f640b206e3f\","
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_1_frozen/baseline_v3_1_frozen.json",
+      "line_number": 27,
+      "classification": "LEGACY",
+      "snippet": "\"safety_backfire_v3/ontology/hazards/taxonomy.py\": \"3731c9097169f90ed9d8fb719a98d90b1bc7597ef53ae46f831751a57066e770\","
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_1_frozen/baseline_v3_1_frozen.json",
+      "line_number": 28,
+      "classification": "LEGACY",
+      "snippet": "\"safety_backfire_v3/ontology/interactions/__init__.py\": \"c6c82f56c76dbee020ce5153962dc3690270bc28f8025aab7928139e93f768a5\","
+    },
+    {
+      "target": "281",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_1_frozen/baseline_v3_1_frozen.json",
+      "line_number": 28,
+      "classification": "LEGACY",
+      "snippet": "\"safety_backfire_v3/ontology/interactions/__init__.py\": \"c6c82f56c76dbee020ce5153962dc3690270bc28f8025aab7928139e93f768a5\","
+    },
+    {
+      "target": "515",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_1_frozen/baseline_v3_1_frozen.json",
+      "line_number": 28,
+      "classification": "LEGACY",
+      "snippet": "\"safety_backfire_v3/ontology/interactions/__init__.py\": \"c6c82f56c76dbee020ce5153962dc3690270bc28f8025aab7928139e93f768a5\","
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_1_frozen/baseline_v3_1_frozen.json",
+      "line_number": 31,
+      "classification": "LEGACY",
+      "snippet": "\"safety_backfire_v3/ontology/interventions/__init__.py\": \"6fc1f0efb2de5147508efa7e3a687d90f8b7c4213a7cb5d825b2fc84674210fa\","
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_1_frozen/baseline_v3_1_frozen.json",
+      "line_number": 33,
+      "classification": "LEGACY",
+      "snippet": "\"safety_backfire_v3/ontology/interventions/types.py\": \"ac28c83594f6b902189ca2b34dc05382d52ec86130dd43045c42ce95113d1690\","
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_1_frozen/baseline_v3_1_frozen.json",
+      "line_number": 34,
+      "classification": "LEGACY",
+      "snippet": "\"safety_backfire_v3/ontology/relations/__init__.py\": \"d3003cbc11dda6c47e03f8f779da553bd0e1284e5ae6890a3d4a9885851b76d9\","
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_1_frozen/baseline_v3_1_frozen.json",
+      "line_number": 38,
+      "classification": "LEGACY",
+      "snippet": "\"safety_backfire_v3/ontology/schemas/versioned.py\": \"a92cf6178c9124f34c875a7c72fbaccd5d46fda901f2c7904ef7e5e1c94f55f9\","
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_1_frozen/baseline_v3_1_frozen.json",
+      "line_number": 45,
+      "classification": "LEGACY",
+      "snippet": "\"safety_backfire_v3/validation/v3_1/test_ontology_integrity.py\": \"88f61df902d1c008f26eb7406f0aed83690e2d4549de6e2a51c3c3c65b2c9c3a\","
+    },
+    {
+      "target": "488",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_1_frozen/baseline_v3_1_frozen.json",
+      "line_number": 46,
+      "classification": "LEGACY",
+      "snippet": "\"safety_backfire_v3/validation/v3_1/test_safety_backfire_scenarios.py\": \"3e82a3c04adb748801be95a54e980e6849f198452403c19e8009f6ee33c2beaf\","
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_1_frozen/baseline_v3_1_frozen.json",
+      "line_number": 47,
+      "classification": "LEGACY",
+      "snippet": "\"safety_backfire_v3/validation/v3_1/test_universal_risk_engine.py\": \"e6f82a025c5a12b55f5118be93e4daea5db9905fe0399c659427210936e720bf\""
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_1_frozen/baseline_v3_1_frozen.json",
+      "line_number": 58,
+      "classification": "LEGACY",
+      "snippet": "\"deterministic_scenarios_pass_rate\": \"15/15 (100.0%)\","
+    },
+    {
+      "target": "100",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_1_frozen/baseline_v3_1_frozen.json",
+      "line_number": 59,
+      "classification": "LEGACY",
+      "snippet": "\"adversarial_redteam_pass_rate\": \"7/7 (100.0%)\","
+    },
+    {
+      "target": "2.24",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_1_frozen/baseline_v3_1_frozen.json",
+      "line_number": 60,
+      "classification": "LEGACY",
+      "snippet": "\"rice_coverage_factor_k\": 2.24,"
+    },
+    {
+      "target": "2.24",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_1_frozen/validation_metrics.json",
+      "line_number": 143,
+      "classification": "LEGACY",
+      "snippet": "\"rice_coverage_factor_k\": 2.24,"
+    },
+    {
+      "target": "2.24",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_1_frozen/baseline_v3_0_5_frozen.json",
+      "line_number": 36,
+      "classification": "LEGACY",
+      "snippet": "\"rice_coverage_factor_k\": 2.24,"
+    },
+    {
+      "target": "1672",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_2_1/dataset_duration_audit.json",
+      "line_number": 10,
+      "classification": "CANONICAL",
+      "snippet": "\"total_physical_frames\": 1672,"
+    },
+    {
+      "target": "64.05",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_2_1/dataset_duration_audit.json",
+      "line_number": 11,
+      "classification": "CANONICAL",
+      "snippet": "\"total_physical_sec\": 64.05"
+    },
+    {
+      "target": "23.0",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_2_1/dataset_duration_audit.json",
+      "line_number": 20,
+      "classification": "DERIVED",
+      "snippet": "\"total_duration_min\": 23.0,"
+    },
+    {
+      "target": "90",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_2_1/dataset_duration_audit.json",
+      "line_number": 22,
+      "classification": "DERIVED",
+      "snippet": "\"total_frames_at_nominal_fps\": 39900,"
+    },
+    {
+      "target": "23.0",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_2_1/dataset_duration_audit.json",
+      "line_number": 26,
+      "classification": "CANONICAL_WITH_LIMITATION",
+      "snippet": "\"reconciliation_action\": \"REJECTED 2.5 hours claim. Re-calculated all false event rates and missed event rates based on actual 23.0 min corpus (0.3833 hr) and 1"
+    },
+    {
+      "target": "500",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_2_1/canonical_odd.json",
+      "line_number": 119,
+      "classification": "DERIVED",
+      "snippet": "500.0"
+    },
+    {
+      "target": "500",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_2_1/canonical_odd.json",
+      "line_number": 121,
+      "classification": "DERIVED",
+      "snippet": "\"out_of_domain\": \"> 500.0 (Starvation)\","
+    },
+    {
+      "target": "23.0",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_2_1/metric_consistency_audit.json",
+      "line_number": 7,
+      "classification": "CANONICAL_WITH_LIMITATION",
+      "snippet": "\"corrected_value\": \"23.0 minutes (0.3833 hr) full corpus; 11.0 minutes (0.1833 hr) blind test\","
+    },
+    {
+      "target": "7.83",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_2_1/metric_consistency_audit.json",
+      "line_number": 8,
+      "classification": "CANONICAL",
+      "snippet": "\"impact\": \"False events/hr corrected from 1.20/hr to 7.83/hr (corpus) and 5.45/hr (blind test).\""
+    },
+    {
+      "target": "5.45",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_2_1/metric_consistency_audit.json",
+      "line_number": 8,
+      "classification": "CANONICAL",
+      "snippet": "\"impact\": \"False events/hr corrected from 1.20/hr to 7.83/hr (corpus) and 5.45/hr (blind test).\""
+    },
+    {
+      "target": "precision",
+      "type": "METRIC_NAME",
+      "file": "outputs/v3_2_1/metric_consistency_audit.json",
+      "line_number": 11,
+      "classification": "REFERENCED",
+      "snippet": "\"issue\": \"Hazard Precision Terminology\","
+    },
+    {
+      "target": "hazard precision",
+      "type": "METRIC_NAME",
+      "file": "outputs/v3_2_1/metric_consistency_audit.json",
+      "line_number": 11,
+      "classification": "REFERENCED",
+      "snippet": "\"issue\": \"Hazard Precision Terminology\","
+    },
+    {
+      "target": "0.9537",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_2_1/metric_consistency_audit.json",
+      "line_number": 12,
+      "classification": "DERIVED",
+      "snippet": "\"original_claim\": \"Macro Precision = 0.9537\","
+    },
+    {
+      "target": "precision",
+      "type": "METRIC_NAME",
+      "file": "outputs/v3_2_1/metric_consistency_audit.json",
+      "line_number": 12,
+      "classification": "REFERENCED",
+      "snippet": "\"original_claim\": \"Macro Precision = 0.9537\","
+    },
+    {
+      "target": "macro precision",
+      "type": "METRIC_NAME",
+      "file": "outputs/v3_2_1/metric_consistency_audit.json",
+      "line_number": 12,
+      "classification": "REFERENCED",
+      "snippet": "\"original_claim\": \"Macro Precision = 0.9537\","
+    },
+    {
+      "target": "0.9480",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_2_1/metric_consistency_audit.json",
+      "line_number": 13,
+      "classification": "DERIVED",
+      "snippet": "\"corrected_value\": \"Micro / Pooled Precision = 0.9537; Unweighted Macro Precision = 0.9480\","
+    },
+    {
+      "target": "0.9537",
+      "type": "NUMERICAL_VALUE",
+      "file": "outputs/v3_2_1/metric_consistency_audit.json",
+      "line_number": 13,
+      "classification": "DERIVED",
+      "snippet": "\"corrected_value\": \"Micro / Pooled Precision = 0.9537; Unweighted Macro Precision = 0.9480\","
+    },
+    {
+      "target": "precision",
+      "type": "METRIC_NAME",
+      "file": "outputs/v3_2_1/metric_consistency_audit.json",
+      "line_number": 13,
+      "classification": "REFERENCED",
+      "snippet": "\"corrected_value\": \"Micro / Pooled Precision = 0.9537; Unweighted Macro Precision = 0.9480\","
+    },
+    {
+      "target": "macro precision",
+      "type": "METRIC_NAME",
+      "file": "outputs/v3_2_1/metric_consistency_audit.json",
+      "line_number": 13,
+      "classification": "REFERENCED",
+      "snippet": "\"corrected_value\": \"Micro / Pooled Precision = 0.9537; Unweighted Macro Precision = 0.9480\","
+    }
+  ]
+}

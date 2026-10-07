@@ -1,0 +1,156 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FacilityGeometrySurveySchema",
+  "description": "Validation schema for geodetic, CAD, and optical facility survey, extrinsics, zone boundaries, and ground plane definitions.",
+  "type": "object",
+  "required": [
+    "survey_id",
+    "facility_id",
+    "survey_timestamp_utc",
+    "survey_instrumentation",
+    "coordinate_reference_system",
+    "facility_origin_definition",
+    "ground_plane_equation",
+    "delineated_zones",
+    "sensor_poses_extrinsics",
+    "vehicle_nominal_routes",
+    "survey_integrity_hash"
+  ],
+  "properties": {
+    "survey_id": {
+      "type": "string",
+      "pattern": "^GEO-SURV-[0-9]{8}-[0-9]{4}$"
+    },
+    "facility_id": { "type": "string" },
+    "survey_timestamp_utc": { "type": "string", "format": "date-time" },
+    "survey_instrumentation": {
+      "type": "object",
+      "required": ["total_station_model", "laser_tracker_serial", "surveyor_license_id", "accuracy_tolerance_mm"],
+      "properties": {
+        "total_station_model": { "type": "string" },
+        "laser_tracker_serial": { "type": "string" },
+        "surveyor_license_id": { "type": "string" },
+        "accuracy_tolerance_mm": { "type": "number", "maximum": 5.0 }
+      }
+    },
+    "coordinate_reference_system": {
+      "type": "object",
+      "required": ["crs_type", "origin_description", "axes_convention"],
+      "properties": {
+        "crs_type": { "type": "string", "enum": ["FACILITY_LOCAL_CARTESIAN_RIGHT_HANDED", "UTM_ZONE_CONFORMAL"] },
+        "origin_description": { "type": "string" },
+        "axes_convention": { "type": "string", "const": "X_FORWARD_Y_LEFT_Z_UP" }
+      }
+    },
+    "facility_origin_definition": {
+      "type": "object",
+      "required": ["monument_id", "northing_m", "easting_m", "elevation_m", "monument_physical_description"],
+      "properties": {
+        "monument_id": { "type": "string" },
+        "northing_m": { "type": "number" },
+        "easting_m": { "type": "number" },
+        "elevation_m": { "type": "number" },
+        "monument_physical_description": { "type": "string" }
+      }
+    },
+    "ground_plane_equation": {
+      "type": "object",
+      "description": "Plane coefficients Ax + By + Cz + D = 0 representing the operational floor slab",
+      "required": ["a", "b", "c", "d", "residual_rms_error_mm"],
+      "properties": {
+        "a": { "type": "number" },
+        "b": { "type": "number" },
+        "c": { "type": "number" },
+        "d": { "type": "number" },
+        "residual_rms_error_mm": { "type": "number", "maximum": 3.0 }
+      }
+    },
+    "delineated_zones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["zone_id", "zone_type", "polygon_vertices_xyz", "secondary_aisle_depth_extent_m"],
+        "properties": {
+          "zone_id": { "type": "string" },
+          "zone_type": { "type": "string", "enum": ["PRIMARY_CORRIDOR", "SECONDARY_CROSS_AISLE", "INTERSECTION_JUNCTION", "EXCLUSION_BARRIER_PERIMETER", "SAFE_TEST_BUFFER"] },
+          "polygon_vertices_xyz": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": { "type": "number" },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "minItems": 4
+          },
+          "secondary_aisle_depth_extent_m": { "type": "number" }
+        }
+      }
+    },
+    "sensor_poses_extrinsics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "sensor_id",
+          "sensor_type",
+          "translation_xyz_m",
+          "rotation_rpy_deg",
+          "rotation_quaternion_xyzw",
+          "reprojection_error_px",
+          "calibration_version"
+        ],
+        "properties": {
+          "sensor_id": { "type": "string" },
+          "sensor_type": { "type": "string", "enum": ["CAMERA_A", "CAMERA_B", "CAMERA_C", "CAMERA_D", "LIDAR_FIXED", "UWB_ANCHOR"] },
+          "translation_xyz_m": {
+            "type": "array",
+            "items": { "type": "number" },
+            "minItems": 3,
+            "maxItems": 3
+          },
+          "rotation_rpy_deg": {
+            "type": "array",
+            "items": { "type": "number" },
+            "minItems": 3,
+            "maxItems": 3
+          },
+          "rotation_quaternion_xyzw": {
+            "type": "array",
+            "items": { "type": "number" },
+            "minItems": 4,
+            "maxItems": 4
+          },
+          "reprojection_error_px": { "type": "number", "maximum": 1.5 },
+          "calibration_version": { "type": "string" }
+        }
+      }
+    },
+    "vehicle_nominal_routes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["route_id", "route_type", "waypoints_xyz", "nominal_heading_deg"],
+        "properties": {
+          "route_id": { "type": "string" },
+          "route_type": { "type": "string", "enum": ["STRAIGHT_THROUGH", "RIGHT_SWERVE_DIVERSION", "LEFT_SWERVE_DIVERSION", "CONTROLLED_DECELERATION_STOP"] },
+          "waypoints_xyz": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": { "type": "number" },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "minItems": 2
+          },
+          "nominal_heading_deg": { "type": "number" }
+        }
+      }
+    },
+    "survey_integrity_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  }
+}

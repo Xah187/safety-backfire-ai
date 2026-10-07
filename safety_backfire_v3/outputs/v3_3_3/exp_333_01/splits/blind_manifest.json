@@ -1,0 +1,27 @@
+{
+  "manifest_version": "EXP_333_01_BLIND_MANIFEST",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "split_name": "EXTERNAL_BLIND",
+  "blind_protocol_locked": true,
+  "blind_locked": true,
+  "blind_data_locked": false,
+  "blind_data_status": "AWAITING_INGESTION",
+  "lock_timestamp_utc": "2026-09-25T15:40:00Z",
+  "quarantine_rules": {
+    "prohibit_threshold_tuning": true,
+    "prohibit_model_selection": true,
+    "prohibit_error_driven_adjustment": true,
+    "prohibit_manual_relabeling": true,
+    "prohibit_experiment_calibration": true,
+    "prohibit_hyperparameter_search": true
+  },
+  "prerequisites_for_blind_data_lock": [
+    "raw_data_hash_established",
+    "split_hash_established",
+    "annotation_manifest_hash_established",
+    "provenance_manifest_hash_established"
+  ],
+  "quarantined_files": [],
+  "allocated_sample_count": 0,
+  "governance_note": "BLIND_PROTOCOL_LOCKED = TRUE signifies that the blind evaluation protocol and partition rules are cryptographically locked. It does not claim that external blind data has been ingested."
+}

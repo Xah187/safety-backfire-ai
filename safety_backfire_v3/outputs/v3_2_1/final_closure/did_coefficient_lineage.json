@@ -1,0 +1,27 @@
+{
+  "metric_id": "METRIC_17_DID_COEFFICIENT",
+  "metric_name": "did_risk_redistribution_coefficient",
+  "classification": "SCENARIO_SPECIFIC_DERIVED_RESULT",
+  "scenario_id": "WAREHOUSE_SECTOR_B_MIRROR_INSTALLATION",
+  "description": "Two-zone Difference-in-Differences quasi-experimental evaluation of risk index redistribution following safety mirror installation.",
+  "mathematical_lineage": {
+    "treated_pre": 0.85,
+    "treated_post": 0.4,
+    "treated_delta": -0.45,
+    "control_pre": 0.55,
+    "control_post": 0.52,
+    "control_delta": -0.03,
+    "did_formula": "(treated_post - treated_pre) - (control_post - control_pre)",
+    "did_calculation": "(-0.4500) - (-0.0300)",
+    "did_result": -0.42,
+    "effect_scale": "normalized_risk_index_scale_[0.0, 1.0]"
+  },
+  "parallel_trends_verification": {
+    "pre_period_duration_sec": 30.0,
+    "pre_period_trend_difference": 0.008,
+    "parallel_trends_assumption_valid": true
+  },
+  "confidence_interval": "NOT_REPORTED",
+  "interpretation_limit": "SCENARIO_SPECIFIC_DERIVED_RESULT: ATTRIBUTED_UNDER_TESTED_DID_ASSUMPTIONS (parallel trends held, control shifted -3%). Confounded shifts automatically trigger refusal logic.",
+  "epistemic_warning": "This result demonstrates the causal attribution pipeline on a single validated quasi-experimental setup. It is not an unconditional site-wide performance guarantee."
+}

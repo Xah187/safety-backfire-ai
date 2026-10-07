@@ -1,0 +1,15 @@
+{
+  "audit_version": "V3.2.1_UNCERTAINTY_LINEAGE",
+  "parameter": "Coverage factor k = 2.24",
+  "theoretical_basis": "Bivariate 2D Gaussian quantile for 95% circular error probable",
+  "evaluation_dataset_split": "CALIBRATION_SPLIT",
+  "tuning_split": "CALIBRATION_SPLIT (Historical V3.0.4/V3.0.5)",
+  "independence_status": "CALIBRATION_EVALUATION (NOT Blind Test)",
+  "sample_size_N": 500,
+  "empirical_coverage": 0.976,
+  "wilson_ci": [
+    0.9585,
+    0.9862
+  ],
+  "scientific_terminology_rule": "Must be described as an empirically calibrated and validated coverage factor under bivariate Gaussian assumptions, NEVER as an unconditioned mathematical guarantee."
+}

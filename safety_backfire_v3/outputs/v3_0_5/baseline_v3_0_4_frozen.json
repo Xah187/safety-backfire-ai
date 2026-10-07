@@ -1,0 +1,54 @@
+{
+  "release": "V3.0.4_FREEZE_FOR_V3_0_5",
+  "timestamp": "2026-09-23T23:45:00+03:00",
+  "environment": {
+    "python_version": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+    "platform": "macOS-27.0-arm64-arm-64bit",
+    "torch_version": "2.8.0",
+    "cv2_version": "4.11.0",
+    "numpy_version": "1.26.4",
+    "ultralytics_version": "8.4.150"
+  },
+  "geometry_configuration": {
+    "camera_height_m": 3.5,
+    "camera_pitch_deg": 28.0,
+    "camera_roll_deg": 0.0,
+    "intrinsics": {
+      "fx": 950.0,
+      "fy": 950.0,
+      "cx": 640.0,
+      "cy": 360.0
+    },
+    "coordinate_convention": "RIGHT_HANDED_PINHOLE_HORIZONTAL_DEPRESSION",
+    "ground_plane": "Z_w = 0"
+  },
+  "uncertainty_configuration": {
+    "coverage_factor_k": 2.24,
+    "jensen_debiasing": true,
+    "jensen_formula": "d_unbiased = max(0, d_obs - sigma_perp^2 / (2 * max(0.2, d_obs)))",
+    "distribution_assumption": "2D_RICE_NON_CENTRAL_CHI"
+  },
+  "risk_engine_configuration": {
+    "danger_distance_m": 1.5,
+    "caution_distance_m": 3.0,
+    "critical_clearance_zone_m": 1.0,
+    "warning_clearance_zone_m": 1.8,
+    "critical_ttc_sec": 2.5,
+    "cleared_cpa_miss_m": 1.8
+  },
+  "random_seeds": {
+    "geometry_gcp_seed": 42,
+    "uncertainty_seed": 101
+  },
+  "v3_0_4_artifact_hashes": {
+    "geometry_gcp_25pt_audit.json": "42cbca7a83b99f2fb0b847e8614fb43f0f5b93a5b185b3b39d0187e0b05823bb",
+    "video_real_world_metrics.json": "6bc013f57525a5886fd79a7fa23e6f387ac17a0429d200b1b96dace4bbb17fd3",
+    "video_test2_v3_0_4_annotated.mp4": "1d3850c8eb8ccfb27ebf96767322a238a55cc92c4f5f22da37fb64805fce8219",
+    "benchmark_stability_metrics.json": "192e33e9cdde9167db84ebad930be14003200fcc98d48001276f23495c181770",
+    "uncertainty_ablation_metrics.json": "22333968ea60026e89c329557211ab189017d669bfcbce741b9d08a5cf801ac6",
+    "geometry_recovery_metrics.json": "f9343d4540ae2158d24a0b4affb1af525c3f92cc348e178edef19384776c576a",
+    "baseline_v3_0_3_frozen.json": "a74ffbf1b78fab39db44014bbf1608ae8541d68b00991d83eda23149dee14190",
+    "uncertainty_stratified_coverage.json": "bae0b8ce803a9af40b9ec163590b0a3ed0efe2278fa1d3ba231575513f4748bc",
+    "risk_regression_metrics.json": "2ba45fae32910f96c0d3a7d3acc26ee28d4c8d047293f5e6a1b100b09fa73d51"
+  }
+}

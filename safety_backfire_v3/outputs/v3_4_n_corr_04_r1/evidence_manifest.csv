@@ -1,0 +1,11 @@
+trial_id,operating_condition,raw_waveform_file,raw_waveform_sha256,scope_config_file,trigger_timestamp_ms,contactor_timestamp_ms,threshold_crossing_timestamp_ms,persistence_start_timestamp_ms,persistence_completion_timestamp_ms,max_residual_current_a_rms,rebound_count,temperature_c,instrument_calibration_state,operator_record,evidence_class
+CHAR_RUN_01,"Low Speed Forward (10 Hz electrical, 15% rated torque)",MISSING,MISSING,MISSING,0.0,19.2,21.8,21.8,31.8,0.071,0,22.0,MISSING,MISSING,REPORT_BASED
+CHAR_RUN_02,"Medium Speed Forward (30 Hz electrical, 30% rated torque)",MISSING,MISSING,MISSING,0.0,19.8,22.4,22.4,32.4,0.068,0,23.0,MISSING,MISSING,REPORT_BASED
+CHAR_RUN_03,"Rated Speed Forward (60 Hz electrical, 50% rated torque)",MISSING,MISSING,MISSING,0.0,20.4,23.6,23.6,33.6,0.074,0,35.0,MISSING,MISSING,REPORT_BASED
+CHAR_RUN_04,"Full Torque Low Speed (15 Hz electrical, 100% rated torque)",MISSING,MISSING,MISSING,0.0,21.0,25.4,25.4,35.4,0.082,0,38.0,MISSING,MISSING,REPORT_BASED
+CHAR_RUN_05,"High Speed Field Weakening (90 Hz electrical, 25% rated torque)",MISSING,MISSING,MISSING,0.0,20.8,24.1,24.1,34.1,0.078,0,41.0,MISSING,MISSING,REPORT_BASED
+CHAR_RUN_06,"Reverse Low Speed (-20 Hz electrical, 30% rated torque)",MISSING,MISSING,MISSING,0.0,19.6,22.8,22.8,32.8,0.072,0,42.0,MISSING,MISSING,REPORT_BASED
+CHAR_RUN_07,"Reverse Rated Speed (-60 Hz electrical, 50% rated torque)",MISSING,MISSING,MISSING,0.0,20.7,23.9,23.9,33.9,0.076,0,43.0,MISSING,MISSING,REPORT_BASED
+CHAR_RUN_08,"Rapid Dynamic Plug Braking Transient (-30 Hz to +30 Hz switch)",MISSING,MISSING,MISSING,0.0,21.6,25.8,25.8,35.8,0.091,0,48.0,MISSING,MISSING,REPORT_BASED
+CHAR_RUN_09,"Standstill Holding Torque (0 Hz, 80% locked rotor holding torque)",MISSING,MISSING,MISSING,0.0,19.4,21.2,21.2,31.2,0.065,0,40.0,MISSING,MISSING,REPORT_BASED
+CHAR_RUN_10,"Stabilized Repeat Baseline (60 Hz electrical, 50% rated torque)",MISSING,MISSING,MISSING,0.0,20.1,23.2,23.2,33.2,0.073,0,36.0,MISSING,MISSING,REPORT_BASED

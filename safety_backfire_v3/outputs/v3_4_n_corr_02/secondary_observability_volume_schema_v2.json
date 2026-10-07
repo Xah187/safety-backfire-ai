@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SecondaryObservabilityVolumeAndSampledCoverageSchemaV2",
+  "milestone": "V3.4-N-CORR-02",
+  "description": "Corrected spatial observability specification replacing ungrounded continuous zero-blind-pocket claims with bounded sampled-observability criteria, resolving polygon-to-grid lateral rail mismatches and purging unvoxelized voxel terminology.",
+  "governance_classification": "PHYSICAL_COMMISSIONING_GATE_C4",
+  "geometric_definitions": {
+    "zone_polygon": {
+      "name": "ZONE_POLYGON",
+      "definition": "The 2D horizontal bounding polygon of the secondary cross-aisle corridor in facility local coordinates.",
+      "facility_datum_origin": "Cross-aisle entrance threshold junction (X = 30.0 m, Y = 0.0 m, Z = 0.0 m)",
+      "corridor_length_depth_m": 20.0,
+      "corridor_width_m": 3.5,
+      "bounding_polygon_vertices_local_xy_m": [
+        [0.0, -1.75],
+        [0.0, 1.75],
+        [20.0, 1.75],
+        [20.0, -1.75]
+      ],
+      "total_corridor_floor_area_m2": 70.0
+    },
+    "measurement_grid": {
+      "name": "MEASUREMENT_GRID",
+      "definition": "The discrete spatial test array used to evaluate sensor resolution and line-of-sight across depth, width, and height.",
+      "depth_planes_m": [5.0, 10.0, 15.0, 20.0],
+      "lateral_rails_m": [-1.2, 0.0, 1.2],
+      "target_heights_m": [0.8, 1.4, 1.8],
+      "total_grid_sample_points_count": 36,
+      "grid_span_width_m": 2.4,
+      "lateral_mismatch_audit": "The full facility corridor width is 3.5 m (Y in [-1.75, +1.75] m), whereas the discrete lateral rails span 2.4 m (Y in [-1.2, +1.2] m). The lateral margin zones (|Y| in [1.2, 1.75] m, total area 22.0 m^2) represent unsampled clearance strips adjacent to warehouse pallet racking."
+    },
+    "observability_sample_points": {
+      "name": "OBSERVABILITY_SAMPLE_POINTS",
+      "definition": "The exact set of 36 discrete 3D spatial points (x_i, y_j, z_k) at which the standardized physical target (SPMT-01 mannequin) is placed for optical resolution and occlusion testing.",
+      "sampling_points_list": [
+        {"id": "PT_01", "x_depth_m": 5.0, "y_lat_m": -1.2, "z_height_m": 0.8},
+        {"id": "PT_02", "x_depth_m": 5.0, "y_lat_m": -1.2, "z_height_m": 1.4},
+        {"id": "PT_03", "x_depth_m": 5.0, "y_lat_m": -1.2, "z_height_m": 1.8},
+        {"id": "PT_04", "x_depth_m": 5.0, "y_lat_m": 0.0, "z_height_m": 0.8},
+        {"id": "PT_05", "x_depth_m": 5.0, "y_lat_m": 0.0, "z_height_m": 1.4},
+        {"id": "PT_06", "x_depth_m": 5.0, "y_lat_m": 0.0, "z_height_m": 1.8},
+        {"id": "PT_07", "x_depth_m": 5.0, "y_lat_m": 1.2, "z_height_m": 0.8},
+        {"id": "PT_08", "x_depth_m": 5.0, "y_lat_m": 1.2, "z_height_m": 1.4},
+        {"id": "PT_09", "x_depth_m": 5.0, "y_lat_m": 1.2, "z_height_m": 1.8},
+        {"id": "PT_10", "x_depth_m": 10.0, "y_lat_m": -1.2, "z_height_m": 0.8},
+        {"id": "PT_11", "x_depth_m": 10.0, "y_lat_m": -1.2, "z_height_m": 1.4},
+        {"id": "PT_12", "x_depth_m": 10.0, "y_lat_m": -1.2, "z_height_m": 1.8},
+        {"id": "PT_13", "x_depth_m": 10.0, "y_lat_m": 0.0, "z_height_m": 0.8},
+        {"id": "PT_14", "x_depth_m": 10.0, "y_lat_m": 0.0, "z_height_m": 1.4},
+        {"id": "PT_15", "x_depth_m": 10.0, "y_lat_m": 0.0, "z_height_m": 1.8},
+        {"id": "PT_16", "x_depth_m": 10.0, "y_lat_m": 1.2, "z_height_m": 0.8},
+        {"id": "PT_17", "x_depth_m": 10.0, "y_lat_m": 1.2, "z_height_m": 1.4},
+        {"id": "PT_18", "x_depth_m": 10.0, "y_lat_m": 1.2, "z_height_m": 1.8},
+        {"id": "PT_19", "x_depth_m": 15.0, "y_lat_m": -1.2, "z_height_m": 0.8},
+        {"id": "PT_20", "x_depth_m": 15.0, "y_lat_m": -1.2, "z_height_m": 1.4},
+        {"id": "PT_21", "x_depth_m": 15.0, "y_lat_m": -1.2, "z_height_m": 1.8},
+        {"id": "PT_22", "x_depth_m": 15.0, "y_lat_m": 0.0, "z_height_m": 0.8},
+        {"id": "PT_23", "x_depth_m": 15.0, "y_lat_m": 0.0, "z_height_m": 1.4},
+        {"id": "PT_24", "x_depth_m": 15.0, "y_lat_m": 0.0, "z_height_m": 1.8},
+        {"id": "PT_25", "x_depth_m": 15.0, "y_lat_m": 1.2, "z_height_m": 0.8},
+        {"id": "PT_26", "x_depth_m": 15.0, "y_lat_m": 1.2, "z_height_m": 1.4},
+        {"id": "PT_27", "x_depth_m": 15.0, "y_lat_m": 1.2, "z_height_m": 1.8},
+        {"id": "PT_28", "x_depth_m": 20.0, "y_lat_m": -1.2, "z_height_m": 0.8},
+        {"id": "PT_29", "x_depth_m": 20.0, "y_lat_m": -1.2, "z_height_m": 1.4},
+        {"id": "PT_30", "x_depth_m": 20.0, "y_lat_m": -1.2, "z_height_m": 1.8},
+        {"id": "PT_31", "x_depth_m": 20.0, "y_lat_m": 0.0, "z_height_m": 0.8},
+        {"id": "PT_32", "x_depth_m": 20.0, "y_lat_m": 0.0, "z_height_m": 1.4},
+        {"id": "PT_33", "x_depth_m": 20.0, "y_lat_m": 0.0, "z_height_m": 1.8},
+        {"id": "PT_34", "x_depth_m": 20.0, "y_lat_m": 1.2, "z_height_m": 0.8},
+        {"id": "PT_35", "x_depth_m": 20.0, "y_lat_m": 1.2, "z_height_m": 1.4},
+        {"id": "PT_36", "x_depth_m": 20.0, "y_lat_m": 1.2, "z_height_m": 1.8}
+      ],
+      "voxel_terminology_purge": "The term 'voxel' is purged. A voxel requires a defined finite 3D bounding box (dx, dy, dz) and occupancy integration. The 36 test locations are point evaluations, designated OBSERVABILITY_SAMPLE_POINTS."
+    },
+    "observed_area": {
+      "name": "OBSERVED_AREA",
+      "definition": "The horizontal projection of the corridor where optical line-of-sight and spatial resolution have been verified.",
+      "epistemic_status": "SAMPLED_POINT_OBSERVED (Directly verified at discrete sample points only)"
+    },
+    "unobserved_area": {
+      "name": "UNOBSERVED_AREA",
+      "definition": "Corridor floor area outside the direct line-of-sight rays or beyond the sampled rails, including the 0.55 m lateral rack clearance margins (|Y| in [1.2, 1.75] m)."
+    },
+    "critical_obstruction_area": {
+      "name": "CRITICAL_OBSTRUCTION_AREA",
+      "definition": "Projected continuous floor area within the dynamic vehicle diversion trajectory corridor occluded by permanent facility structural elements (columns, building support pillars, electrical cabinets).",
+      "mathematical_limitation": "CRITICAL_OBSTRUCTION_AREA = 0.0 m^2 CANNOT be mathematically deduced from 36 discrete point evaluations alone. Point sampling verifies only that the 36 specific line-of-sight paths are unoccluded.",
+      "authoritative_acceptance_target": "SAMPLED_POINT_OBSERVABILITY == 36/36 (100%) AND SURVEYED_PERMANENT_OBSTRUCTIONS == 0 within primary dynamic envelope",
+      "continuous_coverage_classification": "UNVERIFIED_BOUNDED_INTERPOLATION"
+    }
+  },
+  "gate_c4_acceptance_criteria": {
+    "sampled_point_observability": {
+      "required_point_pass_count": 36,
+      "total_points": 36,
+      "acceptance_rule": "sample_points_passed == 36 AND target_resolution_at_20m >= 65.0 px/m"
+    },
+    "continuous_coverage_limitation_statement": "Passing the 36-point grid sweep establishes SAMPLED_POINT_OBSERVABILITY. It does NOT prove continuous volumetric zero-blindness across the unmonitored lateral margins (|Y| > 1.2 m). Full continuous coverage remains UNVERIFIED_BOUNDED_INTERPOLATION pending continuous LiDAR surface scanning.",
+    "current_gate_status": "UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING"
+  }
+}

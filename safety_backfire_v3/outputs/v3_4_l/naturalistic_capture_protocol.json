@@ -1,0 +1,60 @@
+{
+  "protocol_version": "1.0.0",
+  "milestone": "V3.4-L",
+  "ethical_and_operational_invariants": {
+    "no_forced_interventions": "Field personnel and test operators SHALL NOT artificially induce abrupt braking or aggressive swerving near real workers.",
+    "no_worker_deception": "Naturalistic capture observes normal warehouse workflows without modifying shifts, incentives, or worker movement patterns.",
+    "passive_monitoring": "All instrumentation operates in non-invasive passive monitoring mode. No audio warnings or visual indicators shall alter natural worker psychology.",
+    "safety_priority": "Facility operational safety rules and vehicle factory safety systems take absolute precedence over data acquisition."
+  },
+  "operational_metadata_schema": {
+    "required_fields": [
+      "session_id",
+      "facility_id",
+      "shift_identifier",
+      "start_time_utc",
+      "end_time_utc",
+      "ambient_lighting_lux",
+      "floor_traction_condition",
+      "traffic_density_level",
+      "active_fleet_vehicles",
+      "continuous_sensor_health_status"
+    ],
+    "traffic_density_classes": ["SPARSE_OFF_PEAK", "NOMINAL_STEADY", "PEAK_CONGESTION"],
+    "floor_traction_conditions": ["DRY_HIGH_TRACTION", "POLISHED_STANDARD", "MOISTURE_DEBRIS_DETECTED"]
+  },
+  "event_sampling_framework": {
+    "target_sample_size": "TBD_AFTER_POWER_ANALYSIS",
+    "power_analysis_rationale": "Event sample size cannot be arbitrarily set; it must be determined post-pilot after measuring baseline empirical rates of naturalistic swerves and interventions.",
+    "target_event_distribution_taxonomy": {
+      "nominal_safe_controls": {
+        "description": "Routine traversals without braking or steering deviations (sanity checks for false alarms).",
+        "quota_strategy": "Systematic random subsampling of nominal runs"
+      },
+      "near_miss_stopping_events": {
+        "description": "In-lane decelerations triggered by real operational obstacles without secondary intrusion.",
+        "quota_strategy": "100% census capture via kinematic threshold trigger"
+      },
+      "benign_swerve_events": {
+        "description": "Vehicle steering maneuvers bypassing obstacles into demonstrably empty cross-aisles.",
+        "quota_strategy": "100% census capture"
+      },
+      "secondary_exposure_candidates": {
+        "description": "Vehicle diversion intersecting cross-aisle with observed secondary actor presence.",
+        "quota_strategy": "100% census capture with highest priority packaging"
+      },
+      "independent_actor_confounded": {
+        "description": "Maneuvers occurring coincidentally with unrelated secondary pedestrian movements.",
+        "quota_strategy": "100% census capture"
+      },
+      "insufficient_observability_rejections": {
+        "description": "Events where vehicle swerves towards unobserved or occluded secondary zones.",
+        "quota_strategy": "Audit package generation for Gate E4 verification"
+      },
+      "hardware_sensor_dropouts": {
+        "description": "Natural dropouts or sync failures used to verify pipeline rejection integrity.",
+        "quota_strategy": "Audit package generation for Gate C1-C4 verification"
+      }
+    }
+  }
+}

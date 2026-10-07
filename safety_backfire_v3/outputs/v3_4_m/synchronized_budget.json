@@ -1,0 +1,70 @@
+{
+  "milestone": "V3.4-M",
+  "document_title": "Authoritative Multi-Modal Synchronization Budget Architecture",
+  "governance_classification": "ENGINEERING_SPECIFICATION_BASELINE",
+  "mathematical_reconciliation_principle": "allocated_subsystem_budget + unallocated_reserve = composite_system_target",
+  "mathematical_identity": {
+    "allocated_subsystem_budget_ms": 18.0,
+    "unallocated_reserve_ms": 15.33,
+    "composite_system_target_ms": 33.33,
+    "arithmetic_check_passed": true,
+    "arithmetic_identity_formula": "18.00 ms + 15.33 ms == 33.33 ms (nominal 30.0 fps frame interval)"
+  },
+  "budget_architecture_layers": {
+    "layer_a_hard_component_acceptance_limits": {
+      "description": "Upper bounds on individual sensor interface jitter/latency during single-sensor bench and pre-capture commissioning. Exceeding any individual limit fails Gate C1/C2/C3 regardless of composite total.",
+      "classification": "DESIGN_REQUIREMENT",
+      "limits": {
+        "camera_frame_trigger_jitter_max_ms": 5.0,
+        "can_bus_gateway_timestamp_latency_max_ms": 10.0,
+        "secondary_sensor_packet_latency_max_ms": 5.0
+      },
+      "reconciliation_note": "These individual limits (5.0, 10.0, 5.0) are NOT added together to form the composite budget. Summing them (20.0 ms) and subtracting from 33.33 ms produced the erroneous 13.33 ms in historical V3.4-L draft text. The authoritative nominal allocation is defined in Layer D."
+    },
+    "layer_b_ptp_timestamp_skew_targets": {
+      "description": "IEEE 1588-2019 (PTPv2) grandmaster hardware clock alignment across all local network interface cards (NICs).",
+      "classification": "CURRENT_ACCEPTANCE_TARGET",
+      "targets": {
+        "hardware_nic_clock_offset_mean_us": 100.0,
+        "hardware_nic_clock_offset_p99_us": 500.0,
+        "maximum_acceptable_clock_drift_ppb": 50.0
+      }
+    },
+    "layer_c_transport_and_gateway_latencies": {
+      "description": "Physical packet transit, serialization delay, and hardware queue buffers across TSN switch fabric and CAN transceivers.",
+      "classification": "DESIGN_REQUIREMENT",
+      "latencies": {
+        "tsn_switch_hop_delay_max_us": 15.0,
+        "can_transceiver_fifo_transit_max_ms": 2.5
+      }
+    },
+    "layer_d_nominal_allocated_subsystem_budget": {
+      "description": "Partitioned nominal latency/jitter envelope across concurrent multi-modal pipelines running in active capture mode.",
+      "classification": "DESIGN_REQUIREMENT",
+      "allocations": {
+        "camera_hardware_trigger_jitter_ms": 2.0,
+        "can_bus_gateway_timestamp_latency_ms": 5.0,
+        "secondary_sensor_network_latency_ms": 8.0,
+        "operating_system_inter_process_jitter_ms": 3.0
+      },
+      "subsystem_allocated_sum_ms": 18.0
+    },
+    "layer_e_composite_end_to_end_system_target": {
+      "description": "Maximum end-to-end temporal skew across all multi-modal channels within a single video frame duration at 30 fps.",
+      "classification": "CURRENT_ACCEPTANCE_TARGET",
+      "nominal_frame_rate_fps": 30.0,
+      "frame_interval_exact_ms": 33.333333,
+      "composite_max_skew_ms": 33.33
+    },
+    "layer_f_unallocated_design_reserve": {
+      "description": "Safety margin preserved for unmodelled transient network jitter or operating system scheduling delays.",
+      "classification": "DESIGN_RESERVE",
+      "reserve_duration_ms": 15.33,
+      "percentage_of_frame_budget": 46.0
+    }
+  },
+  "historical_errata_resolution": {
+    "erratum_13_33_ms_origin": "Historical draft V3.4-L Section 8 computed 33.33 - (5.0 + 10.0 + 5.0) = 13.33 ms by conflating individual component trip thresholds with the allocated nominal budget.",
+    "resolution": "13.33 ms is superseded and purged. The authoritative unallocated reserve across all specifications, reports, schemas, and verification harnesses is exactly 15.33 ms."
+  }
+}

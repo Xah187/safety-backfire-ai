@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "contract_id": "V3_4_J_CAMERA_COVERAGE_CONTRACT",
+  "version": "1.0.0",
+  "status": "REQUIRED_SPECIFICATION",
+  "description": "Multi-Camera Field Architecture Specification to eliminate secondary depth occlusion and tracking discontinuity in safety backfire research.",
+  "governance": {
+    "milestone": "V3.4-J",
+    "validation_status": "NOT_ESTABLISHED",
+    "ground_truth_status": "NOT_ESTABLISHED",
+    "model_h_status": "FROZEN_INVARIANT"
+  },
+  "global_video_requirements": {
+    "time_synchronization_protocol": "IEEE_1588_PTP_V2",
+    "maximum_inter_camera_skew_ms": 5.0,
+    "timestamp_source": "HARDWARE_PTP_TIMESTAMPER_AT_MAC_LAYER",
+    "target_frame_rate_fps": 30.0,
+    "minimum_frame_rate_fps": 30.0,
+    "ideal_frame_rate_fps": 60.0,
+    "color_space": "YUV420P_OR_RGB24",
+    "encoding": "H264_OR_H265_HIGH_PROFILE_CONSTANT_BITRATE",
+    "gop_size_frames": 15,
+    "dropped_frames_allowable_percent": 0.01
+  },
+  "camera_nodes": [
+    {
+      "camera_id": "CAMERA_A",
+      "role": "PRIMARY_INTERACTION_VIEW",
+      "status": "REQUIRED_SPECIFICATION",
+      "purpose": "Capture the primary vehicle-pedestrian approach, proximity convergence, and active mitigation/braking maneuvers along the primary aisle.",
+      "mounting_position": {
+        "location": "Aisle ceiling centerline or structural column looking down the primary transit corridor",
+        "height_m": 5.0,
+        "pitch_deg": 25.0,
+        "yaw_deg": 0.0,
+        "roll_deg": 0.0
+      },
+      "lens_and_sensor": {
+        "sensor_type": "1/2.8-inch CMOS Global Shutter",
+        "focal_length_mm": 4.0,
+        "horizontal_fov_deg": 84.0,
+        "vertical_fov_deg": 52.0,
+        "native_resolution": "1920x1080",
+        "minimum_target_density_ppf": 120.0
+      },
+      "coverage_boundary": {
+        "zone_type": "PRIMARY_TRANSIT_LANE",
+        "depth_range_m": [2.0, 28.0],
+        "width_range_m": 4.5
+      },
+      "blind_spots": [
+        "Floor space immediately underneath camera (< 1.8m ground projection)",
+        "Interior depth of cross-aisles perpendicular to camera optical axis"
+      ],
+      "overlap_requirements": {
+        "overlaps_with": ["CAMERA_B", "CAMERA_D"],
+        "minimum_ground_plane_overlap_pct": 30.0
+      }
+    },
+    {
+      "camera_id": "CAMERA_B",
+      "role": "SECONDARY_ZONE_ENTRY_VIEW",
+      "status": "REQUIRED_SPECIFICATION",
+      "purpose": "Capture the boundary threshold between primary aisle and cross-aisle, tracking vehicle swerve trajectory across aisle ingress.",
+      "mounting_position": {
+        "location": "Rack upright or cross-beam facing the intersection junction of primary lane and secondary aisle",
+        "height_m": 4.5,
+        "pitch_deg": 30.0,
+        "yaw_deg": 45.0,
+        "roll_deg": 0.0
+      },
+      "lens_and_sensor": {
+        "sensor_type": "1/2.8-inch CMOS Global Shutter",
+        "focal_length_mm": 6.0,
+        "horizontal_fov_deg": 65.0,
+        "vertical_fov_deg": 40.0,
+        "native_resolution": "1920x1080",
+        "minimum_target_density_ppf": 150.0
+      },
+      "coverage_boundary": {
+        "zone_type": "SECONDARY_ZONE_THRESHOLD",
+        "depth_range_m": [1.5, 15.0],
+        "width_range_m": 5.0
+      },
+      "blind_spots": [
+        "Cross-aisle interior depth beyond 4.0m into rack rows (blocked by pallet racking)"
+      ],
+      "overlap_requirements": {
+        "overlaps_with": ["CAMERA_A", "CAMERA_C", "CAMERA_D"],
+        "minimum_ground_plane_overlap_pct": 25.0
+      }
+    },
+    {
+      "camera_id": "CAMERA_C",
+      "role": "SECONDARY_ZONE_DEPTH_VIEW",
+      "status": "REQUIRED_SPECIFICATION",
+      "purpose": "ELIMINATE THE 0/38 OCCLUSION BOTTLENECK: Direct, unobstructed line-of-sight down the interior length of the secondary cross-aisle.",
+      "mounting_position": {
+        "location": "Mounted directly at the closed end or ceiling apex of the secondary rack aisle looking inward along the aisle axis",
+        "height_m": 4.0,
+        "pitch_deg": 18.0,
+        "yaw_deg": 0.0,
+        "roll_deg": 0.0
+      },
+      "lens_and_sensor": {
+        "sensor_type": "1/2.8-inch CMOS Global Shutter",
+        "focal_length_mm": 8.0,
+        "horizontal_fov_deg": 52.0,
+        "vertical_fov_deg": 32.0,
+        "native_resolution": "1920x1080",
+        "minimum_target_density_ppf": 140.0
+      },
+      "coverage_boundary": {
+        "zone_type": "SECONDARY_ZONE_INTERIOR_DEPTH",
+        "depth_range_m": [2.0, 30.0],
+        "width_range_m": 3.2
+      },
+      "blind_spots": [
+        "Behind loaded pallets exceeding 2.2m height if worker is actively crouching between lower rack bays"
+      ],
+      "overlap_requirements": {
+        "overlaps_with": ["CAMERA_B", "CAMERA_D"],
+        "minimum_ground_plane_overlap_pct": 20.0
+      }
+    },
+    {
+      "camera_id": "CAMERA_D",
+      "role": "OVERLAPPING_CROSS_VIEW_AND_CONTINUITY",
+      "status": "PROPOSED",
+      "purpose": "Provide a high-angle diagonal perspective bridging Camera A, B, and C to maintain continuous 3D bounding box tracking and eliminate tracker ID handoff swaps.",
+      "mounting_position": {
+        "location": "High corner ceiling mount diagonally overlooking both primary lane and secondary aisle junction",
+        "height_m": 6.5,
+        "pitch_deg": 45.0,
+        "yaw_deg": 135.0,
+        "roll_deg": 0.0
+      },
+      "lens_and_sensor": {
+        "sensor_type": "1/2.5-inch CMOS Global Shutter",
+        "focal_length_mm": 3.6,
+        "horizontal_fov_deg": 92.0,
+        "vertical_fov_deg": 60.0,
+        "native_resolution": "2560x1440",
+        "minimum_target_density_ppf": 100.0
+      },
+      "coverage_boundary": {
+        "zone_type": "GLOBAL_JUNCTION_OVERLAP",
+        "depth_range_m": [3.0, 25.0],
+        "width_range_m": 12.0
+      },
+      "blind_spots": [
+        "Shadow zones behind high pallet loads located on topmost rack tiers"
+      ],
+      "overlap_requirements": {
+        "overlaps_with": ["CAMERA_A", "CAMERA_B", "CAMERA_C"],
+        "minimum_ground_plane_overlap_pct": 40.0
+      }
+    }
+  ]
+}

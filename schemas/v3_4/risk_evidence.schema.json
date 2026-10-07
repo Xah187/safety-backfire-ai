@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safety-backfire-ai.org/schemas/v3_4/risk_evidence.schema.json",
+  "title": "V3.4 Risk Evidence Schema",
+  "description": "Schema for physical kinematics, proximity metrics, and hazard evidence per intervention episode window.",
+  "type": "object",
+  "required": [
+    "event_id",
+    "zone_id",
+    "window",
+    "min_human_vehicle_distance",
+    "zone_occupancy",
+    "restricted_zone_entries",
+    "human_speed",
+    "vehicle_speed",
+    "trajectory_conflict",
+    "ttc",
+    "evidence_notes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Identifier linking to intervention event."
+    },
+    "zone_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Facility zone where evidence was measured."
+    },
+    "window": {
+      "type": "string",
+      "enum": [
+        "PRE",
+        "INTERVENTION",
+        "POST"
+      ],
+      "description": "Temporal window phase."
+    },
+    "min_human_vehicle_distance": {
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": 0.0
+        },
+        {
+          "type": "string",
+          "enum": ["UNKNOWN"]
+        }
+      ],
+      "description": "Minimum observed metric distance (meters) or UNKNOWN."
+    },
+    "zone_occupancy": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "type": "string",
+          "enum": ["UNKNOWN"]
+        }
+      ],
+      "description": "Total count of entities present in zone or UNKNOWN."
+    },
+    "restricted_zone_entries": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "type": "string",
+          "enum": ["UNKNOWN"]
+        }
+      ],
+      "description": "Count of unauthorized zone entries or UNKNOWN."
+    },
+    "human_speed": {
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": 0.0
+        },
+        {
+          "type": "string",
+          "enum": ["UNKNOWN"]
+        }
+      ],
+      "description": "Maximum or instantaneous worker speed (m/s) or UNKNOWN."
+    },
+    "vehicle_speed": {
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": 0.0
+        },
+        {
+          "type": "string",
+          "enum": ["UNKNOWN"]
+        }
+      ],
+      "description": "Maximum or instantaneous vehicle speed (m/s) or UNKNOWN."
+    },
+    "trajectory_conflict": {
+      "oneOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "string",
+          "enum": ["UNKNOWN"]
+        }
+      ],
+      "description": "Whether trajectories intersected within clearance envelope or UNKNOWN."
+    },
+    "ttc": {
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": 0.0
+        },
+        {
+          "type": "string",
+          "enum": ["UNKNOWN"]
+        }
+      ],
+      "description": "Calculated time-to-collision in seconds or UNKNOWN."
+    },
+    "evidence_notes": {
+      "type": "string",
+      "description": "Quantitative analysis notes or observations."
+    }
+  }
+}

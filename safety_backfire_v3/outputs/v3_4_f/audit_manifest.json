@@ -1,0 +1,76 @@
+{
+  "manifest_version": "V3.4_F_AUDIT_MANIFEST_V1",
+  "timestamp_utc": "2026-10-01T15:16:12.066638+00:00",
+  "repository_root": "/Users/xah187/Projects/safety-backfire-ai",
+  "git_commit": "NOT_A_GIT_REPO (Standalone Workspace)",
+  "governance_state": {
+    "human_review": "BYPASSED",
+    "safety_backfire_gt": "NOT_ESTABLISHED",
+    "safety_backfire_validation": "NOT_ESTABLISHED",
+    "perception_metrics": "NOT_ESTABLISHED",
+    "model_h": "FROZEN_INVARIANT"
+  },
+  "runtime_commands": {
+    "candidate_discovery": ".venv/bin/python scripts/v3_4/discover_event_candidates.py",
+    "automated_screening": ".venv/bin/python scripts/v3_4/automated_evidence_screening.py",
+    "union_registry_creation": ".venv/bin/python scripts/v3_4/execute_human_screening_and_union.py",
+    "observability_audit": ".venv/bin/python scripts/v3_4/execute_observability_audit.py"
+  },
+  "tracked_files": {
+    "scripts/v3_4/discover_event_candidates.py": {
+      "exists": true,
+      "size_bytes": 17883,
+      "sha256": "656f2fb79f8bef48c53c752f1a51c409e24762d9989c719c3de1ee111a1c7623"
+    },
+    "scripts/v3_4/automated_evidence_screening.py": {
+      "exists": true,
+      "size_bytes": 17399,
+      "sha256": "4e19e411207e7be7b39096ee0aca701415da19f8216f807e2a030201678c9896"
+    },
+    "scripts/v3_4/execute_human_screening_and_union.py": {
+      "exists": true,
+      "size_bytes": 28348,
+      "sha256": "dc86787d4a4e474ce793409aa54f49c41db349ee4c8c5c3771e0740646eea97a"
+    },
+    "scripts/v3_4/create_human_screening_timeline.py": {
+      "exists": true,
+      "size_bytes": 7587,
+      "sha256": "9446832d4a02d884524e7df24e7d372c314d1bf6c2e2de4c696c11cfab7e1b07"
+    },
+    "scripts/v3_4/validate_adjudication.py": {
+      "exists": true,
+      "size_bytes": 17284,
+      "sha256": "4ac7cbedaf43f0cc293410eaa3d6d99094b39f923c998e17c6ab49a0581aa3cc"
+    },
+    "safety_backfire_v3/outputs/v3_3_3/exp_333_01/runs/RUN_003_NVIDIA_WAREHOUSE_026/observation_ledger.json": {
+      "exists": true,
+      "size_bytes": 10883593,
+      "sha256": "e4b57138f01e0027814e0583e3e25ccece332fdfa9ee00726a9fcf6be8289662"
+    },
+    "safety_backfire_v3/outputs/v3_3_3/exp_333_01/runs/RUN_004_NVIDIA_WAREHOUSE_027/observation_ledger.json": {
+      "exists": true,
+      "size_bytes": 32676475,
+      "sha256": "930db2a1c293b08b1d0517b4a9b838fb2b906b6441dec4f18a52ceaab431a446"
+    },
+    "outputs/v3_4/candidates/candidate_events_registry.json": {
+      "exists": true,
+      "size_bytes": 41244,
+      "sha256": "38c4969b8c71c26da4651108d285cabd962c6139b9c77586b785b4c8fc053f4a"
+    },
+    "outputs/v3_4/candidates/union_events_registry.json": {
+      "exists": true,
+      "size_bytes": 80889,
+      "sha256": "7a695e90d02e3ed906f420752375bb14e7fc880b52a1f81de5de54d5074d5968"
+    },
+    "outputs/v3_4/automated_screening/automated_screening_results.json": {
+      "exists": true,
+      "size_bytes": 144254,
+      "sha256": "25fb1dff8ce503535bcda2ea90dfd9cd1639542c4b6a114eda6926c344ea4d86"
+    },
+    "outputs/v3_4/observability/v3_4_e_observability_matrix.json": {
+      "exists": true,
+      "size_bytes": 94036,
+      "sha256": "b560473c273379578df0281a36bedf0ec16c3ea785d19fcfc9167fce08e5bbc8"
+    }
+  }
+}

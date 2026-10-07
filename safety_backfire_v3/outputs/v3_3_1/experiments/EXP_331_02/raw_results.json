@@ -1,0 +1,43 @@
+{
+  "confusion_matrix": {
+    "FULL_INTERVENTION": {
+      "FULL_INTERVENTION": 500,
+      "ADVISORY": 0,
+      "SAFE_REFUSAL": 0,
+      "INSUFFICIENT_EVIDENCE": 0
+    },
+    "ADVISORY": {
+      "FULL_INTERVENTION": 0,
+      "ADVISORY": 200,
+      "SAFE_REFUSAL": 0,
+      "INSUFFICIENT_EVIDENCE": 0
+    },
+    "SAFE_REFUSAL": {
+      "FULL_INTERVENTION": 0,
+      "ADVISORY": 0,
+      "SAFE_REFUSAL": 150,
+      "INSUFFICIENT_EVIDENCE": 0
+    },
+    "INSUFFICIENT_EVIDENCE": {
+      "FULL_INTERVENTION": 0,
+      "ADVISORY": 0,
+      "SAFE_REFUSAL": 0,
+      "INSUFFICIENT_EVIDENCE": 50
+    }
+  },
+  "quality_counts": {
+    "TRUE_SAFE_REFUSAL": 700,
+    "UNSAFE_NON_REFUSAL": 0,
+    "FALSE_REFUSAL": 0,
+    "ADVISORY_DOWNGRADE": 200,
+    "LATE_REFUSAL": 0,
+    "EARLY_REFUSAL": 0
+  },
+  "trigger_counts": {
+    "uncertainty_triggered_refusal": 30,
+    "ODD_triggered_refusal": 60,
+    "latency_triggered_refusal": 30,
+    "geometry_triggered_refusal": 30,
+    "identity_triggered_refusal": 0
+  }
+}

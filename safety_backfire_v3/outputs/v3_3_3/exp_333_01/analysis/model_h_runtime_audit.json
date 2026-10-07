@@ -1,0 +1,67 @@
+{
+  "audit_type": "MODEL_H_RUNTIME_IMPLEMENTATION_FORENSIC_AUDIT",
+  "timestamp_utc": "2026-09-27T19:30:00Z",
+  "target_script": "safety_backfire_v3_3_3/experiments/run_exp_333_01.py",
+  "target_lines": "168-176",
+  "canonical_specification": {
+    "source": "outputs/v3_3_3/reconciliation/model_h_lineage.json",
+    "formula": "k_H = k0 + beta_d * max(0.0, distance_m - 4.0) + beta_l * max(0.0, 300.0 - illumination_lux) / 100.0 + beta_pitch * I(camera_pitch_deg < 40.0) + gamma_occ",
+    "parameters": {
+      "k0": 2.4,
+      "beta_d": 0.08,
+      "beta_l": 0.12,
+      "beta_pitch": 0.22,
+      "pitch_threshold_deg": 40.0,
+      "gamma_occ": {
+        "NONE": 0.0,
+        "PARTIAL": 0.2,
+        "HEAVY": 0.4
+      }
+    }
+  },
+  "runtime_implementation_code": "L_ambient = 0.50\ntheta_offset = 0.0\nocc_val = gamma_occ.get(\"NONE\", 0.0)\nk_factor = round(k0 + beta_d * dist_m + beta_l * (1.0 - L_ambient) + beta_pitch * theta_offset + occ_val, 3)\nstd_unc_m = round(0.05 * dist_m + 0.08, 3)\nexpanded_unc_m = round(k_factor * std_unc_m, 3)",
+  "structural_mismatch_audit": [
+    {
+      "term": "distance_scaling",
+      "canonical_formula": "beta_d * max(0.0, distance_m - 4.0)",
+      "runtime_formula": "beta_d * dist_m",
+      "status": "MISMATCH",
+      "severity": "CRITICAL",
+      "explanation": "Canonical Model H has a zero penalty hinge for distances <= 4.0m, applying beta_d only beyond 4m. Runtime applied beta_d linearly across all distances, artificially penalizing near-field targets (e.g. at 3.0m, added 0.24 instead of 0.00)."
+    },
+    {
+      "term": "illumination_compensation",
+      "canonical_formula": "beta_l * max(0.0, 300.0 - illumination_lux) / 100.0",
+      "runtime_formula": "beta_l * (1.0 - L_ambient) with L_ambient = 0.50",
+      "status": "MISMATCH",
+      "severity": "CRITICAL",
+      "explanation": "Canonical Model H thresholds against 300 lux using measured lux. Runtime used an ad-hoc uncalibrated unitless proxy L_ambient=0.50 giving a constant 0.06 penalty without measuring actual photometric lux."
+    },
+    {
+      "term": "camera_pitch_compensation",
+      "canonical_formula": "beta_pitch * I(camera_pitch_deg < 40.0)",
+      "runtime_formula": "beta_pitch * theta_offset with theta_offset = 0.0",
+      "status": "MISMATCH",
+      "severity": "CRITICAL",
+      "explanation": "Canonical Model H applies an indicator step function beta_pitch=0.22 when camera pitch < 40\u00b0. Runtime multiplied beta_pitch by 0.0, entirely suppressing perspective pitch compensation without measuring extrinsic camera pitch."
+    },
+    {
+      "term": "occlusion_margin",
+      "canonical_formula": "gamma_occ[state] where state in {NONE: 0.0, PARTIAL: 0.20, HEAVY: 0.40}",
+      "runtime_formula": "gamma_occ.get(\"NONE\", 0.0)",
+      "status": "ASSUMED_DEFAULT",
+      "severity": "MODERATE",
+      "explanation": "Without ground-truth occlusion labels, NONE was assumed (0.00 margin). Correct for lack of GT, but unverified."
+    }
+  ],
+  "k_value_reconciliation_verdict": {
+    "status": "FAIL",
+    "contradiction_in_previous_report": {
+      "reported_k_range": "[2.70, 3.151]",
+      "reported_far_field_k": 3.35,
+      "root_cause_explanation": "The reported k_range [2.70, 3.151] was generated directly by the buggy runtime equation (2.46 + 0.08 * dist_m for dist in [3.0, 8.64]). The 3.35 far-field value was calculated separately by hand using the canonical formula under worst-case assumptions (2.40 + 0.08*(8.64-4) + 0.12*3 + 0.22 = 3.3512). The two numbers came from two completely distinct formulas and were conflated in the report narrative."
+    }
+  },
+  "audit_classification": "MODEL_H_BASELINE_INTEGRITY_FAILURE",
+  "remediation_protocol": "DO_NOT_SILENTLY_REPAIR. Maintain frozen baseline, record audit finding, document limitations, and require correct harness execution for any future release."
+}

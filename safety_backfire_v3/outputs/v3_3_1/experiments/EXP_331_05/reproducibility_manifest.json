@@ -1,0 +1,8 @@
+{
+  "command": "./.venv/bin/python safety_backfire_v3_3_1/experiments/run_exp_331_05.py",
+  "deterministic": true,
+  "dependencies": [
+    "json",
+    "pathlib"
+  ]
+}

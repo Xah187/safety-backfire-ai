@@ -1,0 +1,92 @@
+{
+  "audit_type": "OPERATIONAL_DESIGN_DOMAIN_CLASSIFICATION_AUDIT",
+  "timestamp_utc": "2026-09-27T19:30:00Z",
+  "video": "0_te11.mp4",
+  "evaluation_rules": {
+    "principle_1": "Assignment must be based on measured ODD physical dimensions, not visual scene semantics.",
+    "principle_2": "Clutter, machines, presses, and dark clothing do not constitute ODD_SHIFT unless mapped to a defined ODD metric.",
+    "principle_3": "If physical sensor telemetry is absent, dimension status must be UNKNOWN, not inferred IN_ODD or OUT_OF_ODD."
+  },
+  "dimensions_audit": {
+    "camera_height_status": {
+      "status": "UNKNOWN",
+      "measurement": "UNAVAILABLE",
+      "nominal_assumption": "~7.0m",
+      "odd_specification": "4.5m to 8.5m",
+      "evidence_note": "No extrinsic physical survey or ceiling mount log exists on disk."
+    },
+    "pitch_status": {
+      "status": "UNKNOWN",
+      "measurement": "UNAVAILABLE",
+      "nominal_assumption": "~35-40 deg",
+      "odd_specification": "30.0 deg to 55.0 deg (Model H step at 40.0 deg)",
+      "evidence_note": "No inclinometer telemetry or extrinsic calibration matrix available."
+    },
+    "range_status": {
+      "status": "IN_ODD",
+      "measurement": "3.00m to 8.64m (model-derived)",
+      "odd_specification": "0.5m to 15.0m",
+      "evidence_note": "Estimated target distances fall entirely within operational perception range."
+    },
+    "floor_geometry_status": {
+      "status": "UNKNOWN",
+      "measurement": "UNAVAILABLE",
+      "nominal_assumption": "Flat concrete floor",
+      "odd_specification": "Flat warehouse concrete plane <= 2% grade",
+      "evidence_note": "Visual appearance indicates concrete floor, but metric planar survey is absent."
+    },
+    "illumination_status": {
+      "status": "UNKNOWN",
+      "measurement": "UNAVAILABLE",
+      "nominal_assumption": "Indoor industrial high-bay lighting",
+      "odd_specification": ">= 300 lux for nominal unpenalized scaling",
+      "evidence_note": "Photometric lux meter logs are completely absent."
+    },
+    "speed_status": {
+      "status": "IN_ODD",
+      "measurement": "~1.8 m/s (model-derived)",
+      "odd_specification": "<= 4.5 m/s",
+      "evidence_note": "Observed forklift transit speed is within normal warehouse operational limits."
+    },
+    "latency_status": {
+      "status": "IN_ODD",
+      "measurement": "~35-40 ms per frame",
+      "odd_specification": "<= 100 ms real-time safety budget",
+      "evidence_note": "ByteTrack + YOLO26n inference runs in real-time."
+    },
+    "uncertainty_width_status": {
+      "status": "UNKNOWN",
+      "measurement": "INVALIDATED_BY_MODEL_H_RUNTIME_BUG",
+      "odd_specification": "Monotonic condition-aware calibrated coverage >= 95.0%",
+      "evidence_note": "Because runtime Model H implementation was flawed and lux/pitch unmeasured, uncertainty width cannot be certified."
+    },
+    "identity_status": {
+      "status": "OUT_OF_ODD",
+      "measurement": "4 track IDs for 1 vehicle over 6.98s (173 frames)",
+      "odd_specification": "Track fragmentation < 1 per 10s of unoccluded transit",
+      "evidence_note": "Single moving forklift fragmented into track IDs [1, 5, 9, 12], exhibiting unacceptable identity fragmentation."
+    }
+  },
+  "overall_odd_classification": "UNKNOWN",
+  "governing_rationale": "Key extrinsic dimensions (camera height, tilt pitch, illumination lux) are completely unmeasured. In accordance with Section 6, IN_ODD cannot be inferred without demonstration. Therefore, overall status is UNKNOWN.",
+  "sub_tracks_reconciliation": {
+    "EXP_333_01A": {
+      "name": "EXTERNAL_IN_ODD_ZERO_ADAPTATION",
+      "status": "EXTERNAL_ODD_STATUS_UNKNOWN",
+      "detections_assigned": 0,
+      "reconciliation_note": "Previous assignment of 238 forklift detections was based on semantic aisle interpretation without physical dimension verification. Overturned to EXTERNAL_ODD_STATUS_UNKNOWN."
+    },
+    "EXP_333_01B": {
+      "name": "EXTERNAL_ODD_SHIFT_ZERO_ADAPTATION",
+      "status": "EXTERNAL_ODD_STATUS_UNKNOWN",
+      "detections_assigned": 0,
+      "reconciliation_note": "Previous assignment of 13 person detections was based on visual presence of stamping machines and dark clothing, which violates ODD governance. Overturned to EXTERNAL_ODD_STATUS_UNKNOWN."
+    },
+    "EXTERNAL_ODD_STATUS_UNKNOWN_POPULATION": {
+      "total_detection_instances": 251,
+      "forklift": 238,
+      "person": 13,
+      "status": "EXTERNAL_ODD_STATUS_UNKNOWN"
+    }
+  }
+}

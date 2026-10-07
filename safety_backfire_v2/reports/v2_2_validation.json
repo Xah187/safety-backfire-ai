@@ -1,0 +1,321 @@
+{
+  "validation_date": "2026-09-21T00:42:29.424404",
+  "video_tested": "test2.mp4",
+  "physical_ground_truth_available": false,
+  "human_annotations_available": false,
+  "final_validation_status": "ALGORITHMICALLY VALIDATED \u2014 REAL-WORLD PARTIALLY VALIDATED \u2014 PRODUCTION NOT YET VALIDATED",
+  "key_findings": {
+    "geometry_error_instances": 969,
+    "geometry_error_rate_pct": 77.8,
+    "unique_ids_test2": 21,
+    "tracking_failure_rate": 0.053,
+    "avg_yolo_conf": 0.44,
+    "total_events_detected": 0,
+    "evidence_level_real": "MODERATE",
+    "evidence_invariant_passed": true
+  },
+  "validation_matrix": [
+    {
+      "component": "Geometry / Homography",
+      "synthetic": "PASS",
+      "real_world": "UNVALIDATED",
+      "status": "NOT COMPUTABLE",
+      "notes": "No physical measurements. 969/1246 footpoints outside calibration bounds (77.8%)."
+    },
+    {
+      "component": "Detection (Person)",
+      "synthetic": "PASS",
+      "real_world": "NOT COMPUTABLE",
+      "status": "NOT COMPUTABLE",
+      "notes": "No human annotations."
+    },
+    {
+      "component": "Detection (Forklift)",
+      "synthetic": "PASS",
+      "real_world": "NOT COMPUTABLE",
+      "status": "NOT COMPUTABLE",
+      "notes": "No human annotations."
+    },
+    {
+      "component": "Tracking (IDF1)",
+      "synthetic": "PASS (0.561 synthetic)",
+      "real_world": "NOT COMPUTABLE",
+      "status": "NOT COMPUTABLE",
+      "notes": "Synthetic IDF1 \u2260 Real-World. 21 unique IDs on test2 (1246 frames)."
+    },
+    {
+      "component": "Distance (Metric)",
+      "synthetic": "PASS (MAE=0.0 synthetic)",
+      "real_world": "NOT COMPUTABLE",
+      "status": "NOT COMPUTABLE",
+      "notes": "No physical measurements. Synthetic MAE=0.0 CANNOT be extrapolated."
+    },
+    {
+      "component": "TTC",
+      "synthetic": "PASS",
+      "real_world": "NOT YET VALIDATED",
+      "status": "PARTIAL",
+      "notes": "Algorithmically validated. No GT for relative motion."
+    },
+    {
+      "component": "Interaction Events",
+      "synthetic": "PASS",
+      "real_world": "NOT COMPUTABLE",
+      "status": "NOT COMPUTABLE",
+      "notes": "0 events detected (interactions outside calibration zone)."
+    },
+    {
+      "component": "Risk Engine",
+      "synthetic": "PASS",
+      "real_world": "NOT COMPUTABLE",
+      "status": "PARTIAL",
+      "notes": "Weights project-defined, not from safety standards."
+    },
+    {
+      "component": "Evidence Engine",
+      "synthetic": "PASS",
+      "real_world": "PARTIAL",
+      "status": "PARTIAL",
+      "notes": "Critical invariant PASSED: High YOLO conf \u2260 HIGH evidence. Real video: MODERATE (5.3% failures, 0 events)."
+    },
+    {
+      "component": "Backfire Decision",
+      "synthetic": "PASS",
+      "real_world": "NOT COMPUTABLE",
+      "status": "NOT COMPUTABLE",
+      "notes": "No intervention metadata for real video."
+    },
+    {
+      "component": "Counterfactual",
+      "synthetic": "PASS",
+      "real_world": "NOT YET VALIDATED",
+      "status": "PARTIAL",
+      "notes": "Logic validated algorithmically."
+    }
+  ],
+  "detailed_results": {
+    "evidence": {
+      "phase": "Evidence Engine Real-World Validation (Phase 11)",
+      "status": "COMPUTED",
+      "critical_invariant_passed": true,
+      "real_video_stats": {
+        "total_frames": 1246,
+        "tracking_failures": 66,
+        "tracking_failure_rate": 0.053,
+        "unique_ids": 21,
+        "total_events": 0
+      },
+      "profiles": {
+        "real_video_profile": {
+          "description": "Actual test2.mp4 pipeline output",
+          "events_count": 0,
+          "tracking_failure_rate": 0.053,
+          "avg_yolo_confidence": 0.44,
+          "evidence_confidence": 0.6,
+          "evidence_level": "MODERATE",
+          "limitations": [
+            "No interaction events observed. Analysis relies on zero-event baseline."
+          ]
+        },
+        "invariant_test__high_yolo_conf_no_events": {
+          "description": "High YOLO confidence but zero events \u2014 should NOT be HIGH evidence",
+          "events_count": 0,
+          "tracking_failure_rate": 0.05,
+          "avg_yolo_confidence": 0.44,
+          "evidence_confidence": 0.6,
+          "evidence_level": "MODERATE",
+          "invariant_passed": true,
+          "invariant_description": "HIGH YOLO confidence alone must not yield HIGH evidence level"
+        }
+      }
+    },
+    "failures": {
+      "phase": "Failure Taxonomy (Phase 16)",
+      "video": "test2.mp4",
+      "total_frames_analyzed": 1246,
+      "total_failure_types_observed": 1,
+      "failure_taxonomy": [
+        {
+          "failure_type": "GEOMETRY_ERROR",
+          "description": "Footpoint outside calibrated homography region",
+          "count": 969,
+          "severity": "MEDIUM",
+          "example_frames": [
+            200,
+            201,
+            202
+          ],
+          "root_cause": "Object footpoint falls outside hardcoded calibration bounds + 100px margin",
+          "recommended_action": "Re-calibrate homography with wider coverage or use multi-camera setup",
+          "instances_sample": [
+            {
+              "frame": 200,
+              "class": "person",
+              "track_id": 4,
+              "pixel": [
+                753,
+                248
+              ]
+            },
+            {
+              "frame": 201,
+              "class": "person",
+              "track_id": 4,
+              "pixel": [
+                752,
+                249
+              ]
+            },
+            {
+              "frame": 202,
+              "class": "person",
+              "track_id": 4,
+              "pixel": [
+                752,
+                249
+              ]
+            },
+            {
+              "frame": 203,
+              "class": "person",
+              "track_id": 4,
+              "pixel": [
+                754,
+                249
+              ]
+            },
+            {
+              "frame": 204,
+              "class": "person",
+              "track_id": 4,
+              "pixel": [
+                754,
+                249
+              ]
+            }
+          ]
+        }
+      ],
+      "note": "EVENT_FALSE_POSITIVE and EVENT_FALSE_NEGATIVE cannot be computed without human-annotated ground truth. These remain NOT_COMPUTABLE."
+    },
+    "detection_tracking_events": {
+      "detection": {
+        "phase": "Detection Validation (Phase 6)",
+        "status": "NOT_COMPUTABLE",
+        "reason": "No annotated frames found in ground_truth.json. Human annotation required.",
+        "person_metrics": null,
+        "forklift_metrics": null
+      },
+      "tracking": {
+        "phase": "Real Tracking Validation (Phase 7)",
+        "status": "NOT_COMPUTABLE",
+        "reason": "Only 0 annotated frames available. Tracking metrics (IDF1, ID Switches) require consistent gt_id annotations across multiple sequential frames. Minimum ~20 annotated frames recommended.",
+        "IDF1": null,
+        "ID_switches": null,
+        "Fragmentation": null,
+        "Track_Recall": null,
+        "Track_Precision": null
+      },
+      "events": {
+        "phase": "Real Event Validation (Phase 8)",
+        "status": "NOT_COMPUTABLE",
+        "reason": "No 'interaction_events' section found in ground_truth.json. A human must manually annotate interaction_start, interaction_end, interaction_type, person_gt_id, forklift_gt_id for each observed interaction.",
+        "Event_Precision": null,
+        "Event_Recall": null,
+        "Event_F1": null,
+        "Start_frame_error_avg": null,
+        "Duration_error_avg": null
+      }
+    },
+    "geometry": {
+      "physical_ground_truth_available": false,
+      "total_measurement_points": 8,
+      "computable_points": 0,
+      "not_computable_points": 8,
+      "aggregate_metrics": {
+        "MAE_m": null,
+        "RMSE_m": null,
+        "Median_AE_m": null,
+        "Max_AE_m": null,
+        "Mean_Relative_Error_pct": null,
+        "Max_Relative_Error_pct": null
+      },
+      "per_point_results": [
+        {
+          "id": "fg_center_A",
+          "zone": "foreground_center",
+          "ground_truth_m": null,
+          "estimated_m": null,
+          "absolute_error_m": null,
+          "relative_error_percent": null,
+          "status": "NOT_COMPUTABLE \u2014 physical_distance_m not provided"
+        },
+        {
+          "id": "fg_left_B",
+          "zone": "foreground_left",
+          "ground_truth_m": null,
+          "estimated_m": null,
+          "absolute_error_m": null,
+          "relative_error_percent": null,
+          "status": "NOT_COMPUTABLE \u2014 physical_distance_m not provided"
+        },
+        {
+          "id": "fg_right_C",
+          "zone": "foreground_right",
+          "ground_truth_m": null,
+          "estimated_m": null,
+          "absolute_error_m": null,
+          "relative_error_percent": null,
+          "status": "NOT_COMPUTABLE \u2014 physical_distance_m not provided"
+        },
+        {
+          "id": "mid_center_D",
+          "zone": "midground_center",
+          "ground_truth_m": null,
+          "estimated_m": null,
+          "absolute_error_m": null,
+          "relative_error_percent": null,
+          "status": "NOT_COMPUTABLE \u2014 physical_distance_m not provided"
+        },
+        {
+          "id": "mid_left_E",
+          "zone": "midground_left",
+          "ground_truth_m": null,
+          "estimated_m": null,
+          "absolute_error_m": null,
+          "relative_error_percent": null,
+          "status": "NOT_COMPUTABLE \u2014 physical_distance_m not provided"
+        },
+        {
+          "id": "mid_right_F",
+          "zone": "midground_right",
+          "ground_truth_m": null,
+          "estimated_m": null,
+          "absolute_error_m": null,
+          "relative_error_percent": null,
+          "status": "NOT_COMPUTABLE \u2014 physical_distance_m not provided"
+        },
+        {
+          "id": "bg_center_G",
+          "zone": "background_center",
+          "ground_truth_m": null,
+          "estimated_m": null,
+          "absolute_error_m": null,
+          "relative_error_percent": null,
+          "status": "NOT_COMPUTABLE \u2014 physical_distance_m not provided"
+        },
+        {
+          "id": "boundary_H",
+          "zone": "near_calibration_boundary",
+          "ground_truth_m": null,
+          "estimated_m": null,
+          "absolute_error_m": null,
+          "relative_error_percent": null,
+          "status": "NOT_COMPUTABLE \u2014 physical_distance_m not provided"
+        }
+      ],
+      "calibration_classification": "UNVALIDATED",
+      "classification_reason": "No physical measurements provided. Cannot assess real-world distance accuracy."
+    }
+  }
+}

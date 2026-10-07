@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TractionCurrentPersistenceSpecificationSchema",
+  "milestone": "V3.4-N-CORR-04",
+  "description": "Validation schema defining vehicle-specific traction current persistence criteria, signal processing parameters, and physical safety endpoint separation for electrical traction de-energization.",
+  "governance_classification": "POWERTRAIN_ELECTRICAL_SAFETY_METROLOGY",
+  "vehicle_configuration": {
+    "vehicle_id": "AGV-RES-TRUCK-01",
+    "powertrain_type": "48V DC Battery Powered 3-Phase AC Electric Industrial Truck",
+    "traction_motor": {
+      "motor_type": "Permanent Magnet Synchronous Motor (PMSM)",
+      "rated_power_kw": 5.5,
+      "nominal_voltage_vdc": 48.0,
+      "stator_inductance_phase_mh": 0.42,
+      "stator_resistance_phase_ohm": 0.085,
+      "electrical_time_constant_tau_ms": 4.94,
+      "electrical_frequency_range_hz": [0.0, 120.0]
+    },
+    "traction_inverter": {
+      "model": "Curtis 1238E-5421 / Sevcon Gen4 48V 350A AC Motor Controller",
+      "pwm_switching_frequency_khz": 10.0,
+      "pwm_period_us": 100.0,
+      "safe_torque_off_response_time_ms": 1.5
+    },
+    "current_sensing_chain": {
+      "probe_model": "Tektronix TCP303 AC/DC Current Probe with TCPA300 Amplifier",
+      "measurement_bandwidth_hz": 15000000.0,
+      "measurement_channel": "Motor Stator Phase U Conductor",
+      "probe_sensitivity_v_per_a": 0.1,
+      "zero_offset_nulling_required": true
+    }
+  },
+  "signal_processing_frozen_specification": {
+    "pipeline_version": "RMS-PROC-V1.0",
+    "status": "FROZEN_PRE_COMMISSIONING",
+    "sampling_frequency_hz": 1000000.0,
+    "analog_anti_alias_filter": "Hardware 4th-order low-pass filter (f_cutoff = 20.0 kHz, -80 dB/dec)",
+    "rms_window_length_ms": 2.0,
+    "rms_window_samples": 2000,
+    "sliding_step_size_ms": 0.1,
+    "sliding_step_samples": 100,
+    "window_overlap_percent": 95.0,
+    "filter_group_delay_ms": 0.85,
+    "rms_formula": "I_RMS(t) = sqrt((1/N) * sum(i(t - tau)^2)) for tau in [0, T_window]"
+  },
+  "persistence_parameter_specification": {
+    "parameter_name": "TRACTION_CURRENT_ENDPOINT_PERSISTENCE",
+    "approved_value_ms": 10.0,
+    "current_threshold_a_rms": 0.5,
+    "status": "APPROVED",
+    "approval_basis": "Empirical characterization of motor L/R decay time (3*tau = 14.8 ms worst-case, gate-off freewheel diode clamp active in < 3.0 ms) combined with 2.0 ms sliding RMS integration filter latency. A 10.0 ms continuous window filters all 10 kHz PWM ripple and AC zero-crossing false detections while guaranteeing total electrical latency <= 48.8 ms within the 50.0 ms guarded budget.",
+    "condition": "I_motor_RMS(t) < 0.5 A continuously for delta_t >= 10.0 ms without single-sample excursion"
+  },
+  "endpoint_state_separation": {
+    "states": [
+      {
+        "state_id": "E_STOP_COMMAND",
+        "definition": "Instantaneous physical opening of the dual-channel normally-closed E-Stop push button (24V -> 0V)."
+      },
+      {
+        "state_id": "SAFETY_OUTPUT_DEENERGIZED",
+        "definition": "Safety relay internal logic drops de-energizing coil outputs (OSSD drop)."
+      },
+      {
+        "state_id": "CONTACTOR_OPEN",
+        "definition": "Main traction contactor auxiliary status microswitch physically breaks contact."
+      },
+      {
+        "state_id": "ELECTRICAL_TRACTION_DEENERGIZED",
+        "definition": "AUTHORITATIVE ELECTRICAL ENDPOINT: Phase U line current falls below 0.5 A RMS continuously for T_persist >= 10.0 ms."
+      },
+      {
+        "state_id": "DC_BUS_ISOLATED",
+        "definition": "Galvanic disconnection of battery pack and voltage discharge of inverter DC link bulk capacitors (V_bus < 50.0 VDC). Measured independently via high-voltage probe."
+      },
+      {
+        "state_id": "BRAKE_CONTROL_DEENERGIZED",
+        "definition": "Electrical supply to spring-applied mechanical brake solenoid cut (24V -> 0V)."
+      },
+      {
+        "state_id": "MECHANICAL_BRAKE_APPLIED",
+        "definition": "Mechanical friction brake pads clamp against rotor; measured via caliper travel sensor or deceleration onset."
+      },
+      {
+        "state_id": "VEHICLE_MOTION_STOPPED",
+        "definition": "Chassis velocity = 0.0 m/s; measured via wheel speed encoder frequency = 0 Hz."
+      }
+    ],
+    "non_conflation_mandate": "ELECTRICAL_TRACTION_DEENERGIZED (I < 0.5 A RMS) DOES NOT prove DC_BUS_ISOLATED, MECHANICAL_BRAKE_APPLIED, or VEHICLE_MOTION_STOPPED."
+  }
+}

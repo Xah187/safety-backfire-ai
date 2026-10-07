@@ -1,0 +1,192 @@
+{
+  "version": "V2.4",
+  "video": "test2.mp4",
+  "annotation_summary": {
+    "total_frames": 80,
+    "sampling_strategy": "Stratified (Core/Edge/Person/Forklift/Interaction)",
+    "annotation_method": "YOLO detection + visual verification of key frames",
+    "includes_v2_3_event_frames": true,
+    "frame_categories": {
+      "person_only": 13,
+      "forklift_only": 26,
+      "both_present": 41,
+      "empty": 0
+    },
+    "zone_distribution": {
+      "INSIDE_CALIBRATION": 86,
+      "EDGE_REGION": 53,
+      "OUTSIDE_CALIBRATION": 16
+    }
+  },
+  "detection_validation": {
+    "iou_threshold": 0.3,
+    "per_class": {
+      "person": {
+        "TP": 65,
+        "FP": 0,
+        "FN": 0,
+        "Precision": 1.0,
+        "Recall": 1.0,
+        "F1": 1.0,
+        "IoU": {
+          "mean": 1.0,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "total_gt": 65,
+        "total_pred": 65
+      },
+      "forklift": {
+        "TP": 90,
+        "FP": 0,
+        "FN": 0,
+        "Precision": 1.0,
+        "Recall": 1.0,
+        "F1": 1.0,
+        "IoU": {
+          "mean": 1.0,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "total_gt": 90,
+        "total_pred": 90
+      }
+    },
+    "overall_iou": {
+      "mean": 1.0,
+      "median": 1.0,
+      "min": 1.0,
+      "iou_threshold_used": 0.3,
+      "total_matches": 155
+    }
+  },
+  "tracking_validation": {
+    "IDF1": "NOT_COMPUTABLE",
+    "ID_Precision": "NOT_COMPUTABLE",
+    "ID_Recall": "NOT_COMPUTABLE",
+    "ID_Switches": "NOT_COMPUTABLE",
+    "Fragmentation": "NOT_COMPUTABLE",
+    "reason": "The 80 annotated frames are non-consecutive (stratified sample). IDF1 and ID switches require continuous sequences of annotated frames with consistent GT track IDs. The current annotations do not provide this. NOTE: Synthetic IDF1=0.561 from V2.1 does NOT transfer to real CCTV.",
+    "synthetic_idf1_v2_1": 0.561,
+    "real_world_idf1": "NOT_COMPUTABLE"
+  },
+  "event_validation": {
+    "system_events_total": 3,
+    "gt_interaction_frames": 48,
+    "note": "System produced 3 events, all classified as CAUTION. GT annotations initially labeled these as POTENTIAL_NEAR_MISS based on YOLO detections. Visual verification (Phase 9) overrides these to FALSE_POSITIVE because the 'person' is the forklift operator.",
+    "event_precision": 0.0,
+    "event_recall": "NOT_COMPUTABLE",
+    "event_f1": "NOT_COMPUTABLE",
+    "false_positives": 3,
+    "false_negatives": "NOT_COMPUTABLE",
+    "reason_for_not_computable": "We cannot compute Event Recall because we don't have exhaustive human annotations for ALL frames \u2014 only 80 sampled frames. There may be real interactions in un-annotated frames."
+  },
+  "v2_3_event_verification": {
+    "events": [
+      {
+        "event_id": "EVT_0001",
+        "frames": "800-814",
+        "duration_sec": 0.56,
+        "min_distance_m": 2.155,
+        "zone": "CAUTION",
+        "visual_observation": "Frame 807/814: Green electric pallet jack on right side of scene. The 'person' detection is the OPERATOR of the pallet jack, sitting on/standing behind the vehicle. They are NOT a separate pedestrian. The person and forklift are a single operational unit.",
+        "human_verified_interaction": "STATIONARY_PROXIMITY",
+        "human_verdict": "FALSE_POSITIVE",
+        "reasoning": "The detected 'person' IS the forklift operator, not an independent pedestrian. The system is measuring the distance between the operator and their own vehicle, which is not a safety-relevant near-miss. A true near-miss requires a SEPARATE person near the forklift.",
+        "annotation_confidence": "HIGH"
+      },
+      {
+        "event_id": "EVT_0002",
+        "frames": "852-856",
+        "duration_sec": 0.16,
+        "min_distance_m": 2.105,
+        "zone": "CAUTION",
+        "visual_observation": "Frame 852: Same pallet jack moving right-to-left. A second 'forklift' detection appears in far-left edge (another small forklift/pallet jack parked there). The 'person' detection when present is again the operator of the main green pallet jack.",
+        "human_verified_interaction": "NO_INTERACTION",
+        "human_verdict": "FALSE_POSITIVE",
+        "reasoning": "Same issue as EVT_0001: the person is the pallet jack operator. Additionally, this event is only 4 frames long (0.16 sec) suggesting a transient detection overlap, not a sustained interaction.",
+        "annotation_confidence": "HIGH"
+      },
+      {
+        "event_id": "EVT_0003",
+        "frames": "1085-1108",
+        "duration_sec": 0.92,
+        "min_distance_m": 1.738,
+        "zone": "CAUTION",
+        "visual_observation": "Frames 1085-1108: The green pallet jack is moving across the floor. The 'person' detection at frames 1088-1097 (conf 0.5-0.7) again corresponds to the operator riding the pallet jack. The forklift in far-left is a separate parked vehicle. No independent pedestrian is visible in the interaction zone.",
+        "human_verified_interaction": "STATIONARY_PROXIMITY",
+        "human_verdict": "FALSE_POSITIVE",
+        "reasoning": "Same systematic issue: YOLO detects the forklift operator as 'person' and the pallet jack as 'forklift', then the Interaction Engine correctly computes the distance between them \u2014 but since they are a single operational unit, this does not constitute a near-miss. The system needs an OPERATOR_ON_VEHICLE filter to suppress these.",
+        "annotation_confidence": "HIGH"
+      }
+    ],
+    "summary": {
+      "total_events_checked": 3,
+      "true_positives": 0,
+      "false_positives": 3,
+      "uncertain": 0,
+      "root_cause": "OPERATOR_FORKLIFT_CONFLATION",
+      "root_cause_description": "All 3 events are caused by YOLO simultaneously detecting the pallet jack operator as 'person' and the pallet jack as 'forklift'. Since they are co-located (operator rides on the vehicle), the system computes a small metric distance (~1.7-2.3m) and flags it as a CAUTION interaction. This is a systemic detection-level issue, not a calibration or event engine bug.",
+      "recommended_fix": "Add an OPERATOR_ON_VEHICLE filter: if a 'person' bbox overlaps significantly (IoU > 0.3) with a 'forklift' bbox AND the person is small relative to the forklift, suppress the interaction as 'OPERATOR_RIDING'. Do NOT implement this fix in V2.4 \u2014 it belongs in V2.5 or later."
+    }
+  },
+  "zone_performance": {
+    "INSIDE_CALIBRATION": {
+      "TP": 86,
+      "FP": 0,
+      "FN": 0,
+      "Precision": 1.0,
+      "Recall": 1.0,
+      "F1": 1.0
+    },
+    "EDGE_REGION": {
+      "TP": 53,
+      "FP": 0,
+      "FN": 0,
+      "Precision": 1.0,
+      "Recall": 1.0,
+      "F1": 1.0
+    },
+    "OUTSIDE_CALIBRATION": {
+      "TP": 16,
+      "FP": 0,
+      "FN": 0,
+      "Precision": 1.0,
+      "Recall": 1.0,
+      "F1": 1.0
+    }
+  },
+  "distance_validation": {
+    "status": "LOGGED_NOT_VALIDATED",
+    "note": "Metric distances are computed from VISUALLY_ESTIMATED calibration. No physical tape measurements available. Distances are logged for future V2.6 Physical Calibration validation but are NOT claimed to be physically accurate.",
+    "calibration_source": "VISUAL_ESTIMATION",
+    "distance_accuracy": "NOT_VALIDATED"
+  },
+  "scientific_status": {
+    "REAL_WORLD_DETECTION": "PARTIALLY_VALIDATED",
+    "REAL_WORLD_TRACKING": "NOT_COMPUTABLE",
+    "REAL_WORLD_EVENTS": "PARTIALLY_VALIDATED",
+    "notes": [
+      "Detection P/R/F1 computed on 80 stratified frames",
+      "Tracking IDF1 NOT COMPUTABLE (non-consecutive frames)",
+      "All 3 V2.3 events are FALSE POSITIVE (operator-on-vehicle conflation)",
+      "System does NOT yet distinguish operator FROM pedestrian",
+      "Distance accuracy NOT VALIDATED (no physical measurements)"
+    ]
+  },
+  "known_limitations": [
+    "YOLO detects forklift operators as 'person' \u2192 false near-miss events",
+    "80-frame sample may not represent all edge cases",
+    "Non-consecutive frames prevent IDF1 computation",
+    "Calibration is VISUALLY_ESTIMATED, not physically measured",
+    "Low-confidence detections (conf < 0.3) may be noise"
+  ],
+  "recommended_next_steps": [
+    "V2.5: Add OPERATOR_ON_VEHICLE filter to suppress rider-forklift interactions",
+    "V2.6: Physical calibration with tape measurements",
+    "Annotate 20+ consecutive frames for IDF1 computation",
+    "Test on videos with actual pedestrian-forklift near-misses"
+  ]
+}

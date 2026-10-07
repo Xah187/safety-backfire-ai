@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PhysicalIlluminanceAndTemporalFlickerCommissioningSchema",
+  "milestone": "V3.4-N-CORR-01",
+  "description": "Bifurcated commissioning schema separating static physical illuminance from high-frequency temporal light modulation (flicker), resolving the sensor capability gap in prior drafts.",
+  "governance_classification": "PHYSICAL_COMMISSIONING_GATE_C7",
+  "instrumentation_separation_mandate": "Standard digital lux meters (sampling at 1-2 Hz) CANNOT measure optical flicker index or temporal modulation frequencies >= 1000 Hz. Gate C7 enforces TWO distinct measurement paths with dedicated calibrated instruments.",
+  "measurement_paths": {
+    "path_1_static_physical_illuminance": {
+      "metric_name": "mean_corridor_illuminance_lux",
+      "purpose": "Verify steady-state photopic light level across the vehicle corridor and secondary cross-aisle.",
+      "acceptance_target": "350.0 +/- 50.0 lux",
+      "classification": "CURRENT_ACCEPTANCE_TARGET",
+      "instrument_requirements": {
+        "instrument_type": "Class B DIN 5032-7 Precision Lux Meter",
+        "example_models": ["Testo 540", "Gossen Mavolux 5032B"],
+        "spectral_response": "CIE photopic spectral luminous efficiency V(lambda)",
+        "cosine_correction": "Required (f2 <= 3.0%)",
+        "measurement_uncertainty_percent": 3.0,
+        "sampling_rate_hz": 1.0,
+        "calibration_standard": "ISO/IEC 17025 accredited laboratory calibration",
+        "calibration_reference_required": true
+      },
+      "sampling_grid_locations": [
+        "PT_CORRIDOR_ENTRY_0M",
+        "PT_CORRIDOR_APPROACH_15M",
+        "PT_INTERSECTION_JUNCTION_30M",
+        "PT_CROSS_AISLE_MOUTH_0M",
+        "PT_CROSS_AISLE_DEPTH_20M"
+      ],
+      "status": "UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING"
+    },
+    "path_2_temporal_light_modulation_flicker": {
+      "metric_name": "flicker_index_and_frequency",
+      "purpose": "Verify absence of optical flicker or rolling-shutter CMOS sensor banding artifacts from warehouse LED drivers.",
+      "acceptance_target": "flicker_index <= 0.05 AND modulation_frequency >= 1000.0 Hz (conforming to IEEE 1789 recommended practices)",
+      "classification": "CURRENT_ACCEPTANCE_TARGET",
+      "instrument_requirements": {
+        "instrument_type": "High-Frequency Photodiode Sensor with Oscilloscope OR Dedicated Optical Flicker Spectroradiometer",
+        "example_models": [
+          "Gigahertz-Optik BTS256-EF High-Speed Flicker Meter",
+          "Thorlabs PDA36A2 Amplified Photodetector + Keysight DSOX1204G Oscilloscope"
+        ],
+        "spectral_response": "Photopic eye-matched filter V(lambda)",
+        "minimum_sampling_rate_kSa_per_s": 100.0,
+        "bandwidth_hz": 100000.0,
+        "measurement_uncertainty_percent": 2.5,
+        "calibration_standard": "ISO/IEC 17025 traceable fast-optical calibration",
+        "calibration_reference_required": true
+      },
+      "measurement_locations": [
+        "PT_CORRIDOR_APPROACH_15M_OPTICAL_AXIS",
+        "PT_CROSS_AISLE_DEPTH_20M_CAMERA_C_FOV"
+      ],
+      "c7_flicker_status": "UNVERIFIED_INSTRUMENTATION_REQUIREMENT",
+      "status_explanation": "Prior draft listed Testo 540 which CANNOT measure high-frequency flicker. Path 2 requires dedicated high-frequency photometer hardware. Gate C7 CANNOT achieve GATE_PASS until Path 2 hardware is deployed and measured."
+    }
+  },
+  "gate_c7_acceptance_rule": {
+    "evaluation_logic": "Gate C7 PASS requires BOTH Path 1 (300 lux <= mean <= 400 lux) == PASS AND Path 2 (flicker_index <= 0.05 and freq >= 1000 Hz) == PASS. If Path 2 instrument is unverified, Gate C7 remains UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING.",
+    "current_gate_status": "UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING"
+  }
+}

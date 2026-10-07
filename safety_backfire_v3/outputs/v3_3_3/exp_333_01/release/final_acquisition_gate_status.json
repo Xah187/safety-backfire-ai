@@ -1,0 +1,90 @@
+{
+  "manifest_version": "EXP_333_01_FINAL_ACQUISITION_GATE_STATUS_V2",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "reconciliation_timestamp_utc": "2026-09-28T00:07:22Z",
+  "schema_version": "EVIDENCE_PACKAGE_RECONCILED",
+  "evidence_package_version": "V1",
+  "evidence_package_hash": "e601de60106efad4e9cbcab70cc20454901887aa377adbc936bbe8be6f91a035",
+  "baseline_integrity": {
+    "status": "PASS",
+    "baseline_version": "V3.3.2_FINAL_RECONCILED",
+    "hash_drift": "0 / 39",
+    "model_h_frozen": true
+  },
+  "run_isolation": {
+    "RUN_001": "INVALIDATED_RUNTIME_MISMATCH \u2014 PRESERVED",
+    "RUN_002": "CANONICAL_CONFORMANCE \u2014 COMPLETED_INPUT_INSUFFICIENT"
+  },
+  "acquisition_gate": {
+    "raw_footage": "AUTHENTIC_FOOTAGE_RECEIVED",
+    "provenance_seal": "VERIFIED",
+    "physical_independence": "ESTABLISHED_WITH_LIMITATIONS",
+    "frame_overlap": "CLEAR",
+    "blind_protocol": "COMPLIANT",
+    "synthetic_substitution": "REJECTED",
+    "primary_gate_passed": true
+  },
+  "evidence_readiness": {
+    "overall": "NOT_READY_FOR_FULL_EVALUATION",
+    "gates_passed": 4,
+    "gates_partial": 1,
+    "gates_failed": 3,
+    "gates_limited": 1,
+    "zero_adaptation_ready": true,
+    "model_h_evaluation_ready": false,
+    "perception_evaluation_ready": false,
+    "generalization_ready": false
+  },
+  "blocking_deficiencies": [
+    "illumination_lux: NOT_AVAILABLE (blocks Model H)",
+    "camera_pitch_deg: NOT_AVAILABLE (blocks Model H)",
+    "occlusion_state: NOT_AVAILABLE (blocks Model H)",
+    "ground_truth: NOT_AVAILABLE (blocks perception evaluation)",
+    "geometry_survey: NOT_AVAILABLE (blocks distance validation)"
+  ],
+  "model_h_status": {
+    "frozen": true,
+    "k0": 2.4,
+    "beta_d": 0.08,
+    "beta_l": 0.12,
+    "beta_pitch": 0.22,
+    "any_adaptation_performed": false,
+    "evaluation_possible": false,
+    "reason": "INPUT_INSUFFICIENT \u2014 missing lux, pitch, occlusion"
+  },
+  "data_volume": {
+    "external_frames": 173,
+    "external_seconds": 6.98,
+    "external_cameras": 1,
+    "external_sessions": 1,
+    "external_recordings": 1,
+    "data_volume_status": "LIMITED"
+  },
+  "supported_claims": [
+    "V3.3.2 baseline integrity is preserved with zero hash drift across 39 protected artifacts.",
+    "The external data acquisition and provenance gate infrastructure is implemented and validated.",
+    "Authentic physically independent external footage (0_te11.mp4) is ingested with verified provenance.",
+    "Synthetic substitutes for physical external footage are rejected by cryptographic and perceptual gate.",
+    "Model H parameters are frozen and no adaptation has been performed.",
+    "Evidence package is sealed with cryptographic hash manifest."
+  ],
+  "prohibited_claims": [
+    "External_Facility_Perception_F1 (no ground truth)",
+    "External_Facility_IDF1 (no ground truth)",
+    "External uncertainty coverage (no Model H \u2014 INPUT_INSUFFICIENT)",
+    "Cross-warehouse generalization (insufficient evidence)",
+    "External hazard performance (no ground truth + no Model H)",
+    "External event performance (no ground truth)",
+    "Physical illuminance measurement (no lux meter data)",
+    "Camera pitch angle (no physical measurement)"
+  ],
+  "system_state": "EVIDENCE_PACKAGE_BUILT_AWAITING_SENSOR_ACQUISITION",
+  "next_actions": [
+    "ACQUIRE physical lux meter reading from external facility",
+    "ACQUIRE physical camera pitch measurement from external facility",
+    "ACQUIRE per-detection occlusion annotations",
+    "ACQUIRE ground survey with fiducial points",
+    "ACQUIRE frame-level bounding box annotations for ground truth",
+    "Then: RE-EXECUTE EXP_333_01 as RUN_003 with complete sensor inputs"
+  ]
+}

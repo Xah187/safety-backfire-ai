@@ -1,0 +1,92 @@
+{
+  "audit_schema_version": "V3.3.3_MODEL_H_INPUT_PROVENANCE_AUDIT_V1",
+  "audit_target": "RUN_003_NVIDIA_WAREHOUSE_026",
+  "audit_timestamp_utc": "2026-09-28T09:51:30Z",
+  "model_h_canonical_specification": {
+    "frozen_lineage": "outputs/v3_3_3/reconciliation/model_h_lineage.json",
+    "formula": "k_H = k0 + beta_d * max(0, d - 4.0) + beta_l * max(0, 300 - L)/100 + beta_pitch * I(pitch < 40) + gamma_occ[occ]",
+    "parameters": {
+      "k0": 2.40,
+      "beta_d": 0.08,
+      "beta_l": 0.12,
+      "beta_pitch": 0.22,
+      "pitch_threshold_deg": 40.0,
+      "gamma_occ": {
+        "NONE": 0.0,
+        "PARTIAL": 0.20,
+        "HEAVY": 0.40
+      }
+    },
+    "parameter_freeze_verified": true,
+    "zero_adaptation_compliance": true
+  },
+  "input_provenance_classification": {
+    "distance_m": {
+      "classification": "DATASET_PROVIDED / DERIVED_FROM_CALIBRATION",
+      "derivation_source": "NVIDIA Warehouse_026 calibrated homography matrices and camera world positions",
+      "physical_survey_status": "CALIBRATION_DERIVED_DISTANCE (NOT independently physically surveyed ground truth)",
+      "measurements_count": 10942,
+      "mean_m": 6.923,
+      "range_m": [1.876, 25.407],
+      "reprojection_rmse_units": 0.0542,
+      "is_ground_truth": false
+    },
+    "camera_pitch_deg": {
+      "classification": "DATASET_PROVIDED / DERIVED_FROM_EXTRINSIC",
+      "derivation_source": "NVIDIA Warehouse_026 3x4 extrinsic matrices",
+      "physical_survey_status": "EXTRINSIC_DERIVED (inclinometer survey logs not independently provided)",
+      "convention_status": "CONVENTION_REVIEW_REQUIRED",
+      "reported_euler_zyx_angles": {
+        "Camera_0000": 56.51,
+        "Camera_0001": 53.84,
+        "Camera_0002": 4.42,
+        "Camera_0003": 1.59
+      },
+      "optical_axis_depression_angles": {
+        "Camera_0000": 31.94,
+        "Camera_0001": 27.45,
+        "Camera_0002": 27.25,
+        "Camera_0003": 24.33
+      },
+      "is_ground_truth": false
+    },
+    "occlusion_state": {
+      "classification": "MODEL_DERIVED_PROXY",
+      "derivation_source": "Per-frame bounding box IoU spatial interaction from YOLO predictions",
+      "physical_survey_status": "PROXY_DERIVED_FROM_MODEL_PREDICTIONS",
+      "governance_rule": "Strictly PROHIBITED from being designated as GROUND_TRUTH_OCCLUSION",
+      "distribution": {
+        "NONE": 10056,
+        "PARTIAL": 635,
+        "HEAVY": 251
+      },
+      "is_ground_truth": false
+    },
+    "illumination_lux": {
+      "classification": "NOT_AVAILABLE",
+      "derivation_source": "None (physical calibrated lux meter telemetry absent)",
+      "physical_survey_status": "NOT_AVAILABLE",
+      "prohibited_substitutions": [
+        "pixel_mean",
+        "image_histogram",
+        "exposure_metadata",
+        "guessed_lux",
+        "normalized_luminance",
+        "camera_brightness"
+      ],
+      "permitted_informational_reporting": "IMAGE_LUMINANCE_STATISTICS (Camera 0: 94.74, Camera 1: 77.84, Camera 2: 103.10, Camera 3: 101.99; Overall mean: 94.42)",
+      "is_ground_truth": false
+    }
+  },
+  "model_h_formal_verdict": {
+    "canonical_model_h_formal_status": "INPUT_INSUFFICIENT",
+    "primary_blocker": "MISSING_ILLUMINATION_LUX",
+    "partial_terms_status": {
+      "distance_term_available": true,
+      "pitch_term_available": true,
+      "occlusion_proxy_available": true,
+      "illumination_term_available": false
+    },
+    "scientific_integrity_note": "A partial evaluation record is maintained for engineering visibility, but full Model H coverage is formally withheld and cannot be claimed until physical lux measurements are acquired."
+  }
+}

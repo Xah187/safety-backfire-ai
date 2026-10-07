@@ -1,0 +1,15 @@
+{
+  "tracking_metrics_status": "DESCRIPTIVE_TOPOLOGY_ONLY_NO_GROUND_TRUTH",
+  "tracking_idf1": "NOT_ESTABLISHED",
+  "mota": "NOT_ESTABLISHED",
+  "total_active_tracks": 237,
+  "per_camera_track_counts": {
+    "Camera_0000": 52,
+    "Camera_0001": 44,
+    "Camera_0002": 27,
+    "Camera_0003": 9,
+    "Camera_0004": 14,
+    "Camera_0005": 41,
+    "Camera_0006": 50
+  }
+}

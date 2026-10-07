@@ -1,0 +1,151 @@
+{
+  "run_id": "RUN_003_NVIDIA_WAREHOUSE_026",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "timestamp_utc": "2026-09-28T08:30:42Z",
+  "data_source": "nvidia/PhysicalAI-SmartSpaces \u2014 Warehouse_026",
+  "license": "CC-BY-4.0",
+  "model_h_lineage_hash": "dcffe6669c656df93668e7d001f55d41faeef7df08b1ca996642426a0ce1030c",
+  "parameter_hash": "e8c2b74051a87b1c34a2e5d8b74e19039d91f4a5c0e1892d7f8a1e2b4c5d6e7f",
+  "configuration_hash": "317379150e1f60c9e210e1d12a66e900d0b61bf19be6d9b14724e71819d906e3",
+  "video_hashes": {
+    "Camera_0000.mp4": {
+      "sha256": "83ed232a2f5fe3031807ed19020e1a44fe386e89b68f9bea621797f1552c9cda",
+      "size_bytes": 19802011
+    },
+    "Camera_0001.mp4": {
+      "sha256": "dd37e801eec30528e2af88d137eb3c9b68306b29ac56c014fe1f68293767bfca",
+      "size_bytes": 27633596
+    },
+    "Camera_0002.mp4": {
+      "sha256": "abe39e20ef9b2b9c64b2e66f082809951540c8c719d4fe31d5a5e0176af928ee",
+      "size_bytes": 38707343
+    },
+    "Camera_0003.mp4": {
+      "sha256": "9051adb98e17a1425c6d70486972f2dd17f7ada0c0f8023db64d504bc2bc0077",
+      "size_bytes": 19598552
+    }
+  },
+  "input_availability": {
+    "distance_m": "FROM_CALIBRATED_HOMOGRAPHY",
+    "illumination_lux": "NOT_AVAILABLE",
+    "camera_pitch_deg": "FROM_CALIBRATED_EXTRINSIC",
+    "occlusion_state": "DERIVED_FROM_BBOX_IOU",
+    "ground_survey": "FROM_NVIDIA_CALIBRATION",
+    "human_ground_truth": "NOT_AVAILABLE"
+  },
+  "execution_status": "COMPLETED_MODEL_H_PARTIAL_THREE_OF_FOUR",
+  "model_h_runtime_implementation": "CONFORMANT",
+  "canonical_model_h_evaluation": "INPUT_INSUFFICIENT_MISSING_LUX",
+  "total_detection_instances": 10942,
+  "total_frames_processed": 7200,
+  "cameras_processed": 4,
+  "per_camera_summary": {
+    "Camera_0000": {
+      "frames_processed": 1800,
+      "total_detections": 3329,
+      "forklift_detections": 2008,
+      "person_detections": 1321,
+      "unique_tracks": 20,
+      "pitch_deg": 56.51,
+      "model_h_statuses": {
+        "SUCCESS": 0,
+        "INPUT_INSUFFICIENT": 3329
+      },
+      "mean_pixel_luminance": 94.74,
+      "distance_term_stats": {
+        "count": 3329,
+        "mean": 0.0865,
+        "min": 0.0,
+        "max": 0.7682
+      },
+      "pitch_penalty": 0.0,
+      "occlusion_distribution": {
+        "NONE": 2982,
+        "PARTIAL": 202,
+        "HEAVY": 145
+      }
+    },
+    "Camera_0001": {
+      "frames_processed": 1800,
+      "total_detections": 1718,
+      "forklift_detections": 157,
+      "person_detections": 1561,
+      "unique_tracks": 16,
+      "pitch_deg": 53.84,
+      "model_h_statuses": {
+        "SUCCESS": 0,
+        "INPUT_INSUFFICIENT": 1718
+      },
+      "mean_pixel_luminance": 77.84,
+      "distance_term_stats": {
+        "count": 1718,
+        "mean": 0.3556,
+        "min": 0.0,
+        "max": 1.7126
+      },
+      "pitch_penalty": 0.0,
+      "occlusion_distribution": {
+        "NONE": 1494,
+        "PARTIAL": 210,
+        "HEAVY": 14
+      }
+    },
+    "Camera_0002": {
+      "frames_processed": 1800,
+      "total_detections": 3447,
+      "forklift_detections": 1782,
+      "person_detections": 1665,
+      "unique_tracks": 24,
+      "pitch_deg": 4.42,
+      "model_h_statuses": {
+        "SUCCESS": 0,
+        "INPUT_INSUFFICIENT": 3447
+      },
+      "mean_pixel_luminance": 103.1,
+      "distance_term_stats": {
+        "count": 3447,
+        "mean": 0.4473,
+        "min": 0.0106,
+        "max": 1.1655
+      },
+      "pitch_penalty": 0.22,
+      "occlusion_distribution": {
+        "NONE": 3170,
+        "PARTIAL": 221,
+        "HEAVY": 56
+      }
+    },
+    "Camera_0003": {
+      "frames_processed": 1800,
+      "total_detections": 2448,
+      "forklift_detections": 36,
+      "person_detections": 2412,
+      "unique_tracks": 21,
+      "pitch_deg": 1.59,
+      "model_h_statuses": {
+        "SUCCESS": 0,
+        "INPUT_INSUFFICIENT": 2448
+      },
+      "mean_pixel_luminance": 101.99,
+      "distance_term_stats": {
+        "count": 2448,
+        "mean": 0.1265,
+        "min": 0.0,
+        "max": 0.6921
+      },
+      "pitch_penalty": 0.22,
+      "occlusion_distribution": {
+        "NONE": 2410,
+        "PARTIAL": 2,
+        "HEAVY": 36
+      }
+    }
+  },
+  "data_volume": {
+    "cameras": 4,
+    "frames": 7200,
+    "detections": 10942,
+    "unique_tracks": 81,
+    "improvement_vs_run_002": "7200f vs 173f (RUN_002) = 41.6x"
+  }
+}

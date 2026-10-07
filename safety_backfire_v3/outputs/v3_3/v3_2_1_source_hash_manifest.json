@@ -1,0 +1,163 @@
+{
+  "manifest_version": "V3.2.1_FROZEN_SOURCE_HASH_MANIFEST",
+  "timestamp_utc": "2026-09-25T00:45:00Z",
+  "protected_artifact_count": 39,
+  "files": {
+    "outputs/v3_2_1/final_closure/V3.2.1_FINAL_FROZEN.json": {
+      "sha256": "a5a63d36687639a78d120d21c45e6f351a760a5e80435f8d3b638f3e964146cb",
+      "size_bytes": 790
+    },
+    "outputs/v3_2_1/final_closure/canonical_release_registry.json": {
+      "sha256": "6de28d4502ff0bd8b92fadeeeaa9918d1f91f6fe1670d4051eeb91dbd239c9f8",
+      "size_bytes": 31613
+    },
+    "outputs/v3_2_1/final_closure/canonical_metric_registry.json": {
+      "sha256": "bf977149730db24d47e7acab98b9a77208bc2d79c1eb214f23bf62698d09261b",
+      "size_bytes": 26257
+    },
+    "outputs/v3_2_1/final_closure/failure_catalog_summary.json": {
+      "sha256": "5a8ef9315d48701d5c1467346981c40e88e03a40f3eeb61390349830bb8276bb",
+      "size_bytes": 670
+    },
+    "outputs/v3_2_1/final_closure/reproducibility_scope.json": {
+      "sha256": "144b5b5db9c2ee31188b6baa44872c8dd19644b784cafe33acb849a5e84e7efa",
+      "size_bytes": 2812
+    },
+    "outputs/v3_2_1/final_closure/evidence_provenance_policy.json": {
+      "sha256": "893e37945c4d0940e1a3747b73518ec88a37f242fe43308301cfa14df30fdb7f",
+      "size_bytes": 749
+    },
+    "outputs/v3_2_1/final_closure/final_release_decision.json": {
+      "sha256": "b6e926a8e6d2f9b91b3fbf68b6726f45b8a5abc9e47e0cc7025fa038abfc1503",
+      "size_bytes": 4552
+    },
+    "outputs/v3_2_1/final_closure/event_rate_canonical_calculation.json": {
+      "sha256": "51623c432ce4b838d8f3b94b30fcaaaea42040ba22acc01b763016131d706db1",
+      "size_bytes": 1552
+    },
+    "outputs/v3_2_1/final_closure/idf1_definition_record.json": {
+      "sha256": "268a05eae2fee5d1729f79e4856ef9440a1498f49dc12302f4f3606cdaf84078",
+      "size_bytes": 1149
+    },
+    "outputs/v3_2_1/final_closure/did_coefficient_lineage.json": {
+      "sha256": "7277f2ab97ff2821eb310bf7dea1248a3d28c2f077beb07e9a43570443d2d326",
+      "size_bytes": 1375
+    },
+    "outputs/v3_2_1/final_closure/metric_population_odd_map.json": {
+      "sha256": "e4049210f09f93bcfbf8896833e1836bf33aa137e5cf55d696433c32e25bcef5",
+      "size_bytes": 7405
+    },
+    "outputs/v3_2_1/final_closure/uncertainty_split_audit.json": {
+      "sha256": "4c30897772b2be04f63b741cf04f5924a0c8b81cd0b9444f3f9ec4143ac0954f",
+      "size_bytes": 1212
+    },
+    "outputs/v3_2_1/final_closure/event_matching_audit.json": {
+      "sha256": "d860336d436c31cf378b0a5684f2dc43d5610d10334c8354da1a775412414eac",
+      "size_bytes": 2582
+    },
+    "outputs/v3_2_1/final_closure/k_factor_audit.json": {
+      "sha256": "57cb89f6d7ab6b2d3af98a967a00540908e3d88ef1b7b10a5a0a5cef48aae8cc",
+      "size_bytes": 1934
+    },
+    "outputs/v3_2_1/final_closure/hazard_metric_reconciliation.json": {
+      "sha256": "550fc8e46f23182e27c848cc3adaffed56fa5c14394097f989716a37c7603fc7",
+      "size_bytes": 3985
+    },
+    "outputs/v3_2_1/final_closure/perception_metric_reconciliation.json": {
+      "sha256": "5c48d1eb87fe265295d2e1824e9910cb7ae0b2f517f5084812f5deeed81ebf0f",
+      "size_bytes": 2210
+    },
+    "outputs/v3_2_1/final_closure/geometry_metric_reconciliation.json": {
+      "sha256": "d6a5c668dd13ea9b1c6d11a97c4d4a3ee66033b0348deee3ff202d3f2c681446",
+      "size_bytes": 1962
+    },
+    "outputs/v3_2_1/final_closure/canonical_claim_evidence_graph.json": {
+      "sha256": "15393905b2a589c899831049390f8633300a1453008b5baa5421b4c50b03f440",
+      "size_bytes": 11005
+    },
+    "outputs/v3_2_1/final_closure/statistical_method_registry.json": {
+      "sha256": "e7a6e121839827318cfc930cd7edaefe462650bc057ec4300e8bc0f3f2e4a719",
+      "size_bytes": 10499
+    },
+    "reports/v3_2_1/V3.2.1_FINAL_FROZEN_RELEASE.md": {
+      "sha256": "12af57318a2f9083662c561b727644658efd5e33dbf85e98cc4e4378956a0bba",
+      "size_bytes": 684
+    },
+    "reports/v3_2_1/V3.2.1_CORE_STATUS.md": {
+      "sha256": "881e4d33713c14b7023106894e42dfb0f879898fc4a98f165b7728c7014a7b28",
+      "size_bytes": 8319
+    },
+    "reports/v3_2_1/V3.2.1_FINAL_RELEASE_AUDIT.md": {
+      "sha256": "5590620d001532d0bb9b0405967f8328c13daf5b94df85cf16a44d345d822099",
+      "size_bytes": 4824
+    },
+    "reports/v3_2_1/V3.2.1_FAILURE_REGISTRY_AUDIT.md": {
+      "sha256": "a5992f8f53a29798bd174391945595caf15f585f23deae5381b2f6f0c55b91eb",
+      "size_bytes": 5182
+    },
+    "reports/v3_2_1/V3.2.1_CLAIM_EVIDENCE_TRACEABILITY.md": {
+      "sha256": "0b4ee13fa03666ed1f79c297975474b43869de4775d790da1ca04e75abc79261",
+      "size_bytes": 6176
+    },
+    "reports/v3_2_1/V3.2.1_REPRODUCIBILITY_AUDIT.md": {
+      "sha256": "919df1aae561f8fb235c52dae418b4c130130ca7851af31ec90abf203ad02689",
+      "size_bytes": 4497
+    },
+    "reports/v3_2_1/V3.2.1_MASTER_RECONCILED_AUDIT_REPORT.md": {
+      "sha256": "3efd1f4dbfa5711cde526a41a4999e23801fab4a952da6f5225531491a2b7709",
+      "size_bytes": 72935
+    },
+    "reports/v3_2_1/V3.2.1_FINAL_CLOSURE_TEST_EXECUTION_REPORT.md": {
+      "sha256": "a65278787b8de68265aee49a700a1f83ca8e16320420c88c8feca7945f810b0d",
+      "size_bytes": 19406
+    },
+    "safety_backfire_v3/validation/v3_2_1/final_closure/test_final_freeze_semantics.py": {
+      "sha256": "e46097a857884f04511c40cb6b482ecffb63285781647f55bdb140ec04e19ffd",
+      "size_bytes": 13150
+    },
+    "safety_backfire_v3/validation/v3_2_1/final_closure/test_v3_2_1_release_integrity.py": {
+      "sha256": "14f8822040bfcc8cb7ac5e6b9ec4c7eaef9d817128fb037b7e3596e6e524d01e",
+      "size_bytes": 25292
+    },
+    "safety_backfire_v3/validation/v3_2_1/final_closure/test_canonical_report_consistency.py": {
+      "sha256": "d003ba397935b4442789dd5c65994034d87ffd056a41505e5b90f6df0078a99f",
+      "size_bytes": 11292
+    },
+    "safety_backfire_v3/validation/v3_2_1/test_audit_v3_2_1_suite.py": {
+      "sha256": "9fb0478e8383fb04e418ab0b7f903c07c2d8c2a2ed457a375d9c453256ad58b9",
+      "size_bytes": 3460
+    },
+    "safety_backfire_v3/validation/v3_2/test_adversarial_v3_2_suite.py": {
+      "sha256": "26d1f655a599fdf3914208e72f2b7c86f91ab45261324121d3836a163321077e",
+      "size_bytes": 11032
+    },
+    "safety_backfire_v3/core/universal_risk_engine.py": {
+      "sha256": "33e1eff11054a2484719bd33325b08403c0e31803b5160359af7a49c0e33eb01",
+      "size_bytes": 20748
+    },
+    "safety_backfire_v3/core/geometry_v3.py": {
+      "sha256": "a99b380755e09206bca613f33f741a73fed0e1f1406dbc157bc06fa50f32f023",
+      "size_bytes": 27005
+    },
+    "safety_backfire_v3/core/event_engine_v3.py": {
+      "sha256": "da460c1aacd86315698b13caf937ca574e4cc94e0504b3d6e3a84dc55dddaf39",
+      "size_bytes": 18066
+    },
+    "safety_backfire_v3/core/identity_layer.py": {
+      "sha256": "6ef77c5ad952c95628ce059f9963b511617a1cc32e1cde7f30a2d348623e542e",
+      "size_bytes": 10620
+    },
+    "safety_backfire_v3/core/uncertainty_risk_engine.py": {
+      "sha256": "c6078f7cf9f51f6fd8b1bdcac148254200439a05d0389745b7c54676ec70c02a",
+      "size_bytes": 13371
+    },
+    "safety_backfire_v3/core/async_ingest.py": {
+      "sha256": "845abd11306810764230d3def1d7e047e5d212ebe818881971b658c9c076dfb0",
+      "size_bytes": 10248
+    },
+    "safety_backfire_v3/core/async_pipeline.py": {
+      "sha256": "797184ecda54611bf3dada71e2af1ef9888112ea31dad632c3a9f8b6afad8fca",
+      "size_bytes": 30048
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "tracking_metrics_status": "DESCRIPTIVE_TOPOLOGY_ONLY_NO_GROUND_TRUTH",
+  "tracking_idf1": "NOT_ESTABLISHED",
+  "mota": "NOT_ESTABLISHED",
+  "total_active_tracks": 6,
+  "forklift_track_ids": [
+    1,
+    5,
+    9,
+    12
+  ],
+  "person_track_ids": [
+    14,
+    19
+  ],
+  "observed_topology": {
+    "1": {
+      "class": "forklift",
+      "first_frame": 0,
+      "last_frame": 94,
+      "frames_active": 92,
+      "duration_seconds": 3.79,
+      "mean_confidence": 0.405,
+      "mean_distance_m": 6.046
+    },
+    "5": {
+      "class": "forklift",
+      "first_frame": 57,
+      "last_frame": 119,
+      "frames_active": 37,
+      "duration_seconds": 2.5,
+      "mean_confidence": 0.302,
+      "mean_distance_m": 3.0
+    },
+    "9": {
+      "class": "forklift",
+      "first_frame": 68,
+      "last_frame": 172,
+      "frames_active": 87,
+      "duration_seconds": 4.194,
+      "mean_confidence": 0.427,
+      "mean_distance_m": 6.22
+    },
+    "12": {
+      "class": "forklift",
+      "first_frame": 101,
+      "last_frame": 162,
+      "frames_active": 21,
+      "duration_seconds": 2.46,
+      "mean_confidence": 0.424,
+      "mean_distance_m": 6.216
+    },
+    "14": {
+      "class": "person",
+      "first_frame": 116,
+      "last_frame": 122,
+      "frames_active": 6,
+      "duration_seconds": 0.242,
+      "mean_confidence": 0.466,
+      "mean_distance_m": 3.0
+    },
+    "19": {
+      "class": "person",
+      "first_frame": 131,
+      "last_frame": 144,
+      "frames_active": 7,
+      "duration_seconds": 0.524,
+      "mean_confidence": 0.326,
+      "mean_distance_m": 8.631
+    }
+  },
+  "forklift_phenomenon": "TRACK_FRAGMENTATION (Single physical vehicle fragmented across IDs [1, 5, 9, 12])"
+}

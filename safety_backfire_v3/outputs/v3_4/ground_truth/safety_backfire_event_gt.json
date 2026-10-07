@@ -1,0 +1,15 @@
+{
+  "ground_truth_version": "V3.4_C_SAFETY_BACKFIRE_EVENT_GT_V1",
+  "generation_timestamp_utc": "2026-09-30T11:45:00.000000+00:00",
+  "ground_truth_status": "NOT_ESTABLISHED",
+  "governance_status": "HUMAN_REVIEW_BYPASSED_NO_GT_ESTABLISHED",
+  "human_review_status": "HUMAN_REVIEW = BYPASSED",
+  "safety_backfire_gt": "NOT_ESTABLISHED",
+  "safety_backfire_validation": "NOT_ESTABLISHED",
+  "perception_metrics": "NOT_ESTABLISHED",
+  "total_verified_gt_events": 0,
+  "verified_records": 0,
+  "eligible_candidate_events_pool": 38,
+  "ineligible_events_pool": 13,
+  "adjudicated_events": []
+}

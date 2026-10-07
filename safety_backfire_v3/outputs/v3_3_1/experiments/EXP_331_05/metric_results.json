@@ -1,0 +1,159 @@
+{
+  "experiment_id": "EXP_331_05",
+  "sample_size_total": 6,
+  "provenance_breakdown": {
+    "PHYSICAL_NEW": 1,
+    "PHYSICAL_HISTORICAL": 2,
+    "REPLAY": 3,
+    "SYNTHETIC": 0
+  },
+  "outcome_distribution": {
+    "RISK_REDISTRIBUTED": 3,
+    "RISK_REDUCED": 1,
+    "NEW_HAZARD_CREATED": 1,
+    "PARTIAL_BACKFIRE": 0,
+    "INSUFFICIENT_EVIDENCE": 1,
+    "NO_DETECTABLE_EFFECT": 0
+  },
+  "parallel_trend_falsification_actions": {
+    "verified_cases": 5,
+    "refused_causality_cases": 1
+  },
+  "cases": [
+    {
+      "intervention_id": "INT_331_01_PHYSICAL_BARRIER_AISLE_A",
+      "case_id": "CASE_BARRIER_01",
+      "facility_id": "FACILITY_CENTRAL_01",
+      "provenance_class": "PHYSICAL_HISTORICAL",
+      "treated_zone": "Sector_A_Main_Aisle_Crosswalk",
+      "control_zone": "Sector_B_Parallel_Storage_Aisle",
+      "primary_hazard": "Forklift-pedestrian crosswalk collision",
+      "secondary_hazards": [
+        "Turnaround pinch-point crushing",
+        "Blind barrier corner emergence"
+      ],
+      "traffic_volume": 18,
+      "delta_treated": -0.5,
+      "delta_control": 0.01,
+      "did_coefficient": -0.51,
+      "parallel_trend_valid": true,
+      "pre_trend_p_value": 0.52,
+      "control_shift": 0.01,
+      "outcome_state": "RISK_REDISTRIBUTED",
+      "causal_status": "ATTRIBUTED_UNDER_TESTED_DID_ASSUMPTIONS",
+      "is_physical_new": false
+    },
+    {
+      "intervention_id": "INT_331_02_VEHICLE_SPEED_LIMITER_JUNCTION_B",
+      "case_id": "CASE_SPEED_02",
+      "facility_id": "FACILITY_CENTRAL_01",
+      "provenance_class": "PHYSICAL_HISTORICAL",
+      "treated_zone": "Sector_B_High_Bay_Junction",
+      "control_zone": "Sector_A_Main_Aisle",
+      "primary_hazard": "Excessive speed blind-intersection collision",
+      "secondary_hazards": [
+        "Tailgating at merge point"
+      ],
+      "traffic_volume": 24,
+      "delta_treated": -0.36,
+      "delta_control": -0.01,
+      "did_coefficient": -0.35,
+      "parallel_trend_valid": true,
+      "pre_trend_p_value": 0.68,
+      "control_shift": 0.01,
+      "outcome_state": "RISK_REDUCED",
+      "causal_status": "ATTRIBUTED_UNDER_TESTED_DID_ASSUMPTIONS",
+      "is_physical_new": false
+    },
+    {
+      "intervention_id": "INT_331_03_PEDESTRIAN_DETOUR_ROUTING_C",
+      "case_id": "CASE_ROUTING_03",
+      "facility_id": "FACILITY_CENTRAL_01",
+      "provenance_class": "REPLAY",
+      "treated_zone": "Sector_C_Intersection_Blind_Turn",
+      "control_zone": "Sector_B_Aisle_3",
+      "primary_hazard": "Mast-obscured pedestrian crossing",
+      "secondary_hazards": [
+        "High-stack blind corner emergence"
+      ],
+      "traffic_volume": 28,
+      "delta_treated": -0.27,
+      "delta_control": 0.01,
+      "did_coefficient": -0.28,
+      "parallel_trend_valid": true,
+      "pre_trend_p_value": 0.45,
+      "control_shift": 0.01,
+      "outcome_state": "NEW_HAZARD_CREATED",
+      "causal_status": "ATTRIBUTED_UNDER_TESTED_DID_ASSUMPTIONS",
+      "is_physical_new": false
+    },
+    {
+      "intervention_id": "INT_331_04_OUTBOUND_STAGING_RELOCATION_D",
+      "case_id": "CASE_STAGING_04",
+      "facility_id": "FACILITY_CENTRAL_01",
+      "provenance_class": "REPLAY",
+      "treated_zone": "Sector_D_Dock_Staging_Lane",
+      "control_zone": "Sector_D_Adjacent_Buffer",
+      "primary_hazard": "Pallet wall crushing during loading",
+      "secondary_hazards": [
+        "Dock door queue congestion"
+      ],
+      "traffic_volume": 32,
+      "delta_treated": -0.32,
+      "delta_control": 0.02,
+      "did_coefficient": -0.34,
+      "parallel_trend_valid": true,
+      "pre_trend_p_value": 0.38,
+      "control_shift": 0.02,
+      "outcome_state": "RISK_REDISTRIBUTED",
+      "causal_status": "ATTRIBUTED_UNDER_TESTED_DID_ASSUMPTIONS",
+      "is_physical_new": false
+    },
+    {
+      "intervention_id": "INT_331_05_EXOGENOUS_SHIFT_SHOCK_CROSS_SITE",
+      "case_id": "CASE_SHOCK_05",
+      "facility_id": "FACILITY_CENTRAL_01",
+      "provenance_class": "REPLAY",
+      "treated_zone": "Sector_A_Main_Aisle",
+      "control_zone": "Sector_C_Intersection",
+      "primary_hazard": "Aisle overtaking collision",
+      "secondary_hazards": [
+        "Congestion bottleneck"
+      ],
+      "traffic_volume": 55,
+      "delta_treated": -0.2,
+      "delta_control": 0.27,
+      "did_coefficient": -0.47,
+      "parallel_trend_valid": false,
+      "pre_trend_p_value": 0.008,
+      "control_shift": 0.27,
+      "outcome_state": "INSUFFICIENT_EVIDENCE",
+      "causal_status": "INSUFFICIENT_EVIDENCE_PARALLEL_TREND_VIOLATED",
+      "is_physical_new": false
+    },
+    {
+      "intervention_id": "INT_331_06_HIGH_BAY_AISLE_ONE_WAY_RESTRICTION",
+      "case_id": "CASE_ONEWAY_06",
+      "facility_id": "FACILITY_CENTRAL_01",
+      "provenance_class": "PHYSICAL_NEW",
+      "treated_zone": "Sector_B_High_Bay_Aisle_04",
+      "control_zone": "Sector_B_High_Bay_Aisle_05",
+      "primary_hazard": "Bi-directional head-on forklift conflict",
+      "secondary_hazards": [
+        "Perimeter turn queueing",
+        "Blind backing exit hazard"
+      ],
+      "traffic_volume": 26,
+      "delta_treated": -0.44,
+      "delta_control": 0.02,
+      "did_coefficient": -0.46,
+      "parallel_trend_valid": true,
+      "pre_trend_p_value": 0.42,
+      "control_shift": 0.02,
+      "outcome_state": "RISK_REDISTRIBUTED",
+      "causal_status": "ATTRIBUTED_UNDER_TESTED_DID_ASSUMPTIONS",
+      "is_physical_new": true
+    }
+  ],
+  "governance_claim_boundary": "N=6 represents discrete episode case studies; population-level causal claims are explicitly prohibited."
+}

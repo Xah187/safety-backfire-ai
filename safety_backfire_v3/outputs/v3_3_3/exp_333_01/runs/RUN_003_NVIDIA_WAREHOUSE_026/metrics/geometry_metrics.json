@@ -1,0 +1,16 @@
+{
+  "distance_evidence_type": "FROM_CALIBRATED_HOMOGRAPHY",
+  "calibration_source": "NVIDIA_PROVIDED_INTRINSIC_EXTRINSIC",
+  "reprojection_rmse": 0.0542,
+  "total_distance_measurements": 10942,
+  "near_field_lt_4m": 2993,
+  "mid_field_4_to_8m": 4835,
+  "far_field_gt_8m": 3114,
+  "distance_range_m": [
+    1.876,
+    25.407
+  ],
+  "distance_mean_m": 6.923,
+  "distance_std_m": 3.315,
+  "upgrade_vs_run_002": "MODEL_ESTIMATE \u2192 FROM_CALIBRATED_HOMOGRAPHY"
+}

@@ -1,0 +1,55 @@
+{
+  "milestone": "V3.4-N",
+  "document_title": "Safety Abort, Data Invalidation & E-Stop Acceptance Specification V2",
+  "governance_classification": "SAFETY_CRITICAL_SYSTEMS_SPECIFICATION",
+  "daq_isolation_mandate": "RESEARCH DAQ HAS ZERO VEHICLE ACTUATION AUTHORITY. Experimental data acquisition software is completely isolated from vehicle throttle, steering, and braking lines. A data loss event (frame drop, CAN timeout, PTP degradation) terminates data capture and logs ABORTED_DATA_INVALID; it DOES NOT issue an automated emergency stop to the vehicle.",
+  "bifurcated_abort_taxonomy": {
+    "safety_abort": {
+      "definition": "Immediate hardware-level intervention invoked strictly to preserve human safety or asset integrity.",
+      "control_path": "Hardwired, fail-safe, dual-channel Cat 4 / SIL-3 safety circuit.",
+      "actuation": "Main battery/traction contactor de-energization; mechanical failsafe brake engagement.",
+      "authority": "Safety Marshal, Certified Vehicle Operator, Perimeter Gate Interlocks.",
+      "triggers": [
+        "Depression of manual or wireless emergency stop (E-Stop) push-button.",
+        "Physical opening of perimeter safety fence gate interlock switch.",
+        "Optical light curtain intrusion detection across test track boundary.",
+        "Unplanned human entry into test buffer or dynamic vehicle envelope.",
+        "Vehicle steering runaway, mechanical collision, or tire deflation."
+      ]
+    },
+    "data_invalidation_abort": {
+      "definition": "Software-level event package invalidation due to sensor failure, timing violation, or packet loss.",
+      "control_path": "Experimental Linux DAQ user-space software daemon.",
+      "actuation": "Mark active JSON manifest as ABORTED_DATA_INVALID; flush and close media handles; move directory to outputs/aborted_runs/.",
+      "vehicle_consequence": "NO ACTUATOR COMMAND ISSUED. Vehicle continues under native human/autonomous control and completes run or stops via standard operational procedures.",
+      "authority": "Automated DAQ Quality Monitor or Data Operations Lead.",
+      "triggers": [
+        "Camera A, B, or C drops >= 1 video frame during active trial window.",
+        "CAN bus message gap > 20.0 ms for vehicle speed or brake state.",
+        "PTP Grandmaster loses GNSS lock, or local clock slave offset > 5.0 ms.",
+        "Secondary LiDAR/Radar packet drop exceeds 0.01%.",
+        "NVMe capture buffer queue exceeds 80% capacity.",
+        "SHA-256 hash or Merkle tree computation failure during session close."
+      ]
+    }
+  },
+  "estop_physical_acceptance_specification": {
+    "target_metric": "Vehicle traction power disconnect latency upon E-Stop depression",
+    "acceptance_threshold": "<= 50.0 ms",
+    "epistemic_classification": {
+      "nominal_threshold": "DESIGN_REQUIREMENT",
+      "hardware_standard": "VENDOR_CERTIFICATION_REQUIREMENT (IEC 61508 SIL-3 / ISO 13849-1 Cat 4 PLe)",
+      "site_verification": "FIELD_ACCEPTANCE_TEST",
+      "current_prototype_status": "UNVERIFIED_PENDING_MEASUREMENT (NEVER report design target as measured result)"
+    },
+    "acceptance_evidence_fields": {
+      "vendor_certificate_reference": { "type": "string", "example": "TUV-RHEINLAND-CERT-SIL3-2025-9981" },
+      "applicable_standards": ["IEC_61508_SIL3", "ISO_13849_1_CAT4_PLE"],
+      "hardware_part_number": { "type": "string", "example": "HBC-radiomatic quadrix / Tyro Sedna SIL3" },
+      "safety_circuit_diagram": { "type": "string", "example": "SCHEMATIC-VEHICLE-ESTOP-REV-C.pdf" },
+      "field_test_method": "Dual-channel high-speed digital storage oscilloscope recording E-Stop NC contact break (Channel 1) vs Main Contactor auxiliary feedback contact opening (Channel 2).",
+      "oscilloscope_evidence": { "type": "string", "example": "OSC_TRACE_ESTOP_DISCONNECT_2026.png" },
+      "measured_cutoff_latency_ms": { "type": ["number", "null"], "description": "Actual measured delta in milliseconds. MUST be <= 50.0 ms to PASS Gate C8." }
+    }
+  }
+}

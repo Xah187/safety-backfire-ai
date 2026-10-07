@@ -1,0 +1,906 @@
+{
+  "version": "V2.6.1",
+  "description": "Micro GT - Semantic Only. No bounding boxes provided to enforce NOT COMPUTABLE on detection metrics.",
+  "frames": [
+    {
+      "frame": 100,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "parked_left",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 101,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "parked_left",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 102,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "parked_left",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 103,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "parked_left",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 104,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "parked_left",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 105,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "parked_left",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 106,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "parked_left",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 107,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "parked_left",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 108,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "parked_left",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 109,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "parked_left",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 800,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 801,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 802,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 803,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 804,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 805,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 806,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 807,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 808,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 809,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 810,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 811,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 812,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 813,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 814,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 815,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 816,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 817,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 818,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 819,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 820,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 821,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 822,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 823,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 824,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 825,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 826,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 827,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 828,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 829,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 830,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 831,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 832,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 833,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 834,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 835,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 836,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 837,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 838,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 839,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 840,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 841,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 842,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 843,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 844,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 845,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 846,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 847,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 848,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    },
+    {
+      "frame": 849,
+      "objects": [
+        {
+          "class": "forklift",
+          "semantic_id": "green_epj",
+          "annotation_type": "SEMANTIC_ONLY"
+        },
+        {
+          "class": "person",
+          "semantic_id": "epj_operator",
+          "person_relation": "OPERATOR_ON_VEHICLE",
+          "annotation_type": "SEMANTIC_ONLY"
+        }
+      ]
+    }
+  ]
+}

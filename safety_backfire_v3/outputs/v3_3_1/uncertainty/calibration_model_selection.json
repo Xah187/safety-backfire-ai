@@ -1,0 +1,92 @@
+{
+  "experiment_id": "EXP_331_01",
+  "candidate_models": {
+    "MODEL_A": {
+      "in_sample_coverage": 0.95,
+      "parameters": {
+        "k0": 2.35,
+        "beta_d": 0.06,
+        "beta_l": 0.08,
+        "gamma_partial": 0.18,
+        "gamma_heavy": 0.35,
+        "k_fixed": 2.42,
+        "conformal_quantile_k": 2.45
+      }
+    },
+    "MODEL_B": {
+      "in_sample_coverage": 0.946,
+      "parameters": {
+        "k0": 2.35,
+        "beta_d": 0.06,
+        "beta_l": 0.08,
+        "gamma_partial": 0.18,
+        "gamma_heavy": 0.35,
+        "k_fixed": 2.42,
+        "conformal_quantile_k": 2.45
+      }
+    },
+    "MODEL_C": {
+      "in_sample_coverage": 0.946,
+      "parameters": {
+        "k0": 2.35,
+        "beta_d": 0.06,
+        "beta_l": 0.08,
+        "gamma_partial": 0.18,
+        "gamma_heavy": 0.35,
+        "k_fixed": 2.42,
+        "conformal_quantile_k": 2.45
+      }
+    },
+    "MODEL_D": {
+      "in_sample_coverage": 0.948,
+      "parameters": {
+        "k0": 2.35,
+        "beta_d": 0.06,
+        "beta_l": 0.08,
+        "gamma_partial": 0.18,
+        "gamma_heavy": 0.35,
+        "k_fixed": 2.42,
+        "conformal_quantile_k": 2.45
+      }
+    },
+    "MODEL_E": {
+      "in_sample_coverage": 0.962,
+      "parameters": {
+        "k0": 2.35,
+        "beta_d": 0.06,
+        "beta_l": 0.08,
+        "gamma_partial": 0.18,
+        "gamma_heavy": 0.35,
+        "k_fixed": 2.42,
+        "conformal_quantile_k": 2.45
+      }
+    }
+  },
+  "selected_and_locked_model": "MODEL_D",
+  "locked_parameters": {
+    "k0": 2.35,
+    "beta_d": 0.06,
+    "beta_l": 0.08,
+    "gamma_partial": 0.18,
+    "gamma_heavy": 0.35,
+    "k_fixed": 2.42,
+    "conformal_quantile_k": 2.45
+  },
+  "lock_manifest": {
+    "locked_model": "MODEL_D",
+    "locked_parameters": {
+      "k0": 2.35,
+      "beta_d": 0.06,
+      "beta_l": 0.08,
+      "gamma_partial": 0.18,
+      "gamma_heavy": 0.35,
+      "k_fixed": 2.42,
+      "conformal_quantile_k": 2.45
+    },
+    "target_coverage": 0.95,
+    "calibration_sample_size": 500,
+    "in_sample_calibration_coverage": 0.948,
+    "calibration_dataset_id": "DS_V3_3_CALIB_SECTOR_B",
+    "lock_status": "PERMANENTLY_LOCKED_BEFORE_OOS_EVALUATION"
+  }
+}

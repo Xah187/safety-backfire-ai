@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "contract_id": "V3_4_J_SECONDARY_ZONE_SENSOR_CONTRACT",
+  "version": "1.0.0",
+  "status": "SPECIFICATION_COMPARISON",
+  "description": "Architectural evaluation of three sensing alternatives to resolve the 0/38 secondary cross-aisle depth occlusion bottleneck.",
+  "governance": {
+    "milestone": "V3.4-J",
+    "selection_policy": "NO_PREMATURE_WINNER_SELECTED_FIELD_PILOT_WILL_EVALUATE"
+  },
+  "options": [
+    {
+      "option_id": "OPTION_A",
+      "modality_name": "MULTI_CAMERA_INWARD_MONITORING",
+      "architecture": "Dedicated cross-aisle inward-facing optical cameras (Camera C) paired with entry threshold camera (Camera B)",
+      "what_it_observes": [
+        "Rich 2D visual texture, human clothing, posture, and gaze orientation",
+        "Fine-grained actor classification (pedestrian, forklift driver, order picker, stationary obstacle)",
+        "Visual interactions with racking infrastructure (reaching, picking, leaning)"
+      ],
+      "what_it_cannot_observe": [
+        "Direct metric 3D depth without extrinsic homography or stereo disparity matching",
+        "Workers fully obscured behind floor-standing pallet stacks (> 2.0m height)",
+        "Visual targets under deep shadow or during aisle lighting shutdown"
+      ],
+      "synchronization_requirement": {
+        "protocol": "IEEE_1588_PTP_V2",
+        "maximum_allowable_skew_ms": 5.0,
+        "clock_reference": "CENTRAL_FACILITY_PTP_GRANDMASTER"
+      },
+      "spatial_calibration_requirement": {
+        "calibration_type": "MULTI_CAMERA_EXTRINSIC_HOMOGRAPHY_AND_EPILINEAR_GEOMETRY",
+        "method": "ArUco board calibration wand surveyed across overlapping Camera B and Camera C ground planes",
+        "reprojection_error_target_px": 1.5
+      },
+      "failure_modes": [
+        "Dust and grease accumulation on optical lens in high-traffic distribution centers",
+        "Direct glare from overhead high-bay LED fixtures blinding sensor at specific sun angles",
+        "YOLO detector misses on partially occluded crouching workers"
+      ]
+    },
+    {
+      "option_id": "OPTION_B",
+      "modality_name": "OVERHEAD_3D_SOLID_STATE_LIDAR",
+      "architecture": "Overhead 3D Solid-State LiDAR mounted at cross-aisle junction scanning 30m aisle volume",
+      "what_it_observes": [
+        "Direct metric 3D point cloud of aisle volume with millimeter spatial accuracy",
+        "Velocity vectors and acceleration of all moving volumetric blobs independent of ambient lighting",
+        "Volumetric intrusion into aisle clearance boundaries in complete darkness"
+      ],
+      "what_it_cannot_observe": [
+        "Semantic actor identity (cannot reliably distinguish between a worker, a low-profile pallet jack, or fallen cargo without dense point density)",
+        "Targets behind dense shrink-wrapped pallet faces causing specular multi-path beam deflection",
+        "Absorptive dark clothing causing localized point dropouts"
+      ],
+      "synchronization_requirement": {
+        "protocol": "PTP_IEEE_1588_OR_HARDWARE_PPS",
+        "maximum_allowable_skew_ms": 1.0,
+        "clock_reference": "CENTRAL_FACILITY_PTP_GRANDMASTER"
+      },
+      "spatial_calibration_requirement": {
+        "calibration_type": "LIDAR_TO_CAMERA_EXTRINSIC_TRANSFORMATION_MATRIX",
+        "method": "Iterative Closest Point (ICP) registration against retro-reflective calibration targets surveyed into facility CAD frame",
+        "translation_error_target_mm": 20.0,
+        "rotation_error_target_deg": 0.2
+      },
+      "failure_modes": [
+        "Specular reflection flares off shiny plastic stretch-wrap on high pallets producing ghost points",
+        "Suspended dust clouds from forklift braking triggering false occupancy alerts",
+        "High per-aisle hardware and deployment cost across large facilities"
+      ]
+    },
+    {
+      "option_id": "OPTION_C",
+      "modality_name": "INDEPENDENT_OCCUPANCY_SENSOR_NETWORK",
+      "architecture": "Industrial Ultra-Wideband (UWB) personnel tags + vertical safety light curtains mounted across rack uprights",
+      "what_it_observes": [
+        "Definitive sub-decimeter personnel micro-location for tagged warehouse staff",
+        "Binary planar perimeter intrusion detection via safety light curtains across aisle entrance",
+        "Zero dependency on optical line-of-sight, lighting conditions, or environmental dust"
+      ],
+      "what_it_cannot_observe": [
+        "Un-tagged individuals (visitors, delivery contractors, non-badged personnel)",
+        "Non-personnel physical hazards (fallen pallets, protruding forks, unattended machinery)",
+        "Continuous 2D/3D human body posture or evasive reaction dynamics"
+      ],
+      "synchronization_requirement": {
+        "protocol": "CENTRALIZED_UWB_ANCHOR_TIME_DIFFERENCE_OF_ARRIVAL (TDoA)",
+        "maximum_allowable_skew_ms": 10.0,
+        "clock_reference": "UWB_SYNCHRONIZATION_MASTER"
+      },
+      "spatial_calibration_requirement": {
+        "calibration_type": "SURVEYED_RADIO_ANCHOR_AND_LIGHT_CURTAIN_DATUM",
+        "method": "Total Station theodolite surveying of fixed UWB anchor positions and curtain optical emitter plane",
+        "datum_accuracy_target_mm": 10.0
+      },
+      "failure_modes": [
+        "Worker enters cross-aisle without assigned UWB wearable or with dead battery",
+        "Multipath RF reflections from corrugated metal siding causing position hopping",
+        "Accidental physical misalignment of light curtain beams by forklift mast bumps"
+      ]
+    }
+  ]
+}

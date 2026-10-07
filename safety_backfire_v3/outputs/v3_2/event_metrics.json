@@ -1,0 +1,56 @@
+{
+  "validation_layer": "EVENT_LEVEL_VALIDATION_PRIMARY",
+  "blind_test_evaluation": {
+    "monitoring_duration_minutes": 11.0,
+    "monitoring_duration_seconds": 660.0,
+    "monitoring_duration_hours": 0.1833,
+    "total_ground_truth_events_N": 16,
+    "true_positive_events": 15,
+    "false_positive_events": 1,
+    "missed_events": 1,
+    "fragmented_events": 1,
+    "duplicated_events": 0,
+    "event_precision": 0.9375,
+    "event_recall": 0.9375,
+    "event_f1_score": 0.9375,
+    "false_events_per_hour": 5.45,
+    "missed_dangerous_events_per_hour": 5.45
+  },
+  "full_corpus_aggregate_evaluation": {
+    "monitoring_duration_minutes": 23.0,
+    "monitoring_duration_seconds": 1380.0,
+    "monitoring_duration_hours": 0.3833,
+    "total_ground_truth_events_N": 50,
+    "true_positive_events": 47,
+    "false_positive_events": 3,
+    "missed_events": 3,
+    "event_precision": 0.94,
+    "event_recall": 0.94,
+    "event_f1_score": 0.94,
+    "false_events_per_hour": 7.83,
+    "missed_dangerous_events_per_hour": 7.83
+  },
+  "event_temporal_characteristics": {
+    "mean_time_to_detection_sec": 0.109,
+    "p95_time_to_detection_sec": 0.145,
+    "mean_time_to_confirmation_sec": 0.141,
+    "p95_time_to_confirmation_sec": 0.171,
+    "mean_time_to_resolution_sec": 1.018,
+    "mean_alert_duration_sec": 3.59
+  },
+  "event_level_metrics": {
+    "event_precision": 0.94,
+    "event_recall": 0.94,
+    "event_f1_score": 0.94,
+    "false_events_per_hour": 7.83,
+    "missed_dangerous_events_per_hour": 7.83
+  },
+  "taxonomic_event_definitions": {
+    "TRUE_POSITIVE_EVENT": "AI event matches ground truth event with temporal IoU >= 0.50 and matching hazard category.",
+    "FALSE_POSITIVE_EVENT": "AI event triggered without corresponding ground truth physical hazard.",
+    "MISSED_EVENT": "Ground truth hazard episode elapsed without AI confirming danger.",
+    "PARTIAL_EVENT": "AI detected only a small fraction (temporal IoU < 0.30) of the hazard event.",
+    "FRAGMENTED_EVENT": "Single continuous physical event was split into >= 2 AI event episodes (FAIL-41).",
+    "DUPLICATED_EVENT": "Multiple overlapping AI event IDs created for the same physical entity pair."
+  }
+}

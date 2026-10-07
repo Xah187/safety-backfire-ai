@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TemporalLightModulationAndFlickerMeasurementSchemaV2",
+  "milestone": "V3.4-N-CORR-02",
+  "description": "Comprehensive optoelectronic instrumentation and signal processing specification for warehouse temporal light modulation (flicker) measurement, establishing practical reconstruction sampling margins and separating illuminance from temporal modulation.",
+  "governance_classification": "PHYSICAL_COMMISSIONING_GATE_C7",
+  "epistemic_classification": {
+    "illuminance_target": "CURRENT_ACCEPTANCE_TARGET",
+    "flicker_target": "CURRENT_ACCEPTANCE_TARGET",
+    "scientific_qualification": "Neither 350 lux nor flicker_index <= 0.05 / f_mod >= 1000 Hz represents a universal physical safety law. They are project-specific engineering acceptance targets chosen to mitigate CMOS rolling-shutter banding and low-light noise."
+  },
+  "separation_of_photometric_quantities": {
+    "illuminance_acceptance": {
+      "quantity": "Steady-State Photopic Illuminance (E_v)",
+      "metric": "Spatial mean illuminance across corridor ground plane and camera optical axes",
+      "target_value": "350.0 +/- 50.0 lux (300.0 lux <= E_v <= 400.0 lux)",
+      "instrument_class": "Class B DIN 5032-7 Cosine-Corrected Lux Meter (e.g. Testo 540 / Gossen Mavolux 5032B)",
+      "sampling_rate_hz": 1.0,
+      "measurement_duration_s": 30.0,
+      "calibration_reference": "ISO/IEC 17025 accredited photopic calibration certificate",
+      "acceptance_rule": "300.0 lux <= mean_illuminance <= 400.0 lux across all 5 test positions",
+      "status": "UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING"
+    },
+    "temporal_light_modulation_acceptance": {
+      "quantity": "Temporal Light Modulation / High-Frequency Optical Flicker",
+      "metric": "Flicker Index (FI) and Fundamental Modulation Frequency (f_mod)",
+      "acceptance_target": "Flicker Index <= 0.05 AND f_mod >= 1000.0 Hz",
+      "instrument_requirements": {
+        "sensor_type": "Amplified Silicon Photodetector (e.g. Thorlabs PDA36A2 or equivalent)",
+        "sensor_bandwidth_hz": 50000.0,
+        "digitizer_type": "Digital Storage Oscilloscope (Keysight DSOX1204G / Tektronix TBS2000B)",
+        "oscilloscope_bandwidth_mhz": 70.0,
+        "anti_alias_filter": "Hardware 4th-order anti-alias low-pass Butterworth filter (f_cutoff = 50.0 kHz)",
+        "minimum_sampling_rate_msa_per_s": 1.0,
+        "sampling_margin_rationale": "Nyquist criterion (2 * f_max = 100 kSa/s) is insufficient for pulse-shape and harmonic reconstruction. A sampling rate of >= 1.0 MSa/s provides 20x oversampling of the 50 kHz analog bandwidth, ensuring accurate waveform peak/trough extraction.",
+        "measurement_duration_s": 2.0,
+        "frequency_resolution_hz": 0.5,
+        "waveform_preprocessing": "DC offset baseline subtraction, high-frequency noise de-glitching via median filter (window = 5 samples), and integer-period truncation over continuous 2.0 s capture."
+      },
+      "flicker_index_definition": {
+        "mathematical_formula": "Flicker_Index = Area_Above_Mean / (Area_Above_Mean + Area_Below_Mean) over an integral number of periods",
+        "reference_standard": "IEEE 1789-2015 / IES RP-16-10"
+      },
+      "rolling_shutter_banding_qualification": "A modulation frequency f_mod >= 1000 Hz does NOT by itself guarantee zero rolling-shutter artifacts. If camera exposure time t_exp is short (e.g. <= 1/1000 s) or line readout time t_row (~25 us) aliases with duty cycle harmonics, spatial banding may still occur. Full immunity requires camera shutter synchronization or high DC-current ballast drivers.",
+      "c7_flicker_status": "UNVERIFIED_INSTRUMENTATION_REQUIREMENT",
+      "status_explanation": "Physical photodiode and DSO hardware are not yet connected to warehouse lighting. Gate C7 cannot pass until physical optical oscillogram is recorded and analyzed."
+    }
+  },
+  "gate_c7_acceptance_rule": {
+    "rule": "Gate C7 PASS requires BOTH Illuminance Acceptance == PASS AND Temporal Light Modulation Acceptance == PASS. If either is unverified or fails, Gate C7 remains UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING.",
+    "current_status": "UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING"
+  }
+}

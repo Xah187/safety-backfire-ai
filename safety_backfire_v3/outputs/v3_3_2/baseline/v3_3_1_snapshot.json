@@ -1,0 +1,86 @@
+{
+  "snapshot_version": "V3.3.1_FROZEN_BASELINE",
+  "snapshot_timestamp_utc": "2026-09-25T07:30:00Z",
+  "baseline_release": "V3.3.1",
+  "status": "V3.3.1_VALIDATED_WITH_LIMITATIONS",
+  "governing_rationale": "V3.3.1 successfully executed all 5 preregistered experiments. Baseline V3.2.1 remains immutable and V3.3.0 is frozen. Condition-aware uncertainty Model D narrowed undercoverage, raising nominal OOS coverage to 93.67% and Sector D to 89.78%, though the point estimate remains below the 95.0% target. Safe refusal achieved 100% appropriate refusal across 150 boundary violations with 0% false refusals. Identity ambiguity handling resolved V3.3-FAIL-003 without forced incorrect associations. Exactly 1 new physical intervention was added with DiD and parallel trend verification. Active unsupported claims: 0.",
+  "baseline": {
+    "v3_2_1_immutable": true,
+    "v3_3_0_frozen": true,
+    "v3_3_0_protected_artifacts": 79
+  },
+  "experiments": {
+    "EXP_331_01": {
+      "title": "CONDITION_AWARE_UNCERTAINTY",
+      "status": "EXECUTED_WITH_LIMITATIONS",
+      "model_selected": "MODEL_D",
+      "nominal_oos_coverage": 0.9367,
+      "nominal_ci_95": [
+        0.9155,
+        0.9528
+      ],
+      "worst_stratum_coverage": 0.8978,
+      "target_coverage": 0.95,
+      "target_met": false
+    },
+    "EXP_331_02": {
+      "title": "ODD_AWARE_SAFE_REFUSAL",
+      "status": "EXECUTED_VALIDATED",
+      "appropriate_refusal_rate": 1.0,
+      "unsafe_non_refusal_rate": 0.0,
+      "false_refusal_rate": 0.0,
+      "target_met": true
+    },
+    "EXP_331_03": {
+      "title": "CROSS_ENVIRONMENT_GENERALIZATION",
+      "status": "EXECUTED_VALIDATED",
+      "perception_f1": 0.8845,
+      "tracking_idf1": 0.918,
+      "tracking_idf1_ci95": [
+        0.9057,
+        0.9295
+      ],
+      "sectors_evaluated": 4,
+      "target_met": true
+    },
+    "EXP_331_04": {
+      "title": "IDENTITY_RECOVERY_HARDENING",
+      "status": "EXECUTED_VALIDATED",
+      "forced_incorrect_assignments": 0,
+      "safety_downgrade_rate": 1.0,
+      "target_met": true
+    },
+    "EXP_331_05": {
+      "title": "BACKFIRE_EVIDENCE_EXPANSION",
+      "status": "EXECUTED_VALIDATED",
+      "total_cases": 6,
+      "physical_new_cases": 1,
+      "causal_refusal_actions": 1,
+      "target_met": true
+    }
+  },
+  "metrics": {
+    "total_canonical_metrics": 8,
+    "metric_registry_file": "outputs/v3_3_1/canonical_metric_registry.json"
+  },
+  "failures": {
+    "total_v3_3_1_failures": 3,
+    "failure_registry_file": "outputs/v3_3_1/failure_registry/v3_3_1_failure_registry.json"
+  },
+  "evidence_gaps": {
+    "total_tracked_gaps": 6,
+    "gap_matrix_file": "outputs/v3_3/v3_3_gap_matrix.json"
+  },
+  "claims": {
+    "total_active_claims": 6,
+    "claim_registry_file": "outputs/v3_3_1/canonical_claim_evidence_registry.json"
+  },
+  "active_unsupported_claims": 0,
+  "forensic_closure": {
+    "v3_3_1_metrics_reconstructible": true,
+    "v3_3_1_dataset_provenance_verified": true,
+    "v3_3_1_blind_integrity_verified": true,
+    "v3_3_1_failure_registry_verified": true,
+    "v3_3_1_claim_traceability_verified": true
+  }
+}

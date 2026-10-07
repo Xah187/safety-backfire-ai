@@ -1,0 +1,13 @@
+{
+  "lock_version": "V3.3.3_EXPERIMENT_LOCK",
+  "timestamp_utc": "2026-09-25T14:45:00Z",
+  "status": "LOCKED_PRE_EVALUATION",
+  "preregistered_experiments": [
+    "EXP_333_01_EXTERNAL_FACILITY",
+    "EXP_333_02_PROSPECTIVE_BACKFIRE",
+    "EXP_333_03_OOS_UNCERTAINTY_CROSS_CAMERA",
+    "EXP_333_04_WIDEBaseline_REID",
+    "EXP_333_05_REAL_LONG_DURATION",
+    "EXP_333_06_DISTRIBUTION_SHIFT_REFUSAL"
+  ]
+}

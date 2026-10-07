@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_id": "V3_4_J_DATASET_READINESS_SCHEMA",
+  "version": "1.0.0",
+  "status": "REQUIRED_SPECIFICATION",
+  "description": "Pre-Ingestion Quality Gates, Facility-Level Partitioning, Provenance Standards, and Dataset Readiness Criteria.",
+  "governance": {
+    "milestone": "V3.4-J",
+    "acceptance_policy": "NO_PERCEPTION_METRICS_USED_FOR_ACCEPTANCE (Accuracy/F1/Precision/Recall Excluded)",
+    "partition_policy": "FACILITY_LEVEL_HOLDOUT_MANDATORY_NO_RANDOM_FRAME_SPLITS"
+  },
+  "facility_partition_strategy": {
+    "partitioning_type": "FACILITY_LEVEL_STRATIFIED_HOLDOUT",
+    "rationale": "Prevents catastrophic spatial data leakage caused by sharing warehouse geometry, floor texture, and lighting between splits.",
+    "partitions": [
+      {
+        "split_name": "TRAINING_SET",
+        "facility_assignment": "Facilities 01 and 02",
+        "usage": "Candidate discovery training and parameter exploration."
+      },
+      {
+        "split_name": "DEVELOPMENT_SET",
+        "facility_assignment": "Facility 03",
+        "usage": "Hyperparameter tuning and sensitivity analysis."
+      },
+      {
+        "split_name": "INTERNAL_VALIDATION_SET",
+        "facility_assignment": "Facility 04",
+        "usage": "Pre-deployment benchmark testing."
+      },
+      {
+        "split_name": "HELD_OUT_BENCHMARK_FACILITY",
+        "facility_assignment": "Facility 05 (Completely Unseen Physical Facility)",
+        "usage": "Strictly quarantined for final generalization validation; zero exposure during development."
+      }
+    ]
+  },
+  "pre_ingestion_quality_gates": [
+    {
+      "gate_id": "G_CAMERA_SYNC",
+      "metric": "Inter-camera frame capture time delta",
+      "threshold": "<= 5.0 ms",
+      "rejection_action": "Reject entire multi-view recording session."
+    },
+    {
+      "gate_id": "G_SENSOR_SYNC",
+      "metric": "CAN bus telemetry to video frame synchronization delta",
+      "threshold": "<= 20.0 ms",
+      "rejection_action": "Mark telemetry as UNVERIFIED; exclude from quantitative braking analysis."
+    },
+    {
+      "gate_id": "G_CALIBRATION",
+      "metric": "Ground plane homography and extrinsic reprojection error",
+      "threshold": "<= 1.5 pixels mean reprojection error",
+      "rejection_action": "Recalibrate camera extrinsic matrices before event logging."
+    },
+    {
+      "gate_id": "G_ZONE_MAPPING",
+      "metric": "Defined 2D/3D polygons for primary and secondary zones",
+      "threshold": "All zone vertices surveyed and verified in facility coordinates",
+      "rejection_action": "Quarantine event as UNDEFINED_ZONE_GEOMETRY."
+    },
+    {
+      "gate_id": "G_TELEMETRY",
+      "metric": "CAN signal continuity (speed, acceleration, brake switch)",
+      "threshold": "Zero missing packets exceeding 50ms interval",
+      "rejection_action": "Downgrade event to PARTIAL_TELEMETRY."
+    },
+    {
+      "gate_id": "G_OCCLUSION",
+      "metric": "Secondary zone interior depth visibility verification",
+      "threshold": "Camera C line-of-sight confirmed OR LiDAR/UWB active and unoccluded",
+      "rejection_action": "Reject event from backfire validation pool; route to INSUFFICIENT_OBSERVABILITY."
+    },
+    {
+      "gate_id": "G_EVENT_COMPLETENESS",
+      "metric": "PRE, INTERVENTION, and POST window completeness",
+      "threshold": "T_pre >= 3.0s, T_interv >= 1.5s, T_post >= 4.0s without clip truncation",
+      "rejection_action": "Tag as INELIGIBLE_WINDOW."
+    },
+    {
+      "gate_id": "G_GT_COMPLETENESS",
+      "metric": "Dual-blinded human review completion and cryptographic signoff",
+      "threshold": "Both reviewer forms signed and consensus/adjudication recorded",
+      "rejection_action": "Exclude event from validated ground-truth benchmark."
+    }
+  ],
+  "dataset_readiness_acceptance_criteria": [
+    "DATASET_READINESS: 100% of candidate events pass pre-ingestion quality gates G_CAMERA_SYNC through G_EVENT_COMPLETENESS.",
+    "EVIDENCE_COMPLETENESS: Zero missing mandatory telemetry signals across evaluated event windows.",
+    "SENSOR_COVERAGE: All four camera views (A, B, C, D) present and optically calibrated.",
+    "ZONE_COVERAGE: Secondary zone interior depth is affirmatively observable in all candidate events.",
+    "TEMPORAL_COVERAGE: Unclipped observation throughout the dynamic post-intervention window.",
+    "GT_READINESS: Dual-blinded human adjudication protocol completed with Cohen's Kappa >= 0.80."
+  ],
+  "minimum_dataset_scale_specifications": {
+    "minimum_facility_count": ">= 3 distinct industrial warehouse facilities",
+    "minimum_camera_count_per_junction": ">= 4 synchronized cameras",
+    "minimum_event_count": "TBD_AFTER_POWER_ANALYSIS",
+    "minimum_backfire_positive_candidate_count": "TBD_AFTER_POWER_ANALYSIS",
+    "minimum_negative_controls": "TBD_AFTER_POWER_ANALYSIS",
+    "minimum_confounded_events": "TBD_AFTER_POWER_ANALYSIS"
+  },
+  "statistical_sample_size_framework": {
+    "status": "FRAMEWORK_SPECIFIED_PARAMETRIC_CALCULATION_DEFERRED",
+    "formula_reference": "n = (Z_{alpha/2}^2 * p * (1 - p)) / E^2",
+    "required_input_parameters_prior_to_number_selection": [
+      "Expected true backfire prevalence (p) in operational logistics facilities",
+      "Target statistical confidence level (1 - alpha, e.g., 95%)",
+      "Acceptable margin of error (E, e.g., +/- 3%)",
+      "Statistical power (1 - beta, e.g., 80% to 90%) for hypothesis testing between baseline and intervention configurations"
+    ],
+    "policy_note": "No arbitrary integer event count is fabricated; final sample size will be derived following pilot prevalence estimation."
+  }
+}

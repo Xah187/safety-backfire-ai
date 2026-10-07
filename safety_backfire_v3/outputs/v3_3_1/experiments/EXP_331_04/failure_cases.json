@@ -1,0 +1,8 @@
+[
+  {
+    "failure_id": "V3.3.1-FAIL-002",
+    "category": "ODD_BOUNDARY",
+    "description": "Prolonged parallel walking (>3 seconds) maintains ambiguous identity state.",
+    "mitigation": "BOUNDED_BY_ODD"
+  }
+]

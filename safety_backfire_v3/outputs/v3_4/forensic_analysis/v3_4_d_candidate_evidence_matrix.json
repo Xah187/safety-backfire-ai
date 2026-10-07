@@ -1,0 +1,288 @@
+{
+  "milestone": "V3.4-D",
+  "document_title": "Forensic Analysis Evidence Matrix of Automated Backfire Candidates",
+  "timestamp_utc": "2026-10-01T11:45:00.000000+00:00",
+  "epistemic_status": {
+    "safety_backfire_gt": "NOT_ESTABLISHED",
+    "safety_backfire_validation": "NOT_ESTABLISHED",
+    "perception_metrics": "NOT_ESTABLISHED",
+    "candidate_pool_evaluated": "5_AUTOMATED_SCREENING_CANDIDATE_BACKFIRE_EVENTS"
+  },
+  "summary_distribution": {
+    "total_candidates_analyzed": 5,
+    "strong_candidate": 0,
+    "moderate_candidate": 1,
+    "weak_candidate": 2,
+    "insufficient_evidence": 2,
+    "visible_intervention_count": 4,
+    "visible_primary_risk_change_count": 4,
+    "visible_secondary_change_count": 0,
+    "high_causal_mechanism_evidence_count": 0,
+    "confounders_present_count": 4,
+    "heavily_detector_dependent_count": 2
+  },
+  "candidates": [
+    {
+      "event_id": "UNION_CAND_Warehouse_026_010",
+      "facility": "Warehouse_026",
+      "camera": "Camera_0002",
+      "actors": {
+        "person_track_id": 148,
+        "forklift_track_id": 136,
+        "detector_class_person": "person",
+        "detector_class_forklift": "forklift"
+      },
+      "pre_window": {
+        "start_frame": 91,
+        "end_frame": 240,
+        "timestamp_start_s": 3.03,
+        "timestamp_end_s": 8.0,
+        "duration_s": 5.0,
+        "clip_filename": "before.mp4"
+      },
+      "intervention_window": {
+        "start_frame": 241,
+        "end_frame": 313,
+        "timestamp_start_s": 8.03,
+        "timestamp_end_s": 10.43,
+        "duration_s": 2.43,
+        "clip_filename": "intervention.mp4"
+      },
+      "post_window": {
+        "start_frame": 314,
+        "end_frame": 553,
+        "timestamp_start_s": 10.47,
+        "timestamp_end_s": 18.43,
+        "duration_s": 8.0,
+        "clip_filename": "after.mp4"
+      },
+      "intervention_visibility": "YES",
+      "intervention_description": "Person 148 walks across central transit corridor; Forklift 136 executes an abrupt deceleration/halt to avoid impact (closest approach 115.1 px at frame 257).",
+      "primary_risk_present": "YES",
+      "primary_risk_change": "OBSERVED",
+      "primary_risk_change_details": "Immediate collision risk is eliminated as Forklift 136 stops and Person 148 clears the corridor path.",
+      "secondary_zone_definition": "Camera_0002_ADJACENT_RACK_AISLE (geometrically calibrated aisle bordering the central lane).",
+      "secondary_zone_visibility": "PARTIALLY_VISIBLE",
+      "secondary_risk_change": "NOT_OBSERVED",
+      "secondary_risk_change_details": "Forklift 136 remains stationary (total displacement 2.5 px over 240 frames in POST) and does not enter or displace hazard into the adjacent aisle where workers 134 and 135 are located.",
+      "causal_mechanism_evidence": "LOW",
+      "causal_mechanism_details": "Intervention (braking) successfully averted primary collision, but did not cause a secondary kinetic cascade or displacement into secondary zone.",
+      "confounders_present": "YES",
+      "confounder_notes": "Workers 134 and 135 were already stationary at the rack prior to the event; their presence was not caused by the intervention.",
+      "occlusion_status": "PARTIALLY_OCCLUDED",
+      "coverage_status": "MONOCULAR_CCTV_CLEAR_LANE",
+      "detector_dependence": "LOW",
+      "evidence_quality": "HIGH",
+      "forensic_status": "MODERATE_CANDIDATE",
+      "forensic_reason": "Clear visual evidence of primary risk mitigation, but secondary hazard transfer is absent because the vehicle came to a complete stop and remained parked throughout the 8.0s post window."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_001",
+      "facility": "Warehouse_027",
+      "camera": "Camera_0002",
+      "actors": {
+        "person_track_id": 367,
+        "forklift_track_id": 378
+      },
+      "pre_window": {
+        "start_frame": 342,
+        "end_frame": 491,
+        "timestamp_start_s": 11.4,
+        "timestamp_end_s": 16.4,
+        "duration_s": 5.0,
+        "clip_filename": "before.mp4"
+      },
+      "intervention_window": {
+        "start_frame": 492,
+        "end_frame": 720,
+        "timestamp_start_s": 16.4,
+        "timestamp_end_s": 24.0,
+        "duration_s": 7.63,
+        "clip_filename": "intervention.mp4"
+      },
+      "post_window": {
+        "start_frame": 721,
+        "end_frame": 960,
+        "timestamp_start_s": 24.0,
+        "timestamp_end_s": 32.0,
+        "duration_s": 8.0,
+        "clip_filename": "after.mp4"
+      },
+      "intervention_visibility": "YES",
+      "intervention_description": "Person 367 yields and steps toward the corridor perimeter as Forklift 378 advances down the lane (closest approach 242.9 px at frame 720).",
+      "primary_risk_present": "YES",
+      "primary_risk_change": "OBSERVED",
+      "primary_risk_change_details": "Person 367 steps aside and vacates the primary corridor.",
+      "secondary_zone_definition": "Camera_0002_ADJACENT_RACK_AISLE (adjacent access lane).",
+      "secondary_zone_visibility": "PARTIALLY_VISIBLE",
+      "secondary_risk_change": "UNCLEAR",
+      "secondary_risk_change_details": "Forklift 378 idles/stops (displacement 5.1 px over 136 post frames) while a separate cluster of incoming warehouse workers (397, 398, etc.) enters the adjacent lane.",
+      "causal_mechanism_evidence": "LOW",
+      "causal_mechanism_details": "Incoming pedestrian traffic is an independent shift-routine movement rather than an avoidance-induced hazard cascade.",
+      "confounders_present": "YES",
+      "confounder_notes": "Multiple independent pedestrians (cluster of 8+ workers) enter adjacent area during POST window.",
+      "occlusion_status": "PARTIALLY_OCCLUDED",
+      "coverage_status": "MONOCULAR_CCTV_CLEAR_LANE",
+      "detector_dependence": "MEDIUM",
+      "evidence_quality": "MEDIUM",
+      "forensic_status": "WEAK_CANDIDATE",
+      "forensic_reason": "Visible primary interaction, but secondary hazard transfer cannot be causally attributed to the initial intervention due to confounding independent pedestrian traffic."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_003",
+      "facility": "Warehouse_027",
+      "camera": "Camera_0002",
+      "actors": {
+        "person_track_id": 397,
+        "forklift_track_id": 378
+      },
+      "pre_window": {
+        "start_frame": 562,
+        "end_frame": 711,
+        "timestamp_start_s": 18.73,
+        "timestamp_end_s": 23.7,
+        "duration_s": 5.0,
+        "clip_filename": "before.mp4"
+      },
+      "intervention_window": {
+        "start_frame": 712,
+        "end_frame": 857,
+        "timestamp_start_s": 23.73,
+        "timestamp_end_s": 28.6,
+        "duration_s": 4.87,
+        "clip_filename": "intervention.mp4"
+      },
+      "post_window": {
+        "start_frame": 858,
+        "end_frame": 1097,
+        "timestamp_start_s": 28.6,
+        "timestamp_end_s": 36.6,
+        "duration_s": 8.0,
+        "clip_filename": "after.mp4"
+      },
+      "intervention_visibility": "YES",
+      "intervention_description": "Forklift 378 navigates past Person 397 who pauses near corridor entrance (closest approach 231.8 px at frame 807).",
+      "primary_risk_present": "YES",
+      "primary_risk_change": "OBSERVED",
+      "primary_risk_change_details": "Forklift 378 continues moving forward and exits the corridor frame.",
+      "secondary_zone_definition": "Camera_0002_ADJACENT_RACK_AISLE.",
+      "secondary_zone_visibility": "PARTIALLY_VISIBLE",
+      "secondary_risk_change": "UNCLEAR",
+      "secondary_risk_change_details": "Forklift 378 departs the field of view; a completely separate forklift (418) enters the scene during the post-intervention window.",
+      "causal_mechanism_evidence": "LOW",
+      "causal_mechanism_details": "Secondary activity is initiated by an independent incoming forklift rather than a behavioral cascade from Forklift 378.",
+      "confounders_present": "YES",
+      "confounder_notes": "Arrival of a new forklift (418) and multiple incoming pedestrians in the post-window.",
+      "occlusion_status": "PARTIALLY_OCCLUDED",
+      "coverage_status": "MONOCULAR_CCTV_CLEAR_LANE",
+      "detector_dependence": "HIGH",
+      "evidence_quality": "MEDIUM",
+      "forensic_status": "WEAK_CANDIDATE",
+      "forensic_reason": "High tracker conflation: the automated score flagged this event due to multi-vehicle turnover rather than an authentic backfire mechanism."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_004",
+      "facility": "Warehouse_027",
+      "camera": "Camera_0002",
+      "actors": {
+        "person_track_id": 417,
+        "forklift_track_id": 418
+      },
+      "pre_window": {
+        "start_frame": 843,
+        "end_frame": 992,
+        "timestamp_start_s": 28.1,
+        "timestamp_end_s": 33.1,
+        "duration_s": 5.0,
+        "clip_filename": "before.mp4"
+      },
+      "intervention_window": {
+        "start_frame": 993,
+        "end_frame": 1123,
+        "timestamp_start_s": 33.1,
+        "timestamp_end_s": 37.43,
+        "duration_s": 4.37,
+        "clip_filename": "intervention.mp4"
+      },
+      "post_window": {
+        "start_frame": 1124,
+        "end_frame": 1363,
+        "timestamp_start_s": 37.47,
+        "timestamp_end_s": 45.43,
+        "duration_s": 8.0,
+        "clip_filename": "after.mp4"
+      },
+      "intervention_visibility": "YES",
+      "intervention_description": "Forklift 418 maneuvers through corridor while Person 417 walks along the wall (closest approach 225.1 px at frame 1011).",
+      "primary_risk_present": "YES",
+      "primary_risk_change": "OBSERVED",
+      "primary_risk_change_details": "Both agents exit the shared corridor safely without conflict.",
+      "secondary_zone_definition": "Camera_0002_ADJACENT_RACK_AISLE.",
+      "secondary_zone_visibility": "PARTIALLY_VISIBLE",
+      "secondary_risk_change": "NOT_OBSERVED",
+      "secondary_risk_change_details": "In the post window, both Forklift 418 and Person 417 leave the camera frame; no secondary agents or hazards enter.",
+      "causal_mechanism_evidence": "NONE",
+      "causal_mechanism_details": "Zero secondary hazard was generated; the event represents a nominal clearing interaction.",
+      "confounders_present": "NO",
+      "confounder_notes": "Scene clears completely in post-window.",
+      "occlusion_status": "CLEAR",
+      "coverage_status": "MONOCULAR_CCTV_CLEAR_LANE",
+      "detector_dependence": "MEDIUM",
+      "evidence_quality": "HIGH",
+      "forensic_status": "INSUFFICIENT_EVIDENCE",
+      "forensic_reason": "Empirically a non-backfire event; automated screening flag was triggered purely by proximity threshold rather than any observed secondary risk."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_014",
+      "facility": "Warehouse_026",
+      "camera": "Camera_0002",
+      "actors": {
+        "person_track_id": 195,
+        "forklift_track_id": 188
+      },
+      "pre_window": {
+        "start_frame": 1144,
+        "end_frame": 1293,
+        "timestamp_start_s": 38.13,
+        "timestamp_end_s": 43.1,
+        "duration_s": 5.0,
+        "clip_filename": "before.mp4"
+      },
+      "intervention_window": {
+        "start_frame": 1294,
+        "end_frame": 1364,
+        "timestamp_start_s": 43.13,
+        "timestamp_end_s": 45.5,
+        "duration_s": 2.37,
+        "clip_filename": "intervention.mp4"
+      },
+      "post_window": {
+        "start_frame": 1365,
+        "end_frame": 1604,
+        "timestamp_start_s": 45.5,
+        "timestamp_end_s": 53.5,
+        "duration_s": 8.0,
+        "clip_filename": "after.mp4"
+      },
+      "intervention_visibility": "PARTIALLY_VISIBLE",
+      "intervention_description": "Complex cluttered scene: Forklift 188 approaches Person 195 (closest approach 117.1 px at frame 1298) amidst 5 active background forklifts.",
+      "primary_risk_present": "YES",
+      "primary_risk_change": "UNCLEAR",
+      "primary_risk_change_details": "Person 195 departs the detection region, but dense forklift congestion continues across the lane.",
+      "secondary_zone_definition": "Camera_0002_ADJACENT_RACK_AISLE.",
+      "secondary_zone_visibility": "PARTIALLY_VISIBLE",
+      "secondary_risk_change": "UNCLEAR",
+      "secondary_risk_change_details": "Forklift 188 is stationary in post-window (displacement 0.6 px), while other vehicles (Forklift 200) move across the background.",
+      "causal_mechanism_evidence": "LOW",
+      "causal_mechanism_details": "Extreme visual clutter and multi-vehicle crossings make causal isolation impossible.",
+      "confounders_present": "YES",
+      "confounder_notes": "Heavy multi-vehicle congestion: 5 distinct forklifts active across the windows.",
+      "occlusion_status": "OCCLUDED",
+      "coverage_status": "CLUTTERED_MULTI_VEHICLE",
+      "detector_dependence": "HIGH",
+      "evidence_quality": "LOW",
+      "forensic_status": "INSUFFICIENT_EVIDENCE",
+      "forensic_reason": "High visual occlusion, severe multi-forklift confounding, and tracker ambiguity prevent any definitive causal evaluation."
+    }
+  ]
+}

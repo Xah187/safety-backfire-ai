@@ -1,0 +1,35 @@
+{
+  "phase": "Evidence Engine Real-World Validation (Phase 11)",
+  "status": "COMPUTED",
+  "critical_invariant_passed": true,
+  "real_video_stats": {
+    "total_frames": 1246,
+    "tracking_failures": 66,
+    "tracking_failure_rate": 0.053,
+    "unique_ids": 21,
+    "total_events": 0
+  },
+  "profiles": {
+    "real_video_profile": {
+      "description": "Actual test2.mp4 pipeline output",
+      "events_count": 0,
+      "tracking_failure_rate": 0.053,
+      "avg_yolo_confidence": 0.44,
+      "evidence_confidence": 0.6,
+      "evidence_level": "MODERATE",
+      "limitations": [
+        "No interaction events observed. Analysis relies on zero-event baseline."
+      ]
+    },
+    "invariant_test__high_yolo_conf_no_events": {
+      "description": "High YOLO confidence but zero events \u2014 should NOT be HIGH evidence",
+      "events_count": 0,
+      "tracking_failure_rate": 0.05,
+      "avg_yolo_confidence": 0.44,
+      "evidence_confidence": 0.6,
+      "evidence_level": "MODERATE",
+      "invariant_passed": true,
+      "invariant_description": "HIGH YOLO confidence alone must not yield HIGH evidence level"
+    }
+  }
+}

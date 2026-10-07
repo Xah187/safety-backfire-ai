@@ -1,0 +1,55 @@
+{
+  "registry_version": "V3.3.3_EXPERIMENT_REGISTRY",
+  "release": "V3.3.3",
+  "status": "PREREGISTERED_LOCKED",
+  "experiments": [
+    {
+      "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+      "title": "Independent External Facility Generalization Gate",
+      "hypothesis": "Perception F1 and tracking IDF1 maintain >= 85% without re-tuning when evaluated on a distinct, unseen physical warehouse facility with different camera layout and lighting.",
+      "preregistered_primary_metric": "External_Facility_Perception_F1 >= 0.8500",
+      "dataset_requirement": "Physically distinct facility (Facility E) with new capture sessions and independent annotations",
+      "status": "BLOCKED_PENDING_EXTERNAL_DATA"
+    },
+    {
+      "experiment_id": "EXP_333_02_PROSPECTIVE_BACKFIRE",
+      "title": "Prospective Physical Intervention Backfire Study",
+      "hypothesis": "Physical interventions across diverse operational zones exhibit secondary risk redistribution quantifiable via DiD with valid parallel trends (p >= 0.05).",
+      "preregistered_primary_metric": "Prospective_Physical_New_Cases >= 5",
+      "dataset_requirement": "Prospective real-world intervention capture with before, during, after, and control zones",
+      "status": "PREREGISTERED_PENDING_FIELD_COLLECTION"
+    },
+    {
+      "experiment_id": "EXP_333_03_OOS_UNCERTAINTY_CROSS_CAMERA",
+      "title": "Out-of-Sample Uncertainty Validation Across Unseen Cameras",
+      "hypothesis": "Model H localized pitch compensation achieves >= 95.0% nominal OOS coverage on previously uncalibrated camera viewports without exceeding 0.40m interval width.",
+      "preregistered_primary_metric": "Nominal_OOS_Coverage >= 0.9500",
+      "dataset_requirement": "Independent camera viewport streams within nominal distance",
+      "status": "PREREGISTERED_LOCKED"
+    },
+    {
+      "experiment_id": "EXP_333_04_WIDEBaseline_REID",
+      "title": "Wide-Baseline Multi-Camera Re-Identification Robustness",
+      "hypothesis": "Under non-overlapping wide-baseline camera handoffs, identity ambiguity engine enforces UNKNOWN without producing unsafe forced track swaps.",
+      "preregistered_primary_metric": "Forced_Wrong_Identity_Rate == 0.0",
+      "dataset_requirement": "Multi-camera synchronized warehouse handoff sequences",
+      "status": "PREREGISTERED_LOCKED"
+    },
+    {
+      "experiment_id": "EXP_333_05_REAL_LONG_DURATION",
+      "title": "Real Continuous Long-Duration Endurance Validation",
+      "hypothesis": "Continuous physical video inference exhibits zero unbounded memory growth, zero latency drift (>500ms), and zero track drift over multi-hour runs.",
+      "preregistered_primary_metric": "Max_Latency <= 500.0 ms, Memory_Growth_Rate == 0.0 MB/hr",
+      "dataset_requirement": "Continuous unlooped physical footage stream",
+      "status": "PREREGISTERED_PENDING_CONTINUOUS_STREAM"
+    },
+    {
+      "experiment_id": "EXP_333_06_DISTRIBUTION_SHIFT_REFUSAL",
+      "title": "Distribution Shift Safe Refusal Robustness Battery",
+      "hypothesis": "Multi-trigger action gating maintains 0 unsafe non-refusals across abrupt photometric, optical, and mechanical sensor shifts.",
+      "preregistered_primary_metric": "Unsafe_Non_Refusal_Rate == 0.0",
+      "dataset_requirement": "50 stress fixture test scenarios across all 5 failure families",
+      "status": "PREREGISTERED_LOCKED"
+    }
+  ]
+}

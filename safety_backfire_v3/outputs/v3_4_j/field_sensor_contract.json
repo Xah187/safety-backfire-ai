@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "contract_id": "V3_4_J_FIELD_SENSOR_CONTRACT",
+  "version": "1.0.0",
+  "status": "REQUIRED_SPECIFICATION",
+  "description": "Master Multi-Modal Sensor Integration, Time Synchronization, Spatial Geometry, and Environmental Telemetry Contract.",
+  "governance": {
+    "milestone": "V3.4-J",
+    "validation_status": "NOT_ESTABLISHED",
+    "design_target_policy": "33.3ms SKEW BUDGET IS CURRENT_DESIGN_TARGET_NOT_UNIVERSAL_LAW"
+  },
+  "temporal_synchronization_budget": {
+    "grandmaster_protocol": "IEEE_1588_PTP_V2",
+    "clock_domain": "TAI_SYNCHRONIZED_UTC_OFFSET",
+    "error_budget_breakdown_ms": {
+      "camera_hardware_trigger_jitter_ms": 2.0,
+      "can_bus_gateway_timestamp_latency_ms": 5.0,
+      "secondary_sensor_network_jitter_ms": 8.0,
+      "operating_system_inter_process_jitter_ms": 3.0,
+      "total_composite_skew_budget_ms": 33.3
+    },
+    "skew_budget_designation": "CURRENT_DESIGN_TARGET",
+    "budget_rationale": "Corresponds to 1.0 frame interval at 30 fps; guarantees control signal and visual observation map to identical temporal epoch within one discrete video frame."
+  },
+  "spatial_geometry_contract": {
+    "coordinate_reference_system": "FACILITY_GLOBAL_DATUM_METRIC_XYZ",
+    "camera_intrinsics_model": "BROWN_CONRADY_PINHOLE_RADIAL_TANGENTIAL (fx, fy, cx, cy, k1, k2, p1, p2, k3)",
+    "extrinsic_calibration_representation": "6_DOF_EUCLIDEAN_RIGID_TRANSFORM [R | T] relative to facility origin",
+    "ground_plane_model": "PLANAR_Z0_HOMOGRAPHY_MATRIX_H",
+    "homography_sufficiency_criteria": [
+      "Vehicle and pedestrian footfalls remain strictly in contact with flat concrete slab",
+      "No ramps, raised docks, or uneven floor depressions exceeding 20mm elevation",
+      "Sufficient for 2D footprint tracking, separation distances, and boundary crossing detection"
+    ],
+    "three_dimensional_reconstruction_mandate": [
+      "Required when pallet loads create 3D visual occlusions across cross-aisle sightlines",
+      "Required when forklift mast elevation lifts cargo into overhead camera FOV",
+      "Required when dynamic ray-casting against 3D warehouse racking geometry is used to compute line-of-sight visibility"
+    ],
+    "zone_polygon_definitions": {
+      "primary_interaction_zone": "Planar 2D polygon enclosing central transit lane",
+      "secondary_zone_entry": "Planar 2D polygon bounding the aisle junction intersection",
+      "secondary_zone_depth": "3D volumetric bounding box enclosing aisle space between racking uprights up to 6.0m height"
+    }
+  },
+  "environmental_and_illumination_telemetry": {
+    "lux_sensor": {
+      "status": "REQUIRED_SPECIFICATION",
+      "purpose": "Continuously measure ambient light level at aisle ground plane to calibrate optical detector reliability and identify shadow degradation.",
+      "unit": "lux",
+      "sampling_rate_hz": 1.0,
+      "mounting_location": "Mounted at 2.5m height on rack column facing aisle floor",
+      "nominal_operational_range_lux": [50.0, 1000.0]
+    },
+    "environmental_particulate_monitor": {
+      "status": "HIGHLY_DESIRABLE",
+      "purpose": "Monitor airborne dust concentration resulting from heavy braking or concrete wear that degrades camera and LiDAR optical fidelity.",
+      "unit": "micrograms_per_cubic_meter (PM2.5 / PM10)",
+      "sampling_rate_hz": 0.1
+    }
+  }
+}

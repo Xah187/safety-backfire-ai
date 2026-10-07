@@ -1,0 +1,26 @@
+{
+  "audit_version": "V3.2.1_UNCERTAINTY_SPLIT_AUDIT",
+  "metric_name": "uncertainty_containment_coverage",
+  "dataset_split": "CALIBRATION_SPLIT",
+  "source_stream": "VID_CAL_001 (CAM02_RACK_CORRIDOR_CALIB)",
+  "sample_size_N": 500,
+  "contained_samples": 488,
+  "in_sample_coverage": 0.976,
+  "wilson_ci_descriptive": [
+    0.9585,
+    0.9862
+  ],
+  "designation": "in-sample calibration coverage",
+  "evaluation_type": "CALIBRATION_SPLIT_IN_SAMPLE",
+  "independent_validation_status": "NOT_AN_INDEPENDENT_TEST",
+  "leakage_audit_verdict": {
+    "leakage_present_in_original_label": true,
+    "leakage_mitigated_by_relabeling": true,
+    "finding": "The 500 observations evaluated for spatial uncertainty containment originated from the same CALIBRATION_SPLIT used to tune factor k = 2.24. Presenting 97.60% as an independent validation score constituted test-set contamination. The metric has been formally reclassified as 'in-sample calibration coverage'."
+  },
+  "post_calibration_evaluation": {
+    "validation_split_evaluated": false,
+    "blind_split_evaluated": false,
+    "recommendation": "Independent out-of-sample coverage verification should be performed in future operational pilot testing."
+  }
+}

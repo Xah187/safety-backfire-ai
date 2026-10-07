@@ -1,0 +1,109 @@
+{
+  "provenance_version": "NVIDIA_WAREHOUSE_026_PROVENANCE_V1",
+  "acquisition_timestamp_utc": "2026-09-28T08:10:33Z",
+  "source": {
+    "repository": "nvidia/PhysicalAI-SmartSpaces",
+    "platform": "HuggingFace Hub",
+    "repository_type": "dataset",
+    "subset": "MTMC_Tracking_2026/test/Warehouse_026",
+    "download_command": "hf download nvidia/PhysicalAI-SmartSpaces --repo-type dataset --include 'MTMC_Tracking_2026/test/Warehouse_026/*' --local-dir ./data/external_facility/raw/Warehouse_026",
+    "license": "CC-BY-4.0",
+    "publisher": "NVIDIA Corporation",
+    "dataset_class": "REAL_WORLD_MULTI_CAMERA_WAREHOUSE",
+    "physical_independence": "NVIDIA_FACILITY — no overlap with primary evaluation population"
+  },
+  "data_volume": {
+    "cameras": 4,
+    "videos": 4,
+    "total_frames": 7200,
+    "frames_per_camera": 1800,
+    "fps": 30,
+    "duration_seconds": 60.0,
+    "resolution": "1920x1080",
+    "total_size_mb": 100.83,
+    "comparison_to_previous": {
+      "0_te11_frames": 173,
+      "warehouse_026_frames": 7200,
+      "improvement_factor": "41.6x"
+    }
+  },
+  "video_hashes": {
+    "Camera_0000.mp4": {
+      "sha256": "83ed232a2f5fe3031807ed19020e1a44fe386e89b68f9bea621797f1552c9cda",
+      "size_bytes": 19802011
+    },
+    "Camera_0001.mp4": {
+      "sha256": "dd37e801eec30528e2af88d137eb3c9b68306b29ac56c014fe1f68293767bfca",
+      "size_bytes": 27633596
+    },
+    "Camera_0002.mp4": {
+      "sha256": "abe39e20ef9b2b9c64b2e66f082809951540c8c719d4fe31d5a5e0176af928ee",
+      "size_bytes": 38707343
+    },
+    "Camera_0003.mp4": {
+      "sha256": "9051adb98e17a1425c6d70486972f2dd17f7ada0c0f8023db64d504bc2bc0077",
+      "size_bytes": 19598552
+    }
+  },
+  "calibration": {
+    "type": "cartesian",
+    "provided_matrices": ["intrinsicMatrix", "extrinsicMatrix", "cameraMatrix", "homography"],
+    "reprojection_error": {
+      "total_points": 1000,
+      "mean_error_units": 0.0369,
+      "rmse_units": 0.0542,
+      "median_error_units": 0.0240,
+      "max_error_units": 0.3630,
+      "p95_error_units": 0.1082,
+      "quality": "HIGH_PRECISION"
+    },
+    "cameras": {
+      "Camera_0000": {
+        "pitch_deg": 56.51,
+        "focal_length_fx": 999.56,
+        "focal_length_fy": 988.71,
+        "translation_m": [0.193, 3.049, 1.905],
+        "reprojection_points": 129,
+        "reprojection_mean": 0.0728
+      },
+      "Camera_0001": {
+        "pitch_deg": -53.84,
+        "focal_length_fx": 935.24,
+        "focal_length_fy": 928.42,
+        "translation_m": [3.220, -3.693, 13.382],
+        "reprojection_points": 55,
+        "reprojection_mean": 0.0794
+      },
+      "Camera_0002": {
+        "pitch_deg": -4.42,
+        "focal_length_fx": 933.95,
+        "focal_length_fy": 926.44,
+        "translation_m": [-6.523, 0.808, 6.426],
+        "reprojection_points": 365,
+        "reprojection_mean": 0.0259
+      },
+      "Camera_0003": {
+        "pitch_deg": 1.59,
+        "focal_length_fx": 939.93,
+        "focal_length_fy": 934.71,
+        "translation_m": [6.788, -0.879, 9.375],
+        "reprojection_points": 451,
+        "reprojection_mean": 0.0304
+      }
+    }
+  },
+  "model_h_sensor_availability": {
+    "camera_pitch_deg": "AVAILABLE_FROM_CALIBRATION",
+    "illumination_lux": "NOT_AVAILABLE — must extract from pixel analysis or declare UNKNOWN",
+    "occlusion_state": "DERIVABLE — multi-camera cross-view enables occlusion estimation",
+    "distance_m": "DERIVABLE — calibration homography enables metric distance",
+    "note": "Pitch is PHYSICALLY MEASURED via calibrated extrinsic matrices (not estimated)"
+  },
+  "governance": {
+    "synthetic_substitution": "REJECTED",
+    "default_value_substitution": "PROHIBITED",
+    "threshold_tuning": "PROHIBITED",
+    "model_adaptation": "PROHIBITED",
+    "blind_protocol": "COMPLIANT — no model parameters were tuned on this data"
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "audit_version": "V3.2.1_HAZARD_RECONCILIATION",
+  "total_hazards_evaluated": 12,
+  "total_trials_N": 286,
+  "pooled_tp": 268,
+  "pooled_fp": 13,
+  "pooled_fn": 18,
+  "pooled_micro_metrics": {
+    "micro_precision": 0.9537,
+    "micro_recall": 0.9371,
+    "micro_f1": 0.9453,
+    "wilson_ci_precision": [
+      0.9224,
+      0.9729
+    ],
+    "wilson_ci_recall": [
+      0.9024,
+      0.9602
+    ]
+  },
+  "unweighted_macro_metrics": {
+    "macro_precision": 0.948,
+    "macro_recall": 0.9288,
+    "macro_f1": 0.938
+  },
+  "capability_breakdown": {
+    "REAL_WORLD_VALIDATED": 6,
+    "LIMITED_REAL_WORLD_VALIDATION": 5,
+    "SYNTHETIC_ONLY": 1,
+    "SENSOR_REQUIRED": 0,
+    "OUT_OF_ODD": 0
+  },
+  "hazard_list": [
+    {
+      "id": 1,
+      "name": "Person-Forklift Collision",
+      "status": "REAL_WORLD_VALIDATED",
+      "trials": 45,
+      "tp": 43,
+      "fp": 2,
+      "fn": 2
+    },
+    {
+      "id": 2,
+      "name": "Forklift-Rack Impact",
+      "status": "REAL_WORLD_VALIDATED",
+      "trials": 28,
+      "tp": 26,
+      "fp": 1,
+      "fn": 2
+    },
+    {
+      "id": 3,
+      "name": "Unstable Load",
+      "status": "LIMITED_REAL_WORLD_VALIDATION",
+      "trials": 20,
+      "tp": 16,
+      "fp": 2,
+      "fn": 4
+    },
+    {
+      "id": 4,
+      "name": "Falling Object Exposure",
+      "status": "SYNTHETIC_ONLY",
+      "trials": 25,
+      "tp": 25,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": 5,
+      "name": "Blocked Aisle",
+      "status": "REAL_WORLD_VALIDATED",
+      "trials": 35,
+      "tp": 33,
+      "fp": 2,
+      "fn": 2
+    },
+    {
+      "id": 6,
+      "name": "Blocked Emergency Exit",
+      "status": "REAL_WORLD_VALIDATED",
+      "trials": 22,
+      "tp": 22,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": 7,
+      "name": "Conveyor Exposure",
+      "status": "LIMITED_REAL_WORLD_VALIDATION",
+      "trials": 18,
+      "tp": 16,
+      "fp": 1,
+      "fn": 2
+    },
+    {
+      "id": 8,
+      "name": "Restricted-Zone Intrusion",
+      "status": "REAL_WORLD_VALIDATED",
+      "trials": 30,
+      "tp": 29,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": 9,
+      "name": "Dock-Edge Exposure",
+      "status": "LIMITED_REAL_WORLD_VALIDATION",
+      "trials": 15,
+      "tp": 14,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": 10,
+      "name": "Spill / Slip Exposure",
+      "status": "LIMITED_REAL_WORLD_VALIDATION",
+      "trials": 16,
+      "tp": 13,
+      "fp": 2,
+      "fn": 3
+    },
+    {
+      "id": 11,
+      "name": "Machinery Maintenance",
+      "status": "LIMITED_REAL_WORLD_VALIDATION",
+      "trials": 12,
+      "tp": 11,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": 12,
+      "name": "Multi-Hazard Concurrent Scene",
+      "status": "REAL_WORLD_VALIDATED",
+      "trials": 20,
+      "tp": 20,
+      "fp": 0,
+      "fn": 0
+    }
+  ]
+}

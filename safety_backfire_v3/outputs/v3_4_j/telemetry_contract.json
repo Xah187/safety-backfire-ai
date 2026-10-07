@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "contract_id": "V3_4_J_VEHICLE_TELEMETRY_CONTRACT",
+  "version": "1.0.0",
+  "status": "REQUIRED_SPECIFICATION",
+  "description": "Standardized CAN Bus & IMU Telemetry Data Contract for Industrial Vehicles in Safety Backfire Research.",
+  "governance": {
+    "milestone": "V3.4-J",
+    "threshold_policy": "NO_PHYSICAL_INTERVENTION_THRESHOLDS_DEFINED_HERE",
+    "ground_truth_policy": "TELEMETRY_IS_DIRECT_PHYSICAL_OBSERVATION_NOT_MODEL_OUTPUT"
+  },
+  "synchronization_specification": {
+    "time_source": "PTP_IEEE_1588_OR_PPS_GPS_GATEWAY",
+    "clock_domain": "TAI_OR_UTC_MICROSECONDS",
+    "maximum_clock_drift_ppm": 1.0,
+    "target_bus_to_camera_latency_ms": 10.0,
+    "maximum_allowable_skew_budget_ms": 20.0
+  },
+  "signals": [
+    {
+      "signal_name": "timestamp_utc_us",
+      "purpose": "Global chronological baseline linking vehicle physical control states to video frame capture.",
+      "unit": "microseconds",
+      "sampling_target_hz": 100.0,
+      "availability_requirement": "MANDATORY",
+      "synchronization": "HARDWARE_TIMESTAMPER_AT_CAN_TRANSCEIVER",
+      "failure_mode": "Timestamp gap > 20ms or clock jump causes temporal gate G4 invalidation."
+    },
+    {
+      "signal_name": "vehicle_speed_mps",
+      "purpose": "Verify vehicle approach velocity, deceleration profile, and absolute cessation of movement (dead stop verification).",
+      "unit": "meters_per_second",
+      "sampling_target_hz": 50.0,
+      "availability_requirement": "MANDATORY",
+      "synchronization": "SYNCHRONIZED_VIA_CAN_TIMESTAMP",
+      "failure_mode": "Zero-speed drift or wheel-lock slip falsely reporting stationary vehicle."
+    },
+    {
+      "signal_name": "wheel_speed_rad_per_s",
+      "purpose": "Detect wheel lockup, traction loss, differential braking, and rotational slippage during abrupt maneuvers.",
+      "unit": "radians_per_second",
+      "sampling_target_hz": 50.0,
+      "availability_requirement": "HIGHLY_DESIRABLE",
+      "synchronization": "SYNCHRONIZED_VIA_CAN_TIMESTAMP",
+      "failure_mode": "Encoder pulse dropout under wet/dusty warehouse floor conditions."
+    },
+    {
+      "signal_name": "longitudinal_acceleration_mps2",
+      "purpose": "Quantify braking onset rate, peak deceleration force, and stopping dynamics for Gate G1 intervention confirmation.",
+      "unit": "meters_per_second_squared",
+      "sampling_target_hz": 100.0,
+      "availability_requirement": "MANDATORY",
+      "synchronization": "SYNCHRONIZED_VIA_CAN_TIMESTAMP",
+      "failure_mode": "Sensor vibration noise from uneven floor joints masking true deceleration onset."
+    },
+    {
+      "signal_name": "brake_state",
+      "purpose": "Definitively confirm driver or automatic safety brake actuation, distinguishing active intervention from nominal coasting.",
+      "unit": "discrete_enum: [OFF, SERVICE_BRAKE_ACTIVE, EMERGENCY_BRAKE_ACTIVE, FAULT]",
+      "sampling_target_hz": 100.0,
+      "availability_requirement": "MANDATORY",
+      "synchronization": "SYNCHRONIZED_VIA_CAN_TIMESTAMP",
+      "failure_mode": "Digital microswitch bounce or contact corrosion delaying state change flag."
+    },
+    {
+      "signal_name": "brake_hydraulic_pressure_kpa",
+      "purpose": "Measure physical braking force applied to calipers, validating severity and proportionality of emergency intervention.",
+      "unit": "kilopascals",
+      "sampling_target_hz": 50.0,
+      "availability_requirement": "HIGHLY_DESIRABLE",
+      "synchronization": "SYNCHRONIZED_VIA_CAN_TIMESTAMP",
+      "failure_mode": "Transducer drift requiring periodic zero-pressure calibration."
+    },
+    {
+      "signal_name": "steering_angle_deg",
+      "purpose": "Detect steering wheel rotation and evasive swerving toward secondary zones, establishing lateral trajectory redirection.",
+      "unit": "degrees (positive = right, negative = left)",
+      "sampling_target_hz": 50.0,
+      "availability_requirement": "MANDATORY",
+      "synchronization": "SYNCHRONIZED_VIA_CAN_TIMESTAMP",
+      "failure_mode": "Centering offset drift falsely reporting lateral redirection when driving straight."
+    },
+    {
+      "signal_name": "yaw_rate_deg_per_s",
+      "purpose": "Measure instantaneous vehicle angular turning velocity, confirming physical chassis swerve into cross-aisle coordinates.",
+      "unit": "degrees_per_second",
+      "sampling_target_hz": 100.0,
+      "availability_requirement": "MANDATORY",
+      "synchronization": "SYNCHRONIZED_VIA_CAN_TIMESTAMP",
+      "failure_mode": "Thermal bias drift in MEMS gyroscope during extended facility shifts."
+    },
+    {
+      "signal_name": "throttle_position_pct",
+      "purpose": "Verify accelerator pedal release, establishing human or autonomous reaction time prior to brake application.",
+      "unit": "percentage (0.0 to 100.0)",
+      "sampling_target_hz": 50.0,
+      "availability_requirement": "MANDATORY",
+      "synchronization": "SYNCHRONIZED_VIA_CAN_TIMESTAMP",
+      "failure_mode": "Potentiometer deadband obscuring partial throttle release."
+    }
+  ]
+}

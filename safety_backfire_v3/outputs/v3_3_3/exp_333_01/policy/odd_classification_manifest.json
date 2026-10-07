@@ -1,0 +1,105 @@
+{
+  "manifest_version": "EXP_333_01_ODD_CLASSIFICATION_MANIFEST",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "schema_version": "2026-09-27",
+  "governance_note": "ODD classification is applied per-recording per-camera. ODD_SHIFT data cannot enter the primary in-ODD population. This prevents misattribution of ODD failures as generalization failures.",
+
+  "odd_definition_source": "V3.2.2_AND_V3.3_FROZEN_ODD_SPECIFICATION",
+  "odd_definition_version": "FROZEN_DO_NOT_REDEFINE",
+  "odd_redefinition_prohibited": true,
+
+  "odd_status_taxonomy": {
+    "IN_ODD": "All measured ODD dimensions are within the established operational envelope.",
+    "ODD_MARGIN": "One or more ODD dimensions are near but within the established limits. Flagged for sensitivity analysis.",
+    "ODD_SHIFT": "One or more ODD dimensions fall outside the established operational envelope. Must be analyzed separately as EXP_333_01B.",
+    "UNKNOWN": "Actual measurements are unavailable. ODD status cannot be determined without physical evidence."
+  },
+
+  "odd_dimensions": {
+    "camera_height_m": {
+      "established_range": [2.5, 8.0],
+      "margin_band": [7.5, 8.0],
+      "unit": "meters",
+      "source": "V3.3_FROZEN_ODD"
+    },
+    "camera_pitch_deg": {
+      "established_range": [25.0, 60.0],
+      "margin_band": [25.0, 28.0],
+      "unit": "degrees",
+      "source": "V3.3_FROZEN_ODD"
+    },
+    "camera_drift_deg_per_week": {
+      "established_range": [0.0, 2.0],
+      "unit": "degrees/week",
+      "source": "V3.3_FROZEN_ODD"
+    },
+    "operating_range_m": {
+      "established_range": [0.5, 12.0],
+      "unit": "meters",
+      "source": "V3.3_FROZEN_ODD"
+    },
+    "floor_slope_deg": {
+      "established_range": [0.0, 3.0],
+      "unit": "degrees",
+      "source": "V3.3_FROZEN_ODD"
+    },
+    "illumination_lux": {
+      "established_range": [200.0, 800.0],
+      "margin_band": [200.0, 250.0],
+      "unit": "lux",
+      "source": "V3.3_FROZEN_ODD"
+    },
+    "target_speed_m_per_s": {
+      "established_range": [0.0, 3.5],
+      "unit": "m/s",
+      "source": "V3.3_FROZEN_ODD"
+    },
+    "pipeline_latency_ms": {
+      "established_max": 150.0,
+      "unit": "ms",
+      "source": "V3.3_FROZEN_ODD"
+    },
+    "uncertainty_width_normalized": {
+      "established_max": 0.25,
+      "source": "V3.3_FROZEN_ODD"
+    },
+    "identity_confidence_threshold": {
+      "established_min": 0.60,
+      "source": "V3.3_FROZEN_ODD"
+    }
+  },
+
+  "external_recordings": [],
+
+  "experiment_split_classification": {
+    "EXP_333_01A": {
+      "label": "EXTERNAL_IN_ODD_ZERO_ADAPTATION",
+      "description": "Tests transfer to a physically independent facility while remaining within the established operational envelope. Primary generalization test.",
+      "population_rule": "Only recordings where all ODD dimensions are IN_ODD or ODD_MARGIN.",
+      "primary_metric": "External_Facility_Perception_F1",
+      "preregistered_acceptance_criterion": "External_Facility_Perception_F1 >= 85.00%",
+      "execution_status": "NOT_YET_EXECUTABLE",
+      "current_data_status": "NOT_AVAILABLE"
+    },
+    "EXP_333_01B": {
+      "label": "EXTERNAL_ODD_SHIFT_ZERO_ADAPTATION",
+      "description": "Tests external distribution shift where one or more ODD dimensions fall outside the established envelope. Analyzed separately from EXP_333_01A.",
+      "population_rule": "Only recordings where at least one ODD dimension is ODD_SHIFT.",
+      "primary_metric": "Degraded_Perception_F1_Under_ODD_Shift",
+      "execution_status": "NOT_YET_EXECUTABLE",
+      "current_data_status": "NOT_AVAILABLE"
+    }
+  },
+
+  "mixing_prohibition": {
+    "rule": "EXP_333_01A and EXP_333_01B populations must never be mixed in the primary F1 number.",
+    "rationale": "Mixing prevents correct decomposition of generalization failure vs ODD failure.",
+    "enforcement": "odd_classification_manifest.json must be completed before any evaluation is executed."
+  },
+
+  "hypothesis_governance": {
+    "note": "The 85% criterion is a PREREGISTERED_ACCEPTANCE_CRITERION, not a formal statistical null/alternative hypothesis test unless a complete formal hypothesis testing framework is explicitly implemented.",
+    "preregistered_acceptance_criterion": "External_Facility_Perception_F1 >= 85.00% on the EXP_333_01A in-ODD population",
+    "prohibited_notation": ["H0: F1 < 0.85", "H1: F1 >= 0.85 (unless formally justified with power analysis and test specification)"]
+  }
+}

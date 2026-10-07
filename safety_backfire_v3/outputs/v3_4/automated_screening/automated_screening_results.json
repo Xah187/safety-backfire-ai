@@ -1,0 +1,4023 @@
+{
+  "milestone": "V3.4-C",
+  "governance_status": {
+    "human_review_status": "HUMAN_REVIEW = BYPASSED",
+    "safety_backfire_gt": "NOT_ESTABLISHED",
+    "safety_backfire_validation": "NOT_ESTABLISHED",
+    "perception_metrics": "NOT_ESTABLISHED",
+    "automated_evidence_screening": "COMPLETED"
+  },
+  "summary_counts": {
+    "total_union_events": 51,
+    "eligible_screened_events": 38,
+    "ineligible_events": 13,
+    "candidate_backfire": 5,
+    "candidate_no_backfire": 13,
+    "insufficient_evidence": 20,
+    "not_reviewed": 13
+  },
+  "records": [
+    {
+      "event_id": "UNION_CAND_Warehouse_026_008",
+      "automation_status": "EXCLUDED_INELIGIBLE_WINDOW",
+      "screening_label": "NOT_REVIEWED",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": false,
+        "invalidation_reasons": [
+          "PRE = INSUFFICIENT (start_frame < 30; baseline window truncated at stream start)"
+        ],
+        "scene_id": "Warehouse_026",
+        "camera_id": "Camera_0002"
+      },
+      "missing_evidence": [
+        "VALID_TEMPORAL_WINDOW",
+        "PHYSICAL_TELEMETRY",
+        "INDEPENDENT_HUMAN_ADJUDICATION"
+      ],
+      "screening_reason": "Excluded from causal screening due to invalid or truncated temporal window (INELIGIBLE_WINDOW).",
+      "source_hashes": {
+        "source_video_sha256": "RECORDED_IN_MANIFEST"
+      },
+      "timestamp": "2026-09-30T08:46:13.280822+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_009",
+      "automation_status": "EXCLUDED_INELIGIBLE_WINDOW",
+      "screening_label": "NOT_REVIEWED",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": false,
+        "invalidation_reasons": [
+          "PRE = INSUFFICIENT (start_frame < 30; baseline window truncated at stream start)"
+        ],
+        "scene_id": "Warehouse_026",
+        "camera_id": "Camera_0002"
+      },
+      "missing_evidence": [
+        "VALID_TEMPORAL_WINDOW",
+        "PHYSICAL_TELEMETRY",
+        "INDEPENDENT_HUMAN_ADJUDICATION"
+      ],
+      "screening_reason": "Excluded from causal screening due to invalid or truncated temporal window (INELIGIBLE_WINDOW).",
+      "source_hashes": {
+        "source_video_sha256": "RECORDED_IN_MANIFEST"
+      },
+      "timestamp": "2026-09-30T08:46:13.281682+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_028",
+      "automation_status": "EXCLUDED_INELIGIBLE_WINDOW",
+      "screening_label": "NOT_REVIEWED",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": false,
+        "invalidation_reasons": [
+          "PRE = INSUFFICIENT (start_frame < 30; baseline window truncated at stream start)"
+        ],
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0006"
+      },
+      "missing_evidence": [
+        "VALID_TEMPORAL_WINDOW",
+        "PHYSICAL_TELEMETRY",
+        "INDEPENDENT_HUMAN_ADJUDICATION"
+      ],
+      "screening_reason": "Excluded from causal screening due to invalid or truncated temporal window (INELIGIBLE_WINDOW).",
+      "source_hashes": {
+        "source_video_sha256": "RECORDED_IN_MANIFEST"
+      },
+      "timestamp": "2026-09-30T08:46:13.281686+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_001",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "CANDIDATE_BACKFIRE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0002",
+        "video_stream": "Camera_0002.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 342,
+            "end_frame": 491,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 492,
+            "end_frame": 720,
+            "duration_s": 7.63
+          },
+          "post": {
+            "start_frame": 721,
+            "end_frame": 960,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1801135,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 229,
+            "decoded_frames_to_null": 229,
+            "size_bytes": 2374567,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 2557361,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.757,
+          "objects_involved": {
+            "person_track_id": 367,
+            "forklift_track_id": 378
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Automated candidate screening hypothesis: High spatial convergence observed in primary zone (detector relevance: 0.757) with agent trajectory extending toward adjacent rack aisle. Causal mechanism remains unverified due to lack of physical telemetry.",
+      "source_hashes": {
+        "source_video_sha256": "29bc455831e1b80210307405601a4b33fbe00430eea8839b9c8ffd3eccfd526a",
+        "package_hash": "4339a08737a64bf9ba23c34980c5608b08da1ebb1cb302d07e8b855429e74d11"
+      },
+      "timestamp": "2026-09-30T08:46:14.319703+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_003",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "CANDIDATE_BACKFIRE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0002",
+        "video_stream": "Camera_0002.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 562,
+            "end_frame": 711,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 712,
+            "end_frame": 857,
+            "duration_s": 4.87
+          },
+          "post": {
+            "start_frame": 858,
+            "end_frame": 1097,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1535816,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 146,
+            "decoded_frames_to_null": 146,
+            "size_bytes": 1533132,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 2705667,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.75,
+          "objects_involved": {
+            "person_track_id": 397,
+            "forklift_track_id": 378
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Automated candidate screening hypothesis: High spatial convergence observed in primary zone (detector relevance: 0.750) with agent trajectory extending toward adjacent rack aisle. Causal mechanism remains unverified due to lack of physical telemetry.",
+      "source_hashes": {
+        "source_video_sha256": "29bc455831e1b80210307405601a4b33fbe00430eea8839b9c8ffd3eccfd526a",
+        "package_hash": "f93db5f5ee3bfe3f1c72fd6ca0ef3bb2a8b5ad3578d248e75287411199146af6"
+      },
+      "timestamp": "2026-09-30T08:46:15.140180+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_004",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "CANDIDATE_BACKFIRE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0002",
+        "video_stream": "Camera_0002.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 843,
+            "end_frame": 992,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 993,
+            "end_frame": 1123,
+            "duration_s": 4.37
+          },
+          "post": {
+            "start_frame": 1124,
+            "end_frame": 1363,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1718187,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 131,
+            "decoded_frames_to_null": 131,
+            "size_bytes": 1426676,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 2354261,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.658,
+          "objects_involved": {
+            "person_track_id": 417,
+            "forklift_track_id": 418
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Automated candidate screening hypothesis: High spatial convergence observed in primary zone (detector relevance: 0.658) with agent trajectory extending toward adjacent rack aisle. Causal mechanism remains unverified due to lack of physical telemetry.",
+      "source_hashes": {
+        "source_video_sha256": "29bc455831e1b80210307405601a4b33fbe00430eea8839b9c8ffd3eccfd526a",
+        "package_hash": "976bbfcdad7c55e75ea245e00e23f080e6f1589259563034bd323fb3f2ee2615"
+      },
+      "timestamp": "2026-09-30T08:46:15.936624+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_010",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "CANDIDATE_BACKFIRE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_026",
+        "camera_id": "Camera_0002",
+        "video_stream": "Camera_0002.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 91,
+            "end_frame": 240,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 241,
+            "end_frame": 313,
+            "duration_s": 2.43
+          },
+          "post": {
+            "start_frame": 314,
+            "end_frame": 553,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1702129,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 73,
+            "decoded_frames_to_null": 73,
+            "size_bytes": 965354,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 2788873,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.642,
+          "objects_involved": {
+            "person_track_id": 148,
+            "forklift_track_id": 136
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Automated candidate screening hypothesis: High spatial convergence observed in primary zone (detector relevance: 0.642) with agent trajectory extending toward adjacent rack aisle. Causal mechanism remains unverified due to lack of physical telemetry.",
+      "source_hashes": {
+        "source_video_sha256": "abe39e20ef9b2b9c64b2e66f082809951540c8c719d4fe31d5a5e0176af928ee",
+        "package_hash": "8ac3917177243f1398ed18285d074a4e4c38e14b07d8b90ddf79aa05ffbeefce"
+      },
+      "timestamp": "2026-09-30T08:46:16.675435+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_014",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "CANDIDATE_BACKFIRE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_026",
+        "camera_id": "Camera_0002",
+        "video_stream": "Camera_0002.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 1144,
+            "end_frame": 1293,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 1294,
+            "end_frame": 1364,
+            "duration_s": 2.37
+          },
+          "post": {
+            "start_frame": 1365,
+            "end_frame": 1604,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 2092868,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 71,
+            "decoded_frames_to_null": 71,
+            "size_bytes": 984945,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 2800762,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.619,
+          "objects_involved": {
+            "person_track_id": 195,
+            "forklift_track_id": 188
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Automated candidate screening hypothesis: High spatial convergence observed in primary zone (detector relevance: 0.619) with agent trajectory extending toward adjacent rack aisle. Causal mechanism remains unverified due to lack of physical telemetry.",
+      "source_hashes": {
+        "source_video_sha256": "abe39e20ef9b2b9c64b2e66f082809951540c8c719d4fe31d5a5e0176af928ee",
+        "package_hash": "a0374f20487f39a56f8f409b004e3b3cc58758527a2b1bb23835e9becf2f21be"
+      },
+      "timestamp": "2026-09-30T08:46:17.409513+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_012",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "INSUFFICIENT_EVIDENCE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_026",
+        "camera_id": "Camera_0002",
+        "video_stream": "Camera_0002.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 1070,
+            "end_frame": 1219,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 1220,
+            "end_frame": 1296,
+            "duration_s": 2.57
+          },
+          "post": {
+            "start_frame": 1297,
+            "end_frame": 1536,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1837439,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 77,
+            "decoded_frames_to_null": 77,
+            "size_bytes": 1171523,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 2905819,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.55,
+          "objects_involved": {
+            "person_track_id": 186,
+            "forklift_track_id": 176
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Observational evidence ambiguous: Intermediate detector interaction (relevance: 0.550); adjacent aisle partially occluded by warehouse storage racks; physical telemetry absent.",
+      "source_hashes": {
+        "source_video_sha256": "abe39e20ef9b2b9c64b2e66f082809951540c8c719d4fe31d5a5e0176af928ee",
+        "package_hash": "f79e067f6dc006f61ef5786cd791dff6ecc066544fc2349bd957069cee044e01"
+      },
+      "timestamp": "2026-09-30T08:46:18.154947+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_013",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "INSUFFICIENT_EVIDENCE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_026",
+        "camera_id": "Camera_0002",
+        "video_stream": "Camera_0002.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 1075,
+            "end_frame": 1224,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 1225,
+            "end_frame": 1323,
+            "duration_s": 3.3
+          },
+          "post": {
+            "start_frame": 1324,
+            "end_frame": 1563,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1847160,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 99,
+            "decoded_frames_to_null": 99,
+            "size_bytes": 1472258,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 2828667,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.537,
+          "objects_involved": {
+            "person_track_id": 186,
+            "forklift_track_id": 188
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Observational evidence ambiguous: Intermediate detector interaction (relevance: 0.537); adjacent aisle partially occluded by warehouse storage racks; physical telemetry absent.",
+      "source_hashes": {
+        "source_video_sha256": "abe39e20ef9b2b9c64b2e66f082809951540c8c719d4fe31d5a5e0176af928ee",
+        "package_hash": "318b7effbba157f71712c076823c036c8b7420a8f40c1b30092a4fb3508015cf"
+      },
+      "timestamp": "2026-09-30T08:46:18.932583+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_011",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "INSUFFICIENT_EVIDENCE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_026",
+        "camera_id": "Camera_0002",
+        "video_stream": "Camera_0002.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 1046,
+            "end_frame": 1195,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 1196,
+            "end_frame": 1247,
+            "duration_s": 1.73
+          },
+          "post": {
+            "start_frame": 1248,
+            "end_frame": 1487,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1789488,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 52,
+            "decoded_frames_to_null": 52,
+            "size_bytes": 761985,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 3031857,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.506,
+          "objects_involved": {
+            "person_track_id": 181,
+            "forklift_track_id": 176
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Observational evidence ambiguous: Intermediate detector interaction (relevance: 0.506); adjacent aisle partially occluded by warehouse storage racks; physical telemetry absent.",
+      "source_hashes": {
+        "source_video_sha256": "abe39e20ef9b2b9c64b2e66f082809951540c8c719d4fe31d5a5e0176af928ee",
+        "package_hash": "22ea253e9b2e64dcefab29a807f20fc64db7b2d19d25789e60534026608fe690"
+      },
+      "timestamp": "2026-09-30T08:46:19.639661+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_006",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "INSUFFICIENT_EVIDENCE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0003",
+        "video_stream": "Camera_0003.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 1499,
+            "end_frame": 1648,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 1649,
+            "end_frame": 1746,
+            "duration_s": 3.27
+          },
+          "post": {
+            "start_frame": 1747,
+            "end_frame": 1799,
+            "duration_s": 1.77
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1494428,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 98,
+            "decoded_frames_to_null": 98,
+            "size_bytes": 1120801,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 53,
+            "decoded_frames_to_null": 53,
+            "size_bytes": 633746,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0003_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0003_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.428,
+          "objects_involved": {
+            "person_track_id": 502,
+            "forklift_track_id": 490
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Observational evidence ambiguous: Intermediate detector interaction (relevance: 0.428); adjacent aisle partially occluded by warehouse storage racks; physical telemetry absent.",
+      "source_hashes": {
+        "source_video_sha256": "7deacc1aa539bb999ea16c0f656f52695b6fb034e6269bd80e670c090023766c",
+        "package_hash": "f8d7ab4e2112f4869c78f87d95799869100de68519907e78969c88bd4cecd1e6"
+      },
+      "timestamp": "2026-09-30T08:46:20.129323+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_022",
+      "automation_status": "EXCLUDED_INELIGIBLE_WINDOW",
+      "screening_label": "NOT_REVIEWED",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": false,
+        "invalidation_reasons": [
+          "POST = INSUFFICIENT (end_frame > 1770; follow-on window truncated at stream end)"
+        ],
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0005"
+      },
+      "missing_evidence": [
+        "VALID_TEMPORAL_WINDOW",
+        "PHYSICAL_TELEMETRY",
+        "INDEPENDENT_HUMAN_ADJUDICATION"
+      ],
+      "screening_reason": "Excluded from causal screening due to invalid or truncated temporal window (INELIGIBLE_WINDOW).",
+      "source_hashes": {
+        "source_video_sha256": "RECORDED_IN_MANIFEST"
+      },
+      "timestamp": "2026-09-30T08:46:20.129339+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_001",
+      "automation_status": "EXCLUDED_INELIGIBLE_WINDOW",
+      "screening_label": "NOT_REVIEWED",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": false,
+        "invalidation_reasons": [
+          "PRE = INSUFFICIENT (start_frame < 30; baseline window truncated at stream start)"
+        ],
+        "scene_id": "Warehouse_026",
+        "camera_id": "Camera_0000"
+      },
+      "missing_evidence": [
+        "VALID_TEMPORAL_WINDOW",
+        "PHYSICAL_TELEMETRY",
+        "INDEPENDENT_HUMAN_ADJUDICATION"
+      ],
+      "screening_reason": "Excluded from causal screening due to invalid or truncated temporal window (INELIGIBLE_WINDOW).",
+      "source_hashes": {
+        "source_video_sha256": "RECORDED_IN_MANIFEST"
+      },
+      "timestamp": "2026-09-30T08:46:20.129341+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_002",
+      "automation_status": "EXCLUDED_INELIGIBLE_WINDOW",
+      "screening_label": "NOT_REVIEWED",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": false,
+        "invalidation_reasons": [
+          "PRE = INSUFFICIENT (start_frame < 30; baseline window truncated at stream start)"
+        ],
+        "scene_id": "Warehouse_026",
+        "camera_id": "Camera_0000"
+      },
+      "missing_evidence": [
+        "VALID_TEMPORAL_WINDOW",
+        "PHYSICAL_TELEMETRY",
+        "INDEPENDENT_HUMAN_ADJUDICATION"
+      ],
+      "screening_reason": "Excluded from causal screening due to invalid or truncated temporal window (INELIGIBLE_WINDOW).",
+      "source_hashes": {
+        "source_video_sha256": "RECORDED_IN_MANIFEST"
+      },
+      "timestamp": "2026-09-30T08:46:20.129343+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_008",
+      "automation_status": "EXCLUDED_INELIGIBLE_WINDOW",
+      "screening_label": "NOT_REVIEWED",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": false,
+        "invalidation_reasons": [
+          "PRE = INSUFFICIENT (start_frame < 30; baseline window truncated at stream start)"
+        ],
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0005"
+      },
+      "missing_evidence": [
+        "VALID_TEMPORAL_WINDOW",
+        "PHYSICAL_TELEMETRY",
+        "INDEPENDENT_HUMAN_ADJUDICATION"
+      ],
+      "screening_reason": "Excluded from causal screening due to invalid or truncated temporal window (INELIGIBLE_WINDOW).",
+      "source_hashes": {
+        "source_video_sha256": "RECORDED_IN_MANIFEST"
+      },
+      "timestamp": "2026-09-30T08:46:20.129344+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_009",
+      "automation_status": "EXCLUDED_INELIGIBLE_WINDOW",
+      "screening_label": "NOT_REVIEWED",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": false,
+        "invalidation_reasons": [
+          "PRE = INSUFFICIENT (start_frame < 30; baseline window truncated at stream start)"
+        ],
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0005"
+      },
+      "missing_evidence": [
+        "VALID_TEMPORAL_WINDOW",
+        "PHYSICAL_TELEMETRY",
+        "INDEPENDENT_HUMAN_ADJUDICATION"
+      ],
+      "screening_reason": "Excluded from causal screening due to invalid or truncated temporal window (INELIGIBLE_WINDOW).",
+      "source_hashes": {
+        "source_video_sha256": "RECORDED_IN_MANIFEST"
+      },
+      "timestamp": "2026-09-30T08:46:20.129348+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_017",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "INSUFFICIENT_EVIDENCE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0005",
+        "video_stream": "Camera_0005.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 805,
+            "end_frame": 954,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 955,
+            "end_frame": 1268,
+            "duration_s": 10.47
+          },
+          "post": {
+            "start_frame": 1269,
+            "end_frame": 1508,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 908947,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 314,
+            "decoded_frames_to_null": 314,
+            "size_bytes": 2095411,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 1449571,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.4,
+          "objects_involved": {
+            "person_track_id": 608,
+            "forklift_track_id": 557
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Observational evidence ambiguous: Intermediate detector interaction (relevance: 0.400); adjacent aisle partially occluded by warehouse storage racks; physical telemetry absent.",
+      "source_hashes": {
+        "source_video_sha256": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632",
+        "package_hash": "6e391747fda9bb0760aac0b12760adab67964aec82b9b3bd68263d0be164f664"
+      },
+      "timestamp": "2026-09-30T08:46:21.243809+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_027",
+      "automation_status": "EXCLUDED_INELIGIBLE_WINDOW",
+      "screening_label": "NOT_REVIEWED",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": false,
+        "invalidation_reasons": [
+          "PRE = INSUFFICIENT (start_frame < 30; baseline window truncated at stream start)"
+        ],
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0006"
+      },
+      "missing_evidence": [
+        "VALID_TEMPORAL_WINDOW",
+        "PHYSICAL_TELEMETRY",
+        "INDEPENDENT_HUMAN_ADJUDICATION"
+      ],
+      "screening_reason": "Excluded from causal screening due to invalid or truncated temporal window (INELIGIBLE_WINDOW).",
+      "source_hashes": {
+        "source_video_sha256": "RECORDED_IN_MANIFEST"
+      },
+      "timestamp": "2026-09-30T08:46:21.243824+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_029",
+      "automation_status": "EXCLUDED_INELIGIBLE_WINDOW",
+      "screening_label": "NOT_REVIEWED",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": false,
+        "invalidation_reasons": [
+          "PRE = INSUFFICIENT (start_frame < 30; baseline window truncated at stream start)"
+        ],
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0006"
+      },
+      "missing_evidence": [
+        "VALID_TEMPORAL_WINDOW",
+        "PHYSICAL_TELEMETRY",
+        "INDEPENDENT_HUMAN_ADJUDICATION"
+      ],
+      "screening_reason": "Excluded from causal screening due to invalid or truncated temporal window (INELIGIBLE_WINDOW).",
+      "source_hashes": {
+        "source_video_sha256": "RECORDED_IN_MANIFEST"
+      },
+      "timestamp": "2026-09-30T08:46:21.243827+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_030",
+      "automation_status": "EXCLUDED_INELIGIBLE_WINDOW",
+      "screening_label": "NOT_REVIEWED",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": false,
+        "invalidation_reasons": [
+          "PRE = INSUFFICIENT (start_frame < 30; baseline window truncated at stream start)"
+        ],
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0006"
+      },
+      "missing_evidence": [
+        "VALID_TEMPORAL_WINDOW",
+        "PHYSICAL_TELEMETRY",
+        "INDEPENDENT_HUMAN_ADJUDICATION"
+      ],
+      "screening_reason": "Excluded from causal screening due to invalid or truncated temporal window (INELIGIBLE_WINDOW).",
+      "source_hashes": {
+        "source_video_sha256": "RECORDED_IN_MANIFEST"
+      },
+      "timestamp": "2026-09-30T08:46:21.243828+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_031",
+      "automation_status": "EXCLUDED_INELIGIBLE_WINDOW",
+      "screening_label": "NOT_REVIEWED",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": false,
+        "invalidation_reasons": [
+          "PRE = INSUFFICIENT (start_frame < 30; baseline window truncated at stream start)"
+        ],
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0006"
+      },
+      "missing_evidence": [
+        "VALID_TEMPORAL_WINDOW",
+        "PHYSICAL_TELEMETRY",
+        "INDEPENDENT_HUMAN_ADJUDICATION"
+      ],
+      "screening_reason": "Excluded from causal screening due to invalid or truncated temporal window (INELIGIBLE_WINDOW).",
+      "source_hashes": {
+        "source_video_sha256": "RECORDED_IN_MANIFEST"
+      },
+      "timestamp": "2026-09-30T08:46:21.243829+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_005",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "INSUFFICIENT_EVIDENCE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0002",
+        "video_stream": "Camera_0002.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 843,
+            "end_frame": 992,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 993,
+            "end_frame": 1039,
+            "duration_s": 1.57
+          },
+          "post": {
+            "start_frame": 1040,
+            "end_frame": 1279,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1718187,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 47,
+            "decoded_frames_to_null": 47,
+            "size_bytes": 605871,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 2435362,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.329,
+          "objects_involved": {
+            "person_track_id": 401,
+            "forklift_track_id": 418
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Observational evidence ambiguous: Intermediate detector interaction (relevance: 0.329); adjacent aisle partially occluded by warehouse storage racks; physical telemetry absent.",
+      "source_hashes": {
+        "source_video_sha256": "29bc455831e1b80210307405601a4b33fbe00430eea8839b9c8ffd3eccfd526a",
+        "package_hash": "4b380cfccd46ec11fedda9af8ad58dbdcb585c0363531f9d5829710d649dd316"
+      },
+      "timestamp": "2026-09-30T08:46:21.919870+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_002",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "INSUFFICIENT_EVIDENCE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0002",
+        "video_stream": "Camera_0002.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 455,
+            "end_frame": 604,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 605,
+            "end_frame": 677,
+            "duration_s": 2.43
+          },
+          "post": {
+            "start_frame": 678,
+            "end_frame": 917,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1565270,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 73,
+            "decoded_frames_to_null": 73,
+            "size_bytes": 781859,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 2538034,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0002_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0002_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.305,
+          "objects_involved": {
+            "person_track_id": 392,
+            "forklift_track_id": 378
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Observational evidence ambiguous: Intermediate detector interaction (relevance: 0.305); adjacent aisle partially occluded by warehouse storage racks; physical telemetry absent.",
+      "source_hashes": {
+        "source_video_sha256": "29bc455831e1b80210307405601a4b33fbe00430eea8839b9c8ffd3eccfd526a",
+        "package_hash": "200f21b999f2144cf90b8a133be432225c647678aae4ac509f9e6acc61fc7c48"
+      },
+      "timestamp": "2026-09-30T08:46:22.635964+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_007",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "INSUFFICIENT_EVIDENCE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_026",
+        "camera_id": "Camera_0000",
+        "video_stream": "Camera_0000.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 1206,
+            "end_frame": 1355,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 1356,
+            "end_frame": 1391,
+            "duration_s": 1.2
+          },
+          "post": {
+            "start_frame": 1392,
+            "end_frame": 1631,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1295638,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 36,
+            "decoded_frames_to_null": 36,
+            "size_bytes": 461635,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 1887316,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0000_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0000_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.289,
+          "objects_involved": {
+            "person_track_id": 66,
+            "forklift_track_id": 2
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Observational evidence ambiguous: Intermediate detector interaction (relevance: 0.289); adjacent aisle partially occluded by warehouse storage racks; physical telemetry absent.",
+      "source_hashes": {
+        "source_video_sha256": "83ed232a2f5fe3031807ed19020e1a44fe386e89b68f9bea621797f1552c9cda",
+        "package_hash": "db5258d8f8c0703388d86ebdeb6a4634387c3aa698ce6d7bb7b6f0e6efe16531"
+      },
+      "timestamp": "2026-09-30T08:46:23.292732+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_006",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "INSUFFICIENT_EVIDENCE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_026",
+        "camera_id": "Camera_0000",
+        "video_stream": "Camera_0000.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 149,
+            "end_frame": 298,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 299,
+            "end_frame": 377,
+            "duration_s": 2.63
+          },
+          "post": {
+            "start_frame": 378,
+            "end_frame": 617,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1073741,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 79,
+            "decoded_frames_to_null": 79,
+            "size_bytes": 628305,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 1633344,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0000_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0000_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.25,
+          "objects_involved": {
+            "person_track_id": 39,
+            "forklift_track_id": 2
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Observational evidence ambiguous: Intermediate detector interaction (relevance: 0.250); adjacent aisle partially occluded by warehouse storage racks; physical telemetry absent.",
+      "source_hashes": {
+        "source_video_sha256": "83ed232a2f5fe3031807ed19020e1a44fe386e89b68f9bea621797f1552c9cda",
+        "package_hash": "c428dc858999cc45e7e76f7c9c593c5bba8a04485c5edff2bbcd0c8732c36464"
+      },
+      "timestamp": "2026-09-30T08:46:24.022391+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_014",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "INSUFFICIENT_EVIDENCE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0005",
+        "video_stream": "Camera_0005.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 558,
+            "end_frame": 707,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 708,
+            "end_frame": 786,
+            "duration_s": 2.63
+          },
+          "post": {
+            "start_frame": 787,
+            "end_frame": 1026,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 980555,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 79,
+            "decoded_frames_to_null": 79,
+            "size_bytes": 636762,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 1399719,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.203,
+          "objects_involved": {
+            "person_track_id": 586,
+            "forklift_track_id": 557
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Observational evidence ambiguous: Intermediate detector interaction (relevance: 0.203); adjacent aisle partially occluded by warehouse storage racks; physical telemetry absent.",
+      "source_hashes": {
+        "source_video_sha256": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632",
+        "package_hash": "00976752a8daaef610562ba225d23c31522f576aa6cb1d35f8f6fa814f764b84"
+      },
+      "timestamp": "2026-09-30T08:46:24.772233+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_015",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "INSUFFICIENT_EVIDENCE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0005",
+        "video_stream": "Camera_0005.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 637,
+            "end_frame": 786,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 787,
+            "end_frame": 884,
+            "duration_s": 3.27
+          },
+          "post": {
+            "start_frame": 885,
+            "end_frame": 1124,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1083500,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 98,
+            "decoded_frames_to_null": 98,
+            "size_bytes": 652954,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 1428602,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.203,
+          "objects_involved": {
+            "person_track_id": 598,
+            "forklift_track_id": 557
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Observational evidence ambiguous: Intermediate detector interaction (relevance: 0.203); adjacent aisle partially occluded by warehouse storage racks; physical telemetry absent.",
+      "source_hashes": {
+        "source_video_sha256": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632",
+        "package_hash": "94ad2d78d12d09dd93aae95e91f2e5088edc8ea1666689f338e6275357c51ac9"
+      },
+      "timestamp": "2026-09-30T08:46:25.566383+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_003",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "INSUFFICIENT_EVIDENCE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_026",
+        "camera_id": "Camera_0000",
+        "video_stream": "Camera_0000.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 0,
+            "end_frame": 52,
+            "duration_s": 1.77
+          },
+          "intervention": {
+            "start_frame": 53,
+            "end_frame": 214,
+            "duration_s": 5.4
+          },
+          "post": {
+            "start_frame": 215,
+            "end_frame": 454,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 53,
+            "decoded_frames_to_null": 53,
+            "size_bytes": 416137,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 162,
+            "decoded_frames_to_null": 162,
+            "size_bytes": 1152618,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 1722567,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0000_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0000_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.185,
+          "objects_involved": {
+            "person_track_id": 7,
+            "forklift_track_id": 2
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Observational evidence ambiguous: Intermediate detector interaction (relevance: 0.185); adjacent aisle partially occluded by warehouse storage racks; physical telemetry absent.",
+      "source_hashes": {
+        "source_video_sha256": "83ed232a2f5fe3031807ed19020e1a44fe386e89b68f9bea621797f1552c9cda",
+        "package_hash": "c38436248cfba4187c5877e3be73d2f6ac59ca15991e723302badba4df8a0493"
+      },
+      "timestamp": "2026-09-30T08:46:26.264768+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_004",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "INSUFFICIENT_EVIDENCE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_026",
+        "camera_id": "Camera_0000",
+        "video_stream": "Camera_0000.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 33,
+            "end_frame": 182,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 183,
+            "end_frame": 257,
+            "duration_s": 2.5
+          },
+          "post": {
+            "start_frame": 258,
+            "end_frame": 497,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1082143,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 75,
+            "decoded_frames_to_null": 75,
+            "size_bytes": 585884,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 1662824,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0000_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0000_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.184,
+          "objects_involved": {
+            "person_track_id": 23,
+            "forklift_track_id": 2
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Observational evidence ambiguous: Intermediate detector interaction (relevance: 0.184); adjacent aisle partially occluded by warehouse storage racks; physical telemetry absent.",
+      "source_hashes": {
+        "source_video_sha256": "83ed232a2f5fe3031807ed19020e1a44fe386e89b68f9bea621797f1552c9cda",
+        "package_hash": "914c96b9e870fec6e1b90ac3209b65c88d2991c884c86ee6ea1dc4613522c779"
+      },
+      "timestamp": "2026-09-30T08:46:26.984643+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_020",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "INSUFFICIENT_EVIDENCE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0005",
+        "video_stream": "Camera_0005.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 1056,
+            "end_frame": 1205,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 1206,
+            "end_frame": 1338,
+            "duration_s": 4.43
+          },
+          "post": {
+            "start_frame": 1339,
+            "end_frame": 1578,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 958546,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 133,
+            "decoded_frames_to_null": 133,
+            "size_bytes": 856263,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 1546373,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.184,
+          "objects_involved": {
+            "person_track_id": 642,
+            "forklift_track_id": 557
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Observational evidence ambiguous: Intermediate detector interaction (relevance: 0.184); adjacent aisle partially occluded by warehouse storage racks; physical telemetry absent.",
+      "source_hashes": {
+        "source_video_sha256": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632",
+        "package_hash": "db39c670fbc1997bd89e6bfb32f9ad62470d45645220e781c94ff211c80ec927"
+      },
+      "timestamp": "2026-09-30T08:46:27.814497+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_026",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "INSUFFICIENT_EVIDENCE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0005",
+        "video_stream": "Camera_0005.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 1502,
+            "end_frame": 1651,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 1652,
+            "end_frame": 1727,
+            "duration_s": 2.53
+          },
+          "post": {
+            "start_frame": 1728,
+            "end_frame": 1799,
+            "duration_s": 2.4
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1108800,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 76,
+            "decoded_frames_to_null": 76,
+            "size_bytes": 854719,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 72,
+            "decoded_frames_to_null": 72,
+            "size_bytes": 677266,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.181,
+          "objects_involved": {
+            "person_track_id": 676,
+            "forklift_track_id": 557
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Observational evidence ambiguous: Intermediate detector interaction (relevance: 0.181); adjacent aisle partially occluded by warehouse storage racks; physical telemetry absent.",
+      "source_hashes": {
+        "source_video_sha256": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632",
+        "package_hash": "a14122460a7eb690516668718eac376d70152b49f83ea91cdb912fd3fe012998"
+      },
+      "timestamp": "2026-09-30T08:46:28.321067+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_016",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "INSUFFICIENT_EVIDENCE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0005",
+        "video_stream": "Camera_0005.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 672,
+            "end_frame": 821,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 822,
+            "end_frame": 926,
+            "duration_s": 3.5
+          },
+          "post": {
+            "start_frame": 927,
+            "end_frame": 1166,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1083664,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 105,
+            "decoded_frames_to_null": 105,
+            "size_bytes": 672296,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 1450594,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.171,
+          "objects_involved": {
+            "person_track_id": 601,
+            "forklift_track_id": 557
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Observational evidence ambiguous: Intermediate detector interaction (relevance: 0.171); adjacent aisle partially occluded by warehouse storage racks; physical telemetry absent.",
+      "source_hashes": {
+        "source_video_sha256": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632",
+        "package_hash": "7e4a15a5f84dbf8630936822a7c407c61e99c11e7b276c672fad8ed610ebaffc"
+      },
+      "timestamp": "2026-09-30T08:46:29.105467+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_005",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "INSUFFICIENT_EVIDENCE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_026",
+        "camera_id": "Camera_0000",
+        "video_stream": "Camera_0000.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 69,
+            "end_frame": 218,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 219,
+            "end_frame": 267,
+            "duration_s": 1.63
+          },
+          "post": {
+            "start_frame": 268,
+            "end_frame": 507,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1064979,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 49,
+            "decoded_frames_to_null": 49,
+            "size_bytes": 402682,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 1671265,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0000_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0000_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.162,
+          "objects_involved": {
+            "person_track_id": 27,
+            "forklift_track_id": 2
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Observational evidence ambiguous: Intermediate detector interaction (relevance: 0.162); adjacent aisle partially occluded by warehouse storage racks; physical telemetry absent.",
+      "source_hashes": {
+        "source_video_sha256": "83ed232a2f5fe3031807ed19020e1a44fe386e89b68f9bea621797f1552c9cda",
+        "package_hash": "31223ce6f02af0933472a0887ebdebdf5632ee84bd1e8c479720785f57d8ef2c"
+      },
+      "timestamp": "2026-09-30T08:46:29.810432+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_033",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "INSUFFICIENT_EVIDENCE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0006",
+        "video_stream": "Camera_0006.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 107,
+            "end_frame": 256,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 257,
+            "end_frame": 342,
+            "duration_s": 2.87
+          },
+          "post": {
+            "start_frame": 343,
+            "end_frame": 582,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1300566,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 86,
+            "decoded_frames_to_null": 86,
+            "size_bytes": 874952,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 2442624,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0006_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0006_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.16,
+          "objects_involved": {
+            "person_track_id": 695,
+            "forklift_track_id": 685
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Observational evidence ambiguous: Intermediate detector interaction (relevance: 0.160); adjacent aisle partially occluded by warehouse storage racks; physical telemetry absent.",
+      "source_hashes": {
+        "source_video_sha256": "175816231eced5e215d1733640a65757ad9c0429b3c846966342d142aed54b1a",
+        "package_hash": "c1fa93bbb09f2397c5caf0b76e3ef3f0ef2f328c631bc5afc6dc56d219fe303f"
+      },
+      "timestamp": "2026-09-30T08:46:30.548690+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_012",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "CANDIDATE_NO_BACKFIRE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0005",
+        "video_stream": "Camera_0005.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 428,
+            "end_frame": 577,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 578,
+            "end_frame": 634,
+            "duration_s": 1.9
+          },
+          "post": {
+            "start_frame": 635,
+            "end_frame": 874,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1028253,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 57,
+            "decoded_frames_to_null": 57,
+            "size_bytes": 466116,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 1536225,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.115,
+          "objects_involved": {
+            "person_track_id": 580,
+            "forklift_track_id": 557
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Automated candidate screening observation: Primary interaction resolved (detector relevance: 0.115); zero observable hazard transfer or agent displacement into visible secondary zone within observation window.",
+      "source_hashes": {
+        "source_video_sha256": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632",
+        "package_hash": "7a7f7ae8f4413ca8242128d7d9e12fcb238b14df2ce55550f7c47d793c153072"
+      },
+      "timestamp": "2026-09-30T08:46:31.266082+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_025",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "CANDIDATE_NO_BACKFIRE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0005",
+        "video_stream": "Camera_0005.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 1479,
+            "end_frame": 1628,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 1629,
+            "end_frame": 1686,
+            "duration_s": 1.93
+          },
+          "post": {
+            "start_frame": 1687,
+            "end_frame": 1799,
+            "duration_s": 3.77
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1093569,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 58,
+            "decoded_frames_to_null": 58,
+            "size_bytes": 660045,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 113,
+            "decoded_frames_to_null": 113,
+            "size_bytes": 1049111,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.115,
+          "objects_involved": {
+            "person_track_id": 672,
+            "forklift_track_id": 557
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Automated candidate screening observation: Primary interaction resolved (detector relevance: 0.115); zero observable hazard transfer or agent displacement into visible secondary zone within observation window.",
+      "source_hashes": {
+        "source_video_sha256": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632",
+        "package_hash": "b0c2802b7265db04df601b05029208e308806316b0bedc45236c8ec4b2849e67"
+      },
+      "timestamp": "2026-09-30T08:46:31.807623+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_019",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "CANDIDATE_NO_BACKFIRE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0005",
+        "video_stream": "Camera_0005.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 1003,
+            "end_frame": 1152,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 1153,
+            "end_frame": 1200,
+            "duration_s": 1.6
+          },
+          "post": {
+            "start_frame": 1201,
+            "end_frame": 1440,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 890487,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 48,
+            "decoded_frames_to_null": 48,
+            "size_bytes": 444441,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 1378310,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.112,
+          "objects_involved": {
+            "person_track_id": 636,
+            "forklift_track_id": 557
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Automated candidate screening observation: Primary interaction resolved (detector relevance: 0.112); zero observable hazard transfer or agent displacement into visible secondary zone within observation window.",
+      "source_hashes": {
+        "source_video_sha256": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632",
+        "package_hash": "21a5a2d523d5d2d352fc244dc1eba4d9d6d0fb9b00fce4f0ce52c252d773c7c8"
+      },
+      "timestamp": "2026-09-30T08:46:32.514139+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_032",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "CANDIDATE_NO_BACKFIRE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0006",
+        "video_stream": "Camera_0006.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 0,
+            "end_frame": 110,
+            "duration_s": 3.7
+          },
+          "intervention": {
+            "start_frame": 111,
+            "end_frame": 166,
+            "duration_s": 1.87
+          },
+          "post": {
+            "start_frame": 167,
+            "end_frame": 406,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 111,
+            "decoded_frames_to_null": 111,
+            "size_bytes": 942296,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 56,
+            "decoded_frames_to_null": 56,
+            "size_bytes": 561411,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 2312425,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0006_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0006_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.099,
+          "objects_involved": {
+            "person_track_id": 689,
+            "forklift_track_id": 685
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Automated candidate screening observation: Primary interaction resolved (detector relevance: 0.099); zero observable hazard transfer or agent displacement into visible secondary zone within observation window.",
+      "source_hashes": {
+        "source_video_sha256": "175816231eced5e215d1733640a65757ad9c0429b3c846966342d142aed54b1a",
+        "package_hash": "7d424569431a7d9ac82395d5fcd488911bdbfb13ce99a0a03c6e4e71f42baee2"
+      },
+      "timestamp": "2026-09-30T08:46:33.156123+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_021",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "CANDIDATE_NO_BACKFIRE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0005",
+        "video_stream": "Camera_0005.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 1138,
+            "end_frame": 1287,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 1288,
+            "end_frame": 1337,
+            "duration_s": 1.67
+          },
+          "post": {
+            "start_frame": 1338,
+            "end_frame": 1577,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1037114,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 50,
+            "decoded_frames_to_null": 50,
+            "size_bytes": 416075,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 1553039,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.093,
+          "objects_involved": {
+            "person_track_id": 646,
+            "forklift_track_id": 557
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Automated candidate screening observation: Primary interaction resolved (detector relevance: 0.093); zero observable hazard transfer or agent displacement into visible secondary zone within observation window.",
+      "source_hashes": {
+        "source_video_sha256": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632",
+        "package_hash": "cffcffbeb403d417ba35e571f948ac5b814ebf4866d277e68af253a111dfb594"
+      },
+      "timestamp": "2026-09-30T08:46:33.866308+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_034",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "CANDIDATE_NO_BACKFIRE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0006",
+        "video_stream": "Camera_0006.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 140,
+            "end_frame": 289,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 290,
+            "end_frame": 334,
+            "duration_s": 1.5
+          },
+          "post": {
+            "start_frame": 335,
+            "end_frame": 574,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1308396,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 45,
+            "decoded_frames_to_null": 45,
+            "size_bytes": 529010,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 2463252,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0006_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0006_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.091,
+          "objects_involved": {
+            "person_track_id": 696,
+            "forklift_track_id": 685
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Automated candidate screening observation: Primary interaction resolved (detector relevance: 0.091); zero observable hazard transfer or agent displacement into visible secondary zone within observation window.",
+      "source_hashes": {
+        "source_video_sha256": "175816231eced5e215d1733640a65757ad9c0429b3c846966342d142aed54b1a",
+        "package_hash": "1d1b03f170c9d1cab5486fa1de987ef8d52da4d176ed2f094c574dc9001e3835"
+      },
+      "timestamp": "2026-09-30T08:46:34.546935+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_010",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "CANDIDATE_NO_BACKFIRE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0005",
+        "video_stream": "Camera_0005.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 110,
+            "end_frame": 259,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 260,
+            "end_frame": 293,
+            "duration_s": 1.13
+          },
+          "post": {
+            "start_frame": 294,
+            "end_frame": 533,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 996880,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 34,
+            "decoded_frames_to_null": 34,
+            "size_bytes": 390724,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 1538495,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.083,
+          "objects_involved": {
+            "person_track_id": 559,
+            "forklift_track_id": 557
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Automated candidate screening observation: Primary interaction resolved (detector relevance: 0.083); zero observable hazard transfer or agent displacement into visible secondary zone within observation window.",
+      "source_hashes": {
+        "source_video_sha256": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632",
+        "package_hash": "854f1ed9391bd418f021ba18f84b1fddf93b7b788367628e1bb7fe51f6fdfc44"
+      },
+      "timestamp": "2026-09-30T08:46:35.231355+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_018",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "CANDIDATE_NO_BACKFIRE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0005",
+        "video_stream": "Camera_0005.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 973,
+            "end_frame": 1122,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 1123,
+            "end_frame": 1151,
+            "duration_s": 0.97
+          },
+          "post": {
+            "start_frame": 1152,
+            "end_frame": 1391,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 898291,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 29,
+            "decoded_frames_to_null": 29,
+            "size_bytes": 312302,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 1464697,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.077,
+          "objects_involved": {
+            "person_track_id": 627,
+            "forklift_track_id": 557
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Automated candidate screening observation: Primary interaction resolved (detector relevance: 0.077); zero observable hazard transfer or agent displacement into visible secondary zone within observation window.",
+      "source_hashes": {
+        "source_video_sha256": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632",
+        "package_hash": "b57f62175dbdaad41174dadefd88fd9c6f6a11bcf780335d9dbb3d6ff82911cd"
+      },
+      "timestamp": "2026-09-30T08:46:35.910710+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_007",
+      "automation_status": "EXCLUDED_INELIGIBLE_WINDOW",
+      "screening_label": "NOT_REVIEWED",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": false,
+        "invalidation_reasons": [
+          "POST = INSUFFICIENT (end_frame > 1770; follow-on window truncated at stream end)"
+        ],
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0003"
+      },
+      "missing_evidence": [
+        "VALID_TEMPORAL_WINDOW",
+        "PHYSICAL_TELEMETRY",
+        "INDEPENDENT_HUMAN_ADJUDICATION"
+      ],
+      "screening_reason": "Excluded from causal screening due to invalid or truncated temporal window (INELIGIBLE_WINDOW).",
+      "source_hashes": {
+        "source_video_sha256": "RECORDED_IN_MANIFEST"
+      },
+      "timestamp": "2026-09-30T08:46:35.910727+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_011",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "CANDIDATE_NO_BACKFIRE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0005",
+        "video_stream": "Camera_0005.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 202,
+            "end_frame": 351,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 352,
+            "end_frame": 417,
+            "duration_s": 2.2
+          },
+          "post": {
+            "start_frame": 418,
+            "end_frame": 657,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1100980,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 66,
+            "decoded_frames_to_null": 66,
+            "size_bytes": 519786,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 1485199,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.069,
+          "objects_involved": {
+            "person_track_id": 568,
+            "forklift_track_id": 557
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Automated candidate screening observation: Primary interaction resolved (detector relevance: 0.069); zero observable hazard transfer or agent displacement into visible secondary zone within observation window.",
+      "source_hashes": {
+        "source_video_sha256": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632",
+        "package_hash": "124e06f0b14cd163ae81d1f5e2cce913ee3661cbd2f8cee55909ca6bde538bb9"
+      },
+      "timestamp": "2026-09-30T08:46:36.640823+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_024",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "CANDIDATE_NO_BACKFIRE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0005",
+        "video_stream": "Camera_0005.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 1309,
+            "end_frame": 1458,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 1459,
+            "end_frame": 1486,
+            "duration_s": 0.93
+          },
+          "post": {
+            "start_frame": 1487,
+            "end_frame": 1726,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 943855,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 28,
+            "decoded_frames_to_null": 28,
+            "size_bytes": 322729,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 1932430,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.069,
+          "objects_involved": {
+            "person_track_id": 662,
+            "forklift_track_id": 557
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Automated candidate screening observation: Primary interaction resolved (detector relevance: 0.069); zero observable hazard transfer or agent displacement into visible secondary zone within observation window.",
+      "source_hashes": {
+        "source_video_sha256": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632",
+        "package_hash": "cc4511cd73cc450b127547c3c7336d691ad04a7ed4bd80b16327b5adea33a564"
+      },
+      "timestamp": "2026-09-30T08:46:37.349471+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_035",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "CANDIDATE_NO_BACKFIRE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0006",
+        "video_stream": "Camera_0006.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 156,
+            "end_frame": 305,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 306,
+            "end_frame": 342,
+            "duration_s": 1.23
+          },
+          "post": {
+            "start_frame": 343,
+            "end_frame": 582,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1335410,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 37,
+            "decoded_frames_to_null": 37,
+            "size_bytes": 453196,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 2442624,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0006_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0006_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.064,
+          "objects_involved": {
+            "person_track_id": 700,
+            "forklift_track_id": 685
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Automated candidate screening observation: Primary interaction resolved (detector relevance: 0.064); zero observable hazard transfer or agent displacement into visible secondary zone within observation window.",
+      "source_hashes": {
+        "source_video_sha256": "175816231eced5e215d1733640a65757ad9c0429b3c846966342d142aed54b1a",
+        "package_hash": "720def54b5363ef92a5a3694735e7baa3bab8c3447571a1d3a5bb0e912231b78"
+      },
+      "timestamp": "2026-09-30T08:46:38.018184+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_013",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "CANDIDATE_NO_BACKFIRE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0005",
+        "video_stream": "Camera_0005.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 488,
+            "end_frame": 637,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 638,
+            "end_frame": 676,
+            "duration_s": 1.3
+          },
+          "post": {
+            "start_frame": 677,
+            "end_frame": 916,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 954496,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 39,
+            "decoded_frames_to_null": 39,
+            "size_bytes": 384905,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 1504348,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.053,
+          "objects_involved": {
+            "person_track_id": 581,
+            "forklift_track_id": 557
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Automated candidate screening observation: Primary interaction resolved (detector relevance: 0.053); zero observable hazard transfer or agent displacement into visible secondary zone within observation window.",
+      "source_hashes": {
+        "source_video_sha256": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632",
+        "package_hash": "0d15781eb095fc1b885716b67b60311fc987a026f4c397109d2dd80be2d0e346"
+      },
+      "timestamp": "2026-09-30T08:46:38.711088+00:00"
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_023",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "CANDIDATE_NO_BACKFIRE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0005",
+        "video_stream": "Camera_0005.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 1236,
+            "end_frame": 1385,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 1386,
+            "end_frame": 1408,
+            "duration_s": 0.77
+          },
+          "post": {
+            "start_frame": 1409,
+            "end_frame": 1648,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 922423,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 23,
+            "decoded_frames_to_null": 23,
+            "size_bytes": 277371,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 1714153,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0005_CENTRAL_CORRIDOR",
+          "secondary_zone": "Camera_0005_ADJACENT_RACK_AISLE",
+          "secondary_zone_status": "PROVISIONAL"
+        },
+        "detector_observation": {
+          "candidate_type": "FORKLIFT_HUMAN_INTERACTION",
+          "detector_relevance_score": 0.053,
+          "objects_involved": {
+            "person_track_id": 654,
+            "forklift_track_id": 557
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)"
+      ],
+      "screening_reason": "Automated candidate screening observation: Primary interaction resolved (detector relevance: 0.053); zero observable hazard transfer or agent displacement into visible secondary zone within observation window.",
+      "source_hashes": {
+        "source_video_sha256": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632",
+        "package_hash": "9265250edc3331b0b96997b3060943b3bfaff020aa43a073d7cf9194eb52c48c"
+      },
+      "timestamp": "2026-09-30T08:46:39.380790+00:00"
+    },
+    {
+      "event_id": "UNION_HEVT_Warehouse_026_003",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "INSUFFICIENT_EVIDENCE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_026",
+        "camera_id": "Camera_0000",
+        "video_stream": "Camera_0000.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 510,
+            "end_frame": 659,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 660,
+            "end_frame": 795,
+            "duration_s": 4.53
+          },
+          "post": {
+            "start_frame": 796,
+            "end_frame": 1035,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1022773,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 136,
+            "decoded_frames_to_null": 136,
+            "size_bytes": 979701,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 1711803,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0000_INTERSECTION",
+          "secondary_zone": "UNKNOWN",
+          "secondary_zone_status": "UNKNOWN"
+        },
+        "detector_observation": {
+          "candidate_type": "AVOIDANCE_MANEUVER",
+          "detector_relevance_score": 1.0,
+          "objects_involved": {
+            "pedestrians_observed": 1,
+            "vehicles_observed": 1,
+            "description": "Pedestrian pauses near column intersection upon observing distant forklift turning radius (distance > 12m)."
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)",
+        "DEFINED_SECONDARY_ZONE_GEOMETRY"
+      ],
+      "screening_reason": "Secondary zone geometry is undefined/UNKNOWN; cannot observe or rule out risk transfer into secondary zone.",
+      "source_hashes": {
+        "source_video_sha256": "83ed232a2f5fe3031807ed19020e1a44fe386e89b68f9bea621797f1552c9cda",
+        "package_hash": "85d137a6317a8ed37a04481982f2bfd0a9a37623cea7ed323ecb30eaf14b8345"
+      },
+      "timestamp": "2026-09-30T08:46:40.179356+00:00"
+    },
+    {
+      "event_id": "UNION_HEVT_Warehouse_027_002",
+      "automation_status": "SCREENED_COMPLETED",
+      "screening_label": "INSUFFICIENT_EVIDENCE",
+      "screening_label_type": "AUTOMATED_SCREENING_LABEL",
+      "evidence_fields": {
+        "window_valid": true,
+        "scene_id": "Warehouse_027",
+        "camera_id": "Camera_0003",
+        "video_stream": "Camera_0003.mp4",
+        "temporal_bounds": {
+          "pre": {
+            "start_frame": 390,
+            "end_frame": 539,
+            "duration_s": 5.0
+          },
+          "intervention": {
+            "start_frame": 540,
+            "end_frame": 690,
+            "duration_s": 5.03
+          },
+          "post": {
+            "start_frame": 691,
+            "end_frame": 930,
+            "duration_s": 8.0
+          }
+        },
+        "stream_continuity": true,
+        "temporal_overlap": false,
+        "video_readability": {
+          "all_clips_readable": true,
+          "before_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 150,
+            "decoded_frames_to_null": 150,
+            "size_bytes": 1456748,
+            "integrity_pass": true
+          },
+          "intervention_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 151,
+            "decoded_frames_to_null": 151,
+            "size_bytes": 1423746,
+            "integrity_pass": true
+          },
+          "after_clip": {
+            "exists": true,
+            "readable": true,
+            "codec": "h264",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30.0,
+            "frame_count": 240,
+            "decoded_frames_to_null": 240,
+            "size_bytes": 2186526,
+            "integrity_pass": true
+          }
+        },
+        "spatial_zones": {
+          "primary_zone": "Camera_0003_BLIND_CORNER",
+          "secondary_zone": "UNKNOWN",
+          "secondary_zone_status": "UNKNOWN"
+        },
+        "detector_observation": {
+          "candidate_type": "WARNING_EVENT",
+          "detector_relevance_score": 1.0,
+          "objects_involved": {
+            "pedestrians_observed": 2,
+            "vehicles_observed": 1,
+            "description": "Forklift enters blind corner; worker on foot alerts second worker carrying hand load to step back."
+          },
+          "epistemic_warning": "DETECTOR_OBSERVATION_ONLY_NOT_GROUND_TRUTH"
+        },
+        "causal_evidence_status": "INSUFFICIENT"
+      },
+      "missing_evidence": [
+        "PHYSICAL_TELEMETRY (lux sensor, AGV speed telemetry, floor load)",
+        "MULTI_VIEW_HOMOGRAPHY_CALIBRATION (3D calibrated secondary zone)",
+        "CONTROLLED_COUNTERFACTUAL_TRIAL (randomized safety intervention)",
+        "INDEPENDENT_HUMAN_ADJUDICATION (bypassed per directive)",
+        "DEFINED_SECONDARY_ZONE_GEOMETRY"
+      ],
+      "screening_reason": "Secondary zone geometry is undefined/UNKNOWN; cannot observe or rule out risk transfer into secondary zone.",
+      "source_hashes": {
+        "source_video_sha256": "7deacc1aa539bb999ea16c0f656f52695b6fb034e6269bd80e670c090023766c",
+        "package_hash": "9316a44671bdf325eac9d465219725ad67f27444aac91b90198b9f69dddb2033"
+      },
+      "timestamp": "2026-09-30T08:46:41.015443+00:00"
+    }
+  ]
+}

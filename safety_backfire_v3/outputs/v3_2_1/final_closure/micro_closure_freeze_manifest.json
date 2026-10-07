@@ -1,0 +1,28 @@
+{
+  "manifest_version": "V3.2.1_MICRO_CLOSURE_FREEZE",
+  "timestamp_utc": "2026-09-24T18:41:00Z",
+  "git_status": "NOT_A_GIT_REPOSITORY",
+  "hashed_files": {
+    "outputs/v3_2_1/final_closure/FINAL_RELEASE_INTEGRITY_SUMMARY.md": "5a79c3ffc60af34e303a87142d2de271666d68b2f6385b0bf8ff429c89584efc",
+    "outputs/v3_2_1/final_closure/canonical_metric_registry.json": "c737859c8e376caa57ef3ba14ae69c6444f9a177c498ecc7601927bc947efd18",
+    "outputs/v3_2_1/final_closure/canonical_release_registry.json": "1557794e559b4a416751269fd401c7131a992ca2d79ff9299f9fa40bf454d173",
+    "outputs/v3_2_1/final_closure/final_release_decision.json": "35c9a90f16989bd79206ff199e356afc950fb2b0c1abdfd1e453305a2791c49d",
+    "reports/v3_2_1/V3.2.1_BACKFIRE_EVIDENCE_AUDIT.md": "37a25c9aed65b4a6473303fa8afb808ab45b77eddae0763ca00ade988bb815fe",
+    "reports/v3_2_1/V3.2.1_CAUSALITY_AUDIT.md": "4d9d24d29976070ce68fe108ec2e32a926d03e8d45d531bf2fa63dc79b6de71d",
+    "reports/v3_2_1/V3.2.1_CLAIM_EVIDENCE_TRACEABILITY.md": "b1764d8d5ab0d5a2146b92b30c164d067a28639480a9ab2685be05968b15eb69",
+    "reports/v3_2_1/V3.2.1_CORE_STATUS.md": "102bd14fa8c77a82884bf9bf998541d6dc94736f13cc05bc2445afa9eae4688c",
+    "reports/v3_2_1/V3.2.1_DATASET_RECONCILIATION.md": "2b4ae5b550328dbc472751891e78b6ba68bea31a3779c22d46c51dcaf3e8999e",
+    "reports/v3_2_1/V3.2.1_EVENT_METRIC_AUDIT.md": "3a5c2e9160f941254cc532f9cd7b43d70a6c948685462fde66f8fb9a009b81e8",
+    "reports/v3_2_1/V3.2.1_FAILURE_REGISTRY_AUDIT.md": "a0cf2c9e7a12588bc2931d6561ca90e13950ed2cf1fc07b132b0d13659977fc1",
+    "reports/v3_2_1/V3.2.1_FINAL_RELEASE_AUDIT.md": "512caf953f50d9ee5ced5676c870a1d600b51baaf9b6da60af939f776378e7fb",
+    "reports/v3_2_1/V3.2.1_HAZARD_METRIC_AUDIT.md": "f25fa781a08402a6905824908d3f582e0e40381f10934829a14a53107c208722",
+    "reports/v3_2_1/V3.2.1_MASTER_RECONCILED_AUDIT_REPORT.md": "1747646eb3d9df812904a507eb6aefb656781f020de0a1d63e2753d2a6e34018",
+    "reports/v3_2_1/V3.2.1_METRIC_RECONCILIATION.md": "184e11eec6a0f936c6b06e9a035f6ef1184641a5f89a14fb8a593d986f9e73b7",
+    "reports/v3_2_1/V3.2.1_ODD_RECONCILIATION.md": "0aeefc03dc5d77199078965f53d778600ea4f38bc131db0db48caafe96eb36e0",
+    "reports/v3_2_1/V3.2.1_REPRODUCIBILITY_AUDIT.md": "ed25a8ad5d2a701ac3152b8f92a4bdc477d9a45721bbcba2b89a92ed03059deb",
+    "reports/v3_2_1/V3.2.1_STATISTICAL_TERMINOLOGY_AUDIT.md": "32786a5de3e32052bf59489df3ec800bb066f8dc9c74478f0d14c99daf8fd782",
+    "reports/v3_2_1/V3.2.1_UNCERTAINTY_LINEAGE_AUDIT.md": "8e5c7d76c9e769fe97b383c00ed388f4062e477afb5884999803fd83a5f86432",
+    "validation/v3_2_1/final_closure/test_canonical_report_consistency.py": "a88523db59061a5a4248a0bfaf1aadafc0297cfa847c6c7abaf98bf490aaa13b",
+    "validation/v3_2_1/final_closure/test_v3_2_1_release_integrity.py": "08a329b3df460afc6f3fb47d3bedc38fc13b0bbbe10f84274164a925b5f8a983"
+  }
+}

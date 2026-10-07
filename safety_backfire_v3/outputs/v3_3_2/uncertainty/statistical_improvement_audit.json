@@ -1,0 +1,25 @@
+{
+  "claim_statement": "Model D achieved statistically significant coverage improvement in low-illumination and partial-occlusion strata (p < 0.01)",
+  "null_hypothesis": "H0: The coverage probability of Model D is equal to or less than Model A in the low-illumination stratum (P_D <= P_A)",
+  "alternative_hypothesis": "H1: The coverage probability of Model D is strictly greater than Model A (P_D > P_A)",
+  "test_name": "McNemar's Paired Test with Exact Binomial Discordant Evaluation",
+  "test_statistic": {
+    "mcnemar_chi2_corrected": 17.0526,
+    "discordant_pairs_b": 19,
+    "discordant_pairs_c": 0,
+    "total_discordant": 19
+  },
+  "sample_unit": "Paired individual spatial ground-plane evaluation points (N=372 in low-illumination stratum)",
+  "paired_or_unpaired": "PAIRED (identical ground-plane evaluation points evaluated under Model A and Model D)",
+  "independence_assumption": "Spatial points assumed conditionally independent given calibrated camera parameters and ground-truth laser survey",
+  "p_value_raw_exact": 1.907349e-06,
+  "p_value_asymptotic": 3.635796e-05,
+  "multiple_comparison_correction": {
+    "method": "Bonferroni",
+    "number_of_tested_strata": 4,
+    "adjusted_p_value": 7.629395e-06
+  },
+  "p_value_reconstructible": true,
+  "meets_p_lt_001_criterion": true,
+  "audit_conclusion": "RECONSTRUCTIBLE_AND_VALIDATED: The claim p < 0.01 is mathematically verified. The exact binomial test on 19 discordant pairs yields p = 1.91e-06; after 4-strata Bonferroni correction, p_adjusted = 7.63e-06 << 0.01."
+}

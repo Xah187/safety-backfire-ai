@@ -1,0 +1,497 @@
+{
+  "audit_version": "V3.2.1_FAILURE_REGISTRY_INTEGRITY",
+  "summary_counts": {
+    "total_cataloged_ids": 55,
+    "confirmed_failures": 49,
+    "resolved_defects": 42,
+    "documented_boundaries": 7,
+    "unreproduced_candidates": 6,
+    "open_critical_defects": 0
+  },
+  "arithmetic_verification": {
+    "confirmed_equals_resolved_plus_boundaries": true,
+    "total_equals_confirmed_plus_unreproduced": true,
+    "formula_1": "49 = 42 + 7",
+    "formula_2": "55 = 49 + 6"
+  },
+  "boundary_structure": {
+    "total_boundary_ids_count": 7,
+    "boundary_families_count": 4,
+    "distinction_note": "There are exactly 7 distinct boundary failure IDs (FAIL-13, FAIL-26, FAIL-27, FAIL-30, FAIL-38, FAIL-44, FAIL-45) organized into 4 physical boundary families. Reports must not conflate the 4 boundary families with the 7 individual boundary IDs.",
+    "families": {
+      "FAMILY_1_OPTICAL_REID_DRIFT": {
+        "name": "Optical & Specular ReID Uniformity Drift",
+        "boundary_ids": [
+          "FAIL-13"
+        ],
+        "description": "Uniform high-vis worker clothing and specular reflections causing visual appearance feature ambiguity."
+      },
+      "FAMILY_2_FAR_FIELD_RAY_DILUTION": {
+        "name": "Far-Field Monocular Ray Dilution & Target Miss",
+        "boundary_ids": [
+          "FAIL-26",
+          "FAIL-38"
+        ],
+        "description": "Monocular ground-projection ray divergence and detector sensitivity drop beyond 8.5m - 10.0m range."
+      },
+      "FAMILY_3_NON_PLANAR_ELEVATION_WARP": {
+        "name": "Non-Planar Floor Gradients & Ramp Elevation Warping",
+        "boundary_ids": [
+          "FAIL-27",
+          "FAIL-45"
+        ],
+        "description": "Floor inclines and ramps (> 1.5 deg - 3.0 deg) violating planar homography assumption."
+      },
+      "FAMILY_4_CAMERA_PITCH_DEFLECTION_DRIFT": {
+        "name": "Camera Mount Mechanical Deflection & Pitch Drift",
+        "boundary_ids": [
+          "FAIL-30",
+          "FAIL-44"
+        ],
+        "description": "Gantry vibration and mechanical deflection causing pitch drift exceeding 0.35 deg tolerance."
+      }
+    }
+  },
+  "cataloged_items": [
+    {
+      "id": "FAIL-01",
+      "description": "Forklift-pedestrian false negative under low light",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-02",
+      "description": "False positive alert triggered by stationary pallet shadows",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-03",
+      "description": "Bounding box jitter during rapid acceleration",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-04",
+      "description": "Track fragmentation on pedestrian crossing aisle",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-05",
+      "description": "Temporal state machine deadlock in caution zone",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-06",
+      "description": "Uncalibrated focal length leading to depth bias",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-07",
+      "description": "Dynamic extreme occlusion behind stack of crates",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-08",
+      "description": "Forklift tine occlusion mistaken for obstacle",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-09",
+      "description": "Timestamp desynchronization between RTSP camera streams",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-10",
+      "description": "Zero velocity misclassification on slow crawling pedestrian",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-11",
+      "description": "Refusal to brake due to missing covariance matrix initialization",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-12",
+      "description": "Specular floor glare mistaken for pedestrian feet",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-13",
+      "description": "Visual ReID feature drift under identical high-vis jackets",
+      "status": "DOCUMENTED_PHYSICAL_BOUNDARY",
+      "category": "OPERATIONAL_ODD_BOUNDARY",
+      "boundary_family": "FAMILY_1_OPTICAL_REID_DRIFT",
+      "resolution_summary": "Formally documented as physical/operational ODD boundary; system enforces safe refusal or advisory-only mode."
+    },
+    {
+      "id": "FAIL-14",
+      "description": "Excessive Kalman filter lag on sudden brake",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-15",
+      "description": "False positive hazard on parked forklift mast",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-16",
+      "description": "Zone boundary polygon clipping arithmetic overflow",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-17",
+      "description": "Missing ground-truth bounding box in calibration frame",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-18",
+      "description": "Inconsistent track ID handover across overlapping cameras",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-19",
+      "description": "Memory leak in RTSP frame ingestion queue",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-20",
+      "description": "Braking command delayed beyond 50ms safety contract",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-21",
+      "description": "False hazard trigger on reflected vehicle headlights",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-22",
+      "description": "Pitch angle perturbation on unanchored temporary tripod",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-23",
+      "description": "False safe assertion when pedestrian obscured by mast",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-24",
+      "description": "Incompatible JSON schema in hazard event log",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-25",
+      "description": "Forklift speed overestimate due to camera motion",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-26",
+      "description": "Far-field monocular ray dilution beyond 10 meters",
+      "status": "DOCUMENTED_PHYSICAL_BOUNDARY",
+      "category": "OPERATIONAL_ODD_BOUNDARY",
+      "boundary_family": "FAMILY_2_FAR_FIELD_RAY_DILUTION",
+      "resolution_summary": "Formally documented as physical/operational ODD boundary; system enforces safe refusal or advisory-only mode."
+    },
+    {
+      "id": "FAIL-27",
+      "description": "Non-planar floor gradient leading to 0.4m depth warp",
+      "status": "DOCUMENTED_PHYSICAL_BOUNDARY",
+      "category": "OPERATIONAL_ODD_BOUNDARY",
+      "boundary_family": "FAMILY_3_NON_PLANAR_ELEVATION_WARP",
+      "resolution_summary": "Formally documented as physical/operational ODD boundary; system enforces safe refusal or advisory-only mode."
+    },
+    {
+      "id": "FAIL-28",
+      "description": "Uncertainty ellipse under-coverage during sudden turn",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-29",
+      "description": "Aisle blockage detector missed partially opened gate",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-30",
+      "description": "Camera pitch drift caused by gantry air handler vibration",
+      "status": "DOCUMENTED_PHYSICAL_BOUNDARY",
+      "category": "OPERATIONAL_ODD_BOUNDARY",
+      "boundary_family": "FAMILY_4_CAMERA_PITCH_DEFLECTION_DRIFT",
+      "resolution_summary": "Formally documented as physical/operational ODD boundary; system enforces safe refusal or advisory-only mode."
+    },
+    {
+      "id": "FAIL-31",
+      "description": "Temporary trajectory loss behind structural support column",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-32",
+      "description": "Sensor degradation alert missed under high ambient lux",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-33",
+      "description": "Counterfactual safety backfire simulator race condition",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-34",
+      "description": "Two-zone DiD estimator parallel trend violation on shift change",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-35",
+      "description": "False alert suppression during simultaneous multi-hazard events",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-36",
+      "description": "Emergency stop signal packet drop on UDP broadcast",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-37",
+      "description": "Homography matrix inversion singular value collapse",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-38",
+      "description": "Real-world far-field detector miss at D > 8.5m",
+      "status": "DOCUMENTED_PHYSICAL_BOUNDARY",
+      "category": "OPERATIONAL_ODD_BOUNDARY",
+      "boundary_family": "FAMILY_2_FAR_FIELD_RAY_DILUTION",
+      "resolution_summary": "Formally documented as physical/operational ODD boundary; system enforces safe refusal or advisory-only mode."
+    },
+    {
+      "id": "FAIL-39",
+      "description": "Candidate: Frame drop causing Kalman covariance explosion",
+      "status": "UNREPRODUCED_CANDIDATE",
+      "category": "CANDIDATE_HYPOTHESIS",
+      "boundary_family": null,
+      "resolution_summary": "Hypothesis tested under adversarial test bench; condition NOT reproduced in real-world or synthetic test replay."
+    },
+    {
+      "id": "FAIL-40",
+      "description": "Real-world worker ducking under rack crossbeam FN",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-41",
+      "description": "Real-world AGV pallet overlap causing track merge",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-42",
+      "description": "Real-world camera lens dust accumulation contrast loss",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-43",
+      "description": "Candidate: Dual camera stereo disparity mismatch",
+      "status": "UNREPRODUCED_CANDIDATE",
+      "category": "CANDIDATE_HYPOTHESIS",
+      "boundary_family": null,
+      "resolution_summary": "Hypothesis tested under adversarial test bench; condition NOT reproduced in real-world or synthetic test replay."
+    },
+    {
+      "id": "FAIL-44",
+      "description": "Camera pitch gantry deflection tolerance exceeded (> 0.35 deg)",
+      "status": "DOCUMENTED_PHYSICAL_BOUNDARY",
+      "category": "OPERATIONAL_ODD_BOUNDARY",
+      "boundary_family": "FAMILY_4_CAMERA_PITCH_DEFLECTION_DRIFT",
+      "resolution_summary": "Formally documented as physical/operational ODD boundary; system enforces safe refusal or advisory-only mode."
+    },
+    {
+      "id": "FAIL-45",
+      "description": "Ramp floor incline elevation warping on planar homography",
+      "status": "DOCUMENTED_PHYSICAL_BOUNDARY",
+      "category": "OPERATIONAL_ODD_BOUNDARY",
+      "boundary_family": "FAMILY_3_NON_PLANAR_ELEVATION_WARP",
+      "resolution_summary": "Formally documented as physical/operational ODD boundary; system enforces safe refusal or advisory-only mode."
+    },
+    {
+      "id": "FAIL-46",
+      "description": "Real-world rapid worker sprint exceeding 4.5 m/s ODD limit",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-47",
+      "description": "Candidate: Acoustic forklift horn trigger false alarm",
+      "status": "UNREPRODUCED_CANDIDATE",
+      "category": "CANDIDATE_HYPOTHESIS",
+      "boundary_family": null,
+      "resolution_summary": "Hypothesis tested under adversarial test bench; condition NOT reproduced in real-world or synthetic test replay."
+    },
+    {
+      "id": "FAIL-48",
+      "description": "Candidate: Thermal blooming on warm battery charger",
+      "status": "UNREPRODUCED_CANDIDATE",
+      "category": "CANDIDATE_HYPOTHESIS",
+      "boundary_family": null,
+      "resolution_summary": "Hypothesis tested under adversarial test bench; condition NOT reproduced in real-world or synthetic test replay."
+    },
+    {
+      "id": "FAIL-49",
+      "description": "High-velocity out-of-ODD vehicle transit (> 6.0 m/s)",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-50",
+      "description": "Candidate: Network switch reboot packet starvation",
+      "status": "UNREPRODUCED_CANDIDATE",
+      "category": "CANDIDATE_HYPOTHESIS",
+      "boundary_family": null,
+      "resolution_summary": "Hypothesis tested under adversarial test bench; condition NOT reproduced in real-world or synthetic test replay."
+    },
+    {
+      "id": "FAIL-51",
+      "description": "PTS freshness contract violation exceeding 500ms latency",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-52",
+      "description": "Candidate: Mirror reflection ReID false association",
+      "status": "UNREPRODUCED_CANDIDATE",
+      "category": "CANDIDATE_HYPOTHESIS",
+      "boundary_family": null,
+      "resolution_summary": "Hypothesis tested under adversarial test bench; condition NOT reproduced in real-world or synthetic test replay."
+    },
+    {
+      "id": "FAIL-53",
+      "description": "Real-world person walking on pallet hazard detection miss",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-54",
+      "description": "Real-world forklift reverse buzzer desynchronization",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    },
+    {
+      "id": "FAIL-55",
+      "description": "Real-world dynamic pedestrian occlusion during load placement",
+      "status": "RESOLVED",
+      "category": "SOFTWARE_OR_CALIBRATION_DEFECT",
+      "boundary_family": null,
+      "resolution_summary": "Root cause identified and resolved in code/calibration with regression test in test suite."
+    }
+  ]
+}

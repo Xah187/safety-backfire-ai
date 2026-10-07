@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EStopPhysicalEndpointMeasurementSchema",
+  "milestone": "V3.4-N-CORR-01",
+  "description": "Validation schema defining the exact physical signal transition sequence, probe points, and endpoint definition for vehicle emergency stop latency.",
+  "governance_classification": "PHYSICAL_COMMISSIONING_GATE_C8",
+  "endpoint_distinction_mandate": "Contactor auxiliary feedback opening CANNOT be assumed identical to true traction power isolation. Contactor main contacts may exhibit arc duration, or inverter DC bus capacitors may maintain motor torque after coil de-energization. This schema formally establishes the physical transition sequence.",
+  "physical_transition_sequence": {
+    "t_0_estop_command": {
+      "symbol": "t_estop_command",
+      "definition": "The exact physical instant when the normally-closed (NC) dual-channel E-Stop push-button or wireless safety relay contacts break.",
+      "probe_point": "Wireless Safety Receiver Safety Output Channel 1/2 terminals (Voltage transition from 24VDC to 0VDC)."
+    },
+    "t_1_safety_output": {
+      "symbol": "t_safety_output",
+      "definition": "Safety relay internal logic de-energization time.",
+      "probe_point": "Cat 4 / SIL-3 Safety Controller output contact drop."
+    },
+    "t_2_contactor_change": {
+      "symbol": "t_contactor_change",
+      "definition": "Mechanical separation of the main traction contactor armature and opening of its auxiliary status feedback contact.",
+      "probe_point": "Main Contactor auxiliary normally-open (NO) feedback interlock microswitch.",
+      "diagnostic_metric_name": "contactor_auxiliary_drop_latency_ms",
+      "acceptance_target_ms": 35.0
+    },
+    "t_3_traction_safe_state": {
+      "symbol": "t_traction_safe_state",
+      "definition": "AUTHORITATIVE SAFETY ENDPOINT: The instant when high-voltage traction motor line current drops below safe threshold (I_motor < 0.5 A) and mechanical spring-applied fail-safe brake coil de-energizes.",
+      "probe_point": "Hall-effect current clamp transducer on motor Phase U/V/W AND mechanical brake solenoid coil voltage.",
+      "primary_safety_endpoint": true
+    }
+  },
+  "acceptance_rule_specification": {
+    "primary_acceptance_metric": "delta_t_traction_isolation = t_traction_safe_state - t_estop_command",
+    "acceptance_threshold_ms": 50.0,
+    "epistemic_classification": {
+      "nominal_threshold": "CURRENT_DESIGN_REQUIREMENT",
+      "site_verification": "FIELD_ACCEPTANCE_TEST",
+      "current_status": "UNVERIFIED_PENDING_FIELD_MEASUREMENT"
+    },
+    "acceptance_rule": "delta_t_traction_isolation <= 50.0 ms. If measured delta > 50.0 ms, Gate C8 FAILS."
+  },
+  "oscilloscope_measurement_instrumentation": {
+    "instrument_type": "4-Channel Isolated Digital Storage Oscilloscope (DSO)",
+    "example_model": "Keysight DSOX1204G / Tektronix TBS2000B",
+    "minimum_bandwidth_mhz": 70.0,
+    "minimum_sample_rate_msa_per_s": 100.0,
+    "probe_channel_assignment": {
+      "channel_1": "E-Stop Receiver Output Voltage (24V -> 0V, trigger edge)",
+      "channel_2": "Main Contactor Auxiliary Microswitch (24V -> 0V)",
+      "channel_3": "Inverter DC Bus / Motor Phase Current (Current Clamp, A -> 0A)",
+      "channel_4": "Spring-Applied Mechanical Brake Solenoid Voltage (24V -> 0V)"
+    },
+    "calibration_reference_required": true,
+    "evidence_artifact_required": "Raw oscilloscope CSV waveform trace and screenshot PNG."
+  },
+  "gate_c8_status": "UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING"
+}

@@ -1,0 +1,22 @@
+{
+  "master_catalog_entries": 55,
+  "confirmed_failure_modes": 49,
+  "resolved_failure_modes": 42,
+  "documented_boundary_ids": 7,
+  "documented_boundary_families": 4,
+  "unreproduced_candidate_hypotheses": 6,
+  "open_critical_defects": 0,
+  "mathematical_identity": {
+    "identity_1": "49 confirmed + 6 candidate hypotheses = 55 master catalog entries",
+    "identity_2": "42 resolved + 7 documented ODD boundaries = 49 confirmed failure modes"
+  },
+  "hierarchy": {
+    "MASTER CATALOG ENTRIES": 55,
+    "CONFIRMED FAILURE MODES": {
+      "total": 49,
+      "RESOLVED": 42,
+      "DOCUMENTED ODD BOUNDARIES": 7
+    },
+    "UNREPRODUCED CANDIDATE HYPOTHESES": 6
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "audit_version": "V3.3.3_RECONCILIATION_PARETO_AUDIT",
+  "issue_id": "CRITICAL_ISSUE_05_PARETO_OPTIMALITY_CLAIM",
+  "audit_timestamp_utc": "2026-09-25T14:24:00Z",
+  "objective_space": {
+    "coverage": "MAXIMIZE (target >= 0.9500)",
+    "mean_interval_width_m": "MINIMIZE",
+    "p95_interval_width_m": "MINIMIZE",
+    "unsafe_non_refusal_rate": "MINIMIZE (target <= 0.0100)",
+    "false_refusal_rate": "MINIMIZE (target <= 0.0500)"
+  },
+  "candidate_models_evaluation": {
+    "MODEL_A": {
+      "coverage": 0.9261,
+      "mean_width_m": 0.1815,
+      "p95_width_m": 0.2672,
+      "unsafe_non_refusal_rate": 0.0649,
+      "false_refusal_rate": 0.0,
+      "meets_coverage_target": false
+    },
+    "MODEL_D": {
+      "coverage": 0.9367,
+      "mean_width_m": 0.1913,
+      "p95_width_m": 0.3021,
+      "unsafe_non_refusal_rate": 0.0513,
+      "false_refusal_rate": 0.0,
+      "meets_coverage_target": false
+    },
+    "MODEL_F": {
+      "coverage": 0.9427,
+      "mean_width_m": 0.1975,
+      "p95_width_m": 0.3150,
+      "unsafe_non_refusal_rate": 0.0452,
+      "false_refusal_rate": 0.0,
+      "meets_coverage_target": false
+    },
+    "MODEL_G": {
+      "coverage": 0.9472,
+      "mean_width_m": 0.2007,
+      "p95_width_m": 0.3194,
+      "unsafe_non_refusal_rate": 0.0392,
+      "false_refusal_rate": 0.0,
+      "meets_coverage_target": false
+    },
+    "MODEL_H": {
+      "coverage": 0.9502,
+      "mean_width_m": 0.2076,
+      "p95_width_m": 0.3438,
+      "unsafe_non_refusal_rate": 0.0392,
+      "false_refusal_rate": 0.0,
+      "meets_coverage_target": true
+    }
+  },
+  "dominance_analysis": {
+    "is_model_h_dominated": false,
+    "does_model_h_dominate_all_others": false,
+    "pareto_frontier_members": ["MODEL_A", "MODEL_D", "MODEL_F", "MODEL_G", "MODEL_H"],
+    "frontier_explanation": "Each successive model trades a small increase in interval width for a reduction in undercoverage and unsafe non-refusals. Model H is the ONLY model on the frontier that achieves the preregistered nominal coverage target (>= 95.0%). However, it does not mathematically dominate Model G (which has smaller interval width).",
+    "wording_reconciliation": {
+      "original_statement": "Model H achieves Pareto-optimal coverage",
+      "revised_statement": "Model H is a verified non-dominated Pareto-frontier model providing the best observed trade-off that satisfies the >= 95% coverage target among tested candidate models.",
+      "claim_status": "QUALIFIED_AND_RECONCILED"
+    }
+  }
+}

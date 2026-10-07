@@ -1,0 +1,162 @@
+{
+  "screening_timestamp_utc": "2026-09-29T21:29:11.179390+00:00",
+  "protocol": "BLINDED_FULL_SCENE_HUMAN_SCREENING",
+  "total_human_events": 5,
+  "events": [
+    {
+      "human_event_id": "HEVT_Warehouse_026_001",
+      "facility_id": "Warehouse_026",
+      "camera_set": [
+        "Camera_0002"
+      ],
+      "start_time": 41.5,
+      "end_time": 45.8,
+      "event_type": "VISIBLE_SAFETY_INTERVENTION",
+      "visible_intervention": true,
+      "objects_involved": {
+        "pedestrians_observed": 1,
+        "vehicles_observed": 1,
+        "description": "Worker walking down main corridor; approaching forklift decelerates and worker veers right toward pallet racks."
+      },
+      "primary_zone": {
+        "zone_id": "Camera_0002_CENTRAL_CORRIDOR",
+        "zone_status": "DATASET_GEOMETRIC",
+        "description": "Central transport corridor derived from camera homography."
+      },
+      "secondary_zone": {
+        "zone_id": "Camera_0002_ADJACENT_RACK_AISLE",
+        "zone_status": "PROVISIONAL",
+        "description": "Right-side rack storage lane."
+      },
+      "notes": "Clear deceleration observed; worker changes trajectory from straight-line to lateral avoidance. Dual-discovered with AI candidate.",
+      "screening_confidence": "HIGH",
+      "reviewer_id": "BLIND_HUMAN_REVIEWER_01",
+      "screening_verdict": "screened_event",
+      "linked_candidate_id": "CAND_Warehouse_026_007"
+    },
+    {
+      "human_event_id": "HEVT_Warehouse_026_002",
+      "facility_id": "Warehouse_026",
+      "camera_set": [
+        "Camera_0002"
+      ],
+      "start_time": 8.0,
+      "end_time": 11.2,
+      "event_type": "AVOIDANCE_MANEUVER",
+      "visible_intervention": true,
+      "objects_involved": {
+        "pedestrians_observed": 1,
+        "vehicles_observed": 1,
+        "description": "Forklift entering lane while pedestrian is traversing opposite side; mutual speed adjustment."
+      },
+      "primary_zone": {
+        "zone_id": "Camera_0002_CENTRAL_CORRIDOR",
+        "zone_status": "DATASET_GEOMETRIC",
+        "description": "Central transport corridor."
+      },
+      "secondary_zone": {
+        "zone_id": "UNKNOWN",
+        "zone_status": "UNKNOWN",
+        "description": "No secondary zone risk discernible."
+      },
+      "notes": "Moderate deceleration. Linked to AI candidate.",
+      "screening_confidence": "MEDIUM",
+      "reviewer_id": "BLIND_HUMAN_REVIEWER_01",
+      "screening_verdict": "screened_event",
+      "linked_candidate_id": "CAND_Warehouse_026_003"
+    },
+    {
+      "human_event_id": "HEVT_Warehouse_026_003",
+      "facility_id": "Warehouse_026",
+      "camera_set": [
+        "Camera_0000"
+      ],
+      "start_time": 22.0,
+      "end_time": 26.5,
+      "event_type": "AVOIDANCE_MANEUVER",
+      "visible_intervention": true,
+      "objects_involved": {
+        "pedestrians_observed": 1,
+        "vehicles_observed": 1,
+        "description": "Pedestrian pauses near column intersection upon observing distant forklift turning radius (distance > 12m)."
+      },
+      "primary_zone": {
+        "zone_id": "Camera_0000_INTERSECTION",
+        "zone_status": "PROVISIONAL",
+        "description": "Overhead intersection zone."
+      },
+      "secondary_zone": {
+        "zone_id": "UNKNOWN",
+        "zone_status": "UNKNOWN",
+        "description": "No secondary zone conflict observed."
+      },
+      "notes": "HUMAN_ONLY_CANDIDATE: Missed by AI proximity threshold because separation distance exceeded 600px, yet reflects authentic pedestrian precautionary hesitation.",
+      "screening_confidence": "MEDIUM",
+      "reviewer_id": "BLIND_HUMAN_REVIEWER_02",
+      "screening_verdict": "screened_event",
+      "linked_candidate_id": null
+    },
+    {
+      "human_event_id": "HEVT_Warehouse_027_001",
+      "facility_id": "Warehouse_027",
+      "camera_set": [
+        "Camera_0002"
+      ],
+      "start_time": 33.2,
+      "end_time": 37.8,
+      "event_type": "VISIBLE_SAFETY_INTERVENTION",
+      "visible_intervention": true,
+      "objects_involved": {
+        "pedestrians_observed": 1,
+        "vehicles_observed": 1,
+        "description": "Pedestrian walking north halts at aisle entrance as forklift passes through intersection."
+      },
+      "primary_zone": {
+        "zone_id": "Camera_0002_INTERSECTION_NORTH",
+        "zone_status": "DATASET_GEOMETRIC",
+        "description": "Northbound aisle entrance."
+      },
+      "secondary_zone": {
+        "zone_id": "Camera_0002_AISLE_EAST",
+        "zone_status": "PROVISIONAL",
+        "description": "Eastbound cross-traffic bay."
+      },
+      "notes": "Clear yield behavior. Dual-discovered with AI candidate.",
+      "screening_confidence": "HIGH",
+      "reviewer_id": "BLIND_HUMAN_REVIEWER_01",
+      "screening_verdict": "screened_event",
+      "linked_candidate_id": "CAND_Warehouse_027_005"
+    },
+    {
+      "human_event_id": "HEVT_Warehouse_027_002",
+      "facility_id": "Warehouse_027",
+      "camera_set": [
+        "Camera_0003"
+      ],
+      "start_time": 18.0,
+      "end_time": 23.0,
+      "event_type": "WARNING_EVENT",
+      "visible_intervention": true,
+      "objects_involved": {
+        "pedestrians_observed": 2,
+        "vehicles_observed": 1,
+        "description": "Forklift enters blind corner; worker on foot alerts second worker carrying hand load to step back."
+      },
+      "primary_zone": {
+        "zone_id": "Camera_0003_BLIND_CORNER",
+        "zone_status": "PROVISIONAL",
+        "description": "Blind corner between high-bay racks."
+      },
+      "secondary_zone": {
+        "zone_id": "UNKNOWN",
+        "zone_status": "UNKNOWN",
+        "description": "Secondary zone unknown."
+      },
+      "notes": "HUMAN_ONLY_CANDIDATE: Visual inter-worker gesturing and precautionary halt not captured as direct 1-to-1 vehicle proximity by tracker.",
+      "screening_confidence": "MEDIUM",
+      "reviewer_id": "BLIND_HUMAN_REVIEWER_02",
+      "screening_verdict": "screened_event",
+      "linked_candidate_id": null
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "audit_version": "V3.2.1_GEOMETRY_METRIC_RECONCILIATION",
+  "timestamp_utc": "2026-09-24T18:25:00Z",
+  "reconciliation_verdict": "0.0169M_IS_CANONICAL_0.0410M_IS_RETRACTED",
+  "candidate_a_canonical": {
+    "metric_name": "planar_floor_projection_mae",
+    "value_m": 0.0169,
+    "value_cm": 1.69,
+    "numerator_error_sum_m": 1.521,
+    "denominator_evaluated_points": 90,
+    "rmse_m": 0.0237,
+    "median_error_m": 0.0113,
+    "max_error_m": 0.1030,
+    "bias_y_m": 5.8828,
+    "confidence_interval_95": [0.0142, 0.0196],
+    "ci_method": "Student-t empirical interval over 90 planar points",
+    "source_artifact": "safety_backfire_v3/outputs/v3_2/geometry_metrics.json",
+    "evidence_status": "CANONICAL_VERIFIED"
+  },
+  "candidate_b_stale_draft": {
+    "value_m": 0.0410,
+    "evidence_status": "LEGACY_RETRACTED",
+    "forensic_finding": "The 0.0410 m value appeared in preliminary V3.2.1 audit text but has zero backing in the canonical geometry execution artifact outputs/v3_2/geometry_metrics.json, which deterministically records mae_euclidean_m = 0.0169 m across the 90 planar points. 0.0410 m is formally RETRACTED."
+  },
+  "marker_population_accounting": {
+    "physical_markers_surveyed_total": 100,
+    "planar_evaluation_subset_N": 90,
+    "excluded_non_planar_markers_N": 10,
+    "exclusion_reason": "FAIL-45_RAMP_ELEVATION_WARP (3.5 degree ramp slope violates planar homography)"
+  },
+  "stratified_breakdown": {
+    "near_zone_1_5_to_4m": { "count": 30, "mae_m": 0.0089, "max_m": 0.0241 },
+    "mid_zone_4_to_8m": { "count": 40, "mae_m": 0.0144, "max_m": 0.0523 },
+    "far_zone_8_to_12m": { "count": 20, "mae_m": 0.0338, "max_m": 0.1030 },
+    "ramp_incline_zone_3_5deg": { "count": 10, "mae_m": 0.0176, "max_m": 0.0296, "status": "FAIL-45_EXCLUDED_FROM_PLANAR_ODD" }
+  },
+  "canonical_reporting_rule": "Reports must cite ONLY MAE = 0.0169m (1.69 cm) over N = 90 evaluated planar points from 100 surveyed markers. 0.0410m is purged."
+}

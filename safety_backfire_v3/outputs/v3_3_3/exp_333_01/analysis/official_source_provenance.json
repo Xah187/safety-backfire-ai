@@ -1,0 +1,59 @@
+{
+  "provenance_schema_version": "V3.3.3_NVIDIA_SOURCE_PROVENANCE_V1",
+  "audit_target": "RUN_003_NVIDIA_WAREHOUSE_026",
+  "audit_timestamp_utc": "2026-09-28T09:50:00Z",
+  "official_source": {
+    "dataset": "nvidia/PhysicalAI-SmartSpaces",
+    "subset": "MTMC_Tracking_2026",
+    "primary_scene": "Warehouse_026",
+    "secondary_scene": "Warehouse_027",
+    "publisher": "NVIDIA Corporation",
+    "license": "CC-BY-4.0",
+    "source_url": "https://huggingface.co/datasets/nvidia/PhysicalAI-SmartSpaces",
+    "citation": "NVIDIA PhysicalAI-SmartSpaces: Multi-Target Multi-Camera Tracking Benchmark (2026), NVIDIA Research."
+  },
+  "official_dataset_characterization": {
+    "repository_overall_type": "SYNTHETIC_OVERALL_WITH_REAL_WORLD_TEST_CAPTURES",
+    "clarification": "The overall dataset repository contains predominantly synthetic data; however, scenes Warehouse_026 and Warehouse_027 are explicitly documented and provided as authentic real-world test captures.",
+    "real_world_test_scenes": {
+      "Warehouse_026": {
+        "nature": "real-world test capture",
+        "cameras_count": 4,
+        "camera_ids": ["Camera_0000", "Camera_0001", "Camera_0002", "Camera_0003"],
+        "duration_seconds_per_camera": 60.0,
+        "frames_per_camera": 1800,
+        "total_frames": 7200,
+        "fps": 30.0,
+        "resolution": "1920x1080",
+        "videos_supplied": true,
+        "calibration_supplied": true,
+        "ground_truth_status": "WITHHELD_FOR_REAL_WORLD_TEST_SCENES"
+      },
+      "Warehouse_027": {
+        "nature": "real-world test capture",
+        "cameras_count": 7,
+        "camera_ids": ["Camera_0000", "Camera_0001", "Camera_0002", "Camera_0003", "Camera_0004", "Camera_0005", "Camera_0006"],
+        "duration_seconds_per_camera": 60.0,
+        "frames_per_camera": 1800,
+        "total_frames": 12600,
+        "fps": 30.0,
+        "resolution": "1920x1080",
+        "videos_supplied": true,
+        "calibration_supplied": true,
+        "ground_truth_status": "WITHHELD_FOR_REAL_WORLD_TEST_SCENES"
+      }
+    }
+  },
+  "facility_independence_classification": {
+    "real_world_external_dataset": "VERIFIED",
+    "physical_building_independence": "SOURCE_SUPPORTED / NOT_DIRECTLY_VERIFIED",
+    "governance_rule": "NVIDIA does not publish specific physical facility identities or cadastral survey records. Therefore, physical building independence is supported by external provenance but not directly certified by architectural deed."
+  },
+  "external_evidence_hierarchy": {
+    "LEVEL_1": "Official NVIDIA source metadata (dataset documentation, schema, statements)",
+    "LEVEL_2": "Raw video media (Camera_0000.mp4 .. Camera_0003.mp4 container, codec, pixel frames)",
+    "LEVEL_3": "NVIDIA calibration data (intrinsic, extrinsic, homography, reprojection report)",
+    "LEVEL_4": "Model-derived observations (YOLO detections, ByteTrack tracks, bbox IoU occlusion proxy)",
+    "LEVEL_5": "Independent human ground truth (WITHHELD / NOT_AVAILABLE for real-world test scenes)"
+  }
+}

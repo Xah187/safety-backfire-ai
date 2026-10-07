@@ -1,0 +1,29 @@
+{
+  "manifest_version": "EXP_333_01_ANNOTATION_MANIFEST",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "facility_id": "FACILITY_E_COLD_STORAGE",
+  "annotation_version": "V1.0.0_EXTERNAL_PREREGISTERED",
+  "annotator_count": 0,
+  "review_status": "AWAITING_EXTERNAL_DATA",
+  "inter_annotator_review": "NOT_AVAILABLE",
+  "multi_annotator_validation": "NOT_AVAILABLE",
+  "schemas": {
+    "perception_schema": {
+      "required_fields": ["frame_id", "class", "bbox", "occlusion", "visibility", "annotator_id"],
+      "allowed_classes": ["Person", "Vehicle", "Storage", "Load", "Machine"],
+      "occlusion_states": ["NONE", "PARTIAL", "HEAVY"],
+      "visibility_range": [0.0, 1.0]
+    },
+    "tracking_schema": {
+      "required_fields": ["frame_id", "object_id", "trajectory_id", "camera_id"]
+    },
+    "geometry_schema": {
+      "required_fields": ["reference_point_id", "image_coordinate", "ground_coordinate", "survey_distance"],
+      "floor_type": ["PLANAR", "NON_PLANAR", "RAMP", "UNKNOWN"]
+    }
+  },
+  "ingested_annotation_files": [],
+  "total_ground_truth_objects": 0,
+  "status": "NOT_AVAILABLE",
+  "governance_rule": "Ground truth editing after blind lock is prohibited without incrementing the manifest version and regenerating cryptographic hashes."
+}

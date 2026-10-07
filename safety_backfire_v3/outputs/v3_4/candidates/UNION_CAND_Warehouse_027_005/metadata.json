@@ -1,0 +1,42 @@
+{
+  "event_identifier": "UNION_CAND_Warehouse_027_005",
+  "primary_id": "CAND_Warehouse_027_005",
+  "discovery_channel": "DUAL_DISCOVERED",
+  "facility_scene": "Warehouse_027",
+  "camera_stream": "Camera_0002",
+  "source_video_file": "Camera_0002.mp4",
+  "source_video_sha256": "29bc455831e1b80210307405601a4b33fbe00430eea8839b9c8ffd3eccfd526a",
+  "window_valid": true,
+  "window_invalidation_reasons": [],
+  "temporal_windows": {
+    "pre": {
+      "start_frame": 843,
+      "end_frame": 992,
+      "duration_seconds": 5.0,
+      "clip": "before.mp4"
+    },
+    "intervention": {
+      "start_frame": 993,
+      "end_frame": 1039,
+      "duration_seconds": 1.57,
+      "clip": "intervention.mp4"
+    },
+    "post": {
+      "start_frame": 1040,
+      "end_frame": 1279,
+      "duration_seconds": 8.0,
+      "clip": "after.mp4"
+    }
+  },
+  "spatial_zones": {
+    "primary_zone": {
+      "zone_id": "Camera_0002_CENTRAL_CORRIDOR",
+      "zone_status": "DATASET_GEOMETRIC"
+    },
+    "secondary_zone": {
+      "zone_id": "Camera_0002_ADJACENT_RACK_AISLE",
+      "zone_status": "PROVISIONAL"
+    }
+  },
+  "governance_status": "BLINDED_HUMAN_REVIEW_BUNDLE"
+}

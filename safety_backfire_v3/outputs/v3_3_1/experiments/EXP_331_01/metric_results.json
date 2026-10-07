@@ -1,0 +1,16 @@
+{
+  "nominal_coverage": 0.9367,
+  "nominal_ci_95": [
+    0.9155,
+    0.9528
+  ],
+  "worst_stratum_coverage": 0.8978,
+  "mean_interval_width_m": 0.2083,
+  "p95_interval_width_m": 0.3474,
+  "meets_target": false,
+  "far_field_coverage": 0.7683,
+  "far_field_ci_95": [
+    0.6662,
+    0.8463
+  ]
+}

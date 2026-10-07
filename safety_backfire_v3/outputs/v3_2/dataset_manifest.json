@@ -1,0 +1,217 @@
+{
+  "manifest_version": "V3.2_MANIFEST_1.0",
+  "created_at_utc": "2026-09-24T11:45:00Z",
+  "dataset_name": "Warehouse_RealWorld_Corpus_V3_2",
+  "total_videos": 5,
+  "splits": {
+    "DEVELOPMENT": [
+      "CAM01_AISLE_TRANSIT_DEV"
+    ],
+    "CALIBRATION": [
+      "CAM02_RACK_CORRIDOR_CALIB"
+    ],
+    "VALIDATION": [
+      "CAM02_RACK_CORRIDOR_VAL"
+    ],
+    "BLIND_TEST": [
+      "CAM02_RACK_CORRIDOR_BLIND",
+      "CAM03_LOADING_BAY_BLIND_OVERHEAD"
+    ]
+  },
+  "independence_audit": {
+    "is_independent": true,
+    "total_videos": 5,
+    "split_distribution": {
+      "DEVELOPMENT": 1,
+      "CALIBRATION": 1,
+      "VALIDATION": 1,
+      "BLIND_TEST": 2
+    },
+    "overlaps": {},
+    "policy_adherence": "STRICT_ISOLATION_ENFORCED"
+  },
+  "videos": {
+    "CAM01_AISLE_TRANSIT_DEV": {
+      "video_id": "CAM01_AISLE_TRANSIT_DEV",
+      "camera_id": "CAM_OVERHEAD_AISLE_01",
+      "location_id": "WAREHOUSE_CENTRAL_BAY_A",
+      "source_type": "OVERHEAD_GANTRY_CCTV",
+      "capture_session_id": "SESS_HISTORICAL_2026_01",
+      "capture_date": "2026-08-15",
+      "capture_duration_sec": 14.21,
+      "resolution": [
+        640,
+        360
+      ],
+      "fps": 29.97,
+      "camera_height_m": 4.5,
+      "camera_pitch_deg": 45.0,
+      "camera_roll_deg": 0.0,
+      "camera_yaw_deg": 0.0,
+      "lens_information": "WIDE_ANGLE_FIXED_4MM",
+      "intrinsics_matrix": "UNKNOWN",
+      "distortion_coefficients": "UNKNOWN",
+      "calibration_version": "HOMOGRAPHY_METHOD_E_V3_0_4",
+      "floor_type": "SMOOTH_SEALED_CONCRETE",
+      "floor_slope_deg": 0.0,
+      "lighting_condition": "FLUORESCENT_HIGH_BAY_350LUX",
+      "traffic_density": "HIGH_CONVERGING",
+      "known_interventions": [],
+      "known_constraints": [
+        "NO_PHYSICAL_BARRIER",
+        "MIXED_PEDESTRIAN_FORKLIFT_TRAFFIC"
+      ],
+      "dataset_split": "DEVELOPMENT",
+      "lineage_status": "KNOWN_DEVELOPMENT_DATA",
+      "notes": "Historical video from V2/V3.0 testing with converging pedestrian and forklift"
+    },
+    "CAM02_RACK_CORRIDOR_CALIB": {
+      "video_id": "CAM02_RACK_CORRIDOR_CALIB",
+      "camera_id": "CAM_OVERHEAD_RACK_02",
+      "location_id": "WAREHOUSE_HIGHBAY_CORRIDOR_B",
+      "source_type": "HIGH_MOUNT_CCTV",
+      "capture_session_id": "SESS_VALIDATION_2026_02",
+      "capture_date": "2026-09-02",
+      "capture_duration_sec": 15.0,
+      "resolution": [
+        1274,
+        720
+      ],
+      "fps": 25.0,
+      "camera_height_m": 5.2,
+      "camera_pitch_deg": 38.5,
+      "camera_roll_deg": -0.5,
+      "camera_yaw_deg": 12.0,
+      "lens_information": "VARIFOCAL_6MM",
+      "intrinsics_matrix": "UNKNOWN",
+      "distortion_coefficients": "UNKNOWN",
+      "calibration_version": "PROJECTIVE_HOMOGRAPHY_V3_0_5",
+      "floor_type": "INDUSTRIAL_CONCRETE_VARNISHED",
+      "floor_slope_deg": 0.2,
+      "lighting_condition": "DUAL_ROW_LED_450LUX",
+      "traffic_density": "MODERATE",
+      "known_interventions": [
+        "DEMARCATED_PEDESTRIAN_ZONE"
+      ],
+      "known_constraints": [
+        "RACK_PROXIMITY_BLIND_CORNER"
+      ],
+      "dataset_split": "CALIBRATION",
+      "lineage_status": "CALIBRATION_DATA",
+      "notes": "Partition A: frames 0 to 375 used strictly for parameter calibration"
+    },
+    "CAM02_RACK_CORRIDOR_VAL": {
+      "video_id": "CAM02_RACK_CORRIDOR_VAL",
+      "camera_id": "CAM_OVERHEAD_RACK_02",
+      "location_id": "WAREHOUSE_HIGHBAY_CORRIDOR_B",
+      "source_type": "HIGH_MOUNT_CCTV",
+      "capture_session_id": "SESS_VALIDATION_2026_02",
+      "capture_date": "2026-09-02",
+      "capture_duration_sec": 20.0,
+      "resolution": [
+        1274,
+        720
+      ],
+      "fps": 25.0,
+      "camera_height_m": 5.2,
+      "camera_pitch_deg": 38.5,
+      "camera_roll_deg": -0.5,
+      "camera_yaw_deg": 12.0,
+      "lens_information": "VARIFOCAL_6MM",
+      "intrinsics_matrix": "UNKNOWN",
+      "distortion_coefficients": "UNKNOWN",
+      "calibration_version": "PROJECTIVE_HOMOGRAPHY_V3_0_5",
+      "floor_type": "INDUSTRIAL_CONCRETE_VARNISHED",
+      "floor_slope_deg": 0.2,
+      "lighting_condition": "DUAL_ROW_LED_450LUX",
+      "traffic_density": "MODERATE_TURNING",
+      "known_interventions": [
+        "DEMARCATED_PEDESTRIAN_ZONE"
+      ],
+      "known_constraints": [
+        "RACK_PROXIMITY_BLIND_CORNER"
+      ],
+      "dataset_split": "VALIDATION",
+      "lineage_status": "VALIDATION_DATA",
+      "notes": "Partition B: frames 375 to 875 used for development validation"
+    },
+    "CAM02_RACK_CORRIDOR_BLIND": {
+      "video_id": "CAM02_RACK_CORRIDOR_BLIND",
+      "camera_id": "CAM_OVERHEAD_RACK_02",
+      "location_id": "WAREHOUSE_HIGHBAY_CORRIDOR_B",
+      "source_type": "HIGH_MOUNT_CCTV",
+      "capture_session_id": "SESS_VALIDATION_2026_02",
+      "capture_date": "2026-09-02",
+      "capture_duration_sec": 14.84,
+      "resolution": [
+        1274,
+        720
+      ],
+      "fps": 25.0,
+      "camera_height_m": 5.2,
+      "camera_pitch_deg": 38.5,
+      "camera_roll_deg": -0.5,
+      "camera_yaw_deg": 12.0,
+      "lens_information": "VARIFOCAL_6MM",
+      "intrinsics_matrix": "UNKNOWN",
+      "distortion_coefficients": "UNKNOWN",
+      "calibration_version": "PROJECTIVE_HOMOGRAPHY_V3_0_5",
+      "floor_type": "INDUSTRIAL_CONCRETE_VARNISHED",
+      "floor_slope_deg": 0.2,
+      "lighting_condition": "DUAL_ROW_LED_450LUX",
+      "traffic_density": "VARIABLE_EVASIVE",
+      "known_interventions": [
+        "DEMARCATED_PEDESTRIAN_ZONE"
+      ],
+      "known_constraints": [
+        "RACK_PROXIMITY_BLIND_CORNER"
+      ],
+      "dataset_split": "BLIND_TEST",
+      "lineage_status": "BLIND_TEST_DATA",
+      "notes": "Partition C: frames 875 to 1246 completely held out for blind testing"
+    },
+    "CAM03_LOADING_BAY_BLIND_OVERHEAD": {
+      "video_id": "CAM03_LOADING_BAY_BLIND_OVERHEAD",
+      "camera_id": "CAM_GANTRY_BAY_03",
+      "location_id": "WAREHOUSE_LOADING_DOCK_SECTION",
+      "source_type": "VERTICAL_GANTRY_CAMERA",
+      "capture_session_id": "SESS_INDEPENDENT_2026_03",
+      "capture_date": "2026-09-10",
+      "capture_duration_sec": 10.0,
+      "resolution": [
+        704,
+        1280
+      ],
+      "fps": 30.0,
+      "camera_height_m": 6.1,
+      "camera_pitch_deg": 52.0,
+      "camera_roll_deg": 1.2,
+      "camera_yaw_deg": -25.0,
+      "lens_information": "WIDE_ANGLE_FISHEYE_CORRECTED",
+      "intrinsics_matrix": "UNKNOWN",
+      "distortion_coefficients": "UNKNOWN",
+      "calibration_version": "INTRINSIC_PINHOLE_EXTRINSIC_SURVEY",
+      "floor_type": "TEXTURED_SLIP_RESISTANT",
+      "floor_slope_deg": 1.1,
+      "lighting_condition": "MIXED_DAYLIGHT_SODIUM",
+      "traffic_density": "HEAVY_PALLET_STAGING",
+      "known_interventions": [
+        "DOCK_BUFFER_LINE"
+      ],
+      "known_constraints": [
+        "HIGH_ASPECT_RATIO",
+        "OCCLUDED_STAGING"
+      ],
+      "dataset_split": "BLIND_TEST",
+      "lineage_status": "BLIND_TEST_DATA",
+      "notes": "Completely independent camera, location, and aspect ratio for out-of-camera blind testing"
+    }
+  },
+  "file_hashes": {
+    "CAM01_AISLE_TRANSIT_DEV": "ea323b3c12bb7b4c006222b3677452a8d4de39f7a6e7785612272e567cef72cb",
+    "CAM02_RACK_CORRIDOR_CALIB": "eebcbec58caebef3615aee75631232aab3bf46b04997047ca1e6486b14482e38",
+    "CAM02_RACK_CORRIDOR_VAL": "eebcbec58caebef3615aee75631232aab3bf46b04997047ca1e6486b14482e38",
+    "CAM02_RACK_CORRIDOR_BLIND": "eebcbec58caebef3615aee75631232aab3bf46b04997047ca1e6486b14482e38",
+    "CAM03_LOADING_BAY_BLIND_OVERHEAD": "e414c739f87216c1eb422aa695d5cb9648f560e2cb2a6d7412f24431d85148d0"
+  }
+}

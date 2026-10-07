@@ -1,0 +1,51 @@
+{
+  "event_id": "UNION_CAND_Warehouse_026_007",
+  "primary_candidate_id": "CAND_Warehouse_026_007",
+  "discovery_channel": "DUAL_DISCOVERED",
+  "facility_scene": "Warehouse_026",
+  "camera_stream": "Camera_0000",
+  "source_video": "Camera_0000.mp4",
+  "source_video_sha256": "83ed232a2f5fe3031807ed19020e1a44fe386e89b68f9bea621797f1552c9cda",
+  "package_hash": "db5258d8f8c0703388d86ebdeb6a4634387c3aa698ce6d7bb7b6f0e6efe16531",
+  "review_version": "V3.4_C_BLIND_ADJUDICATION_V1",
+  "eligibility_status": "ELIGIBLE_FOR_ADJUDICATION",
+  "window_valid": true,
+  "window_invalidation_reasons": [],
+  "temporal_window_bounds": {
+    "pre": {
+      "start_frame": 1206,
+      "end_frame": 1355,
+      "timestamp_start_s": 40.2,
+      "timestamp_end_s": 45.17,
+      "duration_s": 5.0,
+      "clip_filename": "before.mp4"
+    },
+    "intervention": {
+      "start_frame": 1356,
+      "end_frame": 1391,
+      "timestamp_start_s": 45.2,
+      "timestamp_end_s": 46.37,
+      "duration_s": 1.2,
+      "clip_filename": "intervention.mp4"
+    },
+    "post": {
+      "start_frame": 1392,
+      "end_frame": 1631,
+      "timestamp_start_s": 46.4,
+      "timestamp_end_s": 54.37,
+      "duration_s": 8.0,
+      "clip_filename": "after.mp4"
+    }
+  },
+  "spatial_zones": {
+    "primary_zone": {
+      "zone_id": "Camera_0000_CENTRAL_CORRIDOR",
+      "zone_status": "PROVISIONAL"
+    },
+    "secondary_zone": {
+      "zone_id": "Camera_0000_ADJACENT_RACK_AISLE",
+      "zone_status": "PROVISIONAL"
+    }
+  },
+  "adjudication_readiness": "AWAITING_HUMAN_ASSESSORS"
+}

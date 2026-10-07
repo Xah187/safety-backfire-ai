@@ -1,0 +1,64 @@
+{
+  "preregistration_version": "V3.3_EXPERIMENT_PREREGISTRATION",
+  "preregistration_timestamp_utc": "2026-09-25T01:16:00Z",
+  "status": "LOCKED_PRE_EXECUTION",
+  "experiments": [
+    {
+      "ExperimentID": "EXP_33_01",
+      "Title": "OUT_OF_SAMPLE_UNCERTAINTY",
+      "Hypothesis": "A coverage factor k selected exclusively using calibration data maintains acceptable empirical coverage (target >= 95.0%) on previously unseen evaluation data drawn from the declared nominal ODD population without parameter re-tuning.",
+      "Dataset_Calibration": "DS_V3_3_CALIB_SECTOR_B",
+      "Dataset_Evaluation": ["DS_V3_3_VAL_INTERSECTION_C", "DS_V3_3_BLIND_STAGING_D"],
+      "IndependentVariables": ["Distance strata (Near/Mid/Far)", "Illumination (Low/Normal)", "Occlusion (None/Partial/Severe)"],
+      "DependentVariables": ["Coverage rate", "Undercoverage frequency", "Interval width (m)", "Mahalanobis distance"],
+      "Control": "Calibration in-sample fit coverage on DS_V3_3_CALIB_SECTOR_B",
+      "Treatment": "Out-of-sample evaluation on independent unseen frames with locked k",
+      "AcceptanceCriteria": "Nominal ODD empirical coverage >= 0.9500 with documented Wilson score 95% CI; separate reporting of calibration vs out-of-sample coverage",
+      "IndependenceUnit": "Trajectory / Coordinate Point",
+      "SampleSize": 745,
+      "RandomSeed": 42
+    },
+    {
+      "ExperimentID": "EXP_33_02",
+      "Title": "CROSS_ENVIRONMENT_GENERALIZATION",
+      "Hypothesis": "Computer vision perception, tracking, and hazard detection maintain bounded degradation across diverse warehouse layouts, mounting geometries, and lighting conditions compared to the development baseline.",
+      "Dataset": ["DS_V3_3_DEV_AISLE_A", "DS_V3_3_CALIB_SECTOR_B", "DS_V3_3_VAL_INTERSECTION_C", "DS_V3_3_BLIND_STAGING_D"],
+      "IndependentVariables": ["Layout (Wide aisle, High bay, T-intersection, Staging)", "Camera pitch (36.0 - 48.0 deg)", "Illumination (210 - 500 lux)", "Density (Low/Med/High)"],
+      "DependentVariables": ["Precision", "Recall", "IDF1", "ID switches", "Track fragmentation", "Hazard recall"],
+      "Control": "Nominal baseline performance in Sector A main aisle",
+      "Treatment": "Multi-environment cross-evaluation in Sectors B, C, and D",
+      "AcceptanceCriteria": "Perception recall >= 0.85 across nominal strata; IDF1 >= 0.80 with trajectory bootstrap CI; zero silent failure under degraded conditions",
+      "IndependenceUnit": "Warehouse Sector / Camera Deployment",
+      "SampleSize": 1672,
+      "RandomSeed": 1337
+    },
+    {
+      "ExperimentID": "EXP_33_03",
+      "Title": "INTERVENTION_BACKFIRE_EXPANSION",
+      "Hypothesis": "Rigorous two-zone Difference-in-Differences (DiD) with pre-treatment trend validation distinguishes genuine safety improvements from safety backfire (risk redistribution, new hazard creation) and refuses attribution (INSUFFICIENT_EVIDENCE) when parallel trends fail.",
+      "Dataset": "DS_V3_3_INTERVENTION_REPLAY_FIXTURES",
+      "IndependentVariables": ["Intervention type (Physical barrier, Speed limiter, Pedestrian detour, Staging relocation)", "Exogenous shock (+40% traffic surge)"],
+      "DependentVariables": ["DiD risk delta", "Parallel trend p-value", "Primary hazard reduction", "Secondary hazard creation", "Redistribution index"],
+      "Control": "Untreated control zone with parallel baseline traffic",
+      "Treatment": "Treated intervention zone with localized structural modification",
+      "AcceptanceCriteria": "Correct classification across taxonomy (RISK_REDUCED, RISK_REDISTRIBUTED, PARTIAL_BACKFIRE, NEW_HAZARD_CREATED, INSUFFICIENT_EVIDENCE); zero causal claims under parallel-trend failure",
+      "IndependenceUnit": "Intervention Case Episode",
+      "SampleSize": 5,
+      "RandomSeed": 2026
+    },
+    {
+      "ExperimentID": "EXP_33_04",
+      "Title": "SAFE_REFUSAL_AND_BOUNDARY_ROBUSTNESS",
+      "Hypothesis": "Automated boundary gating triggers SAFE_REFUSAL_INSUFFICIENT_EVIDENCE when input telemetry falls outside the ODD (slope > 1.5 deg, distance > 8.0m, latency > 500ms, extreme occlusion) rather than executing unsafe intervention decisions.",
+      "Dataset": ["DS_V3_3_STRESS_RAMP_SOUTH", "DS_V3_3_SYNTHETIC_OCCLUSION_REPLAY"],
+      "IndependentVariables": ["Floor slope (0.0 to 4.5 deg)", "Camera pitch (20.0 to 65.0 deg)", "Processing latency (15ms to 800ms)", "Distance (1.0m to 12.0m)"],
+      "DependentVariables": ["Appropriate refusal rate", "Unsafe non-refusal rate", "False refusal rate", "Boundary detection latency (ms)"],
+      "Control": "Standard open-loop baseline without telemetry gating",
+      "Treatment": "Closed-loop SafeRefusalEngine with multi-modal boundary gating",
+      "AcceptanceCriteria": "Appropriate refusal rate >= 0.98 on out-of-ODD inputs; unsafe non-refusal rate <= 0.01; false refusal rate <= 0.05 on nominal inputs",
+      "IndependenceUnit": "Decision Frame / Event Episode",
+      "SampleSize": 850,
+      "RandomSeed": 42
+    }
+  ]
+}

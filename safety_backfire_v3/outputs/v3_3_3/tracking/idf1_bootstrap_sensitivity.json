@@ -1,0 +1,51 @@
+{
+  "audit_version": "V3.3.3_TRACKING_BOOTSTRAP_SENSITIVITY",
+  "issue_id": "CRITICAL_ISSUE_12_TRACKING_BOOTSTRAP",
+  "audit_timestamp_utc": "2026-09-25T14:32:00Z",
+  "point_estimate_idf1": 0.9180,
+  "cluster_structure": {
+    "total_trajectories": 28,
+    "total_recordings": 4,
+    "total_cameras": 4,
+    "facility": "FACILITY_CENTRAL_01",
+    "cluster_membership": {
+      "REC_01_CAM_01_SECTOR_A": 7,
+      "REC_02_CAM_02_SECTOR_B": 8,
+      "REC_03_CAM_03_SECTOR_C": 7,
+      "REC_04_CAM_04_SECTOR_D": 6
+    }
+  },
+  "sensitivity_comparison": {
+    "TRAJECTORY_BLOCK_BOOTSTRAP": {
+      "resampling_unit": "individual_trajectory_sequence (N=28)",
+      "replicates": 1000,
+      "seed": 1337,
+      "ci_95": [0.9057, 0.9295],
+      "interval_width": 0.0238,
+      "independence_assumption": "Trajectories assumed conditionally independent given calibrated camera",
+      "status": "V3.3.1_AND_V3.3.2_PUBLISHED_BASELINE"
+    },
+    "RECORDING_CLUSTER_BOOTSTRAP": {
+      "resampling_unit": "recording_session_cluster (N=4)",
+      "replicates": 1000,
+      "seed": 1337,
+      "ci_95": [0.8942, 0.9385],
+      "interval_width": 0.0443,
+      "independence_assumption": "Recordings are independent capture sessions",
+      "status": "RECOMMENDED_SENSITIVITY_BENCHMARK"
+    },
+    "CAMERA_CLUSTER_BOOTSTRAP": {
+      "resampling_unit": "camera_installation_cluster (N=4)",
+      "replicates": 1000,
+      "seed": 1337,
+      "ci_95": [0.8915, 0.9410],
+      "interval_width": 0.0495,
+      "independence_assumption": "Cameras represent independent optical viewports",
+      "status": "SENSITIVITY_CHECK"
+    }
+  },
+  "audit_finding": {
+    "clustering_effect": "Resampling at the sequence level yields an optimistic interval (+/- 1.19%) because trajectories within the same recording session share environmental lighting, traffic bursts, and optical artifacts. Clustering by recording expands the 95% CI to +/- 2.21%.",
+    "governance_rule": "Future V3.3.3 evaluations must report both trajectory-level and recording-cluster bootstrap intervals to prevent understating variance."
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "milestone": "V3.4-K",
+  "description": "Synthetic multi-modal sensor replay baseline snapshot.",
+  "global_clock": {
+    "now_us": 1700000000000000,
+    "domain": "PTP_IEEE_1588_TAI",
+    "state": "LOCKED"
+  },
+  "cameras": {
+    "CAMERA_A": {
+      "packet_checksum": "360ac18097649792ef9fe1dd7c5645d5b97ad14c36760a06d12e9f69333f8e1b",
+      "payload": {
+        "frame_index": 1,
+        "width": 1920,
+        "height": 1080,
+        "channels": 3,
+        "is_black": false,
+        "encoding": "H264_HIGH_PROFILE",
+        "mock_pixel_hash": "da641c374f8112aec8311c949e88db218684bbe9327f880c03991ab5d05e9cce"
+      }
+    },
+    "CAMERA_B": {
+      "packet_checksum": "e0bb9f898052633a682e7a9ead7f5709dc638222b6e3ee15517d97a6477856de",
+      "payload": {
+        "frame_index": 1,
+        "width": 1920,
+        "height": 1080,
+        "channels": 3,
+        "is_black": false,
+        "encoding": "H264_HIGH_PROFILE",
+        "mock_pixel_hash": "676fe58050bde03c2c6b562d638254f4b83ed5becc53a936dc0c53eaec05529a"
+      }
+    },
+    "CAMERA_C": {
+      "packet_checksum": "29484d2bc75974ff99b3c5058d98f7ed7f665de49fc0f0e5f76a703a8cd5e288",
+      "payload": {
+        "frame_index": 1,
+        "width": 1920,
+        "height": 1080,
+        "channels": 3,
+        "is_black": false,
+        "encoding": "H264_HIGH_PROFILE",
+        "mock_pixel_hash": "a8a2c78fb1c3db670957a54530a5e430d1c5c7be94dbdd9d477f9c9f8293f598"
+      }
+    },
+    "CAMERA_D": {
+      "packet_checksum": "a3c30334625e5d87fa376b00ff8753a79dfdbcb2f864c4b9e9c38d356bbcc8d7",
+      "payload": {
+        "frame_index": 1,
+        "width": 1920,
+        "height": 1080,
+        "channels": 3,
+        "is_black": false,
+        "encoding": "H264_HIGH_PROFILE",
+        "mock_pixel_hash": "6b4c4ecdf4cb4abd75cb9d9d1edc997dfe2ad53973e51a02ffb631edc1c33c6b"
+      }
+    }
+  },
+  "telemetry": {
+    "vehicle_id": "FK_01",
+    "speed": 3.2,
+    "brake": "SERVICE_BRAKE_ACTIVE"
+  },
+  "secondary_sensor": {
+    "modality": "LIDAR_3D",
+    "depth_observable": true
+  },
+  "facility_geometry": {
+    "primary_interaction_zone": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        30.0,
+        0.0
+      ],
+      [
+        30.0,
+        4.5
+      ],
+      [
+        0.0,
+        4.5
+      ]
+    ],
+    "secondary_zone_entry": [
+      [
+        10.0,
+        3.5
+      ],
+      [
+        13.2,
+        3.5
+      ],
+      [
+        13.2,
+        5.5
+      ],
+      [
+        10.0,
+        5.5
+      ]
+    ],
+    "secondary_zone_depth": [
+      [
+        10.0,
+        4.5
+      ],
+      [
+        10.0,
+        25.0
+      ],
+      [
+        13.2,
+        25.0
+      ],
+      [
+        13.2,
+        4.5
+      ]
+    ]
+  }
+}

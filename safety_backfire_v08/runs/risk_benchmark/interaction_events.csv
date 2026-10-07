@@ -1,0 +1,6 @@
+frame,time_sec,person_id,forklift_id,track_id_reliable,person_footprint,forklift_footprint,distance_px,distance_meters,approach_speed_px_s,ttc_image_proxy_sec,zone_status,severity_score,event_type
+327,10.878,327001,327000,False,"[399.0, 315.0]","[400.5, 359.0]",44.0,0.82,0.0,99.9,CAUTION,50.6,PROXIMITY_WARNING
+328,10.911,328001,328000,False,"[399.0, 315.0]","[400.5, 359.0]",44.0,0.82,0.0,99.9,CAUTION,50.6,PROXIMITY_WARNING
+329,10.944,329001,329000,False,"[399.0, 315.0]","[400.5, 359.0]",44.0,0.82,0.0,99.9,CAUTION,50.6,PROXIMITY_WARNING
+330,10.978,330001,330000,False,"[399.0, 315.0]","[400.5, 359.0]",44.0,0.82,0.0,99.9,CAUTION,50.6,PROXIMITY_WARNING
+331,11.011,331001,331000,False,"[399.0, 315.0]","[400.5, 359.0]",44.0,0.82,0.0,99.9,CAUTION,50.6,PROXIMITY_WARNING

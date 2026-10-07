@@ -1,0 +1,99 @@
+{
+  "state_machine_name": "PilotReadinessStateMachineV3",
+  "milestone": "V3.4-N",
+  "governance_classification": "PHYSICAL_COMMISSIONING_STATE_MACHINE",
+  "design_state_declaration": {
+    "state": "INSTRUMENTATION_DESIGN_COMPLETE",
+    "definition": "The mathematical, structural, and semantic consistency of the engineering specification has been fully audited and verified. This represents the completion of Milestones V3.4-M and V3.4-N. IT IS STRICTLY A DESIGN STATE AND DOES NOT IMPLY HARDWARE COMMISSIONING OR CAPTURE AUTHORIZATION."
+  },
+  "states": {
+    "PLANNED": {
+      "definition": "Initial facility requirements, sensor configurations, and trial protocols drafted.",
+      "order": 1
+    },
+    "INSTALLATION_READY": {
+      "definition": "Facility leased; structural trusses mounted; sensors, PTP grandmaster, network, and storage physically staged.",
+      "order": 2
+    },
+    "COMMISSIONING": {
+      "definition": "Active on-site hardware commissioning (Gates C1 through C9) underway: PTP lock, camera alignment, CAN decoding, illuminance measurement, and E-Stop oscilloscope verification.",
+      "order": 3
+    },
+    "INSTRUMENTATION_READY_FOR_CAPTURE": {
+      "definition": "All physical Pre-Capture Commissioning Gates (C1 through C9) verified PASS on physical hardware. Instrumentation certified capable of capturing valid multi-modal data.",
+      "prerequisites": ["Gate C1 = PASS", "Gate C2 = PASS", "Gate C3 = PASS", "Gate C4 = PASS", "Gate C5 = PASS", "Gate C6 = PASS", "Gate C7 = PASS", "Gate C8 = PASS", "Gate C9 = PASS"],
+      "order": 4
+    },
+    "PHYSICAL_CAPTURE_AUTHORIZED": {
+      "definition": "Formal operational authorization granted following on-site safety walkthrough, Safety Marshal E-Stop test, and bilateral site agreement execution.",
+      "prerequisites": ["INSTRUMENTATION_READY_FOR_CAPTURE = TRUE", "Safety Marshal Signoff", "Facility Director Permit", "Labor Privacy Agreement Signed"],
+      "order": 5
+    },
+    "CAPTURE_IN_PROGRESS": {
+      "definition": "Active data acquisition during a controlled trial run (L01-L09) or naturalistic shift under live Safety Marshal supervision.",
+      "prerequisites": ["PHYSICAL_CAPTURE_AUTHORIZED = TRUE"],
+      "order": 6
+    },
+    "CAPTURE_ABORTED": {
+      "definition": "Active trial terminated due to Safety Abort or Data Invalidation Abort.",
+      "routing": "Mandatory immediate transition to ABORTED_RUN_ARCHIVED",
+      "order": 7
+    },
+    "ABORTED_RUN_ARCHIVED": {
+      "definition": "Aborted run package quarantined in outputs/aborted_runs/ with diagnostic logs. Permanently marked NON_EVIDENTIARY; cannot advance to review or GT.",
+      "evidentiary_value": "ZERO_NON_EVIDENTIARY",
+      "order": 8
+    },
+    "CAPTURE_COMPLETED": {
+      "definition": "Trial run completed nominally with zero safety or data abort conditions tripped.",
+      "next_step": "Execution of Post-Capture Data Quality Gates D1 through D6",
+      "order": 9
+    },
+    "DATASET_READY_FOR_REVIEW": {
+      "definition": "Post-capture gates D1 through D6 verified PASS; sanitized review packages compiled with zero algorithmic scores or model outputs.",
+      "prerequisites": ["Gate D1 = PASS", "Gate D2 = PASS", "Gate D3 = PASS", "Gate D4 = PASS", "Gate D5 = PASS", "Gate D6 = PASS"],
+      "order": 10
+    },
+    "VALIDATION_READY": {
+      "definition": "Double-blind human panel adjudication complete; inter-rater agreement verified; Ground Truth committed with cryptographic signoff.",
+      "prerequisites": ["Reviewer 1 + Reviewer 2 Ballots", "Cohen's Kappa Computed", "Lead Adjudication Signed", "SHA-256 Merkle Provenance Locked"],
+      "order": 11
+    }
+  },
+  "authoritative_transitions": [
+    { "from": "PLANNED", "to": "INSTALLATION_READY", "condition": "Facility lease executed & hardware staged on site" },
+    { "from": "INSTALLATION_READY", "to": "COMMISSIONING", "condition": "Rigging, cabling, and power connections complete" },
+    { "from": "COMMISSIONING", "to": "INSTRUMENTATION_READY_FOR_CAPTURE", "condition": "Pre-Capture Commissioning Gates C1 through C9 = PASS" },
+    { "from": "COMMISSIONING", "to": "INSTALLATION_READY", "condition": "Hardware fault or mechanical remount required" },
+    { "from": "INSTRUMENTATION_READY_FOR_CAPTURE", "to": "PHYSICAL_CAPTURE_AUTHORIZED", "condition": "Safety Marshal site walkthrough, E-Stop test, and labor privacy signoff" },
+    { "from": "PHYSICAL_CAPTURE_AUTHORIZED", "to": "CAPTURE_IN_PROGRESS", "condition": "Session armed by Safety Marshal & Data Operations Lead" },
+    { "from": "CAPTURE_IN_PROGRESS", "to": "CAPTURE_ABORTED", "condition": "Safety Abort or Data Invalidation Abort triggered" },
+    { "from": "CAPTURE_ABORTED", "to": "ABORTED_RUN_ARCHIVED", "condition": "Automated quarantine to outputs/aborted_runs/" },
+    { "from": "ABORTED_RUN_ARCHIVED", "to": "INSTRUMENTATION_READY_FOR_CAPTURE", "condition": "Root cause logged; fault cleared; C1-C9 re-verified" },
+    { "from": "CAPTURE_IN_PROGRESS", "to": "CAPTURE_COMPLETED", "condition": "Run finishes nominally with zero abort conditions tripped" },
+    { "from": "CAPTURE_COMPLETED", "to": "DATASET_READY_FOR_REVIEW", "condition": "Post-Capture Gates D1-D6 = PASS" },
+    { "from": "DATASET_READY_FOR_REVIEW", "to": "VALIDATION_READY", "condition": "Blinded human panel consensus committed" }
+  ],
+  "strictly_forbidden_shortcuts": [
+    {
+      "from": "INSTRUMENTATION_DESIGN_COMPLETE",
+      "to": "INSTRUMENTATION_READY_FOR_CAPTURE",
+      "rule": "CRITICAL_VIOLATION: Design completeness is a documentation state only. Cannot declare instrumentation ready without physical hardware installation and passing Gates C1-C9 on physical hardware."
+    },
+    {
+      "from": "INSTRUMENTATION_DESIGN_COMPLETE",
+      "to": "PHYSICAL_CAPTURE_AUTHORIZED",
+      "rule": "CRITICAL_VIOLATION: Design completeness does NOT grant authorization for physical capture. Requires physical hardware deployment, commissioning, and Safety Marshal approval."
+    },
+    {
+      "from": "CAPTURE_COMPLETED",
+      "to": "VALIDATION_READY",
+      "rule": "CRITICAL_VIOLATION: Raw unadjudicated captures cannot establish validation without Post-Capture Gates D1-D6 and sanitized human GT review."
+    },
+    {
+      "from": "ABORTED_RUN_ARCHIVED",
+      "to": "DATASET_READY_FOR_REVIEW",
+      "rule": "CRITICAL_VIOLATION: Aborted runs are strictly non-evidentiary and cannot be reviewed as valid experimental data."
+    }
+  ]
+}

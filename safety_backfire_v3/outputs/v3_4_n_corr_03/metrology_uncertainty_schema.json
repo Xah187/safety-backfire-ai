@@ -1,0 +1,161 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MetrologyUncertaintyAndGuardedDecisionRuleSchema",
+  "milestone": "V3.4-N-CORR-03",
+  "description": "Standardized metrology schema defining measurement uncertainty, calibration traceability, and project-wide Guarded Acceptance decision rules across Gates C1-C9.",
+  "governance_classification": "PHYSICAL_METROLOGY_GOVERNANCE",
+  "project_decision_policy": {
+    "policy_name": "GUARDED_ACCEPTANCE",
+    "standard_reference": "ISO 14253-1:2017 & ILAC-G8:09/2019 (Binary Acceptance with Guard Band)",
+    "rationale": "Declaring compliance purely when measured_value <= limit ignores instrument measurement error, creating unacceptable consumer risk (false pass). Guarded Acceptance establishes a guard band g equal to expanded uncertainty U (coverage factor k = 2, 95% confidence).",
+    "mathematical_rules": {
+      "upper_limit_rule": {
+        "formula": "Acceptance if: measured_value <= (acceptance_limit - expanded_uncertainty_U)",
+        "degraded_zone": "acceptance_limit - U < measured_value <= acceptance_limit (PASS_WITH_DEGRADED_MARGIN)",
+        "rejection_zone": "measured_value > acceptance_limit (FAIL)"
+      },
+      "two_sided_interval_rule": {
+        "formula": "Acceptance if: (lower_limit + U) <= measured_value <= (upper_limit - U)",
+        "degraded_zone": "measured_value within [lower_limit, lower_limit + U) OR (upper_limit - U, upper_limit]",
+        "rejection_zone": "measured_value < lower_limit OR measured_value > upper_limit (FAIL)"
+      }
+    }
+  },
+  "gate_metrology_specifications": {
+    "C1_CLOCK": {
+      "measurement_quantity": "Composite Multi-Modal Physical Skew (tau_composite)",
+      "acceptance_limit": 33.33,
+      "unit": "milliseconds",
+      "measurement_method": "Multi-modal optical strobe and physical impactor captured simultaneously by optical cameras and vehicle accelerometer, with PTP 1PPS probe monitoring on DSO.",
+      "instrument": "Keysight DSOX1204G Oscilloscope + Vector VN1640A Interface + Co-Calibration Rig",
+      "instrument_calibration": "ISO/IEC 17025 Accredited Calibration Certificate",
+      "traceability": "NIST-TRACEABLE-2026-Q3",
+      "sample_count": 50,
+      "expanded_uncertainty_U": 0.50,
+      "coverage_factor_k": 2.0,
+      "decision_rule": "measured_value <= (33.33 ms - 0.50 ms) = 32.83 ms for PASS",
+      "measured_value": null,
+      "result": "UNVERIFIED"
+    },
+    "C2_CAMERA": {
+      "measurement_quantity": "Truss Clamp Fastener Bolt Torque & Frame Drop Counter",
+      "acceptance_limit": 9.5,
+      "unit": "Newton-meters / 0 drops over 30 min",
+      "measurement_method": "Calibrated torque wrench physical audit of mounting bolts; Wireshark automated frame drop packet monitor on GigE/RTSP stream.",
+      "instrument": "Norbar Calibrated Torque Wrench (ISO 6789) + Wireshark Packet Monitor",
+      "instrument_calibration": "ISO 6789 Torque Calibration Certificate",
+      "traceability": "DAkkS-TORQUE-2026",
+      "sample_count": 8,
+      "expanded_uncertainty_U": 0.38,
+      "coverage_factor_k": 2.0,
+      "decision_rule": "measured_torque >= (9.5 N*m - 0.38 N*m) AND frame_drops == 0",
+      "measured_value": null,
+      "result": "UNVERIFIED"
+    },
+    "C3_CAN": {
+      "measurement_quantity": "CAN Frame Transit Gap Maximum Latency",
+      "acceptance_limit": 20.0,
+      "unit": "milliseconds",
+      "measurement_method": "High-impedance CAN tap capturing 50 Hz frame timestamps during low-speed shakedown run.",
+      "instrument": "Vector VN1640A CAN Interface + CANoe Log",
+      "instrument_calibration": "Vector Factory Accredited Timing Calibration",
+      "traceability": "DAkkS-VECTOR-2026-04",
+      "sample_count": 90000,
+      "expanded_uncertainty_U": 0.20,
+      "coverage_factor_k": 2.0,
+      "decision_rule": "max_gap <= (20.0 ms - 0.20 ms) = 19.80 ms",
+      "measured_value": null,
+      "result": "UNVERIFIED"
+    },
+    "C4_SECONDARY_OBSERVABILITY": {
+      "measurement_quantity": "Mannequin Optical Resolution at 20m Depth Plane",
+      "acceptance_limit": 65.0,
+      "unit": "pixels_per_meter",
+      "measurement_method": "Laser distance meter placement of SPMT-01 mannequin at 9 grid points at 20m depth; automated OpenCV edge-gradient pixel density measurement.",
+      "instrument": "Leica DISTO D2 Laser Measure + OpenCV Resolution Validator + SPMT-01 Target",
+      "instrument_calibration": "Manufacturer Certificate of Accuracy (ISO 16331-1)",
+      "traceability": "NIST-DISTO-2026",
+      "sample_count": 9,
+      "expanded_uncertainty_U": 2.5,
+      "coverage_factor_k": 2.0,
+      "decision_rule": "measured_resolution >= (65.0 px/m + 2.5 px/m) = 67.5 px/m at 20m depth",
+      "measured_value": null,
+      "result": "UNVERIFIED"
+    },
+    "C5_CALIBRATION": {
+      "measurement_quantity": "ChArUco Bundle Adjustment Reprojection Error RMS",
+      "acceptance_limit": 1.50,
+      "unit": "pixels",
+      "measurement_method": "50+ diverse pose acquisitions of 12x9 ChArUco diamond board per deployed camera; Levenberg-Marquardt non-linear reprojection optimization.",
+      "instrument": "Calib.io Certified Precision Aluminum ChArUco Diamond Target (12x9)",
+      "instrument_calibration": "Calib.io Optical Coordinate Measuring Machine (CMM) Certificate",
+      "traceability": "CALIB-IO-CERT-2026-09",
+      "sample_count": 50,
+      "expanded_uncertainty_U": 0.08,
+      "coverage_factor_k": 2.0,
+      "decision_rule": "rms_reprojection_error <= (1.50 px - 0.08 px) = 1.42 px across all deployed cameras",
+      "measured_value": null,
+      "result": "UNVERIFIED"
+    },
+    "C6_GEOMETRY": {
+      "measurement_quantity": "Facility Floor Ground Plane Fitting RMS Residual",
+      "acceptance_limit": 3.0,
+      "unit": "millimeters",
+      "measurement_method": "Reflectorless geodetic optical total station surveying 30+ floor points across corridor to fit Ax+By+Cz+D=0.",
+      "instrument": "Leica TS16 Total Station (1\" angular accuracy, 1mm + 1.5ppm distance)",
+      "instrument_calibration": "Leica Geosystems ISO 17123-3/4 Calibration Certificate",
+      "traceability": "SWISS-CAL-LEICA-2026",
+      "sample_count": 30,
+      "expanded_uncertainty_U": 0.40,
+      "coverage_factor_k": 2.0,
+      "decision_rule": "rms_residual <= (3.0 mm - 0.40 mm) = 2.60 mm",
+      "measured_value": null,
+      "result": "UNVERIFIED"
+    },
+    "C7_ILLUMINANCE": {
+      "measurement_quantity": "Spatial Photopic Illuminance (E_v) & Optical Flicker Index (FI)",
+      "acceptance_limit": "300.0 <= E_v <= 400.0 lux; FI <= 0.05",
+      "unit": "lux / dimensionless index",
+      "measurement_method": "Class B photometer 5-point grid survey (Path 1) + 1.0 MSa/s amplified photodiode DSO capture under luminaire optical axis (Path 2).",
+      "instrument": "Testo 540 Lux Meter + Thorlabs PDA36A2 Photodetector + Keysight DSOX1204G",
+      "instrument_calibration": "ISO/IEC 17025 Accredited Calibration Certificates for Photometer and DSO",
+      "traceability": "ISO17025-CAL-LUX-2026 / NIST-TRACEABLE-2026-Q3",
+      "sample_count": 5,
+      "expanded_uncertainty_U": "E_v: +/- 10.5 lux (3.0%); FI: +/- 0.003",
+      "coverage_factor_k": 2.0,
+      "decision_rule": "Every point 310.5 lux <= E_v <= 389.5 lux AND FI <= 0.047 AND f_mod >= 1000 Hz",
+      "measured_value": null,
+      "result": "UNVERIFIED"
+    },
+    "C8_E_STOP": {
+      "measurement_quantity": "Electrical Traction De-energization Latency (delta_t_electrical_traction)",
+      "acceptance_limit": 50.0,
+      "unit": "milliseconds",
+      "measurement_method": "4-channel isolated DSO measuring E-Stop NC dry contact opening to motor Phase U line current extinction (I_motor < 0.5 A RMS).",
+      "instrument": "Keysight DSOX1204G Oscilloscope + Tektronix TCP303 / A622 Current Clamp",
+      "instrument_calibration": "Keysight & Tektronix ISO/IEC 17025 Traceable Calibration",
+      "traceability": "NIST-TRACEABLE-2026-Q3",
+      "sample_count": 10,
+      "expanded_uncertainty_U": 1.2,
+      "coverage_factor_k": 2.0,
+      "decision_rule": "measured_latency <= (50.0 ms - 1.2 ms) = 48.8 ms WITH verified TRACTION_CURRENT_ENDPOINT_PERSISTENCE",
+      "measured_value": null,
+      "result": "UNVERIFIED"
+    },
+    "C9_PRIVACY": {
+      "measurement_quantity": "Physical Microphone Disconnection Confirmation & Signed Legal Bilateral Agreement",
+      "acceptance_limit": "Microphones disconnected == TRUE; Agreement signed == TRUE",
+      "unit": "Binary boolean verification",
+      "measurement_method": "Physical hardware desoldering audit under microscope + cryptographic signature verification on legal repository ledger.",
+      "instrument": "Hardware Visual Microscope Inspection + SHA-256 Ledger Validator",
+      "instrument_calibration": "Documentary Legal Validation Certificate",
+      "traceability": "LEGAL_COUNSEL_VERIFICATION_2026",
+      "sample_count": 4,
+      "expanded_uncertainty_U": 0.0,
+      "coverage_factor_k": 1.0,
+      "decision_rule": "Strict deterministic boolean check: mics_desoldered == True AND agreement_signed == True",
+      "measured_value": null,
+      "result": "UNVERIFIED"
+    }
+  }
+}

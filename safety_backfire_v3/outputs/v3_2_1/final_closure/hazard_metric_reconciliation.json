@@ -1,0 +1,75 @@
+{
+  "audit_version": "V3.2.1_HAZARD_METRIC_RECONCILIATION",
+  "timestamp_utc": "2026-09-24T18:25:00Z",
+  "reconciliation_verdict": "268_281_IS_CANONICAL_515_540_IS_RETRACTED",
+  "source_artifact": "safety_backfire_v3/outputs/v3_2/hazard_metrics.json",
+  "summary_metrics": {
+    "micro_precision": {
+      "value": 0.9537,
+      "exact_fraction": "268 / 281",
+      "numerator_tp": 268,
+      "denominator_assertions": 281,
+      "false_positives": 13,
+      "wilson_ci_95": [0.9224, 0.9729],
+      "status": "CANONICAL_VERIFIED"
+    },
+    "micro_recall": {
+      "value": 0.9371,
+      "exact_fraction": "268 / 286",
+      "numerator_tp": 268,
+      "denominator_trials": 286,
+      "false_negatives": 18,
+      "wilson_ci_95": [0.9024, 0.9602],
+      "status": "CANONICAL_VERIFIED"
+    },
+    "micro_f1": {
+      "value": 0.9453,
+      "formula": "2 * 268 / (2 * 268 + 13 + 18) = 536 / 567",
+      "status": "CANONICAL_VERIFIED"
+    },
+    "macro_precision": {
+      "value": 0.9480,
+      "exact_unrounded": 0.947898,
+      "sum_p_exact": 11.374775,
+      "class_count": 12,
+      "status": "CANONICAL_VERIFIED"
+    },
+    "macro_recall": {
+      "value": 0.9288,
+      "exact_unrounded": 0.928753,
+      "sum_r_exact": 11.145037,
+      "class_count": 12,
+      "status": "CANONICAL_VERIFIED"
+    },
+    "macro_f1": {
+      "value": 0.9383,
+      "exact_unrounded": 0.937970,
+      "status": "CANONICAL_VERIFIED"
+    }
+  },
+  "retracted_placeholder": {
+    "ratio": "515 / 540 = 0.9537037",
+    "status": "RETRACTED_UNSUPPORTED",
+    "evidence_status": "RETRACTED_UNSUPPORTED",
+    "forensic_finding": "515/540 was an ad-hoc fraction constructed in an earlier edit to match the decimal 0.9537. outputs/v3_2/hazard_metrics.json proves the actual execution counts are 268 true positives, 13 false positives (281 total assertions), and 18 false negatives (286 total trials). 515/540 has zero empirical backing and is permanently retracted."
+  },
+  "candidate_b_fabricated_fraction": {
+    "ratio": "515 / 540",
+    "evidence_status": "RETRACTED_UNSUPPORTED",
+    "forensic_finding": "Permanently retracted fabricated placeholder fraction."
+  },
+  "underlying_12_class_matrix": [
+    { "class_id": 1, "class_name": "Person - Forklift", "trials": 45, "TP": 43, "FP": 2, "FN": 2, "precision": 0.9556, "recall": 0.9556, "f1": 0.9556 },
+    { "class_id": 2, "class_name": "Forklift - Rack", "trials": 28, "TP": 26, "FP": 1, "FN": 2, "precision": 0.9630, "recall": 0.9286, "f1": 0.9455 },
+    { "class_id": 3, "class_name": "Unstable load", "trials": 20, "TP": 16, "FP": 2, "FN": 4, "precision": 0.8889, "recall": 0.8000, "f1": 0.8421 },
+    { "class_id": 4, "class_name": "Falling object", "trials": 25, "TP": 25, "FP": 0, "FN": 0, "precision": 1.0000, "recall": 1.0000, "f1": 1.0000 },
+    { "class_id": 5, "class_name": "Blocked aisle", "trials": 35, "TP": 33, "FP": 2, "FN": 2, "precision": 0.9429, "recall": 0.9429, "f1": 0.9429 },
+    { "class_id": 6, "class_name": "Blocked exit", "trials": 22, "TP": 22, "FP": 0, "FN": 0, "precision": 1.0000, "recall": 1.0000, "f1": 1.0000 },
+    { "class_id": 7, "class_name": "Conveyor", "trials": 18, "TP": 16, "FP": 1, "FN": 2, "precision": 0.9412, "recall": 0.8889, "f1": 0.9143 },
+    { "class_id": 8, "class_name": "Restricted zone", "trials": 30, "TP": 29, "FP": 1, "FN": 1, "precision": 0.9667, "recall": 0.9667, "f1": 0.9667 },
+    { "class_id": 9, "class_name": "Dock edge", "trials": 15, "TP": 14, "FP": 1, "FN": 1, "precision": 0.9333, "recall": 0.9333, "f1": 0.9333 },
+    { "class_id": 10, "class_name": "Spill/slip", "trials": 16, "TP": 13, "FP": 2, "FN": 3, "precision": 0.8667, "recall": 0.8125, "f1": 0.8387 },
+    { "class_id": 11, "class_name": "Machinery maintenance", "trials": 12, "TP": 11, "FP": 1, "FN": 1, "precision": 0.9167, "recall": 0.9167, "f1": 0.9167 },
+    { "class_id": 12, "class_name": "Multi-hazard scene", "trials": 20, "TP": 20, "FP": 0, "FN": 0, "precision": 1.0000, "recall": 1.0000, "f1": 1.0000 }
+  ]
+}

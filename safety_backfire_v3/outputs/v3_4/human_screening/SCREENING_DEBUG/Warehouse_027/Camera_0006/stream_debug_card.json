@@ -1,0 +1,74 @@
+{
+  "scene_id": "Warehouse_027",
+  "camera_id": "Camera_0006",
+  "stream_duration_seconds": 60.0,
+  "total_frames": 1800,
+  "fps": 30.0,
+  "protocol": "DEBUG_AUDIT_TIMELINE",
+  "ai_candidate_count": 9,
+  "ai_candidates": [
+    {
+      "candidate_id": "CAND_Warehouse_027_028",
+      "start_time": 0.03,
+      "end_time": 11.4,
+      "duration_seconds": 11.37,
+      "relevance_score": 0.766
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_027",
+      "start_time": 0.03,
+      "end_time": 11.4,
+      "duration_seconds": 11.37,
+      "relevance_score": 0.4
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_029",
+      "start_time": 0.03,
+      "end_time": 11.4,
+      "duration_seconds": 11.37,
+      "relevance_score": 0.4
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_030",
+      "start_time": 0.03,
+      "end_time": 11.4,
+      "duration_seconds": 11.37,
+      "relevance_score": 0.4
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_031",
+      "start_time": 0.03,
+      "end_time": 7.67,
+      "duration_seconds": 7.63,
+      "relevance_score": 0.4
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_033",
+      "start_time": 8.57,
+      "end_time": 11.4,
+      "duration_seconds": 2.83,
+      "relevance_score": 0.16
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_032",
+      "start_time": 3.7,
+      "end_time": 5.53,
+      "duration_seconds": 1.83,
+      "relevance_score": 0.099
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_034",
+      "start_time": 9.67,
+      "end_time": 11.13,
+      "duration_seconds": 1.47,
+      "relevance_score": 0.091
+    },
+    {
+      "candidate_id": "CAND_Warehouse_027_035",
+      "start_time": 10.2,
+      "end_time": 11.4,
+      "duration_seconds": 1.2,
+      "relevance_score": 0.064
+    }
+  ]
+}

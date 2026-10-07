@@ -1,0 +1,367 @@
+{
+  "registry_version": "V3.2.1_CANONICAL_METRICS",
+  "description": "Single authoritative source of truth for all quantitative claims across V3.2.1 releases.",
+  "metrics": [
+    {
+      "metric_id": "PERCEPTION_PRECISION",
+      "layer": "Perception",
+      "metric_name": "Perception Precision",
+      "value": 0.9442,
+      "numerator": 474,
+      "denominator": 502,
+      "unit": "proportion",
+      "population": "Multi-entity instances in real warehouse CCTV",
+      "dataset_split": "BLIND_TEST",
+      "confidence_interval_95pct": [
+        0.9205,
+        0.9612
+      ],
+      "ci_method": "Wilson Score",
+      "evidence_source": "safety_backfire_v3/outputs/v3_2/perception_metrics.json",
+      "reproducible_test": "safety_backfire_v3/validation/v3_2/perception_validator.py"
+    },
+    {
+      "metric_id": "PERCEPTION_RECALL",
+      "layer": "Perception",
+      "metric_name": "Perception Recall",
+      "value": 0.948,
+      "numerator": 474,
+      "denominator": 500,
+      "unit": "proportion",
+      "population": "Multi-entity instances in real warehouse CCTV",
+      "dataset_split": "BLIND_TEST",
+      "confidence_interval_95pct": [
+        0.9248,
+        0.9644
+      ],
+      "ci_method": "Wilson Score",
+      "evidence_source": "safety_backfire_v3/outputs/v3_2/perception_metrics.json",
+      "reproducible_test": "safety_backfire_v3/validation/v3_2/perception_validator.py"
+    },
+    {
+      "metric_id": "TRACKING_IDF1",
+      "layer": "Tracking",
+      "metric_name": "Tracking IDF1",
+      "value": 0.9141,
+      "numerator": 3154,
+      "denominator": 3450,
+      "unit": "proportion",
+      "population": "Continuous crossing trajectories in warehouse CCTV",
+      "dataset_split": "BLIND_TEST",
+      "confidence_interval_95pct": [
+        0.898,
+        0.928
+      ],
+      "ci_method": "Wilson Score",
+      "evidence_source": "safety_backfire_v3/outputs/v3_2/tracking_metrics.json",
+      "reproducible_test": "safety_backfire_v3/validation/v3_2/tracking_validator.py"
+    },
+    {
+      "metric_id": "IDENTITY_SWITCH_RATE_INSTANCES",
+      "layer": "Identity",
+      "metric_name": "ID Switch Rate per 1k Instances",
+      "value": 2.03,
+      "numerator": 7,
+      "denominator": 3450,
+      "unit": "switches_per_1000_entity_frame_instances",
+      "population": "Tracked entity instances across crossing passes",
+      "dataset_split": "BLIND_TEST",
+      "confidence_interval_95pct": [
+        0.98,
+        4.18
+      ],
+      "ci_method": "Poisson Exact",
+      "evidence_source": "safety_backfire_v3/outputs/v3_2/tracking_metrics.json",
+      "reproducible_test": "safety_backfire_v3/validation/v3_2/tracking_validator.py"
+    },
+    {
+      "metric_id": "IDENTITY_SWITCH_RATE_FRAMES",
+      "layer": "Identity",
+      "metric_name": "ID Switch Rate per 1k Physical Frames",
+      "value": 4.19,
+      "numerator": 7,
+      "denominator": 1672,
+      "unit": "switches_per_1000_physical_frames",
+      "population": "Consecutive CCTV video frames",
+      "dataset_split": "BLIND_TEST",
+      "confidence_interval_95pct": [
+        1.68,
+        8.63
+      ],
+      "ci_method": "Poisson Exact",
+      "evidence_source": "Reconciled in V3.2.1 from tracking_metrics.json",
+      "reproducible_test": "safety_backfire_v3/validation/v3_2/tracking_validator.py"
+    },
+    {
+      "metric_id": "GEOMETRY_MAE_PLANAR",
+      "layer": "Geometry",
+      "metric_name": "Planar Floor Projection MAE",
+      "value": 0.0169,
+      "numerator": 1.521,
+      "denominator": 90,
+      "unit": "meters",
+      "population": "Physically surveyed ground laser markers",
+      "dataset_split": "SURVEYED_CALIBRATION_FIXTURE",
+      "confidence_interval_95pct": [
+        0.0142,
+        0.0196
+      ],
+      "ci_method": "Student-t Confidence Interval",
+      "evidence_source": "safety_backfire_v3/outputs/v3_2/geometry_metrics.json",
+      "reproducible_test": "safety_backfire_v3/validation/v3_2/geometry_validator.py"
+    },
+    {
+      "metric_id": "UNCERTAINTY_COVERAGE",
+      "layer": "Uncertainty",
+      "metric_name": "Empirical Spatial Clearance Coverage",
+      "value": 0.976,
+      "numerator": 488,
+      "denominator": 500,
+      "unit": "proportion",
+      "population": "Real footpoint uncertainty displacements",
+      "dataset_split": "CALIBRATION_SPLIT",
+      "confidence_interval_95pct": [
+        0.9585,
+        0.9862
+      ],
+      "ci_method": "Wilson Score",
+      "evidence_source": "safety_backfire_v3/outputs/v3_2/uncertainty_metrics.json",
+      "reproducible_test": "safety_backfire_v3/validation/v3_2/uncertainty_validator.py"
+    },
+    {
+      "metric_id": "TTC_CPA_ACCURACY",
+      "layer": "Kinematics",
+      "metric_name": "Kinematic State Classification Accuracy",
+      "value": 1.0,
+      "numerator": 9,
+      "denominator": 9,
+      "unit": "proportion",
+      "population": "Dynamic kinetic interaction regimes",
+      "dataset_split": "RED_TEAM_STRESS_FIXTURE",
+      "confidence_interval_95pct": [
+        0.7009,
+        1.0
+      ],
+      "ci_method": "Wilson Score (Conservative sample)",
+      "evidence_source": "safety_backfire_v3/outputs/v3_2/ttc_cpa_metrics.json",
+      "reproducible_test": "safety_backfire_v3/validation/v3_2/ttc_cpa_validator.py"
+    },
+    {
+      "metric_id": "HAZARD_MICRO_PRECISION",
+      "layer": "Hazard",
+      "metric_name": "Hazard Pooled / Micro Precision",
+      "value": 0.9537,
+      "numerator": 268,
+      "denominator": 281,
+      "unit": "proportion",
+      "population": "12 Core operational hazard trial assertions",
+      "dataset_split": "VALIDATION_CORPUS",
+      "confidence_interval_95pct": [
+        0.9224,
+        0.9729
+      ],
+      "ci_method": "Wilson Score",
+      "evidence_source": "safety_backfire_v3/outputs/v3_2/hazard_metrics.json",
+      "reproducible_test": "safety_backfire_v3/validation/v3_2/hazard_validator.py"
+    },
+    {
+      "metric_id": "HAZARD_MACRO_PRECISION",
+      "layer": "Hazard",
+      "metric_name": "Hazard Unweighted Macro Precision",
+      "value": 0.948,
+      "numerator": 11.376,
+      "denominator": 12,
+      "unit": "proportion",
+      "population": "12 Core operational hazard classes",
+      "dataset_split": "VALIDATION_CORPUS",
+      "confidence_interval_95pct": [
+        0.912,
+        0.971
+      ],
+      "ci_method": "Bootstrap Macro CI",
+      "evidence_source": "safety_backfire_v3/outputs/v3_2/hazard_metrics.json",
+      "reproducible_test": "safety_backfire_v3/validation/v3_2/hazard_validator.py"
+    },
+    {
+      "metric_id": "HAZARD_MICRO_RECALL",
+      "layer": "Hazard",
+      "metric_name": "Hazard Pooled / Micro Recall",
+      "value": 0.9371,
+      "numerator": 268,
+      "denominator": 286,
+      "unit": "proportion",
+      "population": "12 Core operational ground-truth hazards",
+      "dataset_split": "VALIDATION_CORPUS",
+      "confidence_interval_95pct": [
+        0.9024,
+        0.9602
+      ],
+      "ci_method": "Wilson Score",
+      "evidence_source": "safety_backfire_v3/outputs/v3_2/hazard_metrics.json",
+      "reproducible_test": "safety_backfire_v3/validation/v3_2/hazard_validator.py"
+    },
+    {
+      "metric_id": "HAZARD_MACRO_RECALL",
+      "layer": "Hazard",
+      "metric_name": "Hazard Unweighted Macro Recall",
+      "value": 0.9288,
+      "numerator": 11.146,
+      "denominator": 12,
+      "unit": "proportion",
+      "population": "12 Core operational hazard classes",
+      "dataset_split": "VALIDATION_CORPUS",
+      "confidence_interval_95pct": [
+        0.885,
+        0.958
+      ],
+      "ci_method": "Bootstrap Macro CI",
+      "evidence_source": "safety_backfire_v3/outputs/v3_2/hazard_metrics.json",
+      "reproducible_test": "safety_backfire_v3/validation/v3_2/hazard_validator.py"
+    },
+    {
+      "metric_id": "EVENT_PRECISION_FULL_CORPUS",
+      "layer": "Event",
+      "metric_name": "Event Precision (Full Corpus)",
+      "value": 0.94,
+      "numerator": 47,
+      "denominator": 50,
+      "unit": "proportion",
+      "population": "Ground-truth safety event episodes across full 23-min corpus",
+      "dataset_split": "FULL_CORPUS",
+      "confidence_interval_95pct": [
+        0.8378,
+        0.9794
+      ],
+      "ci_method": "Wilson Score",
+      "evidence_source": "safety_backfire_v3/outputs/v3_2/event_metrics.json",
+      "reproducible_test": "safety_backfire_v3/validation/v3_2/event_validator.py"
+    },
+    {
+      "metric_id": "EVENT_RECALL_FULL_CORPUS",
+      "layer": "Event",
+      "metric_name": "Event Recall (Full Corpus)",
+      "value": 0.94,
+      "numerator": 47,
+      "denominator": 50,
+      "unit": "proportion",
+      "population": "Ground-truth safety event episodes across full 23-min corpus",
+      "dataset_split": "FULL_CORPUS",
+      "confidence_interval_95pct": [
+        0.8378,
+        0.9794
+      ],
+      "ci_method": "Wilson Score",
+      "evidence_source": "safety_backfire_v3/outputs/v3_2/event_metrics.json",
+      "reproducible_test": "safety_backfire_v3/validation/v3_2/event_validator.py"
+    },
+    {
+      "metric_id": "EVENT_FALSE_ALARM_RATE_FULL_CORPUS",
+      "layer": "Event",
+      "metric_name": "False Events per Hour (Full Corpus)",
+      "value": 7.83,
+      "numerator": 3,
+      "denominator": 0.3833,
+      "unit": "events_per_hour",
+      "population": "23.0 min continuous monitoring window",
+      "dataset_split": "FULL_CORPUS",
+      "confidence_interval_95pct": [
+        1.614,
+        22.868
+      ],
+      "ci_method": "Poisson Exact Garwood",
+      "evidence_source": "Reconciled in V3.2.1 from event_validator.py",
+      "reproducible_test": "safety_backfire_v3/validation/v3_2/event_validator.py"
+    },
+    {
+      "metric_id": "EVENT_MISSED_RATE_FULL_CORPUS",
+      "layer": "Event",
+      "metric_name": "Missed Dangerous Events per Hour (Full Corpus)",
+      "value": 7.83,
+      "numerator": 3,
+      "denominator": 0.3833,
+      "unit": "events_per_hour",
+      "population": "23.0 min continuous monitoring window",
+      "dataset_split": "FULL_CORPUS",
+      "confidence_interval_95pct": [
+        1.614,
+        22.868
+      ],
+      "ci_method": "Poisson Exact Garwood",
+      "evidence_source": "Reconciled in V3.2.1 from event_validator.py",
+      "reproducible_test": "safety_backfire_v3/validation/v3_2/event_validator.py"
+    },
+    {
+      "metric_id": "EVENT_FALSE_ALARM_RATE_BLIND",
+      "layer": "Event",
+      "metric_name": "False Events per Hour (Blind Test)",
+      "value": 5.45,
+      "numerator": 1,
+      "denominator": 0.1833,
+      "unit": "events_per_hour",
+      "population": "11.0 min blind-test continuous monitoring window",
+      "dataset_split": "BLIND_TEST",
+      "confidence_interval_95pct": [
+        0.138,
+        30.388
+      ],
+      "ci_method": "Poisson Exact Garwood",
+      "evidence_source": "Reconciled in V3.2.1 from event_validator.py",
+      "reproducible_test": "safety_backfire_v3/validation/v3_2/event_validator.py"
+    },
+    {
+      "metric_id": "EVENT_MISSED_RATE_BLIND",
+      "layer": "Event",
+      "metric_name": "Missed Dangerous Events per Hour (Blind Test)",
+      "value": 5.45,
+      "numerator": 1,
+      "denominator": 0.1833,
+      "unit": "events_per_hour",
+      "population": "11.0 min blind-test continuous monitoring window",
+      "dataset_split": "BLIND_TEST",
+      "confidence_interval_95pct": [
+        0.138,
+        30.388
+      ],
+      "ci_method": "Poisson Exact Garwood",
+      "evidence_source": "Reconciled in V3.2.1 from event_validator.py",
+      "reproducible_test": "safety_backfire_v3/validation/v3_2/event_validator.py"
+    },
+    {
+      "metric_id": "BACKFIRE_CASE_ACCURACY",
+      "layer": "Backfire",
+      "metric_name": "Observed Intervention Case Classification Success",
+      "value": 1.0,
+      "numerator": 2,
+      "denominator": 2,
+      "unit": "observed_case_ratio",
+      "population": "Observed empirical warehouse safety intervention case studies",
+      "dataset_split": "REAL_INTERVENTION_STUDY",
+      "confidence_interval_95pct": [
+        0.3424,
+        1.0
+      ],
+      "ci_method": "Wilson Score (Small N caveat)",
+      "evidence_source": "safety_backfire_v3/outputs/v3_2/backfire_metrics.json",
+      "reproducible_test": "safety_backfire_v3/validation/v3_2/backfire_validator.py",
+      "audit_note": "Reconciled: N=2 is an empirical case demonstration; population-level generalization cannot be inferred."
+    },
+    {
+      "metric_id": "TEMPORAL_P95_DECISION_AGE",
+      "layer": "Temporal",
+      "metric_name": "P95 Source-to-Decision Age",
+      "value": 32.5,
+      "numerator": 32.5,
+      "denominator": 1.0,
+      "unit": "milliseconds",
+      "population": "CCTV RTSP pipeline processing cycles",
+      "dataset_split": "LIVE_STREAM_SIMULATION",
+      "confidence_interval_95pct": [
+        28.0,
+        38.0
+      ],
+      "ci_method": "Empirical Percentile Range",
+      "evidence_source": "safety_backfire_v3/outputs/v3_2/temporal_metrics.json",
+      "reproducible_test": "safety_backfire_v3/validation/v3_2/temporal_chatter.py"
+    }
+  ]
+}

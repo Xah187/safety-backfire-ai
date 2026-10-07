@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "timestamp": "2026-09-22T16:40:05Z",
+    "video": "test2.mp4 (frames 550-670)",
+    "methodology_note": "Batch throughput represents unthrottled disk reading; Live throughput represents throttled 25 FPS stream with freshness gate."
+  },
+  "batch_benchmark": {
+    "benchmark_type": "BATCH_UNCONSTRAINED",
+    "frames_evaluated": 120,
+    "baseline_v2_9": {
+      "total_time_s": 3.43,
+      "throughput_fps": 34.96,
+      "detection_p50_ms": 16.54,
+      "pose_p50_ms": 0.0
+    },
+    "v3_0_core": {
+      "total_time_s": 2.88,
+      "throughput_fps": 41.68,
+      "detection_p50_ms": 16.81,
+      "pose_p50_ms": 51.72
+    }
+  },
+  "live_benchmark": {
+    "benchmark_type": "SUSTAINED_LIVE_STREAMING",
+    "stream_fps": 25.0,
+    "frames_evaluated": 120,
+    "baseline_v2_9": {
+      "processed_frames": 119,
+      "dropped_frames": 1,
+      "drop_rate_pct": 0.8,
+      "p50_e2e_ms": 21.63,
+      "p95_e2e_ms": 154.12,
+      "p99_e2e_ms": 159.82
+    },
+    "v3_0_core": {
+      "processed_frames": 120,
+      "dropped_frames": 0,
+      "drop_rate_pct": 0.0,
+      "p50_e2e_ms": 22.02,
+      "p95_e2e_ms": 115.68,
+      "p99_e2e_ms": 129.05
+    }
+  }
+}

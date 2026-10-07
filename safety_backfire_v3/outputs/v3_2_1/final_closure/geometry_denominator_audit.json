@@ -1,0 +1,22 @@
+{
+  "audit_version": "V3.2.1_GEOMETRY_DENOMINATOR_AUDIT",
+  "metric_name": "geometry_planar_mae",
+  "value_m": 0.041,
+  "physical_markers_surveyed_N": 100,
+  "evaluated_planar_points_N": 90,
+  "excluded_points_count": 10,
+  "exclusion_criteria": "FAIL-45_RAMP_ELEVATION_WARP",
+  "exclusion_details": {
+    "reason": "Non-planar ground topography (3.5 deg ramp gradient) violates 2D planar homography assumption.",
+    "measured_ramp_error_mae_m": 0.287,
+    "decision": "The 10 surveyed markers on the loading dock ramp incline exceeded the planar ODD limit (slope > 3.0 deg). Per predefined validation protocol and FAIL-45 boundary specification, these 10 points were excluded from the nominal planar homography MAE calculation and documented as a physical boundary defect."
+  },
+  "mandatory_reporting_rule": {
+    "canonical_form": "MAE = 0.041 m over N = 90 evaluated planar points",
+    "survey_context": "From a total of 100 laser-surveyed physical markers (10 non-planar ramp markers excluded under FAIL-45)",
+    "prohibited_actions": [
+      "Do NOT report N = 100 for the 0.041 m MAE metric.",
+      "Do NOT merge surveyed marker count with evaluated planar sample count without explanation."
+    ]
+  }
+}

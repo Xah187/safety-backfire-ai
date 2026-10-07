@@ -1,0 +1,90 @@
+{
+  "physical_ground_truth_available": false,
+  "total_measurement_points": 8,
+  "computable_points": 0,
+  "not_computable_points": 8,
+  "aggregate_metrics": {
+    "MAE_m": null,
+    "RMSE_m": null,
+    "Median_AE_m": null,
+    "Max_AE_m": null,
+    "Mean_Relative_Error_pct": null,
+    "Max_Relative_Error_pct": null
+  },
+  "per_point_results": [
+    {
+      "id": "fg_center_A",
+      "zone": "foreground_center",
+      "ground_truth_m": null,
+      "estimated_m": null,
+      "absolute_error_m": null,
+      "relative_error_percent": null,
+      "status": "NOT_COMPUTABLE \u2014 physical_distance_m not provided"
+    },
+    {
+      "id": "fg_left_B",
+      "zone": "foreground_left",
+      "ground_truth_m": null,
+      "estimated_m": null,
+      "absolute_error_m": null,
+      "relative_error_percent": null,
+      "status": "NOT_COMPUTABLE \u2014 physical_distance_m not provided"
+    },
+    {
+      "id": "fg_right_C",
+      "zone": "foreground_right",
+      "ground_truth_m": null,
+      "estimated_m": null,
+      "absolute_error_m": null,
+      "relative_error_percent": null,
+      "status": "NOT_COMPUTABLE \u2014 physical_distance_m not provided"
+    },
+    {
+      "id": "mid_center_D",
+      "zone": "midground_center",
+      "ground_truth_m": null,
+      "estimated_m": null,
+      "absolute_error_m": null,
+      "relative_error_percent": null,
+      "status": "NOT_COMPUTABLE \u2014 physical_distance_m not provided"
+    },
+    {
+      "id": "mid_left_E",
+      "zone": "midground_left",
+      "ground_truth_m": null,
+      "estimated_m": null,
+      "absolute_error_m": null,
+      "relative_error_percent": null,
+      "status": "NOT_COMPUTABLE \u2014 physical_distance_m not provided"
+    },
+    {
+      "id": "mid_right_F",
+      "zone": "midground_right",
+      "ground_truth_m": null,
+      "estimated_m": null,
+      "absolute_error_m": null,
+      "relative_error_percent": null,
+      "status": "NOT_COMPUTABLE \u2014 physical_distance_m not provided"
+    },
+    {
+      "id": "bg_center_G",
+      "zone": "background_center",
+      "ground_truth_m": null,
+      "estimated_m": null,
+      "absolute_error_m": null,
+      "relative_error_percent": null,
+      "status": "NOT_COMPUTABLE \u2014 physical_distance_m not provided"
+    },
+    {
+      "id": "boundary_H",
+      "zone": "near_calibration_boundary",
+      "ground_truth_m": null,
+      "estimated_m": null,
+      "absolute_error_m": null,
+      "relative_error_percent": null,
+      "status": "NOT_COMPUTABLE \u2014 physical_distance_m not provided"
+    }
+  ],
+  "calibration_classification": "UNVALIDATED",
+  "classification_reason": "No physical measurements provided. Cannot assess real-world distance accuracy."
+}

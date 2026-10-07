@@ -1,0 +1,29 @@
+{
+  "audit_version": "V3.2.1_BACKFIRE_CASE_AUDIT",
+  "evaluated_cases_count": 2,
+  "cases": [
+    {
+      "case_id": "CASE_01_PHYSICAL_BARRIER",
+      "sector": "WH_SECTOR_B",
+      "intended_hazard_reduced": true,
+      "intended_hazard_delta": -2.94,
+      "unintended_secondary_hazards": [
+        "BLOCKED_EGRESS_HAZARD in EMERGENCY_ROUTE (delta = +0.90)",
+        "AISLE_02 congestion (delta = +1.47)"
+      ],
+      "classification": "NEW_HAZARD_CREATED / PARTIAL_BACKFIRE",
+      "classification_correct": true
+    },
+    {
+      "case_id": "CASE_02_SPEED_LIMIT_GOVERNOR",
+      "sector": "WH_SECTOR_B",
+      "intended_hazard_reduced": true,
+      "intended_hazard_delta": -1.8,
+      "unintended_secondary_hazards": [],
+      "classification": "RISK_REDUCED / GENUINE_SAFETY_GAIN",
+      "classification_correct": true
+    }
+  ],
+  "sample_level_accuracy": "2/2 (100.0%)",
+  "population_claim_prohibition": "Strictly prohibited from claiming 100% general population backfire detector reliability. N=2 is an empirical case demonstration."
+}

@@ -1,0 +1,12 @@
+{
+  "perception_metrics_status": "OBSERVATIONAL_ONLY_NO_GROUND_TRUTH",
+  "ground_truth_available": false,
+  "perception_f1": "NOT_ESTABLISHED",
+  "precision": "NOT_ESTABLISHED",
+  "recall": "NOT_ESTABLISHED",
+  "forklift_detections_count": 3968,
+  "forklift_mean_confidence": 0.3669,
+  "person_detections_count": 30926,
+  "person_mean_confidence": 0.7658,
+  "governance_note": "Ground truth withheld by NVIDIA. F1, precision, and recall are strictly NOT_ESTABLISHED."
+}

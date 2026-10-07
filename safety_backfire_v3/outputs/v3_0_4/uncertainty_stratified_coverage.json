@@ -1,0 +1,53 @@
+{
+  "stratified_by_distance": {
+    "0-1m": {
+      "n_samples": 25,
+      "v3_0_3_baseline_cov_pct": 96.0,
+      "v3_0_4_recovered_cov_pct": 96.0,
+      "mean_interval_width_m": 1.378,
+      "status": "PASS"
+    },
+    "1-2m": {
+      "n_samples": 30,
+      "v3_0_3_baseline_cov_pct": 86.7,
+      "v3_0_4_recovered_cov_pct": 96.7,
+      "mean_interval_width_m": 1.517,
+      "status": "PASS"
+    },
+    "2-4m": {
+      "n_samples": 35,
+      "v3_0_3_baseline_cov_pct": 88.6,
+      "v3_0_4_recovered_cov_pct": 91.4,
+      "mean_interval_width_m": 1.571,
+      "status": "SUB_95"
+    },
+    "4-6m": {
+      "n_samples": 25,
+      "v3_0_3_baseline_cov_pct": 96.0,
+      "v3_0_4_recovered_cov_pct": 96.0,
+      "mean_interval_width_m": 1.593,
+      "status": "PASS"
+    },
+    "6-8m": {
+      "n_samples": 20,
+      "v3_0_3_baseline_cov_pct": 100.0,
+      "v3_0_4_recovered_cov_pct": 100.0,
+      "mean_interval_width_m": 1.497,
+      "status": "PASS"
+    },
+    "8-12m": {
+      "n_samples": 15,
+      "v3_0_3_baseline_cov_pct": 93.3,
+      "v3_0_4_recovered_cov_pct": 93.3,
+      "mean_interval_width_m": 1.506,
+      "status": "SUB_95"
+    }
+  },
+  "overall_diagnostics": {
+    "residual_bias_m": 0.025457737321589114,
+    "residual_std_m": 0.4176124062587976,
+    "skewness": 0.6381049053515532,
+    "excess_kurtosis": 0.371719918756233,
+    "fail_23_status": "RESOLVED"
+  }
+}

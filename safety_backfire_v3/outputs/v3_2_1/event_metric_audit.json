@@ -1,0 +1,56 @@
+{
+  "audit_version": "V3.2.1_EVENT_METRIC_RECONCILIATION",
+  "monitoring_duration_hours_reconciled": 0.3833,
+  "full_corpus_23min": {
+    "duration_minutes": 23.0,
+    "duration_hours": 0.3833,
+    "ground_truth_events_N": 50,
+    "true_positives": 47,
+    "false_positives": 3,
+    "false_negatives": 3,
+    "event_precision": 0.94,
+    "event_recall": 0.94,
+    "event_f1": 0.94,
+    "false_events_per_hour": 7.83,
+    "false_events_per_hour_poisson_ci": [
+      1.614,
+      22.871
+    ],
+    "missed_events_per_hour": 7.83,
+    "missed_events_per_hour_poisson_ci": [
+      1.614,
+      22.871
+    ],
+    "exposure_seconds": 1380,
+    "exposure_hours_exact": 0.38333333333333336
+  },
+  "blind_test_11min": {
+    "duration_minutes": 11.0,
+    "duration_hours": 0.1833,
+    "ground_truth_events_N": 16,
+    "true_positives": 15,
+    "false_positives": 1,
+    "false_negatives": 1,
+    "event_precision": 0.9375,
+    "event_recall": 0.9375,
+    "event_f1": 0.9375,
+    "false_events_per_hour": 5.45,
+    "false_events_per_hour_poisson_ci": [
+      0.138,
+      30.391
+    ],
+    "missed_events_per_hour": 5.45,
+    "missed_events_per_hour_poisson_ci": [
+      0.138,
+      30.391
+    ],
+    "exposure_seconds": 660,
+    "exposure_hours_exact": 0.18333333333333332
+  },
+  "temporal_lifecycle": {
+    "p95_time_to_detection_sec": 0.145,
+    "p95_time_to_confirmation_sec": 0.171,
+    "mean_time_to_resolution_sec": 1.018,
+    "mean_alert_duration_sec": 3.59
+  }
+}

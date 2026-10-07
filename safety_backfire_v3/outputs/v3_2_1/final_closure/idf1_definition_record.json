@@ -1,0 +1,15 @@
+{
+  "metric_id": "METRIC_03_TRACKING_IDF1",
+  "metric_name": "tracking_idf1",
+  "idf1_value": 0.9141,
+  "evaluation_unit": "tracking association evaluation",
+  "gt_trajectories": 24,
+  "entity_frame_instances": 3450,
+  "idtp_idfp_idfn_decomposition": "NOT_RECONSTRUCTIBLE_FROM_CURRENT_ARTIFACTS",
+  "denominator_is_3450": false,
+  "confidence_interval": "NOT_REPORTED",
+  "retracted_draft_fraction": "1768 / 1851",
+  "retracted_draft_fraction_reason": "Evaluates to 0.9552 != 0.9141. Bipartite matching decomposition cannot be represented by a simple ratio of raw detections.",
+  "mathematical_formula": "IDF1 = 2 * IDTP / (2 * IDTP + IDFP + IDFN)",
+  "status_statement": "IDF1 = 0.9141 is the canonical tracking association score across 24 ground-truth trajectories and 3,450 entity-frame instances. The exact Hungarian bipartite IDTP, IDFP, and IDFN counts are NOT_RECONSTRUCTIBLE_FROM_CURRENT_ARTIFACTS. The instance count 3,450 represents the evaluation volume and MUST NOT be interpreted as the denominator of IDF1. Binomial Wilson confidence intervals are mathematically invalid for bipartite matching and are retracted (CI = NOT_REPORTED)."
+}

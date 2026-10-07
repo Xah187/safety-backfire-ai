@@ -1,0 +1,7 @@
+{
+  "experiment_id": "EXP_331_01",
+  "title": "CONDITION_AWARE_UNCERTAINTY",
+  "hypothesis": "Conditioning uncertainty factor k on distance, illumination, and occlusion improves nominal OOS coverage to >= 95.0% without unbounded interval inflation.",
+  "locked_model": "MODEL_D",
+  "sample_size": 745
+}

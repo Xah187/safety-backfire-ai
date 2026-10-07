@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safety-backfire-ai.org/schemas/v3_4/intervention_evidence.schema.json",
+  "title": "V3.4 Intervention Evidence Schema",
+  "description": "Schema for physical and observable evidence supporting the assertion of an active safety intervention, distinguishing proximity from intervention.",
+  "type": "object",
+  "required": [
+    "evidence_id",
+    "event_id",
+    "evidence_type",
+    "description",
+    "observation_channel",
+    "telemetry_support_status",
+    "evidence_confidence"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "evidence_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique identifier for this physical evidence record."
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Identifier of the associated safety candidate or event."
+    },
+    "evidence_type": {
+      "type": "string",
+      "enum": [
+        "VISIBLE_HARD_BRAKING",
+        "VISIBLE_STEERING_AVOIDANCE",
+        "VISIBLE_WORKER_EVASION",
+        "AUDIBLE_WARNING_OBSERVED",
+        "WARNING_BEACON_OBSERVED",
+        "SAFETY_CONTROLLER_SIGNAL",
+        "VEHICLE_TELEMETRY",
+        "HUMAN_OPERATOR_ACTION",
+        "OTHER_DOCUMENTED_SIGNAL",
+        "UNKNOWN"
+      ],
+      "description": "Specific physical modality of the safety intervention."
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the observed physical intervention behavior."
+    },
+    "observation_channel": {
+      "type": "string",
+      "enum": [
+        "MONOCULAR_VIDEO",
+        "MULTI_CAMERA_CORROBORATION",
+        "CAN_BUS_TELEMETRY",
+        "SAFETY_SCANNER_BUS",
+        "AUDIO_RECORDING",
+        "MANUAL_HUMAN_LOG",
+        "UNKNOWN"
+      ],
+      "description": "Physical sensor channel from which evidence was derived."
+    },
+    "telemetry_support_status": {
+      "type": "string",
+      "enum": [
+        "DIRECT_HARDWARE_TELEMETRY",
+        "OPTICAL_DERIVED_PROXY",
+        "NO_TELEMETRY_AVAILABLE"
+      ],
+      "description": "Whether objective vehicle/controller bus telemetry exists to verify the maneuver."
+    },
+    "evidence_confidence": {
+      "type": "string",
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW",
+        "UNKNOWN"
+      ],
+      "description": "Confidence level in the validity of the intervention observation."
+    },
+    "deceleration_magnitude_mps2": {
+      "type": ["number", "null"],
+      "description": "Measured or estimated deceleration rate, if available."
+    },
+    "steering_angle_deflection_deg": {
+      "type": ["number", "null"],
+      "description": "Measured or estimated angular heading deflection, if available."
+    }
+  }
+}

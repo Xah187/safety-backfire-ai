@@ -1,0 +1,104 @@
+{
+  "registry_version": "V3.3.2_CANONICAL_METRIC_REGISTRY",
+  "release": "V3.3.2",
+  "metrics": [
+    {
+      "metric_id": "METRIC_V3_3_2_NOMINAL_OOS_COVERAGE",
+      "name": "Nominal Out-of-Sample Uncertainty Coverage",
+      "historical_v3_3_1_value": 0.9367,
+      "value": 0.9502,
+      "ci_95": [
+        0.9309,
+        0.9643
+      ],
+      "ci_method": "Wilson_Score_Interval",
+      "target": 0.95,
+      "meets_target": true,
+      "sample_size": 663,
+      "model_selected": "MODEL_H",
+      "dataset_id": "DS_V3_3_OOS_INDEPENDENT_EVAL",
+      "test": "test_07_oos_ci_recomputation"
+    },
+    {
+      "metric_id": "METRIC_V3_3_2_WORST_STRATUM_COVERAGE",
+      "name": "Worst Stratum Nominal Uncertainty Coverage",
+      "historical_v3_3_1_value": 0.8978,
+      "value": 0.9586,
+      "ci_95": [
+        0.9288,
+        0.9763
+      ],
+      "ci_method": "Wilson_Score_Interval",
+      "target": 0.9,
+      "meets_target": true,
+      "stratum": "Sector_D_Outbound_Staging",
+      "sample_size": 290,
+      "test": "test_03_nominal_odd_uncertainty_policy"
+    },
+    {
+      "metric_id": "METRIC_V3_3_2_APPROPRIATE_REFUSAL_RATE",
+      "name": "Decision-Level Appropriate Refusal Rate",
+      "value": 1.0,
+      "scenario_level_value": 1.0,
+      "ci_95": [
+        0.9751,
+        1.0
+      ],
+      "ci_method": "Wilson_Score_Interval",
+      "target": 0.98,
+      "meets_target": true,
+      "decisions_evaluated": 150,
+      "scenarios_evaluated": 10,
+      "test": "test_10_refusal_independent_sample_unit"
+    },
+    {
+      "metric_id": "METRIC_V3_3_2_UNSAFE_NON_REFUSAL_RATE",
+      "name": "Decision-Level Unsafe Non-Refusal Rate",
+      "value": 0.0,
+      "scenario_level_value": 0.0,
+      "target": 0.01,
+      "meets_target": true,
+      "decisions_evaluated": 150,
+      "scenarios_evaluated": 10,
+      "test": "test_10_refusal_independent_sample_unit"
+    },
+    {
+      "metric_id": "METRIC_V3_3_2_PERCEPTION_F1",
+      "name": "Object-Level Cross-Sector Perception F1",
+      "value": 0.8845,
+      "denominators": "exact_object_instances_TP1850_FP175_FN223",
+      "target": 0.85,
+      "meets_target": true,
+      "total_ground_truth_objects": 2073,
+      "test": "test_14_perception_tp_fp_fn"
+    },
+    {
+      "metric_id": "METRIC_V3_3_2_TRACKING_IDF1",
+      "name": "Trajectory-Level Tracking IDF1",
+      "value": 0.918,
+      "ci_95": [
+        0.9057,
+        0.9295
+      ],
+      "ci_method": "Non_Parametric_Trajectory_Block_Bootstrap",
+      "target": 0.9,
+      "meets_target": true,
+      "trajectories_evaluated": 28,
+      "test": "test_15_tracking_idf1_bootstrap"
+    },
+    {
+      "metric_id": "METRIC_V3_3_2_PHYSICAL_NEW_INTERVENTIONS",
+      "name": "Newly Documented Physical Intervention Cases",
+      "value": 1,
+      "total_documented_cases": 6,
+      "test": "test_18_physical_new_case_count"
+    },
+    {
+      "metric_id": "METRIC_V3_3_2_DID_CAUSAL_REFUSALS",
+      "name": "DiD Parallel Trend Refusal Under Exogenous Shock",
+      "value": 1,
+      "status": "CAUSALITY_REFUSED_UNDER_PARALLEL_TREND_FAILURE",
+      "test": "test_19_did_assumption_integrity"
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+[
+  {
+    "assigned_id": "WORKER_A",
+    "ambiguity_state": "RESOLVED_CONFIDENT",
+    "hazard_action_permitted": true,
+    "downgrade_action": "NONE",
+    "spatial_residual_m": 0.25,
+    "feature_similarity": 0.94
+  },
+  {
+    "assigned_id": "WORKER_A",
+    "ambiguity_state": "RESOLVED_CONFIDENT",
+    "hazard_action_permitted": true,
+    "downgrade_action": "NONE",
+    "spatial_residual_m": 0.25,
+    "feature_similarity": 0.94
+  },
+  {
+    "assigned_id": "WORKER_A",
+    "ambiguity_state": "RESOLVED_CONFIDENT",
+    "hazard_action_permitted": true,
+    "downgrade_action": "NONE",
+    "spatial_residual_m": 0.25,
+    "feature_similarity": 0.94
+  },
+  {
+    "assigned_id": "WORKER_A",
+    "ambiguity_state": "RESOLVED_CONFIDENT",
+    "hazard_action_permitted": true,
+    "downgrade_action": "NONE",
+    "spatial_residual_m": 0.25,
+    "feature_similarity": 0.94
+  },
+  {
+    "assigned_id": "WORKER_A",
+    "ambiguity_state": "RESOLVED_CONFIDENT",
+    "hazard_action_permitted": true,
+    "downgrade_action": "NONE",
+    "spatial_residual_m": 0.25,
+    "feature_similarity": 0.94
+  },
+  {
+    "assigned_id": "WORKER_A",
+    "ambiguity_state": "RESOLVED_CONFIDENT",
+    "hazard_action_permitted": true,
+    "downgrade_action": "NONE",
+    "spatial_residual_m": 0.25,
+    "feature_similarity": 0.94
+  },
+  {
+    "assigned_id": "WORKER_A",
+    "ambiguity_state": "RESOLVED_CONFIDENT",
+    "hazard_action_permitted": true,
+    "downgrade_action": "NONE",
+    "spatial_residual_m": 0.25,
+    "feature_similarity": 0.94
+  },
+  {
+    "assigned_id": "WORKER_A",
+    "ambiguity_state": "RESOLVED_CONFIDENT",
+    "hazard_action_permitted": true,
+    "downgrade_action": "NONE",
+    "spatial_residual_m": 0.25,
+    "feature_similarity": 0.94
+  },
+  {
+    "assigned_id": "WORKER_A",
+    "ambiguity_state": "RESOLVED_CONFIDENT",
+    "hazard_action_permitted": true,
+    "downgrade_action": "NONE",
+    "spatial_residual_m": 0.25,
+    "feature_similarity": 0.94
+  },
+  {
+    "assigned_id": "WORKER_A",
+    "ambiguity_state": "RESOLVED_CONFIDENT",
+    "hazard_action_permitted": true,
+    "downgrade_action": "NONE",
+    "spatial_residual_m": 0.25,
+    "feature_similarity": 0.94
+  },
+  {
+    "assigned_id": "WORKER_A",
+    "ambiguity_state": "RESOLVED_CONFIDENT",
+    "hazard_action_permitted": true,
+    "downgrade_action": "NONE",
+    "spatial_residual_m": 0.25,
+    "feature_similarity": 0.94
+  },
+  {
+    "assigned_id": "WORKER_A",
+    "ambiguity_state": "RESOLVED_CONFIDENT",
+    "hazard_action_permitted": true,
+    "downgrade_action": "NONE",
+    "spatial_residual_m": 0.25,
+    "feature_similarity": 0.94
+  },
+  {
+    "assigned_id": "WORKER_A",
+    "ambiguity_state": "RESOLVED_CONFIDENT",
+    "hazard_action_permitted": true,
+    "downgrade_action": "NONE",
+    "spatial_residual_m": 0.25,
+    "feature_similarity": 0.94
+  },
+  {
+    "assigned_id": "WORKER_A",
+    "ambiguity_state": "RESOLVED_CONFIDENT",
+    "hazard_action_permitted": true,
+    "downgrade_action": "NONE",
+    "spatial_residual_m": 0.25,
+    "feature_similarity": 0.94
+  },
+  {
+    "assigned_id": "WORKER_A",
+    "ambiguity_state": "RESOLVED_CONFIDENT",
+    "hazard_action_permitted": true,
+    "downgrade_action": "NONE",
+    "spatial_residual_m": 0.25,
+    "feature_similarity": 0.94
+  },
+  {
+    "assigned_id": "WORKER_A",
+    "ambiguity_state": "RESOLVED_CONFIDENT",
+    "hazard_action_permitted": true,
+    "downgrade_action": "NONE",
+    "spatial_residual_m": 0.25,
+    "feature_similarity": 0.94
+  },
+  {
+    "assigned_id": "WORKER_A",
+    "ambiguity_state": "RESOLVED_CONFIDENT",
+    "hazard_action_permitted": true,
+    "downgrade_action": "NONE",
+    "spatial_residual_m": 0.25,
+    "feature_similarity": 0.94
+  },
+  {
+    "assigned_id": "WORKER_A",
+    "ambiguity_state": "RESOLVED_CONFIDENT",
+    "hazard_action_permitted": true,
+    "downgrade_action": "NONE",
+    "spatial_residual_m": 0.25,
+    "feature_similarity": 0.94
+  },
+  {
+    "assigned_id": "WORKER_A",
+    "ambiguity_state": "RESOLVED_CONFIDENT",
+    "hazard_action_permitted": true,
+    "downgrade_action": "NONE",
+    "spatial_residual_m": 0.25,
+    "feature_similarity": 0.94
+  },
+  {
+    "assigned_id": "WORKER_A",
+    "ambiguity_state": "RESOLVED_CONFIDENT",
+    "hazard_action_permitted": true,
+    "downgrade_action": "NONE",
+    "spatial_residual_m": 0.25,
+    "feature_similarity": 0.94
+  },
+  {
+    "assigned_id": "UNKNOWN_AMBIGUOUS_PAIR",
+    "ambiguity_state": "AMBIGUOUS_SIMILAR_PPE",
+    "hazard_action_permitted": false,
+    "downgrade_action": "ADVISORY_WARNING_ONLY",
+    "safety_note": "Identity ambiguity detected; refused forced assignment to prevent unsafe action."
+  },
+  {
+    "assigned_id": "UNKNOWN_AMBIGUOUS_PAIR",
+    "ambiguity_state": "AMBIGUOUS_SIMILAR_PPE",
+    "hazard_action_permitted": false,
+    "downgrade_action": "ADVISORY_WARNING_ONLY",
+    "safety_note": "Identity ambiguity detected; refused forced assignment to prevent unsafe action."
+  },
+  {
+    "assigned_id": "UNKNOWN_AMBIGUOUS_PAIR",
+    "ambiguity_state": "AMBIGUOUS_SIMILAR_PPE",
+    "hazard_action_permitted": false,
+    "downgrade_action": "ADVISORY_WARNING_ONLY",
+    "safety_note": "Identity ambiguity detected; refused forced assignment to prevent unsafe action."
+  },
+  {
+    "assigned_id": "UNKNOWN_AMBIGUOUS_PAIR",
+    "ambiguity_state": "AMBIGUOUS_SIMILAR_PPE",
+    "hazard_action_permitted": false,
+    "downgrade_action": "ADVISORY_WARNING_ONLY",
+    "safety_note": "Identity ambiguity detected; refused forced assignment to prevent unsafe action."
+  },
+  {
+    "assigned_id": "UNKNOWN_AMBIGUOUS_PAIR",
+    "ambiguity_state": "AMBIGUOUS_SIMILAR_PPE",
+    "hazard_action_permitted": false,
+    "downgrade_action": "ADVISORY_WARNING_ONLY",
+    "safety_note": "Identity ambiguity detected; refused forced assignment to prevent unsafe action."
+  },
+  {
+    "assigned_id": "UNKNOWN_AMBIGUOUS_PAIR",
+    "ambiguity_state": "AMBIGUOUS_SIMILAR_PPE",
+    "hazard_action_permitted": false,
+    "downgrade_action": "ADVISORY_WARNING_ONLY",
+    "safety_note": "Identity ambiguity detected; refused forced assignment to prevent unsafe action."
+  },
+  {
+    "assigned_id": "UNKNOWN_AMBIGUOUS_PAIR",
+    "ambiguity_state": "AMBIGUOUS_SIMILAR_PPE",
+    "hazard_action_permitted": false,
+    "downgrade_action": "ADVISORY_WARNING_ONLY",
+    "safety_note": "Identity ambiguity detected; refused forced assignment to prevent unsafe action."
+  },
+  {
+    "assigned_id": "UNKNOWN_AMBIGUOUS_PAIR",
+    "ambiguity_state": "AMBIGUOUS_SIMILAR_PPE",
+    "hazard_action_permitted": false,
+    "downgrade_action": "ADVISORY_WARNING_ONLY",
+    "safety_note": "Identity ambiguity detected; refused forced assignment to prevent unsafe action."
+  },
+  {
+    "assigned_id": "UNKNOWN_AMBIGUOUS_PAIR",
+    "ambiguity_state": "AMBIGUOUS_SIMILAR_PPE",
+    "hazard_action_permitted": false,
+    "downgrade_action": "ADVISORY_WARNING_ONLY",
+    "safety_note": "Identity ambiguity detected; refused forced assignment to prevent unsafe action."
+  },
+  {
+    "assigned_id": "UNKNOWN_AMBIGUOUS_PAIR",
+    "ambiguity_state": "AMBIGUOUS_SIMILAR_PPE",
+    "hazard_action_permitted": false,
+    "downgrade_action": "ADVISORY_WARNING_ONLY",
+    "safety_note": "Identity ambiguity detected; refused forced assignment to prevent unsafe action."
+  }
+]

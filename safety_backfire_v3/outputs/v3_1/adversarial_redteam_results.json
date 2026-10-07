@@ -1,0 +1,49 @@
+{
+  "tests": [
+    {
+      "failure_id": "FAIL-31",
+      "name": "Entity Subtype Hallucination Under Occlusion",
+      "status": "RESOLVED_AND_VERIFIED",
+      "passed": true
+    },
+    {
+      "failure_id": "FAIL-32",
+      "name": "Relation Zone FP From 2D Bbox Footpoint Bleed",
+      "status": "RESOLVED_AND_VERIFIED",
+      "passed": true
+    },
+    {
+      "failure_id": "FAIL-33",
+      "name": "Counterfactual Temporal Baseline Leakage",
+      "status": "RESOLVED_AND_VERIFIED",
+      "passed": true
+    },
+    {
+      "failure_id": "FAIL-34",
+      "name": "Inappropriate Kinetic TTC on Stationary Hazard",
+      "status": "RESOLVED_AND_VERIFIED",
+      "passed": true
+    },
+    {
+      "failure_id": "FAIL-35",
+      "name": "Cross-Hazard Risk Masking Prevention",
+      "status": "RESOLVED_AND_VERIFIED",
+      "passed": true
+    },
+    {
+      "failure_id": "FAIL-36",
+      "name": "Aggregate Risk Transfer Blindness",
+      "status": "RESOLVED_AND_VERIFIED",
+      "passed": true
+    },
+    {
+      "failure_id": "FAIL-37",
+      "name": "Temporal Entity State Resurrection on Dropouts",
+      "status": "RESOLVED_AND_VERIFIED",
+      "passed": true
+    }
+  ],
+  "total_passed": 7,
+  "total_tests": 7,
+  "all_passed": true
+}

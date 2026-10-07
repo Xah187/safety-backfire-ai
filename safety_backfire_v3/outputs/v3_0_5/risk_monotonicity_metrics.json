@@ -1,0 +1,799 @@
+{
+  "n_monotonicity_pairs_tested": 5000,
+  "matched_inversions": 0,
+  "cross_coupled_inversions": 0,
+  "monotonicity_passed": true,
+  "decoupling_all_matched": true,
+  "safe_degradation_confirmed": true,
+  "scenarios_evaluated": [
+    {
+      "scenario": "Stationary Critical Clearance",
+      "nominal_distance_m": 0.8,
+      "ttc_sec": null,
+      "approach_speed_m_s": 0.0,
+      "reported_hazard_semantics": "CURRENT_PROXIMITY_HAZARD",
+      "expected_hazard_semantics": "CURRENT_PROXIMITY_HAZARD",
+      "reported_risk_decision": "CONFIRMED_DANGER",
+      "expected_risk_decision": "CONFIRMED_DANGER",
+      "passed": true
+    },
+    {
+      "scenario": "Stationary Proximity Danger",
+      "nominal_distance_m": 1.3,
+      "ttc_sec": null,
+      "approach_speed_m_s": 0.0,
+      "reported_hazard_semantics": "CURRENT_PROXIMITY_HAZARD",
+      "expected_hazard_semantics": "CURRENT_PROXIMITY_HAZARD",
+      "reported_risk_decision": "CONFIRMED_DANGER",
+      "expected_risk_decision": "CONFIRMED_DANGER",
+      "passed": true
+    },
+    {
+      "scenario": "Approaching Collision from Caution Distance",
+      "nominal_distance_m": 2.2,
+      "ttc_sec": 1.5,
+      "approach_speed_m_s": 1.2,
+      "reported_hazard_semantics": "PREDICTIVE_COLLISION_HAZARD",
+      "expected_hazard_semantics": "PREDICTIVE_COLLISION_HAZARD",
+      "reported_risk_decision": "CONFIRMED_DANGER",
+      "expected_risk_decision": "CONFIRMED_DANGER",
+      "passed": true
+    },
+    {
+      "scenario": "Dual Hazard: Proximity + Convergence",
+      "nominal_distance_m": 0.9,
+      "ttc_sec": 1.2,
+      "approach_speed_m_s": 1.0,
+      "reported_hazard_semantics": "DUAL_HAZARD",
+      "expected_hazard_semantics": "DUAL_HAZARD",
+      "reported_risk_decision": "CONFIRMED_DANGER",
+      "expected_risk_decision": "CONFIRMED_DANGER",
+      "passed": true
+    },
+    {
+      "scenario": "Safe Distance Converging Threat",
+      "nominal_distance_m": 3.5,
+      "ttc_sec": 2.0,
+      "approach_speed_m_s": 1.5,
+      "reported_hazard_semantics": "PREDICTIVE_COLLISION_HAZARD",
+      "expected_hazard_semantics": "PREDICTIVE_COLLISION_HAZARD",
+      "reported_risk_decision": "HIGH_PRIORITY_CANDIDATE",
+      "expected_risk_decision": "HIGH_PRIORITY_CANDIDATE",
+      "passed": true
+    },
+    {
+      "scenario": "Receding Vehicle Caution",
+      "nominal_distance_m": 2.0,
+      "ttc_sec": null,
+      "approach_speed_m_s": -1.2,
+      "reported_hazard_semantics": "UNCERTAIN_PROXIMITY_CAUTION",
+      "expected_hazard_semantics": "UNCERTAIN_PROXIMITY_CAUTION",
+      "reported_risk_decision": "CAUTION",
+      "expected_risk_decision": "CAUTION",
+      "passed": true
+    },
+    {
+      "scenario": "Safe Stationary Separation",
+      "nominal_distance_m": 4.0,
+      "ttc_sec": null,
+      "approach_speed_m_s": 0.0,
+      "reported_hazard_semantics": "CLEAR_SEPARATION",
+      "expected_hazard_semantics": "CLEAR_SEPARATION",
+      "reported_risk_decision": "SAFE",
+      "expected_risk_decision": "SAFE",
+      "passed": true
+    }
+  ],
+  "uncertainty_sweeps": {
+    "dist_0.8m": [
+      {
+        "sigma_m": 0.05,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.2925108332236767,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.2925108332236767
+      },
+      {
+        "sigma_m": 0.1,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.2950108332236767,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.2950108332236767
+      },
+      {
+        "sigma_m": 0.15,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.2975108332236767,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.2975108332236767
+      },
+      {
+        "sigma_m": 0.2,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.3000108332236767,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.3000108332236767
+      },
+      {
+        "sigma_m": 0.25,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.3025108332236767,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.3025108332236767
+      },
+      {
+        "sigma_m": 0.3,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.3050108332236767,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.3050108332236767
+      },
+      {
+        "sigma_m": 0.35,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.3075108332236767,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.3075108332236767
+      },
+      {
+        "sigma_m": 0.4,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.31001083322367673,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.31001083322367673
+      },
+      {
+        "sigma_m": 0.45,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.31251083322367673,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.31251083322367673
+      },
+      {
+        "sigma_m": 0.5,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.31501083322367673,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.31501083322367673
+      },
+      {
+        "sigma_m": 0.55,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.31751083322367674,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.31751083322367674
+      },
+      {
+        "sigma_m": 0.6,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.32001083322367674,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.32001083322367674
+      },
+      {
+        "sigma_m": 0.65,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.3225108332236767,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.3225108332236767
+      },
+      {
+        "sigma_m": 0.7,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.3250108332236767,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.3250108332236767
+      },
+      {
+        "sigma_m": 0.75,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.3275108332236767,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.3275108332236767
+      },
+      {
+        "sigma_m": 0.8,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.33001083322367675,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.33001083322367675
+      },
+      {
+        "sigma_m": 0.85,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.3325108332236767,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.3325108332236767
+      },
+      {
+        "sigma_m": 0.9,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.3350108332236767,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.3350108332236767
+      },
+      {
+        "sigma_m": 0.95,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.3375108332236767,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.3375108332236767
+      },
+      {
+        "sigma_m": 1.0,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.3400108332236767,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.3400108332236767
+      }
+    ],
+    "dist_1.2m": [
+      {
+        "sigma_m": 0.05,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.21309108728631165,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.21309108728631165
+      },
+      {
+        "sigma_m": 0.1,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.21559108728631166,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.21559108728631166
+      },
+      {
+        "sigma_m": 0.15,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.21809108728631166,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.21809108728631166
+      },
+      {
+        "sigma_m": 0.2,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.22059108728631166,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.22059108728631166
+      },
+      {
+        "sigma_m": 0.25,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.22309108728631166,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.22309108728631166
+      },
+      {
+        "sigma_m": 0.3,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.22559108728631166,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.22559108728631166
+      },
+      {
+        "sigma_m": 0.35,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.22809108728631164,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.22809108728631164
+      },
+      {
+        "sigma_m": 0.4,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.23059108728631167,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.23059108728631167
+      },
+      {
+        "sigma_m": 0.45,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.23309108728631164,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.23309108728631164
+      },
+      {
+        "sigma_m": 0.5,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.23559108728631165,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.23559108728631165
+      },
+      {
+        "sigma_m": 0.55,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.23809108728631165,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.23809108728631165
+      },
+      {
+        "sigma_m": 0.6,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.24059108728631165,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.24059108728631165
+      },
+      {
+        "sigma_m": 0.65,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.24309108728631165,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.24309108728631165
+      },
+      {
+        "sigma_m": 0.7,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.24559108728631165,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.24559108728631165
+      },
+      {
+        "sigma_m": 0.75,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.24809108728631166,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.24809108728631166
+      },
+      {
+        "sigma_m": 0.8,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.25059108728631163,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.25059108728631163
+      },
+      {
+        "sigma_m": 0.85,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.25309108728631163,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.25309108728631163
+      },
+      {
+        "sigma_m": 0.9,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.25559108728631164,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.25559108728631164
+      },
+      {
+        "sigma_m": 0.95,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.25809108728631164,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.25809108728631164
+      },
+      {
+        "sigma_m": 1.0,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.26059108728631164,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.26059108728631164
+      }
+    ],
+    "dist_1.5m": [
+      {
+        "sigma_m": 0.05,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.16815681655171114,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.16815681655171114
+      },
+      {
+        "sigma_m": 0.1,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.17065681655171114,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.17065681655171114
+      },
+      {
+        "sigma_m": 0.15,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.17315681655171114,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.17315681655171114
+      },
+      {
+        "sigma_m": 0.2,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.17565681655171114,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.17565681655171114
+      },
+      {
+        "sigma_m": 0.25,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.17815681655171114,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.17815681655171114
+      },
+      {
+        "sigma_m": 0.3,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.18065681655171112,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.18065681655171112
+      },
+      {
+        "sigma_m": 0.35,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.18315681655171112,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.18315681655171112
+      },
+      {
+        "sigma_m": 0.4,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.18565681655171112,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.18565681655171112
+      },
+      {
+        "sigma_m": 0.45,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.18815681655171113,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.18815681655171113
+      },
+      {
+        "sigma_m": 0.5,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.19065681655171113,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.19065681655171113
+      },
+      {
+        "sigma_m": 0.55,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.19315681655171113,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.19315681655171113
+      },
+      {
+        "sigma_m": 0.6,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.19565681655171113,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.19565681655171113
+      },
+      {
+        "sigma_m": 0.65,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.19815681655171113,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.19815681655171113
+      },
+      {
+        "sigma_m": 0.7,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.20065681655171114,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.20065681655171114
+      },
+      {
+        "sigma_m": 0.75,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.20315681655171114,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.20315681655171114
+      },
+      {
+        "sigma_m": 0.8,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.20565681655171114,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.20565681655171114
+      },
+      {
+        "sigma_m": 0.85,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.20815681655171114,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.20815681655171114
+      },
+      {
+        "sigma_m": 0.9,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.21065681655171115,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.21065681655171115
+      },
+      {
+        "sigma_m": 0.95,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.21315681655171115,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.21315681655171115
+      },
+      {
+        "sigma_m": 1.0,
+        "high_ev_decision": "CONFIRMED_DANGER",
+        "high_ev_score": 0.21565681655171115,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.21565681655171115
+      }
+    ],
+    "dist_2.0m": [
+      {
+        "sigma_m": 0.05,
+        "high_ev_decision": "CAUTION",
+        "high_ev_score": 0.11354308489706047,
+        "low_ev_decision": "CAUTION",
+        "low_ev_score": 0.11354308489706047
+      },
+      {
+        "sigma_m": 0.1,
+        "high_ev_decision": "CAUTION",
+        "high_ev_score": 0.11604308489706047,
+        "low_ev_decision": "CAUTION",
+        "low_ev_score": 0.11604308489706047
+      },
+      {
+        "sigma_m": 0.15,
+        "high_ev_decision": "CAUTION",
+        "high_ev_score": 0.11854308489706047,
+        "low_ev_decision": "CAUTION",
+        "low_ev_score": 0.11854308489706047
+      },
+      {
+        "sigma_m": 0.2,
+        "high_ev_decision": "CAUTION",
+        "high_ev_score": 0.12104308489706048,
+        "low_ev_decision": "CAUTION",
+        "low_ev_score": 0.12104308489706048
+      },
+      {
+        "sigma_m": 0.25,
+        "high_ev_decision": "CANDIDATE_REVIEW",
+        "high_ev_score": 0.12354308489706047,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.12354308489706047
+      },
+      {
+        "sigma_m": 0.3,
+        "high_ev_decision": "CANDIDATE_REVIEW",
+        "high_ev_score": 0.12604308489706045,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.12604308489706045
+      },
+      {
+        "sigma_m": 0.35,
+        "high_ev_decision": "CANDIDATE_REVIEW",
+        "high_ev_score": 0.12854308489706046,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.12854308489706046
+      },
+      {
+        "sigma_m": 0.4,
+        "high_ev_decision": "CANDIDATE_REVIEW",
+        "high_ev_score": 0.13104308489706046,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.13104308489706046
+      },
+      {
+        "sigma_m": 0.45,
+        "high_ev_decision": "CANDIDATE_REVIEW",
+        "high_ev_score": 0.13354308489706046,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.13354308489706046
+      },
+      {
+        "sigma_m": 0.5,
+        "high_ev_decision": "CANDIDATE_REVIEW",
+        "high_ev_score": 0.13604308489706046,
+        "low_ev_decision": "CANDIDATE_REVIEW",
+        "low_ev_score": 0.13604308489706046
+      },
+      {
+        "sigma_m": 0.55,
+        "high_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "high_ev_score": 0.13854308489706046,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.13854308489706046
+      },
+      {
+        "sigma_m": 0.6,
+        "high_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "high_ev_score": 0.14104308489706047,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.14104308489706047
+      },
+      {
+        "sigma_m": 0.65,
+        "high_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "high_ev_score": 0.14354308489706047,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.14354308489706047
+      },
+      {
+        "sigma_m": 0.7,
+        "high_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "high_ev_score": 0.14604308489706047,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.14604308489706047
+      },
+      {
+        "sigma_m": 0.75,
+        "high_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "high_ev_score": 0.14854308489706047,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.14854308489706047
+      },
+      {
+        "sigma_m": 0.8,
+        "high_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "high_ev_score": 0.15104308489706048,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.15104308489706048
+      },
+      {
+        "sigma_m": 0.85,
+        "high_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "high_ev_score": 0.15354308489706048,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.15354308489706048
+      },
+      {
+        "sigma_m": 0.9,
+        "high_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "high_ev_score": 0.15604308489706048,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.15604308489706048
+      },
+      {
+        "sigma_m": 0.95,
+        "high_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "high_ev_score": 0.15854308489706048,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.15854308489706048
+      },
+      {
+        "sigma_m": 1.0,
+        "high_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "high_ev_score": 0.16104308489706048,
+        "low_ev_decision": "HIGH_PRIORITY_CANDIDATE",
+        "low_ev_score": 0.16104308489706048
+      }
+    ],
+    "dist_3.5m": [
+      {
+        "sigma_m": 0.05,
+        "high_ev_decision": "SAFE",
+        "high_ev_score": 0.03594553444386988,
+        "low_ev_decision": "SAFE",
+        "low_ev_score": 0.03594553444386988
+      },
+      {
+        "sigma_m": 0.1,
+        "high_ev_decision": "SAFE",
+        "high_ev_score": 0.038445534443869875,
+        "low_ev_decision": "SAFE",
+        "low_ev_score": 0.038445534443869875
+      },
+      {
+        "sigma_m": 0.15,
+        "high_ev_decision": "SAFE",
+        "high_ev_score": 0.04094553444386988,
+        "low_ev_decision": "SAFE",
+        "low_ev_score": 0.04094553444386988
+      },
+      {
+        "sigma_m": 0.2,
+        "high_ev_decision": "SAFE",
+        "high_ev_score": 0.04344553444386988,
+        "low_ev_decision": "SAFE",
+        "low_ev_score": 0.04344553444386988
+      },
+      {
+        "sigma_m": 0.25,
+        "high_ev_decision": "SAFE",
+        "high_ev_score": 0.04594553444386988,
+        "low_ev_decision": "SAFE",
+        "low_ev_score": 0.04594553444386988
+      },
+      {
+        "sigma_m": 0.3,
+        "high_ev_decision": "SAFE",
+        "high_ev_score": 0.04844553444386988,
+        "low_ev_decision": "SAFE",
+        "low_ev_score": 0.04844553444386988
+      },
+      {
+        "sigma_m": 0.35,
+        "high_ev_decision": "SAFE",
+        "high_ev_score": 0.05094553444386987,
+        "low_ev_decision": "SAFE",
+        "low_ev_score": 0.05094553444386987
+      },
+      {
+        "sigma_m": 0.4,
+        "high_ev_decision": "SAFE",
+        "high_ev_score": 0.05344553444386988,
+        "low_ev_decision": "SAFE",
+        "low_ev_score": 0.05344553444386988
+      },
+      {
+        "sigma_m": 0.45,
+        "high_ev_decision": "SAFE",
+        "high_ev_score": 0.055945534443869877,
+        "low_ev_decision": "SAFE",
+        "low_ev_score": 0.055945534443869877
+      },
+      {
+        "sigma_m": 0.5,
+        "high_ev_decision": "SAFE",
+        "high_ev_score": 0.05844553444386988,
+        "low_ev_decision": "SAFE",
+        "low_ev_score": 0.05844553444386988
+      },
+      {
+        "sigma_m": 0.55,
+        "high_ev_decision": "SAFE",
+        "high_ev_score": 0.06094553444386988,
+        "low_ev_decision": "INSUFFICIENT_EVIDENCE",
+        "low_ev_score": 0.06094553444386988
+      },
+      {
+        "sigma_m": 0.6,
+        "high_ev_decision": "SAFE",
+        "high_ev_score": 0.06344553444386988,
+        "low_ev_decision": "INSUFFICIENT_EVIDENCE",
+        "low_ev_score": 0.06344553444386988
+      },
+      {
+        "sigma_m": 0.65,
+        "high_ev_decision": "SAFE",
+        "high_ev_score": 0.06594553444386989,
+        "low_ev_decision": "INSUFFICIENT_EVIDENCE",
+        "low_ev_score": 0.06594553444386989
+      },
+      {
+        "sigma_m": 0.7,
+        "high_ev_decision": "SAFE",
+        "high_ev_score": 0.06844553444386987,
+        "low_ev_decision": "INSUFFICIENT_EVIDENCE",
+        "low_ev_score": 0.06844553444386987
+      },
+      {
+        "sigma_m": 0.75,
+        "high_ev_decision": "SAFE",
+        "high_ev_score": 0.07094553444386989,
+        "low_ev_decision": "INSUFFICIENT_EVIDENCE",
+        "low_ev_score": 0.07094553444386989
+      },
+      {
+        "sigma_m": 0.8,
+        "high_ev_decision": "SAFE",
+        "high_ev_score": 0.07344553444386989,
+        "low_ev_decision": "INSUFFICIENT_EVIDENCE",
+        "low_ev_score": 0.07344553444386989
+      },
+      {
+        "sigma_m": 0.85,
+        "high_ev_decision": "SAFE",
+        "high_ev_score": 0.07594553444386988,
+        "low_ev_decision": "INSUFFICIENT_EVIDENCE",
+        "low_ev_score": 0.07594553444386988
+      },
+      {
+        "sigma_m": 0.9,
+        "high_ev_decision": "CANDIDATE_REVIEW",
+        "high_ev_score": 0.07844553444386988,
+        "low_ev_decision": "INSUFFICIENT_EVIDENCE",
+        "low_ev_score": 0.07844553444386988
+      },
+      {
+        "sigma_m": 0.95,
+        "high_ev_decision": "CANDIDATE_REVIEW",
+        "high_ev_score": 0.08094553444386987,
+        "low_ev_decision": "INSUFFICIENT_EVIDENCE",
+        "low_ev_score": 0.08094553444386987
+      },
+      {
+        "sigma_m": 1.0,
+        "high_ev_decision": "CANDIDATE_REVIEW",
+        "high_ev_score": 0.08344553444386987,
+        "low_ev_decision": "INSUFFICIENT_EVIDENCE",
+        "low_ev_score": 0.08344553444386987
+      }
+    ]
+  }
+}

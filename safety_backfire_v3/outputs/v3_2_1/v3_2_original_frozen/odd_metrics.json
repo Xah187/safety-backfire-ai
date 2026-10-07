@@ -1,0 +1,73 @@
+{
+  "odd_specification_version": "V3.2_ODD_MATRIX",
+  "verified_operational_boundaries": {
+    "camera_mounting_height_m": {
+      "min": 3.5,
+      "max": 6.0,
+      "nominal": 4.5,
+      "status": "VALIDATED"
+    },
+    "camera_pitch_deg": {
+      "min": 35.0,
+      "max": 55.0,
+      "nominal": 45.0,
+      "status": "VALIDATED"
+    },
+    "camera_pitch_drift_tolerance_deg": {
+      "max_allowed": 0.35,
+      "status": "DOCUMENTED_BOUNDARY_FAIL-30_FAIL-44"
+    },
+    "camera_roll_tolerance_deg": {
+      "max_allowed": 1.5,
+      "status": "VALIDATED"
+    },
+    "certified_range_m": {
+      "min": 1.0,
+      "max": 8.0,
+      "status": "VALIDATED_AUTONOMOUS_BRAKING"
+    },
+    "unconditioned_surveillance_range_m": {
+      "min": 8.0,
+      "max": 10.0,
+      "status": "DEGRADED_FAIL-26_FAIL-38"
+    },
+    "far_field_unsupported_range_m": {
+      "gt": 10.0,
+      "status": "OUT_OF_DOMAIN"
+    },
+    "floor_planarity": {
+      "nominal": "PLANAR_Z0",
+      "max_slope_deg": 1.5,
+      "status": "VALIDATED"
+    },
+    "floor_incline_ramps": {
+      "gt_slope_deg": 3.0,
+      "status": "OUT_OF_DOMAIN_FAIL-27_FAIL-45"
+    },
+    "illuminance_lux": {
+      "min": 150,
+      "max": 1200,
+      "status": "VALIDATED"
+    },
+    "low_light_lux": {
+      "min": 50,
+      "max": 150,
+      "status": "DEGRADED"
+    },
+    "hardware_freshness_latency_ms": {
+      "max_valid": 50.0,
+      "max_degraded": 500.0,
+      "status": "VALIDATED_FAIL-51"
+    },
+    "max_entity_velocity_mps": {
+      "max_valid": 4.5,
+      "status": "VALIDATED"
+    }
+  },
+  "boundary_transition_policies": {
+    "VALID": "Full defensive clearance buffers and automated emergency alert dispatch.",
+    "DEGRADED": "Conservative surveillance mode; visual warnings only; autonomous speed capped at 1.0 m/s.",
+    "OUT_OF_DOMAIN": "Strict fail-closed protocol; emit INSUFFICIENT_EVIDENCE; zero false safety assertions.",
+    "UNKNOWN": "Defensive clearance envelopes maintained (Rule: UNKNOWN != SAFE)."
+  }
+}

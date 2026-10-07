@@ -1,0 +1,15 @@
+{
+  "outputs/v3_2_1/final_closure/canonical_release_registry.json": "e5613dde65ec36d3a056f1451d0249397b6136f7c07e7aea3bcccffe5acfb52c",
+  "outputs/v3_2_1/final_closure/canonical_metric_registry.json": "f05d2541f9e72dc55e440bdd441c9d15329b599677c1120ad954d9f83852fde5",
+  "outputs/v3_2_1/final_closure/final_release_decision.json": "b6e926a8e6d2f9b91b3fbf68b6726f45b8a5abc9e47e0cc7025fa038abfc1503",
+  "outputs/v3_2_1/final_closure/FINAL_RELEASE_INTEGRITY_SUMMARY.md": "155a23b7b0294ea46f1c4216cb1233eae23dd97dd1c8fd28fda1bc3d93274754",
+  "outputs/v3_2_1/final_closure/event_rate_canonical_calculation.json": "51623c432ce4b838d8f3b94b30fcaaaea42040ba22acc01b763016131d706db1",
+  "outputs/v3_2_1/final_closure/idf1_definition_record.json": "268a05eae2fee5d1729f79e4856ef9440a1498f49dc12302f4f3606cdaf84078",
+  "outputs/v3_2_1/final_closure/did_coefficient_lineage.json": "7277f2ab97ff2821eb310bf7dea1248a3d28c2f077beb07e9a43570443d2d326",
+  "outputs/v3_2_1/final_closure/metric_population_odd_map.json": "e4049210f09f93bcfbf8896833e1836bf33aa137e5cf55d696433c32e25bcef5",
+  "reports/v3_2_1/V3.2.1_CORE_STATUS.md": "15a8ef183c565dac196b3cab59ad59689d7b16f3547e2350d359c3318e1838a4",
+  "reports/v3_2_1/V3.2.1_FINAL_RELEASE_AUDIT.md": "aaa0ad463d1d2f338e802de1d65131b8eff583b1e204e507ced1f3bb8c8d1bca",
+  "reports/v3_2_1/V3.2.1_MASTER_RECONCILED_AUDIT_REPORT.md": "eb66a9c2041b653b88d3f27461520e09abece2e19095cbbe0395a2a48074c623",
+  "validation/v3_2_1/final_closure/test_v3_2_1_release_integrity.py": "14f8822040bfcc8cb7ac5e6b9ec4c7eaef9d817128fb037b7e3596e6e524d01e",
+  "validation/v3_2_1/final_closure/test_canonical_report_consistency.py": "d003ba397935b4442789dd5c65994034d87ffd056a41505e5b90f6df0078a99f"
+}

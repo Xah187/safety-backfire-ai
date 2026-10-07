@@ -1,0 +1,255 @@
+{
+  "model_type": "MODEL_D",
+  "sample_size": 745,
+  "overall_coverage": 0.9181,
+  "overall_ci_95": [
+    0.8962,
+    0.9357
+  ],
+  "nominal_odd_coverage": 0.9367,
+  "nominal_odd_ci_95": [
+    0.9155,
+    0.9528
+  ],
+  "far_field_coverage": 0.7683,
+  "far_field_ci_95": [
+    0.6662,
+    0.8463
+  ],
+  "mean_interval_width_m": 0.2083,
+  "p95_interval_width_m": 0.3474,
+  "undercoverage_count": 61,
+  "worst_nominal_stratum_coverage": 0.8978,
+  "strata": {
+    "distance": {
+      "NEAR_0_4M": {
+        "N": 284,
+        "coverage": 0.919,
+        "ci_95": {
+          "low": 0.8814,
+          "high": 0.9454,
+          "point": 0.919,
+          "method": "Wilson_Score_Interval"
+        }
+      },
+      "MID_4_8M": {
+        "N": 379,
+        "coverage": 0.9499,
+        "ci_95": {
+          "low": 0.923,
+          "high": 0.9677,
+          "point": 0.9499,
+          "method": "Wilson_Score_Interval"
+        }
+      },
+      "FAR_GT_8M": {
+        "N": 82,
+        "coverage": 0.7683,
+        "ci_95": {
+          "low": 0.6662,
+          "high": 0.8463,
+          "point": 0.7683,
+          "method": "Wilson_Score_Interval"
+        }
+      }
+    },
+    "illumination": {
+      "LOW_LT_250_LUX": {
+        "N": 372,
+        "coverage": 0.8978,
+        "ci_95": {
+          "low": 0.8629,
+          "high": 0.9247,
+          "point": 0.8978,
+          "method": "Wilson_Score_Interval"
+        }
+      },
+      "NORMAL_GE_250_LUX": {
+        "N": 373,
+        "coverage": 0.9383,
+        "ci_95": {
+          "low": 0.9092,
+          "high": 0.9586,
+          "point": 0.9383,
+          "method": "Wilson_Score_Interval"
+        }
+      }
+    },
+    "occlusion": {
+      "NONE": {
+        "N": 477,
+        "coverage": 0.9266,
+        "ci_95": {
+          "low": 0.8997,
+          "high": 0.9468,
+          "point": 0.9266,
+          "method": "Wilson_Score_Interval"
+        }
+      },
+      "PARTIAL": {
+        "N": 195,
+        "coverage": 0.9385,
+        "ci_95": {
+          "low": 0.8955,
+          "high": 0.9645,
+          "point": 0.9385,
+          "method": "Wilson_Score_Interval"
+        }
+      },
+      "HEAVY": {
+        "N": 73,
+        "coverage": 0.8082,
+        "ci_95": {
+          "low": 0.7034,
+          "high": 0.8822,
+          "point": 0.8082,
+          "method": "Wilson_Score_Interval"
+        }
+      }
+    },
+    "camera": {
+      "CAM_SECTOR_C_03": {
+        "N": 373,
+        "coverage": 0.9383,
+        "ci_95": {
+          "low": 0.9092,
+          "high": 0.9586,
+          "point": 0.9383,
+          "method": "Wilson_Score_Interval"
+        }
+      },
+      "CAM_SECTOR_D_04": {
+        "N": 372,
+        "coverage": 0.8978,
+        "ci_95": {
+          "low": 0.8629,
+          "high": 0.9247,
+          "point": 0.8978,
+          "method": "Wilson_Score_Interval"
+        }
+      }
+    }
+  },
+  "failures": [
+    {
+      "point_id": "OOS_Sector_C_0016",
+      "distance_m": 1.38,
+      "illumination_lux": 293.6,
+      "occlusion_state": "NONE",
+      "mahalanobis_sq": 6.1011,
+      "eff_k_sq": 5.5466
+    },
+    {
+      "point_id": "OOS_Sector_D_0027",
+      "distance_m": 8.0,
+      "illumination_lux": 185.1,
+      "occlusion_state": "NONE",
+      "mahalanobis_sq": 9.4233,
+      "eff_k_sq": 7.1927
+    },
+    {
+      "point_id": "OOS_Sector_D_0031",
+      "distance_m": 8.93,
+      "illumination_lux": 214.8,
+      "occlusion_state": "HEAVY",
+      "mahalanobis_sq": 15.3645,
+      "eff_k_sq": 9.3879
+    },
+    {
+      "point_id": "OOS_Sector_D_0041",
+      "distance_m": 5.91,
+      "illumination_lux": 208.4,
+      "occlusion_state": "HEAVY",
+      "mahalanobis_sq": 9.6536,
+      "eff_k_sq": 8.3399
+    },
+    {
+      "point_id": "OOS_Sector_D_0055",
+      "distance_m": 7.02,
+      "illumination_lux": 203.9,
+      "occlusion_state": "HEAVY",
+      "mahalanobis_sq": 20.1062,
+      "eff_k_sq": 8.7502
+    },
+    {
+      "point_id": "OOS_Sector_C_0056",
+      "distance_m": 1.27,
+      "illumination_lux": 329.2,
+      "occlusion_state": "NONE",
+      "mahalanobis_sq": 9.6665,
+      "eff_k_sq": 5.5225
+    },
+    {
+      "point_id": "OOS_Sector_C_0066",
+      "distance_m": 2.3,
+      "illumination_lux": 294.8,
+      "occlusion_state": "NONE",
+      "mahalanobis_sq": 5.7346,
+      "eff_k_sq": 5.5421
+    },
+    {
+      "point_id": "OOS_Sector_D_0095",
+      "distance_m": 5.76,
+      "illumination_lux": 198.5,
+      "occlusion_state": "PARTIAL",
+      "mahalanobis_sq": 15.2431,
+      "eff_k_sq": 7.381
+    },
+    {
+      "point_id": "OOS_Sector_C_0096",
+      "distance_m": 4.43,
+      "illumination_lux": 314.8,
+      "occlusion_state": "PARTIAL",
+      "mahalanobis_sq": 9.4346,
+      "eff_k_sq": 6.5321
+    },
+    {
+      "point_id": "OOS_Sector_D_0113",
+      "distance_m": 5.55,
+      "illumination_lux": 199.9,
+      "occlusion_state": "NONE",
+      "mahalanobis_sq": 8.8023,
+      "eff_k_sq": 6.3659
+    },
+    {
+      "point_id": "OOS_Sector_C_0114",
+      "distance_m": 3.97,
+      "illumination_lux": 314.6,
+      "occlusion_state": "NONE",
+      "mahalanobis_sq": 5.664,
+      "eff_k_sq": 5.5225
+    },
+    {
+      "point_id": "OOS_Sector_D_0127",
+      "distance_m": 5.77,
+      "illumination_lux": 239.3,
+      "occlusion_state": "HEAVY",
+      "mahalanobis_sq": 10.7342,
+      "eff_k_sq": 8.1497
+    },
+    {
+      "point_id": "OOS_Sector_D_0143",
+      "distance_m": 2.27,
+      "illumination_lux": 204.6,
+      "occlusion_state": "NONE",
+      "mahalanobis_sq": 9.3155,
+      "eff_k_sq": 5.887
+    },
+    {
+      "point_id": "OOS_Sector_D_0151",
+      "distance_m": 8.12,
+      "illumination_lux": 194.0,
+      "occlusion_state": "NONE",
+      "mahalanobis_sq": 10.7372,
+      "eff_k_sq": 7.1931
+    },
+    {
+      "point_id": "OOS_Sector_D_0161",
+      "distance_m": 3.7,
+      "illumination_lux": 182.4,
+      "occlusion_state": "NONE",
+      "mahalanobis_sq": 9.1011,
+      "eff_k_sq": 5.9735
+    }
+  ]
+}

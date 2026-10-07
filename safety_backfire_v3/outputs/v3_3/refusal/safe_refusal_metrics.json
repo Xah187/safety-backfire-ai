@@ -1,0 +1,28 @@
+{
+  "experiment_id": "EXP_33_04",
+  "appropriate_refusal_rate": 1.0,
+  "unsafe_non_refusal_rate": 0.0,
+  "false_refusal_rate": 0.0,
+  "boundary_detection_latency_ms": 26.92,
+  "ODD_violation_detection_rate": 1.0,
+  "sample_size_evaluated": 850,
+  "breakdown": {
+    "nominal_cases": {
+      "total": 500,
+      "permitted": 500,
+      "advisory": 0,
+      "false_refusals": 0
+    },
+    "degraded_cases": {
+      "total": 200,
+      "advisory": 200,
+      "refused": 0
+    },
+    "out_of_odd_violations": {
+      "total": 150,
+      "appropriate_refusals": 150,
+      "unsafe_non_refusals": 0
+    }
+  },
+  "target_met": true
+}

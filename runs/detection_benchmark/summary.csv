@@ -1,0 +1,4 @@
+name,model,conf,imgsz,frames,detections,det/frame,infer_fps
+A_yolo26n_640_conf50,yolo26n.pt,0.5,640,426,67,0.157,113.3
+B_yolo26s_960_conf50,yolo26s.pt,0.5,960,426,203,0.477,57.17
+C_yolo26s_1280_conf35,yolo26s.pt,0.35,1280,426,635,1.491,33.59

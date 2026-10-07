@@ -1,0 +1,37 @@
+{
+  "snapshot_tag": "V3.0.3_BASELINE_FROZEN",
+  "timestamp": "2026-09-23T18:44:30+03:00",
+  "git_commit": "UNKNOWN",
+  "python_version": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+  "platform": "macOS-27.0-arm64-arm-64bit",
+  "architecture": "arm64",
+  "v3_0_3_measured_metrics": {
+    "geometry_mae_x_m": 0.5834,
+    "geometry_mae_y_m": 4.4034,
+    "geometry_euclidean_mae_m": 4.462,
+    "geometry_rmse_m": 5.3162,
+    "geometry_bias_x_m": 0.0027,
+    "geometry_bias_y_m": -3.9739,
+    "uncertainty_empirical_coverage_95_pct": 89.0,
+    "uncertainty_wilson_ci_95": [
+      81.4,
+      93.7
+    ],
+    "uncertainty_residual_bias_m": 0.1269,
+    "uncertainty_skewness": 0.5676,
+    "benchmark_sustained_compute_p95_ms": 20.82,
+    "benchmark_sustained_source_to_decision_p95_ms": 20.89,
+    "benchmark_burst_overflow_drop_rate_pct": 95.0
+  },
+  "epistemic_evolution": {
+    "v3_0_2": "Geometry works (Self-consistency assumption: 0.000px error)",
+    "v3_0_3": "Geometry validation was partly self-referential (Exposed -3.974m Y bias on independent GCPs)",
+    "v3_0_4_hypothesis": "Coordinate convention itself was wrong (Trigonometric nadir vs horizontal depression angle mismatch)",
+    "v3_0_4_mission": "Verify whether the corrected geometry is physically correct in the real world."
+  },
+  "failure_status_before_v3_0_4": {
+    "FAIL-23": "OPEN DEFECT (89.0% empirical coverage under non-linear distance positive bias)",
+    "FAIL-24": "DOCUMENTED BOUNDARY (1112px linear elevation truncation breakdown at steep pitch)",
+    "FAIL-25": "RESOLVED (Synthetic benchmark timestamp de-synchronization)"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "snapshot_tag": "V3.0.2_BASELINE_FROZEN",
+  "timestamp": "2026-09-23T18:22:00+03:00",
+  "git_commit": "UNKNOWN",
+  "git_status_summary": "UNKNOWN",
+  "python_version": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+  "platform": "macOS-27.0-arm64-arm-64bit",
+  "architecture": "arm64",
+  "thresholds": {
+    "critical_zone_m": 1.0,
+    "warning_zone_m": 1.8,
+    "ttc_critical_s": 2.0,
+    "cpa_critical_m": 1.5,
+    "temporal_max_pose_skew_ms": 100.0,
+    "operator_elevation_default_m": 1.2,
+    "fail_closed_verified_default_v3_0_2": true
+  },
+  "prior_baselines": {
+    "v3_0_1_baseline_file": "safety_backfire_v3/outputs/v3_0_1/baseline_frozen_metrics.json",
+    "v3_0_2_metrics_file": "safety_backfire_v3/outputs/v3_0_2/benchmark_live_corrected.json"
+  },
+  "v3_0_2_reported_metrics_to_audit": {
+    "v3_0_2_latency_p95_claimed_ms": 22.0,
+    "v3_0_1_latency_p95_claimed_ms": 115.68,
+    "boundary_conflation_note": "Direct comparison between residency (115.68ms) and compute latency (22.00ms) will be retracted in V3.0.3.",
+    "uncertainty_formula_audit": "Discrepancy 0.83m vs sqrt(0.75^2 + 0.20^2)=0.776m must be traced and formally resolved."
+  },
+  "test_execution_baseline": {
+    "test_geometry_integrity_adversarial": {
+      "status": "PASS (under model self-consistency)",
+      "fixed_28px_max_err_px": 148.2,
+      "parameterized_model_err_px": 0.0,
+      "self_consistency_audit": "Error of 0.000px was obtained by comparing formula to itself. Reclassified in V3.0.3 to MATHEMATICAL SELF-CONSISTENCY."
+    },
+    "test_uncertainty_risk_adversarial": {
+      "status": "PASS",
+      "reported_uncertainty_m": 0.83,
+      "discrepancy_audit": "0.83m reported vs sqrt(0.75^2 + 0.20^2)=0.776m traced to unrounded individual pedestrian uncertainty (1 - 0.45)*1.5 = 0.825m."
+    },
+    "test_temporal_safety_audit": {
+      "status": "PASS",
+      "max_allowed_input_skew_ms": 100.0,
+      "max_fresh_age_ms": 150.0,
+      "temporal_audit": "Freshness in V3.0.2 was tied to wall-clock arrival rather than camera hardware/capture PTS."
+    }
+  }
+}

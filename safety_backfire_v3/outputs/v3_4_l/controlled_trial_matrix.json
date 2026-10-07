@@ -1,0 +1,201 @@
+{
+  "matrix_version": "1.0.0",
+  "milestone": "V3.4-L",
+  "safety_policy": {
+    "zero_human_hazard_rule": "NO human being shall enter the dynamic vehicle travel envelope, stopping buffer, or secondary diversion corridor during testing under any circumstances.",
+    "actor_substitutes": "All primary and secondary pedestrian interactions MUST be executed using certified test dummies, foam mannequins on remote rail/pulley actuators, or soft automated guided targets.",
+    "e_stop_mandate": "Dual remote wireless SIL-3 E-Stops active with Safety Marshal having sole uninhibited line-of-sight abort authority."
+  },
+  "causality_disclaimer": "The pairing of RUN_BASELINE and RUN_INTERVENTION provides a controlled contrastive observation only; it DOES NOT prove universal counterfactual causality due to potential unobserved environmental covariates.",
+  "scenarios": [
+    {
+      "scenario_id": "L01",
+      "scenario_name": "Safe Complete Stop",
+      "objective": "Verify primary intervention where vehicle executes full in-lane deceleration without diversion or secondary exposure.",
+      "primary_actor": "CERTIFIED_FOAM_MANNEQUIN_IN_CORRIDOR",
+      "secondary_actor": "NONE",
+      "vehicle_nominal_action": "Braking to full stop at >= 3.0 m from target",
+      "run_baseline": {
+        "run_id": "L01_BASE",
+        "description": "Vehicle operates straight path at nominal speed (3.0 m/s) with no obstacle present.",
+        "controlled_variables": { "speed_mps": 3.0, "obstacle_present": false, "lighting_lux": 350 },
+        "non_controlled_variables": ["ambient_temperature", "tire_temperature"]
+      },
+      "run_intervention": {
+        "run_id": "L01_INTV",
+        "description": "Mannequin introduced at 15m; automated/manual brake triggers deceleration; stops in lane.",
+        "controlled_variables": { "speed_mps": 3.0, "obstacle_present": true, "trigger_distance_m": 15.0, "deceleration_mps2": 2.5 },
+        "non_controlled_variables": ["exact_stop_position_variance_cm", "brake_pad_friction_variance"]
+      },
+      "expected_ground_truth_class": "PRIMARY_HAZARD_RESOLVED_NO_BACKFIRE"
+    },
+    {
+      "scenario_id": "L02",
+      "scenario_name": "Safe Clearance",
+      "objective": "Vehicle continues nominal trajectory through corridor with stationary obstacles outside clearance envelope.",
+      "primary_actor": "STATIONARY_SAFETY_CONE_MARGIN",
+      "secondary_actor": "NONE",
+      "vehicle_nominal_action": "Constant velocity pass through corridor without evasive maneuver",
+      "run_baseline": {
+        "run_id": "L02_BASE",
+        "description": "Empty corridor transit.",
+        "controlled_variables": { "speed_mps": 3.0, "lateral_clearance_m": 2.5 },
+        "non_controlled_variables": ["air_draft"]
+      },
+      "run_intervention": {
+        "run_id": "L02_INTV",
+        "description": "Cones placed at 1.8m lateral offset; vehicle passes without deceleration or swerving.",
+        "controlled_variables": { "speed_mps": 3.0, "lateral_clearance_m": 1.8 },
+        "non_controlled_variables": ["driver_micro_steering"]
+      },
+      "expected_ground_truth_class": "NOMINAL_OPERATION_NO_HAZARD"
+    },
+    {
+      "scenario_id": "L03",
+      "scenario_name": "Swerve Toward Empty Secondary Zone",
+      "objective": "Vehicle swerves laterally to avoid primary obstacle, entering secondary cross-aisle where observability is confirmed and verified completely empty.",
+      "primary_actor": "CERTIFIED_FOAM_MANNEQUIN_IN_CORRIDOR",
+      "secondary_actor": "NONE (EMPTY_VERIFIED_CROSS_AISLE)",
+      "vehicle_nominal_action": "Lateral swerve (steering angle > 12 deg) into cross-aisle mouth to bypass primary obstacle",
+      "run_baseline": {
+        "run_id": "L03_BASE",
+        "description": "Straight pass through clear corridor.",
+        "controlled_variables": { "speed_mps": 3.0, "yaw_rate_deg_s": 0.0 },
+        "non_controlled_variables": ["floor_traction"]
+      },
+      "run_intervention": {
+        "run_id": "L03_INTV",
+        "description": "Primary obstacle induces steering diversion; vehicle enters cross-aisle; Camera C confirms zero actors in zone.",
+        "controlled_variables": { "speed_mps": 3.0, "lateral_swerve_offset_m": 1.5, "secondary_aisle_empty": true },
+        "non_controlled_variables": ["transient_wheel_slip"]
+      },
+      "expected_ground_truth_class": "BENIGN_SWERVE_NO_SECONDARY_HAZARD"
+    },
+    {
+      "scenario_id": "L04",
+      "scenario_name": "Controlled Secondary Exposure Using Safe Proxy",
+      "objective": "Simulate backfire kinetic chain safely: vehicle swerves to avoid primary dummy, and trajectory directly intersects a secondary robotic foam dummy in cross-aisle within tau <= 2.0s.",
+      "primary_actor": "FOAM_MANNEQUIN_P1",
+      "secondary_actor": "ROBOTIC_FOAM_DUMMY_P2_IN_CROSS_AISLE",
+      "vehicle_nominal_action": "Evasive steering into cross-aisle intersecting P2's designated position",
+      "run_baseline": {
+        "run_id": "L04_BASE",
+        "description": "Vehicle stops straight behind P1 without swerving; P2 remains static in cross-aisle.",
+        "controlled_variables": { "p1_distance_m": 12.0, "p2_depth_in_aisle_m": 4.0, "vehicle_action": "BRAKE_ONLY" },
+        "non_controlled_variables": ["sensor_noise"]
+      },
+      "run_intervention": {
+        "run_id": "L04_INTV",
+        "description": "Vehicle executes swerve around P1; vehicle path vector passes within 0.8m of P2 within 1.4s of swerve onset.",
+        "controlled_variables": { "p1_distance_m": 12.0, "p2_depth_in_aisle_m": 4.0, "swerve_rate_deg_s": 18.0, "tau_target_s": 1.4 },
+        "non_controlled_variables": ["exact_closest_point_of_approach_cm"]
+      },
+      "expected_ground_truth_class": "SIMULATED_SAFETY_BACKFIRE_EVENT"
+    },
+    {
+      "scenario_id": "L05",
+      "scenario_name": "Independent Actor Confounder",
+      "objective": "Test separation between vehicle-induced risk and an uncoordinated, independent actor approaching from another direction.",
+      "primary_actor": "FOAM_MANNEQUIN_P1",
+      "secondary_actor": "MOTORIZED_TROLLEY_T1_CROSS_TRAVEL",
+      "vehicle_nominal_action": "Braking for P1; independent trolley moves across background on separate unconflicted trajectory",
+      "run_baseline": {
+        "run_id": "L05_BASE",
+        "description": "Motorized trolley passes at constant speed 1.0 m/s with vehicle stationary.",
+        "controlled_variables": { "trolley_speed_mps": 1.0, "vehicle_motion": false },
+        "non_controlled_variables": ["ambient_acoustics"]
+      },
+      "run_intervention": {
+        "run_id": "L05_INTV",
+        "description": "Vehicle decelerates for P1; trolley passes at 6m distance unaffected by vehicle maneuver.",
+        "controlled_variables": { "vehicle_speed_mps": 2.5, "trolley_speed_mps": 1.0, "causal_linkage": "INDEPENDENT" },
+        "non_controlled_variables": ["timing_jitter_ms"]
+      },
+      "expected_ground_truth_class": "INDEPENDENT_CONFOUNDING_ACTOR"
+    },
+    {
+      "scenario_id": "L06",
+      "scenario_name": "Tracker Handoff Stress Case",
+      "objective": "Stress optical tracking identity preservation as vehicle and actors transition between Camera A, Camera B, and Camera C.",
+      "primary_actor": "ROBOTIC_FOAM_DUMMY_MOBILE",
+      "secondary_actor": "NONE",
+      "vehicle_nominal_action": "Navigating diagonally through intersection overlapping camera FOVs",
+      "run_baseline": {
+        "run_id": "L06_BASE",
+        "description": "Empty junction transit tracking vehicle only across camera boundaries.",
+        "controlled_variables": { "trajectory_type": "DIAGONAL", "speed_mps": 2.0 },
+        "non_controlled_variables": ["shadows"]
+      },
+      "run_intervention": {
+        "run_id": "L06_INTV",
+        "description": "Vehicle and mobile dummy cross optical overlap zones simultaneously; test ID switch detection.",
+        "controlled_variables": { "trajectories_intersecting": false, "overlap_residence_time_s": 2.5 },
+        "non_controlled_variables": ["tracker_affinity_scores"]
+      },
+      "expected_ground_truth_class": "TRACKER_EVALUATION_CONTROL"
+    },
+    {
+      "scenario_id": "L07",
+      "scenario_name": "Occluded Zone",
+      "objective": "Evaluate system evidence pipeline when secondary zone has intentional physical obstruction (blind pocket).",
+      "primary_actor": "FOAM_MANNEQUIN_P1",
+      "secondary_actor": "DUMMY_BEHIND_PALLET_STACK",
+      "vehicle_nominal_action": "Swerve diversion toward partially occluded cross-aisle",
+      "run_baseline": {
+        "run_id": "L07_BASE",
+        "description": "Baseline view of pallet obstruction with Secondary Observability = FALSE.",
+        "controlled_variables": { "pallet_height_m": 2.2, "occlusion_percent": 85.0 },
+        "non_controlled_variables": ["lighting_contrast"]
+      },
+      "run_intervention": {
+        "run_id": "L07_INTV",
+        "description": "Swerve occurs; Secondary Observability remains FALSE; Gate E4 must reject candidate for insufficient observability.",
+        "controlled_variables": { "pallet_height_m": 2.2, "swerve_angle_deg": 15.0 },
+        "non_controlled_variables": ["edge_diffraction"]
+      },
+      "expected_ground_truth_class": "INSUFFICIENT_OBSERVABILITY_REJECTED"
+    },
+    {
+      "scenario_id": "L08",
+      "scenario_name": "Sensor Failure",
+      "objective": "Inject synthetic hardware dropout (e.g. disconnect Camera C feed or inject CAN timeout) to verify instant Gate rejection and abort trigger.",
+      "primary_actor": "FOAM_MANNEQUIN_P1",
+      "secondary_actor": "ROBOTIC_FOAM_DUMMY_P2",
+      "vehicle_nominal_action": "Braking run with forced sensor stream cutoff at t=2.0s",
+      "run_baseline": {
+        "run_id": "L08_BASE",
+        "description": "Normal multi-modal capture without failure injection.",
+        "controlled_variables": { "sensor_status": "ALL_HEALTHY" },
+        "non_controlled_variables": []
+      },
+      "run_intervention": {
+        "run_id": "L08_INTV",
+        "description": "Camera C RTSP packet drop forced during vehicle deceleration; Gate D2 must FAIL immediately.",
+        "controlled_variables": { "fault_injected_sensor": "CAMERA_C", "fault_type": "STREAM_DROPOUT" },
+        "non_controlled_variables": []
+      },
+      "expected_ground_truth_class": "INVALID_RUN_DATA_INTEGRITY_FAIL"
+    },
+    {
+      "scenario_id": "L09",
+      "scenario_name": "Clock Offset",
+      "objective": "Inject timestamp perturbation (> 5.0 ms component limit or > 33.3 ms composite skew) to verify Gate C1 / D2 rejection.",
+      "primary_actor": "FOAM_MANNEQUIN_P1",
+      "secondary_actor": "NONE",
+      "vehicle_nominal_action": "Nominal stop run with CAN gateway clock desynchronized by +25.0 ms",
+      "run_baseline": {
+        "run_id": "L09_BASE",
+        "description": "Normal PTP locked recording (offset < 100 us).",
+        "controlled_variables": { "ptp_lock": true, "max_offset_us": 85.0 },
+        "non_controlled_variables": []
+      },
+      "run_intervention": {
+        "run_id": "L09_INTV",
+        "description": "CAN timestamp perturbed by +25.0 ms; exceeds 10.0 ms component budget; Gate C1 / D2 must FAIL even if within composite frame.",
+        "controlled_variables": { "clock_offset_injected_ms": 25.0, "violation_type": "COMPONENT_BUDGET_EXCEEDED" },
+        "non_controlled_variables": []
+      },
+      "expected_ground_truth_class": "INVALID_RUN_SYNCHRONIZATION_FAIL"
+    }
+  ]
+}

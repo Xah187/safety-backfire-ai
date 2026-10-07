@@ -1,0 +1,25 @@
+{
+  "gate_version": "V3.3.3_PHASE2_RELEASE_GATE",
+  "timestamp_utc": "2026-09-25T14:40:00Z",
+  "v3_3_2_reconciliation_status": "FULL_RECONCILIATION_PASSED",
+  "v3_3_3_readiness_state": "V3.3.3_READY_WITH_LIMITATIONS",
+  "governing_summary": "All 15 critical reconciliation issues from V3.3.2 have been forensically resolved with mathematical reproducibility. Model H lineage is cryptographically defined, exact OOS counts (630/663 = 95.02%) and Wilson CI [93.09%, 96.43%] are recomputed, Pareto non-dominance is verified, action width gating distribution is mapped, failure semantics are corrected, and refusal/intervention sample-unit independence is formally registered. External facility evidence and prospective physical interventions remain actively tracked evidence gaps.",
+  "audits_completed": {
+    "calibration_metric_lineage": "RECONCILED",
+    "model_h_lineage": "VERIFIED_AND_LOCKED",
+    "model_h_oos_statistics": "VERIFIED_EXACT_COUNTS",
+    "uncertainty_pareto_audit": "VERIFIED_NON_DOMINATED",
+    "action_width_distribution": "MAPPED_TO_SAFETY_OUTCOMES",
+    "failure_state_semantics": "CORRECTED_DUAL_STATE",
+    "refusal_independence_registry": "BENCHMARKED_SCENARIO_LEVEL",
+    "idf1_bootstrap_sensitivity": "CLUSTER_SENSITIVITY_COMPLETED",
+    "intervention_provenance_registry": "STRICT_COUNT_CATEGORIZATION",
+    "did_assumption_audit": "CAUSAL_REFUSALS_ENFORCED"
+  },
+  "active_unsupported_claims": 0,
+  "known_evidence_gaps": 6,
+  "external_facility_data": "UNAVAILABLE",
+  "prospective_physical_interventions": "UNAVAILABLE",
+  "real_long_duration_data": "UNAVAILABLE",
+  "readiness_verdict": "V3.3.3 framework and reconciliation gates are validated; prospective physical data collection must now be scheduled before claiming cross-facility or population-level causal results."
+}

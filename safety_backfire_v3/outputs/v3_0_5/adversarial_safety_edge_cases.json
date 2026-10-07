@@ -1,0 +1,100 @@
+{
+  "operator_cases": {
+    "case_a_operator": "SUPPRESSED_OPERATOR",
+    "case_b_touching": "CONFIRMED_DANGER",
+    "case_c_perspective": "SAFE",
+    "case_d_concurrent": {
+      "driver": "SUPPRESSED_OPERATOR",
+      "worker": "CONFIRMED_DANGER"
+    }
+  },
+  "temporal_tests": [
+    {
+      "delay_ms": 0,
+      "suppression_allowed": true,
+      "reason": "SUPPRESSION_PERMITTED",
+      "passed": true
+    },
+    {
+      "delay_ms": 50,
+      "suppression_allowed": true,
+      "reason": "SUPPRESSION_PERMITTED",
+      "passed": true
+    },
+    {
+      "delay_ms": 100,
+      "suppression_allowed": true,
+      "reason": "SUPPRESSION_PERMITTED",
+      "passed": true
+    },
+    {
+      "delay_ms": 200,
+      "suppression_allowed": false,
+      "reason": "SKEW_EXCEEDED_200.0MS",
+      "passed": true
+    },
+    {
+      "delay_ms": 300,
+      "suppression_allowed": false,
+      "reason": "SKEW_EXCEEDED_300.0MS",
+      "passed": true
+    },
+    {
+      "delay_ms": 350,
+      "suppression_allowed": false,
+      "reason": "SKEW_EXCEEDED_350.0MS",
+      "passed": true
+    },
+    {
+      "delay_ms": 400,
+      "suppression_allowed": false,
+      "reason": "STALE_POSE_SOURCE_AGE_400.0MS",
+      "passed": true
+    },
+    {
+      "delay_ms": 500,
+      "suppression_allowed": false,
+      "reason": "STALE_POSE_SOURCE_AGE_500.0MS",
+      "passed": true
+    }
+  ],
+  "failure_injections": [
+    {
+      "fault": "NaN Distance Input",
+      "handled": true,
+      "decision": "HIGH_PRIORITY_CANDIDATE",
+      "passed": true
+    },
+    {
+      "fault": "Inf Distance Input",
+      "handled": true,
+      "decision": "SAFE",
+      "passed": true
+    },
+    {
+      "fault": "Negative Distance",
+      "handled": true,
+      "decision": "CONFIRMED_DANGER",
+      "passed": true
+    },
+    {
+      "fault": "Zero Uncertainty",
+      "handled": true,
+      "decision": "CONFIRMED_DANGER",
+      "passed": true
+    },
+    {
+      "fault": "Zero Evidence Qual",
+      "handled": true,
+      "decision": "HIGH_PRIORITY_CANDIDATE",
+      "passed": true
+    },
+    {
+      "fault": "Singular Covariance Matrix",
+      "handled": true,
+      "decision": "LOW",
+      "passed": true
+    }
+  ],
+  "all_passed": true
+}

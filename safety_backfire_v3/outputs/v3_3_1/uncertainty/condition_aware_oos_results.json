@@ -1,0 +1,40 @@
+{
+  "experiment_id": "EXP_331_01",
+  "target_coverage": 0.95,
+  "sample_size_evaluated": 745,
+  "model_comparison": {
+    "MODEL_A_FIXED_K": {
+      "nominal_coverage": 0.9261,
+      "nominal_ci_95": [
+        0.9036,
+        0.9436
+      ],
+      "worst_stratum_coverage": 0.8468,
+      "mean_interval_width_m": 0.1941,
+      "meets_target": false
+    },
+    "MODEL_D_CONDITION_AWARE": {
+      "nominal_coverage": 0.9367,
+      "nominal_ci_95": [
+        0.9155,
+        0.9528
+      ],
+      "worst_stratum_coverage": 0.8978,
+      "mean_interval_width_m": 0.2083,
+      "p95_interval_width_m": 0.3474,
+      "meets_target": false,
+      "far_field_coverage": 0.7683,
+      "far_field_ci_95": [
+        0.6662,
+        0.8463
+      ]
+    }
+  },
+  "acceptance_criteria_assessment": {
+    "primary_nominal_ge_95": false,
+    "secondary_no_stratum_lt_90": false,
+    "far_field_gated_outside_envelope": true,
+    "false_refusal_le_05": true
+  },
+  "interpretation": "Condition-aware scaling (Model D) improved nominal OOS coverage from 92.61% to 93.67% [95% CI: 91.55%-95.28%], raising Sector D from 84.68% to 89.78%. While the 95% CI spans the 95.0% target, the point estimate remains below 95.0% (target NOT_MET), confirming that condition-aware scaling mitigates but does not fully resolve undercoverage without safe refusal gating."
+}

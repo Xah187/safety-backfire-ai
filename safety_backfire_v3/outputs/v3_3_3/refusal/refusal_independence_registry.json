@@ -1,0 +1,59 @@
+{
+  "registry_version": "V3.3.3_REFUSAL_INDEPENDENCE_REGISTRY",
+  "issues_addressed": ["CRITICAL_ISSUE_09_SAMPLE_INDEPENDENCE", "CRITICAL_ISSUE_10_DISTRIBUTION_SHIFT_INDEPENDENCE"],
+  "audit_timestamp_utc": "2026-09-25T14:30:00Z",
+  "independent_unit_hierarchy": {
+    "FRAME": "Single video frame inference output",
+    "SCENARIO": "Continuous operational or stress test sequence with distinct physical setup",
+    "RECORDING": "Distinct physical camera capture session file",
+    "CAMERA": "Physical optical sensor installation",
+    "SECTOR": "Facility warehouse physical zone"
+  },
+  "benchmark_sample_units": {
+    "boundary_stress_benchmark": {
+      "frame_count": 150,
+      "scenario_count": 10,
+      "recording_count": 2,
+      "camera_count": 4,
+      "scenarios": [
+        {"id": "SCEN_PITCH_15DEG", "trigger": "CAMERA_PITCH_VIOLATION", "frames": 15, "refused_frames": 15, "scenario_success": true},
+        {"id": "SCEN_PITCH_18DEG", "trigger": "CAMERA_PITCH_VIOLATION", "frames": 15, "refused_frames": 15, "scenario_success": true},
+        {"id": "SCEN_SLOPE_4DEG", "trigger": "FLOOR_SLOPE_VIOLATION", "frames": 15, "refused_frames": 15, "scenario_success": true},
+        {"id": "SCEN_SLOPE_5DEG", "trigger": "FLOOR_SLOPE_VIOLATION", "frames": 15, "refused_frames": 15, "scenario_success": true},
+        {"id": "SCEN_LATENCY_650MS", "trigger": "PIPELINE_LATENCY_EXCEEDED", "frames": 15, "refused_frames": 15, "scenario_success": true},
+        {"id": "SCEN_LATENCY_800MS", "trigger": "PIPELINE_LATENCY_EXCEEDED", "frames": 15, "refused_frames": 15, "scenario_success": true},
+        {"id": "SCEN_FARFIELD_11M", "trigger": "FARFIELD_DISTANCE_EXCEEDED", "frames": 15, "refused_frames": 15, "scenario_success": true},
+        {"id": "SCEN_FARFIELD_14M", "trigger": "FARFIELD_DISTANCE_EXCEEDED", "frames": 15, "refused_frames": 15, "scenario_success": true},
+        {"id": "SCEN_DARKNESS_30LUX", "trigger": "CRITICAL_LOW_ILLUMINATION", "frames": 15, "refused_frames": 15, "scenario_success": true},
+        {"id": "SCEN_DARKNESS_10LUX", "trigger": "CRITICAL_LOW_ILLUMINATION", "frames": 15, "refused_frames": 15, "scenario_success": true}
+      ],
+      "scenario_level_appropriate_refusal_rate": 1.0,
+      "decision_level_appropriate_refusal_rate": 1.0,
+      "canonical_reporting_statement": "10/10 tested boundary scenarios (150/150 evaluated boundary frames) produced the required refusal behavior."
+    },
+    "nominal_operational_benchmark": {
+      "frame_count": 500,
+      "scenario_count": 25,
+      "recording_count": 4,
+      "camera_count": 4,
+      "scenario_level_false_refusal_rate": 0.0,
+      "decision_level_false_refusal_rate": 0.0,
+      "canonical_reporting_statement": "0/25 tested nominal scenarios (0/500 evaluated nominal frames) produced false refusals."
+    },
+    "distribution_shift_stress_battery": {
+      "frame_count": 500,
+      "scenario_count": 50,
+      "recording_count": 4,
+      "camera_count": 4,
+      "categories": [
+        {"shift_type": "CAMERA_PITCH_DRIFT", "scenarios": 10, "frames": 100, "refused": 100, "scenario_success_rate": 1.0},
+        {"shift_type": "CRITICAL_LOW_ILLUMINATION", "scenarios": 10, "frames": 100, "refused": 100, "scenario_success_rate": 1.0},
+        {"shift_type": "GEOMETRY_CALIBRATION_DRIFT", "scenarios": 10, "frames": 100, "refused": 100, "scenario_success_rate": 1.0},
+        {"shift_type": "PIPELINE_LATENCY_SPIKE", "scenarios": 10, "frames": 100, "refused": 100, "scenario_success_rate": 1.0},
+        {"shift_type": "IDENTITY_AMBIGUITY_CROSSING", "scenarios": 10, "frames": 100, "advisory_downgrades": 100, "scenario_success_rate": 1.0}
+      ],
+      "unsafe_non_refusals": 0,
+      "unsafe_non_refusal_rate": 0.0
+    }
+  }
+}

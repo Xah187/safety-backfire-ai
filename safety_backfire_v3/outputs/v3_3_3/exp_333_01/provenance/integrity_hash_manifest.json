@@ -1,0 +1,22 @@
+{
+  "manifest_version": "EXP_333_01_INTEGRITY_HASH_MANIFEST",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "audit_timestamp_utc": "2026-09-25T15:20:00Z",
+  "provenance_verifier": "DatasetProvenanceGate_V3.3",
+  "source_raw_files": {
+    "0_te11.mp4": {
+      "sha256": "170a97c819e668d899e378e4ec1c417d89df8da3eff4373bf08f9698152babe1",
+      "size_bytes": 13004617,
+      "status": "VALID_AUTHENTIC_RAW_FILE"
+    }
+  },
+  "hash_verification_summary": {
+    "total_raw_files_evaluated": 1,
+    "valid_sha256_files": 1,
+    "corrupted_or_missing_files": 0,
+    "disallowed_classification_detected": false,
+    "disallowed_reason": null,
+    "gate_status": "PASSED_PROVENANCE_GATE"
+  },
+  "governance_action": "READY_FOR_ZERO_ADAPTATION_EVALUATION"
+}

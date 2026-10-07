@@ -1,0 +1,27 @@
+{
+  "metric": "IDF1",
+  "value": 0.9141,
+  "ci_method": "NONE",
+  "ci_valid": false,
+  "ci_status": "NOT_REPORTED",
+  "bootstrap_unit": null,
+  "bootstrap_replicates": null,
+  "seed": null,
+  "reasoning": "IDF1 is a global multi-object tracking consistency ratio computed from IDTP, IDFP, IDFN across global bipartite matching trajectories. It is not a sequence of independent Bernoulli trials, making the Wilson score interval mathematically invalid. Wilson CI is retracted. Without trajectory/sequence cluster bootstrap replicates, no CI is reported.",
+  "components": {
+    "idtp": null,
+    "idfp": null,
+    "idfn": null,
+    "decomposition_status": "NOT_RECONSTRUCTIBLE_FROM_CURRENT_ARTIFACTS",
+    "retracted_draft_ratio": "1768 / 1851 (evaluates to 0.9552 != 0.9141, retracted)",
+    "instance_ratio": "3154 / 3450 = 0.9142"
+  },
+  "tracking_context": {
+    "total_entity_frame_instances": 3450,
+    "gt_trajectories": 24,
+    "evaluated_frames": 1672,
+    "identity_switches": 7,
+    "fragmentations": 13,
+    "evaluation_protocol": "CLEAR MOT / IDF1 protocol under Hungarian assignment with 0.5 IoU threshold"
+  }
+}

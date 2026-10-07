@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "schema_version": "2.0",
+    "engine_version": "1.0.0",
+    "data_type": "SafetyBackfireAssessment"
+  },
+  "data": {
+    "experiment_metadata": {
+      "experiment_id": "EXP_V2_1",
+      "intervention": {
+        "intervention_id": "INT_001",
+        "type": "POLICY_CHANGE",
+        "zone": "GLOBAL",
+        "description": "Simulated split for experiment",
+        "timestamp": "UNKNOWN"
+      },
+      "data_summary": {
+        "before_events_count": 0,
+        "after_events_count": 0
+      },
+      "disclaimer": "Analysis is locked to this specific intervention. Causality is not assumed by temporal difference alone."
+    },
+    "verdict": {
+      "signal": "NO_SIGNIFICANT_CHANGE",
+      "strength": 0.0,
+      "evidence_level": "MODERATE",
+      "confidence": 0.12,
+      "reasoning": [
+        "Mixed or weak signals; no definitive backfire or improvement observed."
+      ]
+    },
+    "explanation": {
+      "summary": "The data does not show a strong enough signal to definitively conclude a backfire or improvement.",
+      "key_changes": [
+        {
+          "metric": "Total Risk Exposure",
+          "before": 0.0,
+          "after": 0.0,
+          "change": "NO_CHANGE by 0.0%"
+        },
+        {
+          "metric": "High Severity Events",
+          "before": 0.0,
+          "after": 0.0,
+          "change": "NO_CHANGE by 0.0 events"
+        }
+      ],
+      "risk_redistribution": [],
+      "supporting_events": [],
+      "limitations": [
+        "Mixed or weak signals; no definitive backfire or improvement observed."
+      ],
+      "confidence": {
+        "evidence_level": "MODERATE",
+        "confidence_score": 0.12
+      }
+    }
+  }
+}

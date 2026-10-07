@@ -1,0 +1,8 @@
+{
+  "label": "R3_OBSERVED_BASELINE",
+  "note": "First recorded SHA-256 of the production scripts. No earlier hash manifest for these files exists in the repository, so this file cannot prove invariance before its creation. Evidence of non-modification prior to R3: file modification times (2026-09-29 and 2026-09-30) predate the R2-R1 and R3 milestones, and no R2/R2-R1/R3 tool writes to them. Recorded 2026-10-05.",
+  "files": {
+    "scripts/v3_4/discover_event_candidates.py": "656f2fb79f8bef48c53c752f1a51c409e24762d9989c719c3de1ee111a1c7623",
+    "scripts/v3_4/automated_evidence_screening.py": "4e19e411207e7be7b39096ee0aca701415da19f8216f807e2a030201678c9896"
+  }
+}

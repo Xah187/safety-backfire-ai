@@ -1,0 +1,44 @@
+{
+  "manifest_version": "EXP_333_01_GEOMETRY_EVIDENCE_V1",
+  "timestamp_utc": "2026-09-28T00:07:22Z",
+  "ground_survey": {
+    "survey_conducted": false,
+    "fiducial_points": [],
+    "fiducial_count": 0,
+    "reference_lengths": [],
+    "floor_plan_available": false,
+    "floor_geometry_classification": "UNKNOWN",
+    "category": "NOT_AVAILABLE"
+  },
+  "homography": {
+    "homography_matrix": null,
+    "calibration_method": null,
+    "reprojection_error_px": null,
+    "ground_plane_validated": false,
+    "category": "NOT_AVAILABLE",
+    "note": "Homography computation requires surveyed fiducial points on a validated planar ground surface."
+  },
+  "distance_estimation": {
+    "method": "MODEL_ESTIMATE",
+    "description": "Distances estimated from model bounding box geometry. NOT surveyed ground truth.",
+    "accuracy_validated": false,
+    "validation_reference": null,
+    "category": "MODEL_ESTIMATE",
+    "note": "Model-estimated distances must be labeled MODEL_ESTIMATE in all outputs."
+  },
+  "elevation": {
+    "mounting_height_m": null,
+    "floor_to_camera_distance_m": null,
+    "measurement_method": null,
+    "category": "NOT_AVAILABLE"
+  },
+  "effect_on_model_h": {
+    "distance_input": "MODEL_ESTIMATE (used with distance penalty hinge)",
+    "geometry_validation": "NOT_AVAILABLE",
+    "note": "Model H distance penalty uses max(0, d-4) hinge. Distance values are model estimates, not surveyed."
+  },
+  "governance": {
+    "rule": "Geometry metrics from model estimations must be labeled MODEL_ESTIMATE, not surveyed ground truth.",
+    "survey_substitution_allowed": false
+  }
+}

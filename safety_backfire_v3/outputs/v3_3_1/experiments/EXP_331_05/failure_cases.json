@@ -1,0 +1,24 @@
+[
+  {
+    "intervention_id": "INT_331_05_EXOGENOUS_SHIFT_SHOCK_CROSS_SITE",
+    "case_id": "CASE_SHOCK_05",
+    "facility_id": "FACILITY_CENTRAL_01",
+    "provenance_class": "REPLAY",
+    "treated_zone": "Sector_A_Main_Aisle",
+    "control_zone": "Sector_C_Intersection",
+    "primary_hazard": "Aisle overtaking collision",
+    "secondary_hazards": [
+      "Congestion bottleneck"
+    ],
+    "traffic_volume": 55,
+    "delta_treated": -0.2,
+    "delta_control": 0.27,
+    "did_coefficient": -0.47,
+    "parallel_trend_valid": false,
+    "pre_trend_p_value": 0.008,
+    "control_shift": 0.27,
+    "outcome_state": "INSUFFICIENT_EVIDENCE",
+    "causal_status": "INSUFFICIENT_EVIDENCE_PARALLEL_TREND_VIOLATED",
+    "is_physical_new": false
+  }
+]

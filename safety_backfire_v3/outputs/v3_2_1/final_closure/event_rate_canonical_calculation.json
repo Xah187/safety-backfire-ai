@@ -1,0 +1,45 @@
+{
+  "calculation_version": "V3.2.1_EVENT_RATE_CANONICAL_EXACT_SECONDS",
+  "governing_policy": "Authoritative exposure durations are exact seconds. Rounded decimal hours are display only.",
+  "full_corpus_23min": {
+    "exposure_seconds": 1380,
+    "exposure_hours_exact": 0.38333333333333336,
+    "display_hours": 0.3833,
+    "false_events_count": 3,
+    "missed_events_count": 3,
+    "point_estimate_rate_per_hour": 7.8261,
+    "display_rate_per_hour": 7.83,
+    "garwood_chi2_quantiles": {
+      "lower_df6_p025": 1.237344,
+      "upper_df8_p975": 17.534546
+    },
+    "garwood_poisson_95_ci": [
+      1.614,
+      22.871
+    ],
+    "interpretation": "OBSERVED_COUNT_RATE_OVER_TESTED_EXPOSURE: Rate over 1,380s (23.0 min). Not stable operational rate."
+  },
+  "blind_test_11min": {
+    "exposure_seconds": 660,
+    "exposure_hours_exact": 0.18333333333333332,
+    "display_hours": 0.1833,
+    "false_events_count": 1,
+    "missed_events_count": 1,
+    "point_estimate_rate_per_hour": 5.4545,
+    "display_rate_per_hour": 5.45,
+    "garwood_chi2_quantiles": {
+      "lower_df2_p025": 0.050636,
+      "upper_df4_p975": 11.143287
+    },
+    "garwood_poisson_95_ci": [
+      0.138,
+      30.391
+    ],
+    "interpretation": "OBSERVED_COUNT_RATE_OVER_TESTED_EXPOSURE: Rate over 660s (11.0 min). Exact Poisson CI from seconds."
+  },
+  "formula_documentation": {
+    "rate": "lambda = X / T_hours = X / (exposure_seconds / 3600)",
+    "lower_bound": "0.5 * chi2(2*X, alpha/2) / T_hours",
+    "upper_bound": "0.5 * chi2(2*X + 2, 1 - alpha/2) / T_hours"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "lock_version": "V3.3.1_PARAMETER_LOCK_MANIFEST",
+  "lock_status": "LOCKED_PRE_EVALUATION",
+  "timestamp_utc": "2026-09-25T06:20:00Z",
+  "locked_parameters": {
+    "selected_uncertainty_model": "MODEL_D",
+    "k0": 2.35,
+    "beta_d": 0.06,
+    "beta_l": 0.08,
+    "gamma_partial": 0.18,
+    "gamma_heavy": 0.35,
+    "max_distance_nominal_m": 8.0,
+    "max_distance_hard_refusal_m": 10.0,
+    "max_latency_nominal_ms": 50.0,
+    "max_latency_hard_refusal_ms": 500.0,
+    "max_floor_slope_deg": 1.5,
+    "min_illumination_nominal_lux": 150.0,
+    "min_illumination_hard_refusal_lux": 50.0,
+    "identity_ambiguity_cosine_threshold": 0.88,
+    "identity_ambiguity_proximity_m": 0.80,
+    "did_control_drift_tolerance": 0.15,
+    "did_shock_tolerance": 0.20
+  },
+  "random_seeds": {
+    "calibration_seed": 42,
+    "oos_eval_seed": 1337,
+    "bootstrap_seed": 2026
+  }
+}

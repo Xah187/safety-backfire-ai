@@ -1,0 +1,55 @@
+{
+  "dataset_name": "Warehouse_026",
+  "dataset_subset": "MTMC_Tracking_2026/test/Warehouse_026",
+  "discovery_timestamp": "2026-09-28T18:46:34.546302+00:00",
+  "cameras": {
+    "Camera_0000": {
+      "width": 1920,
+      "height": 1080,
+      "fps": 30.0,
+      "frame_count": 1800,
+      "duration_sec": 60.0,
+      "size_bytes": 19802011,
+      "warnings": [],
+      "sha256": "83ed232a2f5fe3031807ed19020e1a44fe386e89b68f9bea621797f1552c9cda",
+      "filename": "Camera_0000.mp4",
+      "absolute_path": "/Users/xah187/Projects/safety-backfire-ai/data/external_facility/raw/Warehouse_026/MTMC_Tracking_2026/test/Warehouse_026/videos/Camera_0000.mp4"
+    },
+    "Camera_0001": {
+      "width": 1920,
+      "height": 1080,
+      "fps": 30.0,
+      "frame_count": 1800,
+      "duration_sec": 60.0,
+      "size_bytes": 27633596,
+      "warnings": [],
+      "sha256": "dd37e801eec30528e2af88d137eb3c9b68306b29ac56c014fe1f68293767bfca",
+      "filename": "Camera_0001.mp4",
+      "absolute_path": "/Users/xah187/Projects/safety-backfire-ai/data/external_facility/raw/Warehouse_026/MTMC_Tracking_2026/test/Warehouse_026/videos/Camera_0001.mp4"
+    },
+    "Camera_0002": {
+      "width": 1920,
+      "height": 1080,
+      "fps": 30.0,
+      "frame_count": 1800,
+      "duration_sec": 60.0,
+      "size_bytes": 38707343,
+      "warnings": [],
+      "sha256": "abe39e20ef9b2b9c64b2e66f082809951540c8c719d4fe31d5a5e0176af928ee",
+      "filename": "Camera_0002.mp4",
+      "absolute_path": "/Users/xah187/Projects/safety-backfire-ai/data/external_facility/raw/Warehouse_026/MTMC_Tracking_2026/test/Warehouse_026/videos/Camera_0002.mp4"
+    },
+    "Camera_0003": {
+      "width": 1920,
+      "height": 1080,
+      "fps": 30.0,
+      "frame_count": 1800,
+      "duration_sec": 60.0,
+      "size_bytes": 19598552,
+      "warnings": [],
+      "sha256": "9051adb98e17a1425c6d70486972f2dd17f7ada0c0f8023db64d504bc2bc0077",
+      "filename": "Camera_0003.mp4",
+      "absolute_path": "/Users/xah187/Projects/safety-backfire-ai/data/external_facility/raw/Warehouse_026/MTMC_Tracking_2026/test/Warehouse_026/videos/Camera_0003.mp4"
+    }
+  }
+}

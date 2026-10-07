@@ -1,0 +1,96 @@
+{
+  "audit_version": "V3.2.1_EVENT_MATCHING_AUDIT",
+  "timestamp_utc": "2026-09-24T18:25:00Z",
+  "event_matching_rules": {
+    "temporal_iou_threshold": 0.5,
+    "hazard_class_equality_required": true,
+    "one_to_one_assignment_enforced": true,
+    "duplicate_suppression_enforced": true,
+    "fragmentation_policy": "Temporal hysteresis window of 60 frames (2.0s) merges fragmented predictions before bipartite matching."
+  },
+  "matching_protocol": {
+    "temporal_iou_threshold": 0.5,
+    "class_matching_requirement": "EXACT_HAZARD_TYPE_MATCH",
+    "bipartite_assignment": "GREEDY_ONE_TO_ONE_TEMPORAL_ASSIGNMENT",
+    "many_to_one_prevention": true,
+    "one_to_many_prevention": true
+  },
+  "full_corpus_matching": {
+    "TP": 47,
+    "FP": 3,
+    "FN": 3,
+    "GT": 50,
+    "precision": 0.94,
+    "recall": 0.94,
+    "f1": 0.94
+  },
+  "blind_test_matching": {
+    "TP": 15,
+    "FP": 1,
+    "FN": 1,
+    "GT": 16,
+    "precision": 0.9375,
+    "recall": 0.9375,
+    "f1": 0.9375
+  },
+  "full_evaluation_corpus_23min": {
+    "observation_duration_min": 23.0,
+    "observation_duration_hours": 0.3833,
+    "ground_truth_events_count": 50,
+    "detected_events_count": 50,
+    "true_positives_tp": 47,
+    "false_positives_fp": 3,
+    "false_negatives_fn": 3,
+    "precision": 0.94,
+    "recall": 0.94,
+    "f1_score": 0.94,
+    "observed_false_event_count_rate_per_hour": 7.83,
+    "observed_missed_event_count_rate_per_hour": 7.83,
+    "poisson_rate_95_ci": [
+      1.614,
+      22.871
+    ],
+    "wilson_precision_95_ci": [
+      0.8378,
+      0.9794
+    ],
+    "wilson_recall_95_ci": [
+      0.8378,
+      0.9794
+    ]
+  },
+  "blind_test_11min": {
+    "observation_duration_min": 11.0,
+    "observation_duration_hours": 0.1833,
+    "ground_truth_events_count": 16,
+    "detected_events_count": 16,
+    "true_positives_tp": 15,
+    "false_positives_fp": 1,
+    "false_negatives_fn": 1,
+    "precision": 0.9375,
+    "recall": 0.9375,
+    "f1_score": 0.9375,
+    "observed_false_event_count_rate_per_hour": 5.45,
+    "observed_missed_event_count_rate_per_hour": 5.45,
+    "poisson_rate_95_ci": [
+      0.138,
+      30.391
+    ],
+    "wilson_precision_95_ci": [
+      0.7167,
+      0.9889
+    ],
+    "wilson_recall_95_ci": [
+      0.7167,
+      0.9889
+    ]
+  },
+  "temporal_lifecycle_metrics": {
+    "p95_time_to_detection_sec": 0.145,
+    "p95_time_to_confirmation_sec": 0.171,
+    "mean_time_to_resolution_sec": 1.018,
+    "mean_alert_duration_sec": 3.59
+  },
+  "source_artifact": "safety_backfire_v3/outputs/v3_2_1/event_metric_audit.json",
+  "status": "CANONICAL_VERIFIED"
+}

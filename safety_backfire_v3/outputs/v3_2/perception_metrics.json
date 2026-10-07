@@ -1,0 +1,112 @@
+{
+  "validation_layer": "LEVEL_A_REAL_PERCEPTION",
+  "evaluation_sample_size_N": 500,
+  "overall_metrics": {
+    "total_ground_truth": 500,
+    "total_true_positives": 474,
+    "total_false_positives": 28,
+    "total_false_negatives": 26,
+    "precision": 0.9442,
+    "recall": 0.948,
+    "f1_score": 0.9461,
+    "mean_iou": 0.822
+  },
+  "per_class_metrics": {
+    "PERSON": {
+      "ground_truth_count": 180,
+      "true_positives": 171,
+      "false_positives": 9,
+      "false_negatives": 9,
+      "precision": 0.95,
+      "recall": 0.95,
+      "f1_score": 0.95,
+      "mean_iou": 0.824,
+      "miss_rate": 0.05,
+      "occluded_recall": 0.742,
+      "far_field_recall": 0.684
+    },
+    "VEHICLE": {
+      "ground_truth_count": 160,
+      "true_positives": 156,
+      "false_positives": 6,
+      "false_negatives": 4,
+      "precision": 0.963,
+      "recall": 0.975,
+      "f1_score": 0.9689,
+      "mean_iou": 0.885,
+      "miss_rate": 0.025,
+      "occluded_recall": 0.867,
+      "far_field_recall": 0.812
+    },
+    "STORAGE": {
+      "ground_truth_count": 80,
+      "true_positives": 75,
+      "false_positives": 4,
+      "false_negatives": 5,
+      "precision": 0.9494,
+      "recall": 0.9375,
+      "f1_score": 0.9434,
+      "mean_iou": 0.792,
+      "miss_rate": 0.0625,
+      "occluded_recall": 0.71,
+      "far_field_recall": 0.75
+    },
+    "LOAD": {
+      "ground_truth_count": 50,
+      "true_positives": 44,
+      "false_positives": 7,
+      "false_negatives": 6,
+      "precision": 0.8627,
+      "recall": 0.88,
+      "f1_score": 0.8713,
+      "mean_iou": 0.768,
+      "miss_rate": 0.12,
+      "occluded_recall": 0.655,
+      "far_field_recall": 0.615
+    },
+    "MACHINE": {
+      "ground_truth_count": 30,
+      "true_positives": 28,
+      "false_positives": 2,
+      "false_negatives": 2,
+      "precision": 0.9333,
+      "recall": 0.9333,
+      "f1_score": 0.9333,
+      "mean_iou": 0.841,
+      "miss_rate": 0.0667,
+      "occluded_recall": 0.8,
+      "far_field_recall": 0.8
+    }
+  },
+  "stratified_breakdowns": {
+    "nominal_range_le_8m": {
+      "recall": 0.962,
+      "f1": 0.955
+    },
+    "far_field_gt_8m": {
+      "recall": 0.724,
+      "f1": 0.768,
+      "defect_flag": "FAIL-38_REPRODUCED"
+    },
+    "occluded_gt_50pct": {
+      "recall": 0.771,
+      "f1": 0.812
+    },
+    "low_light_le_150lux": {
+      "recall": 0.825,
+      "f1": 0.84
+    }
+  },
+  "failure_candidates_audited": {
+    "CANDIDATE-38": {
+      "description": "Far-field detector miss at D > 8.5m",
+      "status": "CONFIRMED_AS_FAIL-38",
+      "safety_impact": "Requires ODD boundary at 8.0m for automated emergency braking."
+    },
+    "CANDIDATE-39": {
+      "description": "Floor reflection ghost object",
+      "status": "MITIGATED_BY_CONFIDENCE_GATE",
+      "safety_impact": "Low-confidence floor reflections gated out by 0.60 threshold."
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "metric_name": "Tracking_IDF1",
+  "observed_idf1": 0.918,
+  "sample_unit": "Full Trajectory Sequences (N=28)",
+  "recording_cluster_count": 4,
+  "camera_cluster_count": 4,
+  "bootstrap_parameters": {
+    "method": "Non_Parametric_Trajectory_Block_Bootstrap",
+    "resampling_unit": "trajectory_sequence",
+    "replicates": 1000,
+    "seed": 1337,
+    "confidence_level": 0.95,
+    "ci_low": 0.9057,
+    "ci_high": 0.9295
+  },
+  "independence_hierarchy_level": "SECTOR_AND_CAMERA",
+  "facility_generalization_status": "MULTI_FACILITY_GENERALIZATION_UNVERIFIED",
+  "provenance_limitation": "All 28 trajectories were captured in FACILITY_CENTRAL_01. Inference does not extend to unobserved physical facilities."
+}

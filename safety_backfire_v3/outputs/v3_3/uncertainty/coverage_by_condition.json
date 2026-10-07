@@ -1,0 +1,40 @@
+{
+  "distance_strata": {
+    "NEAR_0_4M": {
+      "n": 284,
+      "coverage": 0.9261
+    },
+    "MID_4_8M": {
+      "n": 379,
+      "coverage": 0.9261
+    },
+    "FAR_GT_8M": {
+      "n": 82,
+      "coverage": 0.6707
+    }
+  },
+  "illumination_strata": {
+    "LOW_LT_250_LUX": {
+      "n": 372,
+      "coverage": 0.8468
+    },
+    "NORMAL_GE_250_LUX": {
+      "n": 373,
+      "coverage": 0.9491
+    }
+  },
+  "occlusion_strata": {
+    "NONE": {
+      "n": 477,
+      "coverage": 0.9308
+    },
+    "PARTIAL": {
+      "n": 195,
+      "coverage": 0.9026
+    },
+    "HEAVY": {
+      "n": 73,
+      "coverage": 0.6712
+    }
+  }
+}

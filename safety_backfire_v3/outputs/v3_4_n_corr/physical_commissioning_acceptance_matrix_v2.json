@@ -1,0 +1,116 @@
+{
+  "milestone": "V3.4-N-CORR-01",
+  "document_title": "Comprehensive Physical Commissioning Acceptance Matrix V2",
+  "governance_classification": "PHYSICAL_GATE_ACCEPTANCE_STANDARD_V2",
+  "epistemic_mandate": "NO GATE MAY PASS BASED ON ARCHITECTURAL ASSUMPTIONS OR SYNTHETIC SIMULATION. Every gate requires on-site physical measurement, calibrated instrumentation, physical evidence artifacts, and signed operator certification.",
+  "commissioning_gates": [
+    {
+      "gate_id": "C1_CLOCK",
+      "gate_name": "PTP Time Synchronization Hardware Commissioning",
+      "current_status": "UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING",
+      "requirement": "IEEE 1588-2019 Grandmaster clock locked with >= 8 GNSS satellites; camera P99 offset <= 5.0 ms, CAN P99 offset <= 10.0 ms, secondary sensor P99 offset <= 8.0 ms; composite multi-modal skew <= 33.33 ms (nominal 18.0 ms, reserve 15.33 ms).",
+      "measurement_method": "Multi-modal optical strobe and physical impactor captured simultaneously by cameras and vehicle accelerometer, with PTP 1PPS probe monitoring.",
+      "instrument": "Keysight DSOX1204G Oscilloscope + Vector VN1640A Interface + Co-Calibration Impactor Strobe Rig",
+      "calibration_reference": "NIST-TRACEABLE-2026-Q3",
+      "acceptance_rule": "actual_composite_skew <= 33.33 ms AND camera_offset <= 5.0 ms AND can_offset <= 10.0 ms AND secondary_offset <= 8.0 ms",
+      "failure_action": "Abort commissioning; inspect GNSS antenna; check PTP priority and TSN switch queues.",
+      "evidence_artifact": null
+    },
+    {
+      "gate_id": "C2_CAMERA",
+      "gate_name": "Optical Camera Hardware & Rigidity Commissioning",
+      "current_status": "UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING",
+      "requirement": "All deployed cameras (A, C, and B/D if present) rigidly mounted with 9.5 N*m torque; focus and aperture mechanically locked with set-screws; zero dropped frames over 30-min continuous ingest.",
+      "measurement_method": "Calibrated torque wrench physical audit of mounting bolts and lens barrels; Wireshark automated frame drop monitor on RTSP/GigE streams.",
+      "instrument": "Norbar Calibrated Torque Wrench (1.0-20.0 N*m, ISO 6789) + Wireshark Network Packet Monitor",
+      "calibration_reference": "ISO6789-TORQUE-2026",
+      "acceptance_rule": "frame_drop_count == 0 over 30 min across all deployed cameras AND all mount bolt torques == 9.5 N*m",
+      "failure_action": "Re-tighten mounts; replace damaged Ethernet cables; optimize NIC ring buffer.",
+      "evidence_artifact": null
+    },
+    {
+      "gate_id": "C3_CAN",
+      "gate_name": "Vehicle Telemetry Signal Integrity Commissioning",
+      "current_status": "UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING",
+      "requirement": "All MANDATORY_RAW_SIGNALS active, monotonic timestamps, continuous streaming (zero packet gaps > 20ms), SI units confirmed, steering_rate derivation verified via 2nd-order Butterworth filter, brake_pressure_bar marked UNAVAILABLE.",
+      "measurement_method": "Non-intrusive high-impedance CAN bus tap monitoring 50 Hz frames during low-speed shakedown roll.",
+      "instrument": "Vector CANoe with VN1640A non-intrusive high-impedance CAN bus interface",
+      "calibration_reference": "DAkkS-VECTOR-2026-04",
+      "acceptance_rule": "can_packet_gap_max_ms <= 20.0 ms AND zero corrupt frames AND all mandatory signals streaming with monotonic timestamps",
+      "failure_action": "Verify CAN baud rate (500 kbps); inspect terminating resistor (120 Ohm); re-seat OBD/J1939 tap.",
+      "evidence_artifact": null
+    },
+    {
+      "gate_id": "C4_SECONDARY_OBSERVABILITY",
+      "gate_name": "Secondary Hazard Zone Volume-Based Observability Proof",
+      "current_status": "UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING",
+      "requirement": "3D spatial grid sweep across secondary cross-aisle volume (36 points, 0m to 20m depth, 3.5m width, 0.8-1.8m height); Camera C achieves >= 65.0 px/m resolution at 20m depth; CRITICAL_OBSTRUCTION_AREA == 0.",
+      "measurement_method": "Physical volumetric target sweep with standardized photometric mannequin target (SPMT-01) across 3D measurement grid; automated OpenCV pixel resolution audit.",
+      "instrument": "Leica DISTO D2 Laser Measure + OpenCV target resolution validator + SPMT-01 Target",
+      "calibration_reference": "NIST-DISTO-2026",
+      "acceptance_rule": "depth_extent >= 20.0 m AND pixel_density_at_20m >= 65.0 px/m AND CRITICAL_OBSTRUCTION_AREA == 0.0 m^2",
+      "failure_action": "Re-aim Camera C; adjust optical focal length; clear pallet rack overhangs; declare zone UNVERIFIED if blocked.",
+      "evidence_artifact": null
+    },
+    {
+      "gate_id": "C5_CALIBRATION",
+      "gate_name": "Intrinsic & Extrinsic Geometric Calibration (All Deployed Cameras)",
+      "current_status": "UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING",
+      "requirement": "Photogrammetric calibration across all deployed cameras (A, C, and B/D if present); RMS reprojection error <= 1.50 px using 12x9 ChArUco diamond board. Undeployed cameras marked NOT_APPLICABLE.",
+      "measurement_method": "Multi-pose ChArUco diamond board physical acquisition (50+ diverse board angles per camera); OpenCV pinhole camera model bundle adjustment.",
+      "instrument": "Calib.io Certified Precision Aluminum ChArUco Calibration Target (12x9 grid)",
+      "calibration_reference": "CALIB-IO-CERT-2026-09",
+      "acceptance_rule": "rms_reprojection_error_px <= 1.50 px across all deployed cameras (Camera D marked NOT_APPLICABLE if absent)",
+      "failure_action": "Re-run calibration capture with improved target lighting; inspect lens distortion profile.",
+      "evidence_artifact": null
+    },
+    {
+      "gate_id": "C6_GEOMETRY",
+      "gate_name": "Facility Geodetic & CAD Reference Survey",
+      "current_status": "UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING",
+      "requirement": "Total Station survey defining facility brass origin monument, floor ground plane equation Ax+By+Cz+D=0 (residual RMS <= 3.0 mm), travel corridor boundaries, and exclusion zone perimeter.",
+      "measurement_method": "Licensed geodetic survey using reflectorless optical total station referencing permanent building structural columns.",
+      "instrument": "Leica TS16 Total Station (1\" angle accuracy, 1mm + 1.5ppm EDM)",
+      "calibration_reference": "SWISS-CAL-LEICA-2026",
+      "acceptance_rule": "ground_plane_rms_residual_mm <= 3.0 mm AND facility monument coordinates locked in local Cartesian CRS",
+      "failure_action": "Re-survey ground plane targets; re-establish tie points; verify floor slab settlement.",
+      "evidence_artifact": null
+    },
+    {
+      "gate_id": "C7_ILLUMINANCE",
+      "gate_name": "Physical Corridor Illuminance & High-Frequency Flicker Commissioning",
+      "current_status": "UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING",
+      "requirement": "Path 1: Physical lux meter measurement confirming mean illuminance within 350 +/- 50 lux across 5 corridor points. Path 2: Dedicated optical flicker meter/oscilloscope confirming flicker index <= 0.05 and driver frequency >= 1000 Hz.",
+      "measurement_method": "Dual-path audit: Static photometer grid sweep across corridor + high-speed photodiode oscilloscope trace under optical axis.",
+      "instrument": "Path 1: Testo 540 / Gossen Mavolux 5032B Lux Meter. Path 2: Thorlabs PDA36A2 Fast Photodetector + Keysight DSOX1204G Oscilloscope.",
+      "calibration_reference": "Path 1: ISO17025-CAL-LUX-2026; Path 2: NIST-TRACEABLE-2026-Q3",
+      "acceptance_rule": "300.0 lux <= mean_lux <= 400.0 lux AND flicker_index <= 0.05 AND modulation_frequency >= 1000.0 Hz",
+      "failure_action": "Adjust warehouse luminaire dimmers; replace faulty LED ballast drivers; install diffuser panels.",
+      "evidence_artifact": null
+    },
+    {
+      "gate_id": "C8_E_STOP",
+      "gate_name": "E-Stop Safety Circuit & Traction Cutoff Latency Acceptance",
+      "current_status": "UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING",
+      "requirement": "Dedicated wireless remote E-Stop with vendor notified body Cat 4 / SIL-3 certificate; oscilloscope trace proves traction motor power disconnect (t_traction_safe_state - t_estop_command) <= 50.0 ms.",
+      "measurement_method": "4-channel isolated digital storage oscilloscope measuring E-Stop NC switch break vs motor phase current isolation and brake solenoid drop.",
+      "instrument": "Keysight DSOX1204G 4-Channel Oscilloscope connected to E-Stop receiver and motor drive line",
+      "calibration_reference": "NIST-TRACEABLE-2026-Q3",
+      "acceptance_rule": "measured_traction_safe_latency <= 50.0 ms AND vendor Cat 4 / SIL-3 certificate on file",
+      "failure_action": "Inspect emergency contactor coil spring; replace slow auxiliary relay; reject uncertified hardware.",
+      "evidence_artifact": null
+    },
+    {
+      "gate_id": "C9_PRIVACY",
+      "gate_name": "Institutional Site & Worker Privacy Clearance",
+      "current_status": "UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING",
+      "requirement": "Physical microphone disconnection/desoldering on all cameras; formal bilateral Data Agreement executed between Research Consortium, Facility Operating Company, and Labor Safety Representatives.",
+      "measurement_method": "Physical hardware visual inspection of camera PCB audio traces + cryptographic signature verification on legal agreement.",
+      "instrument": "Visual hardware inspection + cryptographic document ledger",
+      "calibration_reference": "LEGAL_COUNSEL_VERIFICATION_2026",
+      "acceptance_rule": "microphone_physically_disconnected == TRUE across all cameras AND formal_site_agreement_signed == TRUE",
+      "failure_action": "Physical desoldering/jumpers of camera microphone traces; halt all capture until agreement signed.",
+      "evidence_artifact": null
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "phase": "Failure Taxonomy (Phase 16)",
+  "video": "test2.mp4",
+  "total_frames_analyzed": 1246,
+  "total_failure_types_observed": 1,
+  "failure_taxonomy": [
+    {
+      "failure_type": "GEOMETRY_ERROR",
+      "description": "Footpoint outside calibrated homography region",
+      "count": 969,
+      "severity": "MEDIUM",
+      "example_frames": [
+        200,
+        201,
+        202
+      ],
+      "root_cause": "Object footpoint falls outside hardcoded calibration bounds + 100px margin",
+      "recommended_action": "Re-calibrate homography with wider coverage or use multi-camera setup",
+      "instances_sample": [
+        {
+          "frame": 200,
+          "class": "person",
+          "track_id": 4,
+          "pixel": [
+            753,
+            248
+          ]
+        },
+        {
+          "frame": 201,
+          "class": "person",
+          "track_id": 4,
+          "pixel": [
+            752,
+            249
+          ]
+        },
+        {
+          "frame": 202,
+          "class": "person",
+          "track_id": 4,
+          "pixel": [
+            752,
+            249
+          ]
+        },
+        {
+          "frame": 203,
+          "class": "person",
+          "track_id": 4,
+          "pixel": [
+            754,
+            249
+          ]
+        },
+        {
+          "frame": 204,
+          "class": "person",
+          "track_id": 4,
+          "pixel": [
+            754,
+            249
+          ]
+        }
+      ]
+    }
+  ],
+  "note": "EVENT_FALSE_POSITIVE and EVENT_FALSE_NEGATIVE cannot be computed without human-annotated ground truth. These remain NOT_COMPUTABLE."
+}

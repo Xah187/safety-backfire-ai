@@ -1,0 +1,1141 @@
+{
+  "total_scenarios": 18,
+  "scenarios": [
+    {
+      "event_id": "CASE_H01_SAFE_COMPLETE_STOP",
+      "scenario_type": "SAFE_COMPLETE_STOP",
+      "description": "Forklift approaches pedestrian at 115px; executes emergency brake to a dead stop (disp 2.5px); zero secondary risk transfer.",
+      "primary_interaction": {
+        "actor_vehicle_id": "FK_136",
+        "actor_pedestrian_id": "PED_148",
+        "minimum_separation_px": 115.1,
+        "co_occurring_frames": 59,
+        "interaction_duration_s": 2.43
+      },
+      "intervention_signal": {
+        "intervention_detected": true,
+        "intervention_type": "EMERGENCY_BRAKING",
+        "evidence_status": "OBSERVED",
+        "timestamp_start_s": 8.03,
+        "timestamp_end_s": 10.43
+      },
+      "telemetry": {
+        "brake_applied": true,
+        "longitudinal_decel_mps2": 3.8,
+        "stop_confirmed": true
+      },
+      "primary_mitigation": {
+        "collision_averted": true,
+        "primary_risk_change": "ELIMINATED",
+        "evidence_status": "OBSERVED"
+      },
+      "risk_redirection": {
+        "redirection_observed": false,
+        "lateral_swerve_m": 0.0
+      },
+      "secondary_zone": {
+        "zone_id": "Wh026_Camera_0002_ADJACENT_RACK",
+        "zone_definition_type": "ADJACENT_RACK_AISLE",
+        "entry_observable": true,
+        "interior_depth_observable": false
+      },
+      "secondary_risk_pre": {
+        "risk_score": 0.1,
+        "occupancy_count": 2,
+        "evidence_status": "OBSERVED"
+      },
+      "secondary_risk_post": {
+        "risk_score": 0.1,
+        "occupancy_count": 2,
+        "evidence_status": "OBSERVED"
+      },
+      "delta_secondary_risk": {
+        "delta_value": 0.0,
+        "risk_increased": false,
+        "evidence_status": "OBSERVED"
+      },
+      "observability": {
+        "primary_zone_status": "FULL",
+        "secondary_zone_status": "PARTIAL",
+        "secondary_entry_observable": true,
+        "secondary_depth_observable": false,
+        "post_window_status": "ADEQUATE"
+      },
+      "temporal_order": {
+        "chronological_stages_valid": true
+      },
+      "causal_link": {
+        "causal_chain_status": "UNSUPPORTED",
+        "observable_causal_path": "FALSE",
+        "latency_to_secondary_onset_s": null
+      },
+      "confounders": {
+        "confounders_present": "NO",
+        "causal_isolation_status": "ISOLATED"
+      },
+      "expected_class": "PRIMARY_NEAR_MISS",
+      "oracle_reason": "Vehicle stopped completely without lateral redirection; delta secondary risk is exactly zero."
+    },
+    {
+      "event_id": "CASE_H02_TRUE_SYNTHETIC_BACKFIRE",
+      "scenario_type": "PROTOTYPICAL_BACKFIRE_CASCADE",
+      "description": "Forklift swerves away from worker in lane into occupied secondary cross-aisle; secondary hazard increases sharply.",
+      "primary_interaction": {
+        "actor_vehicle_id": "FK_201",
+        "actor_pedestrian_id": "PED_202",
+        "minimum_separation_px": 180.0,
+        "co_occurring_frames": 120,
+        "interaction_duration_s": 4.0
+      },
+      "intervention_signal": {
+        "intervention_detected": true,
+        "intervention_type": "SWERVE_AVOIDANCE",
+        "evidence_status": "OBSERVED",
+        "timestamp_start_s": 5.0,
+        "timestamp_end_s": 7.0
+      },
+      "telemetry": {
+        "brake_applied": true,
+        "steering_angle_deg": 28.5,
+        "yaw_rate_deg_s": 14.2
+      },
+      "primary_mitigation": {
+        "collision_averted": true,
+        "primary_risk_change": "ELIMINATED",
+        "evidence_status": "OBSERVED"
+      },
+      "risk_redirection": {
+        "redirection_observed": true,
+        "lateral_swerve_m": 2.4
+      },
+      "secondary_zone": {
+        "zone_id": "Wh027_CROSS_AISLE_B",
+        "zone_definition_type": "CALIBRATED_POLYGON",
+        "entry_observable": true,
+        "interior_depth_observable": true
+      },
+      "secondary_risk_pre": {
+        "risk_score": 0.05,
+        "occupancy_count": 1,
+        "evidence_status": "OBSERVED"
+      },
+      "secondary_risk_post": {
+        "risk_score": 0.75,
+        "occupancy_count": 1,
+        "evidence_status": "OBSERVED"
+      },
+      "delta_secondary_risk": {
+        "delta_value": 0.7,
+        "risk_increased": true,
+        "evidence_status": "OBSERVED"
+      },
+      "observability": {
+        "primary_zone_status": "FULL",
+        "secondary_zone_status": "FULL",
+        "secondary_entry_observable": true,
+        "secondary_depth_observable": true,
+        "post_window_status": "ADEQUATE"
+      },
+      "temporal_order": {
+        "chronological_stages_valid": true
+      },
+      "causal_link": {
+        "causal_chain_status": "DIRECTLY_OBSERVED",
+        "observable_causal_path": "TRUE",
+        "latency_to_secondary_onset_s": 1.1
+      },
+      "confounders": {
+        "confounders_present": "NO",
+        "causal_isolation_status": "ISOLATED"
+      },
+      "expected_class": "BACKFIRE_CANDIDATE",
+      "oracle_reason": "Verified unbroken physical chain: avoidance swerve redirected vehicle into fully observable secondary zone where hazard increased."
+    },
+    {
+      "event_id": "CASE_H03_OCCLUDED_SECONDARY",
+      "scenario_type": "OBSERVABILITY_BOTTLENECK",
+      "description": "Evasive maneuver toward rack aisle; aisle depth completely occluded by stacked cargo.",
+      "primary_interaction": {
+        "minimum_separation_px": 150.0,
+        "co_occurring_frames": 90
+      },
+      "intervention_signal": {
+        "intervention_detected": true,
+        "intervention_type": "SWERVE_AVOIDANCE",
+        "evidence_status": "OBSERVED"
+      },
+      "primary_mitigation": {
+        "collision_averted": true,
+        "evidence_status": "OBSERVED"
+      },
+      "risk_redirection": {
+        "redirection_observed": true
+      },
+      "secondary_zone": {
+        "zone_id": "RACK_AISLE_C",
+        "zone_definition_type": "ADJACENT_RACK_AISLE",
+        "entry_observable": true,
+        "interior_depth_observable": false
+      },
+      "secondary_risk_pre": {
+        "risk_score": 0.1,
+        "evidence_status": "PARTIAL"
+      },
+      "secondary_risk_post": {
+        "risk_score": 0.6,
+        "evidence_status": "UNAVAILABLE"
+      },
+      "delta_secondary_risk": {
+        "delta_value": 0.5,
+        "risk_increased": true,
+        "evidence_status": "UNAVAILABLE"
+      },
+      "observability": {
+        "primary_zone_status": "FULL",
+        "secondary_zone_status": "PARTIAL",
+        "secondary_entry_observable": true,
+        "secondary_depth_observable": false,
+        "post_window_status": "ADEQUATE"
+      },
+      "temporal_order": {
+        "chronological_stages_valid": true
+      },
+      "causal_link": {
+        "causal_chain_status": "PARTIALLY_OBSERVED",
+        "observable_causal_path": "TRUE",
+        "latency_to_secondary_onset_s": 1.0
+      },
+      "confounders": {
+        "confounders_present": "NO",
+        "causal_isolation_status": "ISOLATED"
+      },
+      "expected_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "oracle_reason": "Secondary zone interior depth is unobservable; cannot verify whether hazard actually materialized."
+    },
+    {
+      "event_id": "CASE_H04_NEW_FORKLIFT_CONFOUNDER",
+      "scenario_type": "CONFOUNDER_TURNOVER",
+      "description": "Primary vehicle leaves frame; an entirely new forklift arrives in POST and causes secondary hazard.",
+      "primary_interaction": {
+        "minimum_separation_px": 230.0,
+        "co_occurring_frames": 140
+      },
+      "intervention_signal": {
+        "intervention_detected": true,
+        "intervention_type": "PEDESTRIAN_YIELD",
+        "evidence_status": "OBSERVED"
+      },
+      "primary_mitigation": {
+        "collision_averted": true,
+        "evidence_status": "OBSERVED"
+      },
+      "risk_redirection": {
+        "redirection_observed": true
+      },
+      "secondary_zone": {
+        "zone_id": "SEC_ZONE_D",
+        "zone_definition_type": "CALIBRATED_POLYGON",
+        "entry_observable": true,
+        "interior_depth_observable": true
+      },
+      "secondary_risk_pre": {
+        "risk_score": 0.05,
+        "evidence_status": "OBSERVED"
+      },
+      "secondary_risk_post": {
+        "risk_score": 0.7,
+        "evidence_status": "OBSERVED"
+      },
+      "delta_secondary_risk": {
+        "delta_value": 0.65,
+        "risk_increased": true,
+        "evidence_status": "OBSERVED"
+      },
+      "observability": {
+        "primary_zone_status": "FULL",
+        "secondary_zone_status": "FULL",
+        "secondary_entry_observable": true,
+        "secondary_depth_observable": true,
+        "post_window_status": "ADEQUATE"
+      },
+      "temporal_order": {
+        "chronological_stages_valid": true
+      },
+      "causal_link": {
+        "causal_chain_status": "UNSUPPORTED",
+        "observable_causal_path": "FALSE",
+        "latency_to_secondary_onset_s": 1.5
+      },
+      "confounders": {
+        "confounders_present": "YES",
+        "confounder_types": [
+          "NEW_FORKLIFT",
+          "TRACK_HANDOFF"
+        ],
+        "causal_isolation_status": "FAILED"
+      },
+      "expected_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "oracle_reason": "Arrival of independent second forklift competitively explains secondary hazard; causal isolation failed."
+    },
+    {
+      "event_id": "CASE_H05_INDEPENDENT_WORKER_CLUSTER",
+      "scenario_type": "CONFOUNDER_PEDESTRIAN_CROWD",
+      "description": "Shift change crowd enters adjacent aisle independently of vehicle avoidance.",
+      "primary_interaction": {
+        "minimum_separation_px": 240.0,
+        "co_occurring_frames": 150
+      },
+      "intervention_signal": {
+        "intervention_detected": true,
+        "intervention_type": "EMERGENCY_BRAKING",
+        "evidence_status": "OBSERVED"
+      },
+      "primary_mitigation": {
+        "collision_averted": true,
+        "evidence_status": "OBSERVED"
+      },
+      "risk_redirection": {
+        "redirection_observed": false
+      },
+      "secondary_zone": {
+        "zone_id": "SEC_ZONE_E",
+        "zone_definition_type": "CALIBRATED_POLYGON",
+        "entry_observable": true,
+        "interior_depth_observable": true
+      },
+      "secondary_risk_pre": {
+        "risk_score": 0.05,
+        "evidence_status": "OBSERVED"
+      },
+      "secondary_risk_post": {
+        "risk_score": 0.6,
+        "evidence_status": "OBSERVED"
+      },
+      "delta_secondary_risk": {
+        "delta_value": 0.55,
+        "risk_increased": true,
+        "evidence_status": "OBSERVED"
+      },
+      "observability": {
+        "primary_zone_status": "FULL",
+        "secondary_zone_status": "FULL",
+        "secondary_entry_observable": true,
+        "secondary_depth_observable": true,
+        "post_window_status": "ADEQUATE"
+      },
+      "temporal_order": {
+        "chronological_stages_valid": true
+      },
+      "causal_link": {
+        "causal_chain_status": "UNSUPPORTED",
+        "observable_causal_path": "FALSE",
+        "latency_to_secondary_onset_s": 1.2
+      },
+      "confounders": {
+        "confounders_present": "YES",
+        "confounder_types": [
+          "INDEPENDENT_WORKER_CLUSTER"
+        ],
+        "causal_isolation_status": "FAILED"
+      },
+      "expected_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "oracle_reason": "Independent pedestrian cluster explains secondary density; lack of physical redirection link."
+    },
+    {
+      "event_id": "CASE_H06_POSITIVE_DELTA_LATENCY_VIOLATION",
+      "scenario_type": "TEMPORAL_LATENCY_VIOLATION",
+      "description": "Secondary hazard manifests 5.5 seconds after intervention (exceeds tau_max = 2.0s).",
+      "primary_interaction": {
+        "minimum_separation_px": 170.0,
+        "co_occurring_frames": 110
+      },
+      "intervention_signal": {
+        "intervention_detected": true,
+        "intervention_type": "SWERVE_AVOIDANCE",
+        "evidence_status": "OBSERVED"
+      },
+      "primary_mitigation": {
+        "collision_averted": true,
+        "evidence_status": "OBSERVED"
+      },
+      "risk_redirection": {
+        "redirection_observed": true
+      },
+      "secondary_zone": {
+        "zone_id": "SEC_ZONE_F",
+        "zone_definition_type": "CALIBRATED_POLYGON",
+        "entry_observable": true,
+        "interior_depth_observable": true
+      },
+      "secondary_risk_pre": {
+        "risk_score": 0.05,
+        "evidence_status": "OBSERVED"
+      },
+      "secondary_risk_post": {
+        "risk_score": 0.5,
+        "evidence_status": "OBSERVED"
+      },
+      "delta_secondary_risk": {
+        "delta_value": 0.45,
+        "risk_increased": true,
+        "evidence_status": "OBSERVED"
+      },
+      "observability": {
+        "primary_zone_status": "FULL",
+        "secondary_zone_status": "FULL",
+        "secondary_entry_observable": true,
+        "secondary_depth_observable": true,
+        "post_window_status": "ADEQUATE"
+      },
+      "temporal_order": {
+        "chronological_stages_valid": true
+      },
+      "causal_link": {
+        "causal_chain_status": "PARTIALLY_OBSERVED",
+        "observable_causal_path": "TRUE",
+        "latency_to_secondary_onset_s": 5.5
+      },
+      "confounders": {
+        "confounders_present": "NO",
+        "causal_isolation_status": "ISOLATED"
+      },
+      "expected_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "oracle_reason": "Propagation latency (5.5s) exceeds maximum causal threshold (2.0s); anti-retroactive attribution rule triggers."
+    },
+    {
+      "event_id": "CASE_H07_TEMPORAL_LINK_DISCONNECTED_PATH",
+      "scenario_type": "DISCONNECTED_PHYSICAL_TRAJECTORY",
+      "description": "Secondary risk starts quickly (<2s), but occurs across physical concrete barrier with no connected trajectory.",
+      "primary_interaction": {
+        "minimum_separation_px": 160.0,
+        "co_occurring_frames": 100
+      },
+      "intervention_signal": {
+        "intervention_detected": true,
+        "intervention_type": "EMERGENCY_BRAKING",
+        "evidence_status": "OBSERVED"
+      },
+      "primary_mitigation": {
+        "collision_averted": true,
+        "evidence_status": "OBSERVED"
+      },
+      "risk_redirection": {
+        "redirection_observed": false
+      },
+      "secondary_zone": {
+        "zone_id": "SEC_ZONE_G",
+        "zone_definition_type": "CALIBRATED_POLYGON",
+        "entry_observable": true,
+        "interior_depth_observable": true
+      },
+      "secondary_risk_pre": {
+        "risk_score": 0.1,
+        "evidence_status": "OBSERVED"
+      },
+      "secondary_risk_post": {
+        "risk_score": 0.6,
+        "evidence_status": "OBSERVED"
+      },
+      "delta_secondary_risk": {
+        "delta_value": 0.5,
+        "risk_increased": true,
+        "evidence_status": "OBSERVED"
+      },
+      "observability": {
+        "primary_zone_status": "FULL",
+        "secondary_zone_status": "FULL",
+        "secondary_entry_observable": true,
+        "secondary_depth_observable": true,
+        "post_window_status": "ADEQUATE"
+      },
+      "temporal_order": {
+        "chronological_stages_valid": true
+      },
+      "causal_link": {
+        "causal_chain_status": "UNSUPPORTED",
+        "observable_causal_path": "FALSE",
+        "latency_to_secondary_onset_s": 0.8
+      },
+      "confounders": {
+        "confounders_present": "NO",
+        "causal_isolation_status": "ISOLATED"
+      },
+      "expected_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "oracle_reason": "Lack of continuous physical path connecting vehicle intervention to secondary exposure."
+    },
+    {
+      "event_id": "CASE_H08_SECONDARY_DELTA_ZERO",
+      "scenario_type": "ZERO_DELTA_NEAR_MISS",
+      "description": "Intervention mitigates primary hazard; secondary risk remains identical before and after.",
+      "primary_interaction": {
+        "minimum_separation_px": 190.0,
+        "co_occurring_frames": 105
+      },
+      "intervention_signal": {
+        "intervention_detected": true,
+        "intervention_type": "COMBINED_MANEUVER",
+        "evidence_status": "OBSERVED"
+      },
+      "primary_mitigation": {
+        "collision_averted": true,
+        "evidence_status": "OBSERVED"
+      },
+      "risk_redirection": {
+        "redirection_observed": false
+      },
+      "secondary_zone": {
+        "zone_id": "SEC_ZONE_H",
+        "zone_definition_type": "CALIBRATED_POLYGON",
+        "entry_observable": true,
+        "interior_depth_observable": true
+      },
+      "secondary_risk_pre": {
+        "risk_score": 0.2,
+        "evidence_status": "OBSERVED"
+      },
+      "secondary_risk_post": {
+        "risk_score": 0.2,
+        "evidence_status": "OBSERVED"
+      },
+      "delta_secondary_risk": {
+        "delta_value": 0.0,
+        "risk_increased": false,
+        "evidence_status": "OBSERVED"
+      },
+      "observability": {
+        "primary_zone_status": "FULL",
+        "secondary_zone_status": "FULL",
+        "secondary_entry_observable": true,
+        "secondary_depth_observable": true,
+        "post_window_status": "ADEQUATE"
+      },
+      "temporal_order": {
+        "chronological_stages_valid": true
+      },
+      "causal_link": {
+        "causal_chain_status": "UNSUPPORTED",
+        "observable_causal_path": "FALSE",
+        "latency_to_secondary_onset_s": null
+      },
+      "confounders": {
+        "confounders_present": "NO",
+        "causal_isolation_status": "ISOLATED"
+      },
+      "expected_class": "PRIMARY_NEAR_MISS",
+      "oracle_reason": "Delta secondary risk is zero; intervention resolved primary conflict without hazard propagation."
+    },
+    {
+      "event_id": "CASE_H09_SECONDARY_DELTA_NEGATIVE",
+      "scenario_type": "NEGATIVE_DELTA_NEAR_MISS",
+      "description": "Secondary zone clears out during post-window, reducing background risk.",
+      "primary_interaction": {
+        "minimum_separation_px": 210.0,
+        "co_occurring_frames": 95
+      },
+      "intervention_signal": {
+        "intervention_detected": true,
+        "intervention_type": "EMERGENCY_BRAKING",
+        "evidence_status": "OBSERVED"
+      },
+      "primary_mitigation": {
+        "collision_averted": true,
+        "evidence_status": "OBSERVED"
+      },
+      "risk_redirection": {
+        "redirection_observed": false
+      },
+      "secondary_zone": {
+        "zone_id": "SEC_ZONE_I",
+        "zone_definition_type": "CALIBRATED_POLYGON",
+        "entry_observable": true,
+        "interior_depth_observable": true
+      },
+      "secondary_risk_pre": {
+        "risk_score": 0.5,
+        "evidence_status": "OBSERVED"
+      },
+      "secondary_risk_post": {
+        "risk_score": 0.1,
+        "evidence_status": "OBSERVED"
+      },
+      "delta_secondary_risk": {
+        "delta_value": -0.4,
+        "risk_increased": false,
+        "evidence_status": "OBSERVED"
+      },
+      "observability": {
+        "primary_zone_status": "FULL",
+        "secondary_zone_status": "FULL",
+        "secondary_entry_observable": true,
+        "secondary_depth_observable": true,
+        "post_window_status": "ADEQUATE"
+      },
+      "temporal_order": {
+        "chronological_stages_valid": true
+      },
+      "causal_link": {
+        "causal_chain_status": "UNSUPPORTED",
+        "observable_causal_path": "FALSE",
+        "latency_to_secondary_onset_s": null
+      },
+      "confounders": {
+        "confounders_present": "NO",
+        "causal_isolation_status": "ISOLATED"
+      },
+      "expected_class": "PRIMARY_NEAR_MISS",
+      "oracle_reason": "Secondary risk decreased (Delta_R_sec = -0.40 < 0); gate 3 fails, routing to PRIMARY_NEAR_MISS."
+    },
+    {
+      "event_id": "CASE_H10_INTERVENTION_NOT_CONFIRMED",
+      "scenario_type": "UNCONFIRMED_INTERVENTION",
+      "description": "Close approach in primary corridor, but vehicle maintained constant velocity with no braking or steering action.",
+      "primary_interaction": {
+        "minimum_separation_px": 140.0,
+        "co_occurring_frames": 80
+      },
+      "intervention_signal": {
+        "intervention_detected": false,
+        "intervention_type": "NONE",
+        "evidence_status": "NOT_OBSERVED"
+      },
+      "primary_mitigation": {
+        "collision_averted": true,
+        "evidence_status": "OBSERVED"
+      },
+      "risk_redirection": {
+        "redirection_observed": false
+      },
+      "secondary_zone": {
+        "zone_id": "SEC_ZONE_J",
+        "zone_definition_type": "CALIBRATED_POLYGON",
+        "entry_observable": true,
+        "interior_depth_observable": true
+      },
+      "secondary_risk_pre": {
+        "risk_score": 0.1,
+        "evidence_status": "OBSERVED"
+      },
+      "secondary_risk_post": {
+        "risk_score": 0.1,
+        "evidence_status": "OBSERVED"
+      },
+      "delta_secondary_risk": {
+        "delta_value": 0.0,
+        "risk_increased": false,
+        "evidence_status": "OBSERVED"
+      },
+      "observability": {
+        "primary_zone_status": "FULL",
+        "secondary_zone_status": "FULL",
+        "secondary_entry_observable": true,
+        "secondary_depth_observable": true,
+        "post_window_status": "ADEQUATE"
+      },
+      "temporal_order": {
+        "chronological_stages_valid": true
+      },
+      "causal_link": {
+        "causal_chain_status": "UNSUPPORTED",
+        "observable_causal_path": "FALSE",
+        "latency_to_secondary_onset_s": null
+      },
+      "confounders": {
+        "confounders_present": "NO",
+        "causal_isolation_status": "ISOLATED"
+      },
+      "expected_class": "PRIMARY_NEAR_MISS",
+      "oracle_reason": "No safety intervention was confirmed; event remains a primary near miss."
+    },
+    {
+      "event_id": "CASE_H11_SECONDARY_ZONE_UNKNOWN",
+      "scenario_type": "UNDEFINED_SECONDARY_GEOMETRY",
+      "description": "Secondary zone geometry is undefined/UNKNOWN in environment calibration.",
+      "primary_interaction": {
+        "minimum_separation_px": 200.0,
+        "co_occurring_frames": 100
+      },
+      "intervention_signal": {
+        "intervention_detected": true,
+        "intervention_type": "PEDESTRIAN_YIELD",
+        "evidence_status": "OBSERVED"
+      },
+      "primary_mitigation": {
+        "collision_averted": true,
+        "evidence_status": "OBSERVED"
+      },
+      "risk_redirection": {
+        "redirection_observed": true
+      },
+      "secondary_zone": {
+        "zone_id": "UNKNOWN",
+        "zone_definition_type": "UNKNOWN",
+        "entry_observable": false,
+        "interior_depth_observable": false
+      },
+      "secondary_risk_pre": {
+        "risk_score": 0.0,
+        "evidence_status": "UNAVAILABLE"
+      },
+      "secondary_risk_post": {
+        "risk_score": 0.0,
+        "evidence_status": "UNAVAILABLE"
+      },
+      "delta_secondary_risk": {
+        "delta_value": 0.0,
+        "risk_increased": false,
+        "evidence_status": "UNAVAILABLE"
+      },
+      "observability": {
+        "primary_zone_status": "FULL",
+        "secondary_zone_status": "NONE",
+        "secondary_entry_observable": false,
+        "secondary_depth_observable": false,
+        "post_window_status": "ADEQUATE"
+      },
+      "temporal_order": {
+        "chronological_stages_valid": true
+      },
+      "causal_link": {
+        "causal_chain_status": "UNSUPPORTED",
+        "observable_causal_path": "FALSE",
+        "latency_to_secondary_onset_s": null
+      },
+      "confounders": {
+        "confounders_present": "NO",
+        "causal_isolation_status": "ISOLATED"
+      },
+      "expected_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "oracle_reason": "Secondary zone is undefined (UNKNOWN); observability gate fails, prohibiting Backfire candidacy."
+    },
+    {
+      "event_id": "CASE_H12_PARTIAL_OBSERVABILITY_SUSPECTED_HAZARD",
+      "scenario_type": "PARTIAL_DEPTH_OBSERVABILITY",
+      "description": "Secondary entry visible; secondary depth occluded; suspected agent movement behind pallets.",
+      "primary_interaction": {
+        "minimum_separation_px": 175.0,
+        "co_occurring_frames": 115
+      },
+      "intervention_signal": {
+        "intervention_detected": true,
+        "intervention_type": "SWERVE_AVOIDANCE",
+        "evidence_status": "OBSERVED"
+      },
+      "primary_mitigation": {
+        "collision_averted": true,
+        "evidence_status": "OBSERVED"
+      },
+      "risk_redirection": {
+        "redirection_observed": true
+      },
+      "secondary_zone": {
+        "zone_id": "RACK_LANE_K",
+        "zone_definition_type": "ADJACENT_RACK_AISLE",
+        "entry_observable": true,
+        "interior_depth_observable": false
+      },
+      "secondary_risk_pre": {
+        "risk_score": 0.05,
+        "evidence_status": "OBSERVED"
+      },
+      "secondary_risk_post": {
+        "risk_score": 0.55,
+        "evidence_status": "PARTIAL"
+      },
+      "delta_secondary_risk": {
+        "delta_value": 0.5,
+        "risk_increased": true,
+        "evidence_status": "PARTIAL"
+      },
+      "observability": {
+        "primary_zone_status": "FULL",
+        "secondary_zone_status": "PARTIAL",
+        "secondary_entry_observable": true,
+        "secondary_depth_observable": false,
+        "post_window_status": "ADEQUATE"
+      },
+      "temporal_order": {
+        "chronological_stages_valid": true
+      },
+      "causal_link": {
+        "causal_chain_status": "PARTIALLY_OBSERVED",
+        "observable_causal_path": "TRUE",
+        "latency_to_secondary_onset_s": 1.1
+      },
+      "confounders": {
+        "confounders_present": "NO",
+        "causal_isolation_status": "ISOLATED"
+      },
+      "expected_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "oracle_reason": "Secondary depth occluded; gate 2 fails (rule: never convert PARTIAL to NO_SECONDARY_RISK, never award candidate)."
+    },
+    {
+      "event_id": "CASE_H13_EXACT_DELTA_ZERO_EDGE",
+      "scenario_type": "EXACT_ZERO_DELTA_EDGE",
+      "description": "Secondary risk before = 0.3500, after = 0.3500; delta = 0.0000 exactly.",
+      "primary_interaction": {
+        "minimum_separation_px": 165.0,
+        "co_occurring_frames": 100
+      },
+      "intervention_signal": {
+        "intervention_detected": true,
+        "intervention_type": "EMERGENCY_BRAKING",
+        "evidence_status": "OBSERVED"
+      },
+      "primary_mitigation": {
+        "collision_averted": true,
+        "evidence_status": "OBSERVED"
+      },
+      "risk_redirection": {
+        "redirection_observed": false
+      },
+      "secondary_zone": {
+        "zone_id": "SEC_ZONE_L",
+        "zone_definition_type": "CALIBRATED_POLYGON",
+        "entry_observable": true,
+        "interior_depth_observable": true
+      },
+      "secondary_risk_pre": {
+        "risk_score": 0.35,
+        "evidence_status": "OBSERVED"
+      },
+      "secondary_risk_post": {
+        "risk_score": 0.35,
+        "evidence_status": "OBSERVED"
+      },
+      "delta_secondary_risk": {
+        "delta_value": 0.0,
+        "risk_increased": false,
+        "evidence_status": "OBSERVED"
+      },
+      "observability": {
+        "primary_zone_status": "FULL",
+        "secondary_zone_status": "FULL",
+        "secondary_entry_observable": true,
+        "secondary_depth_observable": true,
+        "post_window_status": "ADEQUATE"
+      },
+      "temporal_order": {
+        "chronological_stages_valid": true
+      },
+      "causal_link": {
+        "causal_chain_status": "UNSUPPORTED",
+        "observable_causal_path": "FALSE",
+        "latency_to_secondary_onset_s": null
+      },
+      "confounders": {
+        "confounders_present": "NO",
+        "causal_isolation_status": "ISOLATED"
+      },
+      "expected_class": "PRIMARY_NEAR_MISS",
+      "oracle_reason": "Delta_R_sec == 0.0000 exactly fails Gate 3, routing decisively to PRIMARY_NEAR_MISS."
+    },
+    {
+      "event_id": "CASE_H14_NEGLIGIBLE_SENSOR_NOISE_DELTA",
+      "scenario_type": "NOISE_DELTA_EDGE",
+      "description": "Delta secondary risk = +0.005 (within bounding-box tracking jitter noise floor).",
+      "primary_interaction": {
+        "minimum_separation_px": 170.0,
+        "co_occurring_frames": 90
+      },
+      "intervention_signal": {
+        "intervention_detected": true,
+        "intervention_type": "EMERGENCY_BRAKING",
+        "evidence_status": "OBSERVED"
+      },
+      "primary_mitigation": {
+        "collision_averted": true,
+        "evidence_status": "OBSERVED"
+      },
+      "risk_redirection": {
+        "redirection_observed": false
+      },
+      "secondary_zone": {
+        "zone_id": "SEC_ZONE_M",
+        "zone_definition_type": "CALIBRATED_POLYGON",
+        "entry_observable": true,
+        "interior_depth_observable": true
+      },
+      "secondary_risk_pre": {
+        "risk_score": 0.1,
+        "evidence_status": "OBSERVED"
+      },
+      "secondary_risk_post": {
+        "risk_score": 0.105,
+        "evidence_status": "OBSERVED"
+      },
+      "delta_secondary_risk": {
+        "delta_value": 0.005,
+        "risk_increased": true,
+        "evidence_status": "OBSERVED"
+      },
+      "observability": {
+        "primary_zone_status": "FULL",
+        "secondary_zone_status": "FULL",
+        "secondary_entry_observable": true,
+        "secondary_depth_observable": true,
+        "post_window_status": "ADEQUATE"
+      },
+      "temporal_order": {
+        "chronological_stages_valid": true
+      },
+      "causal_link": {
+        "causal_chain_status": "UNSUPPORTED",
+        "observable_causal_path": "FALSE",
+        "latency_to_secondary_onset_s": 0.5
+      },
+      "confounders": {
+        "confounders_present": "NO",
+        "causal_isolation_status": "ISOLATED"
+      },
+      "expected_class": "PRIMARY_NEAR_MISS",
+      "oracle_reason": "Delta (+0.005) is below noise threshold (0.010); Gate 3 treats as no significant increase."
+    },
+    {
+      "event_id": "CASE_H15_CONFOUNDER_STATUS_UNKNOWN",
+      "scenario_type": "UNKNOWN_CONFOUNDER_STATE",
+      "description": "Camera feed glitched during POST; presence of independent vehicles/workers is unknown.",
+      "primary_interaction": {
+        "minimum_separation_px": 180.0,
+        "co_occurring_frames": 110
+      },
+      "intervention_signal": {
+        "intervention_detected": true,
+        "intervention_type": "SWERVE_AVOIDANCE",
+        "evidence_status": "OBSERVED"
+      },
+      "primary_mitigation": {
+        "collision_averted": true,
+        "evidence_status": "OBSERVED"
+      },
+      "risk_redirection": {
+        "redirection_observed": true
+      },
+      "secondary_zone": {
+        "zone_id": "SEC_ZONE_N",
+        "zone_definition_type": "CALIBRATED_POLYGON",
+        "entry_observable": true,
+        "interior_depth_observable": true
+      },
+      "secondary_risk_pre": {
+        "risk_score": 0.05,
+        "evidence_status": "OBSERVED"
+      },
+      "secondary_risk_post": {
+        "risk_score": 0.65,
+        "evidence_status": "OBSERVED"
+      },
+      "delta_secondary_risk": {
+        "delta_value": 0.6,
+        "risk_increased": true,
+        "evidence_status": "OBSERVED"
+      },
+      "observability": {
+        "primary_zone_status": "FULL",
+        "secondary_zone_status": "FULL",
+        "secondary_entry_observable": true,
+        "secondary_depth_observable": true,
+        "post_window_status": "ADEQUATE"
+      },
+      "temporal_order": {
+        "chronological_stages_valid": true
+      },
+      "causal_link": {
+        "causal_chain_status": "DIRECTLY_OBSERVED",
+        "observable_causal_path": "TRUE",
+        "latency_to_secondary_onset_s": 1.1
+      },
+      "confounders": {
+        "confounders_present": "UNKNOWN",
+        "causal_isolation_status": "UNKNOWN"
+      },
+      "expected_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "oracle_reason": "Confounder state is UNKNOWN; Gate 4 cannot verify causal isolation."
+    },
+    {
+      "event_id": "CASE_H16_TEMPORAL_ORDERING_VIOLATED",
+      "scenario_type": "STAGE_SEQUENCE_INVERSION",
+      "description": "Secondary risk increase logged at t=3.0s, prior to intervention at t=5.0s.",
+      "primary_interaction": {
+        "minimum_separation_px": 170.0,
+        "co_occurring_frames": 100
+      },
+      "intervention_signal": {
+        "intervention_detected": true,
+        "intervention_type": "SWERVE_AVOIDANCE",
+        "evidence_status": "OBSERVED"
+      },
+      "primary_mitigation": {
+        "collision_averted": true,
+        "evidence_status": "OBSERVED"
+      },
+      "risk_redirection": {
+        "redirection_observed": true
+      },
+      "secondary_zone": {
+        "zone_id": "SEC_ZONE_O",
+        "zone_definition_type": "CALIBRATED_POLYGON",
+        "entry_observable": true,
+        "interior_depth_observable": true
+      },
+      "secondary_risk_pre": {
+        "risk_score": 0.05,
+        "evidence_status": "OBSERVED"
+      },
+      "secondary_risk_post": {
+        "risk_score": 0.7,
+        "evidence_status": "OBSERVED"
+      },
+      "delta_secondary_risk": {
+        "delta_value": 0.65,
+        "risk_increased": true,
+        "evidence_status": "OBSERVED"
+      },
+      "observability": {
+        "primary_zone_status": "FULL",
+        "secondary_zone_status": "FULL",
+        "secondary_entry_observable": true,
+        "secondary_depth_observable": true,
+        "post_window_status": "ADEQUATE"
+      },
+      "temporal_order": {
+        "chronological_stages_valid": false
+      },
+      "causal_link": {
+        "causal_chain_status": "UNSUPPORTED",
+        "observable_causal_path": "TRUE",
+        "latency_to_secondary_onset_s": -2.0
+      },
+      "confounders": {
+        "confounders_present": "NO",
+        "causal_isolation_status": "ISOLATED"
+      },
+      "expected_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "oracle_reason": "Chronological stage ordering violated (secondary hazard preceded intervention)."
+    },
+    {
+      "event_id": "CASE_H17_POST_WINDOW_INADEQUATE",
+      "scenario_type": "TRUNCATED_POST_WINDOW",
+      "description": "Post window ends 1.8 seconds after intervention due to video stream boundary.",
+      "primary_interaction": {
+        "minimum_separation_px": 175.0,
+        "co_occurring_frames": 90
+      },
+      "intervention_signal": {
+        "intervention_detected": true,
+        "intervention_type": "SWERVE_AVOIDANCE",
+        "evidence_status": "OBSERVED"
+      },
+      "primary_mitigation": {
+        "collision_averted": true,
+        "evidence_status": "OBSERVED"
+      },
+      "risk_redirection": {
+        "redirection_observed": true
+      },
+      "secondary_zone": {
+        "zone_id": "SEC_ZONE_P",
+        "zone_definition_type": "CALIBRATED_POLYGON",
+        "entry_observable": true,
+        "interior_depth_observable": true
+      },
+      "secondary_risk_pre": {
+        "risk_score": 0.05,
+        "evidence_status": "OBSERVED"
+      },
+      "secondary_risk_post": {
+        "risk_score": 0.6,
+        "evidence_status": "PARTIAL"
+      },
+      "delta_secondary_risk": {
+        "delta_value": 0.55,
+        "risk_increased": true,
+        "evidence_status": "PARTIAL"
+      },
+      "observability": {
+        "primary_zone_status": "FULL",
+        "secondary_zone_status": "FULL",
+        "secondary_entry_observable": true,
+        "secondary_depth_observable": true,
+        "post_window_status": "INADEQUATE"
+      },
+      "temporal_order": {
+        "chronological_stages_valid": true
+      },
+      "causal_link": {
+        "causal_chain_status": "PARTIALLY_OBSERVED",
+        "observable_causal_path": "TRUE",
+        "latency_to_secondary_onset_s": 1.0
+      },
+      "confounders": {
+        "confounders_present": "NO",
+        "causal_isolation_status": "ISOLATED"
+      },
+      "expected_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "oracle_reason": "Post window duration (1.8s) is inadequate; Gate 2 fails."
+    },
+    {
+      "event_id": "CASE_H18_TRACK_HANDOFF_DURING_PROPAGATION",
+      "scenario_type": "TRACKER_ID_SWAP",
+      "description": "Automated tracker swaps vehicle ID at secondary zone threshold, breaking trajectory identity.",
+      "primary_interaction": {
+        "minimum_separation_px": 180.0,
+        "co_occurring_frames": 100
+      },
+      "intervention_signal": {
+        "intervention_detected": true,
+        "intervention_type": "SWERVE_AVOIDANCE",
+        "evidence_status": "OBSERVED"
+      },
+      "primary_mitigation": {
+        "collision_averted": true,
+        "evidence_status": "OBSERVED"
+      },
+      "risk_redirection": {
+        "redirection_observed": true
+      },
+      "secondary_zone": {
+        "zone_id": "SEC_ZONE_Q",
+        "zone_definition_type": "CALIBRATED_POLYGON",
+        "entry_observable": true,
+        "interior_depth_observable": true
+      },
+      "secondary_risk_pre": {
+        "risk_score": 0.05,
+        "evidence_status": "OBSERVED"
+      },
+      "secondary_risk_post": {
+        "risk_score": 0.7,
+        "evidence_status": "OBSERVED"
+      },
+      "delta_secondary_risk": {
+        "delta_value": 0.65,
+        "risk_increased": true,
+        "evidence_status": "OBSERVED"
+      },
+      "observability": {
+        "primary_zone_status": "FULL",
+        "secondary_zone_status": "FULL",
+        "secondary_entry_observable": true,
+        "secondary_depth_observable": true,
+        "post_window_status": "ADEQUATE"
+      },
+      "temporal_order": {
+        "chronological_stages_valid": true
+      },
+      "causal_link": {
+        "causal_chain_status": "UNSUPPORTED",
+        "observable_causal_path": "FALSE",
+        "latency_to_secondary_onset_s": 1.2
+      },
+      "confounders": {
+        "confounders_present": "YES",
+        "confounder_types": [
+          "TRACK_HANDOFF"
+        ],
+        "causal_isolation_status": "FAILED"
+      },
+      "expected_class": "INSUFFICIENT_BACKFIRE_EVIDENCE",
+      "oracle_reason": "Tracker handoff breaks trajectory continuity; Gate 4 fails."
+    }
+  ]
+}

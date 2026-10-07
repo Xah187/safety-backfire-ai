@@ -1,0 +1,44 @@
+{
+  "reconciliation_version": "V3.3.3_IDF1_BOOTSTRAP_SENSITIVITY",
+  "base_metric": "Tracking_IDF1",
+  "observed_point_estimate": 0.918,
+  "total_sequences": 28,
+  "total_recordings": 4,
+  "total_cameras": 4,
+  "sensitivity_analysis": {
+    "UNIT_1_TRAJECTORY_SEQUENCE": {
+      "resampling_unit": "individual_trajectory_sequence",
+      "cluster_count": 28,
+      "replicates": 1000,
+      "ci_95": [
+        0.9057,
+        0.9295
+      ],
+      "interval_width": 0.0238,
+      "assumption": "Trajectories are conditionally independent given calibrated camera homographies."
+    },
+    "UNIT_2_RECORDING_BLOCK": {
+      "resampling_unit": "recording_session_cluster",
+      "cluster_count": 4,
+      "replicates": 1000,
+      "ci_95": [
+        0.8915,
+        0.942
+      ],
+      "interval_width": 0.0505,
+      "assumption": "Accounts for session-level temporal correlation."
+    },
+    "UNIT_3_CAMERA_BLOCK": {
+      "resampling_unit": "camera_installation_cluster",
+      "cluster_count": 4,
+      "replicates": 1000,
+      "ci_95": [
+        0.888,
+        0.946
+      ],
+      "interval_width": 0.058,
+      "assumption": "Accounts for camera-specific optical and mounting correlation."
+    }
+  },
+  "scientific_conclusion": "Sequence-level bootstrap yields [90.57%, 92.95%]. Cluster-level resampling demonstrates wider intervals due to intra-camera optical correlation. Future multi-site evaluations must enforce camera-cluster block bootstrapping."
+}

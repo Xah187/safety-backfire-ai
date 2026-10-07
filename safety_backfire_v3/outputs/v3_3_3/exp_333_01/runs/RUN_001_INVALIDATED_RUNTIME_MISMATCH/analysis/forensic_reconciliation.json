@@ -1,0 +1,115 @@
+{
+  "mission": "EXP_333_01_FORENSIC_RECONCILIATION_ZERO_ADAPTATION_AUDIT",
+  "timestamp_utc": "2026-09-27T19:30:00Z",
+  "audit_target": {
+    "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+    "video": "0_te11.mp4",
+    "sha256": "170a97c819e668d899e378e4ec1c417d89df8da3eff4373bf08f9698152babe1"
+  },
+  "section_verdicts": {
+    "1_baseline_lock": {
+      "verdict": "PASS",
+      "details": "V3.3.2 remains frozen as V3.3.2_FINAL_RECONCILED. Zero hash drift across all 39 protected artifacts verified by test_v3_2_1_immutability.py."
+    },
+    "2_model_h_formula_audit": {
+      "verdict": "MISMATCH",
+      "classification": "MODEL_H_BASELINE_INTEGRITY_FAILURE",
+      "details": "Runtime implementation in run_exp_333_01.py deviated structurally from canonical Model H across distance, illumination, and pitch terms."
+    },
+    "3_k_value_reconciliation": {
+      "verdict": "FAIL",
+      "details": "Report contradicted itself by presenting runtime range [2.70, 3.151] alongside theoretical far-field 3.35. Exact evaluated population: runtime k in [2.7000, 3.1513], canonical lower bound in [2.4000, 2.7713], canonical worst-case upper bound in [2.9800, 3.3513]."
+    },
+    "4_detection_count_reconciliation": {
+      "verdict": "PASS",
+      "details": "Exact 251 detection instances reconciled: forklift=238, person=13. Near=43, mid=201, far=7. All quantities derived from observation ledger."
+    },
+    "5_distance_stratum_reconciliation": {
+      "verdict": "PASS_COUNTS_REVISED_ODD",
+      "details": "Counts verified: 43+201+7=251 across all detections. Previous semantic ODD split rejected."
+    },
+    "6_odd_classification_audit": {
+      "verdict": "UNKNOWN",
+      "details": "Physical sensor data for camera height, pitch, and lux are missing. Overall ODD_STATUS = UNKNOWN."
+    },
+    "7_terminology_governance": {
+      "verdict": "ENFORCED",
+      "details": "Removed VALIDATED_IN_ODD_OBSERVED. Replaced with OBSERVED_ZERO_ADAPTATION_BEHAVIOR and ODD_STATUS_UNKNOWN."
+    },
+    "8_perception_claim_governance": {
+      "verdict": "ENFORCED",
+      "details": "Human ground truth unavailable. Statistical F1, precision, recall, and 85% gate marked NOT_ESTABLISHED."
+    },
+    "9_person_detection_claim": {
+      "verdict": "ENFORCED",
+      "details": "Changed 'severe false-negatives' to LOW_OBSERVED_PERSON_DETECTION_RATE and VISUAL_DETECTION_MISS."
+    },
+    "10_tracking_interpretation": {
+      "verdict": "ENFORCED",
+      "details": "Track sequence [1, 5, 9, 12] classified as TRACK_FRAGMENTATION of 1 physical forklift, not true physical identity switches."
+    },
+    "11_safe_transit_claim": {
+      "verdict": "ENFORCED",
+      "details": "Reclassified minimum separation as ESTIMATED_MINIMUM_SEPARATION = 4.2m [MODEL_ESTIMATE], not surveyed clearance."
+    },
+    "12_external_facility_generalization_status": {
+      "verdict": "NOT_ESTABLISHED",
+      "status": "ZERO_ADAPTATION_OBSERVATION_COMPLETED_WITH_LIMITATIONS",
+      "generalization": "CROSS_WAREHOUSE_GENERALIZATION = NOT_ESTABLISHED"
+    },
+    "13_track_split_architecture": {
+      "verdict": "RECONCILED",
+      "details": "Both EXP_333_01A and EXP_333_01B assigned to EXTERNAL_ODD_STATUS_UNKNOWN due to absence of physical measurements."
+    },
+    "14_data_volume": {
+      "verdict": "LIMITED",
+      "status": "DATA_VOLUME_STATUS = LIMITED (173 frames, 6.98s, 1 clip)"
+    },
+    "15_provenance_distinction": {
+      "verdict": "ENFORCED",
+      "file_authenticity": "VERIFIED",
+      "camera_hardware_authenticity": "DECLARED_NOT_VERIFIED",
+      "physical_facility_independence": "OBSERVED_NOT_VERIFIED",
+      "frame_overlap": "CLEAR (min Hamming distance = 97)"
+    },
+    "16_report_status": {
+      "verdict": "EXP_333_01_EXECUTED_WITH_LIMITATIONS"
+    }
+  },
+  "critical_discrepancies_count": 3,
+  "critical_discrepancies": [
+    {
+      "id": "DISCREPANCY_01",
+      "title": "Model H Runtime Formula Mismatch",
+      "severity": "CRITICAL",
+      "description": "run_exp_333_01.py implemented an ad-hoc linear formula rather than the canonical frozen Model H specification."
+    },
+    {
+      "id": "DISCREPANCY_02",
+      "title": "K-Value Population Reporting Contradiction",
+      "severity": "HIGH",
+      "description": "Report conflated buggy runtime k-range [2.70, 3.151] with hand-calculated theoretical far-field 3.35 without scoping."
+    },
+    {
+      "id": "DISCREPANCY_03",
+      "title": "Semantic ODD Classification Without Physical Telemetry",
+      "severity": "HIGH",
+      "description": "Report classified observations into IN_ODD and ODD_SHIFT using visual machine/clothing clutter rather than measured physical variables."
+    }
+  ],
+  "final_decision_table": {
+    "Baseline": "PASS",
+    "Runtime Model H": "MISMATCH",
+    "Observation ledger": "CONSISTENT",
+    "K-value reconciliation": "FAIL",
+    "Detection-count reconciliation": "PASS",
+    "ODD classification": "UNKNOWN",
+    "Ground truth": "NOT_AVAILABLE",
+    "Perception F1 gate": "NOT_ESTABLISHED",
+    "Zero-adaptation execution": "COMPLETED_WITH_LIMITATIONS",
+    "Cross-warehouse generalization": "NOT_ESTABLISHED",
+    "Critical discrepancies": 3,
+    "Model optimization performed": "NO",
+    "Next action": "ACQUIRE_LONGER_EXTERNAL_DATASET"
+  }
+}

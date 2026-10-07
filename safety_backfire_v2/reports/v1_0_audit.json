@@ -1,0 +1,44 @@
+{
+  "audit_version": "1.0",
+  "pipeline_components": {
+    "detection": {
+      "file": "run_v08_pipeline.py",
+      "method": "YOLOv8 model.track()",
+      "issues": "Anonymous fallback IDs skip tracking logic but act as real objects."
+    },
+    "tracking": {
+      "file": "run_v08_pipeline.py, core/trajectory.py",
+      "method": "ByteTrack with TrajectoryTracker persistence",
+      "issues": "Tracking carryover uses max_age=25. This creates interactions using the last known position of an object even if it's no longer detected."
+    },
+    "distance": {
+      "file": "core/interaction_engine.py, core/geometry.py",
+      "method": "estimate_metric_distance via 4-pt Homography",
+      "issues": "Metric outputs are generated even if the footprint is outside calibrated bounds."
+    },
+    "ttc": {
+      "file": "core/interaction_engine.py",
+      "method": "px_dist / v_approach",
+      "issues": "Calculated in pixel-space (ttc_image_proxy_sec). Falls back to arbitrary 99.90 when undefined."
+    },
+    "event_generation": {
+      "file": "core/interaction_engine.py",
+      "method": "Per-frame appending to recorded_events",
+      "issues": "Creates a new event per frame instead of grouping contiguous frames into a single Interaction Event."
+    }
+  },
+  "metrics_sources": {
+    "min_passing_distance_meters": "InteractionEngine.process_frame()",
+    "peak_approach_speed_px_s": "InteractionEngine.process_frame()",
+    "percent_time_in_risk_zones": "frames_in_danger + frames_in_caution / total_frames"
+  },
+  "id_handling": {
+    "confirmed_ids": "ByteTrack outputs (usually < 9000). Passed to TrajectoryTracker.",
+    "fallback_ids": "Synthesized as frame_idx*1000 + i (>= 9000). Handled as independent objects per frame."
+  },
+  "baseline_lock": {
+    "status": "LOCKED",
+    "version": "1.0",
+    "files": ["safety_backfire_comparison.json", "before_baseline.json", "after_baseline.json"]
+  }
+}

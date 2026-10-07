@@ -1,0 +1,23 @@
+{
+  "event_identifier": "UNION_CAND_Warehouse_027_005",
+  "timeline": [
+    {
+      "phase": "PRE",
+      "start_s": 28.1,
+      "end_s": 33.07,
+      "duration_s": 5.0
+    },
+    {
+      "phase": "INTERVENTION",
+      "start_s": 33.1,
+      "end_s": 34.63,
+      "duration_s": 1.57
+    },
+    {
+      "phase": "POST",
+      "start_s": 34.67,
+      "end_s": 42.63,
+      "duration_s": 8.0
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "milestone": "V3.4-K",
+  "reviewer_package_sanitized": true,
+  "leak_detection_test_passed": true,
+  "forbidden_strings_audited": [
+    "BACKFIRE_SCORE",
+    "CANDIDATE_BACKFIRE",
+    "Model H risk score",
+    "YOLO confidence",
+    "ByteTrack score",
+    "candidate ranking",
+    "automated disposition"
+  ],
+  "model_h_isolation_verified": true,
+  "raw_package_hash_invariant": true,
+  "reviewer_package_hash_invariant": true,
+  "reviewer_package_sample": {
+    "event_id": "PILOT_PKG_001",
+    "facility_id": "Wh_Pilot_001",
+    "review_presentation": {
+      "available_views": [
+        "CAMERA_A_PRIMARY",
+        "CAMERA_B_ENTRY",
+        "CAMERA_C_DEPTH",
+        "CAMERA_D_CROSS"
+      ],
+      "telemetry_stream_available": true,
+      "secondary_occupancy_available": true,
+      "windows": {
+        "t_pre_s": 4.0,
+        "t_interv_s": 2.0,
+        "t_post_s": 5.0
+      },
+      "counts": {
+        "cameras": {
+          "CAMERA_A": 1,
+          "CAMERA_B": 1,
+          "CAMERA_C": 1,
+          "CAMERA_D": 1
+        },
+        "telemetry_packets": 1,
+        "secondary_packets": 1
+      }
+    },
+    "provenance": {
+      "package_hash": "88428231db14b48d64cce5f867f99bd97c8b4e37a2d7d6617bcf9a4fbb216741",
+      "software_version": "V3.4-K-PILOT-01"
+    }
+  }
+}

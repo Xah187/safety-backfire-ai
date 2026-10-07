@@ -1,0 +1,18 @@
+{
+  "regime_15_fps_sustained": {
+    "status": "SUPPORTED",
+    "latency_headroom_pct": 82.5
+  },
+  "regime_25_fps_sustained": {
+    "status": "SUPPORTED",
+    "latency_headroom_pct": 71.0
+  },
+  "regime_30_fps_sustained": {
+    "status": "SUPPORTED",
+    "latency_headroom_pct": 65.2
+  },
+  "burst_traffic_60_fps": {
+    "status": "SUPPORTED_VIA_FRAME_BUFFER",
+    "queue_fill_pct": 34.0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "lock_version": "V3.3_BLIND_SET_LOCK_MANIFEST",
+  "lock_status": "LOCKED_PRE_EVALUATION",
+  "timestamp_utc": "2026-09-25T01:15:30Z",
+  "quarantined_dataset": {
+    "dataset_id": "DS_V3_3_BLIND_STAGING_D",
+    "camera_id": "CAM_SECTOR_D_04",
+    "warehouse_sector": "Sector_D_Outbound_Staging",
+    "layout_id": "LAYOUT_CONGESTED_PALLET_ZONE",
+    "split": "V3.3_BLIND",
+    "odd_tier": "NOMINAL_ODD",
+    "source_sha256": "d4e5f6a1b2c30405060708090a1b2c3d4e5f6a1b2c30405060708090a1b2c3d4",
+    "frame_count": 345,
+    "duration_seconds": 13.80,
+    "resolution": "1274x720",
+    "fps": 25.0,
+    "quarantine_seal_hash": "7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a"
+  },
+  "quarantine_rules": [
+    "No exploratory data analysis or threshold optimization permitted on DS_V3_3_BLIND_STAGING_D prior to unblinding.",
+    "Factor k must be calibrated exclusively on DS_V3_3_CALIB_SECTOR_B and locked.",
+    "Unblinding is a one-way irreversible action; post-unblinding parameter adjustments invalidate results."
+  ]
+}

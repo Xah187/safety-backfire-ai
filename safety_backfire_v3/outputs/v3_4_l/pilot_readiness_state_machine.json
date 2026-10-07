@@ -1,0 +1,131 @@
+{
+  "state_machine_name": "PilotReadinessStateMachine",
+  "milestone": "V3.4-L",
+  "governance_rule": "Strictly linear operational gating. No state may transition directly from pre-capture readiness to validation without physical data collection, post-capture quality validation, and blinded human adjudication.",
+  "states": [
+    {
+      "state": "PLANNED",
+      "description": "Protocol and engineering specifications finalized; facility selected; hardware procurement complete."
+    },
+    {
+      "state": "INSTALLATION_READY",
+      "description": "Sensors, PTP Grandmaster, rigid rigging, and network switches physically mounted on site."
+    },
+    {
+      "state": "COMMISSIONING",
+      "description": "Active hardware burn-in, intrinsic/extrinsic optical calibration, PTP clock lock, CAN bus decoding, and secondary zone field target tests underway."
+    },
+    {
+      "state": "INSTRUMENTATION_READY_FOR_CAPTURE",
+      "description": "All pre-capture gates C1 through C6 verified PASS. Instrumentation certified capable of capturing data. GT and Model Validation remain NOT_ESTABLISHED."
+    },
+    {
+      "state": "CAPTURE_IN_PROGRESS",
+      "description": "Active execution of controlled trial matrix (L01-L09) or naturalistic recording session under Safety Marshal oversight."
+    },
+    {
+      "state": "CAPTURE_ABORTED",
+      "description": "Emergency stop or data integrity violation triggered during capture session; raw data isolated and tagged ABORTED."
+    },
+    {
+      "state": "CAPTURE_COMPLETED",
+      "description": "Physical trial run or naturalistic recording concluded nominally; data locked on encrypted storage."
+    },
+    {
+      "state": "DATASET_READY_FOR_REVIEW",
+      "description": "Post-capture gates D1 through D6 verified PASS; sanitized review packages compiled with zero model scores or AI annotations; ready for human adjudicators."
+    },
+    {
+      "state": "VALIDATION_READY",
+      "description": "Double-blind human panel adjudication complete; adjudication schema validated; Ground Truth established for the field dataset."
+    }
+  ],
+  "transitions": [
+    {
+      "from": "PLANNED",
+      "to": "INSTALLATION_READY",
+      "prerequisites": ["Facility selection criteria verified", "Hardware BOM staged"]
+    },
+    {
+      "from": "INSTALLATION_READY",
+      "to": "COMMISSIONING",
+      "prerequisites": ["Rigid mounting completed", "Network & power verified"]
+    },
+    {
+      "from": "COMMISSIONING",
+      "to": "INSTRUMENTATION_READY_FOR_CAPTURE",
+      "prerequisites": [
+        "Pre-Capture Gate C1_CLOCK = PASS",
+        "Pre-Capture Gate C2_CAMERA = PASS",
+        "Pre-Capture Gate C3_CAN = PASS",
+        "Pre-Capture Gate C4_SECONDARY_SENSOR = PASS",
+        "Pre-Capture Gate C5_CALIBRATION = PASS",
+        "Pre-Capture Gate C6_GEOMETRY = PASS"
+      ]
+    },
+    {
+      "from": "COMMISSIONING",
+      "to": "INSTALLATION_READY",
+      "trigger": "Hardware or mounting failure during commissioning requiring physical remount"
+    },
+    {
+      "from": "INSTRUMENTATION_READY_FOR_CAPTURE",
+      "to": "CAPTURE_IN_PROGRESS",
+      "prerequisites": ["Pre-test safety walkthrough completed", "Exclusion zone verified clear", "Safety Marshal signoff"]
+    },
+    {
+      "from": "CAPTURE_IN_PROGRESS",
+      "to": "CAPTURE_ABORTED",
+      "trigger": "Any trigger in abort_criteria.json (E-stop, zone breach, clock unlock, packet drop)"
+    },
+    {
+      "from": "CAPTURE_ABORTED",
+      "to": "INSTRUMENTATION_READY_FOR_CAPTURE",
+      "prerequisites": ["Root cause investigation logged", "Fault cleared", "Pre-capture gates re-verified"]
+    },
+    {
+      "from": "CAPTURE_IN_PROGRESS",
+      "to": "CAPTURE_COMPLETED",
+      "prerequisites": ["Run nominal completion", "No abort conditions tripped during run duration"]
+    },
+    {
+      "from": "CAPTURE_COMPLETED",
+      "to": "DATASET_READY_FOR_REVIEW",
+      "prerequisites": [
+        "Post-Capture Gate D1_EVENT_COMPLETENESS = PASS",
+        "Post-Capture Gate D2_SENSOR_COMPLETENESS = PASS",
+        "Post-Capture Gate D3_PROVENANCE = PASS",
+        "Post-Capture Gate D4_FILE_INTEGRITY = PASS",
+        "Post-Capture Gate D5_REPLAYABILITY = PASS",
+        "Post-Capture Gate D6_REVIEW_PACKAGE_SANITIZATION = PASS"
+      ]
+    },
+    {
+      "from": "DATASET_READY_FOR_REVIEW",
+      "to": "VALIDATION_READY",
+      "prerequisites": [
+        "Human adjudication panel completion",
+        "Independent review consensus reached",
+        "Tie-breaker adjudication completed",
+        "Ground Truth dataset committed with cryptographic provenance"
+      ]
+    }
+  ],
+  "forbidden_transitions": [
+    {
+      "from": "INSTRUMENTATION_READY_FOR_CAPTURE",
+      "to": "VALIDATION_READY",
+      "rule": "CRITICAL_VIOLATION: Cannot leapfrog physical capture, data quality verification, and human Ground Truth establishment."
+    },
+    {
+      "from": "COMMISSIONING",
+      "to": "DATASET_READY_FOR_REVIEW",
+      "rule": "CRITICAL_VIOLATION: Calibration and test artifacts cannot be reviewed as operational dataset."
+    },
+    {
+      "from": "CAPTURE_COMPLETED",
+      "to": "VALIDATION_READY",
+      "rule": "CRITICAL_VIOLATION: Raw unadjudicated captures cannot establish validation without sanitized human GT review."
+    }
+  ]
+}

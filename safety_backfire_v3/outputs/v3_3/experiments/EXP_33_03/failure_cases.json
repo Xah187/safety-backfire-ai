@@ -1,0 +1,60 @@
+[
+  {
+    "intervention_id": "INT_33_05_EXOGENOUS_SHIFT_SHOCK_CROSS_SITE",
+    "case_id": "CASE_SHOCK_05",
+    "control_zone_id": "Sector_C_Intersection",
+    "intervention_type": "traffic_separation",
+    "outcome_state": "INSUFFICIENT_EVIDENCE",
+    "delta_primary_risk": -0.2,
+    "delta_secondary_risk": 0.15,
+    "new_hazard_created": false,
+    "new_hazard_type": null,
+    "did_analysis": {
+      "did_coefficient": -0.47,
+      "delta_treated": -0.2,
+      "delta_control": 0.27,
+      "control_drift": 0.27,
+      "parallel_trend_valid": false,
+      "causal_status": "INSUFFICIENT_EVIDENCE",
+      "attribution_reasons": [
+        "Control zone baseline shifted by 27.00% (> 15%); parallel-trend assumption invalid.",
+        "Exogenous site shock detected (38.5%); confounding site-wide throughput."
+      ]
+    },
+    "causal_status": "INSUFFICIENT_EVIDENCE",
+    "PRE_WINDOW": [
+      0,
+      200
+    ],
+    "INTERVENTION_WINDOW": [
+      201,
+      230
+    ],
+    "POST_WINDOW": [
+      231,
+      425
+    ],
+    "TREATED_ZONE": "Sector_A_Main_Aisle",
+    "CONTROL_ZONE": "Sector_C_Intersection",
+    "PRIMARY_HAZARD": "Aisle overtaking collision",
+    "SECONDARY_HAZARDS": [
+      "Congestion bottleneck"
+    ],
+    "TRAFFIC_VOLUME": 55,
+    "ENTITY_COUNTS": {
+      "workers": 12,
+      "forklifts": 6
+    },
+    "CAMERA_IDS": [
+      "CAM_SECTOR_A_01",
+      "CAM_SECTOR_C_03"
+    ],
+    "DATASET_IDS": [
+      "DS_V3_3_DEV_AISLE_A",
+      "DS_V3_3_VAL_INTERSECTION_C"
+    ],
+    "SOURCE_HASHES": [
+      "ea323b3c12bb7b4c006222b3677452a8d4de39f7a6e7785612272e567cef72cb"
+    ]
+  }
+]

@@ -1,0 +1,97 @@
+{
+  "validation_layer": "LEVEL_F_REAL_TTC_CPA",
+  "total_regimes_evaluated": 9,
+  "kinematic_state_accuracy_pct": 100.0,
+  "results": [
+    {
+      "regime": "HEAD_ON_COLLISION",
+      "expected_state": "FINITE",
+      "actual_state": "FINITE",
+      "cpa_distance_m": 0.0,
+      "ttc_sec": 2.5,
+      "ttc_error_sec": 0.0,
+      "passed": true
+    },
+    {
+      "regime": "CROSSING_COLLISION",
+      "expected_state": "FINITE",
+      "actual_state": "FINITE",
+      "cpa_distance_m": 0.0,
+      "ttc_sec": 1.529,
+      "ttc_error_sec": 0.029,
+      "passed": true
+    },
+    {
+      "regime": "PARALLEL_NON_COLLIDING",
+      "expected_state": "INFINITE",
+      "actual_state": "INFINITE",
+      "cpa_distance_m": 2.5,
+      "ttc_sec": null,
+      "ttc_error_sec": null,
+      "passed": true
+    },
+    {
+      "regime": "DIVERGING_PATHS",
+      "expected_state": "INFINITE",
+      "actual_state": "INFINITE",
+      "cpa_distance_m": 3.0,
+      "ttc_sec": null,
+      "ttc_error_sec": null,
+      "passed": true
+    },
+    {
+      "regime": "STATIONARY_ENTITIES",
+      "expected_state": "INFINITE",
+      "actual_state": "INFINITE",
+      "cpa_distance_m": 1.8,
+      "ttc_sec": null,
+      "ttc_error_sec": null,
+      "passed": true
+    },
+    {
+      "regime": "ACCELERATING_APPROACH",
+      "expected_state": "FINITE",
+      "actual_state": "FINITE",
+      "cpa_distance_m": 0.0,
+      "ttc_sec": 1.333,
+      "ttc_error_sec": 0.003,
+      "passed": true
+    },
+    {
+      "regime": "REVERSING_VEHICLE",
+      "expected_state": "FINITE",
+      "actual_state": "FINITE",
+      "cpa_distance_m": 0.0,
+      "ttc_sec": 2.5,
+      "ttc_error_sec": 0.0,
+      "passed": true
+    },
+    {
+      "regime": "LATERAL_CROSSING_SAFE_MISS",
+      "expected_state": "INFINITE",
+      "actual_state": "INFINITE",
+      "cpa_distance_m": 2.2,
+      "ttc_sec": null,
+      "ttc_error_sec": null,
+      "passed": true
+    },
+    {
+      "regime": "OCCLUSION_VELOCITY_JITTER",
+      "expected_state": "INFINITE",
+      "actual_state": "INFINITE",
+      "cpa_distance_m": 1.414,
+      "ttc_sec": null,
+      "ttc_error_sec": null,
+      "passed": true
+    }
+  ],
+  "motion_evidence_guarantee": "System explicitly returned INFINITE / UNDEFINED when motion was divergent or stationary; zero fabricated TTC under stationary or diverging vectors.",
+  "failure_candidates_audited": {
+    "CANDIDATE-42": {
+      "description": "Occlusion-induced velocity jitter creating false low TTC",
+      "status": "CONFIRMED_AS_FAIL-42",
+      "safety_impact": "Detection centroid jitter creates spurious 2.5 m/s velocity spikes during occlusions.",
+      "remediation": "Low-pass velocity exponential smoothing filter with variance gating applied."
+    }
+  }
+}

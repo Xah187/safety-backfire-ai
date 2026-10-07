@@ -1,0 +1,11 @@
+{
+  "perception_overall_f1": 0.8845,
+  "tracking_idf1": 0.918,
+  "tracking_idf1_ci95": [
+    0.9057,
+    0.9295
+  ],
+  "identity_switches": 23,
+  "geometry_mean_residual_m": 0.0215,
+  "hazard_recall": 0.9412
+}

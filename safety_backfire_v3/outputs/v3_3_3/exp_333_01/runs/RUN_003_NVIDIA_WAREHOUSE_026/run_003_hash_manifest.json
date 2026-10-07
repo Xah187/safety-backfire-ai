@@ -1,0 +1,20 @@
+{
+  "run_id": "RUN_003_NVIDIA_WAREHOUSE_026",
+  "timestamp_utc": "2026-09-28T08:30:42Z",
+  "artifacts": {
+    "canonical_evaluation.json": "7b04de8ef92da594f0271c93c943261164198cf0cbb05593e14ed3ad30aed8d3",
+    "metrics/geometry_metrics.json": "49ff9bda3918e3e28f38b28506e11d161513fd300b3c8d36e57cc6511f90d99c",
+    "metrics/odd_metrics.json": "6f9c712663bb0e446729cbfb2948114f76c843da5160b5943d9c3e3d5334c266",
+    "metrics/perception_metrics.json": "cde99e3c076a6fdd5315a040290f22886896bfc1564f33490a368b67f8edc15c",
+    "metrics/tracking_metrics.json": "cbedae7cb47faa98600f51be19ef648d354bf721e17352987907799be0632c16",
+    "metrics/uncertainty_metrics.json": "23ff30ef17b9b191ad34f5f86fc38dd034c2acfab511f64ce762e4293a915840",
+    "observation_ledger.json": "e4b57138f01e0027814e0583e3e25ccece332fdfa9ee00726a9fcf6be8289662",
+    "per_camera/Camera_0000_observations.json": "8608ebe66a325bbd08dbab49ffca5f9cc5fc80ec966c9e820cac383bfe703e23",
+    "per_camera/Camera_0001_observations.json": "40587d801bd3adda0000ad40d1743e8781800378ae7eaec646af0ce072df4032",
+    "per_camera/Camera_0002_observations.json": "1988e9c5861af2d085a1a14b279d3c7acb5b760207d7153ae8cfa5bae19b4a0a",
+    "per_camera/Camera_0003_observations.json": "9ca2e677879fe3a44c3981bf885b35c6367a7ded82ede34345964c95ff3fc48f",
+    "run_003_hash_manifest.json": "b25cd3b0e1b2bb4318e0ae866e7ec39b9aa9cef761b45e0b6970267559b1e932",
+    "run_manifest.json": "178df0e95112c1ce97da3950b36dc9f293f91625eea0015a239e0fc9dad32bbd",
+    "track_topology.json": "b061eab444d4696a07757a69821dbdd6a062da3fc840a383ee062c48a28e3125"
+  }
+}

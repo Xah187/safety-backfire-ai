@@ -1,0 +1,84 @@
+{
+  "milestone": "V3.4-K",
+  "provenance_chain_length": 5,
+  "initial_chain_valid": true,
+  "all_tamper_tests_detected": true,
+  "chain_entries": [
+    {
+      "sequence_index": 0,
+      "event_id": "EVENT_PILOT_001",
+      "payload_hash": "eb2c95d31f0f759964915155c210ac3cdcf4c1b5cedd89d6d6548317445d7085",
+      "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "current_hash": "35f8a235d677123da73543dc143196278644dd2f73e6005797c06d6da45c1fd7"
+    },
+    {
+      "sequence_index": 1,
+      "event_id": "EVENT_PILOT_002",
+      "payload_hash": "4bc8688ba903312a275f9c2bfdb5c9b49dc70142cb7008f004666963f4f8dd66",
+      "previous_hash": "35f8a235d677123da73543dc143196278644dd2f73e6005797c06d6da45c1fd7",
+      "current_hash": "588d58611a034bc93e33295f367a993156fb2c2004d0370e83b261557d934ebe"
+    },
+    {
+      "sequence_index": 2,
+      "event_id": "EVENT_PILOT_003",
+      "payload_hash": "16ead8236b590b60125163415cae0bcd16ab6476b11a23b7cff4b84da8d5bc5d",
+      "previous_hash": "588d58611a034bc93e33295f367a993156fb2c2004d0370e83b261557d934ebe",
+      "current_hash": "7a2ed168242e1f5684b614f1b35360637925795b55bb21748c0d04a599469f43"
+    },
+    {
+      "sequence_index": 3,
+      "event_id": "EVENT_PILOT_004",
+      "payload_hash": "96f24bc48e72f9ff259fe39f24ab90387e42f7beff6729389b7f3f851e8ea51f",
+      "previous_hash": "7a2ed168242e1f5684b614f1b35360637925795b55bb21748c0d04a599469f43",
+      "current_hash": "b58d5114f99d8cdf53d2456de0f38b9ee919affdd61893c5bf41d99a3fdd8e40"
+    },
+    {
+      "sequence_index": 4,
+      "event_id": "EVENT_PILOT_005",
+      "payload_hash": "8c774f40bbaf04ef9b2c0d5f2b33c795fc8917a1165f1e8c302c70587b69c188",
+      "previous_hash": "b58d5114f99d8cdf53d2456de0f38b9ee919affdd61893c5bf41d99a3fdd8e40",
+      "current_hash": "408ce8471c5fa815abda4671f83e803e3089819c547ef46faa82922fa649953b"
+    }
+  ],
+  "tamper_tests": [
+    {
+      "test_id": "K_TAMPER_01_SINGLE_BYTE_PAYLOAD_MODIFICATION",
+      "description": "Modify 1 byte in payload hash of committed event 3.",
+      "tamper_detected": true,
+      "error_message": [
+        "Entry 2 current_hash tampered! Found 7a2ed168242e1f5684b614f1b35360637925795b55bb21748c0d04a599469f43, expected 5dcda39b0e4bf9a3a31b842c2803db711e44c53676724b8f45c577eb0c3d4c94"
+      ],
+      "test_passed": true
+    },
+    {
+      "test_id": "K_TAMPER_02_PREVIOUS_HASH_POINTER_MODIFICATION",
+      "description": "Alter previous_hash pointer in entry 4.",
+      "tamper_detected": true,
+      "error_message": [
+        "Entry 3 previous_hash mismatch! Found 0000000000000000000000000000000000000000000000000000000000000000, expected 7a2ed168242e1f5684b614f1b35360637925795b55bb21748c0d04a599469f43",
+        "Entry 3 current_hash tampered! Found b58d5114f99d8cdf53d2456de0f38b9ee919affdd61893c5bf41d99a3fdd8e40, expected 4b54bea82c8470c246666bcf6cca3dd1ce38f24f5abd20cd7cbba50691c534b7"
+      ],
+      "test_passed": true
+    },
+    {
+      "test_id": "K_TAMPER_03_INTERMEDIATE_EVENT_DELETION",
+      "description": "Delete event 2 from the middle of the hash chain.",
+      "tamper_detected": true,
+      "error_message": [
+        "Entry 1 previous_hash mismatch! Found 588d58611a034bc93e33295f367a993156fb2c2004d0370e83b261557d934ebe, expected 35f8a235d677123da73543dc143196278644dd2f73e6005797c06d6da45c1fd7"
+      ],
+      "test_passed": true
+    },
+    {
+      "test_id": "K_TAMPER_04_CHRONOLOGICAL_EVENT_REORDERING",
+      "description": "Swap sequence positions of event 1 and event 2.",
+      "tamper_detected": true,
+      "error_message": [
+        "Entry 0 previous_hash mismatch! Found 35f8a235d677123da73543dc143196278644dd2f73e6005797c06d6da45c1fd7, expected 0000000000000000000000000000000000000000000000000000000000000000",
+        "Entry 1 previous_hash mismatch! Found 0000000000000000000000000000000000000000000000000000000000000000, expected 588d58611a034bc93e33295f367a993156fb2c2004d0370e83b261557d934ebe",
+        "Entry 2 previous_hash mismatch! Found 588d58611a034bc93e33295f367a993156fb2c2004d0370e83b261557d934ebe, expected 35f8a235d677123da73543dc143196278644dd2f73e6005797c06d6da45c1fd7"
+      ],
+      "test_passed": true
+    }
+  ]
+}

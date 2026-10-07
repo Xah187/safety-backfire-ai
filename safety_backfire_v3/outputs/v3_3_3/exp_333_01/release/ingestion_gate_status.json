@@ -1,0 +1,32 @@
+{
+  "release_version": "V3.3.3",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "status_machine": {
+    "states": [
+      "NOT_AVAILABLE",
+      "INGESTED_PENDING_AUDIT",
+      "PROVENANCE_VERIFIED",
+      "BLIND_LOCKED",
+      "READY_FOR_EVALUATION",
+      "EVALUATED"
+    ],
+    "current_state": "NOT_AVAILABLE",
+    "previous_state": null,
+    "state_progression_rule": "States must be traversed strictly in linear order. Skipping states is prohibited."
+  },
+  "ingestion_gate": {
+    "baseline_integrity": "PASS",
+    "external_raw_footage": "NOT_AVAILABLE",
+    "physical_independence": "NOT_ESTABLISHED",
+    "frame_overlap": "NOT_ESTABLISHED",
+    "blind_protocol": "LOCKED",
+    "blind_data": "NOT_AVAILABLE",
+    "synthetic_substitution": "REJECTED",
+    "ground_truth": "NOT_AVAILABLE",
+    "evaluation_readiness": "BLOCKED"
+  },
+  "current_experiment_status": "NOT_ESTABLISHED",
+  "primary_blocker": "Authenticated physical raw video footage and ground truth for external facility are not available on disk.",
+  "required_next_action": "ACQUIRE_AUTHENTIC_EXTERNAL_FACILITY_FOOTAGE",
+  "governance_rule": "The experiment begins only when authentic external-facility evidence passes the provenance gate."
+}

@@ -1,0 +1,54 @@
+{
+  "artifact_name": "EXP_333_01_PERCEPTION_METRICS",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "target_facility": "FACILITY_E_COLD_STORAGE",
+  "evaluation_mode": "ZERO_ADAPTATION_TRANSFER_TEST",
+  "model_evaluated": "YOLO26S_FROZEN_V3_3_2",
+  "gate_threshold": {
+    "metric": "EXTERNAL_PERCEPTION_F1",
+    "target": 0.8500,
+    "status": "NOT_ESTABLISHED"
+  },
+  "overall_micro_metrics": {
+    "true_positives": null,
+    "false_positives": null,
+    "false_negatives": null,
+    "total_ground_truth": null,
+    "micro_precision": null,
+    "micro_recall": null,
+    "micro_f1": null,
+    "status": "NOT_ESTABLISHED"
+  },
+  "macro_class_metrics": {
+    "macro_f1": null,
+    "per_class": {
+      "Person": {"TP": null, "FP": null, "FN": null, "precision": null, "recall": null, "f1": null, "status": "NOT_ESTABLISHED"},
+      "Vehicle": {"TP": null, "FP": null, "FN": null, "precision": null, "recall": null, "f1": null, "status": "NOT_ESTABLISHED"},
+      "Storage": {"TP": null, "FP": null, "FN": null, "precision": null, "recall": null, "f1": null, "status": "NOT_ESTABLISHED"},
+      "Load": {"TP": null, "FP": null, "FN": null, "precision": null, "recall": null, "f1": null, "status": "NOT_ESTABLISHED"},
+      "Machine": {"TP": null, "FP": null, "FN": null, "precision": null, "recall": null, "f1": null, "status": "NOT_ESTABLISHED"}
+    },
+    "status": "NOT_ESTABLISHED"
+  },
+  "stratified_breakdown": {
+    "distance_strata": {
+      "near_0_to_4m": {"sample_count": 0, "f1": null, "status": "NOT_ESTABLISHED"},
+      "mid_4_to_8m": {"sample_count": 0, "f1": null, "status": "NOT_ESTABLISHED"},
+      "far_gt_8m": {"sample_count": 0, "f1": null, "status": "NOT_ESTABLISHED"}
+    },
+    "occlusion_strata": {
+      "low_occlusion": {"sample_count": 0, "f1": null, "status": "NOT_ESTABLISHED"},
+      "medium_occlusion": {"sample_count": 0, "f1": null, "status": "NOT_ESTABLISHED"},
+      "high_occlusion": {"sample_count": 0, "f1": null, "status": "NOT_ESTABLISHED"}
+    },
+    "lighting_strata": {
+      "normal_light_gt_300lux": {"sample_count": 0, "f1": null, "status": "NOT_ESTABLISHED"},
+      "low_light_lt_300lux": {"sample_count": 0, "f1": null, "status": "NOT_ESTABLISHED"}
+    }
+  },
+  "governance_finding": {
+    "external_generalization_claimed": false,
+    "reason": "Absence of authenticated physical footage from an independent facility prevents empirical evaluation of the 85.00% perception F1 gate. Data volume is 0 frames.",
+    "scientific_classification": "DATA_VOLUME_LIMITATION"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "audit_version": "V3.2.1_DURATION_RECONCILIATION",
+  "finding": "Discrepancy detected between 23 minutes (1380s) corpus inventory and 2.5 hours in Event Validation report.",
+  "root_cause": "The 2.5-hour figure was a hypothetical operational shift assumption used for rate scaling, not continuous physical video.",
+  "physical_raw_video_on_disk": {
+    "test_mp4_frames": 426,
+    "test_mp4_duration_sec": 14.21,
+    "test2_mp4_frames": 1246,
+    "test2_mp4_duration_sec": 49.84,
+    "total_physical_frames": 1672,
+    "total_physical_sec": 64.05
+  },
+  "dataset_manifest_streams": {
+    "stream_count": 5,
+    "total_manifest_frames": 1922,
+    "total_manifest_sec": 74.05
+  },
+  "annotated_validation_corpus": {
+    "total_duration_sec": 1380.0,
+    "total_duration_min": 23.0,
+    "total_duration_hours": 0.3833,
+    "total_frames_at_nominal_fps": 39900,
+    "blind_test_duration_min": 11.0,
+    "blind_test_duration_hours": 0.1833
+  },
+  "reconciliation_action": "REJECTED 2.5 hours claim. Re-calculated all false event rates and missed event rates based on actual 23.0 min corpus (0.3833 hr) and 11.0 min blind test (0.1833 hr)."
+}

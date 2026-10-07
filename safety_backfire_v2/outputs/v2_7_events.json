@@ -1,0 +1,72 @@
+[
+  {
+    "event_id": "EVT_0001",
+    "person_id": 22,
+    "forklift_id": 25,
+    "status": "ENDED",
+    "start_frame": 565,
+    "end_frame": 567,
+    "duration_sec": 0.067,
+    "min_distance_m": 0.26,
+    "median_distance_m": 0.27,
+    "min_distance_frame": 565,
+    "peak_approach_speed": 0.0,
+    "zone": "DANGER"
+  },
+  {
+    "event_id": "EVT_0002",
+    "person_id": 36,
+    "forklift_id": 39,
+    "status": "ENDED",
+    "start_frame": 814,
+    "end_frame": 839,
+    "duration_sec": 0.833,
+    "min_distance_m": 0.93,
+    "median_distance_m": 1.58,
+    "min_distance_frame": 839,
+    "peak_approach_speed": 0.0,
+    "zone": "DANGER"
+  },
+  {
+    "event_id": "EVT_0003",
+    "person_id": 77,
+    "forklift_id": 59,
+    "status": "ENDED",
+    "start_frame": 976,
+    "end_frame": 1001,
+    "duration_sec": 0.833,
+    "min_distance_m": 2.01,
+    "median_distance_m": 2.13,
+    "min_distance_frame": 998,
+    "peak_approach_speed": 0.0,
+    "zone": "CAUTION"
+  },
+  {
+    "event_id": "EVT_0004",
+    "person_id": 93,
+    "forklift_id": 92,
+    "status": "ENDED",
+    "start_frame": 1088,
+    "end_frame": 1098,
+    "duration_sec": 0.333,
+    "min_distance_m": 2.26,
+    "median_distance_m": 2.79,
+    "min_distance_frame": 1090,
+    "peak_approach_speed": 0.0,
+    "zone": "CAUTION"
+  },
+  {
+    "event_id": "EVT_0005",
+    "person_id": 89,
+    "forklift_id": 92,
+    "status": "ENDED",
+    "start_frame": 1140,
+    "end_frame": 1144,
+    "duration_sec": 0.133,
+    "min_distance_m": 2.3,
+    "median_distance_m": 2.385,
+    "min_distance_frame": 1140,
+    "peak_approach_speed": 0.0,
+    "zone": "CAUTION"
+  }
+]

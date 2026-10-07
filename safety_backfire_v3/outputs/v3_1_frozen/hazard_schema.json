@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HazardV1Schema",
+  "description": "Schema for warehouse multi-hazard taxonomy, severity, and imminence",
+  "type": "object",
+  "required": [
+    "hazard_id",
+    "hazard_type",
+    "entity_ids",
+    "severity",
+    "imminence",
+    "lifecycle_state"
+  ],
+  "properties": {
+    "hazard_id": {
+      "type": "string"
+    },
+    "hazard_type": {
+      "type": "string",
+      "enum": [
+        "COLLISION_HAZARD",
+        "STRUCK_BY_HAZARD",
+        "CRUSH_HAZARD",
+        "PINCH_POINT_HAZARD",
+        "ENTRAPMENT_HAZARD",
+        "FALL_HAZARD",
+        "FALLING_OBJECT_HAZARD",
+        "COLLAPSE_HAZARD",
+        "UNSAFE_LOAD_HAZARD",
+        "MACHINERY_EXPOSURE_HAZARD",
+        "BLOCKED_EGRESS_HAZARD",
+        "BLOCKED_AISLE_HAZARD",
+        "FIRE_ACCESS_HAZARD",
+        "PEDESTRIAN_ZONE_INTRUSION",
+        "VEHICLE_ZONE_INTRUSION",
+        "DOCK_EDGE_HAZARD",
+        "SPILL_SLIP_HAZARD",
+        "BLIND_CORNER_HAZARD",
+        "PROXIMITY_HAZARD",
+        "UNKNOWN_HAZARD"
+      ]
+    },
+    "entity_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "CATASTROPHIC",
+        "CRITICAL",
+        "MODERATE",
+        "MINOR",
+        "NEGLIGIBLE"
+      ]
+    },
+    "imminence": {
+      "type": "string",
+      "enum": [
+        "IMMINENT",
+        "HIGH",
+        "MEDIUM",
+        "LOW",
+        "NONE"
+      ]
+    },
+    "lifecycle_state": {
+      "type": "string",
+      "enum": [
+        "CANDIDATE",
+        "CONFIRMED",
+        "ESCALATING",
+        "MITIGATING",
+        "RESOLVED",
+        "SUPPRESSED",
+        "FALSE_ALARM"
+      ]
+    }
+  }
+}

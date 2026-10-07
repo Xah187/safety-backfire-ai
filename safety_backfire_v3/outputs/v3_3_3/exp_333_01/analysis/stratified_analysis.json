@@ -1,0 +1,36 @@
+{
+  "artifact_name": "EXP_333_01_STRATIFIED_ANALYSIS",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "facility_id": "FACILITY_E_COLD_STORAGE",
+  "governance_rule": "Every stratum must report its sample count. Strata with N=0 are explicitly marked NOT_ESTABLISHED.",
+  "strata": {
+    "distance": {
+      "near_0_to_4m": {"sample_count": 0, "precision": null, "recall": null, "f1": null, "coverage": null, "status": "NOT_ESTABLISHED"},
+      "mid_4_to_8m": {"sample_count": 0, "precision": null, "recall": null, "f1": null, "coverage": null, "status": "NOT_ESTABLISHED"},
+      "far_gt_8m": {"sample_count": 0, "precision": null, "recall": null, "f1": null, "coverage": null, "status": "NOT_ESTABLISHED"}
+    },
+    "occlusion": {
+      "low_occlusion": {"sample_count": 0, "precision": null, "recall": null, "f1": null, "coverage": null, "status": "NOT_ESTABLISHED"},
+      "medium_occlusion": {"sample_count": 0, "precision": null, "recall": null, "f1": null, "coverage": null, "status": "NOT_ESTABLISHED"},
+      "high_occlusion": {"sample_count": 0, "precision": null, "recall": null, "f1": null, "coverage": null, "status": "NOT_ESTABLISHED"}
+    },
+    "lighting": {
+      "normal_light": {"sample_count": 0, "precision": null, "recall": null, "f1": null, "coverage": null, "status": "NOT_ESTABLISHED"},
+      "low_light": {"sample_count": 0, "precision": null, "recall": null, "f1": null, "coverage": null, "status": "NOT_ESTABLISHED"}
+    },
+    "class": {
+      "Person": {"sample_count": 0, "f1": null, "status": "NOT_ESTABLISHED"},
+      "Vehicle": {"sample_count": 0, "f1": null, "status": "NOT_ESTABLISHED"},
+      "Storage": {"sample_count": 0, "f1": null, "status": "NOT_ESTABLISHED"},
+      "Load": {"sample_count": 0, "f1": null, "status": "NOT_ESTABLISHED"},
+      "Machine": {"sample_count": 0, "f1": null, "status": "NOT_ESTABLISHED"}
+    },
+    "camera": {
+      "CAM_EXT_01": {"sample_count": 0, "f1": null, "status": "NOT_ESTABLISHED"},
+      "CAM_EXT_02": {"sample_count": 0, "f1": null, "status": "NOT_ESTABLISHED"},
+      "CAM_EXT_03": {"sample_count": 0, "f1": null, "status": "NOT_ESTABLISHED"},
+      "CAM_EXT_04": {"sample_count": 0, "f1": null, "status": "NOT_ESTABLISHED"}
+    }
+  },
+  "summary": "All strata have sample_count = 0 due to pending external site data collection."
+}

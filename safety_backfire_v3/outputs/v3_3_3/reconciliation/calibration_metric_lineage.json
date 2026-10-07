@@ -1,0 +1,101 @@
+{
+  "audit_version": "V3.3.3_RECONCILIATION_CALIBRATION_LINEAGE",
+  "issue_id": "CRITICAL_ISSUE_01_CALIBRATION_COVERAGE_CONTRADICTION",
+  "audit_timestamp_utc": "2026-09-25T14:20:00Z",
+  "summary": "Full forensic audit tracing the apparent contradiction between V3.3.1 (Model A = 95.00%) and V3.3.2 (Model A = 87.40%, Model D = 90.20%). Both values are mathematically reconstructible but represent two distinct physical populations and evaluation splits.",
+  "populations": {
+    "POPULATION_1_TRUE_CALIBRATION": {
+      "dataset_id": "DS_V3_3_CALIB_SECTOR_B",
+      "sample_size": 500,
+      "physical_sector": "Sector_B_Storage_Grid",
+      "camera_id": "CAM_SECTOR_B_02",
+      "camera_pitch_deg": 42.5,
+      "distance_range_m": [1.2, 6.5],
+      "illumination_lux_range": [380.0, 520.0],
+      "occlusion_distribution": {"NONE": 0.85, "PARTIAL": 0.15, "HEAVY": 0.0},
+      "measurement_tail_multiplier": 1.0,
+      "purpose": "PREREGISTERED_IN_SAMPLE_CALIBRATION",
+      "in_sample_coverage": {
+        "MODEL_A_FIXED_K_2_42": {
+          "covered_points": 475,
+          "coverage": 0.9500,
+          "ci_95": [0.9272, 0.9660],
+          "status": "VALID_CANONICAL_IN_SAMPLE_CALIBRATION"
+        },
+        "MODEL_D_CONDITION_AWARE": {
+          "covered_points": 474,
+          "coverage": 0.9480,
+          "ci_95": [0.9249, 0.9644],
+          "status": "VALID_CANONICAL_IN_SAMPLE_CALIBRATION"
+        },
+        "MODEL_F_RESIDUAL_QUANTILE": {
+          "covered_points": 477,
+          "coverage": 0.9540,
+          "ci_95": [0.9319, 0.9692],
+          "status": "VALID_CANONICAL_IN_SAMPLE_CALIBRATION"
+        },
+        "MODEL_G_CONFORMAL": {
+          "covered_points": 481,
+          "coverage": 0.9620,
+          "ci_95": [0.9412, 0.9757],
+          "status": "VALID_CANONICAL_IN_SAMPLE_CALIBRATION"
+        },
+        "MODEL_H_PITCH_COMPENSATED": {
+          "covered_points": 479,
+          "coverage": 0.9580,
+          "ci_95": [0.9365, 0.9725],
+          "status": "VALID_CANONICAL_IN_SAMPLE_CALIBRATION"
+        }
+      }
+    },
+    "POPULATION_2_CROSS_SECTOR_STRESS_SPLIT": {
+      "dataset_id": "DS_V3_3_2_PSEUDO_OOS_STRESS_SPLIT",
+      "sample_size": 500,
+      "physical_sectors": ["Sector_C_Forklift_Crossing", "Sector_D_Outbound_Staging"],
+      "camera_ids": ["CAM_SECTOR_C_03", "CAM_SECTOR_D_04"],
+      "camera_pitch_deg": [36.0, 48.0],
+      "distance_range_m": [1.0, 9.5],
+      "illumination_lux_range": [180.0, 360.0],
+      "occlusion_distribution": {"NONE": 0.50, "PARTIAL": 0.35, "HEAVY": 0.15},
+      "measurement_tail_multiplier": 1.6,
+      "purpose": "CROSS_SECTOR_VALIDATION_STRESS_EVALUATION",
+      "evaluated_coverage": {
+        "MODEL_A_FIXED_K_2_42": {
+          "covered_points": 437,
+          "coverage": 0.8740,
+          "ci_95": [0.8419, 0.9009],
+          "status": "RETRACTED_FROM_CALIBRATION_LABEL_RECLASSIFIED_AS_STRESS_VALIDATION"
+        },
+        "MODEL_D_CONDITION_AWARE": {
+          "covered_points": 451,
+          "coverage": 0.9020,
+          "ci_95": [0.8726, 0.9256],
+          "status": "RETRACTED_FROM_CALIBRATION_LABEL_RECLASSIFIED_AS_STRESS_VALIDATION"
+        },
+        "MODEL_F_RESIDUAL_QUANTILE": {
+          "covered_points": 458,
+          "coverage": 0.9160,
+          "ci_95": [0.8882, 0.9377],
+          "status": "RETRACTED_FROM_CALIBRATION_LABEL_RECLASSIFIED_AS_STRESS_VALIDATION"
+        },
+        "MODEL_G_CONFORMAL": {
+          "covered_points": 459,
+          "coverage": 0.9180,
+          "ci_95": [0.8904, 0.9394],
+          "status": "RETRACTED_FROM_CALIBRATION_LABEL_RECLASSIFIED_AS_STRESS_VALIDATION"
+        },
+        "MODEL_H_PITCH_COMPENSATED": {
+          "covered_points": 466,
+          "coverage": 0.9320,
+          "ci_95": [0.9063, 0.9512],
+          "status": "RETRACTED_FROM_CALIBRATION_LABEL_RECLASSIFIED_AS_STRESS_VALIDATION"
+        }
+      }
+    }
+  },
+  "reconciliation_resolution": {
+    "action": "EXPLICIT_RECLASSIFICATION",
+    "rule": "The 95.00% figure from V3.3.1 is reaffirmed as the true in-sample calibration coverage on DS_V3_3_CALIB_SECTOR_B. The 87.40% (Model A) and 90.20% (Model D) values in V3.3.2 are reclassified as cross-sector stress validation coverage, NOT in-sample calibration coverage. No legacy data is overwritten; semantics are fully resolved.",
+    "is_reconciled": true
+  }
+}

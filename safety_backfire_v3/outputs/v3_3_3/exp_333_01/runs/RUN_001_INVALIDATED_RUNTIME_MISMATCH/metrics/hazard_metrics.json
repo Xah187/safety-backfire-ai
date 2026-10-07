@@ -1,0 +1,41 @@
+{
+  "artifact_name": "EXP_333_01_HAZARD_METRICS",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "facility_id": "FACILITY_E_COLD_STORAGE",
+  "decision_layer": "HAZARD",
+  "overall_metrics": {
+    "hazard_precision": null,
+    "hazard_recall": null,
+    "hazard_f1": null,
+    "status": "NOT_ESTABLISHED"
+  },
+  "hazard_types_stratified": {
+    "HAZ_01_PEDESTRIAN_FORKLIFT_PROXIMITY": {
+      "ground_truth_events": 0,
+      "detected_events": 0,
+      "state": "NOT_ESTABLISHED"
+    },
+    "HAZ_02_BLIND_CORNER_INCUSION": {
+      "ground_truth_events": 0,
+      "detected_events": 0,
+      "state": "NOT_ESTABLISHED"
+    },
+    "HAZ_03_TTC_TIME_TO_COLLISION_BREACH": {
+      "ground_truth_events": 0,
+      "detected_events": 0,
+      "state": "NOT_ESTABLISHED"
+    },
+    "HAZ_04_UNSTABLE_STORAGE_LOAD": {
+      "ground_truth_events": 0,
+      "detected_events": 0,
+      "state": "NOT_ESTABLISHED"
+    }
+  },
+  "taxonomy_states_allowed": [
+    "SUPPORTED",
+    "NOT_ESTABLISHED",
+    "OUT_OF_ODD",
+    "INSUFFICIENT_EVIDENCE"
+  ],
+  "overall_hazard_state": "NOT_ESTABLISHED"
+}

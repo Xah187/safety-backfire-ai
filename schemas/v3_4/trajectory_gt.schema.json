@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safety-backfire-ai.org/schemas/v3_4/trajectory_gt.schema.json",
+  "title": "V3.4 Trajectory Ground Truth Schema",
+  "description": "Schema for 3D metric ground-plane trajectories across persistent spatial coordinates in industrial facilities.",
+  "type": "object",
+  "required": [
+    "facility_id",
+    "trajectory_id",
+    "object_id",
+    "timestamp",
+    "world_x",
+    "world_y",
+    "world_z",
+    "zone_id"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "facility_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Facility unique identifier."
+    },
+    "trajectory_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique trajectory track identifier."
+    },
+    "object_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique persistent entity identifier."
+    },
+    "timestamp": {
+      "type": "number",
+      "minimum": 0.0,
+      "description": "Observation timestamp in seconds."
+    },
+    "world_x": {
+      "type": "number",
+      "description": "World metric X-coordinate on facility ground plane (meters)."
+    },
+    "world_y": {
+      "type": "number",
+      "description": "World metric Y-coordinate on facility ground plane (meters)."
+    },
+    "world_z": {
+      "oneOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string",
+          "enum": ["UNKNOWN"]
+        }
+      ],
+      "description": "World metric elevation Z relative to ground plane (meters) or UNKNOWN."
+    },
+    "zone_id": {
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "string",
+          "enum": ["UNKNOWN"]
+        }
+      ],
+      "description": "Surveyed zone identifier or UNKNOWN."
+    }
+  }
+}

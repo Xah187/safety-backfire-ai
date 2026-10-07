@@ -1,0 +1,15 @@
+{
+  "lock_version": "V3.3.2_EXPERIMENT_LOCK",
+  "status": "LOCKED_PRE_EVALUATION",
+  "experiments": [
+    "EXP_332_01",
+    "EXP_332_02",
+    "EXP_332_03",
+    "EXP_332_04",
+    "EXP_332_05",
+    "EXP_332_06",
+    "EXP_332_07",
+    "EXP_332_08",
+    "EXP_332_09"
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "specification_name": "BackfireAwareDetectionSpecification",
+  "milestone": "V3.4-G",
+  "version": "1.0.0",
+  "creation_timestamp_utc": "2026-10-01T18:35:00Z",
+  "governance_status": {
+    "human_review": "BYPASSED",
+    "safety_backfire_gt": "NOT_ESTABLISHED",
+    "safety_backfire_validation": "NOT_ESTABLISHED",
+    "perception_metrics": "NOT_ESTABLISHED",
+    "model_h": "FROZEN_INVARIANT",
+    "production_model": "UNCHANGED",
+    "current_generator_status": "PRIMARY_NEAR_MISS_FILTER",
+    "backfire_aware_implementation": "NOT_IMPLEMENTED"
+  },
+  "current_generator_reclassification": {
+    "original_designation": "candidate_relevance_score",
+    "reclassified_designation": "PRIMARY_INTERACTION_SCORE",
+    "prohibited_designations": [
+      "BACKFIRE_SCORE",
+      "RISK_PROBABILITY",
+      "SAFETY_SCORE",
+      "BACKFIRE_PROBABILITY"
+    ],
+    "architectural_classification": "PROXIMITY_DOMINANT",
+    "feature_coverage": {
+      "spatial_proximity": "60% weight",
+      "co_occurrence_duration": "40% weight",
+      "secondary_risk_aware": false,
+      "causal_chain_aware": false,
+      "post_aware": false,
+      "intervention_aware": false
+    },
+    "correct_mathematical_constraint": {
+      "equation": "Score = 0.60 * max(0, min(1, 1 - d/600)) + 0.40 * min(1, N/150)",
+      "condition_for_score_ge_0_60": "d <= 400.0 * min(1, N/150)",
+      "mathematical_implication": "d <= 400.0 px is a necessary upper bound derived from dur <= 1.0, but NOT sufficient on its own. For any given co-occurrence N, closest approach d must satisfy d <= 400 * (N/150)."
+    }
+  },
+  "backfire_event_contract": {
+    "definition": "A Backfire Candidate event is a multi-stage spatiotemporal sequence in which a safety intervention aimed at averting a primary hazard directly or causally redirects kinetic energy or agent displacement into a secondary zone, producing an observable net hazard increase in that secondary zone.",
+    "formal_stages": {
+      "T0": { "name": "PRE_BASELINE", "requirement": "Calibrated unperturbed baseline hazard state R_sec(PRE) and R_prim(PRE)." },
+      "T1": { "name": "PRIMARY_INTERACTION", "requirement": "Spatial and temporal convergence of primary actors in primary zone." },
+      "T2": { "name": "INTERVENTION", "requirement": "Physical avoidance maneuver, emergency brake, horn, or yield action executed." },
+      "T3": { "name": "PRIMARY_MITIGATION", "requirement": "Primary collision risk eliminated or substantially diminished." },
+      "T4": { "name": "RISK_REDIRECTION", "requirement": "Lateral displacement, vehicle swerve, or pedestrian avoidance path directed toward secondary zone." },
+      "T5": { "name": "SECONDARY_EXPOSURE_POST", "requirement": "Observable hazard exposure R_sec(POST) manifests in secondary zone during POST window." }
+    },
+    "canonical_chain": "PRIMARY_RISK -> INTERVENTION -> PRIMARY_RISK_REDUCTION -> RISK_REDIRECTION -> SECONDARY_RISK_INCREASE"
+  },
+  "two_stage_architecture": {
+    "description": "Replaces single-scalar scoring with a two-stage hierarchical screening architecture to prevent proximity-overfitting.",
+    "stage_a": {
+      "name": "INTERACTION_AND_NEAR_MISS_DETECTION",
+      "purpose": "Detect and quantify convergence between vehicles and workers in primary lanes.",
+      "output_score": "PRIMARY_INTERACTION_SCORE",
+      "disposition_if_fails_stage_b": "PRIMARY_NEAR_MISS"
+    },
+    "stage_b": {
+      "name": "BACKFIRE_EVIDENCE_GATE",
+      "purpose": "Filter candidates through four mandatory gates before Backfire candidacy is permitted.",
+      "gates": [
+        "INTERVENTION_CONFIRMATION_GATE",
+        "OBSERVABILITY_GATE",
+        "SECONDARY_RISK_DELTA_GATE",
+        "CAUSAL_CONFOUNDER_ISOLATION_GATE"
+      ],
+      "disposition_if_passes_all_gates": "BACKFIRE_CANDIDATE",
+      "disposition_if_observability_or_causality_fails": "INSUFFICIENT_BACKFIRE_EVIDENCE"
+    }
+  },
+  "required_feature_groups": {
+    "group_a_primary_interaction": [
+      { "name": "minimum_separation_px", "unit": "pixels", "type": "continuous" },
+      { "name": "relative_bearing_deg", "unit": "degrees", "type": "continuous" },
+      { "name": "co_occurrence_duration_s", "unit": "seconds", "type": "continuous" },
+      { "name": "time_to_closest_approach_s", "unit": "seconds", "type": "continuous" }
+    ],
+    "group_b_intervention_response": [
+      { "name": "longitudinal_deceleration_mps2", "unit": "m/s^2", "type": "telemetry_or_tracking" },
+      { "name": "vehicle_complete_stop_flag", "unit": "boolean", "type": "kinematic" },
+      { "name": "heading_angular_velocity_deg_s", "unit": "deg/s", "type": "telemetry_or_tracking" },
+      { "name": "lateral_path_displacement_m", "unit": "meters", "type": "kinematic" },
+      { "name": "intervention_timestamp_s", "unit": "seconds", "type": "temporal" }
+    ],
+    "group_c_secondary_zone": [
+      { "name": "secondary_zone_occupancy_pre", "unit": "count", "type": "spatial_occupancy" },
+      { "name": "secondary_zone_occupancy_post", "unit": "count", "type": "spatial_occupancy" },
+      { "name": "secondary_entry_timestamp_s", "unit": "seconds", "type": "temporal" },
+      { "name": "secondary_risk_delta", "unit": "differential_score", "formula": "R_sec_POST - R_sec_PRE" }
+    ],
+    "group_d_temporal_causal": [
+      { "name": "pre_baseline_duration_s", "unit": "seconds", "type": "temporal" },
+      { "name": "post_persistence_duration_s", "unit": "seconds", "type": "temporal" },
+      { "name": "temporal_precedence_valid", "unit": "boolean", "type": "logical" },
+      { "name": "causal_path_continuity", "unit": "categorical", "values": ["CONTINUOUS", "PARTIAL", "BROKEN"] },
+      { "name": "confounder_isolation_status", "unit": "categorical", "values": ["ISOLATED", "COMPROMISED", "FAILED"] }
+    ]
+  },
+  "telemetry_contract": {
+    "objective": "Provide vehicle physical state independent of optical occlusions.",
+    "required_signals": [
+      { "signal": "speed_mps", "unit": "m/s", "rationale": "Separates active travel from idling/parked vehicles." },
+      { "signal": "longitudinal_accel_mps2", "unit": "m/s^2", "rationale": "Directly measures braking deceleration intensity." },
+      { "signal": "brake_pressure_bar", "unit": "bar / %", "rationale": "Confirms mechanical brake application independent of detector footpoint jitter." },
+      { "signal": "steering_wheel_angle_deg", "unit": "degrees", "rationale": "Confirms driver avoidance steering into secondary zone." },
+      { "signal": "yaw_rate_deg_s", "unit": "deg/s", "rationale": "Measures vehicle rotational swerve into adjacent aisles." }
+    ]
+  },
+  "secondary_zone_sensor_contract": {
+    "objective": "Overcome the 0% depth visibility bottleneck documented in Milestone V3.4-E.",
+    "acceptable_sensor_modalities": [
+      { "modality": "Multi-Camera Cross-View", "description": "Overlapping cameras looking down secondary rack aisles with calibrated 3D ground homography." },
+      { "modality": "In-Aisle LiDAR Scanner", "description": "Ceiling-mounted 2D/3D LiDAR tracking agent occupancy in blind rack depths." },
+      { "modality": "Piezoelectric Floor Sensors", "description": "Pressure-sensitive floor mats logging worker presence at rack aisle thresholds." }
+    ],
+    "synchronization_requirement": "All secondary sensor streams must be synchronized to master UTC clock within +/- 33.3ms (1 frame at 30 fps)."
+  },
+  "conceptual_test_cases": {
+    "CASE_A": {
+      "name": "Close Approach with Safe Stop (e.g. UNION_CAND_Warehouse_026_010)",
+      "scenario": "Forklift approaches pedestrian at 115px; executes emergency stop; post displacement = 2.5px; zero entry into secondary aisle.",
+      "stage_a_outcome": "PRIMARY_INTERACTION_SCORE = 0.642 (High Interaction)",
+      "stage_b_outcome": "Delta_R_sec = 0.0 -> FAILS Secondary Risk Gate",
+      "expected_classification": "PRIMARY_NEAR_MISS"
+    },
+    "CASE_B": {
+      "name": "Evasive Swerve with Secondary Exposure (Prototypical Backfire)",
+      "scenario": "Forklift swerves away from worker in lane; turns directly into secondary rack aisle where second worker is forced to jump back.",
+      "stage_a_outcome": "PRIMARY_INTERACTION_SCORE = 0.750",
+      "stage_b_outcome": "Delta_R_sec > 0, Causal Link = TRUE, Observability = FULL -> PASSES All Gates",
+      "expected_classification": "BACKFIRE_CANDIDATE"
+    },
+    "CASE_C": {
+      "name": "Avoidance with Occluded Secondary Zone (Observability Bottleneck)",
+      "scenario": "Forklift brakes/swerves toward rack aisle; aisle depth is completely occluded by stacked pallets; presence of workers inside aisle unknown.",
+      "stage_a_outcome": "PRIMARY_INTERACTION_SCORE = 0.680",
+      "stage_b_outcome": "SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE -> FAILS Observability Gate",
+      "expected_classification": "INSUFFICIENT_BACKFIRE_EVIDENCE"
+    },
+    "CASE_D": {
+      "name": "Secondary Hazard from Independent Vehicle (e.g. UNION_CAND_Warehouse_027_003)",
+      "scenario": "Primary forklift leaves scene; an unrelated second forklift enters adjacent aisle during POST window.",
+      "stage_a_outcome": "PRIMARY_INTERACTION_SCORE = 0.750",
+      "stage_b_outcome": "Confounder = NEW_FORKLIFT / TRACK_HANDOFF -> FAILS Causal Gate (CAUSAL_ISOLATION = FAILED)",
+      "expected_classification": "INSUFFICIENT_BACKFIRE_EVIDENCE"
+    },
+    "CASE_E": {
+      "name": "Wide Clearance Transit (e.g. Camera_0005 nominal events)",
+      "scenario": "Worker walks along perimeter corridor 800px away from idling forklift; neither trajectory alters.",
+      "stage_a_outcome": "PRIMARY_INTERACTION_SCORE = 0.083",
+      "stage_b_outcome": "FAILS Stage A threshold -> Dropped from candidate evaluation",
+      "expected_classification": "PRIMARY_NEAR_MISS / NOMINAL_TRANSIT"
+    }
+  }
+}

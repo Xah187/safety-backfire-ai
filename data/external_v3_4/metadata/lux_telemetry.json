@@ -1,0 +1,32 @@
+[
+  {
+    "facility_id": "FACILITY_PILOT_01",
+    "sensor_id": "LUX_METER_NIST_001",
+    "timestamp": 0.0,
+    "lux": 165.2,
+    "sampling_rate_hz": 10.0,
+    "measurement_uncertainty": 2.5,
+    "calibration_reference": "CERT_NIST_2026_0881",
+    "location": [12.5, 4.0, 3.4]
+  },
+  {
+    "facility_id": "FACILITY_PILOT_01",
+    "sensor_id": "LUX_METER_NIST_001",
+    "timestamp": 1.0,
+    "lux": 164.8,
+    "sampling_rate_hz": 10.0,
+    "measurement_uncertainty": 2.5,
+    "calibration_reference": "CERT_NIST_2026_0881",
+    "location": [12.5, 4.0, 3.4]
+  },
+  {
+    "facility_id": "FACILITY_PILOT_01",
+    "sensor_id": "LUX_METER_NIST_001",
+    "timestamp": 2.0,
+    "lux": "UNKNOWN",
+    "sampling_rate_hz": 10.0,
+    "measurement_uncertainty": "UNKNOWN",
+    "calibration_reference": "CERT_NIST_2026_0881",
+    "location": [12.5, 4.0, 3.4]
+  }
+]

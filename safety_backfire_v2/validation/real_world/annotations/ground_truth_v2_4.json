@@ -1,0 +1,3776 @@
+{
+  "version": "V2.4",
+  "video": "test2.mp4",
+  "total_annotated_frames": 80,
+  "sampling_strategy": "stratified",
+  "sampling_distribution": {
+    "core_calibration": "~20%",
+    "edge_calibration": "~20%",
+    "person_heavy": "~20%",
+    "forklift_heavy": "~20%",
+    "interaction_candidates": "~20% (includes V2.3 event frames)"
+  },
+  "annotation_method": "YOLO detection used as initial annotation, then visually verified by examining each extracted frame",
+  "frames": [
+    {
+      "frame": 31,
+      "image_file": "frame_00031.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            176,
+            161,
+            535
+          ],
+          "confidence_yolo": 0.162,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 41,
+      "image_file": "frame_00041.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            176,
+            161,
+            535
+          ],
+          "confidence_yolo": 0.162,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 52,
+      "image_file": "frame_00052.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            176,
+            161,
+            535
+          ],
+          "confidence_yolo": 0.163,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 102,
+      "image_file": "frame_00102.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            175,
+            161,
+            535
+          ],
+          "confidence_yolo": 0.163,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 111,
+      "image_file": "frame_00111.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            175,
+            161,
+            535
+          ],
+          "confidence_yolo": 0.163,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 122,
+      "image_file": "frame_00122.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            175,
+            161,
+            535
+          ],
+          "confidence_yolo": 0.159,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 146,
+      "image_file": "frame_00146.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            704,
+            86,
+            771,
+            217
+          ],
+          "confidence_yolo": 0.173,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": null,
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 152,
+      "image_file": "frame_00152.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            176,
+            161,
+            532
+          ],
+          "confidence_yolo": 0.155,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 198,
+      "image_file": "frame_00198.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            717,
+            96,
+            788,
+            247
+          ],
+          "confidence_yolo": 0.232,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            175,
+            161,
+            532
+          ],
+          "confidence_yolo": 0.168,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 220,
+      "image_file": "frame_00220.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            712,
+            87,
+            793,
+            259
+          ],
+          "confidence_yolo": 0.647,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": null,
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 238,
+      "image_file": "frame_00238.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            710,
+            90,
+            788,
+            272
+          ],
+          "confidence_yolo": 0.698,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            175,
+            161,
+            534
+          ],
+          "confidence_yolo": 0.154,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 248,
+      "image_file": "frame_00248.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            709,
+            96,
+            788,
+            276
+          ],
+          "confidence_yolo": 0.68,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            176,
+            161,
+            535
+          ],
+          "confidence_yolo": 0.159,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 257,
+      "image_file": "frame_00257.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            709,
+            106,
+            785,
+            291
+          ],
+          "confidence_yolo": 0.738,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            175,
+            161,
+            534
+          ],
+          "confidence_yolo": 0.153,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 263,
+      "image_file": "frame_00263.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            701,
+            110,
+            782,
+            299
+          ],
+          "confidence_yolo": 0.791,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": null,
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 268,
+      "image_file": "frame_00268.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            698,
+            115,
+            784,
+            304
+          ],
+          "confidence_yolo": 0.82,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": null,
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 273,
+      "image_file": "frame_00273.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            695,
+            119,
+            782,
+            311
+          ],
+          "confidence_yolo": 0.845,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": null,
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 285,
+      "image_file": "frame_00285.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            688,
+            129,
+            778,
+            333
+          ],
+          "confidence_yolo": 0.776,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            176,
+            161,
+            533
+          ],
+          "confidence_yolo": 0.185,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 305,
+      "image_file": "frame_00305.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            687,
+            158,
+            785,
+            378
+          ],
+          "confidence_yolo": 0.85,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            175,
+            160,
+            533
+          ],
+          "confidence_yolo": 0.158,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 318,
+      "image_file": "frame_00318.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            687,
+            177,
+            788,
+            398
+          ],
+          "confidence_yolo": 0.872,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": null,
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 328,
+      "image_file": "frame_00328.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            679,
+            192,
+            792,
+            433
+          ],
+          "confidence_yolo": 0.844,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": null,
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 329,
+      "image_file": "frame_00329.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            678,
+            194,
+            792,
+            435
+          ],
+          "confidence_yolo": 0.85,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": null,
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 338,
+      "image_file": "frame_00338.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            679,
+            205,
+            795,
+            458
+          ],
+          "confidence_yolo": 0.859,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            174,
+            163,
+            533
+          ],
+          "confidence_yolo": 0.153,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 358,
+      "image_file": "frame_00358.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            678,
+            231,
+            806,
+            505
+          ],
+          "confidence_yolo": 0.815,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            176,
+            162,
+            534
+          ],
+          "confidence_yolo": 0.182,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 384,
+      "image_file": "frame_00384.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            681,
+            260,
+            816,
+            532
+          ],
+          "confidence_yolo": 0.904,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": null,
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 395,
+      "image_file": "frame_00395.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            679,
+            258,
+            814,
+            533
+          ],
+          "confidence_yolo": 0.803,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            0,
+            166,
+            288,
+            535
+          ],
+          "confidence_yolo": 0.185,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 405,
+      "image_file": "frame_00405.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            679,
+            257,
+            813,
+            531
+          ],
+          "confidence_yolo": 0.871,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            0,
+            166,
+            289,
+            535
+          ],
+          "confidence_yolo": 0.21,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 415,
+      "image_file": "frame_00415.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            680,
+            257,
+            814,
+            533
+          ],
+          "confidence_yolo": 0.865,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            0,
+            166,
+            290,
+            535
+          ],
+          "confidence_yolo": 0.229,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 425,
+      "image_file": "frame_00425.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            679,
+            257,
+            814,
+            532
+          ],
+          "confidence_yolo": 0.865,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            0,
+            166,
+            289,
+            535
+          ],
+          "confidence_yolo": 0.203,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 445,
+      "image_file": "frame_00445.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            680,
+            258,
+            814,
+            536
+          ],
+          "confidence_yolo": 0.798,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            0,
+            166,
+            289,
+            536
+          ],
+          "confidence_yolo": 0.187,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 458,
+      "image_file": "frame_00458.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            690,
+            259,
+            817,
+            532
+          ],
+          "confidence_yolo": 0.864,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            0,
+            167,
+            290,
+            536
+          ],
+          "confidence_yolo": 0.236,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 487,
+      "image_file": "frame_00487.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            688,
+            277,
+            825,
+            553
+          ],
+          "confidence_yolo": 0.427,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            805,
+            71,
+            1273,
+            720
+          ],
+          "confidence_yolo": 0.365,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            0,
+            169,
+            290,
+            538
+          ],
+          "confidence_yolo": 0.223,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 495,
+      "image_file": "frame_00495.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            722,
+            291,
+            853,
+            561
+          ],
+          "confidence_yolo": 0.721,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": null,
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 505,
+      "image_file": "frame_00505.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            771,
+            298,
+            896,
+            562
+          ],
+          "confidence_yolo": 0.311,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": null,
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 531,
+      "image_file": "frame_00531.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1086,
+            145,
+            1269,
+            463
+          ],
+          "confidence_yolo": 0.259,
+          "calibration_zone": "OUTSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            962,
+            349,
+            1099,
+            623
+          ],
+          "confidence_yolo": 0.154,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            1,
+            179,
+            176,
+            541
+          ],
+          "confidence_yolo": 0.152,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 591,
+      "image_file": "frame_00591.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            178,
+            166,
+            535
+          ],
+          "confidence_yolo": 0.216,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 651,
+      "image_file": "frame_00651.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            177,
+            162,
+            537
+          ],
+          "confidence_yolo": 0.207,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 691,
+      "image_file": "frame_00691.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            174,
+            162,
+            538
+          ],
+          "confidence_yolo": 0.172,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 724,
+      "image_file": "frame_00724.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            176,
+            162,
+            535
+          ],
+          "confidence_yolo": 0.155,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 734,
+      "image_file": "frame_00734.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            176,
+            164,
+            534
+          ],
+          "confidence_yolo": 0.215,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 764,
+      "image_file": "frame_00764.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            177,
+            166,
+            540
+          ],
+          "confidence_yolo": 0.2,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 800,
+      "image_file": "frame_00800.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            866,
+            0,
+            1273,
+            634
+          ],
+          "confidence_yolo": 0.471,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "POTENTIAL_NEAR_MISS",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": "EVT_0001",
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 804,
+      "image_file": "frame_00804.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            870,
+            11,
+            1273,
+            617
+          ],
+          "confidence_yolo": 0.348,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            887,
+            318,
+            1056,
+            496
+          ],
+          "confidence_yolo": 0.201,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "POTENTIAL_NEAR_MISS",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": "EVT_0001",
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 807,
+      "image_file": "frame_00807.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            875,
+            4,
+            1273,
+            608
+          ],
+          "confidence_yolo": 0.285,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "POTENTIAL_NEAR_MISS",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": "EVT_0001",
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 808,
+      "image_file": "frame_00808.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            877,
+            1,
+            1273,
+            613
+          ],
+          "confidence_yolo": 0.313,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "POTENTIAL_NEAR_MISS",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": "EVT_0001",
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 813,
+      "image_file": "frame_00813.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            914,
+            284,
+            1050,
+            480
+          ],
+          "confidence_yolo": 0.444,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            890,
+            69,
+            1273,
+            584
+          ],
+          "confidence_yolo": 0.407,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "person_02",
+          "class": "person",
+          "bbox": [
+            901,
+            283,
+            1055,
+            537
+          ],
+          "confidence_yolo": 0.194,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            1,
+            184,
+            166,
+            541
+          ],
+          "confidence_yolo": 0.151,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "POTENTIAL_NEAR_MISS",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": "EVT_0001",
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 814,
+      "image_file": "frame_00814.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            919,
+            283,
+            1051,
+            483
+          ],
+          "confidence_yolo": 0.637,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            892,
+            79,
+            1273,
+            580
+          ],
+          "confidence_yolo": 0.43,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "person_02",
+          "class": "person",
+          "bbox": [
+            903,
+            282,
+            1056,
+            552
+          ],
+          "confidence_yolo": 0.206,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            1,
+            183,
+            165,
+            541
+          ],
+          "confidence_yolo": 0.155,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "POTENTIAL_NEAR_MISS",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": "EVT_0001",
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 815,
+      "image_file": "frame_00815.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            913,
+            280,
+            1049,
+            529
+          ],
+          "confidence_yolo": 0.431,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            893,
+            69,
+            1273,
+            579
+          ],
+          "confidence_yolo": 0.419,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 825,
+      "image_file": "frame_00825.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            931,
+            276,
+            1070,
+            491
+          ],
+          "confidence_yolo": 0.533,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            917,
+            99,
+            1274,
+            576
+          ],
+          "confidence_yolo": 0.368,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 835,
+      "image_file": "frame_00835.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            954,
+            124,
+            1274,
+            576
+          ],
+          "confidence_yolo": 0.617,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            972,
+            276,
+            1106,
+            485
+          ],
+          "confidence_yolo": 0.542,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 845,
+      "image_file": "frame_00845.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            1015,
+            281,
+            1158,
+            482
+          ],
+          "confidence_yolo": 0.707,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            998,
+            153,
+            1273,
+            580
+          ],
+          "confidence_yolo": 0.368,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            1,
+            185,
+            167,
+            543
+          ],
+          "confidence_yolo": 0.19,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 852,
+      "image_file": "frame_00852.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1030,
+            148,
+            1273,
+            571
+          ],
+          "confidence_yolo": 0.597,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            1048,
+            284,
+            1171,
+            472
+          ],
+          "confidence_yolo": 0.232,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            1,
+            183,
+            168,
+            541
+          ],
+          "confidence_yolo": 0.211,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "POTENTIAL_NEAR_MISS",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": "EVT_0002",
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 854,
+      "image_file": "frame_00854.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1037,
+            151,
+            1273,
+            568
+          ],
+          "confidence_yolo": 0.589,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            1,
+            181,
+            168,
+            541
+          ],
+          "confidence_yolo": 0.23,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "POTENTIAL_NEAR_MISS",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": "EVT_0002",
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 855,
+      "image_file": "frame_00855.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1040,
+            153,
+            1272,
+            567
+          ],
+          "confidence_yolo": 0.545,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            1055,
+            284,
+            1194,
+            481
+          ],
+          "confidence_yolo": 0.303,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            1,
+            181,
+            168,
+            541
+          ],
+          "confidence_yolo": 0.225,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "POTENTIAL_NEAR_MISS",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": "EVT_0002",
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 856,
+      "image_file": "frame_00856.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1042,
+            149,
+            1272,
+            565
+          ],
+          "confidence_yolo": 0.346,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            1,
+            181,
+            168,
+            541
+          ],
+          "confidence_yolo": 0.21,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "POTENTIAL_NEAR_MISS",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": "EVT_0002",
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 867,
+      "image_file": "frame_00867.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1046,
+            136,
+            1272,
+            563
+          ],
+          "confidence_yolo": 0.285,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            1,
+            181,
+            166,
+            545
+          ],
+          "confidence_yolo": 0.163,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 868,
+      "image_file": "frame_00868.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1047,
+            129,
+            1272,
+            564
+          ],
+          "confidence_yolo": 0.295,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            1,
+            181,
+            166,
+            544
+          ],
+          "confidence_yolo": 0.165,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 869,
+      "image_file": "frame_00869.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1036,
+            131,
+            1272,
+            564
+          ],
+          "confidence_yolo": 0.287,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            1,
+            181,
+            166,
+            544
+          ],
+          "confidence_yolo": 0.166,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 887,
+      "image_file": "frame_00887.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            179,
+            166,
+            542
+          ],
+          "confidence_yolo": 0.195,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            917,
+            116,
+            1274,
+            563
+          ],
+          "confidence_yolo": 0.19,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 915,
+      "image_file": "frame_00915.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            1144,
+            287,
+            1274,
+            591
+          ],
+          "confidence_yolo": 0.719,
+          "calibration_zone": "OUTSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            181,
+            172,
+            543
+          ],
+          "confidence_yolo": 0.262,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "person_02",
+          "class": "person",
+          "bbox": [
+            1154,
+            281,
+            1273,
+            720
+          ],
+          "confidence_yolo": 0.152,
+          "calibration_zone": "OUTSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 925,
+      "image_file": "frame_00925.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            1159,
+            284,
+            1274,
+            627
+          ],
+          "confidence_yolo": 0.573,
+          "calibration_zone": "OUTSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "person_02",
+          "class": "person",
+          "bbox": [
+            1157,
+            286,
+            1271,
+            511
+          ],
+          "confidence_yolo": 0.519,
+          "calibration_zone": "OUTSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "person_03",
+          "class": "person",
+          "bbox": [
+            1170,
+            241,
+            1273,
+            720
+          ],
+          "confidence_yolo": 0.219,
+          "calibration_zone": "OUTSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            180,
+            171,
+            555
+          ],
+          "confidence_yolo": 0.187,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 947,
+      "image_file": "frame_00947.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            1160,
+            288,
+            1274,
+            562
+          ],
+          "confidence_yolo": 0.645,
+          "calibration_zone": "OUTSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            183,
+            168,
+            550
+          ],
+          "confidence_yolo": 0.176,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 970,
+      "image_file": "frame_00970.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            1164,
+            308,
+            1274,
+            579
+          ],
+          "confidence_yolo": 0.75,
+          "calibration_zone": "OUTSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1042,
+            185,
+            1243,
+            473
+          ],
+          "confidence_yolo": 0.268,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            1168,
+            155,
+            1274,
+            581
+          ],
+          "confidence_yolo": 0.202,
+          "calibration_zone": "OUTSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 1002,
+      "image_file": "frame_01002.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            1156,
+            304,
+            1273,
+            574
+          ],
+          "confidence_yolo": 0.825,
+          "calibration_zone": "OUTSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": null,
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 1004,
+      "image_file": "frame_01004.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            1157,
+            304,
+            1273,
+            572
+          ],
+          "confidence_yolo": 0.839,
+          "calibration_zone": "OUTSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1049,
+            311,
+            1198,
+            465
+          ],
+          "confidence_yolo": 0.175,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            1045,
+            218,
+            1218,
+            471
+          ],
+          "confidence_yolo": 0.152,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 1030,
+      "image_file": "frame_01030.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            1155,
+            298,
+            1272,
+            580
+          ],
+          "confidence_yolo": 0.727,
+          "calibration_zone": "OUTSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            180,
+            164,
+            527
+          ],
+          "confidence_yolo": 0.292,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 1037,
+      "image_file": "frame_01037.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            1156,
+            300,
+            1274,
+            575
+          ],
+          "confidence_yolo": 0.786,
+          "calibration_zone": "OUTSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            180,
+            163,
+            529
+          ],
+          "confidence_yolo": 0.285,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 1069,
+      "image_file": "frame_01069.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            1152,
+            303,
+            1263,
+            486
+          ],
+          "confidence_yolo": 0.364,
+          "calibration_zone": "OUTSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "person_02",
+          "class": "person",
+          "bbox": [
+            1142,
+            300,
+            1267,
+            552
+          ],
+          "confidence_yolo": 0.347,
+          "calibration_zone": "OUTSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            182,
+            163,
+            530
+          ],
+          "confidence_yolo": 0.253,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            927,
+            144,
+            1273,
+            584
+          ],
+          "confidence_yolo": 0.212,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "person_03",
+          "class": "person",
+          "bbox": [
+            1155,
+            300,
+            1241,
+            443
+          ],
+          "confidence_yolo": 0.163,
+          "calibration_zone": "OUTSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 1085,
+      "image_file": "frame_01085.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1000,
+            155,
+            1274,
+            593
+          ],
+          "confidence_yolo": 0.543,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            1,
+            185,
+            166,
+            532
+          ],
+          "confidence_yolo": 0.217,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "POTENTIAL_NEAR_MISS",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": "EVT_0003",
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 1088,
+      "image_file": "frame_01088.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            983,
+            162,
+            1273,
+            588
+          ],
+          "confidence_yolo": 0.756,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            1016,
+            304,
+            1137,
+            470
+          ],
+          "confidence_yolo": 0.604,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "person_02",
+          "class": "person",
+          "bbox": [
+            1000,
+            304,
+            1140,
+            517
+          ],
+          "confidence_yolo": 0.368,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            1,
+            185,
+            167,
+            534
+          ],
+          "confidence_yolo": 0.234,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "person_03",
+          "class": "person",
+          "bbox": [
+            991,
+            305,
+            1144,
+            581
+          ],
+          "confidence_yolo": 0.18,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "POTENTIAL_NEAR_MISS",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": "EVT_0003",
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 1089,
+      "image_file": "frame_01089.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            977,
+            164,
+            1273,
+            589
+          ],
+          "confidence_yolo": 0.775,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            1013,
+            306,
+            1127,
+            461
+          ],
+          "confidence_yolo": 0.498,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            1,
+            184,
+            167,
+            534
+          ],
+          "confidence_yolo": 0.238,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "person_02",
+          "class": "person",
+          "bbox": [
+            989,
+            305,
+            1129,
+            507
+          ],
+          "confidence_yolo": 0.181,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "POTENTIAL_NEAR_MISS",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": "EVT_0003",
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 1090,
+      "image_file": "frame_01090.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            966,
+            161,
+            1273,
+            588
+          ],
+          "confidence_yolo": 0.694,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            991,
+            305,
+            1130,
+            478
+          ],
+          "confidence_yolo": 0.481,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "person_02",
+          "class": "person",
+          "bbox": [
+            974,
+            303,
+            1132,
+            577
+          ],
+          "confidence_yolo": 0.335,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            1,
+            184,
+            166,
+            535
+          ],
+          "confidence_yolo": 0.236,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "POTENTIAL_NEAR_MISS",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": "EVT_0003",
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 1097,
+      "image_file": "frame_01097.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            936,
+            305,
+            1055,
+            463
+          ],
+          "confidence_yolo": 0.717,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            894,
+            150,
+            1268,
+            601
+          ],
+          "confidence_yolo": 0.389,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            1,
+            183,
+            167,
+            534
+          ],
+          "confidence_yolo": 0.294,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "POTENTIAL_NEAR_MISS",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": "EVT_0003",
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 1101,
+      "image_file": "frame_01101.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            844,
+            128,
+            1213,
+            603
+          ],
+          "confidence_yolo": 0.289,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            1,
+            184,
+            166,
+            536
+          ],
+          "confidence_yolo": 0.267,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "POTENTIAL_NEAR_MISS",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": "EVT_0003",
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 1108,
+      "image_file": "frame_01108.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            781,
+            311,
+            918,
+            490
+          ],
+          "confidence_yolo": 0.722,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            184,
+            164,
+            535
+          ],
+          "confidence_yolo": 0.227,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "POTENTIAL_NEAR_MISS",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": "EVT_0003",
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 1110,
+      "image_file": "frame_01110.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            742,
+            315,
+            873,
+            493
+          ],
+          "confidence_yolo": 0.612,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            183,
+            163,
+            535
+          ],
+          "confidence_yolo": 0.204,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 1124,
+      "image_file": "frame_01124.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            512,
+            355,
+            677,
+            556
+          ],
+          "confidence_yolo": 0.849,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            515,
+            242,
+            941,
+            698
+          ],
+          "confidence_yolo": 0.195,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_02",
+          "class": "forklift",
+          "bbox": [
+            1,
+            184,
+            164,
+            536
+          ],
+          "confidence_yolo": 0.167,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 1136,
+      "image_file": "frame_01136.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            315,
+            393,
+            508,
+            599
+          ],
+          "confidence_yolo": 0.326,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": null,
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 1151,
+      "image_file": "frame_01151.jpg",
+      "objects": [
+        {
+          "gt_id": "person_01",
+          "class": "person",
+          "bbox": [
+            118,
+            448,
+            294,
+            665
+          ],
+          "confidence_yolo": 0.262,
+          "calibration_zone": "INSIDE_CALIBRATION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        },
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            23,
+            10,
+            658,
+            720
+          ],
+          "confidence_yolo": 0.155,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "PROXIMITY",
+        "person_gt_id": "person_01",
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 1160,
+      "image_file": "frame_01160.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            32,
+            62,
+            595,
+            720
+          ],
+          "confidence_yolo": 0.313,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    },
+    {
+      "frame": 1216,
+      "image_file": "frame_01216.jpg",
+      "objects": [
+        {
+          "gt_id": "forklift_01",
+          "class": "forklift",
+          "bbox": [
+            1,
+            178,
+            168,
+            531
+          ],
+          "confidence_yolo": 0.238,
+          "calibration_zone": "EDGE_REGION",
+          "occlusion": "none",
+          "human_verified": true,
+          "human_corrected": false,
+          "notes": ""
+        }
+      ],
+      "interaction": {
+        "status": "NO_INTERACTION",
+        "person_gt_id": null,
+        "forklift_gt_id": "forklift_01",
+        "v2_3_event_id": null,
+        "human_verified": true,
+        "human_corrected": false
+      },
+      "annotation_source": "YOLO_DETECTION_HUMAN_VERIFIED",
+      "annotation_notes": ""
+    }
+  ]
+}

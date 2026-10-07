@@ -1,0 +1,41 @@
+{
+  "audit_version": "V3.2.1_K_FACTOR_AUDIT",
+  "timestamp_utc": "2026-09-24T18:25:00Z",
+  "parameter": "k = 2.24",
+  "canonical_factor_k": 2.24,
+  "semantic_classification": "EMPIRICALLY_CALIBRATED_COVERAGE_FACTOR",
+  "mathematical_reconciliation": {
+    "is_theoretical_chi_square_quantile": false,
+    "theoretical_chi2_2d_95_quantile": 2.44774689,
+    "selected_engineering_factor": 2.24,
+    "discrepancy_explanation": "A standard 2-DOF bivariate Gaussian 95% circular error probable requires multiplier k = sqrt(chi2_2(0.95)) = 2.448. In safety_backfire_v3, k = 2.24 was empirically calibrated on calibration sequence residuals to prevent excessive spatial volume overconfidence while satisfying the empirical target of >= 95% containment. Therefore, 2.24 is NOT a Chi-Square 95% quantile and is NOT an unconditional mathematical guarantee."
+  },
+  "calibration_split_lineage": {
+    "dataset_split": "CALIBRATION_SPLIT (VID_CAL_001 / CAM02)",
+    "sample_size_N": 500,
+    "contained_observations": 488,
+    "empirical_containment_ratio": 0.9760,
+    "calibration_data_reused_for_factor_selection": true,
+    "independent_validation_status": "NOT_AN_INDEPENDENT_VALIDATION",
+    "mandatory_designation": "IN_SAMPLE_CALIBRATION_COVERAGE",
+    "wilson_ci_descriptive": [0.9585, 0.9862]
+  },
+  "retractions": {
+    "mathematical_guarantee_retracted": true,
+    "chi_square_quantile_claim_retracted": true
+  },
+  "prohibited_terminology": [
+    "mathematical guarantee",
+    "guaranteed safety coverage",
+    "Chi-Square 95% Quantile",
+    "independently validated 97.60% coverage",
+    "zero failure probability"
+  ],
+  "allowed_reporting_terminology": [
+    "empirically calibrated coverage factor",
+    "in-sample calibration coverage of 97.60% (488/500)",
+    "calibrated 2D Gaussian multiplier"
+  ],
+  "source_artifact": "safety_backfire_v3/outputs/v3_2_1/uncertainty_lineage_audit.json",
+  "status": "RECONCILED_CANONICAL"
+}

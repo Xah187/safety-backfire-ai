@@ -1,0 +1,103 @@
+{
+  "milestone": "V3.4-N",
+  "document_title": "V3.4-K Test Execution Count Forensic Audit",
+  "governance_classification": "SOFTWARE_VERIFICATION_AUDIT",
+  "epistemic_mandate": "Software verification test execution metrics MUST NEVER be described as '100% accuracy' or conflated with empirical sensor accuracy. The metric represents the test pass rate of deterministic software verification suites.",
+  "audited_source_artifact": "scripts/v3_4_k/run_field_verification.py",
+  "execution_verification": {
+    "command_executed": "python3 scripts/v3_4_k/run_field_verification.py",
+    "exit_code": 0,
+    "execution_status": "SUCCESS"
+  },
+  "test_breakdown_taxonomy": {
+    "atomic_tests": {
+      "definition": "Independent test cases executing an isolated data pipeline evaluation against a discrete context mutation or fault injection.",
+      "suites": [
+        {
+          "suite_name": "Fault Injection Suite (Step 3)",
+          "execution_function": "execute_fault_injection_suite()",
+          "test_type": "ATOMIC_TEST",
+          "categories": {
+            "time_and_synchronization": { "case_ids": ["K01", "K02", "K03", "K04", "K05", "K06", "K07", "K08"], "count": 8 },
+            "camera_health": { "case_ids": ["CAM01", "CAM02", "CAM03", "CAM04", "CAM05", "CAM06"], "count": 6 },
+            "can_telemetry": { "case_ids": ["CAN01", "CAN02", "CAN03", "CAN04", "CAN05", "CAN06"], "count": 6 },
+            "secondary_sensor": { "case_ids": ["SEC01", "SEC02", "SEC03", "SEC04", "SEC05", "SEC06"], "count": 6 },
+            "calibration_mismatch": { "case_ids": ["CALIB01", "CALIB02", "CALIB03", "CALIB04", "CALIB05"], "count": 5 },
+            "facility_geometry": { "case_ids": ["GEOM01", "GEOM02", "GEOM03", "GEOM04", "GEOM05", "GEOM06"], "count": 6 }
+          },
+          "atomic_test_count": 37,
+          "passed_count": 37
+        },
+        {
+          "suite_name": "Cryptographic Provenance & Tamper Detection Suite (Step 4)",
+          "execution_function": "execute_cryptographic_provenance_and_tamper_suite()",
+          "test_type": "ATOMIC_TEST",
+          "tests": [
+            "Raw video hash mutation detection",
+            "CAN telemetry payload tampering detection",
+            "Session manifest hash mismatch detection",
+            "Calibration hash modification detection"
+          ],
+          "atomic_test_count": 4,
+          "passed_count": 4
+        },
+        {
+          "suite_name": "Reviewer Blinding & Model H Isolation Suite (Step 5)",
+          "execution_function": "execute_reviewer_blinding_and_model_h_isolation()",
+          "test_type": "ATOMIC_TEST",
+          "tests": [
+            "Absence of AI scores, boxes, and track IDs in review package",
+            "Model H invariant parameter freeze verification",
+            "Reviewer package automated leak detection test"
+          ],
+          "atomic_test_count": 3,
+          "passed_count": 3
+        },
+        {
+          "suite_name": "Pipeline Reproducibility & Recovery Suite (Step 6)",
+          "execution_function": "execute_pipeline_reproducibility_and_recovery()",
+          "test_type": "ATOMIC_TEST",
+          "tests": [
+            "Deterministic multi-run hash consistency",
+            "Failure recovery disconnect protection",
+            "State rollback upon evaluation exception",
+            "Output manifest schema compliance"
+          ],
+          "atomic_test_count": 4,
+          "passed_count": 4
+        }
+      ],
+      "total_atomic_tests": 48
+    },
+    "meta_tests_and_aggregate_assertions": {
+      "definition": "Higher-level programmatic checks inspecting aggregate results from the atomic test suites to enforce mandatory project success conditions.",
+      "suite_name": "Mandatory Success Conditions Audit (Step 7)",
+      "execution_function": "verify_ten_mandatory_success_conditions()",
+      "test_type": "META_TEST_AND_AGGREGATE_ASSERTION",
+      "conditions": [
+        "CONDITION_01_VALID_PACKAGE_BECOMES_READY_FOR_PILOT",
+        "CONDITION_02_CLOCK_FAILURE_BECOMES_NOT_READY",
+        "CONDITION_03_MISSING_CAN_BECOMES_NOT_READY",
+        "CONDITION_04_SECONDARY_SENSOR_FAILURE_BECOMES_NOT_READY",
+        "CONDITION_05_CALIBRATION_MISMATCH_BECOMES_NOT_READY",
+        "CONDITION_06_ZONE_MISMATCH_BECOMES_NOT_READY",
+        "CONDITION_07_PROVENANCE_TAMPER_DETECTED_AND_REJECTED",
+        "CONDITION_08_REPLAY_DETERMINISTIC_REPRODUCIBILITY_PASS",
+        "CONDITION_09_REVIEWER_PACKAGE_STRICT_BLINDING_PASS",
+        "CONDITION_10_PRODUCTION_CODEBASE_AND_MODEL_H_UNCHANGED"
+      ],
+      "meta_test_count": 10,
+      "passed_count": 10
+    }
+  },
+  "summary_metrics": {
+    "atomic_tests_executed": 48,
+    "meta_verification_checks_executed": 10,
+    "total_automated_verification_checks": 58,
+    "checks_passed": 58,
+    "checks_failed": 0,
+    "test_pass_rate_percentage": 100.0,
+    "authoritative_nomenclature": "58 AUTOMATED VERIFICATION CHECKS (100% TEST PASS RATE)",
+    "prohibited_nomenclature": ["100% accuracy", "100% hardware accuracy", "37 total tests without reconciliation"]
+  }
+}

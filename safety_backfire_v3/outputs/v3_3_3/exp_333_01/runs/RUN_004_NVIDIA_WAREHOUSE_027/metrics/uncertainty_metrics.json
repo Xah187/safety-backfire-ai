@@ -1,0 +1,33 @@
+{
+  "runtime_implementation_status": "CONFORMANT_TO_FROZEN_SPECIFICATION",
+  "model_h_evaluation_status": "PARTIAL_THREE_OF_FOUR_INPUTS_AVAILABLE",
+  "model_h_formal_status": "INPUT_INSUFFICIENT",
+  "model_h_reason": "MISSING_ILLUMINATION_LUX",
+  "missing_inputs": [
+    "illumination_lux"
+  ],
+  "available_inputs": {
+    "distance_m": "FROM_CALIBRATED_HOMOGRAPHY",
+    "camera_pitch_deg": "FROM_CALIBRATED_EXTRINSIC_OPTICAL_AXIS",
+    "occlusion_state": "DERIVED_FROM_BBOX_IOU"
+  },
+  "mode_a_no_occlusion": {
+    "definition": "k0 + dist_penalty + pitch_penalty (gamma_occ = 0)",
+    "mean_k_partial": 2.8404,
+    "min_k_partial": 2.62,
+    "max_k_partial": 4.3533,
+    "std_k_partial": 0.2921
+  },
+  "mode_b_with_occlusion_proxy": {
+    "definition": "k0 + dist_penalty + pitch_penalty + gamma_occ[occ]",
+    "mean_k_partial": 2.908,
+    "min_k_partial": 2.62,
+    "max_k_partial": 4.7533,
+    "std_k_partial": 0.3152
+  },
+  "worst_case_bounds": {
+    "rationale": "If L=0 (total darkness), illumination penalty = 0.12 * 300/100 = 0.36",
+    "worst_case_illumination_penalty": 0.36,
+    "governance_note": "Risk quantification bound only; not substituted into canonical ledger."
+  }
+}

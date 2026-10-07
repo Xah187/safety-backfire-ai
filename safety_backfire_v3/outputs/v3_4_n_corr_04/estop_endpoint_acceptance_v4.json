@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EStopEndpointAcceptanceSpecificationV4",
+  "milestone": "V3.4-N-CORR-04",
+  "description": "Authoritative Gate C8 acceptance contract incorporating the empirically approved 10.0 ms persistence window, ISO 14253-1 guarded decision rules, and decoupled safety endpoints.",
+  "governance_classification": "PHYSICAL_COMMISSIONING_GATE_C8_SPECIFICATION",
+  "gate_id": "C8_E_STOP",
+  "authoritative_endpoint_name": "ELECTRICAL_TRACTION_DEENERGIZED",
+  "persistence_parameter_status": "APPROVED",
+  "approved_persistence_duration_ms": 10.0,
+  "signal_processing_pipeline": "RMS-PROC-V1.0",
+  "acceptance_criteria": {
+    "guarded_latency_limit_ms": 48.8,
+    "nominal_latency_limit_ms": 50.0,
+    "latency_uncertainty_U_ms": 1.2,
+    "guarded_current_threshold_a_rms": 0.413,
+    "nominal_current_threshold_a_rms": 0.500,
+    "current_uncertainty_U_a": 0.087,
+    "contactor_auxiliary_limit_ms": 35.0,
+    "acceptance_rule": "delta_t_electrical_traction <= 48.8 ms WITH sustained I_motor_RMS <= 0.413 A for >= 10.0 ms AND delta_t_contactor <= 35.0 ms AND vendor component certificate (Cat 4 / PLe / SIL-3) on file."
+  },
+  "safety_endpoints_decoupling_matrix": {
+    "electrical_traction_deenergized": {
+      "endpoint": "ELECTRICAL_TRACTION_DEENERGIZED",
+      "measured_by": "Keysight DSO + Tektronix TCP303 Current Clamp on Phase U",
+      "threshold": "I_motor_RMS <= 0.413 A sustained for >= 10.0 ms",
+      "proves_safe_torque_off": true,
+      "proves_dc_bus_isolation": false,
+      "proves_mechanical_braking": false,
+      "proves_vehicle_stopped": false
+    },
+    "contactor_open": {
+      "endpoint": "CONTACTOR_OPEN",
+      "measured_by": "DSO Channel 2 monitoring auxiliary microswitch logic level (24V -> 0V)",
+      "diagnostic_target": "<= 35.0 ms"
+    },
+    "dc_bus_isolated": {
+      "endpoint": "DC_BUS_ISOLATED",
+      "measured_by": "Independent high-voltage differential probe (V_bus < 50.0 VDC)",
+      "decoupling_rationale": "Inverter DC link capacitors remain energized after motor current cutoff."
+    },
+    "brake_control_deenergized": {
+      "endpoint": "BRAKE_CONTROL_DEENERGIZED",
+      "measured_by": "DSO Channel 4 monitoring brake solenoid coil voltage (24V -> 0V)"
+    },
+    "mechanical_brake_applied": {
+      "endpoint": "MECHANICAL_BRAKE_APPLIED",
+      "measured_by": "IMU longitudinal deceleration trace (a >= 1.5 m/s^2) or caliper displacement sensor"
+    },
+    "vehicle_motion_stopped": {
+      "endpoint": "VEHICLE_MOTION_STOPPED",
+      "measured_by": "Wheel speed quadrature encoder frequency == 0 Hz"
+    }
+  },
+  "gate_c8_initial_commissioning_status": "UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING"
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "facility_id": "FACILITY_PILOT_01",
+    "camera_id": "Camera_0001",
+    "frame_id": 0,
+    "timestamp": 0.0,
+    "object_id": "WORKER_401",
+    "class": "person",
+    "bbox": [450.0, 310.0, 520.0, 560.0],
+    "foot_point": [485.0, 560.0],
+    "visibility": 1.0,
+    "occlusion": "NONE"
+  },
+  {
+    "facility_id": "FACILITY_PILOT_01",
+    "camera_id": "Camera_0001",
+    "frame_id": 0,
+    "timestamp": 0.0,
+    "object_id": "FORKLIFT_01",
+    "class": "forklift",
+    "bbox": [720.0, 280.0, 940.0, 620.0],
+    "foot_point": [830.0, 620.0],
+    "visibility": 0.85,
+    "occlusion": "PARTIAL"
+  }
+]

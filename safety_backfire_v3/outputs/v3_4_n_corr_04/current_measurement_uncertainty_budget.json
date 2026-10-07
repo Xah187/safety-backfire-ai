@@ -1,0 +1,105 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TractionCurrentMeasurementUncertaintyBudget",
+  "milestone": "V3.4-N-CORR-04",
+  "description": "Comprehensive GUM (JCGM 100:2008) compliant measurement uncertainty budget for motor stator phase current de-energization and persistence timing on AGV-RES-TRUCK-01.",
+  "governance_classification": "PHYSICAL_METROLOGY_UNCERTAINTY_LEDGER",
+  "current_amplitude_uncertainty_budget": {
+    "nominal_threshold_a_rms": 0.50,
+    "measurement_components": [
+      {
+        "component_id": "U_CAL_PROBE",
+        "description": "Current probe and amplifier calibration uncertainty (ISO/IEC 17025 accredited certificate)",
+        "type": "TYPE_B",
+        "distribution": "NORMAL",
+        "divisor": 2.0,
+        "standard_uncertainty_a": 0.015
+      },
+      {
+        "component_id": "U_OFFSET_DRIFT",
+        "description": "Residual Hall-effect DC zero offset after manual de-gaussing and front-panel balance nulling",
+        "type": "TYPE_B",
+        "distribution": "RECTANGULAR",
+        "divisor": 1.732,
+        "standard_uncertainty_a": 0.020
+      },
+      {
+        "component_id": "U_NOISE_FLOOR",
+        "description": "Inverter DC bus switching EMI and laboratory ambient optical/inductive noise floor",
+        "type": "TYPE_A",
+        "distribution": "NORMAL",
+        "divisor": 1.0,
+        "standard_uncertainty_a": 0.025
+      },
+      {
+        "component_id": "U_ADC_QUANTIZATION",
+        "description": "Oscilloscope 8-bit vertical digitizer resolution at 100 mV/div (0.1 V/A scale)",
+        "type": "TYPE_B",
+        "distribution": "RECTANGULAR",
+        "divisor": 1.732,
+        "standard_uncertainty_a": 0.010
+      },
+      {
+        "component_id": "U_RMS_WINDOWING",
+        "description": "Sliding RMS numerical integration discretization over finite 2.0 ms window (2000 samples)",
+        "type": "TYPE_B",
+        "distribution": "NORMAL",
+        "divisor": 1.0,
+        "standard_uncertainty_a": 0.018
+      },
+      {
+        "component_id": "U_TEMPERATURE_DRIFT",
+        "description": "Thermal sensitivity of Hall sensor over ambient operating range (15 deg C to 35 deg C)",
+        "type": "TYPE_B",
+        "distribution": "RECTANGULAR",
+        "divisor": 1.732,
+        "standard_uncertainty_a": 0.012
+      },
+      {
+        "component_id": "U_FILTER_RESPONSE",
+        "description": "Hardware 4th-order low-pass filter passband ripple and transient overshoot",
+        "type": "TYPE_B",
+        "distribution": "NORMAL",
+        "divisor": 1.0,
+        "standard_uncertainty_a": 0.015
+      }
+    ],
+    "combined_standard_uncertainty_u_c_a": 0.0436,
+    "coverage_factor_k": 2.0,
+    "coverage_probability_percent": 95.45,
+    "expanded_uncertainty_U_a": 0.087,
+    "guarded_acceptance_threshold_a_rms": 0.413,
+    "decision_rule": "I_motor_RMS(t) <= (0.500 A - 0.087 A) = 0.413 A RMS to guarantee 95.45% confidence of true current < 0.500 A RMS"
+  },
+  "timing_latency_uncertainty_budget": {
+    "nominal_budget_ms": 50.0,
+    "measurement_components": [
+      {
+        "component_id": "U_TIMEBASE",
+        "description": "Keysight DSO crystal oscillator timebase clock jitter and drift",
+        "standard_uncertainty_ms": 0.05
+      },
+      {
+        "component_id": "U_RMS_DELAY",
+        "description": "Sliding RMS filter group delay uncertainty (symmetric Hann/rectangular kernel)",
+        "standard_uncertainty_ms": 0.25
+      },
+      {
+        "component_id": "U_STEP_DISCRETIZATION",
+        "description": "Sliding evaluation step size (0.1 ms step discretization uncertainty)",
+        "standard_uncertainty_ms": 0.05
+      },
+      {
+        "component_id": "U_SWITCH_BOUNCE",
+        "description": "E-Stop push button dry contact break chattering and threshold trigger jitter",
+        "standard_uncertainty_ms": 0.35
+      }
+    ],
+    "combined_standard_uncertainty_u_c_ms": 0.436,
+    "coverage_factor_k": 2.0,
+    "coverage_probability_percent": 95.45,
+    "expanded_uncertainty_U_ms": 0.872,
+    "guarded_latency_limit_ms": 48.8,
+    "decision_rule": "delta_t_electrical_traction <= (50.0 ms - 1.2 ms) = 48.8 ms with U = 1.2 ms conservative guard band"
+  }
+}

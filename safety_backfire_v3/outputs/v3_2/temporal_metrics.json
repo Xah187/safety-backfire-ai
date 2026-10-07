@@ -1,0 +1,99 @@
+{
+  "suite": "TEMPORAL_LATENCY_RED_TEAM",
+  "evaluations": [
+    {
+      "injected_latency_ms": 0,
+      "source_to_decision_age_ms": 15.0,
+      "odd_status": "VALID",
+      "evidence_quality": 0.9,
+      "risk_decision": "CONFIRMED_DANGER",
+      "alert_dispatched": true,
+      "safe_fail_closed": true
+    },
+    {
+      "injected_latency_ms": 50,
+      "source_to_decision_age_ms": 65.0,
+      "odd_status": "VALID",
+      "evidence_quality": 0.9,
+      "risk_decision": "CONFIRMED_DANGER",
+      "alert_dispatched": true,
+      "safe_fail_closed": true
+    },
+    {
+      "injected_latency_ms": 100,
+      "source_to_decision_age_ms": 115.0,
+      "odd_status": "DEGRADED",
+      "evidence_quality": 0.55,
+      "risk_decision": "HIGH_PRIORITY_CANDIDATE",
+      "alert_dispatched": false,
+      "safe_fail_closed": true
+    },
+    {
+      "injected_latency_ms": 150,
+      "source_to_decision_age_ms": 165.0,
+      "odd_status": "DEGRADED",
+      "evidence_quality": 0.55,
+      "risk_decision": "HIGH_PRIORITY_CANDIDATE",
+      "alert_dispatched": false,
+      "safe_fail_closed": true
+    },
+    {
+      "injected_latency_ms": 200,
+      "source_to_decision_age_ms": 215.0,
+      "odd_status": "DEGRADED",
+      "evidence_quality": 0.55,
+      "risk_decision": "HIGH_PRIORITY_CANDIDATE",
+      "alert_dispatched": false,
+      "safe_fail_closed": true
+    },
+    {
+      "injected_latency_ms": 250,
+      "source_to_decision_age_ms": 265.0,
+      "odd_status": "DEGRADED",
+      "evidence_quality": 0.55,
+      "risk_decision": "HIGH_PRIORITY_CANDIDATE",
+      "alert_dispatched": false,
+      "safe_fail_closed": true
+    },
+    {
+      "injected_latency_ms": 350,
+      "source_to_decision_age_ms": 365.0,
+      "odd_status": "DEGRADED",
+      "evidence_quality": 0.55,
+      "risk_decision": "HIGH_PRIORITY_CANDIDATE",
+      "alert_dispatched": false,
+      "safe_fail_closed": true
+    },
+    {
+      "injected_latency_ms": 500,
+      "source_to_decision_age_ms": 515.0,
+      "odd_status": "DEGRADED",
+      "evidence_quality": 0.55,
+      "risk_decision": "HIGH_PRIORITY_CANDIDATE",
+      "alert_dispatched": false,
+      "safe_fail_closed": false
+    },
+    {
+      "injected_latency_ms": 1000,
+      "source_to_decision_age_ms": 1015.0,
+      "odd_status": "OUT_OF_DOMAIN",
+      "evidence_quality": 0.2,
+      "risk_decision": "INSUFFICIENT_EVIDENCE",
+      "alert_dispatched": false,
+      "safe_fail_closed": true
+    },
+    {
+      "injected_latency_ms": 3000,
+      "source_to_decision_age_ms": 3015.0,
+      "odd_status": "OUT_OF_DOMAIN",
+      "evidence_quality": 0.2,
+      "risk_decision": "INSUFFICIENT_EVIDENCE",
+      "alert_dispatched": false,
+      "safe_fail_closed": true
+    }
+  ],
+  "p95_decision_age_nominal_ms": 32.5,
+  "p99_decision_age_nominal_ms": 48.0,
+  "starvation_cutoff_ms": 500.0,
+  "fail_closed_compliance": true
+}

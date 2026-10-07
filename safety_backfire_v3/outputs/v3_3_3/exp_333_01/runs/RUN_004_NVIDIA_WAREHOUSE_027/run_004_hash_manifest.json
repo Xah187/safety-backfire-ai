@@ -1,0 +1,25 @@
+{
+  "run_id": "RUN_004_NVIDIA_WAREHOUSE_027",
+  "timestamp_utc": "2026-09-28T09:59:50.258695+00:00",
+  "artifacts": {
+    "camera_extrinsic_convention_audit_027.json": "4d3d5ec2cd8261f0275fc0e9daa923a723073910e0f9b03236216ee45234b2ab",
+    "canonical_evaluation.json": "ed2a211c5b08c91c15e2b0f04e9cdf899e6cdadb839c6940f20d20d13266c6f2",
+    "cross_scene_distribution_shift.json": "54bb8ac17010613b3f3765957649749d3fdef6f62b47eee1aea80a78de29c855",
+    "metrics/geometry_metrics.json": "cab7c7da4f3a38c181c4a4a7a9a25b3b98985aac052d0f08dec9228dcdfd3518",
+    "metrics/odd_metrics.json": "23e98e901ee89dede3f09f3668628490ab7f3164d587021271c67d19cf8fce0c",
+    "metrics/perception_metrics.json": "ea8ca557bfd9e882a51f204fb28f08c854ebab1571cf5c6d5a0ce1ba0acca743",
+    "metrics/tracking_metrics.json": "6d11b1311e4adcd7dba4148d9fc4b1329d72a67deb2f4a97338c6d9fd292dfea",
+    "metrics/uncertainty_metrics.json": "46d715024b7a158812377c17423c84e99992f2c5408399ec2674c80931811af8",
+    "observation_ledger.json": "930db2a1c293b08b1d0517b4a9b838fb2b906b6441dec4f18a52ceaab431a446",
+    "odd_observation_ledger_027.json": "e249d3cd78f49efc03f4d0b0adc4f5f4bfb15cb995ecb6c1b028b2056f695f4d",
+    "per_camera/Camera_0000_summary.json": "d471ba1963fb2ab1fffee682dd5fd10366d114bc6b01a39250fe1a343095d416",
+    "per_camera/Camera_0001_summary.json": "531448ef4e89273d9707e34d0952fc7321972460c3414b48ffb0bd0023c9a363",
+    "per_camera/Camera_0002_summary.json": "7c8e2cef3d8798220ece4a0ab825bedbfe7ab1631cf9004943b0c15246b3425f",
+    "per_camera/Camera_0003_summary.json": "e823708b278f30f3df8eee035c9184bad3714e8c943fadaf236469207f778cdb",
+    "per_camera/Camera_0004_summary.json": "e5af0326548a3d14e2587edc392a6f491921e1a25381e13d63a4e0a279cbf34e",
+    "per_camera/Camera_0005_summary.json": "1c7014ae6357f0746521688ad802497bb4074276a3f5a0562bdad1c9fdb697c6",
+    "per_camera/Camera_0006_summary.json": "547f642734bb4ad35d2901fa023970e7abe898faa21b5c8c5c0b76ea02c94063",
+    "run_004_manifest.json": "fdd6bc8a4bf516105ab0220e64fc90e7f9df4825ab3a921b9a0ed63fe5c7ad74",
+    "track_topology.json": "49bc9e5d5c5217ee3c2d0909372802ce76a2e08897f508cc7eee874dc6a4e2e2"
+  }
+}

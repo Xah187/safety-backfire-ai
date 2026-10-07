@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safety-backfire.ai/schemas/v3_4/source_authority.schema.json",
+  "title": "SourceAuthorityHierarchySchema",
+  "description": "Defines the authoritative hierarchy and precedence rules for data provenance sources in Safety Backfire AI V3.4.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "hierarchy_levels",
+    "precedence_rule",
+    "minimum_authority_for_real_world",
+    "minimum_authority_for_sim_to_real_claims"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": ["1.0.0", "v3.4"]
+    },
+    "hierarchy_levels": {
+      "type": "array",
+      "description": "Ranked order of source authority from highest (rank 1) to lowest (rank 6).",
+      "items": {
+        "type": "object",
+        "required": ["rank", "authority_type", "description", "can_override_lower_ranks"],
+        "properties": {
+          "rank": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 6
+          },
+          "authority_type": {
+            "type": "string",
+            "enum": [
+              "OFFICIAL_DATASET_DOCUMENTATION",
+              "OFFICIAL_DATASET_REPOSITORY_METADATA",
+              "OFFICIAL_RELEASE_CHANGELOG",
+              "PRIMARY_TECHNICAL_PAPER",
+              "SECONDARY_TECHNICAL_SOURCE",
+              "INTERNAL_ASSUMPTIONS"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "can_override_lower_ranks": {
+            "type": "boolean"
+          },
+          "examples": {
+            "type": "array",
+            "items": {"type": "string"}
+          }
+        }
+      }
+    },
+    "precedence_rule": {
+      "type": "string",
+      "const": "In any case of contradictory claims, the source with the lower rank number (higher authority) strictly invalidates and overrides the source with the higher rank number."
+    },
+    "minimum_authority_for_real_world": {
+      "type": "integer",
+      "maximum": 3,
+      "description": "To classify a dataset or scene as REAL_WORLD, the source must have an authority rank <= 3 (Official Documentation, Repository Metadata, or Official Changelog)."
+    },
+    "minimum_authority_for_sim_to_real_claims": {
+      "type": "integer",
+      "maximum": 3,
+      "description": "To assert that real-world footage is synthetic or simulated, rank <= 3 is strictly required."
+    },
+    "provenance_record_definition": {
+      "type": "object",
+      "required": [
+        "dataset_name",
+        "scene_id",
+        "source_authority_type",
+        "source_authority_rank",
+        "source_url",
+        "provenance_class"
+      ],
+      "properties": {
+        "dataset_name": {"type": "string"},
+        "scene_id": {"type": "string"},
+        "source_authority_type": {
+          "type": "string",
+          "enum": [
+            "OFFICIAL_DATASET_DOCUMENTATION",
+            "OFFICIAL_DATASET_REPOSITORY_METADATA",
+            "OFFICIAL_RELEASE_CHANGELOG",
+            "PRIMARY_TECHNICAL_PAPER",
+            "SECONDARY_TECHNICAL_SOURCE",
+            "INTERNAL_ASSUMPTIONS"
+          ]
+        },
+        "source_authority_rank": {"type": "integer", "minimum": 1, "maximum": 6},
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "provenance_class": {
+          "type": "string",
+          "enum": [
+            "REAL_WORLD",
+            "SYNTHETIC",
+            "MIXED",
+            "UNKNOWN",
+            "REAL_WORLD_TEST_CAPTURE",
+            "SYNTHETIC_BENCHMARK",
+            "MIXED_PROVENANCE_DATASET"
+          ]
+        },
+        "verification_timestamp": {"type": "string"}
+      }
+    }
+  }
+}

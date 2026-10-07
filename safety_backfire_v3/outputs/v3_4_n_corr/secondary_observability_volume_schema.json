@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BaselineObservabilityVolumeCommissioningSchema",
+  "milestone": "V3.4-N-CORR-01",
+  "description": "Validation schema defining volume-based secondary-zone observability proof, replacing point-based target checks with a 3D spatial measurement grid.",
+  "governance_classification": "PHYSICAL_COMMISSIONING_GATE_C4",
+  "volume_observability_mandate": "A single physical target placed at 20m does NOT prove observability across the entire cross-aisle corridor. Commissioning Gate C4 mandates a spatial volumetric sweep across a 3D grid covering the entire 20m depth extent, width clearance, and human height envelope.",
+  "baseline_observability_volume_definition": {
+    "zone_id": "ZONE_CROSS_AISLE_SECONDARY_EAST",
+    "facility_coordinate_frame": "FACILITY_LOCAL_CARTESIAN_X_FORWARD_Y_LEFT_Z_UP",
+    "zone_polygon_vertices_xyz": [
+      [30.0, 0.0, 0.0],
+      [30.0, 3.5, 0.0],
+      [50.0, 3.5, 0.0],
+      [50.0, 0.0, 0.0]
+    ],
+    "depth_extent": {
+      "required_depth_extent_m": 20.0,
+      "classification": "DESIGN_REQUIREMENT",
+      "datum_origin": "Intersection junction mouth (X = 30.0 m)"
+    },
+    "width_extent_m": 3.5,
+    "vertical_height_extent_m": [0.0, 2.2],
+    "measurement_grid": {
+      "grid_topology": "3D_REGULAR_VOXEL_GRID",
+      "depth_planes_m": [5.0, 10.0, 15.0, 20.0],
+      "lateral_positions": ["LEFT_RAIL_-1.2M", "CENTERLINE_0.0M", "RIGHT_RAIL_+1.2M"],
+      "target_heights_m": [0.8, 1.4, 1.8],
+      "total_grid_sample_points": 36
+    }
+  },
+  "physical_target_specification": {
+    "target_model": "Standardized Photometric Mannequin Target (SPMT-01)",
+    "torso_dimensions_cm": { "width": 45.0, "height": 75.0, "depth": 25.0 },
+    "surface_reflectance_photopic_percent": 18.0,
+    "contrast_standard": "ISO 12233 slanted-edge resolution patch on torso"
+  },
+  "optical_resolution_acceptance_target": {
+    "minimum_resolution_at_20m_px_per_m": 65.0,
+    "classification": "CURRENT_ACCEPTANCE_TARGET",
+    "rationale": "Ensures >= 30 pixels across human torso width (0.45m) at maximum 20m depth extent, meeting ByteTrack detection reliability thresholds."
+  },
+  "geometric_obstruction_metric": {
+    "metric_name": "CRITICAL_OBSTRUCTION_AREA",
+    "definition": "Projected area of secondary vehicle diversion trajectory corridor occluded by permanent physical facility structures (racks, columns, conduit).",
+    "acceptance_threshold": 0.0,
+    "unit": "square_meters",
+    "reconciliation_note": "Replaces undefined 'zero blind pockets' with rigorous metric: CRITICAL_OBSTRUCTION_AREA = 0. Zero unobserved floor area > 0.25 m^2 permitted within the 2.0m dynamic vehicle corridor up to 20m depth."
+  },
+  "occlusion_state_taxonomy": {
+    "CLEAR_BASELINE": "All 36 grid points visible; CRITICAL_OBSTRUCTION_AREA == 0; Gate C4 PASS.",
+    "PARTIAL_OCCLUSION": "Minor edge vignetting behind non-structural posts; depth >= 20m maintained; conditional pass.",
+    "HEAVY_OCCLUSION": "Pallet overhangs or pillars occlude > 15% of corridor area; Gate C4 FAIL.",
+    "UNKNOWN_OBSERVABILITY": "Physical volumetric target sweep has not been performed; initial state."
+  },
+  "gate_c4_evaluation": {
+    "participating_camera_ids": ["CAMERA_C"],
+    "auxiliary_sensor_ids": ["SECONDARY_LIDAR_NODE_01"],
+    "current_status": "UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING",
+    "initial_observability_state": "UNKNOWN_OBSERVABILITY",
+    "initial_secondary_depth_visible": false
+  }
+}

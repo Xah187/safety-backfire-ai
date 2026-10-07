@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PhysicalIlluminanceCommissioningSchema",
+  "description": "Validation schema for dedicated physical photometer/lux instrumentation, closing the MISSING_ILLUMINATION_LUX blocker.",
+  "governance_classification": "PHYSICAL_COMMISSIONING_GATE_C7",
+  "epistemic_mandate": "DO NOT derive physical lux from pixel brightness or video auto-exposure histograms unless a separately validated photometric calibration procedure exists. Environmental illuminance must be measured directly with a NIST/DAkkS-calibrated physical lux meter.",
+  "type": "object",
+  "required": [
+    "commissioning_id",
+    "facility_id",
+    "timestamp_utc",
+    "lux_sensor_instrumentation",
+    "spatial_sampling_grid",
+    "illuminance_measurements",
+    "acceptance_target_evaluation",
+    "gate_c7_status"
+  ],
+  "properties": {
+    "commissioning_id": {
+      "type": "string",
+      "pattern": "^LUX-COMM-[0-9]{8}-[0-9]{4}$"
+    },
+    "facility_id": { "type": "string" },
+    "timestamp_utc": { "type": "string", "format": "date-time" },
+    "lux_sensor_instrumentation": {
+      "type": "object",
+      "required": [
+        "lux_device_id",
+        "manufacturer",
+        "model",
+        "serial_number",
+        "calibration_date",
+        "certificate_reference",
+        "measurement_uncertainty_percent",
+        "spectral_response_standard",
+        "sampling_interval_seconds",
+        "timestamp_source"
+      ],
+      "properties": {
+        "lux_device_id": { "type": "string", "example": "LUX-METER-01" },
+        "manufacturer": { "type": "string", "example": "Testo" },
+        "model": { "type": "string", "example": "Testo 540 Digital Lux Meter / GOSSEN MAVOLUX 5032B" },
+        "serial_number": { "type": "string" },
+        "calibration_date": { "type": "string", "format": "date" },
+        "certificate_reference": { "type": "string", "example": "ISO17025-CAL-LUX-2026-044" },
+        "measurement_uncertainty_percent": { "type": "number", "maximum": 3.0 },
+        "spectral_response_standard": { "type": "string", "const": "CIE_V_LAMBDA_PHOTOPIC" },
+        "sampling_interval_seconds": { "type": "number", "maximum": 1.0 },
+        "timestamp_source": { "type": "string", "enum": ["PTP_SYNCHRONIZED_DAQ_TIMESTAMP", "CALIBRATED_LOGGER_CLOCK"] }
+      }
+    },
+    "spatial_sampling_grid": {
+      "type": "array",
+      "description": "Physical illuminance must be audited at minimum 5 critical points across the travel corridor.",
+      "items": {
+        "type": "object",
+        "required": ["point_id", "location_description", "coords_xyz_m"],
+        "properties": {
+          "point_id": { "type": "string", "enum": ["PT_CORRIDOR_ENTRY", "PT_CORRIDOR_MID_JUNCTION", "PT_CORRIDOR_EXIT", "PT_CROSS_AISLE_MOUTH", "PT_CROSS_AISLE_DEPTH_20M"] },
+          "location_description": { "type": "string" },
+          "coords_xyz_m": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3 }
+        }
+      },
+      "minItems": 5
+    },
+    "illuminance_measurements": {
+      "type": "object",
+      "required": ["mean_lux", "min_lux", "max_lux", "flicker_frequency_hz", "flicker_index"],
+      "properties": {
+        "mean_lux": { "type": "number" },
+        "min_lux": { "type": "number" },
+        "max_lux": { "type": "number" },
+        "flicker_frequency_hz": { "type": "number", "minimum": 1000.0, "description": "High-frequency LED driver check to prevent rolling shutter banding" },
+        "flicker_index": { "type": "number", "maximum": 0.05 }
+      }
+    },
+    "acceptance_target_evaluation": {
+      "type": "object",
+      "required": ["target_lux_nominal", "target_tolerance_lux", "classification", "is_within_target"],
+      "properties": {
+        "target_lux_nominal": { "type": "number", "const": 350.0 },
+        "target_tolerance_lux": { "type": "number", "const": 50.0 },
+        "classification": { "type": "string", "const": "CURRENT_ACCEPTANCE_TARGET" },
+        "is_within_target": { "type": "boolean" }
+      }
+    },
+    "gate_c7_status": {
+      "type": "string",
+      "enum": ["GATE_PASS", "GATE_REJECTED"]
+    }
+  }
+}

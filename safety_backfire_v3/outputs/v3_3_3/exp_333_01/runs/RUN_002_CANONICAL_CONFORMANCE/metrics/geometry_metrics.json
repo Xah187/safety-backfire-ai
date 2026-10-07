@@ -1,0 +1,13 @@
+{
+  "distance_evidence_type": "MODEL_ESTIMATE",
+  "laser_ground_survey_available": false,
+  "minimum_separation_observed_m": 4.2,
+  "minimum_separation_classification": "ESTIMATED_MINIMUM_SEPARATION = 4.2m [MODEL_ESTIMATE]",
+  "near_field_lt_4m": 43,
+  "mid_field_4_to_8m": 201,
+  "far_field_gt_8m": 7,
+  "distance_range_m": [
+    3.0,
+    8.641
+  ]
+}

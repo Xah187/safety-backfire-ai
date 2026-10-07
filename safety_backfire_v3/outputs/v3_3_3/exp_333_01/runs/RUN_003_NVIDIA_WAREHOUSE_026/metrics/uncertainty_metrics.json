@@ -1,0 +1,56 @@
+{
+  "runtime_implementation_status": "CONFORMANT_TO_FROZEN_SPECIFICATION",
+  "model_h_evaluation_status": "PARTIAL_THREE_OF_FOUR_INPUTS_AVAILABLE",
+  "model_h_formal_status": "INPUT_INSUFFICIENT",
+  "model_h_reason": "MISSING_ILLUMINATION_LUX",
+  "missing_inputs": [
+    "illumination_lux"
+  ],
+  "available_inputs": {
+    "distance_m": "FROM_CALIBRATED_HOMOGRAPHY",
+    "camera_pitch_deg": "FROM_CALIBRATED_EXTRINSIC",
+    "occlusion_state": "DERIVED_FROM_BBOX_IOU"
+  },
+  "default_substitution_performed": false,
+  "partial_terms_computed": {
+    "distance_term": {
+      "count": 10942,
+      "mean": 0.2513,
+      "min": 0.0,
+      "max": 1.7126
+    },
+    "pitch_term_per_camera": {
+      "Camera_0000": 0.0,
+      "Camera_0001": 0.0,
+      "Camera_0002": 0.22,
+      "Camera_0003": 0.22
+    },
+    "occlusion_distribution": {
+      "NONE": 10056,
+      "PARTIAL": 635,
+      "HEAVY": 251
+    },
+    "occlusion_term_mean": null
+  },
+  "worst_case_bounds": {
+    "rationale": "If L=0 (total darkness), illumination penalty = \u03b2_l \u00d7 300/100 = 0.36",
+    "worst_case_illumination_penalty": 0.36,
+    "note": "This is NOT a Model H evaluation \u2014 it is a conservative bound for governance reporting"
+  },
+  "upgrade_vs_run_002": {
+    "run_002_missing": [
+      "illumination_lux",
+      "camera_pitch_deg",
+      "occlusion_state"
+    ],
+    "run_003_missing": [
+      "illumination_lux"
+    ],
+    "inputs_resolved": [
+      "camera_pitch_deg (FROM_CALIBRATION)",
+      "occlusion_state (DERIVED_FROM_BBOX_IOU)"
+    ],
+    "distance_upgrade": "MODEL_ESTIMATE \u2192 FROM_CALIBRATED_HOMOGRAPHY"
+  },
+  "governing_rationale": "Model H evaluation remains formally INPUT_INSUFFICIENT because physical illumination lux is NOT_AVAILABLE. However, RUN_003 resolves 3 of 4 inputs from calibrated physical sources: camera pitch from extrinsic matrices, metric distance from calibrated homography, and occlusion from bbox IoU. No default or synthetic values were substituted."
+}

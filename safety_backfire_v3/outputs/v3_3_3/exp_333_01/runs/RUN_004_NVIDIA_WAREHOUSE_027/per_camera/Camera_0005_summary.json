@@ -1,0 +1,22 @@
+{
+  "camera_id": "Camera_0005",
+  "frames_processed": 1800,
+  "total_detections": 5060,
+  "forklift_detections": 1791,
+  "person_detections": 3269,
+  "unique_tracks": 41,
+  "camera_height_m": 2.71,
+  "optical_depression_deg": 28.15,
+  "mean_luminance": 103.76,
+  "distance_stats": {
+    "mean_m": 6.801,
+    "min_m": 1.839,
+    "max_m": 15.257,
+    "in_odd_le_8m": 2215,
+    "in_odd_pct": 43.77,
+    "degraded_8_to_10m": 2304,
+    "degraded_pct": 45.53,
+    "out_of_odd_gt_10m": 541,
+    "out_of_odd_pct": 10.69
+  }
+}

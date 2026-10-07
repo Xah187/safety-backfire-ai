@@ -1,0 +1,114 @@
+{
+  "milestone": "V3.4-N",
+  "document_title": "Deterministic Vehicle Intervention & Secondary Exposure State Machine",
+  "governance_classification": "PHYSICAL_KINEMATICS_SPECIFICATION",
+  "epistemic_mandate": "A single transient threshold spike (e.g. steering twitch or brake tap) DOES NOT constitute a confirmed causal intervention. All candidate interventions require a PRIMARY_TRIGGER, a SECONDARY_CONFIRMATION, and a MINIMUM_PERSISTENCE_DURATION before advancing state.",
+  "states": {
+    "PRE_INTERVENTION": {
+      "state_id": "STATE_01_PRE_INTERVENTION",
+      "description": "Vehicle traveling along nominal trajectory; unperturbed kinematics; baseline duration >= 3.0 s.",
+      "exit_condition": "PRIMARY_TRIGGER threshold breached"
+    },
+    "INTERVENTION_TRIGGERED": {
+      "state_id": "STATE_02_INTERVENTION_TRIGGERED",
+      "description": "Initial threshold breach detected at t_intervention_trigger; awaiting persistence confirmation.",
+      "timestamp_marker": "t_intervention_trigger",
+      "persistence_window_ms": 100,
+      "confirmation_rule": "Signal must remain above threshold for >= MINIMUM_PERSISTENCE_DURATION (100 ms) and achieve secondary confirmation to become INTERVENTION_ACTIVE; otherwise resets to PRE_INTERVENTION as spurious transient."
+    },
+    "INTERVENTION_ACTIVE": {
+      "state_id": "STATE_03_INTERVENTION_ACTIVE",
+      "description": "Confirmed physical intervention underway (braking, swerving, or combined evasive maneuver).",
+      "timestamp_marker": "t_intervention_confirmed",
+      "dynamics": "Sustained deceleration ax <= -1.5 m/s^2 OR sustained yaw rate |dpsi/dt| >= 12.0 deg/s."
+    },
+    "PRIMARY_RISK_RESOLUTION": {
+      "state_id": "STATE_04_PRIMARY_RISK_RESOLUTION",
+      "description": "Vehicle clears the primary obstacle clearance envelope (d_primary >= d_clearance) or comes to a controlled stop.",
+      "timestamp_marker": "t_primary_resolution"
+    },
+    "TRAJECTORY_STABILIZATION": {
+      "state_id": "STATE_05_TRAJECTORY_STABILIZATION",
+      "description": "Post-intervention steering damping and acceleration recovery as vehicle returns to steady heading or remains stopped.",
+      "dynamics": "|dpsi/dt| < 2.0 deg/s and |ax| < 0.2 m/s^2 for >= 200 ms."
+    },
+    "INTERVENTION_COMPLETE": {
+      "state_id": "STATE_06_INTERVENTION_COMPLETE",
+      "description": "Vehicle has fully concluded evasive dynamics.",
+      "timestamp_marker": "t_intervention_end"
+    },
+    "SECONDARY_EXPOSURE": {
+      "state_id": "STATE_07_SECONDARY_EXPOSURE",
+      "description": "Geometric entry of an actor, proxy, or structural barrier into the vehicle's diverted trajectory corridor.",
+      "timestamp_marker": "t_secondary_onset",
+      "temporal_horizon_classification": "tau = t_secondary_onset - t_intervention_confirmed. If tau <= 2.0s -> INSIDE_CURRENT_ANALYTIC_HORIZON; If tau > 2.0s -> OUTSIDE_CURRENT_ANALYTIC_HORIZON."
+    },
+    "POST_OBSERVATION": {
+      "state_id": "STATE_08_POST_OBSERVATION",
+      "description": "Post-event monitoring window (duration 2.0 s to 10.0 s) capturing full downstream resolution.",
+      "timestamp_marker": "t_post_end"
+    }
+  },
+  "trigger_and_confirmation_architecture": {
+    "longitudinal_braking_intervention": {
+      "primary_trigger": {
+        "signal": "longitudinal_acceleration",
+        "threshold": "<= -1.5 m/s^2",
+        "filter": "2nd-order Butterworth low-pass filter (cutoff fc = 10.0 Hz, sample rate fs = 50.0 Hz)"
+      },
+      "secondary_confirmation": {
+        "signal": "brake_state",
+        "condition": "brake_state == TRUE (or brake line pressure >= 5.0 bar)"
+      },
+      "minimum_persistence_duration_ms": 100
+    },
+    "lateral_swerving_intervention": {
+      "primary_trigger": {
+        "signal": "yaw_rate",
+        "threshold": "abs(yaw_rate) >= 12.0 deg/s",
+        "filter": "2nd-order Butterworth low-pass filter (cutoff fc = 10.0 Hz, sample rate fs = 50.0 Hz)"
+      },
+      "secondary_confirmation": {
+        "signal": "steering_rate",
+        "condition": "abs(steering_rate) >= 15.0 deg/s (derived as filtered central derivative of steering_angle)"
+      },
+      "minimum_persistence_duration_ms": 120
+    }
+  },
+  "secondary_exposure_geometric_schema": {
+    "definition": "Secondary exposure is defined PRIMARILY GEOMETRICALLY: an entity intersects the vehicle's dynamic clearance corridor following swerve diversion.",
+    "event_fields": {
+      "secondary_actor_id": { "type": "string", "example": "ACTOR_SEC_01" },
+      "secondary_object_type": {
+        "type": "string",
+        "enum": [
+          "PEDESTRIAN_PROXY_MOVING",
+          "PEDESTRIAN_PROXY_STATIC",
+          "STRUCTURAL_RACK_BARRIER",
+          "MATERIAL_HANDLING_CART",
+          "NONE"
+        ]
+      },
+      "secondary_zone_entry": { "type": "boolean", "description": "Entity is physically located inside cross-aisle zone polygon." },
+      "secondary_corridor_entry": { "type": "boolean", "description": "Entity intersects the projected 2.0m dynamic vehicle clearance corridor." },
+      "ttc_descriptor": {
+        "ttc_estimate_seconds": { "type": ["number", "null"], "description": "Range / RangeRate estimate." },
+        "ttc_validity": { "type": "string", "enum": ["VALID_NUMERICAL_TTC", "ASYMPTOTIC_INFINITE", "UNKNOWN_INSUFFICIENT_TRACKING"] },
+        "geometry_confidence": { "type": "string", "enum": ["HIGH_CONFIDENCE_OPTICAL_AND_LIDAR", "DEGRADED_OPTICAL_ONLY", "INSUFFICIENT_OBSERVABILITY"] }
+      }
+    }
+  },
+  "tau_governance_rules": {
+    "tau_formula": "tau = t_secondary_onset - t_intervention_confirmed",
+    "specification_horizon_limit_seconds": 2.0,
+    "eligibility_interpretation": {
+      "inside_horizon": "tau <= 2.0 s -> INSIDE_CURRENT_ANALYTIC_HORIZON. Eligible for full backfire causal evaluation.",
+      "outside_horizon": "tau > 2.0 s -> OUTSIDE_CURRENT_ANALYTIC_HORIZON. Package preserved for delayed confounding studies."
+    },
+    "strict_epistemic_prohibitions": [
+      "PROHIBITION 1: Never classify tau > 2.0 s as NO_BACKFIRE (it may be a delayed backfire outside current scope).",
+      "PROHIBITION 2: Never classify tau <= 2.0 s as BACKFIRE (it may be an independent coincidental actor).",
+      "PROHIBITION 3: Tau establishes temporal eligibility only; it NEVER establishes causality without counterfactual evidence."
+    ]
+  }
+}

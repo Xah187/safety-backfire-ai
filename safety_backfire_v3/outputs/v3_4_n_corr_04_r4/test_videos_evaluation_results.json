@@ -1,0 +1,49 @@
+{
+  "test.mp4": {
+    "video": "test.mp4",
+    "width": 640,
+    "height": 360,
+    "fps": 29.97,
+    "total_frames": 426,
+    "processed_frames": 426,
+    "forklift_detections": 96,
+    "person_detections": 5,
+    "unique_forklift_ids": [
+      1,
+      14,
+      16,
+      17
+    ],
+    "unique_person_ids": [
+      15
+    ],
+    "min_separation_m": 2.63,
+    "critical_events": 0,
+    "sample_preview_frames": [
+      "test_frame_050.png",
+      "test_frame_150.png",
+      "test_frame_300.png"
+    ]
+  },
+  "test2.mp4": {
+    "video": "test2.mp4",
+    "width": 1274,
+    "height": 720,
+    "fps": 25.0,
+    "total_frames": 1246,
+    "processed_frames": 450,
+    "forklift_detections": 0,
+    "person_detections": 248,
+    "unique_forklift_ids": [],
+    "unique_person_ids": [
+      4
+    ],
+    "min_separation_m": null,
+    "critical_events": 0,
+    "sample_preview_frames": [
+      "test2_frame_050.png",
+      "test2_frame_150.png",
+      "test2_frame_300.png"
+    ]
+  }
+}

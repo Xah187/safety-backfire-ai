@@ -1,0 +1,30 @@
+{
+  "model": "/Users/xah187/Projects/safety-backfire-ai/safety_backfire_v07/runs/forklift_person_yolo26n_v07/weights/best.pt",
+  "video": "/Users/xah187/Projects/safety-backfire-ai/safety_backfire_v07/test.mp4",
+  "frames": 426,
+  "fps": 29.97002997002997,
+  "resolution": [
+    640,
+    360
+  ],
+  "total_detections": 102,
+  "frames_with_detections": 102,
+  "frames_with_ids": 28,
+  "id_coverage_ratio": 0.0657,
+  "class_counts": {
+    "person": 54,
+    "forklift": 48
+  },
+  "unique_track_ids": 3,
+  "tracks_by_class": {
+    "person": 2,
+    "forklift": 1
+  },
+  "track_length_stats": {
+    "max_frames": 12,
+    "median_frames": 11.0,
+    "mean_frames": 9.333333333333334
+  },
+  "phantom_forklift_frames": 0,
+  "id_switch_proxy_count": 1
+}

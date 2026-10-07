@@ -1,0 +1,68 @@
+{
+  "artifact_name": "EXP_333_01_STATISTICAL_ANALYSIS",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "statistical_framework": {
+    "proportion_ci_method": "Wilson_Score_Interval_Without_Continuity_Correction",
+    "tracking_ci_method": "Recording_Cluster_Block_Bootstrap",
+    "significance_level": 0.05,
+    "confidence_level": 0.95
+  },
+  "sample_unit_independence_registry": {
+    "PERCEPTION": {
+      "nominal_unit": "IMAGE_FRAME",
+      "cluster_unit": "RECORDING_SESSION",
+      "temporal_autocorrelation_mitigation": "Frame subsampling at 1 Hz for benchmark evaluation"
+    },
+    "TRACKING": {
+      "nominal_unit": "TRAJECTORY_INSTANCE",
+      "cluster_unit": "CAMERA_RECORDING_SESSION",
+      "clustering_impact": "Captures intra-session lighting and traffic variance, preventing confidence interval underestimation"
+    },
+    "UNCERTAINTY": {
+      "nominal_unit": "POINTWISE_GROUND_TARGET",
+      "cluster_unit": "TRACK_SEQUENCE",
+      "clustering_impact": "Prevents artificial shrinkage of Wilson CI from repeated frames of static objects"
+    },
+    "POLICY": {
+      "nominal_unit": "DECISION_FRAME",
+      "cluster_unit": "EPISODIC_SCENARIO",
+      "clustering_impact": "Guarantees scenario-level operational independence"
+    }
+  },
+  "evaluation_metrics_tabular": [
+    {
+      "metric_id": "EXT_METRIC_001_PERCEPTION_F1",
+      "metric_name": "External Facility Micro Perception F1",
+      "numerator": null,
+      "denominator": null,
+      "point_estimate": null,
+      "ci_95": null,
+      "population": "External Facility Video Frames (Facility E)",
+      "independence_unit": "RECORDING_SESSION",
+      "status": "NOT_ESTABLISHED"
+    },
+    {
+      "metric_id": "EXT_METRIC_002_TRACKING_IDF1",
+      "metric_name": "External Facility Tracking IDF1",
+      "numerator": null,
+      "denominator": null,
+      "point_estimate": null,
+      "ci_95": null,
+      "population": "External Facility Trajectories (Facility E)",
+      "independence_unit": "CAMERA_RECORDING_SESSION",
+      "status": "NOT_ESTABLISHED"
+    },
+    {
+      "metric_id": "EXT_METRIC_003_MODEL_H_COVERAGE",
+      "metric_name": "External Facility Model H Nominal Coverage",
+      "numerator": null,
+      "denominator": null,
+      "point_estimate": null,
+      "ci_95": null,
+      "population": "External Ground-Plane Evaluation Points",
+      "independence_unit": "TRACK_SEQUENCE",
+      "status": "NOT_ESTABLISHED"
+    }
+  ],
+  "governance_rule": "Temporal video frames cannot be assumed to be independent identically distributed samples. All confidence intervals on external data must report the cluster independence unit."
+}

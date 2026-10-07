@@ -1,0 +1,132 @@
+{
+  "manifest_version": "EXP_333_01_CAMERA_EVIDENCE_V1",
+  "timestamp_utc": "2026-09-28T00:07:22Z",
+  "source_file": "0_te11.mp4",
+  "source_hash": "170a97c819e668d899e378e4ec1c417d89df8da3eff4373bf08f9698152babe1",
+  "evidence_taxonomy": {
+    "EXTRACTED": "Directly extracted from the video container/stream metadata.",
+    "NOT_AVAILABLE": "No evidence of any kind exists for this field.",
+    "MODEL_ESTIMATE": "Estimated by computational model \u2014 not physical measurement."
+  },
+  "container_metadata": {
+    "codec": {
+      "value": "h264",
+      "category": "EXTRACTED"
+    },
+    "resolution": {
+      "value": "1920x1080",
+      "category": "EXTRACTED"
+    },
+    "fps": {
+      "value": 24.8,
+      "category": "EXTRACTED"
+    },
+    "frame_count": {
+      "value": 173,
+      "category": "EXTRACTED"
+    },
+    "duration_seconds": {
+      "value": 6.98,
+      "category": "EXTRACTED"
+    },
+    "bitrate_kbps": {
+      "value": 14913.0,
+      "category": "EXTRACTED"
+    },
+    "file_size_bytes": {
+      "value": 13004617,
+      "category": "EXTRACTED"
+    }
+  },
+  "camera_hardware": {
+    "make": {
+      "value": null,
+      "category": "NOT_AVAILABLE"
+    },
+    "model": {
+      "value": null,
+      "category": "NOT_AVAILABLE"
+    },
+    "serial_number": {
+      "value": null,
+      "category": "NOT_AVAILABLE"
+    },
+    "firmware_version": {
+      "value": null,
+      "category": "NOT_AVAILABLE"
+    },
+    "lens_focal_length_mm": {
+      "value": null,
+      "category": "NOT_AVAILABLE"
+    },
+    "sensor_format": {
+      "value": null,
+      "category": "NOT_AVAILABLE"
+    }
+  },
+  "camera_extrinsics": {
+    "mounting_height_m": {
+      "value": null,
+      "category": "NOT_AVAILABLE"
+    },
+    "pitch_deg": {
+      "value": null,
+      "category": "NOT_AVAILABLE"
+    },
+    "roll_deg": {
+      "value": null,
+      "category": "NOT_AVAILABLE"
+    },
+    "yaw_deg": {
+      "value": null,
+      "category": "NOT_AVAILABLE"
+    },
+    "position_x_m": {
+      "value": null,
+      "category": "NOT_AVAILABLE"
+    },
+    "position_y_m": {
+      "value": null,
+      "category": "NOT_AVAILABLE"
+    },
+    "position_z_m": {
+      "value": null,
+      "category": "NOT_AVAILABLE"
+    }
+  },
+  "camera_intrinsics": {
+    "fx": {
+      "value": null,
+      "category": "NOT_AVAILABLE"
+    },
+    "fy": {
+      "value": null,
+      "category": "NOT_AVAILABLE"
+    },
+    "cx": {
+      "value": null,
+      "category": "NOT_AVAILABLE"
+    },
+    "cy": {
+      "value": null,
+      "category": "NOT_AVAILABLE"
+    },
+    "distortion_coefficients": {
+      "value": null,
+      "category": "NOT_AVAILABLE"
+    },
+    "calibration_method": {
+      "value": null,
+      "category": "NOT_AVAILABLE"
+    },
+    "calibration_reprojection_error": {
+      "value": null,
+      "category": "NOT_AVAILABLE"
+    }
+  },
+  "extracted_fields_count": 7,
+  "not_available_fields_count": 17,
+  "total_fields": 24,
+  "completeness_ratio": 0.292,
+  "governance_note": "Camera hardware, extrinsics, and intrinsics require physical site measurement. Container metadata alone does not enable geometry evaluation."
+}

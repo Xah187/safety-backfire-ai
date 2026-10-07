@@ -1,0 +1,18 @@
+{
+  "baseline_release": "Safety Backfire AI V3.2.1",
+  "baseline_state": "FINAL_FROZEN",
+  "decision": "FINAL_RELEASE_ACCEPTED_WITH_LIMITATIONS",
+  "operational_status": "APPROVED_FOR_BOUNDED_OPERATIONAL_PILOT",
+  "git_status": "NOT_A_GIT_REPOSITORY (LOCAL_FILESYSTEM_ROOT)",
+  "v3_2_1_test_status": "74/74 PASS",
+  "active_unsupported_claims": 0,
+  "known_evidence_gaps": 2,
+  "open_critical_defects": 0,
+  "key_hashes": {
+    "canonical_release_registry_sha256": "6de28d4502ff0bd8b92fadeeeaa9918d1f91f6fe1670d4051eeb91dbd239c9f8",
+    "canonical_metric_registry_sha256": "bf977149730db24d47e7acab98b9a77208bc2d79c1eb214f23bf62698d09261b",
+    "final_frozen_report_sha256": "12af57318a2f9083662c561b727644658efd5e33dbf85e98cc4e4378956a0bba",
+    "v3_2_1_final_frozen_json_sha256": "a5a63d36687639a78d120d21c45e6f351a760a5e80435f8d3b638f3e964146cb"
+  },
+  "protected_files_count": 39
+}

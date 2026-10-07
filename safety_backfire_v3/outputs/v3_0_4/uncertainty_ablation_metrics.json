@@ -1,0 +1,106 @@
+{
+  "Method A: Baseline 1st-Order Taylor (V3.0.3)": {
+    "empirical_coverage_pct": 92.7,
+    "wilson_ci_95": [
+      87.3,
+      95.9
+    ],
+    "missed_lower": 11,
+    "missed_upper": 0,
+    "mean_interval_width_m": 1.344,
+    "bias_m": 0.0598,
+    "rmse_m": 0.416,
+    "target_95_met": false
+  },
+  "Method B: 2nd-Order Debiased Center (k=1.96)": {
+    "empirical_coverage_pct": 92.0,
+    "wilson_ci_95": [
+      86.5,
+      95.4
+    ],
+    "missed_lower": 9,
+    "missed_upper": 3,
+    "mean_interval_width_m": 1.331,
+    "bias_m": 0.0255,
+    "rmse_m": 0.418,
+    "target_95_met": false
+  },
+  "Method C: Rice Root Inversion": {
+    "empirical_coverage_pct": 92.7,
+    "wilson_ci_95": [
+      87.3,
+      95.9
+    ],
+    "missed_lower": 7,
+    "missed_upper": 4,
+    "mean_interval_width_m": 1.346,
+    "bias_m": -0.0201,
+    "rmse_m": 0.439,
+    "target_95_met": false
+  },
+  "Method D: Monte Carlo 2000 Particles": {
+    "empirical_coverage_pct": 95.3,
+    "wilson_ci_95": [
+      90.7,
+      97.7
+    ],
+    "missed_lower": 7,
+    "missed_upper": 0,
+    "mean_interval_width_m": 1.42,
+    "bias_m": 0.0598,
+    "rmse_m": 0.416,
+    "target_95_met": true
+  },
+  "Method E: Conformal Quantile Calibration": {
+    "empirical_coverage_pct": 95.3,
+    "wilson_ci_95": [
+      90.7,
+      97.7
+    ],
+    "missed_lower": 7,
+    "missed_upper": 0,
+    "mean_interval_width_m": 1.489,
+    "bias_m": 0.0598,
+    "rmse_m": 0.416,
+    "target_95_met": true
+  },
+  "Method F: Stratified Asymmetric Safety": {
+    "empirical_coverage_pct": 95.3,
+    "wilson_ci_95": [
+      90.7,
+      97.7
+    ],
+    "missed_lower": 7,
+    "missed_upper": 0,
+    "mean_interval_width_m": 1.385,
+    "bias_m": 0.0598,
+    "rmse_m": 0.416,
+    "target_95_met": true
+  },
+  "Method G: Directional Covariance Propagation": {
+    "empirical_coverage_pct": 96.7,
+    "wilson_ci_95": [
+      92.4,
+      98.6
+    ],
+    "missed_lower": 5,
+    "missed_upper": 0,
+    "mean_interval_width_m": 1.665,
+    "bias_m": 0.0598,
+    "rmse_m": 0.416,
+    "target_95_met": true
+  },
+  "Method H: V3.0.4 Hybrid 2nd-Order + 2D Rice": {
+    "empirical_coverage_pct": 95.3,
+    "wilson_ci_95": [
+      90.7,
+      97.7
+    ],
+    "missed_lower": 7,
+    "missed_upper": 0,
+    "mean_interval_width_m": 1.516,
+    "bias_m": 0.0255,
+    "rmse_m": 0.418,
+    "target_95_met": true
+  }
+}

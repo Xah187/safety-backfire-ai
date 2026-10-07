@@ -1,0 +1,2589 @@
+{
+  "milestone": "V3.4-I",
+  "description": "Deterministic real-data shadow execution trace across 38 eligible events.",
+  "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN.",
+  "governance": {
+    "human_review": "BYPASSED",
+    "ground_truth_status": "NOT_ESTABLISHED",
+    "validation_status": "NOT_ESTABLISHED",
+    "perception_metrics": "NOT_ESTABLISHED"
+  },
+  "summary_statistics": {
+    "total_events": 38,
+    "gate_counts": {
+      "G1": {
+        "PASS": 38,
+        "FAIL": 0,
+        "UNKNOWN": 0
+      },
+      "G2": {
+        "PASS": 0,
+        "FAIL": 38,
+        "UNKNOWN": 0
+      },
+      "G3": {
+        "PASS": 0,
+        "FAIL": 0,
+        "UNKNOWN": 38
+      },
+      "G4": {
+        "PASS": 0,
+        "FAIL": 38,
+        "UNKNOWN": 0
+      }
+    },
+    "first_blocking_gate_distribution": {
+      "G1": 0,
+      "G2": 38,
+      "G3": 0,
+      "G4": 0,
+      "NONE": 0
+    },
+    "shadow_result_distribution": {
+      "SHADOW_BACKFIRE_CANDIDATE": 0,
+      "SHADOW_PRIMARY_NEAR_MISS": 0,
+      "SHADOW_INSUFFICIENT_EVIDENCE": 38
+    },
+    "events_reaching_g3": 0,
+    "events_reaching_g4": 0,
+    "events_completing_all_gates": 0
+  },
+  "traces": [
+    {
+      "event_id": "UNION_CAND_Warehouse_027_001",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0002",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Causal isolation failed: independent confounder present (Independent shift routine pedestrian cluster (8+ workers) enters adjacent aisle during POST window.)."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "YES",
+          "confounder_reason": "Independent shift routine pedestrian cluster (8+ workers) enters adjacent aisle during POST window.",
+          "causal_sequence_observability": "PARTIAL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)",
+        "CONFOUNDER_ISOLATION (independent traffic unlinked from intervention)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "YES",
+        "reason": "Independent shift routine pedestrian cluster (8+ workers) enters adjacent aisle during POST window."
+      },
+      "existing_v3_4_e_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_003",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0002",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Causal isolation failed: independent confounder present (Vehicle turnover and tracker conflation (new incoming forklift replaces departed vehicle).)."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "YES",
+          "confounder_reason": "Vehicle turnover and tracker conflation (new incoming forklift replaces departed vehicle).",
+          "causal_sequence_observability": "NONE",
+          "actor_handoff": true,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)",
+        "CONFOUNDER_ISOLATION (independent traffic unlinked from intervention)",
+        "CONTINUOUS_PHYSICAL_TRAJECTORY_TO_SECONDARY_ZONE"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "YES",
+        "reason": "Vehicle turnover and tracker conflation (new incoming forklift replaces departed vehicle)."
+      },
+      "existing_v3_4_e_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_004",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0002",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Vehicle remained in primary corridor or exited scene without secondary zone hazard redirection."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": null,
+          "causal_sequence_observability": "FULL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": null
+      },
+      "existing_v3_4_e_disposition": "NO_BACKFIRE_OBSERVED",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_010",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0002",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Vehicle remained in primary corridor or exited scene without secondary zone hazard redirection."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": null,
+          "causal_sequence_observability": "PARTIAL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": null
+      },
+      "existing_v3_4_e_disposition": "NO_BACKFIRE_OBSERVED",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_014",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0002",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (PARTIAL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Causal isolation failed: independent confounder present (Multi-forklift congestion and intersecting vehicle trajectories preclude causal isolation.)."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "PARTIAL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "YES",
+          "confounder_reason": "Multi-forklift congestion and intersecting vehicle trajectories preclude causal isolation.",
+          "causal_sequence_observability": "NONE",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)",
+        "CONFOUNDER_ISOLATION (independent traffic unlinked from intervention)",
+        "CONTINUOUS_PHYSICAL_TRAJECTORY_TO_SECONDARY_ZONE"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "YES",
+        "reason": "Multi-forklift congestion and intersecting vehicle trajectories preclude causal isolation."
+      },
+      "existing_v3_4_e_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_012",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0002",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (PARTIAL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Causal isolation failed: independent confounder present (High forklift traffic density and rack occlusions prevent causal tracking.)."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "PARTIAL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "YES",
+          "confounder_reason": "High forklift traffic density and rack occlusions prevent causal tracking.",
+          "causal_sequence_observability": "NONE",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)",
+        "CONFOUNDER_ISOLATION (independent traffic unlinked from intervention)",
+        "CONTINUOUS_PHYSICAL_TRAJECTORY_TO_SECONDARY_ZONE"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "YES",
+        "reason": "High forklift traffic density and rack occlusions prevent causal tracking."
+      },
+      "existing_v3_4_e_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_013",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0002",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (PARTIAL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Causal isolation failed: independent confounder present (High forklift traffic density and rack occlusions prevent causal tracking.)."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "PARTIAL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "YES",
+          "confounder_reason": "High forklift traffic density and rack occlusions prevent causal tracking.",
+          "causal_sequence_observability": "NONE",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)",
+        "CONFOUNDER_ISOLATION (independent traffic unlinked from intervention)",
+        "CONTINUOUS_PHYSICAL_TRAJECTORY_TO_SECONDARY_ZONE"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "YES",
+        "reason": "High forklift traffic density and rack occlusions prevent causal tracking."
+      },
+      "existing_v3_4_e_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_011",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0002",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (PARTIAL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Causal isolation failed: independent confounder present (High forklift traffic density and rack occlusions prevent causal tracking.)."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "PARTIAL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "YES",
+          "confounder_reason": "High forklift traffic density and rack occlusions prevent causal tracking.",
+          "causal_sequence_observability": "NONE",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)",
+        "CONFOUNDER_ISOLATION (independent traffic unlinked from intervention)",
+        "CONTINUOUS_PHYSICAL_TRAJECTORY_TO_SECONDARY_ZONE"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "YES",
+        "reason": "High forklift traffic density and rack occlusions prevent causal tracking."
+      },
+      "existing_v3_4_e_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_006",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0003",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Post-intervention observation window is INADEQUATE (< 4.0s).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "No continuous physical trajectory linking vehicle intervention to secondary zone entry."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "INADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": "Post window ends at stream boundary (1.8s duration).",
+          "causal_sequence_observability": "NONE",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)",
+        "CONTINUOUS_PHYSICAL_TRAJECTORY_TO_SECONDARY_ZONE"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "INADEQUATE"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": "Post window ends at stream boundary (1.8s duration)."
+      },
+      "existing_v3_4_e_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_017",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (PARTIAL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Vehicle remained in primary corridor or exited scene without secondary zone hazard redirection."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "PARTIAL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": null,
+          "causal_sequence_observability": "PARTIAL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": null
+      },
+      "existing_v3_4_e_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_005",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0002",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (PARTIAL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Causal isolation failed: independent confounder present (Intersecting pedestrian movements and brief interaction duration.)."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "PARTIAL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "YES",
+          "confounder_reason": "Intersecting pedestrian movements and brief interaction duration.",
+          "causal_sequence_observability": "NONE",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)",
+        "CONFOUNDER_ISOLATION (independent traffic unlinked from intervention)",
+        "CONTINUOUS_PHYSICAL_TRAJECTORY_TO_SECONDARY_ZONE"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "YES",
+        "reason": "Intersecting pedestrian movements and brief interaction duration."
+      },
+      "existing_v3_4_e_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_002",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0002",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (PARTIAL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Causal isolation failed: independent confounder present (Intersecting pedestrian movements and brief interaction duration.)."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "PARTIAL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "YES",
+          "confounder_reason": "Intersecting pedestrian movements and brief interaction duration.",
+          "causal_sequence_observability": "NONE",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)",
+        "CONFOUNDER_ISOLATION (independent traffic unlinked from intervention)",
+        "CONTINUOUS_PHYSICAL_TRAJECTORY_TO_SECONDARY_ZONE"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "YES",
+        "reason": "Intersecting pedestrian movements and brief interaction duration."
+      },
+      "existing_v3_4_e_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_007",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0000",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Causal isolation failed: independent confounder present (Forklift 2 operates along bottom frame boundary with severe edge truncation; background workers separated by pallet rows.)."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "PARTIAL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "YES",
+          "confounder_reason": "Forklift 2 operates along bottom frame boundary with severe edge truncation; background workers separated by pallet rows.",
+          "causal_sequence_observability": "NONE",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)",
+        "CONFOUNDER_ISOLATION (independent traffic unlinked from intervention)",
+        "CONTINUOUS_PHYSICAL_TRAJECTORY_TO_SECONDARY_ZONE"
+      ],
+      "observability": {
+        "primary_zone": "PARTIAL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "YES",
+        "reason": "Forklift 2 operates along bottom frame boundary with severe edge truncation; background workers separated by pallet rows."
+      },
+      "existing_v3_4_e_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_006",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0000",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Causal isolation failed: independent confounder present (Forklift 2 operates along bottom frame boundary with severe edge truncation; background workers separated by pallet rows.)."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "PARTIAL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "YES",
+          "confounder_reason": "Forklift 2 operates along bottom frame boundary with severe edge truncation; background workers separated by pallet rows.",
+          "causal_sequence_observability": "NONE",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)",
+        "CONFOUNDER_ISOLATION (independent traffic unlinked from intervention)",
+        "CONTINUOUS_PHYSICAL_TRAJECTORY_TO_SECONDARY_ZONE"
+      ],
+      "observability": {
+        "primary_zone": "PARTIAL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "YES",
+        "reason": "Forklift 2 operates along bottom frame boundary with severe edge truncation; background workers separated by pallet rows."
+      },
+      "existing_v3_4_e_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_014",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (PARTIAL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Vehicle remained in primary corridor or exited scene without secondary zone hazard redirection."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "PARTIAL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": null,
+          "causal_sequence_observability": "PARTIAL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": null
+      },
+      "existing_v3_4_e_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_015",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (PARTIAL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Vehicle remained in primary corridor or exited scene without secondary zone hazard redirection."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "PARTIAL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": null,
+          "causal_sequence_observability": "PARTIAL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": null
+      },
+      "existing_v3_4_e_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_003",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0000",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Causal isolation failed: independent confounder present (Forklift 2 operates along bottom frame boundary with severe edge truncation; background workers separated by pallet rows.)."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "PARTIAL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "YES",
+          "confounder_reason": "Forklift 2 operates along bottom frame boundary with severe edge truncation; background workers separated by pallet rows.",
+          "causal_sequence_observability": "NONE",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)",
+        "CONFOUNDER_ISOLATION (independent traffic unlinked from intervention)",
+        "CONTINUOUS_PHYSICAL_TRAJECTORY_TO_SECONDARY_ZONE"
+      ],
+      "observability": {
+        "primary_zone": "PARTIAL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "YES",
+        "reason": "Forklift 2 operates along bottom frame boundary with severe edge truncation; background workers separated by pallet rows."
+      },
+      "existing_v3_4_e_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_004",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0000",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Causal isolation failed: independent confounder present (Forklift 2 operates along bottom frame boundary with severe edge truncation; background workers separated by pallet rows.)."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "PARTIAL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "YES",
+          "confounder_reason": "Forklift 2 operates along bottom frame boundary with severe edge truncation; background workers separated by pallet rows.",
+          "causal_sequence_observability": "NONE",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)",
+        "CONFOUNDER_ISOLATION (independent traffic unlinked from intervention)",
+        "CONTINUOUS_PHYSICAL_TRAJECTORY_TO_SECONDARY_ZONE"
+      ],
+      "observability": {
+        "primary_zone": "PARTIAL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "YES",
+        "reason": "Forklift 2 operates along bottom frame boundary with severe edge truncation; background workers separated by pallet rows."
+      },
+      "existing_v3_4_e_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_020",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (PARTIAL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Vehicle remained in primary corridor or exited scene without secondary zone hazard redirection."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "PARTIAL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": null,
+          "causal_sequence_observability": "PARTIAL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": null
+      },
+      "existing_v3_4_e_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_026",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (PARTIAL) in primary corridor.",
+        "G2": "Post-intervention observation window is INADEQUATE (< 4.0s).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Vehicle remained in primary corridor or exited scene without secondary zone hazard redirection."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "PARTIAL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "INADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": null,
+          "causal_sequence_observability": "PARTIAL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "INADEQUATE"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": null
+      },
+      "existing_v3_4_e_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_016",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (PARTIAL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Vehicle remained in primary corridor or exited scene without secondary zone hazard redirection."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "PARTIAL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": null,
+          "causal_sequence_observability": "PARTIAL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": null
+      },
+      "existing_v3_4_e_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_026_005",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0000",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Causal isolation failed: independent confounder present (Forklift 2 operates along bottom frame boundary with severe edge truncation; background workers separated by pallet rows.)."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "PARTIAL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "YES",
+          "confounder_reason": "Forklift 2 operates along bottom frame boundary with severe edge truncation; background workers separated by pallet rows.",
+          "causal_sequence_observability": "NONE",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)",
+        "CONFOUNDER_ISOLATION (independent traffic unlinked from intervention)",
+        "CONTINUOUS_PHYSICAL_TRAJECTORY_TO_SECONDARY_ZONE"
+      ],
+      "observability": {
+        "primary_zone": "PARTIAL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "YES",
+        "reason": "Forklift 2 operates along bottom frame boundary with severe edge truncation; background workers separated by pallet rows."
+      },
+      "existing_v3_4_e_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_033",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0006",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (PARTIAL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Causal isolation failed: independent confounder present (Vehicle turns into unobservable rack aisle behind structural column.)."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "PARTIAL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "YES",
+          "confounder_reason": "Vehicle turns into unobservable rack aisle behind structural column.",
+          "causal_sequence_observability": "NONE",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)",
+        "CONFOUNDER_ISOLATION (independent traffic unlinked from intervention)",
+        "CONTINUOUS_PHYSICAL_TRAJECTORY_TO_SECONDARY_ZONE"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "YES",
+        "reason": "Vehicle turns into unobservable rack aisle behind structural column."
+      },
+      "existing_v3_4_e_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_012",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Vehicle remained in primary corridor or exited scene without secondary zone hazard redirection."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": null,
+          "causal_sequence_observability": "FULL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": null
+      },
+      "existing_v3_4_e_disposition": "NO_BACKFIRE_OBSERVED",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_025",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Vehicle remained in primary corridor or exited scene without secondary zone hazard redirection."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "PARTIAL",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": null,
+          "causal_sequence_observability": "FULL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "PARTIAL"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": null
+      },
+      "existing_v3_4_e_disposition": "NO_BACKFIRE_OBSERVED",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_019",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Vehicle remained in primary corridor or exited scene without secondary zone hazard redirection."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": null,
+          "causal_sequence_observability": "FULL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": null
+      },
+      "existing_v3_4_e_disposition": "NO_BACKFIRE_OBSERVED",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_032",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0006",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Vehicle remained in primary corridor or exited scene without secondary zone hazard redirection."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": null,
+          "causal_sequence_observability": "FULL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": null
+      },
+      "existing_v3_4_e_disposition": "NO_BACKFIRE_OBSERVED",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_021",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Vehicle remained in primary corridor or exited scene without secondary zone hazard redirection."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": null,
+          "causal_sequence_observability": "FULL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": null
+      },
+      "existing_v3_4_e_disposition": "NO_BACKFIRE_OBSERVED",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_034",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0006",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Vehicle remained in primary corridor or exited scene without secondary zone hazard redirection."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": null,
+          "causal_sequence_observability": "FULL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": null
+      },
+      "existing_v3_4_e_disposition": "NO_BACKFIRE_OBSERVED",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_010",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Vehicle remained in primary corridor or exited scene without secondary zone hazard redirection."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": null,
+          "causal_sequence_observability": "FULL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": null
+      },
+      "existing_v3_4_e_disposition": "NO_BACKFIRE_OBSERVED",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_018",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Vehicle remained in primary corridor or exited scene without secondary zone hazard redirection."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": null,
+          "causal_sequence_observability": "FULL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": null
+      },
+      "existing_v3_4_e_disposition": "NO_BACKFIRE_OBSERVED",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_011",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Vehicle remained in primary corridor or exited scene without secondary zone hazard redirection."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": null,
+          "causal_sequence_observability": "FULL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": null
+      },
+      "existing_v3_4_e_disposition": "NO_BACKFIRE_OBSERVED",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_024",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Vehicle remained in primary corridor or exited scene without secondary zone hazard redirection."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": null,
+          "causal_sequence_observability": "FULL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": null
+      },
+      "existing_v3_4_e_disposition": "NO_BACKFIRE_OBSERVED",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_035",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0006",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Vehicle remained in primary corridor or exited scene without secondary zone hazard redirection."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": null,
+          "causal_sequence_observability": "FULL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": null
+      },
+      "existing_v3_4_e_disposition": "NO_BACKFIRE_OBSERVED",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_013",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Vehicle remained in primary corridor or exited scene without secondary zone hazard redirection."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": null,
+          "causal_sequence_observability": "FULL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": null
+      },
+      "existing_v3_4_e_disposition": "NO_BACKFIRE_OBSERVED",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_CAND_Warehouse_027_023",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0005",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone interior depth is occluded by pallet racking (SECONDARY_DEPTH_EVIDENCE = UNAVAILABLE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Vehicle remained in primary corridor or exited scene without secondary zone hazard redirection."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "PARTIAL",
+          "secondary_entry_observable": true,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": null,
+          "causal_sequence_observability": "FULL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "PARTIAL",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": true,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": null
+      },
+      "existing_v3_4_e_disposition": "NO_BACKFIRE_OBSERVED",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_HEVT_Warehouse_026_003",
+      "facility": "Warehouse_026",
+      "camera_id": "Camera_0000",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone geometry is undefined or absent (NONE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Vehicle remained in primary corridor or exited scene without secondary zone hazard redirection."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "NONE",
+          "secondary_entry_observable": false,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": null,
+          "causal_sequence_observability": "PARTIAL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "NONE",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": false,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": null
+      },
+      "existing_v3_4_e_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    },
+    {
+      "event_id": "UNION_HEVT_Warehouse_027_002",
+      "facility": "Warehouse_027",
+      "camera_id": "Camera_0003",
+      "G1": "PASS",
+      "G2": "FAIL",
+      "G3": "UNKNOWN",
+      "G4": "FAIL",
+      "first_blocking_gate": "G2",
+      "gate_reasons": {
+        "G1": "Intervention confirmed via observed visual kinematics (FULL) in primary corridor.",
+        "G2": "Secondary zone geometry is undefined or absent (NONE).",
+        "G3": "Secondary zone interior depth is occluded; true physical hazard state is UNAVAILABLE in PRE/POST windows.",
+        "G4": "Vehicle remained in primary corridor or exited scene without secondary zone hazard redirection."
+      },
+      "evidence_sources": {
+        "G1": {
+          "source": "VIDEO_DERIVED",
+          "telemetry_source": "NOT_AVAILABLE",
+          "telemetry_present": false,
+          "visual_intervention_status": "FULL"
+        },
+        "G2": {
+          "primary_zone_status": "FULL",
+          "secondary_zone_status": "NONE",
+          "secondary_entry_observable": false,
+          "secondary_depth_observable": false,
+          "post_window_status": "ADEQUATE",
+          "source": "VIDEO_DERIVED"
+        },
+        "G3": {
+          "risk_estimate_source": "UNAVAILABLE",
+          "delta_r_sec": null,
+          "r_sec_pre": null,
+          "r_sec_post": null,
+          "annotation": "INTERIOR_DEPTH_OCCLUDED"
+        },
+        "G4": {
+          "confounders_present": "NO",
+          "confounder_reason": null,
+          "causal_sequence_observability": "PARTIAL",
+          "actor_handoff": false,
+          "source": "VIDEO_DERIVED"
+        }
+      },
+      "missing_inputs": [
+        "CAN_BUS_TELEMETRY (brake switch, deceleration, steering angle)",
+        "SECONDARY_ZONE_DEPTH_OBSERVABILITY (line-of-sight behind pallet racks)",
+        "MEASURED_SECONDARY_ZONE_HAZARD_STATE (R_sec PRE/POST)"
+      ],
+      "observability": {
+        "primary_zone": "FULL",
+        "secondary_zone": "NONE",
+        "secondary_depth_visible": false,
+        "secondary_entry_visible": false,
+        "post_window": "ADEQUATE"
+      },
+      "confounders": {
+        "present": "NO",
+        "reason": null
+      },
+      "existing_v3_4_e_disposition": "INSUFFICIENT_OBSERVABILITY",
+      "shadow_result": "SHADOW_INSUFFICIENT_EVIDENCE",
+      "NOT_GT": true,
+      "rule_override": "V3_4_I_SHADOW_RULE_OVERRIDE: V3.4-H exploratory noise threshold (0.01) excluded from V3.4-G shadow execution. Strictly follows V3.4-G: Delta_R_sec <= 0 -> FAIL, Delta_R_sec > 0 -> PASS. If secondary hazard is occluded, G3 -> UNKNOWN."
+    }
+  ]
+}

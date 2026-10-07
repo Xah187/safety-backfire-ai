@@ -1,0 +1,29 @@
+{
+  "suite": "CONTINUOUS_BOUNDARY_CHATTER_TEST",
+  "total_continuous_frames": 600,
+  "duration_sec": 20.0,
+  "boundary_tested": "DANGER_THRESHOLD_1_5M",
+  "spatial_noise_sigma_m": 0.035,
+  "chatter_metrics": {
+    "total_state_transitions": 51,
+    "transitions_per_minute": 153.0,
+    "confirm_revoke_cycles": 0,
+    "minimum_dwell_time_frames": 2,
+    "minimum_dwell_time_sec": 0.07,
+    "hysteresis_damping_effective": false
+  },
+  "failure_candidates_audited": {
+    "CANDIDATE-51": {
+      "description": "Temporal freshness starvation during network lag (>500ms)",
+      "status": "CONFIRMED_AS_FAIL-51",
+      "safety_impact": "Latency > 500ms must degrade to INSUFFICIENT_EVIDENCE.",
+      "remediation": "Enforced hardware PTS age ceiling in ProvenanceRecord."
+    },
+    "CANDIDATE-55": {
+      "description": "Boundary chatter oscillations near threshold (+/- 3cm jitter)",
+      "status": "CONFIRMED_AS_FAIL-55",
+      "safety_impact": "Rapid alarm chatter causes operator alarm fatigue.",
+      "remediation": "Hysteresis clearance band (0.15m) and temporal dwell dampening applied."
+    }
+  }
+}

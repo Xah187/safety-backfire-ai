@@ -1,0 +1,21 @@
+{
+  "dataset_size": 100,
+  "nominal_coverage_pct": 95.0,
+  "empirical_coverage_95_pct": 89.0,
+  "coverage_ci_95": [
+    81.37,
+    93.75
+  ],
+  "empirical_coverage_1sigma_pct": 59.0,
+  "mean_interval_width_m": 1.3779400000000002,
+  "mae_m": 0.3545850493907378,
+  "rmse_m": 0.4512433928759657,
+  "median_error_m": 0.2996467613185745,
+  "p95_error_m": 0.9811172640179617,
+  "residual_bias_m": 0.12694906495537156,
+  "residual_std_m": 0.43301793787459886,
+  "skewness": 0.5676351675245442,
+  "excess_kurtosis": -0.008643144068143815,
+  "discrepancy_resolved": true,
+  "discrepancy_explanation": "0.83m was unrounded pedestrian position uncertainty ((1-0.45)*1.5=0.825m), not combined distance uncertainty."
+}

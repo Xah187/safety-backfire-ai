@@ -1,0 +1,107 @@
+{
+  "manifest_version": "EXP_333_01_INGESTION_HASH_MANIFEST",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "status": "NOT_AVAILABLE",
+  "artifacts": {
+    "analysis/failure_taxonomy.json": {
+      "sha256": "6e4b56b4265aef4c7d42461d0ef5b2c9b5815faf14acc07aa610f772fcb8de9b",
+      "size_bytes": 1483
+    },
+    "analysis/red_team_results.json": {
+      "sha256": "a7808ef5064d7607f74c05ba4a49957354cbe93c03137aafafbbdaf1bc1cab26",
+      "size_bytes": 4643
+    },
+    "analysis/statistical_analysis.json": {
+      "sha256": "7bc5c01d1ff9984b2eaab4dcb8542e366bb307ed5a4475e362ee5ad8ffda5155",
+      "size_bytes": 2637
+    },
+    "analysis/stratified_analysis.json": {
+      "sha256": "0d8ac6f796e7b0d9bb68d4322c2c6c3f100ad3d5ddc07a2e10f13cf8583eaa00",
+      "size_bytes": 2318
+    },
+    "ground_truth/annotation_manifest.json": {
+      "sha256": "7df23f5633cd4000e22514074da31da1c0990d85a5315b2fc5de05d56170a45a",
+      "size_bytes": 1271
+    },
+    "metrics/event_metrics.json": {
+      "sha256": "230b31f863dc08cdad22568e8fb68b42516aa3ddc0bd78d0f028d9806ec34207",
+      "size_bytes": 600
+    },
+    "metrics/geometry_metrics.json": {
+      "sha256": "34d5450297374a8594b3b23b71e3d2094497fab2e09fb9b36ddbdbf86327b077",
+      "size_bytes": 1128
+    },
+    "metrics/hazard_metrics.json": {
+      "sha256": "82ce6f8ba0c80961e73dd091889d7ad2e10a35bcdf36c732d326d2fcbd41999a",
+      "size_bytes": 1085
+    },
+    "metrics/perception_metrics.json": {
+      "sha256": "08570f1457060e03780c18eba1f3ef387bb6d6bd707098632288252d46a7ece6",
+      "size_bytes": 2528
+    },
+    "metrics/policy_metrics.json": {
+      "sha256": "3a2e05619af7bb11f8d63b0873db7bc1696151634ebd5b728459e085b8a98280",
+      "size_bytes": 1749
+    },
+    "metrics/tracking_metrics.json": {
+      "sha256": "22ef9ba0cf619933af388f6bab4d1f8c955326de9b9e300eac84038d16a73df2",
+      "size_bytes": 905
+    },
+    "metrics/uncertainty_metrics.json": {
+      "sha256": "9fdd909564400ebeea0f35338fa08530e03b54aa67eb9ee2d4dcac5704e51ea8",
+      "size_bytes": 2384
+    },
+    "provenance/acquisition_manifest.json": {
+      "sha256": "02d470d94b79cb7bbab9e458c927763ec481f87848f83c74dbd60d3cd979974f",
+      "size_bytes": 1139
+    },
+    "provenance/camera_manifest.json": {
+      "sha256": "9e67f0b1c45a059b456b4d61c3edbb283d7ee6c43ba5493a019700a76b513f34",
+      "size_bytes": 3004
+    },
+    "provenance/central01_exclusion_registry.json": {
+      "sha256": "9ef64479466048ffd610c9e1991c3ed11bb9567296fb8bc0a303500264145b14",
+      "size_bytes": 3296
+    },
+    "provenance/external_facility_manifest.json": {
+      "sha256": "3aeb0975b8194994540a4e7654bda77b76c07873c99566a748f674972dbd2d1f",
+      "size_bytes": 2832
+    },
+    "provenance/frame_overlap_manifest.json": {
+      "sha256": "5364e85c48cff9b9fe014077ccbfb36ee6ea714fb9171211dd006bbbbe7e8644",
+      "size_bytes": 604
+    },
+    "provenance/integrity_hash_manifest.json": {
+      "sha256": "2a857f4f6469ddfd156c4ae8d79f9b67b0be5c263e99ca09cc757aaed7cc0101",
+      "size_bytes": 730
+    },
+    "release/exp_333_01_release_status.json": {
+      "sha256": "b261e749dc0858760b5c87eb2fa5d17defa29d7a1d0add57e987a7fd3f68bb85",
+      "size_bytes": 1090
+    },
+    "release/ingestion_gate_status.json": {
+      "sha256": "df98ffab3928f6caea15995d0ecb466997ff121c19bf9b0c6440bf68b4bbed0d",
+      "size_bytes": 1222
+    },
+    "reports/EXP_333_01_EXTERNAL_FACILITY_REPORT.md": {
+      "sha256": "bf8d3e49b080e5e58b036917045bc943e68bffbf9af9d5d4265b21e16fbb643c",
+      "size_bytes": 16471
+    },
+    "splits/blind_hash.json": {
+      "sha256": "7b8d74cd31d95bac3563314f39057170f545f74241ebd18421f51de9fd115d58",
+      "size_bytes": 275
+    },
+    "splits/blind_manifest.json": {
+      "sha256": "823c975e9697c7ca5560e72252802e8e6cfc5f142ffd7cef52680c0f1974f6e5",
+      "size_bytes": 1063
+    },
+    "splits/blind_protocol_hash.json": {
+      "sha256": "2ce33226fbed57457bf16bcf92d954795f94eac3672624eabbac9e0cfe4b4d80",
+      "size_bytes": 340
+    },
+    "splits/split_manifest.json": {
+      "sha256": "bf815498a662a122f4038da8f870575ab8e758790015e5ea5ae21c79d668ef43",
+      "size_bytes": 1344
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "model": "/Users/xah187/Projects/safety-backfire-ai/safety_backfire_v05/runs/forklift_person_yolo26n_v04/weights/best.pt",
+  "video": "/Users/xah187/Projects/safety-backfire-ai/safety_backfire_v05/test.mp4",
+  "frames": 426,
+  "fps": 29.97002997002997,
+  "resolution": [
+    640,
+    360
+  ],
+  "total_detections": 417,
+  "frames_with_detections": 339,
+  "frames_with_ids": 335,
+  "id_coverage_ratio": 0.7864,
+  "class_counts": {
+    "forklift": 382,
+    "person": 35
+  },
+  "unique_track_ids": 11,
+  "tracks_by_class": {
+    "forklift": 10,
+    "person": 1
+  },
+  "track_length_stats": {
+    "max_frames": 209,
+    "median_frames": 11,
+    "mean_frames": 37.54545454545455
+  },
+  "id_switch_proxy_count": 12,
+  "notes": [
+    "id_switch_proxy_count is diagnostic only, not a formal ID-switch metric.",
+    "This run uses model.track() with ByteTrack; the previous V0.4 stress test used model.predict().",
+    "Do not treat confidence alone as tracking quality."
+  ]
+}

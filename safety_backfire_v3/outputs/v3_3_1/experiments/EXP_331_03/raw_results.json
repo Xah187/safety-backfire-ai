@@ -1,0 +1,113 @@
+{
+  "experiment_id": "EXP_331_03",
+  "independence_hierarchy_level": "SECTOR_AND_CAMERA (Single Facility)",
+  "facility_count": 1,
+  "environment_count": 4,
+  "independent_camera_count": 4,
+  "independent_recording_count": 2,
+  "total_physical_frames": 1672,
+  "global_perception": {
+    "total_objects_evaluated": 2073,
+    "precision": 0.9136,
+    "recall": 0.8924,
+    "f1_score": 0.9029,
+    "per_class": {
+      "Person": {
+        "TP": 420,
+        "FP": 32,
+        "FN": 38,
+        "precision": 0.9292,
+        "recall": 0.917,
+        "F1": 0.9231
+      },
+      "Vehicle": {
+        "TP": 385,
+        "FP": 18,
+        "FN": 22,
+        "precision": 0.9553,
+        "recall": 0.9459,
+        "F1": 0.9506
+      },
+      "Storage": {
+        "TP": 510,
+        "FP": 45,
+        "FN": 60,
+        "precision": 0.9189,
+        "recall": 0.8947,
+        "F1": 0.9067
+      },
+      "Load": {
+        "TP": 340,
+        "FP": 52,
+        "FN": 68,
+        "precision": 0.8673,
+        "recall": 0.8333,
+        "F1": 0.85
+      },
+      "Machine": {
+        "TP": 195,
+        "FP": 28,
+        "FN": 35,
+        "precision": 0.8744,
+        "recall": 0.8478,
+        "F1": 0.8609
+      }
+    }
+  },
+  "per_environment_breakdown": {
+    "Sector_A_Main_Aisle": {
+      "camera_id": "CAM_SECTOR_A_01",
+      "frames": 426,
+      "layout": "Wide Aisle",
+      "precision": 0.9452,
+      "recall": 0.9215,
+      "f1": 0.9332,
+      "idf1": 0.942,
+      "ranking": "BEST_ENVIRONMENT"
+    },
+    "Sector_B_Storage_Grid": {
+      "camera_id": "CAM_SECTOR_B_02",
+      "frames": 501,
+      "layout": "High-Bay Racks",
+      "precision": 0.912,
+      "recall": 0.895,
+      "f1": 0.9034,
+      "idf1": 0.925
+    },
+    "Sector_C_Forklift_Cross": {
+      "camera_id": "CAM_SECTOR_C_03",
+      "frames": 400,
+      "layout": "T-Intersection",
+      "precision": 0.8875,
+      "recall": 0.868,
+      "f1": 0.8776,
+      "idf1": 0.908
+    },
+    "Sector_D_Outbound_Staging": {
+      "camera_id": "CAM_SECTOR_D_04",
+      "frames": 345,
+      "layout": "Congested Pallet Zone",
+      "precision": 0.835,
+      "recall": 0.812,
+      "f1": 0.8233,
+      "idf1": 0.874,
+      "ranking": "WORST_ENVIRONMENT"
+    }
+  },
+  "best_environment": "Sector_A_Main_Aisle (F1: 0.9332)",
+  "worst_environment": "Sector_D_Outbound_Staging (F1: 0.8233)",
+  "tracking_generalization": {
+    "sample_unit": "Trajectory_Sequence",
+    "N_trajectories": 28,
+    "IDF1": 0.9215,
+    "bootstrap_95_ci": [
+      0.9083,
+      0.933
+    ],
+    "bootstrap_unit": "Trajectory_Sequence",
+    "replicates": 1000,
+    "seed": 1337,
+    "total_identity_switches": 22
+  },
+  "gap_statement": "Generalization evidence is established across 4 warehouse sectors within 1 physical facility. Cross-facility multi-site evidence remains an open gap (GAP_V3_3_01)."
+}

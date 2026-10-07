@@ -1,0 +1,17 @@
+{
+  "total_detections": 2032,
+  "old_calibration": {
+    "inside": 0,
+    "outside": 2032,
+    "inside_pct": 0.0,
+    "outside_pct": 100.0
+  },
+  "new_calibration": {
+    "inside": 723,
+    "edge": 1035,
+    "outside": 274,
+    "inside_pct": 35.6,
+    "edge_pct": 50.9,
+    "outside_pct": 13.5
+  }
+}

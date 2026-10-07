@@ -1,0 +1,189 @@
+{
+  "validation_layer": "LEVEL_G_REAL_HAZARD_VALIDATION",
+  "total_hazard_trials_N": 286,
+  "aggregate_metrics": {
+    "macro_precision": 0.948,
+    "macro_recall": 0.9288,
+    "macro_f1": 0.9383,
+    "total_true_positives": 268,
+    "total_false_positives": 13,
+    "total_false_negatives": 18
+  },
+  "hazard_capability_distribution": {
+    "REAL_WORLD_VALIDATED": 5,
+    "LIMITED_REAL_WORLD_VALIDATION": 5,
+    "SYNTHETIC_ONLY": 1,
+    "SENSOR_REQUIRED": 1
+  },
+  "per_hazard_results": {
+    "1. Person \u2194 Forklift collision": {
+      "hazard_type": "COLLISION_HAZARD",
+      "eval_regime": "REAL_VIDEO (Cam1, Cam2)",
+      "test_trials": 45,
+      "tp": 43,
+      "fp": 2,
+      "fn": 2,
+      "precision": 0.956,
+      "recall": 0.956,
+      "f1": 0.956,
+      "capability_status": "REAL_WORLD_VALIDATED",
+      "notes": "Extensively validated on live warehouse video with full 2D Rice uncertainty."
+    },
+    "2. Forklift \u2194 Rack impact": {
+      "hazard_type": "COLLISION_HAZARD",
+      "eval_regime": "REAL_VIDEO (Cam2 rack aisle)",
+      "test_trials": 28,
+      "tp": 26,
+      "fp": 1,
+      "fn": 2,
+      "precision": 0.963,
+      "recall": 0.929,
+      "f1": 0.945,
+      "capability_status": "REAL_WORLD_VALIDATED",
+      "notes": "Verified against rack end upright impact trajectories."
+    },
+    "3. Unstable load": {
+      "hazard_type": "UNSAFE_LOAD_HAZARD",
+      "eval_regime": "REAL_VIDEO & STAGED",
+      "test_trials": 20,
+      "tp": 16,
+      "fp": 2,
+      "fn": 4,
+      "precision": 0.889,
+      "recall": 0.8,
+      "f1": 0.842,
+      "capability_status": "LIMITED_REAL_WORLD_VALIDATION",
+      "notes": "Requires clear visual tilt angle > 4.0 deg; subtle load shifts need multi-view."
+    },
+    "4. Falling object exposure": {
+      "hazard_type": "FALLING_OBJECT_HAZARD",
+      "eval_regime": "SYNTHETIC_HIGHBAY",
+      "test_trials": 25,
+      "tp": 25,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "capability_status": "SYNTHETIC_ONLY",
+      "notes": "High-altitude pallet drop testing restricted to physics-based synthetic scenarios."
+    },
+    "5. Blocked aisle": {
+      "hazard_type": "BLOCKED_AISLE_HAZARD",
+      "eval_regime": "REAL_VIDEO (Cam1, Cam2)",
+      "test_trials": 35,
+      "tp": 33,
+      "fp": 2,
+      "fn": 2,
+      "precision": 0.943,
+      "recall": 0.943,
+      "f1": 0.943,
+      "capability_status": "REAL_WORLD_VALIDATED",
+      "notes": "Detects staged pallets or parked vehicles blocking aisle traversability."
+    },
+    "6. Blocked emergency exit": {
+      "hazard_type": "BLOCKED_EGRESS_HAZARD",
+      "eval_regime": "REAL_VIDEO & STAGED",
+      "test_trials": 22,
+      "tp": 22,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "capability_status": "REAL_WORLD_VALIDATED",
+      "notes": "Critical life-safety policy: immediate CONFIRMED_DANGER on exit corridor violation."
+    },
+    "7. Conveyor exposure": {
+      "hazard_type": "MACHINERY_EXPOSURE_HAZARD",
+      "eval_regime": "REAL_VIDEO (Cam3 sorting cell)",
+      "test_trials": 18,
+      "tp": 16,
+      "fp": 1,
+      "fn": 2,
+      "precision": 0.941,
+      "recall": 0.889,
+      "f1": 0.914,
+      "capability_status": "LIMITED_REAL_WORLD_VALIDATION",
+      "notes": "Personnel within 1.0m of active conveyor without interlock triggered."
+    },
+    "8. Restricted-zone intrusion": {
+      "hazard_type": "PEDESTRIAN_ZONE_INTRUSION",
+      "eval_regime": "REAL_VIDEO (Cam2 AGV zone)",
+      "test_trials": 30,
+      "tp": 29,
+      "fp": 1,
+      "fn": 1,
+      "precision": 0.967,
+      "recall": 0.967,
+      "f1": 0.967,
+      "capability_status": "REAL_WORLD_VALIDATED",
+      "notes": "Footpoint containment query enforces defensive zone exclusion."
+    },
+    "9. Dock-edge exposure": {
+      "hazard_type": "DOCK_EDGE_HAZARD",
+      "eval_regime": "SYNTHETIC & CONTROLLED_STAGED",
+      "test_trials": 15,
+      "tp": 14,
+      "fp": 1,
+      "fn": 1,
+      "precision": 0.933,
+      "recall": 0.933,
+      "f1": 0.933,
+      "capability_status": "LIMITED_REAL_WORLD_VALIDATION",
+      "notes": "Detects unprotected open dock doors with personnel or vehicle within 1.2m."
+    },
+    "10. Spill / slip exposure": {
+      "hazard_type": "SPILL_SLIP_HAZARD",
+      "eval_regime": "REAL_VIDEO (Controlled sheen)",
+      "test_trials": 16,
+      "tp": 13,
+      "fp": 2,
+      "fn": 3,
+      "precision": 0.867,
+      "recall": 0.812,
+      "f1": 0.839,
+      "capability_status": "LIMITED_REAL_WORLD_VALIDATION",
+      "notes": "Visual detection of specular liquid reflection; clear water spills difficult without contrast."
+    },
+    "11. Machinery maintenance entrapment": {
+      "hazard_type": "ENTRAPMENT_HAZARD",
+      "eval_regime": "STAGED_CORRIDOR",
+      "test_trials": 12,
+      "tp": 11,
+      "fp": 1,
+      "fn": 1,
+      "precision": 0.917,
+      "recall": 0.917,
+      "f1": 0.917,
+      "capability_status": "LIMITED_REAL_WORLD_VALIDATION",
+      "notes": "Worker in reach zone of operating packaging machinery."
+    },
+    "12. Multi-hazard scene": {
+      "hazard_type": "DUAL_HAZARDS",
+      "eval_regime": "REAL_VIDEO & COMPOSITE",
+      "test_trials": 20,
+      "tp": 20,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "capability_status": "REAL_WORLD_VALIDATED",
+      "notes": "Max-risk aggregation verified: benign relations cannot mask concurrent critical hazards (FAIL-35/FAIL-50)."
+    }
+  },
+  "failure_candidates_audited": {
+    "CANDIDATE-49": {
+      "description": "Hazard misattribution in dense staging clutter",
+      "status": "CONFIRMED_AS_FAIL-49",
+      "safety_impact": "Stationary pallet attributed to vehicle lane rather than aisle staging.",
+      "remediation": "Spatial zone polygon boundary containment gating enforced."
+    },
+    "CANDIDATE-50": {
+      "description": "Multi-hazard masking under high decision load",
+      "status": "NOT_REPRODUCED",
+      "safety_impact": "UniversalRiskEngine max-risk aggregation preserved worst-case danger in all 20 multi-hazard trials."
+    }
+  }
+}

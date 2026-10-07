@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TractionCurrentPersistenceDecisionRuleV3",
+  "milestone": "V3.4-N-CORR-04-R2",
+  "description": "Reconciled persistence decision rule under Mode B discrete interval timer semantics, formally holding persistence status at CANDIDATE_ONLY and blocking milestone closure.",
+  "governance_classification": "ENGINEERING_SAFETY_DECISION_RULE",
+  "authoritative_governance_state": {
+    "V3_4_N_CORR_04_R2_STATUS": "BLOCKED_PENDING_RECONCILIATION",
+    "BLK_00_PERSIST": "OPEN",
+    "TRACTION_CURRENT_ENDPOINT_PERSISTENCE": "PROVISIONAL_CHARACTERIZATION_ONLY",
+    "T_persist_10ms_status": "CANDIDATE_ONLY",
+    "PHYSICAL_CAPTURE_AUTHORIZATION": "NOT_GRANTED",
+    "MODEL_H": "FROZEN",
+    "PRODUCTION_MODEL": "UNCHANGED",
+    "FIELD_DATA": "ZERO"
+  },
+  "decision_rule_specification": {
+    "decision_domain": "DECISION_DOMAIN = DISCRETE_SAMPLED_RMS",
+    "continuous_domain_guarantee": "REVOKED_NO_CONTINUOUS_ANALOG_GUARANTEE_ASSERTED",
+    "timer_mode": "MODE_B (100 Elapsed Step Intervals)",
+    "evaluation_step_size_ms": 0.1,
+    "evaluation_window_ms": 2.0,
+    "required_consecutive_intervals": 100,
+    "required_evaluation_points": 101,
+    "nominal_persistence_duration_ms": 10.0,
+    "defensibility_assessment": "The 10.0 ms duration is candidate-only. While analytical models show it exceeds the moving RMS flush delay (1.12 ms) and provides noise smoothing, it cannot be formally defensible or approved until physical rebound profiles, motor-inverter compatibility, and calibrated current scales are verified on the bench."
+  },
+  "blocking_dependencies": [
+    {
+      "blocker_id": "BLK_PROBE_SCALE",
+      "severity": "CRITICAL",
+      "description": "Historical 10 trials recorded with ungrounded 10 A/V setting on TCP303 / TCPA300; true hardware range unresolved."
+    },
+    {
+      "blocker_id": "BLK_MOTOR_COMPATIBILITY",
+      "severity": "CRITICAL",
+      "description": "Curtis 1238E factory documentation specifies AC Induction control; compatibility with 48V PMSM unevidenced."
+    },
+    {
+      "blocker_id": "BLK_RAW_EVIDENCE",
+      "severity": "CRITICAL",
+      "description": "Raw digitized oscillograms for all 10 trials remain missing from the repository."
+    },
+    {
+      "blocker_id": "BLK_TIMING_CIRCULARITY",
+      "severity": "MAJOR",
+      "description": "Historical t_persist_start values were circularly derived from reported endpoints without Delta_flush separation."
+    }
+  ]
+}

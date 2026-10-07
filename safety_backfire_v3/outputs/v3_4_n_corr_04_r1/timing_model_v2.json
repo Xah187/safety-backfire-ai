@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TractionCurrentTimingModelV2",
+  "milestone": "V3.4-N-CORR-04-R1",
+  "description": "Reconciled timing model defining explicit absolute vs incremental timestamp semantics, invalidating flawed prior arithmetic, and establishing an unambiguous latency budget for electrical traction de-energization.",
+  "governance_classification": "ENGINEERING_TIMING_RECONCILIATION",
+  "timestamp_semantic_reconciliation": {
+    "timestamp_convention": "ABSOLUTE_FROM_T0",
+    "trigger_datum": "t0 = E_STOP_COMMAND (0.0 ms, falling edge of NC safety contact)",
+    "semantic_audit_finding": "The recorded values (t1 = 11.8-12.8 ms, t2 = 19.2-21.6 ms, t3 = 31.2-35.8 ms) are ABSOLUTE timestamps relative to t0. They are NOT incremental stage delays. Treating them as incremental delays caused erroneous summation in earlier drafts."
+  },
+  "prior_arithmetic_audit": {
+    "old_formula": "13 ms (safety) + 21 ms (contactor) + 6 ms (decay) + T_persist <= 48.8 ms",
+    "old_formula_status": "INVALID",
+    "audit_flaws": [
+      {
+        "flaw_id": "DOUBLE_COUNTING_T1",
+        "description": "Summing 13 ms (safety relay drop) and 21 ms (contactor open) double-counted the 13 ms relay drop time because contactor auxiliary contacts open at t = 21 ms absolute, which already includes the 13 ms relay drop (contactor mechanical transit is only 21 - 13 = 8 ms)."
+      },
+      {
+        "flaw_id": "ARITHMETIC_CONTRADICTION",
+        "description": "13 + 21 + 6 = 40 ms. 48.8 ms - 40 ms = 8.8 ms. The prior report claimed T_persist <= 12 ms, which is mathematically false under its own equation."
+      }
+    ]
+  },
+  "corrected_timing_model": {
+    "model_name": "INCREMENTAL_STAGE_SUMMATION_WITH_ABSOLUTE_VERIFICATION",
+    "timing_stages": [
+      {
+        "stage_id": "STAGE_0_COMMAND",
+        "symbol": "t0",
+        "name": "E_STOP_COMMAND",
+        "type": "REFERENCE_DATUM",
+        "absolute_time_ms": 0.0,
+        "incremental_delta_ms": 0.0,
+        "description": "Physical opening of dual-channel NC E-Stop contact (voltage drops from 24V to 0V)."
+      },
+      {
+        "stage_id": "STAGE_1_SAFETY_RELAY",
+        "symbol": "t1",
+        "name": "SAFETY_OUTPUT_DEENERGIZED",
+        "type": "ABSOLUTE_EVENT",
+        "absolute_time_range_ms": [11.8, 12.8],
+        "incremental_delta_ms": [11.8, 12.8],
+        "description": "Safety relay internal logic de-energization; OSSD outputs drop."
+      },
+      {
+        "stage_id": "STAGE_1B_INVERTER_STO",
+        "symbol": "t_phys_onset",
+        "name": "INVERTER_STO_DEASSERTION",
+        "type": "ABSOLUTE_EVENT",
+        "absolute_time_range_ms": [13.0, 14.3],
+        "incremental_delta_ms": [1.2, 1.5],
+        "description": "Inverter Safe Torque Off circuit gates off IGBTs (t_phys = t1 + delta_t_STO). Physical motor current collapse begins BEFORE contactor mechanically opens."
+      },
+      {
+        "stage_id": "STAGE_2_CONTACTOR_AUX",
+        "symbol": "t2",
+        "name": "CONTACTOR_OPEN",
+        "type": "ABSOLUTE_EVENT",
+        "absolute_time_range_ms": [19.2, 21.6],
+        "incremental_delta_ms": [7.4, 8.8],
+        "description": "Main traction contactor auxiliary microswitch opens (t2 = t1 + delta_t_contactor_mech). Serves as diagnostic precursor (limit <= 35.0 ms)."
+      },
+      {
+        "stage_id": "STAGE_3_PHYSICAL_CROSSING",
+        "symbol": "t_phys_cross",
+        "name": "PHYSICAL_CURRENT_THRESHOLD_CROSSING",
+        "type": "ABSOLUTE_EVENT",
+        "absolute_time_range_ms": [21.2, 25.8],
+        "incremental_delta_ms": [8.2, 11.5],
+        "description": "Instantaneous phase current envelope collapses below guarded threshold (0.410 A RMS) via freewheeling diode clamping."
+      },
+      {
+        "stage_id": "STAGE_4_RMS_FLUSH_AND_START",
+        "symbol": "t_rms",
+        "name": "RMS_WINDOW_FLUSH_AND_PERSISTENCE_START",
+        "type": "ABSOLUTE_EVENT",
+        "alias": "t_persist_start",
+        "absolute_time_range_ms": [21.2, 25.8],
+        "incremental_delta_ms": [0.0, 1.8],
+        "description": "First sliding RMS evaluation frame k where I_RMS[k] <= I_guarded. Persistence timer starts."
+      },
+      {
+        "stage_id": "STAGE_5_PERSISTENCE_HOLD",
+        "symbol": "T_persist",
+        "name": "SAMPLED_PERSISTENCE_WINDOW",
+        "type": "INCREMENTAL_HOLD_DURATION",
+        "hold_duration_ms": 10.0,
+        "consecutive_frames_count": 100,
+        "frame_interval_ms": 0.1,
+        "description": "All 100 consecutive discrete sliding RMS evaluation frames must maintain I_RMS <= I_guarded."
+      },
+      {
+        "stage_id": "STAGE_6_STABLE_ENDPOINT",
+        "symbol": "t_stable",
+        "name": "ELECTRICAL_TRACTION_DEENERGIZED_DECLARED",
+        "type": "ABSOLUTE_TERMINAL_ENDPOINT",
+        "absolute_time_range_ms": [31.2, 35.8],
+        "formula": "t_stable = t_persist_start + T_persist",
+        "description": "Authoritative electrical safety endpoint declared."
+      }
+    ],
+    "upper_bound_budget_verification": {
+      "guarded_latency_limit_ms": 48.8,
+      "maximum_observed_t_persist_start_ms": 25.8,
+      "candidate_t_persist_ms": 10.0,
+      "maximum_observed_t_stable_ms": 35.8,
+      "margin_to_guarded_limit_ms": 13.0,
+      "maximum_allowable_t_persist_ms": 23.0,
+      "mathematical_formula": "T_persist <= (48.8 ms - max(t_persist_start)) = 48.8 ms - 25.8 ms = 23.0 ms",
+      "conclusion": "The 10.0 ms candidate persistence window satisfies the upper bound constraint with an exact margin of 13.0 ms to the 48.8 ms guarded limit."
+    }
+  }
+}

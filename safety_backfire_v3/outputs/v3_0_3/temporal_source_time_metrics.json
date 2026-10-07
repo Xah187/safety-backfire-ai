@@ -1,0 +1,7 @@
+{
+  "source_frame_switch_test_passed": true,
+  "latency_sweep_points_evaluated": 14,
+  "freshness_cutoff_source_age_ms": 150.0,
+  "skew_cutoff_ms": 100.0,
+  "anomalies_evaluated": 4
+}

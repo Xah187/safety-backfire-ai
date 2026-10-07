@@ -1,0 +1,13 @@
+{
+  "lock_version": "V3.3.1_EXPERIMENT_LOCK_MANIFEST",
+  "lock_status": "LOCKED_PRE_EVALUATION",
+  "timestamp_utc": "2026-09-25T06:20:00Z",
+  "preregistered_experiments": [
+    "EXP_331_01",
+    "EXP_331_02",
+    "EXP_331_03",
+    "EXP_331_04",
+    "EXP_331_05"
+  ],
+  "policy": "No hypothesis, acceptance criteria, or evaluation methodology may be altered after unblinding."
+}

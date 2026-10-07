@@ -1,0 +1,34 @@
+{
+  "artifact_name": "EXP_333_01_GEOMETRY_METRICS",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "facility_id": "FACILITY_E_COLD_STORAGE",
+  "geometry_model": "PLANAR_HOMOGRAPHY_FROZEN_V3_3_2",
+  "evaluated_regions": {
+    "PLANAR": {
+      "fiducial_sample_count": 0,
+      "mae_meters": null,
+      "median_absolute_error_meters": null,
+      "p95_error_meters": null,
+      "max_error_meters": null,
+      "geometry_residual_rmse_meters": null,
+      "status": "NOT_ESTABLISHED"
+    },
+    "NON_PLANAR": {
+      "sample_count": 0,
+      "policy_triggered": "SAFETY_DOWNGRADE_OR_REFUSAL",
+      "status": "NOT_ESTABLISHED"
+    },
+    "RAMP": {
+      "sample_count": 0,
+      "slope_threshold_deg": 3.0,
+      "policy_triggered": "OUT_OF_ODD_REFUSAL",
+      "status": "NOT_ESTABLISHED"
+    },
+    "UNKNOWN": {
+      "sample_count": 0,
+      "policy_triggered": "SAFE_REFUSAL",
+      "status": "NOT_ESTABLISHED"
+    }
+  },
+  "governance_rule": "Planar homography was NOT post-hoc optimized or re-calibrated on the external test facility. Non-planar surfaces trigger automatic geometric refusal or advisory downgrade."
+}

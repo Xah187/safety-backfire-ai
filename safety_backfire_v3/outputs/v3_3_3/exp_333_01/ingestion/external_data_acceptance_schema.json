@@ -1,0 +1,184 @@
+{
+  "schema_version": "EXP_333_01_EXTERNAL_DATA_ACCEPTANCE_SCHEMA",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "created_at_utc": "2026-09-27T18:00:00Z",
+  "governance_note": "This schema defines the deterministic acceptance rules for ingesting external footage. A recording is accepted only when all required fields pass.",
+  "acceptance_gates": {
+    "gate_1_exclusion_registry": {
+      "description": "SHA-256 and perceptual fingerprint comparison against Central 01 exclusion registry.",
+      "pass_condition": "sha256 NOT in known_source_file_hashes AND all sampled frame Hamming distances > 15",
+      "fail_action": "REJECT: CENTRAL01_MATCH_DETECTED",
+      "enforcement": "validate_external_provenance.py :: check_central01_exclusion()"
+    },
+    "gate_2_file_integrity": {
+      "description": "File exists, is readable, SHA-256 is reproducible, video is decodable.",
+      "pass_condition": "All of: file_exists=true, file_readable=true, sha256_length=64, video_opens=true, frame_count>0, fps>0, resolution_valid=true",
+      "fail_action": "REJECT: FILE_INTEGRITY_FAILURE",
+      "enforcement": "validate_external_provenance.py :: validate_candidate_file() checks 1-6"
+    },
+    "gate_3_metadata_identity": {
+      "description": "Facility and camera IDs not banned.",
+      "pass_condition": "facility_id NOT in banned_facility_identifiers AND camera_id NOT in banned_camera_identifiers AND session_id != CENTRAL_01_SESSION",
+      "fail_action": "REJECT: BANNED_IDENTITY_DETECTED",
+      "enforcement": "validate_external_provenance.py :: validate_candidate_file() checks 8-9"
+    },
+    "gate_4_split_integrity": {
+      "description": "Zero-adaptation pipeline parameter lock is confirmed.",
+      "pass_condition": "split_manifest.json :: parameter_adaptation == ZERO_PARAMETER_ADAPTATION",
+      "fail_action": "REJECT: SPLIT_INTEGRITY_FAILURE",
+      "enforcement": "validate_external_provenance.py :: validate_candidate_file() check 13"
+    },
+    "gate_5_blind_protocol": {
+      "description": "Blind evaluation protocol is locked.",
+      "pass_condition": "blind_manifest.json :: blind_protocol_locked == true",
+      "fail_action": "REJECT: BLIND_PROTOCOL_NOT_LOCKED",
+      "enforcement": "validate_external_provenance.py :: validate_candidate_file() check 14"
+    }
+  },
+  "field_schema": {
+    "facility_id": {
+      "type": "string",
+      "required": true,
+      "must_not_match": "FACILITY_CENTRAL_01|FACILITY_01|CENTRAL_01"
+    },
+    "building_id": {
+      "type": "string",
+      "required": false
+    },
+    "camera_id": {
+      "type": "string",
+      "required": true,
+      "must_not_match": "CAM_SECTOR_A_01|CAM_SECTOR_B_02|CAM_SECTOR_C_03|CAM_SECTOR_D_04|CCTV_DOOR_4_1"
+    },
+    "acquisition_session_id": {
+      "type": "string",
+      "required": true,
+      "must_not_equal": "CENTRAL_01_SESSION"
+    },
+    "sha256": {
+      "type": "string",
+      "required": true,
+      "length": 64
+    },
+    "duration_seconds": {
+      "type": "number",
+      "required": true,
+      "min": 0.01
+    },
+    "frame_count": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "fps": {
+      "type": "number",
+      "required": true,
+      "min": 1.0
+    },
+    "resolution": {
+      "type": "string",
+      "required": true,
+      "pattern": "^[0-9]+x[0-9]+$"
+    },
+    "codec": {
+      "type": "string",
+      "required": false
+    },
+    "camera_mounting_height_m": {
+      "type": "number_or_null",
+      "required": false,
+      "evidence_category": [
+        "MEASURED",
+        "DECLARED",
+        "INFERRED",
+        "NOT_AVAILABLE"
+      ]
+    },
+    "camera_pitch_deg": {
+      "type": "number_or_null",
+      "required": false,
+      "evidence_category": [
+        "MEASURED",
+        "DECLARED",
+        "INFERRED",
+        "NOT_AVAILABLE"
+      ]
+    },
+    "camera_roll_deg": {
+      "type": "number_or_null",
+      "required": false,
+      "evidence_category": [
+        "MEASURED",
+        "DECLARED",
+        "INFERRED",
+        "NOT_AVAILABLE"
+      ]
+    },
+    "lighting_lux": {
+      "type": "number_or_null",
+      "required": false,
+      "evidence_category": [
+        "MEASURED",
+        "DECLARED",
+        "INFERRED",
+        "NOT_AVAILABLE"
+      ]
+    },
+    "ground_truth_available": {
+      "type": "boolean",
+      "required": false
+    },
+    "annotation_manifest_sha256": {
+      "type": "string_or_null",
+      "required": false
+    }
+  },
+  "data_volume_assessment": {
+    "status_taxonomy": [
+      "SUFFICIENT",
+      "LIMITED",
+      "INSUFFICIENT",
+      "NOT_ESTABLISHED"
+    ],
+    "assessment_rule": "Assess from actual frame count and duration. Do not reject solely for not meeting a preferred duration target.",
+    "recorded_fields": [
+      "frames",
+      "seconds",
+      "recordings",
+      "cameras",
+      "sessions",
+      "trajectories",
+      "annotated_objects",
+      "events"
+    ]
+  },
+  "model_h_immutability": {
+    "rule": "No external calibration, threshold adjustment, hyperparameter optimization, or error-driven tuning of Model H before the primary zero-adaptation external result is finalized.",
+    "locked_parameters": {
+      "k0": 2.4,
+      "beta_d": 0.08,
+      "beta_l": 0.12,
+      "beta_pitch": 0.22,
+      "gamma_occ": {
+        "NONE": 0.0,
+        "PARTIAL": 0.2,
+        "HEAVY": 0.4
+      }
+    },
+    "post_evaluation_adaptation_label": "POST_EXTERNAL_EVALUATION_CANDIDATE",
+    "any_adaptation_performed": false
+  },
+  "prohibited_synthetic_methods": [
+    "resize",
+    "crop",
+    "rotation",
+    "blur",
+    "color_shift",
+    "illumination_simulation",
+    "perspective_warp",
+    "camera_pitch_simulation",
+    "frame_interpolation",
+    "ai_generated_footage",
+    "synthetic_warehouse_scenes"
+  ]
+}

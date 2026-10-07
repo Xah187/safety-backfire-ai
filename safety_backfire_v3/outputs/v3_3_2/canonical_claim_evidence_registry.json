@@ -1,0 +1,69 @@
+{
+  "registry_version": "V3.3.2_CANONICAL_CLAIM_EVIDENCE_REGISTRY",
+  "release": "V3.3.2",
+  "claims": [
+    {
+      "claim_id": "CLAIM_332_01",
+      "claim": "Model D observed 93.67% nominal OOS coverage on the tested evaluation population. Under Model H, localized pitch scaling achieves 95.02% nominal OOS coverage [95% CI: 93.09%-96.43%].",
+      "evidence_class": "STATISTICAL",
+      "metric_id": "METRIC_V3_3_2_NOMINAL_OOS_COVERAGE",
+      "test": "test_07_oos_ci_recomputation",
+      "allowed_wording": "Observed 93.67% under Model D and 95.02% under Model H on tested OOS population.",
+      "prohibited_wording": "Guarantees 95% general warehouse safety coverage."
+    },
+    {
+      "claim_id": "CLAIM_332_02",
+      "claim": "Multi-trigger boundary gating achieves 100.0% appropriate refusal across tested boundary decisions (150 frames, 10 scenarios) with 0.0% false refusals on nominal operational frames.",
+      "evidence_class": "OBSERVED",
+      "metric_id": "METRIC_V3_3_2_APPROPRIATE_REFUSAL_RATE",
+      "test": "test_10_refusal_independent_sample_unit",
+      "allowed_wording": "Observed 100% appropriate refusal across 10 stress scenarios (150 evaluated frames).",
+      "prohibited_wording": "Universal zero-failure refusal guarantee."
+    },
+    {
+      "claim_id": "CLAIM_332_03",
+      "claim": "Object-level perception F1 achieves 88.45% across four physical warehouse sectors within Facility Central.",
+      "evidence_class": "OBSERVED",
+      "metric_id": "METRIC_V3_3_2_PERCEPTION_F1",
+      "test": "test_14_perception_tp_fp_fn",
+      "allowed_wording": "Object-level F1 is 88.45% across 4 sectors in Facility Central.",
+      "prohibited_wording": "Validated cross-warehouse perception."
+    },
+    {
+      "claim_id": "CLAIM_332_04",
+      "claim": "Trajectory-level tracking IDF1 achieves 91.80% [Bootstrap 95% CI: 90.57% - 92.95%] across 28 trajectories within Facility Central.",
+      "evidence_class": "STATISTICAL",
+      "metric_id": "METRIC_V3_3_2_TRACKING_IDF1",
+      "test": "test_15_tracking_idf1_bootstrap",
+      "allowed_wording": "Tracking IDF1 is 91.80% across 28 sequences in Facility Central.",
+      "prohibited_wording": "Infinite-horizon tracking proof."
+    },
+    {
+      "claim_id": "CLAIM_332_05",
+      "claim": "Enforcing an explicit UNKNOWN state on ambiguous crossing tracks eliminates forced incorrect associations and safely downgrades action.",
+      "evidence_class": "OBSERVED",
+      "metric_id": "METRIC_V3_3_2_APPROPRIATE_REFUSAL_RATE",
+      "test": "test_16_identity_safety",
+      "allowed_wording": "0 forced incorrect associations across 10 ambiguous crossings; safe downgrade enforced.",
+      "prohibited_wording": "Perfect identity re-identification under all occlusions."
+    },
+    {
+      "claim_id": "CLAIM_332_06",
+      "claim": "Intervention evidence encompasses six discrete case studies (including one physical new case) with causal refusal under parallel-trend violation.",
+      "evidence_class": "CASE_STUDY",
+      "metric_id": "METRIC_V3_3_2_PHYSICAL_NEW_INTERVENTIONS",
+      "test": "test_18_physical_new_case_count",
+      "allowed_wording": "Six discrete case studies documented, including 1 new physical intervention.",
+      "prohibited_wording": "Six new physical interventions validated; proven population causality."
+    },
+    {
+      "claim_id": "CLAIM_332_07",
+      "claim": "Multi-facility warehouse generalization remains unverified; evidence is established across four sectors within one central facility.",
+      "evidence_class": "LIMITATION",
+      "metric_id": "METRIC_V3_3_2_PERCEPTION_F1",
+      "test": "test_13_cross_facility_provenance",
+      "allowed_wording": "Multi-facility cross-warehouse generalization is unverified.",
+      "prohibited_wording": "Universal multi-facility deployment ready."
+    }
+  ]
+}

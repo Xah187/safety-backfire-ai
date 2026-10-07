@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safety-backfire-ai.org/schemas/v3_4/lux_telemetry.schema.json",
+  "title": "V3.4 Physical Lux Telemetry Schema",
+  "description": "Schema for physical illuminance (lux) measurements from calibrated hardware meters.",
+  "type": "object",
+  "required": [
+    "facility_id",
+    "sensor_id",
+    "timestamp",
+    "lux",
+    "sampling_rate_hz",
+    "measurement_uncertainty",
+    "calibration_reference",
+    "location"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "facility_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Facility identifier where sensor is installed."
+    },
+    "sensor_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Hardware serial number or sensor tag."
+    },
+    "timestamp": {
+      "type": "number",
+      "minimum": 0.0,
+      "description": "Measurement timestamp in seconds synchronized with video stream."
+    },
+    "lux": {
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": 0.0
+        },
+        {
+          "type": "string",
+          "enum": ["UNKNOWN"]
+        }
+      ],
+      "description": "Measured illuminance in lumens/m^2 (must be >= 0.0) or explicitly UNKNOWN."
+    },
+    "sampling_rate_hz": {
+      "oneOf": [
+        {
+          "type": "number",
+          "exclusiveMinimum": 0.0
+        },
+        {
+          "type": "string",
+          "enum": ["UNKNOWN"]
+        }
+      ],
+      "description": "Sensor logging frequency in Hz or UNKNOWN."
+    },
+    "measurement_uncertainty": {
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": 0.0
+        },
+        {
+          "type": "string",
+          "enum": ["UNKNOWN"]
+        }
+      ],
+      "description": "Expanded measurement uncertainty (+/- lux) or UNKNOWN."
+    },
+    "calibration_reference": {
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "string",
+          "enum": ["UNKNOWN"]
+        }
+      ],
+      "description": "Calibration certificate number or UNKNOWN."
+    },
+    "location": {
+      "oneOf": [
+        {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "number"
+          }
+        },
+        {
+          "type": "string",
+          "enum": ["UNKNOWN"]
+        }
+      ],
+      "description": "Physical sensor 3D coordinates [X, Y, Z] in meters or UNKNOWN."
+    }
+  }
+}

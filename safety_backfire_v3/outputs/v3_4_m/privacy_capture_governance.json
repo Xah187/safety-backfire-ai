@@ -1,0 +1,49 @@
+{
+  "milestone": "V3.4-M",
+  "document_title": "Comprehensive Privacy, Data Governance & Identifiability Specification",
+  "authoritative_privacy_declaration": "NON-ANONYMITY ACKNOWLEDGMENT: Pseudonymization of operator badge IDs alone DOES NOT render multi-modal field capture data anonymous. High-resolution optical video intrinsically captures human facial features, worker uniforms, name badges, vehicle fleet asset IDs, biometric gait dynamics, and precise facility timestamps that can enable re-identification. The dataset is strictly classified as PSEUDONYMIZED CONFIDENTIAL RESEARCH DATA, NOT ANONYMIZED PUBLIC DATA.",
+  "identity_and_identifiability_matrix": {
+    "technician_id_governance": {
+      "classification": "PSEUDONYMOUS_TOKEN",
+      "format": "^TECH-[A-Z0-9]{6}$",
+      "protection": "Separated key vault mapping token to real identity; access restricted to Lead Investigator."
+    },
+    "operator_id_governance": {
+      "classification": "PSEUDONYMOUS_TOKEN",
+      "format": "^OP-[A-Z0-9]{6}$",
+      "protection": "Decoupled from payroll or employment ID numbers; stored in cryptographically sealed lookup table."
+    },
+    "video_identifiability_controls": {
+      "captured_elements": ["Human faces", "Facility badges", "Uniform logos", "Vehicle license/fleet numbers", "Body posture/gait"],
+      "mitigation_architecture": {
+        "raw_storage_level": "Unblurred raw master video stored on AES-256 encrypted volumes strictly for forensic ground truth adjudication.",
+        "export_and_review_level": "Automated irreversible face blurring and badge pixelation applied to all secondary review and training export bundles.",
+        "prohibited_methods": "Face recognition or biometric identification algorithms are strictly prohibited across the entire research codebase."
+      }
+    },
+    "audio_identifiability_controls": {
+      "hardware_mandate": "COMPLETE_AUDIO_ELIMINATION",
+      "implementation": "Microphones on all optical cameras (A, B, C, D) must be physically disconnected, desoldered, or blocked via hardware jumpers. Camera firmware audio streaming is disabled. Audio capture is FORBIDDEN to eliminate accidental recording of worker speech."
+    },
+    "temporal_and_facility_identifiability": {
+      "risk": "Cross-referencing shift schedules and camera timestamps can identify individual workers present during recorded runs.",
+      "control": "Public research releases must apply randomized time-offset obfuscation to session timestamps while preserving relative multi-sensor delta synchronization."
+    }
+  },
+  "data_governance_and_access_policy": {
+    "site_authorization_requirement": "MANDATORY_PRIOR_APPROVAL: Naturalistic operational capture cannot commence without formal written Institutional Review / Site Management Authorization and Worker Notification Agreements signed by facility management and labor safety representatives.",
+    "access_control_levels": {
+      "level_1_raw_vault": "Restricted to Lead Data Engineer and Principal Investigator via multi-factor authentication (MFA) and hardware security keys.",
+      "level_2_sanitized_review": "Access granted to certified Human Adjudication Panel members via ephemeral, audited review sessions.",
+      "level_3_research_derivatives": "De-identified, facial-blurred kinematic datasets for scientific publication."
+    },
+    "retention_period": {
+      "raw_identifiable_master_data": "Maximum 36 months post-project completion, after which raw high-resolution footage must be securely erased via DoD 5220.22-M wipe standards.",
+      "anonymized_kinematic_telemetry": "Permanent scientific archive."
+    },
+    "data_export_rules": {
+      "raw_video_export": "STRICTLY PROHIBITED outside the local physical storage boundary.",
+      "derivative_export": "Permitted only after SHA-256 blinding sanitization, automated facial blurring, and Lead Data Engineer cryptographic signoff."
+    }
+  }
+}

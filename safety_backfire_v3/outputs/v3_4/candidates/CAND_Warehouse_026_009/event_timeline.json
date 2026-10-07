@@ -1,0 +1,23 @@
+{
+  "candidate_id": "CAND_Warehouse_026_009",
+  "timeline_events": [
+    {
+      "phase": "PRE",
+      "start_time": 0.0,
+      "end_time": 0.0,
+      "description": "Baseline nominal corridor movement prior to close convergence."
+    },
+    {
+      "phase": "INTERVENTION",
+      "start_time": 0.03,
+      "end_time": 30.73,
+      "description": "Convergence interval: closest distance 175.8px."
+    },
+    {
+      "phase": "POST",
+      "start_time": 30.77,
+      "end_time": 38.73,
+      "description": "Post-interaction traversal and zone exit monitoring."
+    }
+  ]
+}

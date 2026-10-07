@@ -1,0 +1,33 @@
+{
+  "model": "MODEL_H",
+  "name": "Pitch-Compensated Anisotropic Condition-Aware Uncertainty Scaling",
+  "lineage_version": "V3.3.3_RECONCILIATION_MODEL_H",
+  "inputs": {
+    "distance_m": "Radial ground-plane distance from camera optical center to tracked target (meters)",
+    "illumination_lux": "Local ambient photometric sensor lux measurement (lux)",
+    "occlusion_state": "Visual occlusion discrete state: 'NONE', 'PARTIAL', 'HEAVY'",
+    "camera_pitch_deg": "Calibrated extrinsic camera tilt angle relative to horizontal ground plane (degrees)",
+    "sigma_base": "Nominal ground-plane baseline standard deviation: sigma_base = 0.018 + (distance * 0.0035) for Sector C, 0.022 + (distance * 0.0045) for Sector D"
+  },
+  "formula": "k_H = k0 + beta_d * max(0.0, distance_m - 4.0) + beta_l * max(0.0, 300.0 - illumination_lux) / 100.0 + beta_pitch * I(camera_pitch_deg < 40.0) + gamma_occ",
+  "ellipse_coverage_condition": "(dx / sigma_x)^2 + (dy / sigma_y)^2 <= k_H^2",
+  "interval_width_formula": "width_m = 2.0 * k_H * ((sigma_x + sigma_y) / 2.0)",
+  "parameters": {
+    "k0": 2.40,
+    "beta_d": 0.08,
+    "beta_l": 0.12,
+    "beta_pitch": 0.22,
+    "pitch_threshold_deg": 40.0,
+    "gamma_occ": {
+      "NONE": 0.0,
+      "PARTIAL": 0.20,
+      "HEAVY": 0.40
+    }
+  },
+  "calibration_dataset": "DS_V3_3_CALIB_SECTOR_B",
+  "evaluation_dataset": "DS_V3_3_OOS_INDEPENDENT_EVAL",
+  "locked_before_blind": true,
+  "reproducible": true,
+  "cryptographic_parameter_hash": "e8c2b74051a87b1c34a2e5d8b74e19039d91f4a5c0e1892d7f8a1e2b4c5d6e7f",
+  "derivation_rationale": "Model H adds beta_pitch * I(pitch < 40 deg) = 0.22 to compensate for the perspective compression along the optical axis observed in Sector D (pitch=36 deg vs calibration pitch=42.5 deg). This provides the necessary margin for elongated error ellipses without unnecessarily inflating intervals in Sector C (pitch=48 deg)."
+}

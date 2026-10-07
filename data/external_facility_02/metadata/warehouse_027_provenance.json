@@ -1,0 +1,28 @@
+{
+  "dataset": "nvidia/PhysicalAI-SmartSpaces",
+  "subset": "MTMC_Tracking_2026",
+  "scene": "Warehouse_027",
+  "nature": "real-world test capture",
+  "license": "CC-BY-4.0",
+  "publisher": "NVIDIA Corporation",
+  "cameras_count": 7,
+  "camera_ids": [
+    "Camera_0000",
+    "Camera_0001",
+    "Camera_0002",
+    "Camera_0003",
+    "Camera_0004",
+    "Camera_0005",
+    "Camera_0006"
+  ],
+  "frames_per_camera": 1800,
+  "total_frames": 12600,
+  "duration_seconds_per_camera": 60.0,
+  "total_duration_seconds": 420.0,
+  "fps": 30.0,
+  "resolution": "1920x1080",
+  "calibration_available": true,
+  "ground_truth_status": "WITHHELD_FOR_REAL_WORLD_TEST_SCENES",
+  "target_run": "RUN_004_NVIDIA_WAREHOUSE_027",
+  "governance_note": "RUN_004 must remain a strictly isolated run without model tuning or parameter adaptation."
+}

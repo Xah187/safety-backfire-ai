@@ -1,0 +1,36 @@
+{
+  "manifest_version": "V3.3.3_RUN_003_FORENSIC_AUDIT_MANIFEST_V1",
+  "audit_target": "RUN_003_NVIDIA_WAREHOUSE_026",
+  "audit_timestamp_utc": "2026-09-28T09:53:30Z",
+  "frozen_run_reference": {
+    "run_id": "RUN_003_NVIDIA_WAREHOUSE_026",
+    "directory": "outputs/v3_3_3/exp_333_01/runs/RUN_003_NVIDIA_WAREHOUSE_026",
+    "immutability_status": "FROZEN_UNCHANGED",
+    "hash_manifest": "outputs/v3_3_3/exp_333_01/runs/RUN_003_NVIDIA_WAREHOUSE_026/run_003_hash_manifest.json"
+  },
+  "forensic_audit_components": {
+    "official_source_provenance": "outputs/v3_3_3/exp_333_01/analysis/official_source_provenance.json",
+    "camera_extrinsic_convention_audit": "outputs/v3_3_3/exp_333_01/analysis/camera_extrinsic_convention_audit.json",
+    "model_h_input_provenance_audit": "outputs/v3_3_3/exp_333_01/analysis/model_h_input_provenance_audit.json",
+    "occlusion_circularity_audit": "outputs/v3_3_3/exp_333_01/analysis/occlusion_circularity_audit.json",
+    "odd_observation_ledger": "outputs/v3_3_3/exp_333_01/analysis/odd_observation_ledger.json",
+    "external_claim_evidence_matrix": "outputs/v3_3_3/exp_333_01/analysis/external_claim_evidence_matrix.json"
+  },
+  "forensic_findings_summary": {
+    "official_source": "VERIFIED (NVIDIA PhysicalAI-SmartSpaces CC-BY-4.0)",
+    "real_world_test_scene": "VERIFIED (Warehouse_026 is an authentic test capture)",
+    "raw_videos": "VERIFIED (4 cameras x 1800 frames = 7200 frames @ 30 FPS)",
+    "calibration_quality": "VERIFIED (NVIDIA reported reprojection RMSE = 0.0542 units across 1000 points; language corrected from survey-grade)",
+    "camera_pitch": "VERIFIED / CONVENTION_REVIEW_REQUIRED (Euler ZYX gives 56.51°, 53.84°, 4.42°, 1.59°; physical optical axis depression angle is 24.33° to 31.94°)",
+    "metric_distance": "CALIBRATION_DERIVED (mean 6.923m, range 1.876m to 25.407m)",
+    "lux": "NOT_AVAILABLE (physical lux meter absent; luminance reported only as image statistics)",
+    "occlusion": "MODEL_DERIVED_PROXY / GROUND_TRUTH_UNAVAILABLE (circularity audited; Mode A vs Mode B evaluated)",
+    "perception_ground_truth": "NOT_AVAILABLE (withheld by NVIDIA for real-world test scenes)",
+    "model_h_status": "INPUT_INSUFFICIENT (due strictly to missing physical lux)",
+    "perception_f1": "NOT_ESTABLISHED (prohibited without ground truth)",
+    "tracking_idf1": "NOT_ESTABLISHED (prohibited without ground truth)",
+    "cross_warehouse_generalization": "NOT_ESTABLISHED",
+    "run_003_classification": "EXECUTED_EXTERNAL_BENCHMARK_WITH_LIMITATIONS",
+    "optimization_performed": "NO (zero tuning, zero retraining, frozen k0=2.40)"
+  }
+}

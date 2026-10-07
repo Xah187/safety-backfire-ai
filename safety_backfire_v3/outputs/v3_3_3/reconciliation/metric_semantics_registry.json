@@ -1,0 +1,87 @@
+{
+  "artifact_name": "METRIC_SEMANTICS_REGISTRY",
+  "version": "V3.3.3_RECONCILED",
+  "audit_timestamp_utc": "2026-09-25T14:45:00Z",
+  "purpose": "Strict governance separation between statistical uncertainty coverage and operational safety-policy performance to eliminate semantic conflation.",
+  "metric_families": {
+    "FAMILY_A_STATISTICAL_UNCERTAINTY_COVERAGE": {
+      "decision_layer": "UNCERTAINTY",
+      "fundamental_question": "Did the uncertainty interval contain the observed ground-truth error?",
+      "mathematical_definition": "I((dx / sigma_x)^2 + (dy / sigma_y)^2 <= k^2)",
+      "interpretation": "A calibration and uncertainty quantification metric measuring statistical dispersion and interval reliability. An uncovered point indicates that measurement error exceeded the calibrated confidence boundary.",
+      "canonical_metrics": [
+        {
+          "name": "MODEL_H_NOMINAL_OOS_COVERAGE",
+          "formula": "630 / 663",
+          "value": 0.9502,
+          "target": 0.9500,
+          "decision_layer": "UNCERTAINTY"
+        },
+        {
+          "name": "OOS_UNCOVERED_RATE",
+          "formula": "33 / 663",
+          "value": 0.0498,
+          "decision_layer": "UNCERTAINTY"
+        },
+        {
+          "name": "AUTONOMOUS_SUBSET_UNCOVERED_RATE",
+          "formula": "26 / 502",
+          "value": 0.0518,
+          "decision_layer": "UNCERTAINTY"
+        },
+        {
+          "name": "ADVISORY_SUBSET_UNCOVERED_RATE",
+          "formula": "7 / 161",
+          "value": 0.0435,
+          "decision_layer": "UNCERTAINTY"
+        }
+      ],
+      "prohibited_conflation": "Undercoverage must NEVER be reported as operational unsafe actions, actuator hazards, or vehicle collisions without explicit closed-loop trace evidence."
+    },
+    "FAMILY_B_OPERATIONAL_SAFETY_POLICY_PERFORMANCE": {
+      "decision_layer": "POLICY",
+      "fundamental_question": "Did the action policy correctly refuse or downgrade when operating conditions were unsafe or insufficiently supported?",
+      "mathematical_definition": "Action(w) in {FULL_AUTONOMOUS_ACTION, ADVISORY_ONLY, SAFE_REFUSAL} conditioned on ODD boundaries, sensor health, and interval width thresholds.",
+      "interpretation": "An operational control policy metric measuring whether safety gating protects the physical asset by halting or downgrading autonomy when confidence is degraded or boundaries are breached.",
+      "canonical_metrics": [
+        {
+          "name": "BOUNDARY_STRESS_APPROPRIATE_REFUSAL_RATE",
+          "formula": "150 / 150",
+          "value": 1.0000,
+          "decision_layer": "POLICY"
+        },
+        {
+          "name": "INDEPENDENT_BOUNDARY_SCENARIOS_REFUSED",
+          "formula": "10 / 10",
+          "value": 1.0000,
+          "decision_layer": "POLICY"
+        },
+        {
+          "name": "NOMINAL_FALSE_REFUSAL_RATE",
+          "formula": "0 / 500",
+          "value": 0.0000,
+          "decision_layer": "POLICY"
+        },
+        {
+          "name": "DISTRIBUTION_SHIFT_UNSAFE_NON_REFUSAL_RATE",
+          "formula": "0 / 500",
+          "value": 0.0000,
+          "decision_layer": "POLICY"
+        }
+      ],
+      "prohibited_conflation": "Zero unsafe non-refusals on tested stress fixtures must NEVER be extrapolated to claim universal uncertainty coverage or guaranteed 95% coverage across unobserved warehouses."
+    }
+  },
+  "specific_conflation_resolutions": {
+    "AUTONOMOUS_UNCOVERED_POINTS_AUDIT": {
+      "count": 26,
+      "denominator_subset": 502,
+      "denominator_total_oos": 663,
+      "erroneous_historical_label": "3.92% unsafe non-refusal rate",
+      "corrected_semantic_label": "UNCERTAINTY_COVERAGE_FAILURE_WITHIN_AUTONOMOUS_POLICY_REGION",
+      "operational_safety_status": "NOT_ESTABLISHED_FOR_THE_26_UNCOVERED_OOS_POINTS",
+      "justification": "The 26 points were offline spatial test samples where width <= 0.25m and Mahalanobis error > k_H. No physical actuators were controlled, and downstream temporal safety filters were not simulated. Labeling these as unsafe actions is empirically unevidenced. Labeling them as safe is equally unevidenced. The state is strictly NOT_ESTABLISHED."
+    }
+  },
+  "governance_rule": "NEVER COMBINE FAMILY A AND FAMILY B. Every metric in code, tests, and documentation must explicitly declare its decision layer."
+}

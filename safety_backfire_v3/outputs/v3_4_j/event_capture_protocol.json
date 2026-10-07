@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "protocol_id": "V3_4_J_EVENT_CAPTURE_PROTOCOL",
+  "version": "1.0.0",
+  "status": "REQUIRED_SPECIFICATION",
+  "description": "Standardized Protocol for Dynamic Temporal Windowing, Multi-Modal Event Packaging, and Controlled/Naturalistic Capture.",
+  "governance": {
+    "milestone": "V3.4-J",
+    "validation_status": "NOT_ESTABLISHED",
+    "tau_max_policy": "tau_max = 2.0s IS A CURRENT_SPECIFICATION_CONSTRAINT_NOT_UNIVERSAL_CONSTANT",
+    "ethics_policy": "ZERO_HAZARD_TOLERANCE_NO_DELIBERATE_HUMAN_ENDANGERMENT"
+  },
+  "temporal_window_protocol": {
+    "pre_window_sizing": {
+      "minimum_duration_s": 3.0,
+      "dynamic_formula": "T_pre = max(3.0, approach_distance_m / max(0.5, vehicle_approach_velocity_mps))",
+      "purpose": "Capture baseline unperturbed trajectories, velocities, and initial secondary zone occupancy prior to interaction onset."
+    },
+    "intervention_window_sizing": {
+      "definition": "Window spanning first detection of brake actuation or steering deviation until completion of avoidance maneuver or complete vehicle halt.",
+      "nominal_range_s": [1.5, 5.0],
+      "telemetry_trigger": "Brake switch active OR deceleration > 1.0 m/s2 OR steering angle change rate > 15 deg/s."
+    },
+    "post_window_sizing": {
+      "minimum_duration_s": 4.0,
+      "dynamic_formula": "T_post = max(4.0, tau_max_s + stabilization_time_s)",
+      "tau_max_s": 2.0,
+      "tau_max_designation": "CURRENT_SPECIFICATION_CONSTRAINT",
+      "purpose": "Observe whether secondary hazard emerges within the dynamic propagation latency window."
+    }
+  },
+  "scenario_taxonomies_required_in_dataset": [
+    {
+      "scenario_type": "SAFE_COMPLETE_STOP",
+      "nature": "NEGATIVE_CONTROL",
+      "description": "Close approach leading to emergency braking to a full stop without lateral swerve; secondary zone unpenetrated and hazard unchanged."
+    },
+    {
+      "scenario_type": "SAFE_CLEARANCE",
+      "nature": "NEGATIVE_CONTROL",
+      "description": "Nominal passing maneuver where both vehicle and pedestrian vacate the corridor with zero secondary hazard."
+    },
+    {
+      "scenario_type": "SWERVE_WITHOUT_SECONDARY_RISK",
+      "nature": "NEGATIVE_CONTROL",
+      "description": "Vehicle executes lateral evasive swerve into an observable adjacent zone that is physically verified as clear and unoccupied."
+    },
+    {
+      "scenario_type": "SECONDARY_RISK_FROM_INDEPENDENT_ACTOR",
+      "nature": "CONFOUNDED_NEGATIVE_CONTROL",
+      "description": "Vehicle intervenes in primary corridor; secondary risk increases due to an independent pedestrian group or external forklift entering."
+    },
+    {
+      "scenario_type": "SECONDARY_RISK_FROM_PRIMARY_INTERVENTION",
+      "nature": "POSITIVE_TARGET",
+      "description": "Vehicle intervenes and swerves; the redirected vehicle trajectory directly encroaches upon an occupied, observable secondary zone."
+    },
+    {
+      "scenario_type": "TRACK_HANDOFF_ANOMALY",
+      "nature": "PERCEPTION_STRESS_TEST",
+      "description": "Vehicle executes swerve during which the object detector swaps track IDs or fragments tracks."
+    },
+    {
+      "scenario_type": "OCCLUDED_SECONDARY_SPACE",
+      "nature": "OBSERVABILITY_STRESS_TEST",
+      "description": "Vehicle swerves toward a cross-aisle whose interior depth is occluded by pallets, testing state machine refusal to classify."
+    },
+    {
+      "scenario_type": "UNKNOWN_CONFOUNDER_BLIND_SPOT",
+      "nature": "CAUSAL_STRESS_TEST",
+      "description": "Secondary risk increases, but warehouse architectural blind corners prevent confirming whether an independent actor entered."
+    },
+    {
+      "scenario_type": "TRUNCATED_OBSERVATION_WINDOW",
+      "nature": "TEMPORAL_STRESS_TEST",
+      "description": "Video stream drops or clip terminates within 2.0s of intervention, testing temporal completeness gate."
+    }
+  ],
+  "capture_methodologies": {
+    "controlled_safety_trials": {
+      "purpose": "Systematically test counterfactual hypotheses (baseline vs. intervention configuration) under rigorous experimental controls.",
+      "safety_and_ethics_rules": [
+        "NO human pedestrian may ever be placed in the physical collision path of a moving vehicle.",
+        "Pedestrian obstacles in collision trajectories MUST be certified soft foam dummies or mannequins.",
+        "Human test participants MUST remain in certified safety cages or physically partitioned observation zones.",
+        "Vehicle MUST be equipped with hardware-enforced remote safety emergency stop (E-Stop) operated by a designated safety observer."
+      ],
+      "paired_counterfactual_design": "Record Run A (vehicle maintains path past empty junction) vs. Run B (vehicle executes evasive swerve into adjacent instrumented zone) under identical lighting and floor conditions."
+    },
+    "naturalistic_operational_capture": {
+      "purpose": "Capture ambient warehouse logistics operations to prevent dataset overfitting to artificial test patterns.",
+      "protocol": "Continuous multi-camera facility surveillance across operational shifts, triggering candidate extraction upon CAN telemetry deceleration peaks."
+    }
+  },
+  "evidence_object_schema": {
+    "required_fields": [
+      "event_id",
+      "facility_id",
+      "camera_set_id",
+      "vehicle_id",
+      "actor_ids",
+      "timestamps (T0_start, T1_interv, T2_interv_end, T3_primary_res, T4_sec_onset, T5_post_end)",
+      "telemetry_payload",
+      "camera_observation_payload",
+      "secondary_sensor_payload",
+      "evidence_source_tags"
+    ],
+    "evidence_source_tag_taxonomy": [
+      "DIRECT_PHYSICAL_OBSERVATION (CAN bus, surveyed geometry, calibrated lux)",
+      "VIDEO_DERIVED (bounding boxes, optical flow, visual kinematics)",
+      "TELEMETRY_DERIVED (integrated vehicle pose, velocity from encoders)",
+      "SENSOR_DERIVED (LiDAR point clouds, UWB tag coordinates)",
+      "MODEL_DERIVED (Model H risk score, heuristic convergence score)"
+    ],
+    "ground_truth_isolation_rule": "MODEL_DERIVED data shall NEVER be tagged as GROUND_TRUTH or used as adjudication labels."
+  }
+}

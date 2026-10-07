@@ -1,0 +1,58 @@
+📷 Camera 0:
+   Points: 237
+   Mean error: 0.0577 units
+   Std error: 0.0596 units
+   Median error: 0.0379 units
+   Max error: 0.3636 units
+📷 Camera 1:
+   Points: 130
+   Mean error: 0.0660 units
+   Std error: 0.0917 units
+   Median error: 0.0299 units
+   Max error: 0.6053 units
+📷 Camera 2:
+   Points: 133
+   Mean error: 0.0501 units
+   Std error: 0.0446 units
+   Median error: 0.0363 units
+   Max error: 0.2221 units
+📷 Camera 3:
+   Points: 102
+   Mean error: 0.0708 units
+   Std error: 0.0384 units
+   Median error: 0.0676 units
+   Max error: 0.1826 units
+📷 Camera 4:
+   Points: 54
+   Mean error: 0.1164 units
+   Std error: 0.0753 units
+   Median error: 0.0990 units
+   Max error: 0.3599 units
+📷 Camera 5:
+   Points: 207
+   Mean error: 0.0525 units
+   Std error: 0.0575 units
+   Median error: 0.0332 units
+   Max error: 0.4069 units
+📷 Camera 6:
+   Points: 137
+   Mean error: 0.0928 units
+   Std error: 0.0624 units
+   Median error: 0.0834 units
+   Max error: 0.3399 units
+
+📊 Overall Reprojection Error Statistics:
+   Total points: 1000
+   Mean error: 0.0660 units
+   RMSE: 0.0925 units
+   Std error: 0.0648 units
+   Median error: 0.0479 units
+   Min error: 0.0001 units
+   Max error: 0.6053 units
+
+📈 Error Distribution:
+   50th percentile: 0.0479 units
+   75th percentile: 0.0908 units
+   90th percentile: 0.1417 units
+   95th percentile: 0.1913 units
+   99th percentile: 0.3038 units

@@ -1,0 +1,133 @@
+{
+  "schema_version": "V3.3.3_ODD_OBSERVATION_LEDGER_V1",
+  "audit_target": "RUN_003_NVIDIA_WAREHOUSE_026",
+  "audit_timestamp_utc": "2026-09-28T09:52:30Z",
+  "frozen_odd_reference": "safety_backfire_v3/outputs/v3_2_1/canonical_odd.json",
+  "nine_dimensional_odd_evaluation": {
+    "camera_height": {
+      "specification": "Nominal: 3.5m - 6.0m; Degraded: 3.0m - 3.5m; Out: < 3.0m",
+      "measured_values_m": {
+        "Camera_0000": 3.6,
+        "Camera_0001": 2.95,
+        "Camera_0002": 3.41,
+        "Camera_0003": 3.07
+      },
+      "dimension_status": {
+        "Camera_0000": "IN_ODD",
+        "Camera_0001": "ODD_SHIFT",
+        "Camera_0002": "ODD_SHIFT",
+        "Camera_0003": "ODD_SHIFT"
+      },
+      "overall_status": "ODD_SHIFT"
+    },
+    "pitch": {
+      "specification": "Valid: 35.0\u00b0 - 55.0\u00b0; Degraded: 20.0\u00b0 - 35.0\u00b0; Out: < 20.0\u00b0 or > 65.0\u00b0",
+      "euler_zyx_angles_deg": {
+        "Camera_0000": 56.51,
+        "Camera_0001": 53.84,
+        "Camera_0002": 4.42,
+        "Camera_0003": 1.59
+      },
+      "optical_axis_depression_deg": {
+        "Camera_0000": 31.94,
+        "Camera_0001": 27.45,
+        "Camera_0002": 27.25,
+        "Camera_0003": 24.33
+      },
+      "dimension_status": "ODD_SHIFT"
+    },
+    "range": {
+      "specification": "Certified autonomous braking: <= 8.0m; Degraded advisory: 8.0 - 10.0m; Out of domain: > 10.0m",
+      "overall_breakdown": {
+        "nominal_in_odd_le_8m": 7828,
+        "nominal_in_odd_pct": 71.54,
+        "degraded_advisory_8_to_10m": 1172,
+        "degraded_advisory_pct": 10.71,
+        "out_of_odd_gt_10m": 1942,
+        "out_of_odd_pct": 17.75
+      },
+      "dimension_status": "ODD_SHIFT"
+    },
+    "floor_geometry": {
+      "specification": "Slope <= 1.5\u00b0",
+      "facility_condition": "Flat concrete industrial warehouse floor",
+      "dimension_status": "IN_ODD"
+    },
+    "illumination": {
+      "specification": "150 lux - 1200 lux",
+      "facility_condition": "Visual inspection shows overhead lighting; physical lux logs NOT_AVAILABLE",
+      "dimension_status": "UNKNOWN"
+    },
+    "speed": {
+      "specification": "<= 4.5 m/s (16.2 km/h)",
+      "facility_condition": "Forklift movement and worker walking speeds observed within normal facility rates",
+      "dimension_status": "IN_ODD"
+    },
+    "latency": {
+      "specification": "<= 50.0 ms",
+      "facility_condition": "30 FPS video streaming (33.3 ms inter-frame interval)",
+      "dimension_status": "IN_ODD"
+    },
+    "identity": {
+      "specification": "Physical building independence verified by architectural deed or facility audit",
+      "facility_condition": "NVIDIA PhysicalAI-SmartSpaces authentic warehouse; specific building identity unpublished",
+      "dimension_status": "UNKNOWN"
+    },
+    "uncertainty_width": {
+      "specification": "Model H uncertainty score fully evaluated across certified parameter domain",
+      "facility_condition": "Model H status is INPUT_INSUFFICIENT due to missing physical lux",
+      "dimension_status": "UNKNOWN"
+    }
+  },
+  "per_camera_range_reconciliation": {
+    "Camera_0000": {
+      "total_observations": 3329,
+      "mean_distance_m": 4.562,
+      "min_distance_m": 2.154,
+      "max_distance_m": 13.603,
+      "nominal_in_odd_le_8m": 3041,
+      "nominal_in_odd_pct": 91.35,
+      "degraded_advisory_8_to_10m": 220,
+      "degraded_advisory_pct": 6.61,
+      "out_of_odd_gt_10m": 68,
+      "out_of_odd_pct": 2.04
+    },
+    "Camera_0001": {
+      "total_observations": 1718,
+      "mean_distance_m": 8.42,
+      "min_distance_m": 1.876,
+      "max_distance_m": 25.407,
+      "nominal_in_odd_le_8m": 959,
+      "nominal_in_odd_pct": 55.82,
+      "degraded_advisory_8_to_10m": 714,
+      "degraded_advisory_pct": 41.56,
+      "out_of_odd_gt_10m": 45,
+      "out_of_odd_pct": 2.62
+    },
+    "Camera_0002": {
+      "total_observations": 3447,
+      "mean_distance_m": 9.591,
+      "min_distance_m": 4.133,
+      "max_distance_m": 18.569,
+      "nominal_in_odd_le_8m": 1432,
+      "nominal_in_odd_pct": 41.54,
+      "degraded_advisory_8_to_10m": 224,
+      "degraded_advisory_pct": 6.5,
+      "out_of_odd_gt_10m": 1791,
+      "out_of_odd_pct": 51.96
+    },
+    "Camera_0003": {
+      "total_observations": 2448,
+      "mean_distance_m": 5.326,
+      "min_distance_m": 2.205,
+      "max_distance_m": 12.651,
+      "nominal_in_odd_le_8m": 2396,
+      "nominal_in_odd_pct": 97.88,
+      "degraded_advisory_8_to_10m": 14,
+      "degraded_advisory_pct": 0.57,
+      "out_of_odd_gt_10m": 38,
+      "out_of_odd_pct": 1.55
+    }
+  },
+  "governing_rule": "Overall ODD cannot be inferred solely from the semantic scene. Dimensions with UNKNOWN or ODD_SHIFT status strictly prevent asserting unconstrained operational safety claims."
+}

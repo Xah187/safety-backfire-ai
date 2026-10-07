@@ -1,0 +1,18 @@
+{
+  "distance_evidence_type": "FROM_CALIBRATED_HOMOGRAPHY",
+  "calibration_source": "NVIDIA_PROVIDED_INTRINSIC_EXTRINSIC_P_INV",
+  "reprojection_rmse": 0.0925,
+  "total_distance_measurements": 34894,
+  "distance_range_m": [
+    1.562,
+    25.666
+  ],
+  "distance_mean_m": 6.342,
+  "distance_std_m": 4.008,
+  "in_odd_le_8m": 25933,
+  "in_odd_pct": 74.32,
+  "degraded_8_to_10m": 3233,
+  "degraded_pct": 9.27,
+  "out_of_odd_gt_10m": 5728,
+  "out_of_odd_pct": 16.42
+}

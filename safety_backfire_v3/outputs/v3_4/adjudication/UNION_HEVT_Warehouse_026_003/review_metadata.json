@@ -1,0 +1,51 @@
+{
+  "event_id": "UNION_HEVT_Warehouse_026_003",
+  "primary_candidate_id": "HEVT_Warehouse_026_003",
+  "discovery_channel": "HUMAN_ONLY_CANDIDATE",
+  "facility_scene": "Warehouse_026",
+  "camera_stream": "Camera_0000",
+  "source_video": "Camera_0000.mp4",
+  "source_video_sha256": "83ed232a2f5fe3031807ed19020e1a44fe386e89b68f9bea621797f1552c9cda",
+  "package_hash": "85d137a6317a8ed37a04481982f2bfd0a9a37623cea7ed323ecb30eaf14b8345",
+  "review_version": "V3.4_C_BLIND_ADJUDICATION_V1",
+  "eligibility_status": "ELIGIBLE_FOR_ADJUDICATION",
+  "window_valid": true,
+  "window_invalidation_reasons": [],
+  "temporal_window_bounds": {
+    "pre": {
+      "start_frame": 510,
+      "end_frame": 659,
+      "timestamp_start_s": 17.0,
+      "timestamp_end_s": 21.97,
+      "duration_s": 5.0,
+      "clip_filename": "before.mp4"
+    },
+    "intervention": {
+      "start_frame": 660,
+      "end_frame": 795,
+      "timestamp_start_s": 22.0,
+      "timestamp_end_s": 26.5,
+      "duration_s": 4.53,
+      "clip_filename": "intervention.mp4"
+    },
+    "post": {
+      "start_frame": 796,
+      "end_frame": 1035,
+      "timestamp_start_s": 26.53,
+      "timestamp_end_s": 34.5,
+      "duration_s": 8.0,
+      "clip_filename": "after.mp4"
+    }
+  },
+  "spatial_zones": {
+    "primary_zone": {
+      "zone_id": "Camera_0000_INTERSECTION",
+      "zone_status": "PROVISIONAL"
+    },
+    "secondary_zone": {
+      "zone_id": "UNKNOWN",
+      "zone_status": "UNKNOWN"
+    }
+  },
+  "adjudication_readiness": "AWAITING_HUMAN_ASSESSORS"
+}

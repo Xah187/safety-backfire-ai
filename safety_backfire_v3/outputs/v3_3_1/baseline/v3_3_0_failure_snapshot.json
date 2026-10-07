@@ -1,0 +1,73 @@
+{
+  "registry_version": "V3.3_FAILURE_REGISTRY",
+  "timestamp_utc": "2026-09-25T01:40:00Z",
+  "policy": "Catalog all newly observed empirical failures without modifying historical V3.2.1 failure records.",
+  "total_failures": 5,
+  "failures": [
+    {
+      "failure_id": "V3.3-FAIL-001",
+      "experiment_id": "EXP_33_01",
+      "dataset_id": "DS_V3_3_BLIND_STAGING_D",
+      "category": "ODD_BOUNDARY",
+      "description": "Far-field out-of-sample uncertainty undercoverage beyond 8.0m boundary.",
+      "trigger": "Entity distance > 8.0m under low illumination (210 lux) in Sector D staging.",
+      "observed_behavior": "Empirical coverage dropped from 95.00% calibration in-sample down to 67.07% at >8.0m, and 92.61% across nominal ODD.",
+      "safety_impact": "Potential underestimation of coordinate uncertainty boundary if factor k is assumed universally valid beyond 8.0m.",
+      "reproducible": true,
+      "resolution": "Enforce SafeRefusalEngine to clamp nominal autonomous intervention at <= 8.0m and trigger SAFE_REFUSAL_INSUFFICIENT_EVIDENCE beyond 10.0m.",
+      "regression_test": "validation/v3_3/test_odd_enforcement.py::test_05_far_field_distance_boundary_refusal"
+    },
+    {
+      "failure_id": "V3.3-FAIL-002",
+      "experiment_id": "EXP_33_03",
+      "dataset_id": "DS_V3_3_DEV_AISLE_A",
+      "category": "EVIDENCE_GAP",
+      "description": "Parallel-trend breakdown under exogenous traffic shock confounding causal attribution.",
+      "trigger": "Site shift change traffic surge (+38.5%) occurred during intervention evaluation window.",
+      "observed_behavior": "Control zone baseline drifted by +0.27 (>0.15 tolerance), invalidating the parallel-trend assumption.",
+      "safety_impact": "Risk of falsely attributing an exogenous traffic surge to the localized safety intervention.",
+      "reproducible": true,
+      "resolution": "DifferenceInDifferencesEngine automatically triggered INSUFFICIENT_EVIDENCE status, refusing causal attribution.",
+      "regression_test": "validation/v3_3/test_experiment_registry.py"
+    },
+    {
+      "failure_id": "V3.3-FAIL-003",
+      "experiment_id": "EXP_33_02",
+      "dataset_id": "DS_V3_3_VAL_INTERSECTION_C",
+      "category": "MODEL_ERROR",
+      "description": "Identity switch during high-density worker and forklift crossing under partial visual occlusion.",
+      "trigger": "Worker passed within 0.8m of counterbalanced forklift mast with mutual occlusion.",
+      "observed_behavior": "Tracker swapped track IDs for 3 frames before spatial gating recovered track continuity.",
+      "safety_impact": "Temporary risk index attribution confusion between pedestrian and vehicle.",
+      "reproducible": true,
+      "resolution": "Ambiguity scoring flags crossing as UNCERTAIN_IDENTITY and downgrades intervention to advisory warning.",
+      "regression_test": "validation/v3_3/test_odd_enforcement.py"
+    },
+    {
+      "failure_id": "V3.3-FAIL-004",
+      "experiment_id": "EXP_33_04",
+      "dataset_id": "DS_V3_3_STRESS_RAMP_SOUTH",
+      "category": "ODD_BOUNDARY",
+      "description": "Non-planar incline dock ramp geometry causes homography reprojection distortion.",
+      "trigger": "Floor slope of 3.5 deg on dock south ramp exceeding 1.5 deg planar assumption.",
+      "observed_behavior": "Ground homography residual reached 0.08m, distorting metric distance calculation by > 0.25m.",
+      "safety_impact": "Distance underestimation could cause premature or delayed autonomous braking.",
+      "reproducible": true,
+      "resolution": "GroundGeometryClassifier flags surface as NON_PLANAR_REFUSAL, triggering SAFE_REFUSAL_INSUFFICIENT_EVIDENCE.",
+      "regression_test": "validation/v3_3/test_odd_enforcement.py::test_03_non_planar_slope_triggers_safe_refusal"
+    },
+    {
+      "failure_id": "V3.3-FAIL-005",
+      "experiment_id": "EXP_33_04",
+      "dataset_id": "DS_V3_3_SYNTHETIC_OCCLUSION_REPLAY",
+      "category": "SOFTWARE_ERROR",
+      "description": "Frame processing and transmission latency spike exceeding 500ms safety horizon.",
+      "trigger": "Simulated network congestion buffer bloat injecting 650ms telemetry lag.",
+      "observed_behavior": "Stale kinematic projection would act on outdated physical entity coordinates.",
+      "safety_impact": "High risk of braking on ghost hazard or failing to brake on active trajectory.",
+      "reproducible": true,
+      "resolution": "Telemetry age gating immediately aborts autonomous control and triggers SAFE_REFUSAL_INSUFFICIENT_EVIDENCE.",
+      "regression_test": "validation/v3_3/test_odd_enforcement.py::test_04_critical_latency_triggers_safe_refusal"
+    }
+  ]
+}

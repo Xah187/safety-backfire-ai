@@ -1,0 +1,89 @@
+{
+  "release": "V3.3.0",
+  "phase": "PHASE_1",
+  "status": "V3.3.0_VALIDATED_WITH_LIMITATIONS",
+  "evaluation_timestamp_utc": "2026-09-25T01:55:00Z",
+  "governing_rationale": "All four pre-registered experiments executed against physical and verified replay datasets. Baseline immutability and blind quarantine were strictly maintained. Empirical coverage undercoverage (92.61% nominal vs 95.0% target) and far-field degradation were recorded as formal limitations and protected by automated safe refusal gating. Zero unsupported population claims exist.",
+  "experiments": {
+    "EXP_33_01": {
+      "title": "OUT_OF_SAMPLE_UNCERTAINTY",
+      "status": "EXECUTED",
+      "locked_k": 2.42,
+      "nominal_coverage_observed": 0.9261,
+      "nominal_coverage_target": 0.95,
+      "wilson_ci_95": [0.9036, 0.9436],
+      "far_field_coverage": 0.6707,
+      "failure_cataloged": "V3.3-FAIL-001",
+      "scientific_outcome": "HYPOTHESIS_REFUTED_AT_NOMINAL_BOUNDARY_EMPIRICAL_UNDERCOVERAGE_IDENTIFIED"
+    },
+    "EXP_33_02": {
+      "title": "CROSS_ENVIRONMENT_GENERALIZATION",
+      "status": "EXECUTED",
+      "perception_f1": 0.8845,
+      "tracking_idf1": 0.918,
+      "tracking_idf1_ci95": [0.9057, 0.9295],
+      "sample_unit": "Trajectory_Sequence",
+      "evaluated_environments": ["Sector_A", "Sector_B", "Sector_C", "Sector_D"],
+      "failure_cataloged": "V3.3-FAIL-003",
+      "scientific_outcome": "GENERALIZATION_CHARACTERIZED_ACROSS_4_SECTORS"
+    },
+    "EXP_33_03": {
+      "title": "INTERVENTION_BACKFIRE_EXPANSION",
+      "status": "EXECUTED",
+      "evaluated_cases": 5,
+      "outcomes": {
+        "RISK_REDISTRIBUTED": 2,
+        "RISK_REDUCED": 1,
+        "NEW_HAZARD_CREATED": 1,
+        "INSUFFICIENT_EVIDENCE": 1
+      },
+      "causal_refusal_on_parallel_trend_violation": true,
+      "failure_cataloged": "V3.3-FAIL-002",
+      "scientific_outcome": "EVIDENCE_EXPANDED_WITH_STRICT_CAUSAL_REFUSAL_GATE"
+    },
+    "EXP_33_04": {
+      "title": "SAFE_REFUSAL_AND_BOUNDARY_ROBUSTNESS",
+      "status": "EXECUTED",
+      "appropriate_refusal_rate": 1.0,
+      "unsafe_non_refusal_rate": 0.0,
+      "false_refusal_rate": 0.0,
+      "red_team_scenarios_evaluated": 10,
+      "failures_cataloged": ["V3.3-FAIL-004", "V3.3-FAIL-005"],
+      "scientific_outcome": "BOUNDARY_ENFORCEMENT_VALIDATED"
+    }
+  },
+  "datasets": {
+    "total_audited": 12,
+    "physically_present_and_annotated": 7,
+    "physically_present": 1,
+    "metadata_only": 1,
+    "synthetic": 1,
+    "replay": 1,
+    "unavailable": 1,
+    "physical_video_seconds": 64.05,
+    "physical_frames": 1672
+  },
+  "metrics": {
+    "total_canonical_metrics": 8,
+    "metric_registry_file": "outputs/v3_3/canonical_metric_registry.json"
+  },
+  "failures": {
+    "total_new_v3_3_failures": 5,
+    "failure_registry_file": "outputs/v3_3/failure_registry/v3_3_failure_registry.json"
+  },
+  "evidence_gaps": {
+    "total_documented_gaps": 6,
+    "gap_matrix_file": "outputs/v3_3/v3_3_gap_matrix.json"
+  },
+  "reproducibility": {
+    "v3_2_1_protected_artifacts": 39,
+    "v3_2_1_hash_drift": 0,
+    "reproducible_experiments": 4,
+    "deterministic_execution": true
+  },
+  "blind_integrity": {
+    "blind_set_quarantine": "VERIFIED_LOCKED_BEFORE_EVALUATION",
+    "post_unblinding_tuning": "ZERO_TOLERANCE_MAINTAINED"
+  },
+  "active_unsupported_claims": 0
+}

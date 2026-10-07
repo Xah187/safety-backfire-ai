@@ -1,0 +1,58 @@
+{
+  "interventions": {
+    "CASE_01_PHYSICAL_BARRIER": {
+      "intervention_id": "INTV_CASE_01_BARRIER",
+      "primary_category": "NEW_HAZARD_CREATED",
+      "backfire_signal": "PARTIAL_BACKFIRE",
+      "intended_hazard_reduced": true,
+      "new_hazards_introduced": [
+        "BLOCKED_EGRESS_HAZARD"
+      ],
+      "risk_migration_zones": [
+        {
+          "zone": "AISLE_02",
+          "before_exposure": 0.0,
+          "after_exposure": 1.47,
+          "delta": 1.47
+        },
+        {
+          "zone": "LANE_PEDESTRIAN_A",
+          "before_exposure": 2.94,
+          "after_exposure": 0.0,
+          "delta": -2.94
+        },
+        {
+          "zone": "EMERGENCY_ROUTE",
+          "before_exposure": 0.0,
+          "after_exposure": 0.9,
+          "delta": 0.9
+        }
+      ],
+      "explanation": "Intervention successfully reduced intended hazard but created new unmodeled hazard(s): BLOCKED_EGRESS_HAZARD.",
+      "verdict": "SAFETY_BACKFIRE_DETECTED_CORRECTLY"
+    },
+    "CASE_02_SPEED_LIMIT_GOVERNOR": {
+      "intervention_id": "INTV_CASE_02_SPEED",
+      "primary_category": "RISK_REDUCED",
+      "backfire_signal": "GENUINE_SAFETY_GAIN",
+      "intended_hazard_reduced": true,
+      "new_hazards_introduced": [],
+      "explanation": "Intervention achieved genuine safety gain: risk reduced by 97.3% without collateral hazards.",
+      "verdict": "GENUINE_SAFETY_GAIN_VERIFIED"
+    }
+  },
+  "leakage_tests": [
+    {
+      "test": "POST_INTERVENTION_FRAME_INTO_BASELINE",
+      "timestamp_injected": 125.0,
+      "cutoff_timestamp": 100.0,
+      "leakage_rejected_safely": true
+    },
+    {
+      "test": "LEAKY_TIMELINE_WINDOW_INITIALIZATION",
+      "baseline_end_ts": 105.0,
+      "intervention_ts": 100.0,
+      "leakage_rejected_safely": true
+    }
+  ]
+}

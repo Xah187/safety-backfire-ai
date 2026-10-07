@@ -1,0 +1,103 @@
+{
+  "audit_version": "V3.3.3_RECONCILIATION_ACTION_WIDTH_DISTRIBUTION",
+  "issue_id": "CRITICAL_ISSUE_06_ACTION_POLICY_VS_WIDTH_DISTRIBUTION",
+  "audit_timestamp_utc": "2026-09-25T14:35:00Z",
+  "total_nominal_population_n": 663,
+  "model_evaluated": "MODEL_H",
+  "width_distribution_statistics": {
+    "mean_width_m": 0.2076,
+    "std_width_m": 0.0542,
+    "median_width_m": 0.1985,
+    "p95_width_m": 0.3438,
+    "min_width_m": 0.1032,
+    "max_width_m": 0.3842
+  },
+  "canonical_metrics": {
+    "OOS_UNCOVERED_RATE": {
+      "numerator": 33,
+      "denominator": 663,
+      "value": 0.0498,
+      "percentage": "4.98%",
+      "description": "Total nominal out-of-sample uncertainty coverage failure rate"
+    },
+    "AUTONOMOUS_ACTION_FRAMES": {
+      "numerator": 502,
+      "denominator": 663,
+      "value": 0.7572,
+      "percentage": "75.72%",
+      "description": "Frames where interval width <= 0.25m permitting autonomous navigation"
+    },
+    "AUTONOMOUS_SUBSET_UNCOVERED_RATE": {
+      "numerator": 26,
+      "denominator": 502,
+      "value": 0.0518,
+      "percentage": "5.18%",
+      "description": "Uncertainty coverage failure rate strictly within autonomous-action subset"
+    },
+    "ADVISORY_ACTION_FRAMES": {
+      "numerator": 161,
+      "denominator": 663,
+      "value": 0.2428,
+      "percentage": "24.28%",
+      "description": "Frames where 0.25m < interval width <= 0.40m requiring advisory operator supervision"
+    },
+    "ADVISORY_SUBSET_UNCOVERED_RATE": {
+      "numerator": 7,
+      "denominator": 161,
+      "value": 0.0435,
+      "percentage": "4.35%",
+      "description": "Uncertainty coverage failure rate strictly within advisory-action subset"
+    },
+    "SAFE_REFUSAL_WIDTH_FRAMES": {
+      "numerator": 0,
+      "denominator": 663,
+      "value": 0.0000,
+      "percentage": "0.00%",
+      "description": "Frames where interval width > 0.40m triggering immediate safe refusal"
+    },
+    "OOS_UNCOVERED_RATE_WITHIN_TOTAL_OOS": {
+      "numerator": 26,
+      "denominator": 663,
+      "value": 0.0392,
+      "percentage": "3.92%",
+      "description": "Autonomous-subset uncovered points divided by total nominal OOS population (formerly mislabeled as 'unsafe non-refusal rate')"
+    }
+  },
+  "action_policy_classification": {
+    "FULL_AUTONOMOUS_ACTION": {
+      "threshold": "width <= 0.25 m",
+      "count": 502,
+      "fraction": 0.7571644042232277,
+      "percentage": 75.72,
+      "covered_in_stratum": 476,
+      "uncovered_in_stratum": 26,
+      "subset_uncovered_rate": 0.051793,
+      "semantic_label": "UNCERTAINTY_COVERAGE_FAILURE_WITHIN_AUTONOMOUS_POLICY_REGION",
+      "operational_safety_status": "NOT_ESTABLISHED_FOR_THE_26_UNCOVERED_OOS_POINTS"
+    },
+    "ADVISORY_ONLY": {
+      "threshold": "0.25 m < width <= 0.40 m",
+      "count": 161,
+      "fraction": 0.24283559577677224,
+      "percentage": 24.28,
+      "covered_in_stratum": 154,
+      "uncovered_in_stratum": 7,
+      "subset_uncovered_rate": 0.043478,
+      "semantic_label": "UNCERTAINTY_COVERAGE_FAILURE_WITHIN_ADVISORY_POLICY_REGION",
+      "operational_safety_status": "NOT_ESTABLISHED"
+    },
+    "SAFE_REFUSAL": {
+      "threshold": "width > 0.40 m",
+      "count": 0,
+      "fraction": 0.0,
+      "percentage": 0.0,
+      "impact": "Within nominal distance (<=8.0m), no Model H width exceeded the 0.40m refusal ceiling."
+    }
+  },
+  "semantic_correction_governance": {
+    "prohibited_terminology": "UNSAFE_NON_REFUSAL_RATE for 26/663 (3.92%)",
+    "prohibition_reason": "Conflates statistical uncertainty coverage failure (Layer: UNCERTAINTY) with operational unsafe action (Layer: POLICY), and improperly uses the total OOS population (663) as denominator for an autonomous-subset condition.",
+    "corrected_metric_name": "OOS_UNCOVERED_RATE_WITHIN_TOTAL_OOS (for 26/663 = 3.92%) and AUTONOMOUS_SUBSET_UNCOVERED_RATE (for 26/502 = 5.18%)",
+    "separation_enforced": true
+  }
+}

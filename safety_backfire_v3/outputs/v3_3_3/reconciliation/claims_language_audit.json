@@ -1,0 +1,89 @@
+{
+  "artifact_name": "CLAIMS_LANGUAGE_AUDIT",
+  "version": "V3.3.3_RECONCILED",
+  "audit_timestamp_utc": "2026-09-25T14:50:00Z",
+  "purpose": "Governance audit of allowable versus strictly prohibited scientific and operational claims.",
+  "audited_claims": [
+    {
+      "claim_area": "UNCERTAINTY_COVERAGE",
+      "allowed_phrasing": [
+        "Model H achieved 95.02% observed nominal OOS uncertainty coverage on the tested population of 663 points.",
+        "The corresponding Wilson 95% confidence interval was [93.09%, 96.43%].",
+        "The result met the preregistered 95.00% point-estimate target in the tested population."
+      ],
+      "prohibited_phrasing": [
+        "Model H guarantees 95% coverage.",
+        "Model H is proven safe.",
+        "Guaranteed 95% coverage across all operational conditions.",
+        "Universal 95% uncertainty coverage."
+      ],
+      "governance_rationale": "Because the Wilson 95% confidence interval lower bound is 93.09% (< 95.00%), a statistical guarantee across unobserved populations cannot be claimed."
+    },
+    {
+      "claim_area": "OPERATIONAL_SAFETY_AND_ACTION_WIDTH",
+      "allowed_phrasing": [
+        "Safety refusal tests recorded zero unsafe non-refusals in the specified tested stress battery (150 boundary frames, 500 shift frames).",
+        "The nominal OOS undercoverage rate within total OOS was 4.98% (33/663).",
+        "The autonomous-subset undercoverage rate was 5.18% (26/502).",
+        "OPERATIONAL_SAFETY_STATUS: NOT_ESTABLISHED_FOR_THE_26_UNCOVERED_OOS_POINTS."
+      ],
+      "prohibited_phrasing": [
+        "3.92% unsafe non-refusal rate.",
+        "26 unsafe actions occurred.",
+        "The 26 uncovered points were proved safe."
+      ],
+      "governance_rationale": "Conflates offline statistical undercoverage with operational vehicle actions. Denominator 663 inappropriately included advisory frames; offline evaluation did not execute closed-loop actuators."
+    },
+    {
+      "claim_area": "MULTI_FACILITY_GENERALIZATION",
+      "allowed_phrasing": [
+        "The model demonstrated cross-sector generalization within Facility Central 01 across distinct camera viewpoints and lighting conditions.",
+        "Multi-facility generalization remains an unvalidated evidence gap pending EXP_333_01 external facility data collection."
+      ],
+      "prohibited_phrasing": [
+        "The system generalizes to warehouses worldwide.",
+        "Proven multi-facility transfer.",
+        "Global generalization validated."
+      ],
+      "governance_rationale": "All training and validation data originated from Facility Central 01. Transfer across facilities remains an open evidence gap."
+    },
+    {
+      "claim_area": "INTERVENTION_PROVENANCE",
+      "allowed_phrasing": [
+        "Six documented intervention cases, including one newly captured prospective physical case, two historical physical cases, and three replayed cases."
+      ],
+      "prohibited_phrasing": [
+        "Six new physical experiments.",
+        "Six prospective physical tests.",
+        "6 newly executed physical interventions."
+      ],
+      "governance_rationale": "Only 1 case (INT_331_06) was prospectively captured as a new physical deployment during V3.3.1. 2 were historical archival records, and 3 were synthetic sensor replay simulations."
+    },
+    {
+      "claim_area": "CAUSAL_INFERENCE_AND_DID",
+      "allowed_phrasing": [
+        "No statistically significant pre-trend difference was detected under the tested specification (p = 0.42 for INT_331_06).",
+        "Causal inference was refused for INT_331_05 due to violation of parallel pre-trends (p = 0.008)."
+      ],
+      "prohibited_phrasing": [
+        "Parallel trends proven.",
+        "Population-level causal proof of safety backfire.",
+        "Causality established with certainty."
+      ],
+      "governance_rationale": "Failure to reject the null hypothesis (p >= 0.05) does not prove the null hypothesis of identical parallel trends. Causal backfire remains case-specific, not population-universal."
+    },
+    {
+      "claim_area": "FAILURE_STATE_SEMANTICS",
+      "allowed_phrasing": [
+        "UNDERLYING_LIMITATION = PRESENT, SAFETY_EXPOSURE = MITIGATED (for physical/algorithmic limitations constrained by policy).",
+        "STATE = NOT_ESTABLISHED, CATEGORY = EVIDENCE_GAP (for missing empirical data)."
+      ],
+      "prohibited_phrasing": [
+        "RESOLVED (for unaddressed underlying physical limitations).",
+        "BOUNDED_BY_ODD (for missing empirical evidence)."
+      ],
+      "governance_rationale": "Mitigating exposure does not remove the underlying physical limitation. Bounded by ODD applies only to physical operational parameters, not missing validation data."
+    }
+  ],
+  "audit_conclusion": "ALL_PROHIBITED_PHRASES_INTERCEPTED_AND_BANNED"
+}

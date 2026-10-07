@@ -1,0 +1,177 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "VehicleTelemetryCommissioningSchema",
+  "description": "Validation schema for vehicle CAN bus and physical telemetry commissioning and health verification.",
+  "type": "object",
+  "required": [
+    "commissioning_id",
+    "timestamp_utc",
+    "vehicle_identity",
+    "hardware_interface",
+    "signals_manifest",
+    "signal_integrity_verification",
+    "telemetry_gate_c3_status"
+  ],
+  "properties": {
+    "commissioning_id": {
+      "type": "string",
+      "pattern": "^CAN-COMM-[0-9]{8}-[0-9]{4}$"
+    },
+    "timestamp_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "vehicle_identity": {
+      "type": "object",
+      "required": ["vehicle_id", "make_model", "vin_or_serial", "firmware_version", "curb_weight_kg", "max_payload_kg"],
+      "properties": {
+        "vehicle_id": { "type": "string" },
+        "make_model": { "type": "string" },
+        "vin_or_serial": { "type": "string" },
+        "firmware_version": { "type": "string" },
+        "curb_weight_kg": { "type": "number", "minimum": 100 },
+        "max_payload_kg": { "type": "number", "minimum": 0 }
+      }
+    },
+    "hardware_interface": {
+      "type": "object",
+      "required": ["interface_model", "channel_id", "baud_rate_kbps", "timestamp_source", "ptp_hardware_sync_enabled"],
+      "properties": {
+        "interface_model": { "type": "string" },
+        "channel_id": { "type": "string" },
+        "baud_rate_kbps": { "type": "integer", "enum": [250, 500, 1000] },
+        "timestamp_source": { "type": "string", "enum": ["PTP_HARDWARE_NIC_PULSE", "CAN_TRANSCEIVER_PTP_LOCKED"] },
+        "ptp_hardware_sync_enabled": { "type": "boolean", "const": true }
+      }
+    },
+    "signals_manifest": {
+      "type": "object",
+      "required": [
+        "vehicle_speed",
+        "brake_state",
+        "longitudinal_acceleration",
+        "steering_angle",
+        "yaw_rate",
+        "throttle_position"
+      ],
+      "properties": {
+        "vehicle_speed": {
+          "type": "object",
+          "required": ["can_id_hex", "start_bit", "bit_length", "endianness", "scaling_factor", "offset", "unit", "sample_rate_hz"],
+          "properties": {
+            "can_id_hex": { "type": "string" },
+            "start_bit": { "type": "integer" },
+            "bit_length": { "type": "integer" },
+            "endianness": { "type": "string", "enum": ["LITTLE_ENDIAN", "BIG_ENDIAN"] },
+            "scaling_factor": { "type": "number" },
+            "offset": { "type": "number" },
+            "unit": { "type": "string", "const": "m/s" },
+            "sample_rate_hz": { "type": "number", "minimum": 50 }
+          }
+        },
+        "brake_state": {
+          "type": "object",
+          "required": ["can_id_hex", "start_bit", "bit_length", "scaling_factor", "unit", "sample_rate_hz"],
+          "properties": {
+            "can_id_hex": { "type": "string" },
+            "start_bit": { "type": "integer" },
+            "bit_length": { "type": "integer" },
+            "scaling_factor": { "type": "number" },
+            "unit": { "type": "string", "enum": ["boolean_0_1", "hydraulic_bar", "percent_pedal"] },
+            "sample_rate_hz": { "type": "number", "minimum": 50 }
+          }
+        },
+        "longitudinal_acceleration": {
+          "type": "object",
+          "required": ["can_id_hex", "start_bit", "bit_length", "scaling_factor", "unit", "sample_rate_hz"],
+          "properties": {
+            "can_id_hex": { "type": "string" },
+            "start_bit": { "type": "integer" },
+            "bit_length": { "type": "integer" },
+            "scaling_factor": { "type": "number" },
+            "unit": { "type": "string", "const": "m/s^2" },
+            "sample_rate_hz": { "type": "number", "minimum": 50 }
+          }
+        },
+        "steering_angle": {
+          "type": "object",
+          "required": ["can_id_hex", "start_bit", "bit_length", "scaling_factor", "unit", "sample_rate_hz"],
+          "properties": {
+            "can_id_hex": { "type": "string" },
+            "start_bit": { "type": "integer" },
+            "bit_length": { "type": "integer" },
+            "scaling_factor": { "type": "number" },
+            "unit": { "type": "string", "const": "deg" },
+            "sample_rate_hz": { "type": "number", "minimum": 50 }
+          }
+        },
+        "yaw_rate": {
+          "type": "object",
+          "required": ["can_id_hex", "start_bit", "bit_length", "scaling_factor", "unit", "sample_rate_hz"],
+          "properties": {
+            "can_id_hex": { "type": "string" },
+            "start_bit": { "type": "integer" },
+            "bit_length": { "type": "integer" },
+            "scaling_factor": { "type": "number" },
+            "unit": { "type": "string", "const": "deg/s" },
+            "sample_rate_hz": { "type": "number", "minimum": 50 }
+          }
+        },
+        "throttle_position": {
+          "type": "object",
+          "required": ["can_id_hex", "start_bit", "bit_length", "scaling_factor", "unit", "sample_rate_hz"],
+          "properties": {
+            "can_id_hex": { "type": "string" },
+            "start_bit": { "type": "integer" },
+            "bit_length": { "type": "integer" },
+            "scaling_factor": { "type": "number" },
+            "unit": { "type": "string", "const": "percent" },
+            "sample_rate_hz": { "type": "number", "minimum": 50 }
+          }
+        },
+        "wheel_speed": {
+          "type": "object",
+          "properties": {
+            "is_available": { "type": "boolean" },
+            "unit": { "type": "string", "const": "rad/s" },
+            "sample_rate_hz": { "type": "number" }
+          }
+        }
+      }
+    },
+    "signal_integrity_verification": {
+      "type": "object",
+      "description": "Validation based purely on telemetry fidelity without safety assertion thresholds.",
+      "required": [
+        "monotonicity_check",
+        "continuity_check",
+        "range_validity_check",
+        "unit_consistency_check",
+        "timestamp_integrity_check",
+        "packet_loss_rate_percent",
+        "flatline_detection_check",
+        "dropout_detection_check",
+        "cross_sensor_consistency_check"
+      ],
+      "properties": {
+        "monotonicity_check": { "type": "string", "enum": ["PASS_MONOTONIC_TIMESTAMPS", "FAIL_RETROGRADE_TIMESTAMPS"] },
+        "continuity_check": { "type": "string", "enum": ["PASS_CONTINUOUS", "FAIL_DISCONTINUITY_GAP"] },
+        "range_validity_check": { "type": "string", "enum": ["PASS_IN_PHYSICAL_RANGE", "FAIL_OUT_OF_BOUNDS"] },
+        "unit_consistency_check": { "type": "string", "enum": ["PASS_SI_UNITS_CONFIRMED", "FAIL_UNIT_MISMATCH"] },
+        "timestamp_integrity_check": { "type": "string", "enum": ["PASS_NO_CORRUPT_TIMESTAMPS", "FAIL_CORRUPTION"] },
+        "packet_loss_rate_percent": { "type": "number", "maximum": 0.05 },
+        "flatline_detection_check": { "type": "string", "enum": ["PASS_ACTIVE_DYNAMICS", "FAIL_SIGNAL_FROZEN"] },
+        "dropout_detection_check": { "type": "string", "enum": ["PASS_NO_DROPOUTS", "FAIL_PACKETS_DROPPED"] },
+        "cross_sensor_consistency_check": {
+          "type": "string",
+          "enum": ["PASS_SPEED_ACCEL_CONSISTENT", "FAIL_INTEGRAL_DISCREPANCY"],
+          "description": "Compares integral of acceleration with vehicle speed derivative"
+        }
+      }
+    },
+    "telemetry_gate_c3_status": {
+      "type": "string",
+      "enum": ["GATE_PASS", "GATE_REJECTED"]
+    }
+  }
+}

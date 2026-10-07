@@ -1,0 +1,43 @@
+{
+  "baseline_version": "V3.0.5",
+  "freeze_timestamp": "2026-09-24T00:20:00Z",
+  "system_maturity": "FALSIFICATION-TESTED SAFETY CORE WITH DEFINED OPERATIONAL LIMITS",
+  "sha256_manifest": {
+    "safety_backfire_v3/core/geometry_v3.py": "a99b380755e09206bca613f33f741a73fed0e1f1406dbc157bc06fa50f32f023",
+    "safety_backfire_v3/core/uncertainty_risk_engine.py": "c6078f7cf9f51f6fd8b1bdcac148254200439a05d0389745b7c54676ec70c02a",
+    "safety_backfire_v3/core/async_pipeline.py": "797184ecda54611bf3dada71e2af1ef9888112ea31dad632c3a9f8b6afad8fca",
+    "safety_backfire_v3/core/identity_layer.py": "6ef77c5ad952c95628ce059f9963b511617a1cc32e1cde7f30a2d348623e542e",
+    "safety_backfire_v3/core/event_engine_v3.py": "da460c1aacd86315698b13caf937ca574e4cc94e0504b3d6e3a84dc55dddaf39",
+    "safety_backfire_v3/outputs/v3_0_5/geometry_generalization_metrics.json": "99f43d86d9cf605f12884da330940415be17ff4a4073875ce0bc357117a6fc3c",
+    "safety_backfire_v3/outputs/v3_0_5/residual_distortion_audit.json": "d85a22f8cb79aa6094cbc2ca0018a27b10e020a93c9ea91316ff22c844e35840",
+    "safety_backfire_v3/outputs/v3_0_5/uncertainty_red_team_metrics.json": "447bf7c44e7ccc14f6ca3b74aeb3a37cbb5e50c9a5deb4d61f7912163d5fd71f",
+    "safety_backfire_v3/outputs/v3_0_5/stochastic_clearance_metrics.json": "7f7bdd3a43f3df379f85ec950839f34f0c4ad4d6aedc834ea70bb1c01b5c5519",
+    "safety_backfire_v3/outputs/v3_0_5/risk_monotonicity_metrics.json": "f9cb696a1a1c98ad698db03aaaa3c71628be00e4a618355cb2848365b8e93888",
+    "safety_backfire_v3/outputs/v3_0_5/adversarial_safety_edge_cases.json": "262e41b6b485454a1139b9f6f976ce4fe0e3b9bff2db1a6de01eecec831e2cb9",
+    "reports/v3_0_5/V3.0.5_CORE_STATUS.md": "f3c2f704c562d58e788a4b85b63e7a29c574f5c6593dcd50c38370fb65b8c894",
+    "reports/v3_0_5/V3.0.5_FAILURE_REGISTRY_REPORT.md": "915c4cb38f5b5eb81fe32f298c7fe5b56341fa67ab4efa8c1165e3d54d240550"
+  },
+  "odd_constraints": {
+    "camera_height_m": [
+      2.5,
+      4.5
+    ],
+    "pitch_angle_deg": [
+      20.0,
+      35.0
+    ],
+    "max_pitch_deflection_deg": 0.35,
+    "certified_clearance_range_m": 8.0,
+    "max_pose_source_age_ms": 350.0,
+    "max_input_skew_ms": 150.0,
+    "max_floor_gradient_deg": 1.5
+  },
+  "core_parameters": {
+    "rice_coverage_factor_k": 2.24,
+    "jensen_debiasing": true,
+    "danger_distance_m": 1.5,
+    "critical_clearance_zone_m": 1.0,
+    "warning_clearance_zone_m": 1.8,
+    "caution_distance_m": 3.0
+  }
+}

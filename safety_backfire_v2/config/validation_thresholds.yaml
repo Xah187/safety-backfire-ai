@@ -1,0 +1,66 @@
+# Validation Thresholds Configuration — V2.2
+# ALL thresholds marked PROJECT_VALIDATION_THRESHOLD are project-specific choices,
+# NOT derived from industrial safety standards or peer-reviewed benchmarks.
+# Rationale is documented inline.
+
+geometry:
+  # PROJECT_VALIDATION_THRESHOLD
+  # Rationale: Warehouse near-miss scenarios require sub-meter precision.
+  # 0.3m chosen as a conservative threshold given typical human-forklift interaction zones of 1-3m.
+  # No ISO/OSHA standard defines a specific homography accuracy threshold for CCTV analytics.
+  mae_validated_m: 0.30        # VALIDATED if MAE <= 0.30m
+  mae_partially_validated_m: 0.60  # PARTIALLY_VALIDATED if MAE <= 0.60m
+  mae_poorly_validated_m: 1.00    # POORLY_VALIDATED if MAE <= 1.00m
+  # > 1.00m = UNVALIDATED
+
+  # PROJECT_VALIDATION_THRESHOLD
+  # Rationale: Max error capped at 2x MAE threshold for outlier detection.
+  max_error_validated_m: 0.60
+  max_error_partially_validated_m: 1.20
+
+  # PROJECT_VALIDATION_THRESHOLD
+  # Rationale: Relative error threshold of 15% considered acceptable for distance estimation
+  # in surveillance analytics where precise laser measurement is unavailable.
+  mean_relative_error_validated_pct: 15.0
+  mean_relative_error_partially_pct: 30.0
+
+detection:
+  # PROJECT_VALIDATION_THRESHOLD
+  # Rationale: Safety-critical systems typically require high recall (missing a person is dangerous).
+  # 0.80 recall chosen as minimum acceptable; below this the system misses too many subjects.
+  recall_validated: 0.80
+  recall_partially_validated: 0.60
+  precision_validated: 0.70   # Lower threshold — some FP acceptable vs. FN
+
+  # IoU threshold for a detection to count as True Positive
+  # Standard MOT/COCO threshold; widely used in tracking literature.
+  iou_match_threshold: 0.50
+
+tracking:
+  # PROJECT_VALIDATION_THRESHOLD
+  # Rationale: IDF1 >= 0.60 considered acceptable for surveillance tracking.
+  # Based on MOT Challenge community norms, not a formal standard.
+  idf1_validated: 0.60
+  idf1_partially_validated: 0.40
+
+  # PROJECT_VALIDATION_THRESHOLD
+  # Fewer than 2 ID switches per 100 tracked frames considered acceptable.
+  max_id_switch_rate_per_100_frames: 2.0
+
+evidence_engine:
+  # PROJECT_VALIDATION_THRESHOLD
+  # Rationale: Evidence level threshold represents data quality gating before verdict.
+  # "INSUFFICIENT" blocks any verdict — intentionally conservative.
+  min_evidence_for_verdict: "LOW"   # Minimum level to allow a non-INSUFFICIENT verdict
+
+  # Tracking failure rate above which evidence confidence is penalized
+  tracking_failure_penalty_threshold: 0.20  # 20% of frames
+
+  # Event fragmentation ratio above which penalty applies
+  fragmentation_penalty_threshold: 0.50   # >50% events < 0.2s
+
+notes:
+  - "All thresholds above are PROJECT_VALIDATION_THRESHOLD unless explicitly stated otherwise."
+  - "No ISO 13849, ISO/TS 15066, or OSHA standard maps directly to these CCTV analytics metrics."
+  - "These thresholds represent reasonable engineering judgment for the V2.2 validation context."
+  - "Thresholds should be re-evaluated if real physical ground truth becomes available."

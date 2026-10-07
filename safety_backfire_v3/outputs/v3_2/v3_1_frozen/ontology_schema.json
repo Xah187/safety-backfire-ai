@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WarehouseSafetyOntologyV3_1",
+  "description": "Comprehensive Industrial Warehouse Safety Knowledge & Risk Reasoning Ontology",
+  "version": "3.1.0",
+  "domains": [
+    "Perception_and_Evidence",
+    "Entities_and_States",
+    "Generic_Relations",
+    "Entity_Interactions",
+    "Multi_Hazard_Taxonomy",
+    "Universal_Risk_Decisions",
+    "Counterfactual_Interventions",
+    "Safety_Backfire_Redistribution"
+  ],
+  "core_invariants": {
+    "UNKNOWN_IS_NOT_SAFE": true,
+    "INSUFFICIENT_EVIDENCE_IS_NOT_SAFE": true,
+    "UNKNOWN_IS_NOT_SUPPRESS": true,
+    "LOW_CONFIDENCE_IS_NOT_NO_HAZARD": true,
+    "NO_OBSERVATION_IS_NOT_NO_OBJECT": true,
+    "DECOUPLED_ID_NAMESPACES": [
+      "EntityID",
+      "PairID",
+      "EpisodeID",
+      "EventID",
+      "HazardID",
+      "AlertID"
+    ],
+    "TIME_DIRECTIONALITY": "Strict monotonic non-decreasing timestamp ordering"
+  }
+}

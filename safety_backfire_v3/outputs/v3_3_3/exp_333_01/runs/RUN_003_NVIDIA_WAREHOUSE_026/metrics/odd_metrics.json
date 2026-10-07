@@ -1,0 +1,29 @@
+{
+  "overall_odd_status": "PARTIALLY_CHARACTERIZED",
+  "camera_pitch_characterized": true,
+  "distance_range_characterized": true,
+  "lighting_characterized": false,
+  "per_camera_pitch_assessment": {
+    "Camera_0000": {
+      "pitch_deg": 56.51,
+      "above_40_threshold": true,
+      "pitch_penalty": 0.0
+    },
+    "Camera_0001": {
+      "pitch_deg": 53.84,
+      "above_40_threshold": true,
+      "pitch_penalty": 0.0
+    },
+    "Camera_0002": {
+      "pitch_deg": 4.42,
+      "above_40_threshold": false,
+      "pitch_penalty": 0.22
+    },
+    "Camera_0003": {
+      "pitch_deg": 1.59,
+      "above_40_threshold": false,
+      "pitch_penalty": 0.22
+    }
+  },
+  "governing_rationale": "ODD is partially characterized: camera geometry (pitch, height) and detection distances are measured from calibration. Lighting conditions cannot be fully classified without physical lux measurements."
+}

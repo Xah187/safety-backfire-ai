@@ -1,0 +1,95 @@
+{
+  "matrix_version": "V3.3.3_EXTERNAL_CLAIM_EVIDENCE_MATRIX_V1",
+  "audit_target": "RUN_003_NVIDIA_WAREHOUSE_026",
+  "audit_timestamp_utc": "2026-09-28T09:53:00Z",
+  "evidence_hierarchy_definitions": {
+    "LEVEL_1": "Official NVIDIA source metadata",
+    "LEVEL_2": "Raw video media",
+    "LEVEL_3": "NVIDIA calibration data",
+    "LEVEL_4": "Model-derived observations",
+    "LEVEL_5": "Independent human ground truth"
+  },
+  "claims_matrix": [
+    {
+      "claim": "Warehouse_026 is real-world",
+      "evidence": "NVIDIA source documentation and Hugging Face dataset card",
+      "evidence_level": "LEVEL_1",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "4 cameras",
+      "evidence": "NVIDIA source metadata and authenticated raw video streams",
+      "evidence_level": "LEVEL_1 / LEVEL_2",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "60s/camera",
+      "evidence": "NVIDIA source metadata and video container frame duration (1800 frames @ 30 FPS)",
+      "evidence_level": "LEVEL_1 / LEVEL_2",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "Calibration exists",
+      "evidence": "NVIDIA source raw calibration.json package and reprojection report",
+      "evidence_level": "LEVEL_1 / LEVEL_3",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "Metric distance available",
+      "evidence": "Calibration-derived homography ground-plane projection (RMSE 0.0542 units)",
+      "evidence_level": "LEVEL_3",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "Camera pitch available",
+      "evidence": "Extrinsic-derived rotation matrix (ZYX Euler vs optical-axis depression angle)",
+      "evidence_level": "LEVEL_3",
+      "status": "VERIFY_CONVENTION"
+    },
+    {
+      "claim": "Lux available",
+      "evidence": "None (physical calibrated lux meter log absent from dataset)",
+      "evidence_level": "LEVEL_5_ABSENT",
+      "status": "NOT_AVAILABLE"
+    },
+    {
+      "claim": "Occlusion GT available",
+      "evidence": "None (only predicted YOLO bbox IoU proxy available)",
+      "evidence_level": "LEVEL_5_ABSENT",
+      "status": "NOT_AVAILABLE"
+    },
+    {
+      "claim": "Perception GT available",
+      "evidence": "None (human bounding box annotations withheld for real-world test scenes)",
+      "evidence_level": "LEVEL_5_ABSENT",
+      "status": "NOT_AVAILABLE"
+    },
+    {
+      "claim": "Perception F1",
+      "evidence": "None (cannot compute precision, recall, or F1 without ground truth)",
+      "evidence_level": "LEVEL_5_ABSENT",
+      "status": "NOT_ESTABLISHED"
+    },
+    {
+      "claim": "Model H coverage",
+      "evidence": "None (Model H formally reports INPUT_INSUFFICIENT due to missing physical lux)",
+      "evidence_level": "LEVEL_5_ABSENT",
+      "status": "NOT_ESTABLISHED"
+    },
+    {
+      "claim": "Generalized warehouse performance",
+      "evidence": "None (single facility benchmark without ground truth does not prove statistical generalization)",
+      "evidence_level": "LEVEL_5_ABSENT",
+      "status": "NOT_ESTABLISHED"
+    }
+  ],
+  "governance_classification": {
+    "run_003_classification": "EXECUTED_EXTERNAL_BENCHMARK_WITH_LIMITATIONS",
+    "prohibited_claims": [
+      "GENERALIZATION_VALIDATED",
+      "MODEL_H_VALIDATED",
+      "SURVEY_GRADE_CALIBRATION",
+      "GROUND_TRUTH_OCCLUSION"
+    ]
+  }
+}

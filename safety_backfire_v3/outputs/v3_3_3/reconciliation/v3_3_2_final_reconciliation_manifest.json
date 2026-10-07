@@ -1,0 +1,74 @@
+{
+  "manifest_version": "V3.3.2_FINAL_RECONCILIATION_MANIFEST",
+  "release": "V3.3.2_FINAL_RECONCILED",
+  "reconciliation_gate": "FULL_RECONCILIATION_PASSED",
+  "created_at_utc": "2026-09-25T15:00:00Z",
+  "required_artifacts": [
+    "v3_3_2_final_metric_reconciliation.json",
+    "autonomous_uncovered_provenance.json",
+    "metric_semantics_registry.json",
+    "claims_language_audit.json"
+  ],
+  "reconciliation_artifacts": {
+    "action_width_distribution.json": {
+      "sha256": "6abea476b92eb4cf257750a49cdba1d94dc3ac91e0ab902ec676cd82c130f96f",
+      "size_bytes": 3911
+    },
+    "autonomous_uncovered_provenance.json": {
+      "sha256": "b66252ac54b3d6b774347abfec7ebd3e90955bf7b3e3ced8948a7da0d6393f83",
+      "size_bytes": 1925
+    },
+    "calibration_metric_lineage.json": {
+      "sha256": "211c0c26ed4f39a6e6d1992532bbd266bbcadf6d8bcf0576a8df59f3cc21d346",
+      "size_bytes": 4318
+    },
+    "claims_language_audit.json": {
+      "sha256": "fee6f84ff620f029e95e9ba75657b03d2e6fa4e844e4d79b8d23de93e1f82a86",
+      "size_bytes": 4825
+    },
+    "did_assumption_audit.json": {
+      "sha256": "3b4efa48e5129da43bfea6020e809172a4bfb430a2da95ced336ce8e086e4594",
+      "size_bytes": 3463
+    },
+    "failure_state_semantics.json": {
+      "sha256": "5d42b94cfe40a7cecf86eaa1e989bdfdd5bbdf99aa960efeeff29c43eddb18d5",
+      "size_bytes": 2431
+    },
+    "idf1_bootstrap_sensitivity.json": {
+      "sha256": "0a4aa1d18855115ca5975658ce03575060e87593ef2295eb090e203002df33eb",
+      "size_bytes": 1461
+    },
+    "intervention_provenance_registry.json": {
+      "sha256": "1f8ed5c7cce9fd93be87e341a3346a7288279156bb2d3d4a85499a7b2b3db227",
+      "size_bytes": 3035
+    },
+    "metric_semantics_registry.json": {
+      "sha256": "c6d5a53cfe79474dfd0664d9ac20808081129a2e4b64c5dc80d4d265b4461f74",
+      "size_bytes": 4325
+    },
+    "model_h_lineage.json": {
+      "sha256": "dcffe6669c656df93668e7d001f55d41faeef7df08b1ca996642426a0ce1030c",
+      "size_bytes": 1895
+    },
+    "model_h_oos_statistics.json": {
+      "sha256": "022aa69d5110ae07336ea230fa22032d9df6b66f8631609b287920181c7c4d97",
+      "size_bytes": 1448
+    },
+    "phase2_release_gate.json": {
+      "sha256": "ded5f6fb7a7a5eb2cbc632393ce0fb1f4b5beb107324c0234acaf5487b15533e",
+      "size_bytes": 1806
+    },
+    "refusal_independence_registry.json": {
+      "sha256": "7c62e11647804f8819a67ff8c4d558edba6f0bc8b5181f544cca53b2216c698d",
+      "size_bytes": 2401
+    },
+    "uncertainty_pareto_audit.json": {
+      "sha256": "4f68f05bd3e7fc97f52871469997abfdc8313611e677a33531429f6ab5da7ccf",
+      "size_bytes": 2490
+    },
+    "v3_3_2_final_metric_reconciliation.json": {
+      "sha256": "648926facd9ad418c9771e08150c71628b85680dc351e5df12aa1f62e01bb549",
+      "size_bytes": 10097
+    }
+  }
+}

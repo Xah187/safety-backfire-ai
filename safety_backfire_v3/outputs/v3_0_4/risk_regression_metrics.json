@@ -1,0 +1,68 @@
+{
+  "clearance_distinction_08_vs_20": {
+    "scenario_0_8m": {
+      "true_distance_m": 0.8,
+      "estimated_distance_m": 0.78,
+      "clearance_status": "CRITICAL_VIOLATION",
+      "decision": "CONFIRMED_DANGER",
+      "risk_score": 0.3036883267171008
+    },
+    "scenario_2_0m": {
+      "true_distance_m": 2.0,
+      "estimated_distance_m": 1.989,
+      "clearance_status": "ADEQUATE_CLEARANCE",
+      "decision": "CAUTION",
+      "risk_score": 0.12232457627232292
+    },
+    "distinction_pass": true
+  },
+  "stationary_proximity_hazard": {
+    "true_distance_m": 0.9,
+    "estimated_distance_m": 0.882,
+    "hazard_semantics": "CURRENT_PROXIMITY_HAZARD",
+    "decision": "CONFIRMED_DANGER",
+    "stationary_pass": true
+  },
+  "monotonicity": {
+    "tested_distances_m": [
+      0.5,
+      0.8,
+      1.2,
+      1.8,
+      2.5,
+      3.5,
+      5.0,
+      7.0,
+      9.0
+    ],
+    "estimated_distances_m": [
+      0.468,
+      0.78,
+      1.186,
+      1.791,
+      2.493,
+      3.495,
+      4.997,
+      6.998,
+      8.998
+    ],
+    "risk_scores": [
+      0.38723597685228467,
+      0.3036883267171008,
+      0.2219629651861791,
+      0.1402518869626295,
+      0.08385240776568734,
+      0.042579584503030316,
+      0.019097807067332436,
+      0.013526360876961012,
+      0.013526360876961012
+    ],
+    "distance_monotonicity_pass": true,
+    "risk_score_monotonicity_pass": true
+  },
+  "operator_suppression": {
+    "decision": "SUPPRESSED_OPERATOR",
+    "risk_score": 0.0,
+    "operator_pass": true
+  }
+}

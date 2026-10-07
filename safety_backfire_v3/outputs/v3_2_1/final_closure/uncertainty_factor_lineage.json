@@ -1,0 +1,41 @@
+{
+  "audit_version": "V3.2.1_UNCERTAINTY_FACTOR_LINEAGE",
+  "factor": 2.24,
+  "derivation": "empirically calibrated coverage factor",
+  "theoretical_reference": "sqrt(chi2_2(0.95)) = 2.44774689347",
+  "mathematical_reconciliation": {
+    "theoretical_chi2_95": 2.448,
+    "selected_factor": 2.24,
+    "discrepancy_explanation": "Theoretical 95% circular error probable for a 2-DOF bivariate Gaussian requires k = sqrt(chi2_2(0.95)) = 2.448. In historical V3.0.4/V3.0.5 development, k = 2.24 was empirically calibrated downward on calibration residuals to prevent excessive volumetric inflation of spatial bounding ellipses while maintaining empirical containment >= 0.95. Therefore, k = 2.24 is NOT the mathematical Chi-Square 95% quantile, and must strictly be cited as an 'empirically calibrated coverage factor' under 2D Gaussian assumptions."
+  },
+  "calibration_data_split": "CALIBRATION_SPLIT",
+  "fitting_method": "Empirical grid search minimizing covariance bounding volume subject to empirical containment >= 95.0%",
+  "optimization_objective": "min(det(k^2 * Sigma)) subject to empirical_containment >= 0.95",
+  "assumptions": [
+    "Bivariate zero-mean Gaussian measurement residuals in camera ground plane projection",
+    "Nominal floor planarity (slope < 1.5 deg)",
+    "Nominal camera mounting pitch (35 - 55 deg)",
+    "Distance <= 8.0 meters from optical center"
+  ],
+  "empirical_coverage_result": 0.976,
+  "limitations": [
+    "Calibrated in-sample on CAM02 calibration sequence (500 frames)",
+    "Valid only within nominal ODD boundaries",
+    "Degrades on non-planar surfaces (e.g. 3.5 deg ramp, FAIL-45) and shallow pitch (< 35 deg, FAIL-38)",
+    "Cannot provide an unconditional mathematical guarantee against non-Gaussian outliers"
+  ],
+  "mandatory_reporting_terminology": {
+    "allowed_terms": [
+      "empirically calibrated coverage factor",
+      "calibrated 2D Gaussian coverage multiplier",
+      "in-sample empirical coverage"
+    ],
+    "prohibited_terms": [
+      "mathematical guarantee",
+      "guaranteed safety coverage",
+      "Chi-Square 95% quantile",
+      "unconditioned coverage",
+      "zero failure probability"
+    ]
+  }
+}

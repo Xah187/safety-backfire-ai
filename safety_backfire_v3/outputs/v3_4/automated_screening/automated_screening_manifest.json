@@ -1,0 +1,8 @@
+{
+  "manifest_version": "V3.4_C_AUTOMATED_SCREENING_MANIFEST_V1",
+  "timestamp_utc": "2026-09-30T08:46:41.017747+00:00",
+  "total_records": 51,
+  "results_file": "automated_screening_results.json",
+  "results_sha256": "25fb1dff8ce503535bcda2ea90dfd9cd1639542c4b6a114eda6926c344ea4d86",
+  "epistemic_warning": "AUTOMATED_SCREENING_LABELS_ARE_NOT_GROUND_TRUTH"
+}

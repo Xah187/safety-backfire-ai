@@ -1,0 +1,49 @@
+{
+  "audit_version": "EXP_333_01_MODEL_H_REEXECUTION_AUDIT",
+  "timestamp_utc": "2026-09-27T19:30:00Z",
+  "runs_comparison": {
+    "RUN_001_INVALIDATED_RUNTIME_MISMATCH": {
+      "status": "INVALIDATED",
+      "reason": "MODEL_H_RUNTIME_IMPLEMENTATION_NON_CONFORMANT",
+      "formula_used": "k = 2.40 + 0.08*d + 0.12*(1-0.50) + 0.22*0 + 0",
+      "k_emitted_range": [
+        2.7,
+        3.151
+      ],
+      "default_substitutions": [
+        "L_ambient=0.50",
+        "theta_offset=0.0",
+        "beta_d*d linear"
+      ]
+    },
+    "RUN_002_CANONICAL_CONFORMANCE": {
+      "status": "CONFORMANT_INPUT_INSUFFICIENT",
+      "model_h_runtime_implementation": "CONFORMANT",
+      "canonical_model_h_evaluation": "NOT_ESTABLISHED",
+      "formula_used": "k_H = 2.40 + 0.08*max(0, d-4.0) + 0.12*max(0, 300-L)/100 + 0.22*I(pitch<40) + gamma_occ",
+      "k_emitted_range": null,
+      "missing_inputs": [
+        "illumination_lux",
+        "camera_pitch_deg",
+        "occlusion_state"
+      ],
+      "default_substitutions": "NONE (Strictly prohibited)"
+    }
+  },
+  "perception_observations_preserved": {
+    "total_detection_instances": 251,
+    "forklift": 238,
+    "person": 13,
+    "forklift_track_ids": [
+      1,
+      5,
+      9,
+      12
+    ],
+    "person_track_ids": [
+      14,
+      19
+    ]
+  },
+  "scientific_conclusion": "Model H implementation restored to 100% frozen canonical conformance. In the absence of measured physical sensor data (lux, pitch), canonical Model H evaluation is correctly reported as NOT_ESTABLISHED rather than inventing synthetic defaults."
+}

@@ -1,0 +1,110 @@
+{
+  "milestone": "V3.4-N",
+  "document_title": "Multi-Modal Synchronization Physical Commissioning Matrix",
+  "governance_classification": "PHYSICAL_COMMISSIONING_ACCEPTANCE_STANDARD",
+  "epistemic_principle": "The budget identity (18.0 ms allocated + 15.33 ms reserve = 33.33 ms composite frame target) is an engineering design allocation. It is NOT empirical evidence that physical hardware naturally produces <= 33.33 ms skew. Physical commissioning MUST directly measure real-world temporal offsets using calibrated bench instruments.",
+  "synchronization_layers": {
+    "layer_a_component_acceptance_limits": {
+      "camera_frame_trigger_jitter_max_ms": { "limit": 5.0, "classification": "DESIGN_REQUIREMENT" },
+      "can_bus_gateway_timestamp_latency_max_ms": { "limit": 10.0, "classification": "DESIGN_REQUIREMENT" },
+      "secondary_sensor_packet_latency_max_ms": { "limit": 5.0, "classification": "DESIGN_REQUIREMENT" }
+    },
+    "layer_b_nominal_design_allocations": {
+      "camera_hardware_trigger_jitter_ms": { "allocation": 2.0, "classification": "DESIGN_REQUIREMENT" },
+      "can_bus_gateway_timestamp_latency_ms": { "allocation": 5.0, "classification": "DESIGN_REQUIREMENT" },
+      "secondary_sensor_network_latency_ms": { "allocation": 8.0, "classification": "DESIGN_REQUIREMENT" },
+      "operating_system_inter_process_jitter_ms": { "allocation": 3.0, "classification": "DESIGN_REQUIREMENT" },
+      "total_nominal_allocation_ms": 18.0
+    },
+    "layer_c_composite_acceptance_target": {
+      "composite_max_skew_ms": { "target": 33.33, "classification": "CURRENT_ACCEPTANCE_TARGET" },
+      "unallocated_design_reserve_ms": { "reserve": 15.33, "classification": "DESIGN_RESERVE" }
+    }
+  },
+  "physical_measurement_protocols": [
+    {
+      "metric_id": "SYNC_MEAS_01_CAMERA_TRIGGER_OFFSET",
+      "metric_name": "actual_camera_offset_ms",
+      "channel": "Camera A, B, C, D Strobe Sync",
+      "design_limit_ms": 5.0,
+      "nominal_allocation_ms": 2.0,
+      "acceptance_rule": "measured_value_p99 <= 2.0 ms (nominal PASS); 2.0 ms < measured_value_p99 <= 5.0 ms (conditional PASS); > 5.0 ms (GATE C1 FAIL)",
+      "measurement_method": "Dual-channel high-speed digital storage oscilloscope monitoring PTP 1PPS pulse vs camera opto-isolated flash strobe output pin.",
+      "instrument": {
+        "model": "Keysight DSOX1204G (200MHz, 2GSa/s)",
+        "serial": "CAL-OSC-2026-089",
+        "calibration_certificate": "NIST-TRACEABLE-2026-Q3",
+        "measurement_uncertainty_ns": 50.0
+      },
+      "timestamp_source": "IEEE_1588_PTP_V2_HARDWARE_PIN",
+      "commissioning_status": "PENDING_PHYSICAL_MEASUREMENT",
+      "measured_value_p99_ms": null,
+      "result": "UNVERIFIED_PRE_COMMISSIONING",
+      "evidence_file": null,
+      "calibration_reference": "NIST-KEYSIGHT-CAL-2026"
+    },
+    {
+      "metric_id": "SYNC_MEAS_02_CAN_TIMESTAMP_OFFSET",
+      "metric_name": "actual_can_timestamp_offset_ms",
+      "channel": "Vehicle CAN Bus Gateway Bridge",
+      "design_limit_ms": 10.0,
+      "nominal_allocation_ms": 5.0,
+      "acceptance_rule": "measured_value_p99 <= 5.0 ms (nominal PASS); 5.0 ms < measured_value_p99 <= 10.0 ms (conditional PASS); > 10.0 ms (GATE C1/C3 FAIL)",
+      "measurement_method": "CANoe hardware logger synchronized to PTP grandmaster comparing CAN message frame EOF arrival vs gateway SOF UDP packet emit time.",
+      "instrument": {
+        "model": "Vector VN1640A Network Interface with PTP Slave Sync",
+        "serial": "VEC-VN16-4410",
+        "calibration_certificate": "DAkkS-VECTOR-2026-04",
+        "measurement_uncertainty_us": 1.0
+      },
+      "timestamp_source": "PTP_HARDWARE_TIMESTAMPED_CAN_CONTROLLER",
+      "commissioning_status": "PENDING_PHYSICAL_MEASUREMENT",
+      "measured_value_p99_ms": null,
+      "result": "UNVERIFIED_PRE_COMMISSIONING",
+      "evidence_file": null,
+      "calibration_reference": "DAkkS-VEC-2026"
+    },
+    {
+      "metric_id": "SYNC_MEAS_03_SECONDARY_SENSOR_OFFSET",
+      "metric_name": "actual_secondary_timestamp_offset_ms",
+      "channel": "Secondary Zone LiDAR / Radar Node",
+      "design_limit_ms": 5.0,
+      "nominal_allocation_ms": 8.0,
+      "acceptance_rule": "measured_value_p99 <= 5.0 ms (nominal PASS); > 5.0 ms (GATE C1/C4 FAIL)",
+      "measurement_method": "PTP Ethernet packet timestamp inspection at switch ingress port mirroring using Wireshark hardware timestamping capture card.",
+      "instrument": {
+        "model": "Fiberblaze Silicom FB2CGg3 Capture NIC (PTP synchronized)",
+        "serial": "SIL-NIC-9921",
+        "calibration_certificate": "ISO17025-SIL-2026",
+        "measurement_uncertainty_ns": 20.0
+      },
+      "timestamp_source": "HARDWARE_PTP_INGRESS_NIC",
+      "commissioning_status": "PENDING_PHYSICAL_MEASUREMENT",
+      "measured_value_p99_ms": null,
+      "result": "UNVERIFIED_PRE_COMMISSIONING",
+      "evidence_file": null,
+      "calibration_reference": "ISO17025-SIL-2026"
+    },
+    {
+      "metric_id": "SYNC_MEAS_04_COMPOSITE_MULTI_MODAL_SKEW",
+      "metric_name": "actual_composite_skew_ms",
+      "channel": "Multi-Modal Sensor Ensemble (Camera + CAN + LiDAR)",
+      "design_limit_ms": 33.33,
+      "nominal_allocation_ms": 18.0,
+      "acceptance_rule": "max_observed_skew <= 18.0 ms (OPTIMAL); 18.0 ms < max_observed_skew <= 33.33 ms (ACCEPTABLE_RESERVE_CONSUMED); > 33.33 ms (GATE C1 REJECTED)",
+      "measurement_method": "Physical multi-modal flash/motion event: LED strobe fires concurrently with solenoid impactor tapped onto vehicle accelerometer, observed optically by cameras and captured by CAN IMU.",
+      "instrument": {
+        "model": "Rigid Co-Calibration Impactor Strobe Rig (CC-ISR-01)",
+        "serial": "MMS-RIG-001",
+        "calibration_certificate": "IN-HOUSE-LAB-CERT-2026",
+        "measurement_uncertainty_ms": 0.5
+      },
+      "timestamp_source": "SIMULTANEOUS_OPTICAL_AND_ACCELEROMETER_EVENT",
+      "commissioning_status": "PENDING_PHYSICAL_MEASUREMENT",
+      "measured_value_p99_ms": null,
+      "result": "UNVERIFIED_PRE_COMMISSIONING",
+      "evidence_file": null,
+      "calibration_reference": "LAB-CC-ISR-2026"
+    }
+  ]
+}

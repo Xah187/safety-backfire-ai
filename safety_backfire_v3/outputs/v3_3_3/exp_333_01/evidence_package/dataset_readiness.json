@@ -1,0 +1,163 @@
+{
+  "manifest_version": "EXP_333_01_DATASET_READINESS_V1",
+  "timestamp_utc": "2026-09-28T00:07:22Z",
+  "gates": {
+    "G1_raw_footage": {
+      "name": "Raw Footage Availability",
+      "status": "PASS",
+      "evidence": "1 file, 173 frames, 6.98s",
+      "limitation": "DATA_VOLUME_STATUS = LIMITED"
+    },
+    "G2_provenance": {
+      "name": "Cryptographic Provenance",
+      "status": "PASS",
+      "evidence": "SHA256 verified, frame overlap CLEAR, Central01 exclusion CLEAR"
+    },
+    "G3_independence": {
+      "name": "Physical Independence",
+      "status": "PASS",
+      "evidence": "Different physical facility, independent session, independent camera"
+    },
+    "G4_blind_protocol": {
+      "name": "Blind Protocol Compliance",
+      "status": "PASS",
+      "evidence": "Model H frozen before data access, no parameter tuning"
+    },
+    "G5_camera_metadata": {
+      "name": "Camera Hardware Metadata",
+      "status": "PARTIAL",
+      "available": [
+        "codec",
+        "resolution",
+        "fps",
+        "frame_count",
+        "duration",
+        "bitrate"
+      ],
+      "missing": [
+        "make",
+        "model",
+        "serial",
+        "firmware",
+        "lens",
+        "sensor"
+      ],
+      "note": "Container metadata available; hardware identification NOT_AVAILABLE"
+    },
+    "G6_sensor_telemetry": {
+      "name": "Sensor Telemetry",
+      "status": "FAIL",
+      "missing": [
+        "illumination_lux",
+        "camera_pitch_deg",
+        "occlusion_state"
+      ],
+      "note": "Required physical measurements (lux, pitch, occlusion) are NOT_AVAILABLE"
+    },
+    "G7_geometry": {
+      "name": "Geometry Survey",
+      "status": "FAIL",
+      "missing": [
+        "fiducial_points",
+        "floor_survey",
+        "homography_calibration",
+        "mounting_height"
+      ],
+      "note": "No physical ground survey conducted"
+    },
+    "G8_ground_truth": {
+      "name": "Ground Truth Annotations",
+      "status": "FAIL",
+      "missing": [
+        "bounding_box_annotations",
+        "track_identities",
+        "event_annotations"
+      ],
+      "note": "No human annotations available"
+    },
+    "G9_data_volume": {
+      "name": "Data Volume Sufficiency",
+      "status": "LIMITED",
+      "frames": 173,
+      "seconds": 6.98,
+      "cameras": 1,
+      "sessions": 1,
+      "note": "173 frames (~7s) from 1 camera, 1 session. Limited for statistical significance."
+    }
+  },
+  "summary": {
+    "total_gates": 9,
+    "passed": 4,
+    "partial": 1,
+    "failed": 3,
+    "limited": 1,
+    "overall_readiness": "NOT_READY_FOR_FULL_EVALUATION",
+    "ready_for_zero_adaptation_run": true,
+    "ready_for_model_h_evaluation": false,
+    "ready_for_perception_evaluation": false,
+    "ready_for_generalization_claim": false
+  },
+  "what_can_be_done_now": [
+    "Execute zero-adaptation run (no threshold tuning, frozen Model H)",
+    "Compute model-estimated distances with MODEL_ESTIMATE label",
+    "Count detection instances per frame",
+    "Assess ODD classification coverage",
+    "Verify pipeline execution without errors"
+  ],
+  "what_cannot_be_done_now": [
+    "Compute valid Model H uncertainty scores (missing lux, pitch, occlusion)",
+    "Compute perception F1, precision, recall (missing ground truth)",
+    "Validate geometry accuracy (missing ground survey)",
+    "Claim external generalization (insufficient evidence)"
+  ],
+  "acquisition_requirements_for_full_evaluation": [
+    {
+      "id": "ACQ_01",
+      "requirement": "Physical lux meter reading",
+      "priority": "CRITICAL",
+      "blocks": "Model H"
+    },
+    {
+      "id": "ACQ_02",
+      "requirement": "Physical camera pitch measurement",
+      "priority": "CRITICAL",
+      "blocks": "Model H"
+    },
+    {
+      "id": "ACQ_03",
+      "requirement": "Per-detection occlusion annotation",
+      "priority": "CRITICAL",
+      "blocks": "Model H"
+    },
+    {
+      "id": "ACQ_04",
+      "requirement": "Ground survey with fiducial points",
+      "priority": "HIGH",
+      "blocks": "Geometry validation"
+    },
+    {
+      "id": "ACQ_05",
+      "requirement": "Camera mounting height measurement",
+      "priority": "HIGH",
+      "blocks": "Distance validation"
+    },
+    {
+      "id": "ACQ_06",
+      "requirement": "Frame-level bounding box annotations",
+      "priority": "HIGH",
+      "blocks": "Perception evaluation"
+    },
+    {
+      "id": "ACQ_07",
+      "requirement": "Track identity annotations",
+      "priority": "MEDIUM",
+      "blocks": "Tracking evaluation"
+    },
+    {
+      "id": "ACQ_08",
+      "requirement": "Additional recording sessions",
+      "priority": "MEDIUM",
+      "blocks": "Statistical significance"
+    }
+  ]
+}

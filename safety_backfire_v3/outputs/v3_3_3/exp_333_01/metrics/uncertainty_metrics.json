@@ -1,0 +1,52 @@
+{
+  "artifact_name": "EXP_333_01_UNCERTAINTY_METRICS",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "model_evaluated": "MODEL_H_FROZEN_V3_3_2",
+  "facility_id": "FACILITY_E_COLD_STORAGE",
+  "parameters_locked": {
+    "k0": 2.40,
+    "beta_d": 0.08,
+    "beta_l": 0.12,
+    "beta_pitch": 0.22,
+    "gamma_occ": {"NONE": 0.0, "PARTIAL": 0.20, "HEAVY": 0.40}
+  },
+  "overall_external_oos_coverage": {
+    "covered": null,
+    "uncovered": null,
+    "total_n": 0,
+    "coverage_rate": null,
+    "undercoverage_rate": null,
+    "exact_fraction": "NOT_AVAILABLE",
+    "wilson_ci_95": "NOT_AVAILABLE",
+    "target": 0.9500,
+    "status": "NOT_ESTABLISHED"
+  },
+  "interval_width_statistics": {
+    "mean_width_m": null,
+    "median_width_m": null,
+    "p95_width_m": null,
+    "max_width_m": null,
+    "status": "NOT_ESTABLISHED"
+  },
+  "coverage_by_strata": {
+    "by_distance": {
+      "near_le_4m": {"covered": null, "uncovered": null, "total_n": 0, "coverage": null, "status": "NOT_ESTABLISHED"},
+      "mid_4_to_8m": {"covered": null, "uncovered": null, "total_n": 0, "coverage": null, "status": "NOT_ESTABLISHED"},
+      "far_gt_8m": {"covered": null, "uncovered": null, "total_n": 0, "coverage": null, "status": "NOT_ESTABLISHED"}
+    },
+    "by_pitch": {
+      "steep_ge_40deg": {"covered": null, "uncovered": null, "total_n": 0, "coverage": null, "status": "NOT_ESTABLISHED"},
+      "shallow_lt_40deg": {"covered": null, "uncovered": null, "total_n": 0, "coverage": null, "status": "NOT_ESTABLISHED"}
+    },
+    "by_illumination": {
+      "normal_ge_300lux": {"covered": null, "uncovered": null, "total_n": 0, "coverage": null, "status": "NOT_ESTABLISHED"},
+      "low_lt_300lux": {"covered": null, "uncovered": null, "total_n": 0, "coverage": null, "status": "NOT_ESTABLISHED"}
+    },
+    "by_occlusion": {
+      "none": {"covered": null, "uncovered": null, "total_n": 0, "coverage": null, "status": "NOT_ESTABLISHED"},
+      "partial": {"covered": null, "uncovered": null, "total_n": 0, "coverage": null, "status": "NOT_ESTABLISHED"},
+      "heavy": {"covered": null, "uncovered": null, "total_n": 0, "coverage": null, "status": "NOT_ESTABLISHED"}
+    }
+  },
+  "governance_note": "Model H parameters were strictly locked. Zero tuning or parameter adjustment occurred on the external evaluation domain. Coverage metrics remain uncalculated due to physical data absence."
+}

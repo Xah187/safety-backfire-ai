@@ -1,0 +1,73 @@
+{
+  "manifest_version": "EXP_333_01_SENSOR_GAP_ANALYSIS_V1",
+  "timestamp_utc": "2026-09-28T00:07:22Z",
+  "required_inputs": [
+    {
+      "input": "distance_m",
+      "required_by": "Model H distance penalty",
+      "status": "AVAILABLE_AS_MODEL_ESTIMATE",
+      "category": "MODEL_ESTIMATE",
+      "quality": "Estimated from bounding box geometry \u2014 not surveyed ground truth",
+      "effect_if_missing": "H_score = None",
+      "current_effect": "Used in distance penalty hinge max(0, d-4) with MODEL_ESTIMATE caveat"
+    },
+    {
+      "input": "illumination_lux",
+      "required_by": "Model H illumination penalty",
+      "status": "NOT_AVAILABLE",
+      "category": "NOT_AVAILABLE",
+      "quality": null,
+      "effect_if_missing": "H_score = None (INPUT_INSUFFICIENT)",
+      "current_effect": "Model H cannot produce valid H_score",
+      "acquisition_requirement": "Physical lux meter reading at recording time and location"
+    },
+    {
+      "input": "camera_pitch_deg",
+      "required_by": "Model H pitch penalty",
+      "status": "NOT_AVAILABLE",
+      "category": "NOT_AVAILABLE",
+      "quality": null,
+      "effect_if_missing": "H_score = None (INPUT_INSUFFICIENT)",
+      "current_effect": "Model H cannot produce valid H_score",
+      "acquisition_requirement": "Physical inclinometer or protractor measurement of camera angle"
+    },
+    {
+      "input": "occlusion_state",
+      "required_by": "Model H occlusion multiplier",
+      "status": "NOT_AVAILABLE",
+      "category": "NOT_AVAILABLE",
+      "quality": null,
+      "effect_if_missing": "H_score = None (INPUT_INSUFFICIENT)",
+      "current_effect": "Model H cannot produce valid H_score",
+      "acquisition_requirement": "Per-detection occlusion annotation (NONE/PARTIAL/HEAVY)"
+    },
+    {
+      "input": "mounting_height_m",
+      "required_by": "Geometry validation, camera calibration",
+      "status": "NOT_AVAILABLE",
+      "category": "NOT_AVAILABLE",
+      "quality": null,
+      "effect_if_missing": "Cannot validate distance estimates",
+      "current_effect": "Geometry evaluation NOT_ESTABLISHED",
+      "acquisition_requirement": "Physical measurement with tape measure or laser ranger"
+    }
+  ],
+  "summary": {
+    "total_required_inputs": 5,
+    "available": 1,
+    "available_as_estimate": 1,
+    "not_available": 4,
+    "model_h_executable": false,
+    "model_h_status": "INPUT_INSUFFICIENT",
+    "blocking_inputs": [
+      "illumination_lux",
+      "camera_pitch_deg",
+      "occlusion_state"
+    ],
+    "note": "Model H requires ALL of distance, illumination, pitch, and occlusion. Any missing input \u2192 H_score = None."
+  },
+  "governance": {
+    "rule": "If lux, pitch, or occlusion are missing, status must be INPUT_INSUFFICIENT and uncertainty metrics must be suppressed. Do not substitute defaults (0.5, 0, etc.).",
+    "default_substitution_allowed": false
+  }
+}

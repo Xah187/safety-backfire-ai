@@ -1,0 +1,56 @@
+{
+  "validation_layer": "LEVEL_B_REAL_TRACKING",
+  "total_consecutive_frames_evaluated": 1672,
+  "total_entity_frame_instances": 3450,
+  "total_ground_truth_trajectories": 24,
+  "summary_metrics": {
+    "overall_idf1": 0.9141,
+    "overall_track_continuity_pct": 93.95,
+    "total_id_switches": 7,
+    "id_switch_rate_per_1000_frames": 2.03,
+    "total_fragmentations": 13,
+    "track_recovery_rate_pct": 87.5
+  },
+  "stratified_scenarios": {
+    "SINGLE_OBJECT_ISOLATED": {
+      "gt_trajectories": 6,
+      "total_frames": 900,
+      "id_switches": 0,
+      "fragmentations": 1,
+      "idf1": 0.985,
+      "track_continuity_pct": 99.2
+    },
+    "CROSSING_TRAJECTORIES": {
+      "gt_trajectories": 8,
+      "total_frames": 1150,
+      "id_switches": 3,
+      "fragmentations": 4,
+      "idf1": 0.912,
+      "track_continuity_pct": 94.6
+    },
+    "OCCLUDED_BY_PALLET_STACK": {
+      "gt_trajectories": 6,
+      "total_frames": 850,
+      "id_switches": 2,
+      "fragmentations": 5,
+      "idf1": 0.864,
+      "track_continuity_pct": 89.1
+    },
+    "DENSE_CLUTTER_STAGING": {
+      "gt_trajectories": 4,
+      "total_frames": 550,
+      "id_switches": 2,
+      "fragmentations": 3,
+      "idf1": 0.88,
+      "track_continuity_pct": 91.5
+    }
+  },
+  "failure_candidates_audited": {
+    "CANDIDATE-41": {
+      "description": "Event fragmentation during prolonged occlusion (>45 frames)",
+      "status": "CONFIRMED_AS_FAIL-41",
+      "safety_impact": "Split safety episodes cause premature alarm termination.",
+      "remediation": "Extended temporal episode hysteresis window to 60 frames (2.0s)."
+    }
+  }
+}

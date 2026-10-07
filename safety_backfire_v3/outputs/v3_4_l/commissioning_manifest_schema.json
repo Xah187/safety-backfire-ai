@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_id": "V3_4_L_CAMERA_COMMISSIONING_MANIFEST_SCHEMA",
+  "version": "1.0.0",
+  "status": "APPROVED_SPECIFICATION",
+  "description": "Validation Schema for Physical Pre-Capture Camera Commissioning Manifests.",
+  "type": "object",
+  "required": [
+    "manifest_id",
+    "facility_id",
+    "commissioning_timestamp_utc",
+    "commissioning_engineer_id",
+    "hardware_clock_lock_verified",
+    "camera_nodes"
+  ],
+  "properties": {
+    "manifest_id": { "type": "string" },
+    "facility_id": { "type": "string" },
+    "commissioning_timestamp_utc": { "type": "string", "format": "date-time" },
+    "commissioning_engineer_id": { "type": "string" },
+    "hardware_clock_lock_verified": { "type": "boolean" },
+    "camera_nodes": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "camera_id",
+          "camera_role",
+          "sensor_serial_number",
+          "lens_serial_number",
+          "resolution",
+          "frame_rate_fps",
+          "shutter_speed_s",
+          "focus_ring_locked",
+          "mount_torque_verified_nm",
+          "fov_horizontal_deg",
+          "orientation_rpy_deg",
+          "intrinsics_hash",
+          "extrinsics_hash",
+          "calibration_version",
+          "health_state"
+        ],
+        "properties": {
+          "camera_id": { "type": "string", "enum": ["CAMERA_A", "CAMERA_B", "CAMERA_C", "CAMERA_D"] },
+          "camera_role": { "type": "string" },
+          "sensor_serial_number": { "type": "string" },
+          "lens_serial_number": { "type": "string" },
+          "resolution": { "type": "string", "pattern": "^[0-9]+x[0-9]+$" },
+          "frame_rate_fps": { "type": "number", "minimum": 25.0, "maximum": 120.0 },
+          "shutter_speed_s": { "type": "string" },
+          "focus_ring_locked": { "type": "boolean" },
+          "mount_torque_verified_nm": { "type": "number", "minimum": 2.0 },
+          "fov_horizontal_deg": { "type": "number" },
+          "orientation_rpy_deg": {
+            "type": "array",
+            "items": { "type": "number" },
+            "minItems": 3,
+            "maxItems": 3
+          },
+          "intrinsics_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "extrinsics_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "calibration_version": { "type": "string" },
+          "health_state": {
+            "type": "string",
+            "enum": ["COMMISSIONED_HEALTHY", "CALIBRATION_STALE", "OPTICAL_DEGRADED", "REJECTED"]
+          }
+        }
+      }
+    }
+  }
+}

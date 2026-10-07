@@ -1,0 +1,204 @@
+{
+  "registry_version": "V3.3.1_CANONICAL_METRIC_REGISTRY",
+  "timestamp_utc": "2026-09-25T07:00:00Z",
+  "policy": "Immutable canonical metric registry for Safety Backfire AI V3.3.1.",
+  "total_metrics": 8,
+  "metrics": [
+    {
+      "metric_id": "METRIC_331_UNCERTAINTY_CONDITION_AWARE_NOMINAL",
+      "metric_name": "Condition-Aware Nominal OOS Coverage",
+      "value": 0.9367,
+      "sample_unit": "Track_Coordinate_Measurement",
+      "N": 663,
+      "dataset_ids": [
+        "DS_V3_3_VAL_INTERSECTION_C",
+        "DS_V3_3_BLIND_STAGING_D"
+      ],
+      "split": "OUT_OF_SAMPLE_VALIDATION",
+      "odd_tier": "NOMINAL_ODD",
+      "experiment_id": "EXP_331_01",
+      "statistical_method": "Wilson_Score_Interval",
+      "confidence_interval": [
+        0.9155,
+        0.9528
+      ],
+      "source_artifact": "outputs/v3_3_1/uncertainty/condition_aware_oos_results.json",
+      "execution_commit": "COMMIT_V3_3_1_PRE_EVALUATION_LOCK_4c8b2e1f",
+      "interpretation": "Condition-aware Model D achieved 93.67% nominal coverage, improving on Model A fixed baseline (92.61%) and raising Sector D from 84.68% to 89.78%.",
+      "limitations": [
+        "Point estimate remains below 95.0% target; mitigated by safe refusal gating."
+      ]
+    },
+    {
+      "metric_id": "METRIC_331_UNCERTAINTY_WORST_NOMINAL_STRATUM",
+      "metric_name": "Worst-Stratum Nominal Coverage",
+      "value": 0.8978,
+      "sample_unit": "Track_Coordinate_Measurement",
+      "N": 331,
+      "dataset_ids": [
+        "DS_V3_3_BLIND_STAGING_D"
+      ],
+      "split": "V3.3_BLIND",
+      "odd_tier": "NOMINAL_ODD",
+      "experiment_id": "EXP_331_01",
+      "statistical_method": "Wilson_Score_Interval",
+      "confidence_interval": [
+        0.8598,
+        0.9268
+      ],
+      "source_artifact": "outputs/v3_3_1/uncertainty/condition_aware_oos_results.json",
+      "execution_commit": "COMMIT_V3_3_1_PRE_EVALUATION_LOCK_4c8b2e1f",
+      "interpretation": "Worst observed nominal stratum (Sector D low-lux / partial occlusion) raised from 84.68% to 89.78%.",
+      "limitations": [
+        "Bounds safety margin under dense pallet obstruction."
+      ]
+    },
+    {
+      "metric_id": "METRIC_331_REFUSAL_APPROPRIATE_RATE",
+      "metric_name": "Appropriate Refusal Rate",
+      "value": 1.0,
+      "sample_unit": "Boundary_Violation_Event",
+      "N": 150,
+      "dataset_ids": [
+        "DS_V3_3_STRESS_RAMP_SOUTH",
+        "DS_V3_3_SYNTHETIC_OCCLUSION_REPLAY"
+      ],
+      "split": "BOUNDARY_STRESS_AND_DEV",
+      "odd_tier": "OUT_OF_ODD",
+      "experiment_id": "EXP_331_02",
+      "statistical_method": "Wilson_Score_Interval",
+      "confidence_interval": [
+        0.9751,
+        1.0
+      ],
+      "source_artifact": "outputs/v3_3_1/refusal/refusal_quality_index.json",
+      "execution_commit": "COMMIT_V3_3_1_PRE_EVALUATION_LOCK_4c8b2e1f",
+      "interpretation": "100.0% appropriate refusal across 150 boundary stress violations.",
+      "limitations": [
+        "Evaluated on physical ramp and synthetic red-team fixtures."
+      ]
+    },
+    {
+      "metric_id": "METRIC_331_REFUSAL_FALSE_RATE",
+      "metric_name": "False Refusal Rate",
+      "value": 0.0,
+      "sample_unit": "Nominal_Operational_Frame",
+      "N": 500,
+      "dataset_ids": [
+        "DS_V3_3_DEV_AISLE_A"
+      ],
+      "split": "BOUNDARY_STRESS_AND_DEV",
+      "odd_tier": "NOMINAL_ODD",
+      "experiment_id": "EXP_331_02",
+      "statistical_method": "Wilson_Score_Interval",
+      "confidence_interval": [
+        0.0,
+        0.0076
+      ],
+      "source_artifact": "outputs/v3_3_1/refusal/refusal_quality_index.json",
+      "execution_commit": "COMMIT_V3_3_1_PRE_EVALUATION_LOCK_4c8b2e1f",
+      "interpretation": "0.0% false refusals on nominal operational frames.",
+      "limitations": [
+        "Evaluated within nominal flat-floor ODD parameters."
+      ]
+    },
+    {
+      "metric_id": "METRIC_331_GENERALIZATION_PERCEPTION_F1",
+      "metric_name": "Cross-Sector Perception F1",
+      "value": 0.8845,
+      "sample_unit": "Object_Annotation_Instance",
+      "N": 1980,
+      "dataset_ids": [
+        "DS_V3_3_DEV_AISLE_A",
+        "DS_V3_3_CALIB_SECTOR_B",
+        "DS_V3_3_VAL_INTERSECTION_C",
+        "DS_V3_3_BLIND_STAGING_D"
+      ],
+      "split": "MULTI_SECTOR_EVALUATION",
+      "odd_tier": "NOMINAL_ODD",
+      "experiment_id": "EXP_331_03",
+      "statistical_method": "Harmonic_Mean_Object_Precision_Recall",
+      "confidence_interval": null,
+      "source_artifact": "outputs/v3_3_1/generalization/cross_environment_generalization_summary.json",
+      "execution_commit": "COMMIT_V3_3_1_PRE_EVALUATION_LOCK_4c8b2e1f",
+      "interpretation": "Object-level perception F1 achieves 88.45% across Person, Vehicle, Storage, Load, Machine classes using exact object denominators.",
+      "limitations": [
+        "Evaluated across 4 warehouse sectors in 1 facility."
+      ]
+    },
+    {
+      "metric_id": "METRIC_331_GENERALIZATION_TRACKING_IDF1",
+      "metric_name": "Tracking IDF1",
+      "value": 0.918,
+      "sample_unit": "Trajectory_Sequence",
+      "N": 28,
+      "dataset_ids": [
+        "DS_V3_3_DEV_AISLE_A",
+        "DS_V3_3_CALIB_SECTOR_B",
+        "DS_V3_3_VAL_INTERSECTION_C",
+        "DS_V3_3_BLIND_STAGING_D"
+      ],
+      "split": "MULTI_SECTOR_EVALUATION",
+      "odd_tier": "NOMINAL_ODD",
+      "experiment_id": "EXP_331_03",
+      "statistical_method": "Trajectory_Bootstrap_Percentile",
+      "confidence_interval": [
+        0.9057,
+        0.9295
+      ],
+      "source_artifact": "outputs/v3_3_1/generalization/cross_environment_generalization_summary.json",
+      "execution_commit": "COMMIT_V3_3_1_PRE_EVALUATION_LOCK_4c8b2e1f",
+      "interpretation": "Trajectory-level IDF1 achieves 91.80% [95% CI: 90.57%-92.95%] using non-parametric trajectory bootstrap (1000 replicates).",
+      "limitations": [
+        "28 trajectories derived from 1,672 physical video frames."
+      ]
+    },
+    {
+      "metric_id": "METRIC_331_IDENTITY_AMBIGUITY_DOWNGRADE_RATE",
+      "metric_name": "Ambiguous Crossing Safety Downgrade Rate",
+      "value": 1.0,
+      "sample_unit": "Ambiguous_Crossing_Event",
+      "N": 10,
+      "dataset_ids": [
+        "DS_V3_3_VAL_INTERSECTION_C",
+        "DS_V3_3_BLIND_STAGING_D"
+      ],
+      "split": "CROSSING_AND_OCCLUSION_EVALUATION",
+      "odd_tier": "NOMINAL_ODD",
+      "experiment_id": "EXP_331_04",
+      "statistical_method": "Empirical_Fraction",
+      "confidence_interval": [
+        0.7225,
+        1.0
+      ],
+      "source_artifact": "outputs/v3_3_1/identity/identity_hardening_results.json",
+      "execution_commit": "COMMIT_V3_3_1_PRE_EVALUATION_LOCK_4c8b2e1f",
+      "interpretation": "100.0% of ambiguous crossings safely downgraded to ADVISORY_WARNING_ONLY without forced incorrect assignment.",
+      "limitations": [
+        "Sample size N=10 ambiguous crossing episodes."
+      ]
+    },
+    {
+      "metric_id": "METRIC_331_INTERVENTION_TOTAL_CASES",
+      "metric_name": "Intervention Case Inventory",
+      "value": 6,
+      "sample_unit": "Intervention_Episode",
+      "N": 6,
+      "dataset_ids": [
+        "DS_V3_3_INTERVENTION_REPLAY_FIXTURES",
+        "DS_PHYSICAL_RAW_TEST2_MP4"
+      ],
+      "split": "INTERVENTION_EVALUATION",
+      "odd_tier": "NOMINAL_ODD",
+      "experiment_id": "EXP_331_05",
+      "statistical_method": "Discrete_Case_Inventory",
+      "confidence_interval": null,
+      "source_artifact": "outputs/v3_3_1/intervention/backfire_case_governance_summary.json",
+      "execution_commit": "COMMIT_V3_3_1_PRE_EVALUATION_LOCK_4c8b2e1f",
+      "interpretation": "Expanded intervention evidence to N=6 cases with 1 PHYSICAL_NEW case (one-way restriction in Sector B) and 1 causal refusal under shock.",
+      "limitations": [
+        "N=6 represents discrete episodes; population causal inference prohibited."
+      ]
+    }
+  ]
+}

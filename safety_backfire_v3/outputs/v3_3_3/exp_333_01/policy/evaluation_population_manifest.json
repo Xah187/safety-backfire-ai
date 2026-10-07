@@ -1,0 +1,42 @@
+{
+  "manifest_version": "EXP_333_01_EVALUATION_POPULATION_MANIFEST",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "schema_version": "2026-09-27",
+  "governance_note": "Evaluation population rules enforce separation of in-ODD and ODD-shift data. Populations must be finalized before any metric computation.",
+
+  "population_states": ["NOT_AVAILABLE", "INGESTED_PENDING_AUDIT", "PROVENANCE_VERIFIED", "ODD_CLASSIFIED", "READY_FOR_EVALUATION", "EVALUATED"],
+
+  "EXP_333_01A_population": {
+    "label": "EXTERNAL_IN_ODD_ZERO_ADAPTATION",
+    "current_state": "NOT_AVAILABLE",
+    "recordings": [],
+    "total_frames": 0,
+    "total_seconds": 0.0,
+    "total_cameras": 0,
+    "total_trajectories": 0,
+    "total_annotated_objects": 0,
+    "data_volume_status": "NOT_ESTABLISHED",
+    "data_volume_categories": ["SUFFICIENT", "LIMITED", "INSUFFICIENT", "NOT_ESTABLISHED"],
+    "evaluation_readiness": "BLOCKED"
+  },
+
+  "EXP_333_01B_population": {
+    "label": "EXTERNAL_ODD_SHIFT_ZERO_ADAPTATION",
+    "current_state": "NOT_AVAILABLE",
+    "recordings": [],
+    "total_frames": 0,
+    "total_seconds": 0.0,
+    "total_cameras": 0,
+    "total_trajectories": 0,
+    "total_annotated_objects": 0,
+    "data_volume_status": "NOT_ESTABLISHED",
+    "evaluation_readiness": "BLOCKED"
+  },
+
+  "mixing_violation_detection": {
+    "rule": "Any recording classified as ODD_SHIFT or UNKNOWN must not appear in EXP_333_01A_population.",
+    "enforcement": "test_external_ingestion_gate.py :: test_L_odd_shift_cannot_enter_primary_population"
+  },
+
+  "overall_status": "NOT_AVAILABLE"
+}

@@ -1,0 +1,40 @@
+📷 Camera 0:
+   Points: 129
+   Mean error: 0.0728 units
+   Std error: 0.0469 units
+   Median error: 0.0669 units
+   Max error: 0.3630 units
+📷 Camera 1:
+   Points: 55
+   Mean error: 0.0794 units
+   Std error: 0.0517 units
+   Median error: 0.0729 units
+   Max error: 0.2519 units
+📷 Camera 2:
+   Points: 365
+   Mean error: 0.0259 units
+   Std error: 0.0301 units
+   Median error: 0.0178 units
+   Max error: 0.2680 units
+📷 Camera 3:
+   Points: 451
+   Mean error: 0.0304 units
+   Std error: 0.0328 units
+   Median error: 0.0191 units
+   Max error: 0.2576 units
+
+📊 Overall Reprojection Error Statistics:
+   Total points: 1000
+   Mean error: 0.0369 units
+   RMSE: 0.0542 units
+   Std error: 0.0397 units
+   Median error: 0.0240 units
+   Min error: 0.0000 units
+   Max error: 0.3630 units
+
+📈 Error Distribution:
+   50th percentile: 0.0240 units
+   75th percentile: 0.0533 units
+   90th percentile: 0.0827 units
+   95th percentile: 0.1082 units
+   99th percentile: 0.1760 units

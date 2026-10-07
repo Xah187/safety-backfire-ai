@@ -1,0 +1,72 @@
+{
+  "comparison_labels": {
+    "before": "Segment A (Frames 1-213, 7.1s)",
+    "after": "Segment B (Frames 214-426, 7.1s)"
+  },
+  "metrics": {
+    "total_near_miss_incidents": {
+      "before": 0,
+      "after": 0,
+      "change": 0,
+      "change_pct": null,
+      "verdict": "UNCHANGED"
+    },
+    "total_proximity_warnings": {
+      "before": 0,
+      "after": 0,
+      "change": 0,
+      "change_pct": null,
+      "verdict": "UNCHANGED"
+    },
+    "percent_time_in_risk_zones": {
+      "before": 0.0,
+      "after": 0.0,
+      "change": 0.0,
+      "change_pct": null,
+      "verdict": "UNCHANGED"
+    },
+    "frames_in_danger_zone": {
+      "before": 0,
+      "after": 0,
+      "change": 0,
+      "change_pct": null,
+      "verdict": "UNCHANGED"
+    },
+    "frames_in_caution_zone": {
+      "before": 0,
+      "after": 0,
+      "change": 0,
+      "change_pct": null,
+      "verdict": "UNCHANGED"
+    },
+    "peak_approach_speed_px_s": {
+      "before": 36.3,
+      "after": 1.1,
+      "change": -35.2,
+      "change_pct": -97.0,
+      "verdict": "IMPROVEMENT"
+    },
+    "min_passing_distance_meters": {
+      "before": 3.26,
+      "after": 1.49,
+      "change": -1.77,
+      "change_pct": -54.3,
+      "verdict": "BACKFIRE"
+    },
+    "min_passing_distance_pixels": {
+      "before": 121.2,
+      "after": 71.8,
+      "change": -49.4,
+      "change_pct": -40.8,
+      "verdict": "BACKFIRE"
+    }
+  },
+  "summary": {
+    "metrics_showing_backfire": 2,
+    "metrics_showing_improvement": 1,
+    "metrics_unchanged": 5,
+    "net_backfire_score": 2.659,
+    "overall_verdict": "SAFETY_BACKFIRE_DETECTED"
+  },
+  "scientific_note": "Comparison is valid only if both segments were processed through the same V0.8 pipeline configuration and camera calibration. Metric distances and TTC values are image-space proxies. Safety Backfire detection is preliminary subject to V0.7 model recall limitations (~17% person detection rate on this CCTV angle)."
+}

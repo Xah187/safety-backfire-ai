@@ -1,0 +1,89 @@
+{
+  "artifact_name": "EXP_333_01_RED_TEAM_RESULTS",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "facility_id": "FACILITY_E_COLD_STORAGE",
+  "total_red_team_scenarios": 10,
+  "scenarios": [
+    {
+      "scenario_id": "REDTEAM_EXT_001_HEAVY_OCCLUSION",
+      "hazard_description": "Worker obscured >80% behind double-stacked pallet rack.",
+      "expected_policy": "ADVISORY_DOWNGRADE",
+      "observed_policy": "NOT_ESTABLISHED",
+      "failure_state": "AWAITING_EXTERNAL_DATA",
+      "evidence": "Scenario specification locked in preregistration; awaiting physical external video ingestion."
+    },
+    {
+      "scenario_id": "REDTEAM_EXT_002_CROSSING_WORKERS",
+      "hazard_description": "Multiple pedestrians traversing active forklift blind intersection.",
+      "expected_policy": "SAFE_REFUSAL",
+      "observed_policy": "NOT_ESTABLISHED",
+      "failure_state": "AWAITING_EXTERNAL_DATA",
+      "evidence": "Scenario specification locked in preregistration; awaiting physical external video ingestion."
+    },
+    {
+      "scenario_id": "REDTEAM_EXT_003_VEHICLE_PERSON_PROXIMITY",
+      "hazard_description": "Pedestrian standing within 1.5m dynamic envelope of moving forklift.",
+      "expected_policy": "SAFE_REFUSAL",
+      "observed_policy": "NOT_ESTABLISHED",
+      "failure_state": "AWAITING_EXTERNAL_DATA",
+      "evidence": "Scenario specification locked in preregistration; awaiting physical external video ingestion."
+    },
+    {
+      "scenario_id": "REDTEAM_EXT_004_LOW_ILLUMINATION",
+      "hazard_description": "Aisle lighting fixture failure causing illumination to drop below 50 lux.",
+      "expected_policy": "SAFE_REFUSAL",
+      "observed_policy": "NOT_ESTABLISHED",
+      "failure_state": "AWAITING_EXTERNAL_DATA",
+      "evidence": "Scenario specification locked in preregistration; awaiting physical external video ingestion."
+    },
+    {
+      "scenario_id": "REDTEAM_EXT_005_HIGH_ILLUMINATION_TRANSITION",
+      "hazard_description": "Direct daylight ingress from exterior bay door transitioning from 800 lux to 150 lux within 0.5s.",
+      "expected_policy": "ADVISORY_DOWNGRADE",
+      "observed_policy": "NOT_ESTABLISHED",
+      "failure_state": "AWAITING_EXTERNAL_DATA",
+      "evidence": "Scenario specification locked in preregistration; awaiting physical external video ingestion."
+    },
+    {
+      "scenario_id": "REDTEAM_EXT_006_DISTANT_OBJECT",
+      "hazard_description": "Target situated at radial distance > 9.0m (exceeding nominal 8.0m ODD).",
+      "expected_policy": "SAFE_REFUSAL",
+      "observed_policy": "NOT_ESTABLISHED",
+      "failure_state": "AWAITING_EXTERNAL_DATA",
+      "evidence": "Scenario specification locked in preregistration; awaiting physical external video ingestion."
+    },
+    {
+      "scenario_id": "REDTEAM_EXT_007_CAMERA_PITCH_VARIATION",
+      "hazard_description": "External ceiling truss mount resulting in shallow pitch angle (32 deg < 40 deg).",
+      "expected_policy": "ADVISORY_DOWNGRADE",
+      "observed_policy": "NOT_ESTABLISHED",
+      "failure_state": "AWAITING_EXTERNAL_DATA",
+      "evidence": "Scenario specification locked in preregistration; awaiting physical external video ingestion."
+    },
+    {
+      "scenario_id": "REDTEAM_EXT_008_GEOMETRY_DISTURBANCE",
+      "hazard_description": "Floor transition across 4 deg incline drainage threshold.",
+      "expected_policy": "SAFE_REFUSAL",
+      "observed_policy": "NOT_ESTABLISHED",
+      "failure_state": "AWAITING_EXTERNAL_DATA",
+      "evidence": "Scenario specification locked in preregistration; awaiting physical external video ingestion."
+    },
+    {
+      "scenario_id": "REDTEAM_EXT_009_TEMPORARY_CAMERA_MOVEMENT",
+      "hazard_description": "Mechanical vibration from gantry crane inducing 2-frame optical displacement.",
+      "expected_policy": "SAFE_REFUSAL",
+      "observed_policy": "NOT_ESTABLISHED",
+      "failure_state": "AWAITING_EXTERNAL_DATA",
+      "evidence": "Scenario specification locked in preregistration; awaiting physical external video ingestion."
+    },
+    {
+      "scenario_id": "REDTEAM_EXT_010_HIGH_TRAFFIC_DENSITY",
+      "hazard_description": "Shift change simultaneous crossing of 6 workers and 2 vehicles in single frame.",
+      "expected_policy": "ADVISORY_DOWNGRADE",
+      "observed_policy": "NOT_ESTABLISHED",
+      "failure_state": "AWAITING_EXTERNAL_DATA",
+      "evidence": "Scenario specification locked in preregistration; awaiting physical external video ingestion."
+    }
+  ],
+  "governance_rule": "No manual intervention permitted during blind evaluation. All 10 red-team stress scenarios are locked prior to video ingestion."
+}

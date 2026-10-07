@@ -1,0 +1,45 @@
+{
+  "audit_version": "V3.2.1_CLAIM_EVIDENCE_REGISTRY",
+  "matrix": [
+    {
+      "claim": "Real-world Perception Precision is 94.42%",
+      "evidence": "474 TP / 502 detections across blind test video streams",
+      "data_type": "Real warehouse CCTV video",
+      "sample_size": 502,
+      "independent": true,
+      "reproducible": true,
+      "within_odd": true,
+      "allowed_wording": "Observed 94.42% precision (95% CI: [92.05%, 96.12%]) across 502 blind test instances."
+    },
+    {
+      "claim": "Planar Ground Coordinates accurate to 1.69 cm",
+      "evidence": "100 laser surveyed markers in Sector B",
+      "data_type": "Physically surveyed ground markers",
+      "sample_size": 90,
+      "independent": true,
+      "reproducible": true,
+      "within_odd": true,
+      "allowed_wording": "Planar floor projection MAE of 0.0169m (1.69 cm) within 8m range on planar surfaces."
+    },
+    {
+      "claim": "Safety Backfire AI detects unintended risk displacement",
+      "evidence": "Empirical detection of emergency exit blockage in Sector B guardrail installation",
+      "data_type": "Real warehouse intervention study",
+      "sample_size": 2,
+      "independent": true,
+      "reproducible": true,
+      "within_odd": true,
+      "allowed_wording": "Successfully detected unintended secondary hazard in 2 observed intervention case studies."
+    },
+    {
+      "claim": "System has zero memory leaks",
+      "evidence": "60-minute continuous 108,000 frame simulated traffic cycle with flat 184 MB RSS",
+      "data_type": "Synthetic & replay endurance stress test",
+      "sample_size": "108,000 frames",
+      "independent": true,
+      "reproducible": true,
+      "within_odd": true,
+      "allowed_wording": "Flat memory profile maintained over 60-minute synthetic endurance test."
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ChainOfCustodySchema",
+  "description": "Validation schema for cryptographic chain of custody, data integrity, access control, and storage transfer audit logs without personal identifying information (PII).",
+  "type": "object",
+  "required": [
+    "session_custody_id",
+    "facility_id",
+    "operator_pseudonym_id",
+    "equipment_inventory_manifest",
+    "session_timeframe_utc",
+    "primary_storage_location",
+    "transfer_and_ingest_log",
+    "data_package_hashes",
+    "custody_signoff"
+  ],
+  "properties": {
+    "session_custody_id": {
+      "type": "string",
+      "pattern": "^CUSTODY-[0-9]{8}-[0-9]{4}$"
+    },
+    "facility_id": { "type": "string" },
+    "operator_pseudonym_id": {
+      "type": "string",
+      "pattern": "^OP-[A-Z0-9]{6}$",
+      "description": "Pseudonymous operator badge token to eliminate personal identifiable information (PII)."
+    },
+    "equipment_inventory_manifest": {
+      "type": "object",
+      "required": [
+        "camera_serials",
+        "ptp_grandmaster_serial",
+        "can_gateway_serial",
+        "storage_node_serial"
+      ],
+      "properties": {
+        "camera_serials": { "type": "array", "items": { "type": "string" } },
+        "ptp_grandmaster_serial": { "type": "string" },
+        "can_gateway_serial": { "type": "string" },
+        "storage_node_serial": { "type": "string" }
+      }
+    },
+    "session_timeframe_utc": {
+      "type": "object",
+      "required": ["session_start_utc", "session_end_utc", "total_recording_minutes"],
+      "properties": {
+        "session_start_utc": { "type": "string", "format": "date-time" },
+        "session_end_utc": { "type": "string", "format": "date-time" },
+        "total_recording_minutes": { "type": "number", "minimum": 0 }
+      }
+    },
+    "primary_storage_location": {
+      "type": "object",
+      "required": ["mount_point", "filesystem_type", "encryption_standard", "write_blocker_active"],
+      "properties": {
+        "mount_point": { "type": "string" },
+        "filesystem_type": { "type": "string", "enum": ["ZFS_RAIDZ2", "EXT4_LUKS", "BTRFS_RAID1"] },
+        "encryption_standard": { "type": "string", "const": "AES-256-XTS" },
+        "write_blocker_active": { "type": "boolean", "const": true }
+      }
+    },
+    "transfer_and_ingest_log": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "transfer_id",
+          "timestamp_utc",
+          "source_device",
+          "target_destination",
+          "transfer_protocol",
+          "bytes_transferred",
+          "hash_algorithm",
+          "source_hash",
+          "target_hash",
+          "checksum_verified"
+        ],
+        "properties": {
+          "transfer_id": { "type": "string" },
+          "timestamp_utc": { "type": "string", "format": "date-time" },
+          "source_device": { "type": "string" },
+          "target_destination": { "type": "string" },
+          "transfer_protocol": { "type": "string", "enum": ["NVME_DIRECT_DMA", "SSH_RSYNC_SHA", "ENCRYPTED_S3_TLS13"] },
+          "bytes_transferred": { "type": "integer", "minimum": 0 },
+          "hash_algorithm": { "type": "string", "const": "SHA-256" },
+          "source_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "target_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "checksum_verified": { "type": "boolean", "const": true }
+        }
+      }
+    },
+    "data_package_hashes": {
+      "type": "object",
+      "required": ["root_merkle_root_sha256", "session_manifest_hash_sha256"],
+      "properties": {
+        "root_merkle_root_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "session_manifest_hash_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "custody_signoff": {
+      "type": "object",
+      "required": ["lead_data_engineer_token", "signoff_timestamp_utc", "immutable_lock_engaged"],
+      "properties": {
+        "lead_data_engineer_token": { "type": "string" },
+        "signoff_timestamp_utc": { "type": "string", "format": "date-time" },
+        "immutable_lock_engaged": { "type": "boolean", "const": true }
+      }
+    }
+  }
+}

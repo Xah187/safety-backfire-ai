@@ -1,0 +1,23 @@
+{
+  "milestone": "V3.4-K",
+  "audit_name": "Multi-Modal Sensor Synchronization Budget Audit",
+  "timestamp_utc": "2026-10-02T22:39:24.510851+00:00",
+  "synchronization_protocol": "IEEE_1588_PTP_V2",
+  "clock_domain": "TAI_SYNCHRONIZED_UTC_OFFSET",
+  "allocated_components": {
+    "camera_hardware_trigger_jitter_ms": 2.0,
+    "can_bus_gateway_timestamp_latency_ms": 5.0,
+    "secondary_sensor_network_latency_ms": 8.0,
+    "operating_system_inter_process_jitter_ms": 3.0
+  },
+  "SYNC_BUDGET_TYPE": "ALLOCATED_COMPONENT_BUDGET",
+  "allocated_component_sum_ms": 18.0,
+  "SYSTEM_MAX_DESIGN_TARGET": 33.3,
+  "UNALLOCATED_BUDGET_MS": 15.3,
+  "audit_finding": "Allocated sensor component sum is exactly 18.0 ms. The system maximum design target is 33.3 ms (corresponding to 1.0 video frame interval at 30 fps). An unallocated margin of 15.3 ms remains as design reserve and must NOT be conflated with component latency.",
+  "acceptance_criteria": {
+    "normal_ready_threshold_ms": 18.0,
+    "partially_ready_threshold_ms": 33.3,
+    "not_ready_threshold_ms": "> 33.3"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "audit_version": "V3.2.1_ODD_METRIC_POPULATION_MAP",
+  "timestamp_utc": "2026-09-24T18:25:00Z",
+  "governing_policy": "Any metric computed across both nominal and degraded streams must be explicitly classified as MIXED_ODD.",
+  "streams": {
+    "VID_DEV_001": { "alias": "CAM01_AISLE_TRANSIT_DEV", "pitch_deg": 45.0, "odd_tier": "NOMINAL_ODD" },
+    "VID_CAL_001": { "alias": "CAM02_RACK_CORRIDOR_CALIB", "pitch_deg": 45.0, "odd_tier": "NOMINAL_ODD" },
+    "VID_VAL_001": { "alias": "CAM02_RACK_CORRIDOR_VAL", "pitch_deg": 45.0, "odd_tier": "NOMINAL_ODD" },
+    "VID_TEST_001": { "alias": "CAM02_RACK_CORRIDOR_BLIND", "pitch_deg": 45.0, "odd_tier": "NOMINAL_ODD" },
+    "VID_TEST_002": { "alias": "CAM_DOCK_SOUTH / CAM03_LOADING_BAY", "pitch_deg": 22.5, "odd_tier": "DEGRADED_ODD" }
+  },
+  "metrics_population_mapping": [
+    {
+      "metric_name": "perception_precision",
+      "value": 0.9442,
+      "dataset_split": "BLIND_TEST_EVALUATION",
+      "contributing_streams": ["VID_TEST_001", "VID_TEST_002"],
+      "odd_tier": "MIXED_ODD",
+      "reporting_rule": "Must be labeled MIXED_ODD blind evaluation (not nominal autonomous braking performance)."
+    },
+    {
+      "metric_name": "perception_recall",
+      "value": 0.9480,
+      "dataset_split": "BLIND_TEST_EVALUATION",
+      "contributing_streams": ["VID_TEST_001", "VID_TEST_002"],
+      "odd_tier": "MIXED_ODD",
+      "reporting_rule": "Must be labeled MIXED_ODD blind evaluation."
+    },
+    {
+      "metric_name": "tracking_idf1",
+      "value": 0.9141,
+      "dataset_split": "FULL_TRACKING_CORPUS",
+      "contributing_streams": ["VID_DEV_001", "VID_CAL_001", "VID_VAL_001", "VID_TEST_001"],
+      "odd_tier": "NOMINAL_ODD",
+      "reporting_rule": "Nominal ODD tracking across 45 deg gantry perspectives."
+    },
+    {
+      "metric_name": "event_precision_full_corpus",
+      "value": 0.9400,
+      "dataset_split": "FULL_EVALUATION_CORPUS",
+      "contributing_streams": ["VID_DEV_001", "VID_CAL_001", "VID_VAL_001", "VID_TEST_001", "VID_TEST_002"],
+      "odd_tier": "MIXED_ODD",
+      "reporting_rule": "Corpus aggregate includes VID_TEST_002 (22.5 deg degraded pitch); must be designated MIXED_ODD."
+    },
+    {
+      "metric_name": "event_precision_blind",
+      "value": 0.9375,
+      "dataset_split": "BLIND_TEST",
+      "contributing_streams": ["VID_TEST_001", "VID_TEST_002"],
+      "odd_tier": "MIXED_ODD",
+      "reporting_rule": "Blind aggregate includes nominal and degraded streams; designated MIXED_ODD."
+    },
+    {
+      "metric_name": "false_event_count_rate_corpus",
+      "value": 7.83,
+      "dataset_split": "FULL_EVALUATION_CORPUS",
+      "contributing_streams": ["VID_DEV_001", "VID_CAL_001", "VID_VAL_001", "VID_TEST_001", "VID_TEST_002"],
+      "odd_tier": "MIXED_ODD",
+      "reporting_rule": "Observed count rate over tested exposure in mixed ODD."
+    },
+    {
+      "metric_name": "false_event_count_rate_blind",
+      "value": 5.45,
+      "dataset_split": "BLIND_TEST",
+      "contributing_streams": ["VID_TEST_001", "VID_TEST_002"],
+      "odd_tier": "MIXED_ODD",
+      "reporting_rule": "Observed count rate over blind exposure in mixed ODD."
+    },
+    {
+      "metric_name": "hazard_micro_precision",
+      "value": 0.9537,
+      "dataset_split": "HAZARD_VALIDATION_SUITE",
+      "contributing_streams": ["REAL_VIDEO", "STAGED", "SYNTHETIC_HIGHBAY"],
+      "odd_tier": "MIXED_ODD",
+      "reporting_rule": "Includes 5 real-world validated, 5 limited, 1 synthetic, 1 composite scenario."
+    },
+    {
+      "metric_name": "planar_floor_projection_mae",
+      "value": 0.0169,
+      "dataset_split": "SURVEYED_GRID_PLANAR",
+      "contributing_streams": ["SECTOR_B_PHYSICAL_MARKERS"],
+      "odd_tier": "NOMINAL_ODD",
+      "reporting_rule": "90 planar points strictly within nominal floor slope (< 1.5 deg). 10 ramp points excluded under FAIL-45."
+    },
+    {
+      "metric_name": "synthetic_endurance_stability",
+      "value": 1.0,
+      "dataset_split": "LONG_DURATION_STABILITY_FIXTURE",
+      "contributing_streams": ["SYNTHETIC_GENERATOR_108K"],
+      "odd_tier": "SYNTHETIC_ONLY",
+      "reporting_rule": "Strictly classified as SYNTHETIC & REPLAY ENDURANCE."
+    }
+  ]
+}

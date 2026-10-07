@@ -1,0 +1,8 @@
+{
+  "audit_run_id": "RUN_003_FORENSIC_AUDIT",
+  "timestamp_utc": "2026-09-28T09:54:30Z",
+  "artifacts": {
+    "audit_manifest.json": "997e8d8e22600d9efe19b3471121ec434082a19050aef01e0e28f1df882129a0",
+    "forensic_audit_report.md": "6472ee5b20967cc57a9238e458fdcfd4832aba80be97b5aaebb991d5d0eaf702"
+  }
+}

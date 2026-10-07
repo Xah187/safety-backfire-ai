@@ -1,0 +1,35 @@
+{
+  "states": [
+    "FULL_INTERVENTION",
+    "ADVISORY",
+    "SAFE_REFUSAL",
+    "INSUFFICIENT_EVIDENCE"
+  ],
+  "matrix": {
+    "FULL_INTERVENTION": {
+      "FULL_INTERVENTION": 500,
+      "ADVISORY": 0,
+      "SAFE_REFUSAL": 0,
+      "INSUFFICIENT_EVIDENCE": 0
+    },
+    "ADVISORY": {
+      "FULL_INTERVENTION": 0,
+      "ADVISORY": 200,
+      "SAFE_REFUSAL": 0,
+      "INSUFFICIENT_EVIDENCE": 0
+    },
+    "SAFE_REFUSAL": {
+      "FULL_INTERVENTION": 0,
+      "ADVISORY": 0,
+      "SAFE_REFUSAL": 150,
+      "INSUFFICIENT_EVIDENCE": 0
+    },
+    "INSUFFICIENT_EVIDENCE": {
+      "FULL_INTERVENTION": 0,
+      "ADVISORY": 0,
+      "SAFE_REFUSAL": 0,
+      "INSUFFICIENT_EVIDENCE": 50
+    }
+  },
+  "total_evaluations": 900
+}

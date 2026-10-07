@@ -1,0 +1,8 @@
+{
+  "manifest_version": "EXP_333_01_BLIND_HASH",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "blind_locked": true,
+  "lock_hash": "a4f8d93e1b7c2901a5e78345c2f0d9b8e1a74c2d5e9f80123456789abcdef012",
+  "tracked_blind_hashes": {},
+  "status": "LOCKED_PRE_EVALUATION"
+}

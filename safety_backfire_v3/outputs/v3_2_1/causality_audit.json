@@ -1,0 +1,24 @@
+{
+  "audit_version": "V3.2.1_CAUSALITY_AUDIT",
+  "methodology": "Difference-in-Differences (DiD) Quasi-Experimental Design",
+  "axiom": "TEMPORAL_CORRELATION != CAUSAL_EFFECT",
+  "scenarios_audited": {
+    "CLEAN_ISOLATION": {
+      "confounders": 0,
+      "status": "ATTRIBUTED_DIRECT_EFFECT"
+    },
+    "TRAFFIC_SURGE": {
+      "confounders": 1,
+      "status": "INSUFFICIENT_EVIDENCE"
+    },
+    "SHIFT_CHANGE": {
+      "confounders": 1,
+      "status": "INSUFFICIENT_EVIDENCE"
+    },
+    "FACILITY_SLOWDOWN": {
+      "confounders": 2,
+      "status": "INSUFFICIENT_EVIDENCE"
+    }
+  },
+  "parallel_trend_check": "Enforced; if control zone risk shifts by > 15%, binary causal attribution is suspended."
+}

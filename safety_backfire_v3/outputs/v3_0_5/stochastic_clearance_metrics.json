@@ -1,0 +1,441 @@
+{
+  "n_trials_per_step": 1000,
+  "distance_steps_evaluated": 33,
+  "total_evaluations": 33000,
+  "false_negative_rate_under_1m_pct": 0.462,
+  "false_positive_rate_over_3m_pct": 0.0,
+  "boundary_1_5m_intermediate_mass_pct": 49.5,
+  "monotonic_danger": true,
+  "monotonic_safe": true,
+  "sweep_data": [
+    {
+      "d_true_m": 0.5,
+      "probabilities": {
+        "CONFIRMED_DANGER": 1.0,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.0,
+        "SAFE": 0.0
+      },
+      "mean_observed_d_m": 0.513,
+      "mean_interval_width_m": 0.899,
+      "mean_risk_score": 0.381
+    },
+    {
+      "d_true_m": 0.65,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.999,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.001,
+        "SAFE": 0.0
+      },
+      "mean_observed_d_m": 0.64,
+      "mean_interval_width_m": 0.92,
+      "mean_risk_score": 0.346
+    },
+    {
+      "d_true_m": 0.75,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.996,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.004,
+        "SAFE": 0.0
+      },
+      "mean_observed_d_m": 0.748,
+      "mean_interval_width_m": 0.954,
+      "mean_risk_score": 0.318
+    },
+    {
+      "d_true_m": 0.8,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.998,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.002,
+        "SAFE": 0.0
+      },
+      "mean_observed_d_m": 0.806,
+      "mean_interval_width_m": 0.941,
+      "mean_risk_score": 0.304
+    },
+    {
+      "d_true_m": 0.85,
+      "probabilities": {
+        "CONFIRMED_DANGER": 1.0,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.0,
+        "SAFE": 0.0
+      },
+      "mean_observed_d_m": 0.839,
+      "mean_interval_width_m": 0.946,
+      "mean_risk_score": 0.296
+    },
+    {
+      "d_true_m": 0.9,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.996,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.004,
+        "SAFE": 0.0
+      },
+      "mean_observed_d_m": 0.905,
+      "mean_interval_width_m": 0.952,
+      "mean_risk_score": 0.282
+    },
+    {
+      "d_true_m": 0.95,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.991,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.009,
+        "SAFE": 0.0
+      },
+      "mean_observed_d_m": 0.945,
+      "mean_interval_width_m": 0.951,
+      "mean_risk_score": 0.273
+    },
+    {
+      "d_true_m": 1.0,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.983,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.017,
+        "SAFE": 0.0
+      },
+      "mean_observed_d_m": 0.995,
+      "mean_interval_width_m": 0.947,
+      "mean_risk_score": 0.262
+    },
+    {
+      "d_true_m": 1.05,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.974,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.026,
+        "SAFE": 0.0
+      },
+      "mean_observed_d_m": 1.052,
+      "mean_interval_width_m": 0.953,
+      "mean_risk_score": 0.251
+    },
+    {
+      "d_true_m": 1.1,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.957,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.043,
+        "SAFE": 0.0
+      },
+      "mean_observed_d_m": 1.099,
+      "mean_interval_width_m": 0.942,
+      "mean_risk_score": 0.242
+    },
+    {
+      "d_true_m": 1.25,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.877,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.123,
+        "SAFE": 0.0
+      },
+      "mean_observed_d_m": 1.242,
+      "mean_interval_width_m": 0.95,
+      "mean_risk_score": 0.217
+    },
+    {
+      "d_true_m": 1.4,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.697,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.303,
+        "SAFE": 0.0
+      },
+      "mean_observed_d_m": 1.397,
+      "mean_interval_width_m": 0.966,
+      "mean_risk_score": 0.194
+    },
+    {
+      "d_true_m": 1.45,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.601,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.399,
+        "SAFE": 0.0
+      },
+      "mean_observed_d_m": 1.447,
+      "mean_interval_width_m": 0.951,
+      "mean_risk_score": 0.186
+    },
+    {
+      "d_true_m": 1.5,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.505,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.495,
+        "SAFE": 0.0
+      },
+      "mean_observed_d_m": 1.498,
+      "mean_interval_width_m": 0.962,
+      "mean_risk_score": 0.179
+    },
+    {
+      "d_true_m": 1.55,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.403,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.597,
+        "SAFE": 0.0
+      },
+      "mean_observed_d_m": 1.544,
+      "mean_interval_width_m": 0.956,
+      "mean_risk_score": 0.173
+    },
+    {
+      "d_true_m": 1.6,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.325,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.675,
+        "SAFE": 0.0
+      },
+      "mean_observed_d_m": 1.598,
+      "mean_interval_width_m": 0.948,
+      "mean_risk_score": 0.166
+    },
+    {
+      "d_true_m": 1.7,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.171,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.829,
+        "SAFE": 0.0
+      },
+      "mean_observed_d_m": 1.694,
+      "mean_interval_width_m": 0.945,
+      "mean_risk_score": 0.155
+    },
+    {
+      "d_true_m": 1.75,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.128,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.872,
+        "SAFE": 0.0
+      },
+      "mean_observed_d_m": 1.751,
+      "mean_interval_width_m": 0.958,
+      "mean_risk_score": 0.149
+    },
+    {
+      "d_true_m": 1.8,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.072,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.928,
+        "SAFE": 0.0
+      },
+      "mean_observed_d_m": 1.798,
+      "mean_interval_width_m": 0.951,
+      "mean_risk_score": 0.143
+    },
+    {
+      "d_true_m": 1.85,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.056,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.944,
+        "SAFE": 0.0
+      },
+      "mean_observed_d_m": 1.851,
+      "mean_interval_width_m": 0.953,
+      "mean_risk_score": 0.138
+    },
+    {
+      "d_true_m": 2.0,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.007,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.993,
+        "SAFE": 0.0
+      },
+      "mean_observed_d_m": 1.999,
+      "mean_interval_width_m": 0.952,
+      "mean_risk_score": 0.123
+    },
+    {
+      "d_true_m": 2.15,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.005,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.995,
+        "SAFE": 0.0
+      },
+      "mean_observed_d_m": 2.158,
+      "mean_interval_width_m": 0.955,
+      "mean_risk_score": 0.11
+    },
+    {
+      "d_true_m": 2.3,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.0,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.999,
+        "SAFE": 0.001
+      },
+      "mean_observed_d_m": 2.305,
+      "mean_interval_width_m": 0.947,
+      "mean_risk_score": 0.099
+    },
+    {
+      "d_true_m": 2.45,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.0,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.991,
+        "SAFE": 0.009
+      },
+      "mean_observed_d_m": 2.444,
+      "mean_interval_width_m": 0.956,
+      "mean_risk_score": 0.09
+    },
+    {
+      "d_true_m": 2.6,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.0,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.964,
+        "SAFE": 0.036
+      },
+      "mean_observed_d_m": 2.61,
+      "mean_interval_width_m": 0.966,
+      "mean_risk_score": 0.08
+    },
+    {
+      "d_true_m": 2.75,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.0,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.881,
+        "SAFE": 0.119
+      },
+      "mean_observed_d_m": 2.747,
+      "mean_interval_width_m": 0.958,
+      "mean_risk_score": 0.073
+    },
+    {
+      "d_true_m": 2.9,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.0,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.707,
+        "SAFE": 0.293
+      },
+      "mean_observed_d_m": 2.891,
+      "mean_interval_width_m": 0.953,
+      "mean_risk_score": 0.066
+    },
+    {
+      "d_true_m": 3.0,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.0,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.525,
+        "SAFE": 0.475
+      },
+      "mean_observed_d_m": 2.995,
+      "mean_interval_width_m": 0.96,
+      "mean_risk_score": 0.062
+    },
+    {
+      "d_true_m": 3.05,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.0,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.392,
+        "SAFE": 0.608
+      },
+      "mean_observed_d_m": 3.058,
+      "mean_interval_width_m": 0.949,
+      "mean_risk_score": 0.059
+    },
+    {
+      "d_true_m": 3.1,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.0,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.299,
+        "SAFE": 0.701
+      },
+      "mean_observed_d_m": 3.099,
+      "mean_interval_width_m": 0.958,
+      "mean_risk_score": 0.058
+    },
+    {
+      "d_true_m": 3.2,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.0,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.161,
+        "SAFE": 0.839
+      },
+      "mean_observed_d_m": 3.204,
+      "mean_interval_width_m": 0.958,
+      "mean_risk_score": 0.054
+    },
+    {
+      "d_true_m": 3.35,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.0,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.053,
+        "SAFE": 0.947
+      },
+      "mean_observed_d_m": 3.336,
+      "mean_interval_width_m": 0.943,
+      "mean_risk_score": 0.049
+    },
+    {
+      "d_true_m": 3.5,
+      "probabilities": {
+        "CONFIRMED_DANGER": 0.0,
+        "CANDIDATE_REVIEW": 0.0,
+        "HIGH_PRIORITY_CANDIDATE": 0.0,
+        "CAUTION": 0.01,
+        "SAFE": 0.99
+      },
+      "mean_observed_d_m": 3.515,
+      "mean_interval_width_m": 0.956,
+      "mean_risk_score": 0.044
+    }
+  ]
+}

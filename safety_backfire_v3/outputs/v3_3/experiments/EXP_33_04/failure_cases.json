@@ -1,0 +1,12 @@
+[
+  {
+    "failure_id": "RT_DRIFT_FAILURE",
+    "description": "Camera mount vibration causing pitch drift below 20 deg",
+    "classification": "ODD_BOUNDARY"
+  },
+  {
+    "failure_id": "RT_LATENCY_FAILURE",
+    "description": "Network buffer bloat exceeding 500ms latency ceiling",
+    "classification": "SOFTWARE_ERROR"
+  }
+]

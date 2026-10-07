@@ -1,0 +1,82 @@
+{
+  "comparison_schema_version": "V3.3.3_CROSS_SCENE_COMPARISON_V1",
+  "audit_timestamp_utc": "2026-09-28T09:55:00Z",
+  "scenes": {
+    "benchmark_a": "Warehouse_026 (RUN_003)",
+    "benchmark_b": "Warehouse_027 (RUN_004 Preparation)"
+  },
+  "official_provenance": {
+    "dataset": "nvidia/PhysicalAI-SmartSpaces",
+    "subset": "MTMC_Tracking_2026/test",
+    "license": "CC-BY-4.0",
+    "nature": "real-world test capture (both scenes)"
+  },
+  "comparative_metrics": {
+    "camera_count": {
+      "Warehouse_026": 4,
+      "Warehouse_027": 7,
+      "delta": "+3 cameras (+75%)"
+    },
+    "frames_per_camera": {
+      "Warehouse_026": 1800,
+      "Warehouse_027": 1800,
+      "delta": "Identical"
+    },
+    "total_frames": {
+      "Warehouse_026": 7200,
+      "Warehouse_027": 12600,
+      "delta": "+5,400 frames (+75%)"
+    },
+    "duration_seconds": {
+      "Warehouse_026": 240.0,
+      "Warehouse_027": 420.0,
+      "delta": "+180.0 seconds"
+    },
+    "resolution": {
+      "Warehouse_026": "1920x1080",
+      "Warehouse_027": "1920x1080",
+      "delta": "Identical"
+    },
+    "fps": {
+      "Warehouse_026": 30.0,
+      "Warehouse_027": 30.0,
+      "delta": "Identical"
+    },
+    "camera_height_distribution_m": {
+      "Warehouse_026": [2.95, 3.07, 3.41, 3.60],
+      "Warehouse_026_mean_m": 3.258,
+      "Warehouse_027": [2.52, 2.56, 2.57, 2.71, 2.71, 2.86, 2.99],
+      "Warehouse_027_mean_m": 2.703,
+      "observation": "Warehouse_027 cameras are mounted significantly lower (all < 3.0m), representing a more pronounced ODD height shift."
+    },
+    "optical_axis_depression_angle_deg": {
+      "Warehouse_026": [24.33, 27.25, 27.45, 31.94],
+      "Warehouse_026_mean_deg": 27.74,
+      "Warehouse_027": [20.56, 20.63, 20.75, 28.15, 32.37, 33.77, 35.69],
+      "Warehouse_027_mean_deg": 27.42,
+      "observation": "Mean depression angle is remarkably consistent (27.74° vs 27.42°), both falling within the degraded ODD tilt range (20° to 35°)."
+    },
+    "calibration_reprojection_statistics_1000_points": {
+      "Warehouse_026": {
+        "mean_error_units": 0.0369,
+        "rmse_units": 0.0542,
+        "median_units": 0.0240,
+        "p95_units": 0.1082,
+        "max_units": 0.3630
+      },
+      "Warehouse_027": {
+        "mean_error_units": 0.0660,
+        "rmse_units": 0.0925,
+        "median_units": 0.0479,
+        "p95_units": 0.1873,
+        "max_units": 0.4498
+      },
+      "observation": "Both facilities have sub-0.10 RMSE reprojection error; Warehouse_026 is higher precision (RMSE 0.054 vs 0.093)."
+    },
+    "ground_truth_status": {
+      "Warehouse_026": "WITHHELD_BY_NVIDIA",
+      "Warehouse_027": "WITHHELD_BY_NVIDIA",
+      "statistical_generalization_status": "NOT_ESTABLISHED (prohibited from asserting statistical generalization without ground truth)"
+    }
+  }
+}

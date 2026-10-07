@@ -1,0 +1,28 @@
+{
+  "facility_id": "FACILITY_PILOT_01",
+  "source_name": "Industrial Safety Pilot Test Facility",
+  "source_uri": "https://vault.safety-ai.internal/pilot_01",
+  "acquisition_timestamp": "2026-09-28T12:00:00Z",
+  "license": "Proprietary Research & Safety Validation License",
+  "camera_count": 1,
+  "resolution": "1920x1080",
+  "fps": 30.0,
+  "duration": 1.0,
+  "synchronization_method": "HARDWARE_GENLOCK",
+  "synchronization_error_ms": 0.1,
+  "calibration_available": true,
+  "lux_available": true,
+  "bbox_gt_available": true,
+  "trajectory_gt_available": true,
+  "intervention_gt_available": true,
+  "provenance_status": "AUTHENTIC_PHYSICAL_FACILITY_INGESTED",
+  "sha256_manifest": {
+    "raw/Camera_0001.mp4": "a5368a5dc88f503cd77fcc5d2e44172b00164bc684a06635a16a97ad935e682e",
+    "metadata/camera_survey.json": "5077999e1c438ec2715566bfc265e0dc92facb065f4bcfe5cc738c9878b672f9",
+    "metadata/lux_telemetry.json": "970bfb57a6f113b23d2087e7d7e918f746da90354c6f583d8bd869fd35023793",
+    "annotations/detection_gt.json": "c389b9f29091bc4accb0ae8042099505797a028719dda3ef11093cea8ba8ea75",
+    "annotations/trajectory_gt.json": "0185eecf4aff32de8ee0bbe4aee9e30d2934724cb2d9f9a363ff933305936749",
+    "annotations/intervention_event.json": "7ae0493ef82a9967d158600a0e62fac1553fd634db1808cc638f452508ddea37",
+    "annotations/risk_evidence.json": "5788e7fcf7907ea83eb2cdcf8da506ebaf7fc69728e32fb766a8951d46f248fc"
+  }
+}

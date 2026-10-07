@@ -1,0 +1,49 @@
+{
+  "dataset_subset": "MTMC_Tracking_2026/test/Warehouse_027",
+  "cameras_count": 7,
+  "files": {
+    "Camera_0000.mp4": {
+      "sha256": "7a56955a524e8454ba63df4878a1634fba6f8f59a6136fce9b7a35c2b54a8caa",
+      "size_bytes": 36433143,
+      "size_mb": 36.43
+    },
+    "Camera_0001.mp4": {
+      "sha256": "bf1bb1fd71a811cfdab83bdad01c0c4cf426124f3e7e6635a77bbdc23f68cb45",
+      "size_bytes": 28351858,
+      "size_mb": 28.35
+    },
+    "Camera_0002.mp4": {
+      "sha256": "29bc455831e1b80210307405601a4b33fbe00430eea8839b9c8ffd3eccfd526a",
+      "size_bytes": 29101239,
+      "size_mb": 29.1
+    },
+    "Camera_0003.mp4": {
+      "sha256": "7deacc1aa539bb999ea16c0f656f52695b6fb034e6269bd80e670c090023766c",
+      "size_bytes": 27477008,
+      "size_mb": 27.48
+    },
+    "Camera_0004.mp4": {
+      "sha256": "57934396f19a0b777da07c6171985bf861f546d42c2c0203b1a6f972a9c3a210",
+      "size_bytes": 22303508,
+      "size_mb": 22.3
+    },
+    "Camera_0005.mp4": {
+      "sha256": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632",
+      "size_bytes": 16892801,
+      "size_mb": 16.89
+    },
+    "Camera_0006.mp4": {
+      "sha256": "175816231eced5e215d1733640a65757ad9c0429b3c846966342d142aed54b1a",
+      "size_bytes": 23613453,
+      "size_mb": 23.61
+    },
+    "calibration.json": {
+      "sha256": "c616492ddc892c618a765dc5924cff03e7754a6d0b9e74b71ba1c38fa723121c",
+      "size_bytes": 14164
+    },
+    "vggt_reprojection_error.txt": {
+      "sha256": "29543e21d419ab5734446ddf34138ce20e02bc0a40f1950af8990b4aea85f1ae",
+      "size_bytes": 1468
+    }
+  }
+}

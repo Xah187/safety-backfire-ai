@@ -1,0 +1,20 @@
+{
+  "lock_version": "V3.3.2_PARAMETER_LOCK",
+  "status": "LOCKED_PRE_EVALUATION",
+  "model_h_parameters": {
+    "k0": 2.4,
+    "beta_d": 0.08,
+    "beta_l": 0.12,
+    "beta_pitch": 0.22,
+    "gamma_occ": {
+      "NONE": 0.0,
+      "PARTIAL": 0.2,
+      "HEAVY": 0.4
+    }
+  },
+  "random_seeds": [
+    42,
+    1337,
+    2026
+  ]
+}

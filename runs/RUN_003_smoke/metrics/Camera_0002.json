@@ -1,0 +1,29 @@
+{
+  "camera_id": "Camera_0002",
+  "video_file": "Camera_0002.mp4",
+  "total_frames": 1800,
+  "processed_frames": 100,
+  "total_detections": 201,
+  "person_detections": 201,
+  "detections_per_frame": 2.01,
+  "person_detections_per_frame": 2.01,
+  "mean_confidence": 0.7174,
+  "median_confidence": 0.7101,
+  "min_confidence": 0.5089,
+  "max_confidence": 0.8068,
+  "frames_with_person": 100,
+  "frames_without_person": 0,
+  "processing_time_sec": 1.78,
+  "effective_fps": 56.3,
+  "confidence_distribution": {
+    "p01": 0.5648,
+    "p05": 0.6147,
+    "p25": 0.65,
+    "p50": 0.7101,
+    "p75": 0.7818,
+    "p95": 0.7978,
+    "p99": 0.8032
+  },
+  "validation_errors_count": 0,
+  "validation_status": "PASS"
+}

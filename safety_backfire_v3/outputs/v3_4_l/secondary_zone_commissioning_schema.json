@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SecondaryZoneCommissioningSchema",
+  "description": "Validation schema for cross-aisle secondary hazard zone observability and sensor commissioning.",
+  "type": "object",
+  "required": [
+    "commissioning_id",
+    "timestamp_utc",
+    "facility_id",
+    "zone_id",
+    "implementation_type",
+    "sensor_sources",
+    "geometric_depth_extent",
+    "blind_pockets_survey",
+    "field_observability_verification",
+    "secondary_depth_visible_state",
+    "secondary_gate_c4_status"
+  ],
+  "properties": {
+    "commissioning_id": {
+      "type": "string",
+      "pattern": "^SEC-ZONE-COMM-[0-9]{8}-[0-9]{4}$"
+    },
+    "timestamp_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "facility_id": {
+      "type": "string"
+    },
+    "zone_id": {
+      "type": "string",
+      "enum": ["ZONE_CROSS_AISLE_EAST", "ZONE_CROSS_AISLE_WEST", "ZONE_INTERSECTION_NORTH"]
+    },
+    "implementation_type": {
+      "type": "string",
+      "enum": [
+        "CAMERA_C_STANDALONE",
+        "CAMERA_C_PLUS_FIXED_LIDAR",
+        "CAMERA_C_PLUS_UWB_BEACON_ARRAY",
+        "CAMERA_C_PLUS_RADAR_COMBO"
+      ]
+    },
+    "sensor_sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["sensor_id", "modality", "serial_number", "mount_height_m", "mount_pitch_deg", "calibration_hash"],
+        "properties": {
+          "sensor_id": { "type": "string" },
+          "modality": { "type": "string", "enum": ["CAMERA_OPTICAL", "SOLID_STATE_LIDAR", "UWB_ANCHOR", "77GHZ_RADAR"] },
+          "serial_number": { "type": "string" },
+          "mount_height_m": { "type": "number", "minimum": 2.5 },
+          "mount_pitch_deg": { "type": "number" },
+          "calibration_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        }
+      }
+    },
+    "geometric_depth_extent": {
+      "type": "object",
+      "required": ["required_depth_m", "verified_unobstructed_depth_m", "width_m", "aisle_clearance_status"],
+      "properties": {
+        "required_depth_m": { "type": "number", "const": 20.0, "description": "DESIGN_REQUIREMENT: minimum 20m depth penetration into cross aisle" },
+        "verified_unobstructed_depth_m": { "type": "number", "minimum": 0.0 },
+        "width_m": { "type": "number", "minimum": 3.0 },
+        "aisle_clearance_status": { "type": "string", "enum": ["CLEAR_OF_OBSTRUCTIONS", "PARTIALLY_BLOCKED_BY_RACKS"] }
+      }
+    },
+    "blind_pockets_survey": {
+      "type": "object",
+      "required": ["blind_pocket_count", "blind_regions", "mitigation_strategy"],
+      "properties": {
+        "blind_pocket_count": { "type": "integer", "minimum": 0 },
+        "blind_regions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["pocket_id", "relative_coords_xyz", "volume_m3", "critical_hazard_zone"],
+            "properties": {
+              "pocket_id": { "type": "string" },
+              "relative_coords_xyz": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3 },
+              "volume_m3": { "type": "number" },
+              "critical_hazard_zone": { "type": "boolean" }
+            }
+          }
+        },
+        "mitigation_strategy": { "type": "string" }
+      }
+    },
+    "field_observability_verification": {
+      "type": "object",
+      "required": [
+        "physical_target_deployed",
+        "target_distance_verified_m",
+        "pixel_density_at_limit_px_per_m",
+        "dynamic_motion_detectable",
+        "field_proven_by_physical_target"
+      ],
+      "properties": {
+        "physical_target_deployed": { "type": "string", "enum": ["STANDARDIZED_CALIBRATION_MANNEQUIN", "TEST_CART_REFLECTIVE"] },
+        "target_distance_verified_m": { "type": "number" },
+        "pixel_density_at_limit_px_per_m": { "type": "number", "minimum": 65.0 },
+        "dynamic_motion_detectable": { "type": "boolean" },
+        "field_proven_by_physical_target": {
+          "type": "boolean",
+          "description": "Must be physically proven by placing target at 20m and verifying visual and/or pointcloud tracking"
+        }
+      }
+    },
+    "secondary_depth_visible_state": {
+      "type": "string",
+      "enum": ["FALSE_UNVERIFIED", "FALSE_INSUFFICIENT_DEPTH", "TRUE_FIELD_PROVEN"],
+      "description": "Strict semantic invariant: CANNOT be TRUE until field_proven_by_physical_target is TRUE and verified_unobstructed_depth_m >= required_depth_m."
+    },
+    "secondary_gate_c4_status": {
+      "type": "string",
+      "enum": ["GATE_PASS", "GATE_REJECTED"]
+    }
+  }
+}

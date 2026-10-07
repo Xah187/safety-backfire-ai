@@ -1,0 +1,53 @@
+{
+  "registry_version": "CENTRAL01_EXCLUSION_REGISTRY_V3_3_3",
+  "audit_timestamp_utc": "2026-09-25T15:30:00Z",
+  "status": "ACTIVE_ENFORCEMENT",
+  "protected_facility_id": "FACILITY_CENTRAL_01",
+  "banned_facility_identifiers": [
+    "FACILITY_CENTRAL_01",
+    "FACILITY_01",
+    "CENTRAL_01",
+    "DOOR_4_1",
+    "CCTV_DOOR_4_1"
+  ],
+  "banned_camera_identifiers": [
+    "CAM_SECTOR_A_01",
+    "CAM_SECTOR_B_02",
+    "CAM_SECTOR_C_03",
+    "CAM_SECTOR_D_04",
+    "CCTV_DOOR_4_1"
+  ],
+  "known_source_file_hashes": {
+    "test.mp4": "ea323b3c12bb7b4c006222b3677452a8d4de39f7a6e7785612272e567cef72cb",
+    "test2.mp4": "eebcbec58caebef3615aee75631232aab3bf46b04997047ca1e6486b14482e38",
+    "v23_ref_f00050.jpg": "a1719f4b8d841787e9aae957b5af85138bfd8ad1a3b043748fb6797e5de9884a",
+    "v23_ref_f00200.jpg": "64841e49d6526673d6e99a322902e4a4693b0eacad0e59aaedfbdaab50bea22d",
+    "v23_ref_f00400.jpg": "6fce95a45423d8dabee69b3e3564c8976e7e240441edf63c912fb6f0769cfd56",
+    "v23_ref_f00600.jpg": "59aea09c639590fe4a78095f952258f29d7a36eaa812c2c2002504f023b0ff3b"
+  },
+  "keyframe_perceptual_hashes_256bit": {
+    "test2_frame_0": "fff6ffe6ff36ff16ff34ff34edacfde83de825e001e008e021e001e001c80180",
+    "test2_frame_100": "fff6ffe6ff36ff16ff34ff34edacfde83de825e001e009e021e001e003c80180",
+    "test2_frame_200": "fff6ffe6ff16ff16ff14ff34edacfde83de825e001e009e021e003c001800100",
+    "test2_frame_300": "fff6ffe6ff1eff5eff54ff34ed2cfd283de825e001e009e021e003c007c80d80",
+    "test2_frame_400": "fff6ffeeff36ff36ff74fff4ed2cfd283d28252001000900212000000e080c00",
+    "test2_frame_500": "fff6ffeeff3fff3eff35fff4edecfd883d882d1005000900610026003e001e00",
+    "test2_frame_600": "fff6ffe6ff16ff16ff34ff34edecfde83de825e001e009e021c003c003c00000",
+    "test2_frame_700": "fff6ffe6ff16ff16ff34ff34edacfde83de825f001e009e021e001c001800000",
+    "test2_frame_800": "fff6ffe6ff3eff3eff34ff34edecfde43de225e005e009e021e003c007c00700",
+    "test2_frame_900": "fff6ffe6ff36ff36ff34ffb4efecffe83de82fe015e00dc021c0048004000000",
+    "test2_frame_1000": "fff6ffe6ff36ff16ff34ff34edacfde83de0a5e085e00de021e003c003800100",
+    "test2_frame_1100": "fff6ffe6ff3eff3eff34ff34edacfde83de02fe015e00de021c007c00fc00f00",
+    "test2_frame_1200": "fff6ffeeff3eff16ff34ff34edacfde83de825e011e001e061e023c020400080",
+    "test_frame_0": "100030000fe03ffc3ffc3ffc1ffc3ff83ff03fc03fd03ff83ff83ffc3ffc0000",
+    "test_frame_100": "100030000fe03ffc3ffc3ffc1ff83ff83fd03fc83fd83ff83ff83ffc3ffc0000",
+    "test_frame_200": "100030000fe03ffc3ffc3ffc1ff83ff83ff03fd83ed83ff83ffc3ffc3ffc0000",
+    "test_frame_300": "100030000fe03ffc3ffc3ffc1ff83ff83ff03fd83fd83ff83ffc3ffc3ffc0000",
+    "test_frame_400": "100030000fe03ffc3ffc3ffc1ff83ff83ff03fc83fd83fe83ff83ffc3ff40000"
+  },
+  "exclusion_rules": {
+    "rule_1_cryptographic_hash_match": "Any ingested file matching known Central 01 SHA-256 is immediately rejected as CENTRAL01_FILE_MATCH_REJECTED.",
+    "rule_2_perceptual_hash_similarity": "Any file whose frames match Central 01 keyframe hashes with Hamming distance <= 15 is rejected as SYNTHETIC_SUBSTITUTE_REJECTED (even if resized, cropped, or transcoded).",
+    "rule_3_metadata_identity_match": "Any dataset declaring Facility Central 01 or its known camera IDs is rejected as CENTRAL01_METADATA_MATCH_REJECTED."
+  }
+}

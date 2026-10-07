@@ -1,0 +1,83 @@
+{
+  "verification_id": "V3.4_LOCAL_NVIDIA_PROVENANCE_VERIFICATION_V1",
+  "timestamp_utc": "2026-09-29T10:06:10.180302+00:00",
+  "dataset_name": "nvidia/PhysicalAI-SmartSpaces",
+  "dataset_provenance": "MIXED_PROVENANCE_DATASET",
+  "scenes": {
+    "Warehouse_026": "REAL_WORLD_TEST_CAPTURE",
+    "Warehouse_027": "REAL_WORLD_TEST_CAPTURE"
+  },
+  "ground_truth": "WITHHELD_FOR_TEST_SCENES",
+  "physical_lux": "NOT_AVAILABLE_IN_RELEASE",
+  "calibration": "DATASET_PROVIDED",
+  "source_urls": {
+    "SOURCE_URL": "https://huggingface.co/datasets/nvidia/PhysicalAI-SmartSpaces",
+    "WH026_URL": "https://huggingface.co/datasets/nvidia/PhysicalAI-SmartSpaces/tree/main/MTMC_Tracking_2026/test/Warehouse_026",
+    "WH027_URL": "https://huggingface.co/datasets/nvidia/PhysicalAI-SmartSpaces/tree/main/MTMC_Tracking_2026/test/Warehouse_027"
+  },
+  "source_git_commit": "1eebcf0f74a510994fe4c886f4fa77fbc6724ea8",
+  "calibration_governance": {
+    "CALIBRATION_STATUS": "DATASET_PROVIDED",
+    "physical_surveying_inferred": false,
+    "prohibited_designations": [
+      "PHYSICALLY_SURVEYED",
+      "INDEPENDENTLY_SURVEYED",
+      "TOTAL_STATION_VERIFIED",
+      "VIRTUAL_SYNTHETIC_CALIBRATION"
+    ],
+    "mandatory_disclosure": "The dataset provides calibration matrices. The available project evidence does not independently establish the underlying field-survey methodology or measurement uncertainty."
+  },
+  "historical_linkage": {
+    "RUN_003": {
+      "run_id": "RUN_003_NVIDIA_WAREHOUSE_026",
+      "RUN_003_ACTUAL_INPUT_PATH": "/Users/xah187/Projects/safety-backfire-ai/data/external_facility/raw/Warehouse_026/MTMC_Tracking_2026/test/Warehouse_026",
+      "script_reference": "safety_backfire_v3_3_3/experiments/execute_run_003_nvidia_warehouse.py",
+      "manifest_reference": "safety_backfire_v3/outputs/v3_3_3/exp_333_01/runs/RUN_003_NVIDIA_WAREHOUSE_026/run_manifest.json",
+      "video_hashes_at_run": {
+        "Camera_0000": "83ed232a2f5fe3031807ed19020e1a44fe386e89b68f9bea621797f1552c9cda",
+        "Camera_0001": "dd37e801eec30528e2af88d137eb3c9b68306b29ac56c014fe1f68293767bfca",
+        "Camera_0002": "abe39e20ef9b2b9c64b2e66f082809951540c8c719d4fe31d5a5e0176af928ee",
+        "Camera_0003": "9051adb98e17a1425c6d70486972f2dd17f7ada0c0f8023db64d504bc2bc0077"
+      },
+      "hash_match_with_current": "MATCH"
+    },
+    "RUN_004": {
+      "run_id": "RUN_004_NVIDIA_WAREHOUSE_027",
+      "RUN_004_ACTUAL_INPUT_PATH": "/Users/xah187/Projects/safety-backfire-ai/data/external_facility_02/raw/Warehouse_027/MTMC_Tracking_2026/test/Warehouse_027",
+      "script_reference": "safety_backfire_v3_3_3/experiments/execute_run_004_nvidia_warehouse_027.py",
+      "manifest_reference": "data/external_facility_02/manifests/warehouse_027_file_manifest.json",
+      "video_hashes_at_run": {
+        "Camera_0000": "7a56955a524e8454ba63df4878a1634fba6f8f59a6136fce9b7a35c2b54a8caa",
+        "Camera_0001": "bf1bb1fd71a811cfdab83bdad01c0c4cf426124f3e7e6635a77bbdc23f68cb45",
+        "Camera_0002": "29bc455831e1b80210307405601a4b33fbe00430eea8839b9c8ffd3eccfd526a",
+        "Camera_0003": "7deacc1aa539bb999ea16c0f656f52695b6fb034e6269bd80e670c090023766c",
+        "Camera_0004": "57934396f19a0b777da07c6171985bf861f546d42c2c0203b1a6f972a9c3a210",
+        "Camera_0005": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632",
+        "Camera_0006": "175816231eced5e215d1733640a65757ad9c0429b3c846966342d142aed54b1a"
+      },
+      "hash_match_with_current": "MATCH"
+    }
+  },
+  "duplicates_registry": {
+    "Warehouse_027_downloads_copy": {
+      "path": "/Users/xah187/Downloads",
+      "file_count": 8,
+      "DUPLICATE_IDENTICAL": true,
+      "DUPLICATE_CONFLICT": false
+    },
+    "Warehouse_027_auxiliary_calibration": {
+      "path": "/Users/xah187/Projects/safety-backfire-ai/data/external_facility_02/calibration/calibration.json",
+      "DUPLICATE_IDENTICAL": true,
+      "DUPLICATE_CONFLICT": false
+    }
+  },
+  "final_verdict": {
+    "LOCAL_NVIDIA_DATASET": "FOUND",
+    "WH026": "VERIFIED",
+    "WH027": "VERIFIED",
+    "PROVENANCE": "VERIFIED",
+    "HASH_INTEGRITY": "PASS",
+    "NO_DOWNLOAD_REQUIRED": true,
+    "V3_4_ACQUISITION_STATE": "LOCAL_DATA_READY_FOR_VALIDATION"
+  }
+}

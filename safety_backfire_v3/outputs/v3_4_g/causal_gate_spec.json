@@ -1,0 +1,81 @@
+{
+  "gate_name": "CausalAndConfounderGateSpecification",
+  "milestone": "V3.4-G",
+  "version": "1.0.0",
+  "governance_invariants": {
+    "safety_backfire_gt": "NOT_ESTABLISHED",
+    "prohibit_delta_alone": "Delta_R_sec > 0 ALONE is insufficient to establish Backfire without verified temporal and physical causal linkage.",
+    "prohibit_post_hoc_attribution": "Events occurring in POST window cannot be retroactively assigned to intervention without continuous causal tracing."
+  },
+  "gate_objective": "Verify that any observed secondary risk increase is strictly and demonstrably caused by the primary safety intervention, rather than independent facility dynamics or confounding traffic.",
+  "secondary_risk_delta_contract": {
+    "formulation": "Delta_R_sec = R_sec_POST - R_sec_PRE",
+    "prerequisites": [
+      {
+        "criterion": "R_sec_PRE_established",
+        "description": "Secondary zone hazard state must be quantified during baseline window T0 (duration >= 4.0s)."
+      },
+      {
+        "criterion": "R_sec_POST_established",
+        "description": "Secondary zone hazard state must be quantified during post-intervention window T5 (duration >= 4.0s)."
+      }
+    ],
+    "causal_linkage_requirements": {
+      "temporal_link_to_intervention": {
+        "type": "boolean",
+        "required": true,
+        "definition": "The onset of secondary hazard must occur strictly within delta_t <= 2.0s following the primary intervention maneuver."
+      },
+      "observable_causal_path": {
+        "type": "string",
+        "allowed_values": ["TRUE", "PARTIAL", "FALSE"],
+        "required": ["TRUE", "PARTIAL"],
+        "definition": "A continuous physical path connecting the vehicle swerve, load deflection, or displaced worker into the secondary zone."
+      }
+    }
+  },
+  "confounder_isolation_contract": {
+    "confounder_assessment": {
+      "type": "string",
+      "enum": ["YES", "NO", "UNKNOWN"],
+      "description": "Indicates whether independent facility activity coincided with the event window."
+    },
+    "confounder_typologies": {
+      "NEW_ACTOR": {
+        "description": "A previously undetected worker enters the secondary zone from outside the camera frame.",
+        "impact": "If entry occurred independently of vehicle avoidance, CAUSAL_ISOLATION = FAILED."
+      },
+      "NEW_FORKLIFT": {
+        "description": "A secondary vehicle enters the scene during the post-window (e.g. UNION_CAND_Warehouse_027_003).",
+        "impact": "Severely compromises causal attribution. Route to INSUFFICIENT_BACKFIRE_EVIDENCE."
+      },
+      "TRACK_HANDOFF": {
+        "description": "Automated tracker switches track ID or conflates two distinct vehicles/persons.",
+        "impact": "Invalidates trajectory continuity. Route to INSUFFICIENT_BACKFIRE_EVIDENCE."
+      },
+      "INDEPENDENT_WORKER_CLUSTER": {
+        "description": "Shift-change routine or group transit across adjacent corridor (e.g. UNION_CAND_Warehouse_027_001).",
+        "impact": "Competitively explains secondary pedestrian density. CAUSAL_ISOLATION = FAILED."
+      },
+      "UNRELATED_TRAFFIC": {
+        "description": "High-density multi-forklift operations (e.g. UNION_CAND_Warehouse_026_014 with 5 active forklifts).",
+        "impact": "Cross-cutting traffic prevents single-cause attribution. CAUSAL_ISOLATION = FAILED."
+      }
+    },
+    "causal_isolation_rule": {
+      "condition": "IF confounder_present == YES AND confounder_competitively_explains_secondary_change == TRUE",
+      "action": "Set CAUSAL_ISOLATION_STATUS = FAILED and force candidate_class = INSUFFICIENT_BACKFIRE_EVIDENCE."
+    }
+  },
+  "temporal_precedence_invariants": {
+    "stages": [
+      { "stage": "T0", "name": "PRE_BASELINE", "order": 0, "description": "Baseline unperturbed state." },
+      { "stage": "T1", "name": "PRIMARY_INTERACTION", "order": 1, "description": "Vehicle and pedestrian trajectories converge." },
+      { "stage": "T2", "name": "INTERVENTION", "order": 2, "description": "Safety deceleration or avoidance maneuver executed." },
+      { "stage": "T3", "name": "PRIMARY_MITIGATION", "order": 3, "description": "Collision in primary zone successfully averted." },
+      { "stage": "T4", "name": "RISK_REDIRECTION", "order": 4, "description": "Kinetic energy or worker displacement directed toward secondary zone." },
+      { "stage": "T5", "name": "SECONDARY_EXPOSURE_POST", "order": 5, "description": "Hazard manifests in secondary zone." }
+    ],
+    "strict_ordering_rule": "T0 < T1 < T2 <= T3 <= T4 < T5. Any violation invalidates Backfire candidacy."
+  }
+}

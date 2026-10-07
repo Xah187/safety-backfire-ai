@@ -1,0 +1,21 @@
+{
+  "candidate_id": "CAND_Warehouse_027_028",
+  "instructions": "Review before.mp4, intervention.mp4, after.mp4, and contact_sheet.jpg. Evaluate whether this event constitutes a valid Safety Backfire event according to the 7 canonical criteria.",
+  "evaluation_criteria": {
+    "criterion_1_clear_intervention": "Is there a distinct physical intervention/avoidance maneuver?",
+    "criterion_2_measurable_pre_risk": "Was there measurable risk in the primary zone prior to intervention?",
+    "criterion_3_primary_risk_reduced": "Did risk in the primary zone decrease or mitigate as intended?",
+    "criterion_4_secondary_risk_escalated": "Did measurable risk escalate in a secondary/adjacent zone?",
+    "criterion_5_causal_mechanism": "Is there a plausible causal relationship connecting the intervention to the secondary hazard?",
+    "criterion_6_independent_evidence": "Is evidence supported by objective video/telemetry rather than assumption?",
+    "criterion_7_inter_rater_consensus": "Do at least two independent evaluators concur?"
+  },
+  "review_inputs": {
+    "reviewer_id": null,
+    "review_timestamp_utc": null,
+    "label_decision": null,
+    "evidence_quality": null,
+    "causal_link_confidence": null,
+    "notes": ""
+  }
+}

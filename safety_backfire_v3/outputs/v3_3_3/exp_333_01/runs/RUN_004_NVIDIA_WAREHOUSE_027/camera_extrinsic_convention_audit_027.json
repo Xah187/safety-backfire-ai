@@ -1,0 +1,126 @@
+{
+  "schema_version": "V3.3.3_CAMERA_EXTRINSIC_CONVENTION_AUDIT_027_V1",
+  "run_id": "RUN_004_NVIDIA_WAREHOUSE_027",
+  "timestamp_utc": "2026-09-28T09:59:50.258695+00:00",
+  "conventions_enforced": {
+    "rotation_convention": "World-to-Camera x_cam = R * X_w + t",
+    "camera_world_position": "C = -R^T * t",
+    "optical_axis_vector": "v_opt = R^T * [0, 0, 1]",
+    "physical_depression_angle": "-arcsin(v_opt[2])",
+    "euler_zyx_comparison": "atan2(-R[2,0], sqrt(R[2,1]^2 + R[2,2]^2))"
+  },
+  "per_camera_audit": {
+    "Camera_0000": {
+      "camera_world_pos_m": [
+        0.001,
+        0.001,
+        2.864
+      ],
+      "camera_height_m": 2.864,
+      "optical_axis_world": [
+        -0.02792,
+        0.84414,
+        -0.53539
+      ],
+      "physical_optical_depression_deg": 32.37,
+      "raw_euler_zyx_deg": 1.6,
+      "pitch_governance_decision": "DEPRESSION_ANGLE_APPLIED (Euler artifact discarded)"
+    },
+    "Camera_0001": {
+      "camera_world_pos_m": [
+        3.298,
+        19.403,
+        2.517
+      ],
+      "camera_height_m": 2.517,
+      "optical_axis_world": [
+        -0.202,
+        -0.91382,
+        -0.35233
+      ],
+      "physical_optical_depression_deg": 20.63,
+      "raw_euler_zyx_deg": 11.65,
+      "pitch_governance_decision": "DEPRESSION_ANGLE_APPLIED (Euler artifact discarded)"
+    },
+    "Camera_0002": {
+      "camera_world_pos_m": [
+        -0.061,
+        -0.094,
+        2.712
+      ],
+      "camera_height_m": 2.712,
+      "optical_axis_world": [
+        -0.80291,
+        0.12211,
+        -0.58346
+      ],
+      "physical_optical_depression_deg": 35.69,
+      "raw_euler_zyx_deg": 53.41,
+      "pitch_governance_decision": "DEPRESSION_ANGLE_APPLIED (Euler artifact discarded)"
+    },
+    "Camera_0003": {
+      "camera_world_pos_m": [
+        -9.8,
+        1.441,
+        2.566
+      ],
+      "camera_height_m": 2.566,
+      "optical_axis_world": [
+        0.20216,
+        0.91299,
+        -0.35437
+      ],
+      "physical_optical_depression_deg": 20.75,
+      "raw_euler_zyx_deg": -11.66,
+      "pitch_governance_decision": "DEPRESSION_ANGLE_APPLIED (Euler artifact discarded)"
+    },
+    "Camera_0004": {
+      "camera_world_pos_m": [
+        -12.466,
+        2.067,
+        2.556
+      ],
+      "camera_height_m": 2.556,
+      "optical_axis_world": [
+        0.93052,
+        -0.10397,
+        -0.35118
+      ],
+      "physical_optical_depression_deg": 20.56,
+      "raw_euler_zyx_deg": -68.52,
+      "pitch_governance_decision": "DEPRESSION_ANGLE_APPLIED (Euler artifact discarded)"
+    },
+    "Camera_0005": {
+      "camera_world_pos_m": [
+        -11.294,
+        6.051,
+        2.71
+      ],
+      "camera_height_m": 2.71,
+      "optical_axis_world": [
+        0.86651,
+        -0.16298,
+        -0.47181
+      ],
+      "physical_optical_depression_deg": 28.15,
+      "raw_euler_zyx_deg": -60.06,
+      "pitch_governance_decision": "DEPRESSION_ANGLE_APPLIED (Euler artifact discarded)"
+    },
+    "Camera_0006": {
+      "camera_world_pos_m": [
+        3.892,
+        3.011,
+        2.988
+      ],
+      "camera_height_m": 2.988,
+      "optical_axis_world": [
+        -0.78284,
+        0.27969,
+        -0.55582
+      ],
+      "physical_optical_depression_deg": 33.77,
+      "raw_euler_zyx_deg": 51.52,
+      "pitch_governance_decision": "DEPRESSION_ANGLE_APPLIED (Euler artifact discarded)"
+    }
+  }
+}

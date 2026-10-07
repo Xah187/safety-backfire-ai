@@ -1,0 +1,268 @@
+{
+  "catalog_version": "V3.1",
+  "total_failures_cataloged": 37,
+  "resolved_failures": 33,
+  "documented_boundaries": 4,
+  "open_defects": 0,
+  "failures": [
+    {
+      "id": "FAIL-01",
+      "sev": "CRITICAL",
+      "release": "V2.9",
+      "cause": "Multi-vehicle association collision & track identity cross-talk",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-02",
+      "sev": "HIGH",
+      "release": "V2.9",
+      "cause": "1D TTC crossing false positives from lateral crossing paths",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-03",
+      "sev": "CRITICAL",
+      "release": "V2.9",
+      "cause": "Man-Down candidate rejection on upright recovery",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-04",
+      "sev": "CRITICAL",
+      "release": "V2.9",
+      "cause": "RiskEngine crash on schema mismatch",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-05",
+      "sev": "HIGH",
+      "release": "V2.9",
+      "cause": "Running pedestrian vs operating vehicle misclassification",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-06",
+      "sev": "HIGH",
+      "release": "V2.9",
+      "cause": "Safety state ambiguity between static caution & active hazard",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-07",
+      "sev": "HIGH",
+      "release": "V2.9",
+      "cause": "Event episode fragmentation on tracker ID switch",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-08",
+      "sev": "HIGH",
+      "release": "V2.9",
+      "cause": "Sequential live throughput bottleneck (<15 FPS)",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-09",
+      "sev": "MEDIUM",
+      "release": "V2.9",
+      "cause": "Ephemeral memory leak across long video files",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-10",
+      "sev": "HIGH",
+      "release": "V2.9",
+      "cause": "Elevated cabin homography distortion up to 2.5m",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-11",
+      "sev": "MEDIUM",
+      "release": "V2.9",
+      "cause": "Overlapping bounding box occlusion suppression",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-12",
+      "sev": "LOW",
+      "release": "V2.9",
+      "cause": "Inconsistent warning confidence thresholds across models",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-13",
+      "sev": "HIGH",
+      "release": "V3.0.1",
+      "cause": "Identity ReID drift across visually similar uniforms",
+      "status": "DOCUMENTED BOUNDARY"
+    },
+    {
+      "id": "FAIL-14",
+      "sev": "CRITICAL",
+      "release": "V3.0.1",
+      "cause": "Async queue lock contention under high-frequency ingress",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-15",
+      "sev": "HIGH",
+      "release": "V3.0.1",
+      "cause": "False Man-Down trigger on crouching or stooping workers",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-16",
+      "sev": "MEDIUM",
+      "release": "V3.0.1",
+      "cause": "Temporal starvation of kinematics during frame drops",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-17",
+      "sev": "HIGH",
+      "release": "V3.0.1",
+      "cause": "Premature event episode termination during occlusions",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-18",
+      "sev": "HIGH",
+      "release": "V3.0.1",
+      "cause": "Asynchronous pose freshness gap at moment of safety decision",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-19",
+      "sev": "HIGH",
+      "release": "V3.0.1",
+      "cause": "Perspective elevation compensation sensitive to camera pitch",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-20",
+      "sev": "MEDIUM",
+      "release": "V3.0.1",
+      "cause": "Rapid oscillating state transitions near boundary thresholds",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-21",
+      "sev": "MEDIUM",
+      "release": "V3.0.1",
+      "cause": "Worker thread leak during abrupt pipeline shutdown",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-22",
+      "sev": "HIGH",
+      "release": "V3.0.1",
+      "cause": "Point-estimate risk ignores geometry uncertainty",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-23",
+      "sev": "CRITICAL",
+      "release": "V3.0.3",
+      "cause": "Uncertainty under-coverage (89.0%) due to Jensen convexity",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-24",
+      "sev": "HIGH",
+      "release": "V3.0.3",
+      "cause": "Linear elevation truncation breakdown (667.9 px)",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-25",
+      "sev": "MEDIUM",
+      "release": "V3.0.3",
+      "cause": "Benchmark synthetic timestamp de-synchronization",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-26",
+      "sev": "MEDIUM",
+      "release": "V3.0.4",
+      "cause": "Far-field monocular depth dilution (D > 10m)",
+      "status": "DOCUMENTED BOUNDARY"
+    },
+    {
+      "id": "FAIL-27",
+      "sev": "MEDIUM",
+      "release": "V3.0.4",
+      "cause": "Non-planar warehouse floor gradients / ramp distortions",
+      "status": "DOCUMENTED BOUNDARY"
+    },
+    {
+      "id": "FAIL-28",
+      "sev": "HIGH",
+      "release": "V3.0.5",
+      "cause": "In-sample calibration leakage in uncertainty engine",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-29",
+      "sev": "HIGH",
+      "release": "V3.0.5",
+      "cause": "Trajectory threat inversion in caution zone policy branch",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-30",
+      "sev": "HIGH",
+      "release": "V3.0.5",
+      "cause": "Camera pitch mechanical deflection drift sensitivity",
+      "status": "DOCUMENTED BOUNDARY"
+    },
+    {
+      "id": "FAIL-31",
+      "sev": "HIGH",
+      "release": "V3.1",
+      "cause": "Entity Subtype Hallucination under Occlusion (fail closed to UNKNOWN_PERSON)",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-32",
+      "sev": "MEDIUM",
+      "release": "V3.1",
+      "cause": "Relation Zone False Positive from 2D Bbox Footpoint Bleed",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-33",
+      "sev": "CRITICAL",
+      "release": "V3.1",
+      "cause": "Counterfactual Temporal Baseline Leakage (post-intervention frame contamination)",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-34",
+      "sev": "HIGH",
+      "release": "V3.1",
+      "cause": "Inappropriate Kinetic TTC Computation on Stationary Structural Hazard (v=0)",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-35",
+      "sev": "HIGH",
+      "release": "V3.1",
+      "cause": "Cross-Hazard Risk Masking (benign relation suppressing critical collapse hazard)",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-36",
+      "sev": "CRITICAL",
+      "release": "V3.1",
+      "cause": "Aggregate Risk Transfer Blindness (average risk drops while egress blockage is created)",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "FAIL-37",
+      "sev": "HIGH",
+      "release": "V3.1",
+      "cause": "Temporal Entity State Resurrection across Tracking Dropouts",
+      "status": "RESOLVED"
+    }
+  ]
+}

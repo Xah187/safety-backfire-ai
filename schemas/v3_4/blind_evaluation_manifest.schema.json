@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safety-backfire-ai.org/schemas/v3_4/blind_evaluation_manifest.schema.json",
+  "title": "V3.4 Facility-Level Blind Evaluation Manifest Schema",
+  "description": "Schema enforcing facility-level blind splits, withholding ground-truth labels until formal audit evaluation.",
+  "type": "object",
+  "required": [
+    "manifest_id",
+    "creation_timestamp",
+    "milestone",
+    "split_policy",
+    "facility_splits",
+    "held_out_facilities",
+    "unlabelled_evaluation_assets",
+    "withheld_ground_truth_hashes",
+    "access_lock_status"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "manifest_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique identifier for this blind evaluation configuration."
+    },
+    "creation_timestamp": {
+      "type": "string",
+      "description": "ISO 8601 generation timestamp."
+    },
+    "milestone": {
+      "type": "string",
+      "description": "Project milestone (e.g. SAFETY_BACKFIRE_AI_V3.4)."
+    },
+    "split_policy": {
+      "type": "string",
+      "enum": [
+        "FACILITY_LEVEL_HOLDOUT"
+      ],
+      "description": "Strict partition policy. Random frame-level splitting across same facility is prohibited."
+    },
+    "facility_splits": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "string",
+        "enum": [
+          "TRAIN_EXPLORATION",
+          "BLIND_EVALUATION"
+        ]
+      },
+      "description": "Mapping from facility_id to designated evaluation partition."
+    },
+    "held_out_facilities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      },
+      "description": "List of facilities quarantined for blind evaluation."
+    },
+    "unlabelled_evaluation_assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "facility_id",
+          "camera_id",
+          "video_rel_path",
+          "camera_survey_rel_path",
+          "sha256"
+        ],
+        "properties": {
+          "facility_id": { "type": "string" },
+          "camera_id": { "type": "string" },
+          "video_rel_path": { "type": "string" },
+          "camera_survey_rel_path": { "type": "string" },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        }
+      },
+      "description": "List of raw videos and surveys released to model inference without GT."
+    },
+    "withheld_ground_truth_hashes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      "description": "Cryptographic commitment hashes of withheld GT annotation files."
+    },
+    "access_lock_status": {
+      "type": "string",
+      "enum": [
+        "LOCKED_UNTIL_EVALUATION_COMPLETION",
+        "RELEASED_FOR_FINAL_ADJUDICATION"
+      ],
+      "description": "Access governance status of ground-truth files."
+    }
+  }
+}

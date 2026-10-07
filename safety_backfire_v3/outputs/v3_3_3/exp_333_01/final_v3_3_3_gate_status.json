@@ -1,0 +1,113 @@
+{
+  "manifest_version": "V3.3.3_FINAL_EXTERNAL_GATE_STATUS_V1",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "timestamp_utc": "2026-09-28T10:22:00Z",
+  "baseline_lock": {
+    "baseline_version": "V3.3.2_FINAL_RECONCILED",
+    "k0": 2.40,
+    "beta_d": 0.08,
+    "beta_l": 0.12,
+    "beta_pitch": 0.22,
+    "pitch_threshold_deg": 40.0,
+    "gamma_occ": {
+      "NONE": 0.0,
+      "PARTIAL": 0.20,
+      "HEAVY": 0.40
+    },
+    "zero_hash_drift": true,
+    "zero_parameter_tuning": true,
+    "zero_retraining": true
+  },
+  "runs_synthesis": {
+    "RUN_001": {
+      "id": "RUN_001_INVALIDATED_RUNTIME_MISMATCH",
+      "dataset": "0_te11.mp4",
+      "status": "INVALIDATED_PRESERVED",
+      "frames": 173
+    },
+    "RUN_002": {
+      "id": "RUN_002_CANONICAL_CONFORMANCE",
+      "dataset": "0_te11.mp4",
+      "status": "COMPLETED_CONFORMANT_INPUT_INSUFFICIENT",
+      "frames": 173
+    },
+    "RUN_003": {
+      "id": "RUN_003_NVIDIA_WAREHOUSE_026",
+      "dataset": "NVIDIA PhysicalAI-SmartSpaces (Warehouse_026)",
+      "cameras": 4,
+      "frames": 7200,
+      "detections": 10942,
+      "tracks": 81,
+      "mean_distance_m": 6.923,
+      "mean_optical_depression_deg": 27.74,
+      "status": "EXECUTED_EXTERNAL_BENCHMARK_WITH_LIMITATIONS"
+    },
+    "RUN_004": {
+      "id": "RUN_004_NVIDIA_WAREHOUSE_027",
+      "dataset": "NVIDIA PhysicalAI-SmartSpaces (Warehouse_027)",
+      "cameras": 7,
+      "frames": 12600,
+      "detections": 34894,
+      "tracks": 237,
+      "mean_distance_m": 6.342,
+      "mean_optical_depression_deg": 27.42,
+      "status": "EXECUTED_EXTERNAL_BENCHMARK_WITH_LIMITATIONS"
+    }
+  },
+  "combined_scale_summary": {
+    "total_independent_facilities": 2,
+    "facility_names": ["Warehouse_026", "Warehouse_027"],
+    "total_cameras": 11,
+    "total_frames_processed": 19800,
+    "fps": 30.0,
+    "total_duration_seconds": 660.0,
+    "total_detection_instances": 45836,
+    "total_forklift_detections": 7951,
+    "total_person_detections": 37885,
+    "total_active_tracks": 318,
+    "overall_weighted_mean_distance_m": 6.481,
+    "combined_odd_distribution": {
+      "in_odd_le_8m_count": 33761,
+      "in_odd_le_8m_pct": 73.66,
+      "degraded_8_to_10m_count": 4405,
+      "degraded_8_to_10m_pct": 9.61,
+      "out_of_odd_gt_10m_count": 7670,
+      "out_of_odd_gt_10m_pct": 16.73
+    }
+  },
+  "architectural_findings": {
+    "camera_pitch_revelation": {
+      "warehouse_026_mean_optical_depression_deg": 27.74,
+      "warehouse_027_mean_optical_depression_deg": 27.42,
+      "empirical_finding": "Industrial ceiling mounting practices overwhelmingly favor shallow perspectives (20° to 35°) rather than steep top-down perspectives (>= 40°). The canonical top-down assumption is empirically refuted in both independent facilities.",
+      "penalty_applied": "beta_pitch = 0.22 correctly applied across all 11 cameras without exception."
+    },
+    "long_corridor_challenges": {
+      "identified_cameras": ["Camera_0001 (WH027, 77.6% >10m)", "Camera_0004 (WH027, 54.7% >10m)", "Camera_0002 (WH026, 52.0% >10m)"],
+      "impact": "Deep warehouse corridors present severe depth dilution where autonomous braking intervention must be refused."
+    }
+  },
+  "observational_boundaries": {
+    "proven_capabilities": [
+      "Software pipeline scalability: 19,800 frames processed across 11 synchronized streams.",
+      "Calibrated geometry projection: Metric ground-plane coordinates dynamically resolved via homography.",
+      "Extrinsic decomposition: True physical optical-axis depression angle successfully extracted.",
+      "Dual-mode uncertainty evaluation: MODE_A (base standard) and MODE_B (proxy inclusion) evaluated."
+    ],
+    "unestablished_claims": {
+      "perception_f1_and_recall": "NOT_ESTABLISHED (NVIDIA withholds human annotations for real-world test scenes)",
+      "tracking_idf1_and_mota": "NOT_ESTABLISHED (True identity-switch penalties require ground-truth trajectories)",
+      "model_h_certified_coverage": "NOT_ESTABLISHED (Physical lux logs absent; formal status is INPUT_INSUFFICIENT)",
+      "cross_warehouse_generalization": "NOT_ESTABLISHED (Observational statistics do not constitute statistical validation without ground truth)"
+    }
+  },
+  "final_gate_decisions": {
+    "software_readiness": "READY_FOR_PRODUCTION_EVALUATION",
+    "external_dataset_readiness": "INADEQUATE_FOR_SAFETY_CERTIFICATION",
+    "system_state": "AWAITING_FULLY_ANNOTATED_SENSOR_DATASET",
+    "missing_prerequisites_for_v3_4": [
+      "Human-annotated ground truth bounding boxes and trajectories for external test scenes",
+      "Calibrated physical lux meter sensor telemetry linked to recording timestamps"
+    ]
+  }
+}

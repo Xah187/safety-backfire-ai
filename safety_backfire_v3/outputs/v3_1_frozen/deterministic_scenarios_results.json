@@ -1,0 +1,141 @@
+{
+  "scenarios": [
+    {
+      "scenario_id": "SCEN_A",
+      "name": "Person + Forklift Collision",
+      "expected_hazard": "COLLISION_HAZARD",
+      "actual_hazard": "COLLISION_HAZARD",
+      "expected_decision": "CONFIRMED_DANGER",
+      "actual_decision": "CONFIRMED_DANGER",
+      "passed": true
+    },
+    {
+      "scenario_id": "SCEN_B",
+      "name": "Forklift + Rack Impact",
+      "expected_hazard": "COLLISION_HAZARD",
+      "actual_hazard": "COLLISION_HAZARD",
+      "expected_decision": "CONFIRMED_DANGER",
+      "actual_decision": "CONFIRMED_DANGER",
+      "passed": true
+    },
+    {
+      "scenario_id": "SCEN_C",
+      "name": "Pallet + Rack Collapse",
+      "expected_hazard": "COLLAPSE_HAZARD",
+      "actual_hazard": "COLLAPSE_HAZARD",
+      "expected_decision": "CONFIRMED_DANGER",
+      "actual_decision": "CONFIRMED_DANGER",
+      "passed": true
+    },
+    {
+      "scenario_id": "SCEN_D",
+      "name": "Person + Conveyor Exposure",
+      "expected_hazard": "MACHINERY_EXPOSURE_HAZARD",
+      "actual_hazard": "MACHINERY_EXPOSURE_HAZARD",
+      "expected_decision": "CONFIRMED_DANGER",
+      "actual_decision": "CONFIRMED_DANGER",
+      "passed": true
+    },
+    {
+      "scenario_id": "SCEN_E",
+      "name": "Truck + Dock Edge Crush",
+      "expected_hazard": "DOCK_EDGE_HAZARD",
+      "actual_hazard": "DOCK_EDGE_HAZARD",
+      "expected_decision": "CONFIRMED_DANGER",
+      "actual_decision": "CONFIRMED_DANGER",
+      "passed": true
+    },
+    {
+      "scenario_id": "SCEN_F",
+      "name": "Blocked Aisle Pallet",
+      "expected_hazard": "BLOCKED_AISLE_HAZARD",
+      "actual_hazard": "BLOCKED_AISLE_HAZARD",
+      "expected_decision": "CAUTION",
+      "actual_decision": "CAUTION",
+      "passed": true
+    },
+    {
+      "scenario_id": "SCEN_G",
+      "name": "Blocked Emergency Exit",
+      "expected_hazard": "BLOCKED_EGRESS_HAZARD",
+      "actual_hazard": "BLOCKED_EGRESS_HAZARD",
+      "expected_decision": "CONFIRMED_DANGER",
+      "actual_decision": "CONFIRMED_DANGER",
+      "passed": true
+    },
+    {
+      "scenario_id": "SCEN_H",
+      "name": "Unstable Load (Static Threat)",
+      "expected_hazard": "FALLING_OBJECT_HAZARD",
+      "actual_hazard": "FALLING_OBJECT_HAZARD",
+      "expected_decision": "CONFIRMED_DANGER",
+      "actual_decision": "CONFIRMED_DANGER",
+      "passed": true
+    },
+    {
+      "scenario_id": "SCEN_I",
+      "name": "Fallen Object in Lane",
+      "expected_hazard": "OBSTRUCTION_HAZARD",
+      "actual_hazard": "OBSTRUCTION_HAZARD",
+      "expected_decision": "CANDIDATE_REVIEW",
+      "actual_decision": "CANDIDATE_REVIEW",
+      "passed": true
+    },
+    {
+      "scenario_id": "SCEN_J",
+      "name": "Spill + Pedestrian Slip",
+      "expected_hazard": "SPILL_SLIP_HAZARD",
+      "actual_hazard": "SPILL_SLIP_HAZARD",
+      "expected_decision": "CONFIRMED_DANGER",
+      "actual_decision": "CONFIRMED_DANGER",
+      "passed": true
+    },
+    {
+      "scenario_id": "SCEN_K",
+      "name": "Spill + Forklift Traction Loss",
+      "expected_hazard": "SPILL_SLIP_HAZARD",
+      "actual_hazard": "SPILL_SLIP_HAZARD",
+      "expected_decision": "CONFIRMED_DANGER",
+      "actual_decision": "CONFIRMED_DANGER",
+      "passed": true
+    },
+    {
+      "scenario_id": "SCEN_L",
+      "name": "Restricted Zone Intrusion",
+      "expected_hazard": "PEDESTRIAN_ZONE_INTRUSION",
+      "actual_hazard": "PEDESTRIAN_ZONE_INTRUSION",
+      "expected_decision": "CONFIRMED_DANGER",
+      "actual_decision": "CONFIRMED_DANGER",
+      "passed": true
+    },
+    {
+      "scenario_id": "SCEN_M",
+      "name": "Machine Entrapment Maintenance",
+      "expected_hazard": "MACHINERY_EXPOSURE_HAZARD",
+      "actual_hazard": "MACHINERY_EXPOSURE_HAZARD",
+      "expected_decision": "CONFIRMED_DANGER",
+      "actual_decision": "CONFIRMED_DANGER",
+      "passed": true
+    },
+    {
+      "scenario_id": "SCEN_N",
+      "name": "Simultaneous Multiple Hazards",
+      "expected_hazard": "DUAL_HAZARDS",
+      "actual_hazard": "DUAL_HAZARDS",
+      "expected_decision": "CONFIRMED_DANGER",
+      "actual_decision": "CONFIRMED_DANGER",
+      "passed": true
+    },
+    {
+      "scenario_id": "SCEN_O",
+      "name": "Intervention Safety Backfire",
+      "expected_hazard": "NEW_HAZARD_CREATED",
+      "actual_hazard": "NEW_HAZARD_CREATED",
+      "expected_decision": "PARTIAL_BACKFIRE",
+      "actual_decision": "PARTIAL_BACKFIRE",
+      "passed": true
+    }
+  ],
+  "total_passed": 15,
+  "all_passed": true
+}

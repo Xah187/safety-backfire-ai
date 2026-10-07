@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "InterventionV1Schema",
+  "description": "Physical, policy, and routing intervention records and counterfactual windows",
+  "type": "object",
+  "required": [
+    "intervention_id",
+    "intervention_type",
+    "zone_id",
+    "timestamp",
+    "intended_hazards"
+  ],
+  "properties": {
+    "intervention_id": {
+      "type": "string"
+    },
+    "intervention_type": {
+      "type": "string",
+      "enum": [
+        "PHYSICAL_BARRIER_ADDED",
+        "SPEED_LIMIT_CHANGED",
+        "PEDESTRIAN_ROUTE_REROUTED",
+        "RACK_GUARD_INSTALLED",
+        "STORAGE_REARRANGED",
+        "PROCESS_CHANGED",
+        "RESTRICTED_ZONE_CREATED",
+        "SIGNAGE_ALERT_ADDED",
+        "UNKNOWN_INTERVENTION"
+      ]
+    },
+    "zone_id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "number"
+    },
+    "intended_hazards": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

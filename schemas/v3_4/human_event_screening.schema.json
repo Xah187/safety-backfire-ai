@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safety-backfire-ai.org/schemas/v3_4/human_event_screening.schema.json",
+  "title": "V3.4 Independent Human Event Screening Schema",
+  "description": "Schema for events discovered independently during full-scene blinded human review, without AI candidate cues.",
+  "type": "object",
+  "required": [
+    "human_event_id",
+    "facility_id",
+    "camera_set",
+    "start_time",
+    "end_time",
+    "event_type",
+    "visible_intervention",
+    "objects_involved",
+    "primary_zone",
+    "secondary_zone",
+    "notes",
+    "screening_confidence",
+    "reviewer_id",
+    "screening_verdict"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "human_event_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique identifier for human-discovered event (e.g., HEVT_WH026_001)."
+    },
+    "facility_id": {
+      "type": "string",
+      "description": "Facility / scene identifier (e.g., Warehouse_026, Warehouse_027)."
+    },
+    "camera_set": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "description": "Camera streams where the event is visibly discernible."
+    },
+    "start_time": {
+      "type": "number",
+      "minimum": 0.0,
+      "description": "Start timestamp of observed interaction / intervention in stream (seconds)."
+    },
+    "end_time": {
+      "type": "number",
+      "minimum": 0.0,
+      "description": "End timestamp of observed interaction / intervention in stream (seconds)."
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "VISIBLE_SAFETY_INTERVENTION",
+        "EMERGENCY_RESPONSE",
+        "ABRUPT_BRAKING",
+        "AVOIDANCE_MANEUVER",
+        "WARNING_EVENT",
+        "WORKER_VEHICLE_CONFLICT_RESPONSE",
+        "NOMINAL_OPERATION_NO_INCIDENT",
+        "UNKNOWN_INTERACTION"
+      ],
+      "description": "Operational categorization assigned by the human assessor."
+    },
+    "visible_intervention": {
+      "type": "boolean",
+      "description": "Whether an active, intentional safety intervention was visually confirmed."
+    },
+    "objects_involved": {
+      "type": "object",
+      "properties": {
+        "pedestrians_observed": { "type": "integer", "minimum": 0 },
+        "vehicles_observed": { "type": "integer", "minimum": 0 },
+        "description": { "type": "string" }
+      },
+      "required": ["pedestrians_observed", "vehicles_observed"],
+      "description": "Observed physical entities participating in the event."
+    },
+    "primary_zone": {
+      "type": "object",
+      "properties": {
+        "zone_id": { "type": "string" },
+        "zone_status": {
+          "type": "string",
+          "enum": ["PHYSICALLY_DOCUMENTED", "DATASET_GEOMETRIC", "PROVISIONAL", "UNKNOWN"]
+        },
+        "description": { "type": "string" }
+      },
+      "required": ["zone_id", "zone_status"],
+      "description": "Primary location of the interaction / intervention."
+    },
+    "secondary_zone": {
+      "type": "object",
+      "properties": {
+        "zone_id": { "type": "string" },
+        "zone_status": {
+          "type": "string",
+          "enum": ["PHYSICALLY_DOCUMENTED", "DATASET_GEOMETRIC", "PROVISIONAL", "UNKNOWN"]
+        },
+        "description": { "type": "string" }
+      },
+      "required": ["zone_id", "zone_status"],
+      "description": "Adjoining zone monitored for spillover or displaced hazard."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Human assessor narrative of the event context, mechanics, and environmental conditions."
+    },
+    "screening_confidence": {
+      "type": "string",
+      "enum": ["HIGH", "MEDIUM", "LOW"],
+      "description": "Assessor confidence in the classification and time boundaries."
+    },
+    "reviewer_id": {
+      "type": "string",
+      "description": "Anonymized identifier of the blinded human reviewer."
+    },
+    "screening_verdict": {
+      "type": "string",
+      "enum": ["screened_event", "no_event", "uncertain"],
+      "description": "Screening classification outcome."
+    },
+    "linked_candidate_id": {
+      "type": ["string", "null"],
+      "description": "Cross-reference link to matching AI candidate ID if dual-discovered."
+    }
+  }
+}

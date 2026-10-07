@@ -1,0 +1,29 @@
+{
+  "detection": {
+    "phase": "Detection Validation (Phase 6)",
+    "status": "NOT_COMPUTABLE",
+    "reason": "No annotated frames found in ground_truth.json. Human annotation required.",
+    "person_metrics": null,
+    "forklift_metrics": null
+  },
+  "tracking": {
+    "phase": "Real Tracking Validation (Phase 7)",
+    "status": "NOT_COMPUTABLE",
+    "reason": "Only 0 annotated frames available. Tracking metrics (IDF1, ID Switches) require consistent gt_id annotations across multiple sequential frames. Minimum ~20 annotated frames recommended.",
+    "IDF1": null,
+    "ID_switches": null,
+    "Fragmentation": null,
+    "Track_Recall": null,
+    "Track_Precision": null
+  },
+  "events": {
+    "phase": "Real Event Validation (Phase 8)",
+    "status": "NOT_COMPUTABLE",
+    "reason": "No 'interaction_events' section found in ground_truth.json. A human must manually annotate interaction_start, interaction_end, interaction_type, person_gt_id, forklift_gt_id for each observed interaction.",
+    "Event_Precision": null,
+    "Event_Recall": null,
+    "Event_F1": null,
+    "Start_frame_error_avg": null,
+    "Duration_error_avg": null
+  }
+}

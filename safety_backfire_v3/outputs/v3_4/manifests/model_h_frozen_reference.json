@@ -1,0 +1,36 @@
+{
+  "milestone": "SAFETY_BACKFIRE_AI_V3.4",
+  "document": "MODEL_H_FROZEN_REFERENCE_SPECIFICATION",
+  "governance_status": "ABSOLUTELY_FROZEN_NO_PARAMETER_DRIFT",
+  "frozen_parameters": {
+    "k0": 2.40,
+    "beta_d": 0.08,
+    "beta_l": 0.12,
+    "beta_pitch": 0.22,
+    "pitch_threshold_deg": 40.0,
+    "gamma_occ": {
+      "NONE": 0.00,
+      "PARTIAL": 0.20,
+      "HEAVY": 0.40
+    }
+  },
+  "canonical_formula": "k_H(d, L, occ, pitch) = k0 + beta_d * max(0.0, d - 4.0) + beta_l * max(0.0, 300.0 - L) / 100.0 + beta_pitch * I(pitch < 40.0) + gamma_occ[occ]",
+  "canonical_source_files": [
+    {
+      "source_file_path": "safety_backfire_v3_3_3/uncertainty/model_h.py",
+      "sha256": "8997db285d8b1b6e6237ef681302ef631637a70f7bdf9a453b55f56a598cd73b",
+      "authority": "CANONICAL_MODEL_H_ALGORITHM_IMPLEMENTATION"
+    },
+    {
+      "source_file_path": "outputs/v3_3_3/reconciliation/model_h_lineage.json",
+      "sha256": "dcffe6669c656df93668e7d001f55d41faeef7df08b1ca996642426a0ce1030c",
+      "authority": "CANONICAL_LINEAGE_AND_CONFORMANCE_RECORD"
+    }
+  ],
+  "enforcement_policy": {
+    "zero_parameter_tuning": true,
+    "zero_threshold_manipulation": true,
+    "zero_model_training": true,
+    "drift_detection_mandatory": true
+  }
+}

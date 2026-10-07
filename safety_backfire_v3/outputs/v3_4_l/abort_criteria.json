@@ -1,0 +1,77 @@
+{
+  "abort_system_version": "1.0.0",
+  "milestone": "V3.4-L",
+  "abort_philosophy": "Fail-Safe Immediate Cutoff: Any integrity breach of safety perimeters or telemetry synchronization mandates instant cessation of the active trial and flags the recording as ABORTED.",
+  "abort_triggers": [
+    {
+      "trigger_id": "ABORT_01_ESTOP_ACTUATED",
+      "severity": "CRITICAL_SAFETY",
+      "trigger_condition": "Safety Marshal or vehicle operator depresses manual/wireless E-Stop button.",
+      "action_latency_ms": 50,
+      "system_response": "Cut vehicle traction power instantly; log abort timestamp; flag active recording as ABORTED_SAFETY."
+    },
+    {
+      "trigger_id": "ABORT_02_EXCLUSION_ZONE_BREACH",
+      "severity": "CRITICAL_SAFETY",
+      "trigger_condition": "Optical tripwire, LiDAR curtain, or perimeter sensor detects uncertified human/object entering test buffer.",
+      "action_latency_ms": 100,
+      "system_response": "Emergency vehicle halt; alarm sounding; immediate capture freeze."
+    },
+    {
+      "trigger_id": "ABORT_03_UNEXPECTED_HUMAN_ENTRY",
+      "severity": "CRITICAL_SAFETY",
+      "trigger_condition": "Worker or visitor seen in camera field within 15m of vehicle dynamic envelope.",
+      "action_latency_ms": 100,
+      "system_response": "Safety Marshal triggers remote E-Stop immediately; capture invalid."
+    },
+    {
+      "trigger_id": "ABORT_04_PTP_CLOCK_UNLOCK",
+      "severity": "CRITICAL_DATA_INTEGRITY",
+      "trigger_condition": "Grandmaster loses GNSS lock or PTP slave transitions out of SLAVE_SYNCHRONIZED state.",
+      "action_latency_ms": 200,
+      "system_response": "Abort trial run; reject active event; require clock re-lock and 5-minute burn-in."
+    },
+    {
+      "trigger_id": "ABORT_05_CAMERA_STREAM_LOSS",
+      "severity": "CRITICAL_DATA_INTEGRITY",
+      "trigger_condition": "Camera A, B, or C drops >= 1 frame or RTSP socket disconnection occurs.",
+      "action_latency_ms": 100,
+      "system_response": "Abort trial run; discard current event from valid corpus; re-verify RTSP link."
+    },
+    {
+      "trigger_id": "ABORT_06_CAN_COMMUNICATION_LOSS",
+      "severity": "CRITICAL_DATA_INTEGRITY",
+      "trigger_condition": "CAN bus message gap > 20 ms for vehicle speed or brake state.",
+      "action_latency_ms": 50,
+      "system_response": "Abort trial run; reject event package; check CAN transceiver."
+    },
+    {
+      "trigger_id": "ABORT_07_SECONDARY_SENSOR_LOSS",
+      "severity": "CRITICAL_DATA_INTEGRITY",
+      "trigger_condition": "Secondary LiDAR / radar stream dropout or packet loss exceeds 0.01%.",
+      "action_latency_ms": 100,
+      "system_response": "Abort trial run; mark secondary zone as UNVERIFIED."
+    },
+    {
+      "trigger_id": "ABORT_08_CALIBRATION_DISPLACEMENT",
+      "severity": "CRITICAL_DATA_INTEGRITY",
+      "trigger_condition": "Optical flow or fiducial checkerboard detects camera mount vibration / shift > 0.5 degrees.",
+      "action_latency_ms": 500,
+      "system_response": "Halt testing; invalidate extrinsic calibration; mandate full Total Station resurvey."
+    },
+    {
+      "trigger_id": "ABORT_09_STORAGE_OVERFLOW_OR_IO_STALL",
+      "severity": "INFRASTRUCTURE_FAULT",
+      "trigger_condition": "NVMe ingest buffer queue > 80% capacity or disk write latency > 50 ms.",
+      "action_latency_ms": 100,
+      "system_response": "Gracefully pause testing until disk queues flush; reject incomplete event."
+    },
+    {
+      "trigger_id": "ABORT_10_NETWORK_INTEGRITY_FAILURE",
+      "severity": "INFRASTRUCTURE_FAULT",
+      "trigger_condition": "10GbE switch port CRC error rate > 0 or packet retransmissions detected on PTP VLAN.",
+      "action_latency_ms": 100,
+      "system_response": "Abort capture session; initiate switch diagnostic."
+    }
+  ]
+}

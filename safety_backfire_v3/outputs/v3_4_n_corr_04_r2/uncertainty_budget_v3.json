@@ -1,0 +1,134 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TractionCurrentMeasurementUncertaintyBudgetV3",
+  "milestone": "V3.4-N-CORR-04-R2",
+  "description": "Comprehensive rebuild of the GUM uncertainty budget from manufacturer hardware specifications, exposing the ungrounded origin of prior numerical values and evaluating range-dependent metrological scaling.",
+  "governance_classification": "METROLOGY_UNCERTAINTY_LEDGER",
+  "governance_status": "BLOCKED_PENDING_BENCH_SCALE_CONFIRMATION",
+  "historical_budget_critique": {
+    "finding": "PRIOR_SEVEN_COMPONENTS_WERE_HEURISTIC_ESTIMATES",
+    "description": "The seven components listed in V3.4-N-CORR-04 and V3.4-N-CORR-04-R1 (u_cal=0.015, u_offset=0.020, u_noise=0.025, u_quant=0.010, u_rms=0.018, u_temp=0.012, u_filter=0.015) were arbitrary estimates not traceable to instrument datasheets. Furthermore, they assumed an impossible 10 A/V probe deflection ratio.",
+    "verdict": "REJECTED_AS_UNVERIFIED_HEURISTIC"
+  },
+  "hardware_range_dependent_models": {
+    "model_5A_per_V_low_range": {
+      "nominal_range_deflection": "5 A/V (0.2 V/A sensitivity into 50 Ohms)",
+      "target_operating_point_a_rms": 0.500,
+      "components": [
+        {
+          "component_id": "U1_PROBE_DSO_GAIN",
+          "quantity": "Probe, amplifier, and DSO vertical channel gain calibration error",
+          "source": "Tektronix TCPA300 datasheet (1.0%) + Keysight DSOX1204G gain accuracy (1.5%) + 50-Ohm terminator tolerance (0.5%)",
+          "type": "TYPE_B",
+          "distribution": "NORMAL",
+          "original_limit_relative_percent": 3.0,
+          "divisor": 2.0,
+          "standard_uncertainty_a": 0.00750,
+          "sensitivity_coefficient": 1.0,
+          "uncertainty_contribution_a": 0.00750,
+          "correlation": "UNCORRELATED",
+          "degrees_of_freedom": 50
+        },
+        {
+          "component_id": "U2_HALL_OFFSET_DRIFT",
+          "quantity": "Residual Hall-effect DC zero offset drift post-degauss on 5 A/V range",
+          "source": "TCPA300 specification: < 1.0 mV output drift post-balance nulling (1.0 mV * 5 A/V = 5.0 mA)",
+          "type": "TYPE_B",
+          "distribution": "RECTANGULAR",
+          "original_limit_semi_range_a": 0.00500,
+          "divisor": 1.73205,
+          "standard_uncertainty_a": 0.00289,
+          "sensitivity_coefficient": 1.0,
+          "uncertainty_contribution_a": 0.00289,
+          "correlation": "UNCORRELATED",
+          "degrees_of_freedom": "INFINITE"
+        },
+        {
+          "component_id": "U3_BROADBAND_NOISE",
+          "quantity": "Amplifier front-end broadband noise floor + bench EMI",
+          "source": "TCPA300 specification: < 1.5 mV RMS on 5 A/V range (7.5 mA RMS) + bench ambient pickup (15.0 mA RMS)",
+          "type": "TYPE_A",
+          "distribution": "NORMAL",
+          "original_limit_semi_range_a": 0.01680,
+          "divisor": 1.0,
+          "standard_uncertainty_a": 0.01680,
+          "sensitivity_coefficient": 1.0,
+          "uncertainty_contribution_a": 0.01680,
+          "correlation": "UNCORRELATED",
+          "degrees_of_freedom": 9
+        },
+        {
+          "component_id": "U4_ADC_QUANTIZATION",
+          "quantity": "Oscilloscope 8-bit vertical ADC quantization resolution",
+          "source": "Keysight DSO at 100 mV/div vertical scale (800 mV span = 4.0 A span; LSB = 4.0 / 256 = 15.625 mA)",
+          "type": "TYPE_B",
+          "distribution": "RECTANGULAR",
+          "original_limit_semi_range_a": 0.00781,
+          "divisor": 1.73205,
+          "standard_uncertainty_a": 0.00451,
+          "sensitivity_coefficient": 1.0,
+          "uncertainty_contribution_a": 0.00451,
+          "correlation": "UNCORRELATED",
+          "degrees_of_freedom": "INFINITE"
+        },
+        {
+          "component_id": "U5_NUMERICAL_RMS",
+          "quantity": "Sliding RMS rectangular integration finite discrete sum approximation",
+          "source": "Algorithm discretization over N = 2000 points at 1.0 MSa/s",
+          "type": "TYPE_B",
+          "distribution": "NORMAL",
+          "original_limit_semi_range_a": 0.00500,
+          "divisor": 1.0,
+          "standard_uncertainty_a": 0.00500,
+          "sensitivity_coefficient": 1.0,
+          "uncertainty_contribution_a": 0.00500,
+          "correlation": "UNCORRELATED",
+          "degrees_of_freedom": "INFINITE"
+        },
+        {
+          "component_id": "U6_THERMAL_DRIFT",
+          "quantity": "Hall sensor thermal sensitivity across operating ambient (15 C to 40 C)",
+          "source": "Hall temperature coefficient: 0.02% / C over delta_T = 10 C (0.2% * 0.500 A = 1.0 mA)",
+          "type": "TYPE_B",
+          "distribution": "RECTANGULAR",
+          "original_limit_semi_range_a": 0.00100,
+          "divisor": 1.73205,
+          "standard_uncertainty_a": 0.00058,
+          "sensitivity_coefficient": 1.0,
+          "uncertainty_contribution_a": 0.00058,
+          "correlation": "UNCORRELATED",
+          "degrees_of_freedom": "INFINITE"
+        },
+        {
+          "component_id": "U7_ANALOG_FLATNESS",
+          "quantity": "DSO 20 MHz analog channel passband ripple up to 100 kHz",
+          "source": "Hardware front-end passband flatness specification: 0.5% (0.5% * 0.500 A = 2.5 mA)",
+          "type": "TYPE_B",
+          "distribution": "NORMAL",
+          "original_limit_semi_range_a": 0.00250,
+          "divisor": 2.0,
+          "standard_uncertainty_a": 0.00125,
+          "sensitivity_coefficient": 1.0,
+          "uncertainty_contribution_a": 0.00125,
+          "correlation": "UNCORRELATED",
+          "degrees_of_freedom": "INFINITE"
+        }
+      ],
+      "combined_uncertainty_u_c_a": 0.01985,
+      "effective_degrees_of_freedom": 11.2,
+      "coverage_factor_k": 2.00,
+      "expanded_uncertainty_U_a": 0.03970,
+      "guarded_threshold_a_rms": 0.4603
+    },
+    "model_50A_per_V_high_range": {
+      "nominal_range_deflection": "50 A/V (0.02 V/A sensitivity into 50 Ohms)",
+      "finding": "UNSUITABLE_FOR_0_5A_THRESHOLD_MEASUREMENT",
+      "analysis": "On the 50 A/V range, a 0.500 A signal outputs only 10 mV. The amplifier noise floor alone is 2.5 mV RMS * 50 A/V = 0.125 A RMS. Combined uncertainty exceeds u_c > 0.135 A, yielding U > 0.270 A, which destroys measurement precision.",
+      "disposition": "PROHIBITED_FOR_DEENERGIZATION_VERIFICATION"
+    }
+  },
+  "standards_applicability": {
+    "jcgm_100_2008_gum": "Applied for root-sum-square synthesis of independent Type A and Type B components.",
+    "jcgm_100_amd1_2026_nonlinearity": "Evaluated around I_RMS = 0.500 A. Because I_RMS is non-zero, Taylor series curvature contributes delta_u < 0.0003 A. First-order GUM sensitivity coefficients remain fully valid without fabricating higher-order terms."
+  }
+}

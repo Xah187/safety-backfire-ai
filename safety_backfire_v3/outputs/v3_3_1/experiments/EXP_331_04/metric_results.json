@@ -1,0 +1,10 @@
+{
+  "experiment_id": "EXP_331_04",
+  "sample_size": 30,
+  "total_ambiguous_crossing_events": 10,
+  "forced_incorrect_assignments": 0,
+  "hazard_action_downgrades": 10,
+  "safety_downgrade_rate": 1.0,
+  "mitigation_finding": "Resolves V3.3-FAIL-003 by refusing to force track ID during dense crossing with identical PPE. Assigns UNKNOWN_AMBIGUOUS_PAIR and downgrades intervention to ADVISORY_WARNING_ONLY.",
+  "acceptance_criteria_met": true
+}

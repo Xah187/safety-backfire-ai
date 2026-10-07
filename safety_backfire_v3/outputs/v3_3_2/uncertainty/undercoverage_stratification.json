@@ -1,0 +1,345 @@
+{
+  "distance": {
+    "NEAR_0_4M": {
+      "sample_size": 284,
+      "undercoverage_count": 23,
+      "coverage": 0.919,
+      "confidence_interval": {
+        "low": 0.8814,
+        "high": 0.9454,
+        "point": 0.919,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    },
+    "MID_4_8M": {
+      "sample_size": 379,
+      "undercoverage_count": 19,
+      "coverage": 0.9499,
+      "confidence_interval": {
+        "low": 0.923,
+        "high": 0.9677,
+        "point": 0.9499,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    }
+  },
+  "illumination": {
+    "LOW_LT_250_LUX": {
+      "sample_size": 290,
+      "undercoverage_count": 19,
+      "coverage": 0.9345,
+      "confidence_interval": {
+        "low": 0.8999,
+        "high": 0.9577,
+        "point": 0.9345,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    },
+    "NORMAL_GE_250_LUX": {
+      "sample_size": 373,
+      "undercoverage_count": 23,
+      "coverage": 0.9383,
+      "confidence_interval": {
+        "low": 0.9092,
+        "high": 0.9586,
+        "point": 0.9383,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    }
+  },
+  "occlusion": {
+    "NONE": {
+      "sample_size": 439,
+      "undercoverage_count": 28,
+      "coverage": 0.9362,
+      "confidence_interval": {
+        "low": 0.9094,
+        "high": 0.9555,
+        "point": 0.9362,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    },
+    "PARTIAL": {
+      "sample_size": 167,
+      "undercoverage_count": 5,
+      "coverage": 0.9701,
+      "confidence_interval": {
+        "low": 0.9318,
+        "high": 0.9871,
+        "point": 0.9701,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    },
+    "HEAVY": {
+      "sample_size": 57,
+      "undercoverage_count": 9,
+      "coverage": 0.8421,
+      "confidence_interval": {
+        "low": 0.7264,
+        "high": 0.9146,
+        "point": 0.8421,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    }
+  },
+  "velocity": {
+    "STATIC_0_02M_S": {
+      "sample_size": 4,
+      "undercoverage_count": 0,
+      "coverage": 1.0,
+      "confidence_interval": {
+        "low": 0.5101,
+        "high": 1.0,
+        "point": 1.0,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": false,
+      "limitation": "Sample size too small (<30) for asymptotic inference"
+    },
+    "SLOW_02_10M_S": {
+      "sample_size": 269,
+      "undercoverage_count": 16,
+      "coverage": 0.9405,
+      "confidence_interval": {
+        "low": 0.9056,
+        "high": 0.9631,
+        "point": 0.9405,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    },
+    "MODERATE_10_25M_S": {
+      "sample_size": 390,
+      "undercoverage_count": 26,
+      "coverage": 0.9333,
+      "confidence_interval": {
+        "low": 0.9041,
+        "high": 0.9541,
+        "point": 0.9333,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    }
+  },
+  "camera": {
+    "CAM_SECTOR_C_03": {
+      "sample_size": 373,
+      "undercoverage_count": 23,
+      "coverage": 0.9383,
+      "confidence_interval": {
+        "low": 0.9092,
+        "high": 0.9586,
+        "point": 0.9383,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    },
+    "CAM_SECTOR_D_04": {
+      "sample_size": 290,
+      "undercoverage_count": 19,
+      "coverage": 0.9345,
+      "confidence_interval": {
+        "low": 0.8999,
+        "high": 0.9577,
+        "point": 0.9345,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    }
+  },
+  "sector": {
+    "Sector_C": {
+      "sample_size": 373,
+      "undercoverage_count": 23,
+      "coverage": 0.9383,
+      "confidence_interval": {
+        "low": 0.9092,
+        "high": 0.9586,
+        "point": 0.9383,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    },
+    "Sector_D": {
+      "sample_size": 290,
+      "undercoverage_count": 19,
+      "coverage": 0.9345,
+      "confidence_interval": {
+        "low": 0.8999,
+        "high": 0.9577,
+        "point": 0.9345,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    }
+  },
+  "entity_class": {
+    "Person": {
+      "sample_size": 129,
+      "undercoverage_count": 5,
+      "coverage": 0.9612,
+      "confidence_interval": {
+        "low": 0.9125,
+        "high": 0.9833,
+        "point": 0.9612,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    },
+    "Vehicle": {
+      "sample_size": 131,
+      "undercoverage_count": 15,
+      "coverage": 0.8855,
+      "confidence_interval": {
+        "low": 0.8197,
+        "high": 0.9294,
+        "point": 0.8855,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    },
+    "Storage": {
+      "sample_size": 132,
+      "undercoverage_count": 10,
+      "coverage": 0.9242,
+      "confidence_interval": {
+        "low": 0.8662,
+        "high": 0.9583,
+        "point": 0.9242,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    },
+    "Load": {
+      "sample_size": 133,
+      "undercoverage_count": 7,
+      "coverage": 0.9474,
+      "confidence_interval": {
+        "low": 0.8953,
+        "high": 0.9743,
+        "point": 0.9474,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    },
+    "Machine": {
+      "sample_size": 138,
+      "undercoverage_count": 5,
+      "coverage": 0.9638,
+      "confidence_interval": {
+        "low": 0.918,
+        "high": 0.9844,
+        "point": 0.9638,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    }
+  },
+  "motion_state": {
+    "CONSTANT": {
+      "sample_size": 221,
+      "undercoverage_count": 11,
+      "coverage": 0.9502,
+      "confidence_interval": {
+        "low": 0.9131,
+        "high": 0.972,
+        "point": 0.9502,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    },
+    "ACCELERATING": {
+      "sample_size": 218,
+      "undercoverage_count": 14,
+      "coverage": 0.9358,
+      "confidence_interval": {
+        "low": 0.8951,
+        "high": 0.9614,
+        "point": 0.9358,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    },
+    "TURNING": {
+      "sample_size": 224,
+      "undercoverage_count": 17,
+      "coverage": 0.9241,
+      "confidence_interval": {
+        "low": 0.8818,
+        "high": 0.9521,
+        "point": 0.9241,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    }
+  },
+  "geometry_residual": {
+    "LOW_LT_15MM": {
+      "sample_size": 98,
+      "undercoverage_count": 3,
+      "coverage": 0.9694,
+      "confidence_interval": {
+        "low": 0.9138,
+        "high": 0.9895,
+        "point": 0.9694,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    },
+    "MEDIUM_15_25MM": {
+      "sample_size": 370,
+      "undercoverage_count": 26,
+      "coverage": 0.9297,
+      "confidence_interval": {
+        "low": 0.899,
+        "high": 0.9516,
+        "point": 0.9297,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    },
+    "HIGH_GT_25MM": {
+      "sample_size": 195,
+      "undercoverage_count": 13,
+      "coverage": 0.9333,
+      "confidence_interval": {
+        "low": 0.8893,
+        "high": 0.9606,
+        "point": 0.9333,
+        "method": "Wilson_Score_Interval"
+      },
+      "inference_valid": true,
+      "limitation": null
+    }
+  }
+}

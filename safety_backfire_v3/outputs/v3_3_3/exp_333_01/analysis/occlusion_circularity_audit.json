@@ -1,0 +1,42 @@
+{
+  "schema_version": "V3.3.3_OCCLUSION_CIRCULARITY_AUDIT_V1",
+  "audit_target": "RUN_003_NVIDIA_WAREHOUSE_026",
+  "audit_timestamp_utc": "2026-09-28T09:52:00Z",
+  "circularity_pipeline_documentation": {
+    "architecture_flow": "YOLO Predicted Bounding Boxes -> Inter-box IoU Matrix -> Heuristic Occlusion State Assignment (NONE/PARTIAL/HEAVY) -> gamma_occ Penalty Lookup -> Model H Uncertainty Equation",
+    "formal_designation": "MODEL_DERIVED_OCCLUSION_PROXY",
+    "prohibited_designation": "GROUND_TRUTH_OCCLUSION",
+    "circularity_risk_analysis": "Because the occlusion state is derived directly from YOLO predicted bounding boxes, errors in perception (false positives, merged boxes, misshapen boxes) directly inject bias into the occlusion estimate, which then artificially inflates or deflates Model H uncertainty. True independent occlusion requires human ground-truth 3D or 2D occlusion labeling."
+  },
+  "dual_mode_evaluation": {
+    "MODE_A_NO_OCCLUSION_CONTRIBUTION": {
+      "definition": "Model H partial term evaluation with gamma_occ = 0.0 for all observations (excluding unverified proxy)",
+      "observations_count": 10942,
+      "mean_k_partial": 2.7699,
+      "std_k_partial": 0.2957,
+      "min_k_partial": 2.4,
+      "max_k_partial": 4.1126,
+      "status": "GOVERNANCE_HONEST_PRIMARY_BASELINE"
+    },
+    "MODE_B_WITH_PREDICTED_OCCLUSION_PROXY": {
+      "definition": "Model H partial term evaluation incorporating predicted bbox IoU occlusion proxy",
+      "observations_count": 10942,
+      "mean_k_partial": 2.7906,
+      "std_k_partial": 0.2999,
+      "min_k_partial": 2.4,
+      "max_k_partial": 4.1126,
+      "status": "INFORMATIONAL_PROXY_ONLY_PROHIBITED_FOR_COVERAGE_CLAIMS"
+    }
+  },
+  "mode_comparison_delta": {
+    "mean_k_delta": 0.0208,
+    "observations_with_occlusion_gt_zero": 886,
+    "percentage_with_occlusion_gt_zero": 8.1,
+    "breakdown_by_level": {
+      "NONE_0_0": 10056,
+      "PARTIAL_0_20": 635,
+      "HEAVY_0_40": 251
+    }
+  },
+  "governance_conclusion": "Mode B must NEVER be used to assert formal calibration coverage or scientific validation of Model H. Mode A serves as the strictly verified lower bound of partial uncertainty."
+}

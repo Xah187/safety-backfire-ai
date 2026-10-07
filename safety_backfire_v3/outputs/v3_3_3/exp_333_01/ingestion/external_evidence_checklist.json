@@ -1,0 +1,52 @@
+{
+  "manifest_version": "EXP_333_01_EXTERNAL_EVIDENCE_CHECKLIST",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "schema_version": "2026-09-27",
+  "governance_note": "Every field must be resolved to VERIFIED, DECLARED, INFERRED, or NOT_AVAILABLE. Missing fields must remain NOT_AVAILABLE — never inferred as TRUE.",
+
+  "evidence_status_taxonomy": {
+    "VERIFIED": "Directly confirmed via physical measurement, cryptographic hash, or independent witness.",
+    "DECLARED": "Reported by site operator or source provider without independent verification.",
+    "INFERRED": "Estimated from other available data. Must not be used as ground truth in any evaluation.",
+    "NOT_AVAILABLE": "No evidence of any kind exists."
+  },
+
+  "checklist_items": [
+    {"id": "CL_01", "field": "facility_id", "description": "Unique identifier for the external facility.", "status": "NOT_AVAILABLE", "value": null},
+    {"id": "CL_02", "field": "building_independence", "description": "Confirmation the facility is a distinct building from Facility Central 01.", "status": "NOT_AVAILABLE", "value": null},
+    {"id": "CL_03", "field": "acquisition_date", "description": "Date of footage capture (YYYY-MM-DD).", "status": "NOT_AVAILABLE", "value": null},
+    {"id": "CL_04", "field": "acquisition_session_id", "description": "Unique session identifier independent from all V3.3.x sessions.", "status": "NOT_AVAILABLE", "value": null},
+    {"id": "CL_05", "field": "camera_identifiers", "description": "List of camera hardware IDs used in the recording.", "status": "NOT_AVAILABLE", "value": null},
+    {"id": "CL_06", "field": "raw_source_file", "description": "Original filename(s) of raw video files.", "status": "NOT_AVAILABLE", "value": null},
+    {"id": "CL_07", "field": "original_file_hash_sha256", "description": "SHA-256 hash of each raw video file before any processing.", "status": "NOT_AVAILABLE", "value": null},
+    {"id": "CL_08", "field": "file_duration_seconds", "description": "Actual duration of each recording in seconds.", "status": "NOT_AVAILABLE", "value": null},
+    {"id": "CL_09", "field": "frame_count", "description": "Total number of frames in each recording.", "status": "NOT_AVAILABLE", "value": null},
+    {"id": "CL_10", "field": "fps", "description": "Frames per second (actual, not target).", "status": "NOT_AVAILABLE", "value": null},
+    {"id": "CL_11", "field": "resolution", "description": "Actual resolution (WxH pixels).", "status": "NOT_AVAILABLE", "value": null},
+    {"id": "CL_12", "field": "codec", "description": "Video codec used for recording.", "status": "NOT_AVAILABLE", "value": null},
+    {"id": "CL_13", "field": "camera_mounting_height_m", "description": "Physical mounting height in meters (measured, not planned).", "status": "NOT_AVAILABLE", "value": null},
+    {"id": "CL_14", "field": "camera_pitch_deg", "description": "Camera pitch angle in degrees (measured, not planned).", "status": "NOT_AVAILABLE", "value": null},
+    {"id": "CL_15", "field": "camera_roll_deg", "description": "Camera roll angle in degrees (measured, not planned).", "status": "NOT_AVAILABLE", "value": null},
+    {"id": "CL_16", "field": "lighting_evidence", "description": "Illuminance measurement in lux or documented lighting condition.", "status": "NOT_AVAILABLE", "value": null},
+    {"id": "CL_17", "field": "geometry_evidence", "description": "Ground survey fiducials or floor plan with measurement reference.", "status": "NOT_AVAILABLE", "value": null},
+    {"id": "CL_18", "field": "ground_truth_availability", "description": "Whether frame-level bounding box annotations are available.", "status": "NOT_AVAILABLE", "value": null},
+    {"id": "CL_19", "field": "annotation_provenance", "description": "Annotator identification and review protocol.", "status": "NOT_AVAILABLE", "value": null},
+    {"id": "CL_20", "field": "frame_overlap_verification", "description": "Result of SHA-256 and perceptual fingerprint comparison against V3.3.x datasets.", "status": "NOT_AVAILABLE", "value": null}
+  ],
+
+  "metadata_overclaim_prohibition": {
+    "rule": "Metadata alone does not generate performance claims.",
+    "prohibited_claims_from_metadata_only": [
+      "external generalization",
+      "production readiness",
+      "cross-warehouse validity",
+      "95% uncertainty guarantee",
+      "multi-site safety"
+    ],
+    "rationale": "Metadata establishes provenance. Performance claims require empirical evaluation with ground truth."
+  },
+
+  "checklist_completion_status": "NOT_AVAILABLE",
+  "verified_count": 0,
+  "total_items": 20
+}

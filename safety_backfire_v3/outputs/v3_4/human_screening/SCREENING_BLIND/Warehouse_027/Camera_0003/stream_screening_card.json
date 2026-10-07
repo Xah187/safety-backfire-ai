@@ -1,0 +1,9 @@
+{
+  "scene_id": "Warehouse_027",
+  "camera_id": "Camera_0003",
+  "stream_duration_seconds": 60.0,
+  "total_frames": 1800,
+  "fps": 30.0,
+  "protocol": "BLINDED_HUMAN_SCREENING",
+  "instructions": "Review this 60s stream independently. Identify any safety interventions, abrupt braking, worker evasions, or cross-corridor hazards. Record findings in human_event_screening.schema.json format without referencing model outputs."
+}

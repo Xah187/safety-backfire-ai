@@ -1,0 +1,145 @@
+{
+  "protocol_version": "1.0.0",
+  "milestone": "V3.4-L",
+  "purpose": "Governs the secure packaging, blinding, and transition of field-captured events from post-capture quality validation to human panel adjudication.",
+  "review_package_template": {
+    "package_structure": {
+      "event_id": "EVT-XXXXXXXX-XXXX-XXXX",
+      "synchronized_video_feeds": [
+        "cam_a_raw.mp4",
+        "cam_b_raw.mp4",
+        "cam_c_raw.mp4"
+      ],
+      "telemetry_timeline_render": "vehicle_dynamics_plot_unlabeled.png",
+      "event_temporal_metadata": {
+        "pre_window_duration_s": 3.0,
+        "post_window_duration_s": 4.5,
+        "facility_lighting_lux": 350
+      },
+      "secondary_zone_status": {
+        "observability_confirmed": true,
+        "depth_penetration_m": 20.0
+      }
+    }
+  },
+  "reviewer_blinding_manifest": {
+    "strict_sanitization_mandate": "Zero algorithmic priors or model outputs shall be exposed to human reviewers to eliminate cognitive confirmation bias.",
+    "strictly_forbidden_elements": [
+      "AI_SCORE",
+      "CANDIDATE_RANKING",
+      "YOLO_BOUNDING_BOXES",
+      "BYTETRACK_TRACK_IDS_AND_CONFIDENCE",
+      "MODEL_H_RISK_CURVES",
+      "AUTOMATED_SCREENING_LABEL",
+      "PRIOR_PROTOTYPE_CLASSIFICATION",
+      "NOMINAL_TRIAL_INTENDED_LABEL"
+    ],
+    "permitted_elements": [
+      "RAW_MULTICAMERA_SYNCHRONIZED_VIDEO",
+      "CAN_TELEMETRY_ENGINEERING_UNITS_PLOT",
+      "FACILITY_GEOMETRIC_CAD_OVERLAY_STATIC",
+      "SECONDARY_ZONE_DEPTH_GRID_LINES"
+    ]
+  },
+  "review_form_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "HumanReviewerFormSchema",
+    "type": "object",
+    "required": [
+      "reviewer_id",
+      "event_id",
+      "review_timestamp_utc",
+      "primary_hazard_identified",
+      "primary_hazard_actor_type",
+      "vehicle_intervention_observed",
+      "intervention_type",
+      "primary_hazard_resolved",
+      "secondary_zone_observable",
+      "secondary_hazard_emerged",
+      "secondary_hazard_actor_type",
+      "causal_linkage_to_intervention",
+      "final_human_label",
+      "reviewer_confidence"
+    ],
+    "properties": {
+      "reviewer_id": { "type": "string", "pattern": "^REV-[0-9]{3}$" },
+      "event_id": { "type": "string" },
+      "review_timestamp_utc": { "type": "string", "format": "date-time" },
+      "primary_hazard_identified": { "type": "boolean" },
+      "primary_hazard_actor_type": { "type": "string", "enum": ["MANNEQUIN", "PEDESTRIAN_PROXY", "OBSTACLE_CART", "NONE"] },
+      "vehicle_intervention_observed": { "type": "boolean" },
+      "intervention_type": { "type": "string", "enum": ["IN_LANE_BRAKING", "LATERAL_SWERVE", "COMBINED_BRAKE_SWERVE", "NONE_NOMINAL_PASS"] },
+      "primary_hazard_resolved": { "type": "boolean" },
+      "secondary_zone_observable": { "type": "boolean" },
+      "secondary_hazard_emerged": { "type": "boolean" },
+      "secondary_hazard_actor_type": { "type": "string", "enum": ["SECONDARY_MANNEQUIN", "INDEPENDENT_TROLLEY", "NONE"] },
+      "causal_linkage_to_intervention": {
+        "type": "string",
+        "enum": [
+          "DIRECT_CONSEQUENCE_OF_SWERVE",
+          "INDEPENDENT_COINCIDENTAL_ACTOR",
+          "NO_SECONDARY_HAZARD",
+          "UNRESOLVABLE_OBSERVABILITY_DEFICIT"
+        ]
+      },
+      "final_human_label": {
+        "type": "string",
+        "enum": [
+          "SAFETY_BACKFIRE_CONFIRMED",
+          "BENIGN_PRIMARY_RESOLUTION",
+          "INDEPENDENT_CONFOUNDER",
+          "NOMINAL_OPERATION",
+          "INSUFFICIENT_EVIDENCE"
+        ]
+      },
+      "reviewer_confidence": { "type": "string", "enum": ["HIGH_CERTAINTY", "MODERATE_CERTAINTY", "UNCERTAIN_AMBIGUOUS"] }
+    }
+  },
+  "adjudication_schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "AdjudicationConsensusSchema",
+    "type": "object",
+    "required": [
+      "event_id",
+      "reviewer_evaluations",
+      "inter_rater_agreement_cohen_kappa",
+      "consensus_status",
+      "final_adjudicated_gt_label",
+      "adjudicator_signoff_sha256"
+    ],
+    "properties": {
+      "event_id": { "type": "string" },
+      "reviewer_evaluations": {
+        "type": "array",
+        "items": { "type": "object" },
+        "minItems": 2
+      },
+      "inter_rater_agreement_cohen_kappa": { "type": "number", "minimum": -1.0, "maximum": 1.0 },
+      "consensus_status": {
+        "type": "string",
+        "enum": ["UNANIMOUS_CONSENSUS", "SUPERMAJORITY", "SPLIT_ARBITRATED", "UNRESOLVED_DISCARD"]
+      },
+      "final_adjudicated_gt_label": {
+        "type": "string",
+        "enum": [
+          "GT_SAFETY_BACKFIRE",
+          "GT_BENIGN_RESOLUTION",
+          "GT_INDEPENDENT_CONFOUNDER",
+          "GT_NOMINAL_PASS",
+          "GT_INSUFFICIENT_EVIDENCE"
+        ]
+      },
+      "adjudicator_signoff_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+    }
+  },
+  "audit_log_schema": {
+    "required": ["log_entry_id", "timestamp_utc", "action_type", "actor_token", "hash_before", "hash_after"],
+    "action_types": [
+      "PACKAGE_GENERATION",
+      "SANITIZATION_VERIFICATION",
+      "REVIEWER_ACCESS",
+      "BALLOT_SUBMISSION",
+      "ADJUDICATION_CONSENSUS_REACHED"
+    ]
+  }
+}

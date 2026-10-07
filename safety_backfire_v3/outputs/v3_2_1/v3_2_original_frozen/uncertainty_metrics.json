@@ -1,0 +1,51 @@
+{
+  "validation_layer": "LEVEL_E_REAL_UNCERTAINTY",
+  "sample_size_N": 500,
+  "coverage_factor_k": 2.24,
+  "empirical_coverage": 0.976,
+  "wilson_95pct_ci": [
+    0.9585,
+    0.9862
+  ],
+  "target_safety_coverage": 0.95,
+  "target_met": true,
+  "critical_lower_bound_violations": 2,
+  "critical_lower_bound_violation_rate": 0.004,
+  "mean_interval_width_m": 0.7976,
+  "near_zero_stress_results": [
+    {
+      "test": "D_APPROACHES_ZERO",
+      "d_input": 0.01,
+      "d_corrected": 0.0,
+      "clamping_active": true,
+      "valid": true
+    },
+    {
+      "test": "D_APPROACHES_ZERO",
+      "d_input": 0.03,
+      "d_corrected": 0.0,
+      "clamping_active": true,
+      "valid": true
+    },
+    {
+      "test": "D_APPROACHES_ZERO",
+      "d_input": 0.05,
+      "d_corrected": 0.0,
+      "clamping_active": true,
+      "valid": true
+    },
+    {
+      "test": "D_APPROACHES_ZERO",
+      "d_input": 0.1,
+      "d_corrected": 0.028,
+      "clamping_active": false,
+      "valid": true
+    }
+  ],
+  "covariance_singularity_guard": {
+    "singular_matrix_detected": true,
+    "regularization_floor_applied": true,
+    "regularized_min_eigenvalue": 0.0001,
+    "zero_crash_guarantee": true
+  }
+}

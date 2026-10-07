@@ -1,0 +1,23 @@
+{
+  "event_identifier": "UNION_HEVT_Warehouse_026_003",
+  "timeline": [
+    {
+      "phase": "PRE",
+      "start_s": 17.0,
+      "end_s": 21.97,
+      "duration_s": 5.0
+    },
+    {
+      "phase": "INTERVENTION",
+      "start_s": 22.0,
+      "end_s": 26.5,
+      "duration_s": 4.53
+    },
+    {
+      "phase": "POST",
+      "start_s": 26.53,
+      "end_s": 34.5,
+      "duration_s": 8.0
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "overall_odd_status": "PARTIALLY_CHARACTERIZED_WITH_SHIFTS",
+  "camera_pitch_characterized": true,
+  "distance_range_characterized": true,
+  "lighting_characterized": false,
+  "camera_height_status": "ODD_SHIFT (All cameras mounted between 2.52m and 2.99m, below nominal 3.5m)",
+  "per_camera_pitch_assessment": {
+    "Camera_0000": {
+      "optical_depression_deg": 32.37,
+      "below_40_threshold": true,
+      "pitch_penalty": 0.22
+    },
+    "Camera_0001": {
+      "optical_depression_deg": 20.63,
+      "below_40_threshold": true,
+      "pitch_penalty": 0.22
+    },
+    "Camera_0002": {
+      "optical_depression_deg": 35.69,
+      "below_40_threshold": true,
+      "pitch_penalty": 0.22
+    },
+    "Camera_0003": {
+      "optical_depression_deg": 20.75,
+      "below_40_threshold": true,
+      "pitch_penalty": 0.22
+    },
+    "Camera_0004": {
+      "optical_depression_deg": 20.56,
+      "below_40_threshold": true,
+      "pitch_penalty": 0.22
+    },
+    "Camera_0005": {
+      "optical_depression_deg": 28.15,
+      "below_40_threshold": true,
+      "pitch_penalty": 0.22
+    },
+    "Camera_0006": {
+      "optical_depression_deg": 33.77,
+      "below_40_threshold": true,
+      "pitch_penalty": 0.22
+    }
+  }
+}

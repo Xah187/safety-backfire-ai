@@ -1,0 +1,98 @@
+{
+  "milestone": "V3.4-N-CORR-02",
+  "document_title": "Multi-Modal Synchronization Gate Semantics & Channel Reserve Specification V2",
+  "audit_date": "2026-10-03T22:30:00Z",
+  "governance_classification": "ENGINEERING_SEMANTIC_BASELINE",
+  "abstract": "Defines explicit operational state semantics for camera synchronization margin consumption (SYNC_NOMINAL_PASS, PASS_WITH_DEGRADED_MARGIN, SYNC_FAIL), enforces independent channel evaluation across all deployed modalities, and forbids bypassing component limits based solely on composite skew.",
+  "budget_identity_preservation": {
+    "nominal_subsystem_allocation_ms": 18.00,
+    "composite_design_target_ms": 33.33,
+    "unallocated_design_reserve_ms": 15.33,
+    "identity_formula": "18.00 ms + 15.33 ms == 33.33 ms (nominal 30.0 fps video frame period)",
+    "epistemic_classification": "DESIGN_BUDGET_IDENTITY"
+  },
+  "camera_synchronization_state_semantics": {
+    "metric": "P99 camera strobe trigger phase offset relative to PTP master clock",
+    "states": {
+      "SYNC_NOMINAL_PASS": {
+        "range_ms": "P99 <= 2.0 ms",
+        "operational_status": "NOMINAL_OPERATION",
+        "margin_state": "FULL_MARGIN_PRESERVED",
+        "commissioning_disposition": "PASS",
+        "description": "Camera trigger jitter is strictly within the primary nominal design envelope. Zero design reserve is consumed."
+      },
+      "SYNC_RESERVE_CONSUMED": {
+        "range_ms": "2.0 ms < P99 <= 5.0 ms",
+        "operational_status": "PASS_WITH_DEGRADED_MARGIN",
+        "margin_state": "RESERVE_PARTIALLY_CONSUMED",
+        "commissioning_disposition": "PASS_WITH_DEGRADED_MARGIN",
+        "description": "Camera jitter exceeds nominal design target (2.0 ms) but remains within the component acceptance limit (5.0 ms). Up to 3.0 ms of the 15.33 ms design reserve is consumed. Operationally acceptable for physical DAQ only if composite skew <= 33.33 ms, but triggers an automated jitter warning log and requires engineering review."
+      },
+      "SYNC_ACCEPTABLE": {
+        "range_ms": "P99 <= 5.0 ms",
+        "operational_status": "ACCEPTABLE_FOR_CAPTURE",
+        "description": "Superset of SYNC_NOMINAL_PASS and SYNC_RESERVE_CONSUMED indicating compliance with component acceptance limit."
+      },
+      "SYNC_FAIL": {
+        "range_ms": "P99 > 5.0 ms",
+        "operational_status": "FAIL",
+        "margin_state": "HARD_REJECTION_LIMIT_EXCEEDED",
+        "commissioning_disposition": "FAIL",
+        "description": "Camera trigger jitter exceeds the component hard rejection limit (5.0 ms). Gate C1 and Gate C2 immediately fail, triggering a non-negotiable DATA_INVALIDATION_ABORT."
+      }
+    }
+  },
+  "mandatory_channel_evaluation_matrix": {
+    "rule_of_independent_channel_evaluation": "Gate C1 evaluates every required synchronization channel relevant to the deployed configuration. NO channel may silently bypass a component acceptance rule merely because composite skew is below 33.33 ms.",
+    "channels": [
+      {
+        "channel_id": "CH_OPTICAL_CAMERAS",
+        "applies_to": "All deployed cameras (A, C mandatory; B, D if deployed)",
+        "physical_quantity": "Shutter exposure hardware trigger strobe offset relative to PTP 1PPS pulse",
+        "nominal_target_ms": 2.0,
+        "acceptance_limit_ms": 5.0,
+        "hard_rejection_limit_ms": 5.0,
+        "degraded_margin_range_ms": [2.0, 5.0],
+        "channel_pass_disposition": "P99 <= 2.0 ms -> PASS; 2.0 < P99 <= 5.0 ms -> PASS_WITH_DEGRADED_MARGIN; P99 > 5.0 ms -> FAIL"
+      },
+      {
+        "channel_id": "CH_CAN_GATEWAY",
+        "applies_to": "Vehicle telemetry CAN-to-Ethernet gateway",
+        "physical_quantity": "CAN message transit and buffering latency from CAN bus EOF to UDP packet egress",
+        "nominal_target_ms": 5.0,
+        "acceptance_limit_ms": 5.0,
+        "hard_rejection_limit_ms": 10.0,
+        "degraded_margin_range_ms": [5.0, 10.0],
+        "channel_pass_disposition": "P99 <= 5.0 ms -> PASS; 5.0 < P99 <= 10.0 ms -> PASS_WITH_DEGRADED_MARGIN; P99 > 10.0 ms -> FAIL"
+      },
+      {
+        "channel_id": "CH_SECONDARY_SENSOR",
+        "applies_to": "Secondary zone sensor (LiDAR / Radar if deployed; NOT_APPLICABLE if absent)",
+        "physical_quantity": "Pointcloud packet UDP aggregation and transit latency across TSN switch fabric",
+        "nominal_target_ms": 5.0,
+        "acceptance_limit_ms": 8.0,
+        "hard_rejection_limit_ms": 8.0,
+        "degraded_margin_range_ms": [5.0, 8.0],
+        "channel_pass_disposition": "P99 <= 5.0 ms -> PASS; 5.0 < P99 <= 8.0 ms -> PASS_WITH_DEGRADED_MARGIN; P99 > 8.0 ms -> FAIL"
+      },
+      {
+        "channel_id": "CH_HOST_OS_JITTER",
+        "applies_to": "Host DAQ Linux kernel socket buffer and thread scheduling queue",
+        "physical_quantity": "Kernel socket read to user-space thread buffer queue latency",
+        "nominal_target_ms": 1.0,
+        "acceptance_limit_ms": 3.0,
+        "hard_rejection_limit_ms": 5.0,
+        "degraded_margin_range_ms": [1.0, 3.0],
+        "channel_pass_disposition": "P99 <= 1.0 ms -> PASS; 1.0 < P99 <= 3.0 ms -> PASS_WITH_DEGRADED_MARGIN; P99 > 5.0 ms -> FAIL"
+      }
+    ]
+  },
+  "composite_multi_modal_envelope": {
+    "composite_acceptance_target_ms": 33.33,
+    "composite_hard_rejection_limit_ms": 33.33,
+    "measurement_method": "Multi-modal optical strobe and physical impactor captured simultaneously by optical cameras and vehicle accelerometer",
+    "measured_composite_skew_ms": null,
+    "composite_rule": "Composite skew <= 33.33 ms is a necessary condition, but NOT a sufficient condition for Gate C1 PASS. Gate C1 PASS requires ALL deployed individual channels to be either PASS or PASS_WITH_DEGRADED_MARGIN."
+  },
+  "gate_c1_commissioning_initial_status": "UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING"
+}

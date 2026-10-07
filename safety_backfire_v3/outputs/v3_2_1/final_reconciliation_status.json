@@ -1,0 +1,11 @@
+{
+  "release_version": "V3.2.1",
+  "audit_decision": "V3.2.1_RELEASE_ACCEPTED_WITH_CORRECTIONS",
+  "audit_decision_summary": "All 10 critical inconsistencies reconciled with empirical truth. Unsupported 2.5-hour duration removed and replaced with 23.0 min corpus / 11.0 min blind test. Event rates recalculated with exact Poisson intervals. Camera pitch ODD reconciled with 22.5 deg classified as degraded stress test. Hazard micro vs macro metrics explicitly distinguished. Denominators clarified.",
+  "verified_invariants": {
+    "data_wins": true,
+    "zero_fabricated_metrics": true,
+    "zero_open_critical_defects": true,
+    "regression_suite_passing": true
+  }
+}

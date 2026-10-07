@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EStopSafeStateAndTractionIsolationSchemaV2",
+  "milestone": "V3.4-N-CORR-02",
+  "description": "Rigorous physical signal transition sequence, probe definitions, and state separation for vehicle emergency stop, separating motor line current cutoff from DC bus isolation and mechanical brake engagement.",
+  "governance_classification": "PHYSICAL_COMMISSIONING_GATE_C8",
+  "physical_transition_sequence": {
+    "t0_estop_command": {
+      "symbol": "t_estop_command",
+      "definition": "The exact physical instant when the normally-closed (NC) dual-channel E-Stop push-button or wireless safety relay contacts break.",
+      "probe_point": "Wireless Safety Receiver Channel 1/2 NC contact terminals (24VDC -> 0VDC edge)."
+    },
+    "t1_safety_output": {
+      "symbol": "t_safety_output",
+      "definition": "Safety relay internal logic de-energization time.",
+      "probe_point": "Safety controller OSSD or relay output terminals."
+    },
+    "t2_contactor_diagnostic_transition": {
+      "symbol": "t_contactor_change",
+      "definition": "Mechanical separation of the main traction contactor armature and opening of its auxiliary feedback microswitch.",
+      "probe_point": "Main contactor auxiliary normally-open (NO) status microswitch (24VDC -> 0VDC).",
+      "diagnostic_target_ms": 35.0,
+      "semantic_role": "DIAGNOSTIC_PRECURSOR (Verifies contactor movement; does not prove electrical isolation)."
+    },
+    "t3_traction_safe_state": {
+      "symbol": "t_traction_safe_state",
+      "definition": "The authoritative kinetic safety endpoint where high-voltage traction motor line current drops below safe threshold (I_motor < 0.5 A RMS), verifying immediate torque cessation.",
+      "probe_point": "Calibrated Hall-effect current clamp (e.g. Tektronix TCP303 / A622) on motor Phase U conductor.",
+      "authoritative_metric": "delta_t_traction = t_traction_safe_state - t_estop_command",
+      "acceptance_target_ms": 50.0,
+      "epistemic_status": "CURRENT_DESIGN_REQUIREMENT_AND_FIELD_ACCEPTANCE_TEST"
+    }
+  },
+  "separation_of_physical_endpoints": {
+    "traction_current_safe": {
+      "quantity": "TRACTION_CURRENT_SAFE",
+      "definition": "Motor phase line current I_motor < 0.5 A RMS.",
+      "measurement_method": "Hall-effect current probe on motor stator phase lead.",
+      "role": "Direct proof of electric motor torque elimination."
+    },
+    "brake_applied": {
+      "quantity": "BRAKE_APPLIED",
+      "definition": "Physical mechanical engagement of friction brake pads against the wheel/disc assembly.",
+      "control_signal_separation": "BRAKE_COIL_DEENERGIZED (solenoid voltage drops to 0V) is an electrical actuation signal, NOT mechanical engagement. Mechanical pad displacement requires spring travel time (typically 15-35 ms after coil drop). True BRAKE_APPLIED is measured via vehicle deceleration profile (accelerometer >= 1.5 m/s^2) or caliper mechanical proximity sensor.",
+      "measurement_method": "IMU longitudinal deceleration trace AND brake coil voltage monitor."
+    },
+    "contactor_open": {
+      "quantity": "CONTACTOR_OPEN",
+      "definition": "Physical separation of the main contactor contacts.",
+      "measurement_method": "Auxiliary status microswitch continuity check.",
+      "qualification": "Microswitch status indicates armature travel but cannot detect contact contact welding or plasma arcing."
+    },
+    "dc_bus_isolated": {
+      "quantity": "DC_BUS_ISOLATED",
+      "definition": "Galvanic disconnection of the battery pack and complete discharge of inverter DC link capacitance (V_bus < 50.0 VDC).",
+      "separation_from_motor_current": "I_motor < 0.5 A DOES NOT EQUAL DC_BUS_ISOLATED. Inverter IGBTs gate off in < 1 ms (cutting motor current to zero), but inverter DC link bulk capacitors can store hazardous voltage (> 50 V) for seconds or minutes. DC-bus isolation requires an independent differential high-voltage probe measurement (V_bus < 50V).",
+      "measurement_method": "High-voltage differential oscilloscope probe across inverter DC+ and DC- bus terminals."
+    }
+  },
+  "safety_certification_taxonomy": {
+    "component_certification": {
+      "term": "COMPONENT_CERTIFICATION",
+      "definition": "Vendor certificate issued by an accredited Notified Body (e.g. TÜV Rheinland) certifying that an individual component (e.g. Pilz safety relay, Sick scanner) satisfies IEC 61508 SIL-3 or ISO 13849-1 Cat 4 / PLe in isolation.",
+      "classification": "VENDOR_CERTIFICATION_REQUIREMENT"
+    },
+    "system_architecture": {
+      "term": "SYSTEM_ARCHITECTURE",
+      "definition": "Circuit topology and wiring implementation (dual-channel cross-monitored loop, pulsed diagnostic outputs) designed to achieve Category 4 architecture."
+    },
+    "integrated_safety_function": {
+      "term": "INTEGRATED_SAFETY_FUNCTION",
+      "definition": "The complete, end-to-end safety loop combining sensor inputs, safety relay logic, contactors, inverter disable circuits, and mechanical brakes on this specific physical research vehicle.",
+      "limitation": "A vendor component certificate DOES NOT certify the integrated safety function of the vehicle."
+    },
+    "field_validation": {
+      "term": "FIELD_VALIDATION",
+      "definition": "Comprehensive on-site empirical testing proving that the integrated safety function executes safely under all operational load and speed conditions.",
+      "current_status": "NOT_PERFORMED",
+      "classification": "SYSTEM_SAFETY_VALIDATION (To be performed only after physical commissioning)"
+    }
+  },
+  "gate_c8_acceptance_rule": {
+    "authoritative_rule": "delta_t_traction <= 50.0 ms (I_motor < 0.5 A) AND t_contactor_change <= 35.0 ms AND VENDOR_CERTIFICATION_REQUIREMENT satisfied for safety relay and E-Stop switch.",
+    "current_status": "UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "comparison_schema_version": "V3.3.3_CROSS_SCENE_DISTRIBUTION_SHIFT_V1",
+  "timestamp_utc": "2026-09-28T09:59:50.258695+00:00",
+  "scenes_compared": {
+    "RUN_003": "NVIDIA Warehouse_026 (4 cameras, 7,200 frames)",
+    "RUN_004": "NVIDIA Warehouse_027 (7 cameras, 12,600 frames)"
+  },
+  "1_total_detection_count_comparison": {
+    "RUN_003_Warehouse_026": {
+      "total": 10942,
+      "forklift": 3983,
+      "person": 6959,
+      "detections_per_frame": 1.52
+    },
+    "RUN_004_Warehouse_027": {
+      "total": 34894,
+      "forklift": 3968,
+      "person": 30926,
+      "detections_per_frame": 2.769
+    },
+    "growth_ratio": 3.19
+  },
+  "2_distance_stratum_density_comparison": {
+    "RUN_003_Warehouse_026": {
+      "mean_distance_m": 6.923,
+      "in_odd_le_8m_pct": 71.54,
+      "degraded_8_to_10m_pct": 10.71,
+      "out_of_odd_gt_10m_pct": 17.75
+    },
+    "RUN_004_Warehouse_027": {
+      "mean_distance_m": 6.342,
+      "in_odd_le_8m_pct": 74.32,
+      "degraded_8_to_10m_pct": 9.27,
+      "out_of_odd_gt_10m_pct": 16.42
+    },
+    "shift_finding": "Distance stratum shift: Objects in Warehouse_027 exhibit distinct spatial clustering depending on corridor geometry."
+  },
+  "3_camera_pitch_distribution_differences": {
+    "RUN_003_Warehouse_026": {
+      "optical_depression_range_deg": [
+        24.33,
+        31.94
+      ],
+      "mean_optical_depression_deg": 27.74
+    },
+    "RUN_004_Warehouse_027": {
+      "optical_depression_range_deg": [
+        20.56,
+        35.69
+      ],
+      "mean_optical_depression_deg": 27.42
+    },
+    "pitch_finding": "Mean optical depression angle is virtually identical (27.74\u00b0 vs 27.42\u00b0), confirming both facilities use standardized ceiling mounting pitch brackets."
+  },
+  "4_track_topology_and_fragmentation_comparison": {
+    "RUN_003_Warehouse_026": {
+      "cameras": 4,
+      "total_tracks": 81,
+      "tracks_per_camera": 20.2,
+      "detections_per_track": 135.1
+    },
+    "RUN_004_Warehouse_027": {
+      "cameras": 7,
+      "total_tracks": 237,
+      "tracks_per_camera": 33.9,
+      "detections_per_track": 147.2
+    },
+    "fragmentation_analysis": "With 7 cameras, Warehouse_027 yields 237 total active track IDs across cameras. The expansion from 4 to 7 cameras increases cross-camera boundary transitions, highlighting multi-camera ID handoff challenges."
+  },
+  "scientific_integrity_caveat": "This cross-scene comparison is purely observational and descriptive. Without independent human ground truth, no claim of statistical generalization or F1 invariance is made."
+}

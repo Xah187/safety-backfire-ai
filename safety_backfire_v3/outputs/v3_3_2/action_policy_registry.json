@@ -1,0 +1,105 @@
+{
+  "registry_version": "V3.3.2_CANONICAL_ACTION_POLICY",
+  "description": "Explicit multi-dimensional uncertainty action-gating policy separating PHYSICAL_ODD from EVIDENCE_CONFIDENCE.",
+  "dimensions": [
+    "distance",
+    "uncertainty",
+    "camera_state",
+    "geometry_state",
+    "tracking_state",
+    "identity_state",
+    "latency",
+    "illumination",
+    "hazard_confidence"
+  ],
+  "states": {
+    "UNCERTAINTY_CONFIDENT": {
+      "allowed_action": "FULL_AUTONOMOUS_ACTION",
+      "required_confidence": 0.95,
+      "conditions": {
+        "distance_m": [
+          0.5,
+          8.0
+        ],
+        "max_uncertainty_width_m": 0.25,
+        "min_camera_pitch_deg": 20.0,
+        "max_floor_slope_deg": 3.0,
+        "max_geometry_residual_m": 0.025,
+        "min_tracking_confidence": 0.85,
+        "identity_state": "CONFIRMED_UNIQUE",
+        "max_latency_ms": 500.0,
+        "min_illumination_lux": 250.0,
+        "min_hazard_confidence": 0.8
+      },
+      "reason_code": "NOMINAL_HIGH_CONFIDENCE"
+    },
+    "UNCERTAINTY_DEGRADED": {
+      "allowed_action": "ADVISORY_ONLY",
+      "required_confidence": 0.85,
+      "conditions": {
+        "distance_m": [
+          0.5,
+          8.0
+        ],
+        "uncertainty_width_m": [
+          0.25,
+          0.4
+        ],
+        "identity_state": [
+          "UNKNOWN_AMBIGUOUS_PAIR",
+          "UNKNOWN"
+        ],
+        "illumination_lux": [
+          50.0,
+          250.0
+        ],
+        "tracking_confidence": [
+          0.6,
+          0.85
+        ]
+      },
+      "reason_code": "SPATIAL_UNCERTAINTY_ELEVATED"
+    },
+    "UNCERTAINTY_INSUFFICIENT": {
+      "allowed_action": "SAFE_REFUSAL",
+      "required_confidence": 0.95,
+      "refusal_triggers": [
+        {
+          "dimension": "distance_m",
+          "condition": "> 8.0",
+          "reason_code": "FARFIELD_DISTANCE_EXCEEDED"
+        },
+        {
+          "dimension": "camera_pitch_deg",
+          "condition": "< 20.0",
+          "reason_code": "CAMERA_PITCH_VIOLATION"
+        },
+        {
+          "dimension": "floor_slope_deg",
+          "condition": "> 3.0",
+          "reason_code": "FLOOR_SLOPE_VIOLATION"
+        },
+        {
+          "dimension": "illumination_lux",
+          "condition": "< 50.0",
+          "reason_code": "CRITICAL_LOW_ILLUMINATION"
+        },
+        {
+          "dimension": "latency_ms",
+          "condition": "> 500.0",
+          "reason_code": "PIPELINE_LATENCY_EXCEEDED"
+        },
+        {
+          "dimension": "uncertainty_width_m",
+          "condition": "> 0.40",
+          "reason_code": "SPATIAL_UNCERTAINTY_TOO_HIGH"
+        },
+        {
+          "dimension": "geometry_residual_m",
+          "condition": "> 0.035",
+          "reason_code": "GEOMETRY_CALIBRATION_DRIFT"
+        }
+      ]
+    }
+  }
+}

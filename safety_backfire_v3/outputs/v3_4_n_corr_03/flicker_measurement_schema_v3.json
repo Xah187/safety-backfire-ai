@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TemporalLightModulationAndPhotometricMetrologySchemaV3",
+  "milestone": "V3.4-N-CORR-03",
+  "description": "Comprehensive photometric metrology specification defining explicit point-by-point spatial illuminance structures and rigorous optoelectronic signal processing parameters for high-frequency temporal light modulation.",
+  "governance_classification": "PHYSICAL_COMMISSIONING_GATE_C7",
+  "path_1_spatial_illuminance_metrology": {
+    "metric_description": "Steady-state photopic illuminance E_v measured across 5 standardized corridor stations.",
+    "measurement_points_structure": {
+      "point_01_result_lux": null,
+      "point_02_result_lux": null,
+      "point_03_result_lux": null,
+      "point_04_result_lux": null,
+      "point_05_result_lux": null,
+      "spatial_mean_lux": null,
+      "spatial_min_lux": null,
+      "spatial_max_lux": null
+    },
+    "authoritative_spatial_acceptance_rule": {
+      "policy": "EVERY_REQUIRED_MEASUREMENT_POINT_AND_SPATIAL_MEAN",
+      "definition": "To prevent spatial averaging from concealing severe localized dark pockets or excessive glare hotspots, acceptance requires BOTH: (1) spatial_mean_lux in [300.0, 400.0] lux AND (2) EVERY_REQUIRED_MEASUREMENT_POINT satisfies 300.0 <= E_v <= 400.0 lux.",
+      "rejection_condition": "If any individual point < 300.0 lux or > 400.0 lux, Path 1 FAILS, even if the spatial average is exactly 350.0 lux."
+    },
+    "instrument_metrology": {
+      "instrument_type": "Class B DIN 5032-7 Cosine-Corrected Lux Meter (Testo 540 / Gossen Mavolux 5032B)",
+      "photometric_response": "CIE photopic spectral luminous efficiency V(lambda) match f1' <= 6.0%",
+      "cosine_correction": "f2 <= 3.0%",
+      "calibration_reference": "ISO/IEC 17025 accredited laboratory photometer calibration certificate",
+      "expanded_measurement_uncertainty_percent": 3.0,
+      "coverage_factor_k": 2.0
+    }
+  },
+  "path_2_flicker_and_modulation_metrology": {
+    "metric_description": "High-frequency temporal light modulation, Flicker Index (FI), and fundamental modulation frequency (f_mod).",
+    "acceptance_target_classification": "PROJECT_CURRENT_ACCEPTANCE_TARGET",
+    "standard_mandate_clarification": "IEEE 1789-2015 provides risk-mitigation curves based on modulation frequency and percent flicker; it DOES NOT mandate the project's exact combination of FI <= 0.05 and f_mod >= 1000 Hz. This pair is designated PROJECT_CURRENT_ACCEPTANCE_TARGET.",
+    "optoelectronic_instrumentation_parameters": {
+      "detector_bandwidth_hz": 50000.0,
+      "analog_filter": "Hardware 4th-order anti-alias low-pass Butterworth filter (f_cutoff = 50.0 kHz, -80 dB/decade roll-off)",
+      "digitizer_bandwidth_mhz": 70.0,
+      "sampling_rate_msa_per_s": 1.0,
+      "sampling_margin_definition": "Sampling at 1.0 MSa/s over the 50.0 kHz analog reconstructed band provides exactly 20x oversampling margin above the 50 kHz analog anti-alias filter cutoff, enabling true peak/trough waveform reconstruction.",
+      "measurement_duration_s": 2.0,
+      "FFT_window": "Hann window with 50% frame overlap",
+      "frequency_resolution_hz": 0.5,
+      "digital_filter": "Digital moving median filter (window = 5 samples) for pulse transient de-glitching",
+      "photometric_response": "Eye-matched photopic optical filter V(lambda)",
+      "calibration_reference": "ISO/IEC 17025 accredited fast-optical detector calibration certificate",
+      "expanded_measurement_uncertainty_percent": 3.5,
+      "coverage_factor_k": 2.0
+    },
+    "c7_flicker_status": "UNVERIFIED_INSTRUMENTATION_REQUIREMENT"
+  },
+  "gate_c7_acceptance_rule": {
+    "rule": "Gate C7 PASS requires BOTH Path 1 (Every point in [300, 400] lux and mean in [300, 400] lux) == PASS AND Path 2 (FI <= 0.05, f_mod >= 1000 Hz) == PASS.",
+    "current_status": "UNVERIFIED_PENDING_PHYSICAL_COMMISSIONING"
+  }
+}

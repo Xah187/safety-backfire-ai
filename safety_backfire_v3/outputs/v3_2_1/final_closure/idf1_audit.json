@@ -1,0 +1,33 @@
+{
+  "audit_version": "V3.2.1_IDF1_AUDIT",
+  "timestamp_utc": "2026-09-24T18:25:00Z",
+  "metric_name": "tracking_idf1",
+  "value": 0.9141,
+  "formula": "2 * IDTP / (2 * IDTP + IDFP + IDFN)",
+  "mathematical_audit": {
+    "rejected_fraction": "1768 / 1851 = 0.955159 != 0.9141",
+    "rejection_reason": "1768 / 1851 evaluates to 0.9552, mathematically contradicting the canonical value 0.9141. It was an artificial placeholder and is formally retracted.",
+    "instance_ratio_finding": "In V3.2 tracking validation, 3,154 correct ID instances out of 3,450 entity-frame instances yielded 3154 / 3450 = 0.9142. However, exact bipartite IDTP/IDFP/IDFN decomposition is not recorded in tracking_metrics.json.",
+    "evidence_status": "NOT_RECONSTRUCTIBLE_FROM_CURRENT_ARTIFACTS"
+  },
+  "canonical_quantities": {
+    "IDTP": null,
+    "IDFP": null,
+    "IDFN": null,
+    "total_entity_frame_instances": 3450,
+    "total_ground_truth_trajectories": 24,
+    "evaluated_frames": 1672,
+    "total_id_switches": 7,
+    "total_fragmentations": 13,
+    "track_recovery_rate_pct": 87.5
+  },
+  "confidence_interval": {
+    "ci_status": "NOT_REPORTED",
+    "ci_method": "NONE",
+    "ci_lower": null,
+    "ci_upper": null,
+    "justification": "Wilson score interval is retracted because tracking trajectory identity associations are not independent Bernoulli trials. Without cluster-aware sequence bootstrap, no CI is reported."
+  },
+  "source_artifact": "safety_backfire_v3/outputs/v3_2/tracking_metrics.json",
+  "canonical_reporting_rule": "Report IDF1 = 0.9141 as an empirical summary metric with 3,450 entity-frame instances and 24 trajectories. Do NOT fabricate IDTP/IDFP/IDFN numerators or report Wilson CI."
+}

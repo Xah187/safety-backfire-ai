@@ -1,0 +1,17 @@
+{
+  "artifact_name": "EXP_333_01_EVENT_METRICS",
+  "experiment_id": "EXP_333_01_EXTERNAL_FACILITY",
+  "facility_id": "FACILITY_E_COLD_STORAGE",
+  "decision_layer": "EVENT",
+  "event_metrics": {
+    "event_precision": null,
+    "event_recall": null,
+    "event_f1": null,
+    "false_events_per_hour": null,
+    "event_debounce_latency_ms": null,
+    "duplicate_events_count": null,
+    "missed_events_count": null,
+    "status": "NOT_ESTABLISHED"
+  },
+  "governance_rule": "Event layer performance must be directly measured from temporal event traces, not inferred from static object detection F1."
+}

@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "timestamp": "2026-09-22T17:22:02Z",
+    "benchmark_correction_rationale": "Formally separated unconsumed burst flood testing from steady-state 25 FPS live streaming. Eliminates conflation of 96% queue overflow drop rate with sustained live performance."
+  },
+  "burst_stress_test": {
+    "regime": "BURST_STRESS_TEST",
+    "inter_arrival_ms": 1.0,
+    "queue_capacity": 5,
+    "total_injected": 50,
+    "total_enqueued": 50,
+    "total_dropped": 45,
+    "drop_rate_pct": 90.0,
+    "queue_bounded": true
+  },
+  "sustained_live_test": {
+    "regime": "SUSTAINED_25FPS_LIVE_TEST",
+    "inter_arrival_ms": 40.0,
+    "stream_fps": 25.0,
+    "queue_capacity": 5,
+    "total_frames": 120,
+    "processed_frames": 120,
+    "dropped_frames": 0,
+    "drop_rate_pct": 0.0,
+    "stage_percentiles": {
+      "capture_to_detection_ms": {
+        "P50": 16.0,
+        "P95": 16.0,
+        "P99": 16.0,
+        "Max": 16.0
+      },
+      "capture_to_tracking_ms": {
+        "P50": 19.0,
+        "P95": 19.0,
+        "P99": 19.0,
+        "Max": 19.0
+      },
+      "capture_to_pose_ms": {
+        "P50": 40.0,
+        "P95": 80.0,
+        "P99": 80.0,
+        "Max": 80.0
+      },
+      "capture_to_geometry_ms": {
+        "P50": 20.5,
+        "P95": 20.5,
+        "P99": 20.5,
+        "Max": 20.5
+      },
+      "capture_to_risk_ms": {
+        "P50": 21.3,
+        "P95": 21.3,
+        "P99": 21.3,
+        "Max": 21.3
+      },
+      "capture_to_event_ms": {
+        "P50": 22.0,
+        "P95": 22.0,
+        "P99": 22.0,
+        "Max": 22.0
+      },
+      "capture_to_final_decision_ms": {
+        "P50": 22.0,
+        "P95": 22.0,
+        "P99": 22.0,
+        "Max": 22.0
+      },
+      "pose_age_at_decision_ms": {
+        "P50": 40.0,
+        "P95": 80.0,
+        "P99": 80.0,
+        "Max": 80.0
+      }
+    }
+  }
+}

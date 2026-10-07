@@ -1,0 +1,40 @@
+{
+  "manifest_version": "EXP_333_01_GROUND_TRUTH_EVIDENCE_V1",
+  "timestamp_utc": "2026-09-28T00:07:22Z",
+  "detection_ground_truth": {
+    "bounding_box_annotations": false,
+    "annotation_frames": 0,
+    "annotation_objects": 0,
+    "annotation_format": null,
+    "annotator_id": null,
+    "annotator_protocol": null,
+    "inter_annotator_agreement": null,
+    "category": "NOT_AVAILABLE"
+  },
+  "tracking_ground_truth": {
+    "identity_labels": false,
+    "trajectory_annotations": false,
+    "track_count": 0,
+    "category": "NOT_AVAILABLE"
+  },
+  "event_ground_truth": {
+    "near_miss_annotations": false,
+    "interaction_annotations": false,
+    "event_count": 0,
+    "category": "NOT_AVAILABLE"
+  },
+  "perception_metrics_status": {
+    "F1": "NOT_ESTABLISHED",
+    "precision": "NOT_ESTABLISHED",
+    "recall": "NOT_ESTABLISHED",
+    "IDF1": "NOT_ESTABLISHED",
+    "MOTA": "NOT_ESTABLISHED",
+    "note": "Perception metrics are NOT_ESTABLISHED due to lack of ground truth annotations.",
+    "rule": "Cannot compute F1, precision, recall without human-annotated ground truth bounding boxes."
+  },
+  "governance": {
+    "rule": "Perception metrics (F1, precision, recall) are NOT_ESTABLISHED due to lack of ground truth.",
+    "synthetic_annotation_allowed": false,
+    "model_output_as_ground_truth_allowed": false
+  }
+}

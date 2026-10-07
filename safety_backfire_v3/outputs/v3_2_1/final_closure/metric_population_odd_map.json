@@ -1,0 +1,243 @@
+{
+  "version": "V3.2.1_METRIC_ODD_POPULATION_MAP",
+  "policy": "ODD tier is derived per metric strictly from the actual contributing physical dataset streams, not inferred from section titles.",
+  "metrics_odd_mapping": [
+    {
+      "metric_id": "METRIC_01_PERCEPTION_PRECISION",
+      "metric_name": "perception_precision",
+      "source_streams": [
+        "VID_TEST_001",
+        "VID_TEST_002"
+      ],
+      "odd_tiers": [
+        "NOMINAL_ODD",
+        "DEGRADED_ODD"
+      ],
+      "aggregate_odd_tier": "MIXED_ODD",
+      "justification": "Spans VID_TEST_001 (pitch 45 deg, Nominal) and VID_TEST_002 / CAM_DOCK_SOUTH (pitch 22.5 deg, Degraded)."
+    },
+    {
+      "metric_id": "METRIC_02_PERCEPTION_RECALL",
+      "metric_name": "perception_recall",
+      "source_streams": [
+        "VID_TEST_001",
+        "VID_TEST_002"
+      ],
+      "odd_tiers": [
+        "NOMINAL_ODD",
+        "DEGRADED_ODD"
+      ],
+      "aggregate_odd_tier": "MIXED_ODD",
+      "justification": "Evaluated across Nominal (pitch 45 deg) and Degraded (pitch 22.5 deg) blind streams."
+    },
+    {
+      "metric_id": "METRIC_03_TRACKING_IDF1",
+      "metric_name": "tracking_idf1",
+      "source_streams": [
+        "test.mp4",
+        "test2.mp4"
+      ],
+      "odd_tiers": [
+        "NOMINAL_ODD"
+      ],
+      "aggregate_odd_tier": "NOMINAL_ODD",
+      "justification": "Evaluated on stationary CCTV perspectives within nominal mounting pitch (45 deg) and distance (<=8.0m)."
+    },
+    {
+      "metric_id": "METRIC_04_GEOMETRY_PLANAR_MAE",
+      "metric_name": "planar_floor_projection_mae",
+      "source_streams": [
+        "SURVEYED_FLOOR_GRID_SECTOR_B"
+      ],
+      "odd_tiers": [
+        "NOMINAL_ODD"
+      ],
+      "aggregate_odd_tier": "NOMINAL_ODD",
+      "justification": "Evaluated on surveyed planar warehouse floor (slope < 1.5 deg). 10 ramp incline markers (3.5 deg) excluded per FAIL-45."
+    },
+    {
+      "metric_id": "METRIC_05_HAZARD_MICRO_PRECISION",
+      "metric_name": "hazard_micro_precision",
+      "source_streams": [
+        "VID_VAL_001"
+      ],
+      "odd_tiers": [
+        "NOMINAL_ODD"
+      ],
+      "aggregate_odd_tier": "NOMINAL_ODD",
+      "justification": "12-class hazard benchmark evaluated on nominal operational camera streams."
+    },
+    {
+      "metric_id": "METRIC_06_HAZARD_MICRO_RECALL",
+      "metric_name": "hazard_micro_recall",
+      "source_streams": [
+        "VID_VAL_001"
+      ],
+      "odd_tiers": [
+        "NOMINAL_ODD"
+      ],
+      "aggregate_odd_tier": "NOMINAL_ODD",
+      "justification": "Evaluated on nominal operational camera streams with ground-truth staging."
+    },
+    {
+      "metric_id": "METRIC_07_HAZARD_MACRO_PRECISION",
+      "metric_name": "hazard_macro_precision",
+      "source_streams": [
+        "VID_VAL_001"
+      ],
+      "odd_tiers": [
+        "NOMINAL_ODD"
+      ],
+      "aggregate_odd_tier": "NOMINAL_ODD",
+      "justification": "Unweighted arithmetic average over nominal 12-class hazard evaluations."
+    },
+    {
+      "metric_id": "METRIC_08_HAZARD_MACRO_RECALL",
+      "metric_name": "hazard_macro_recall",
+      "source_streams": [
+        "VID_VAL_001"
+      ],
+      "odd_tiers": [
+        "NOMINAL_ODD"
+      ],
+      "aggregate_odd_tier": "NOMINAL_ODD",
+      "justification": "Unweighted arithmetic average over nominal 12-class hazard evaluations."
+    },
+    {
+      "metric_id": "METRIC_09_EVENT_PRECISION_CORPUS",
+      "metric_name": "event_precision_full_corpus",
+      "source_streams": [
+        "STREAM_SET_A_NOMINAL",
+        "STREAM_SET_B_CORRIDOR",
+        "STREAM_SET_C_DOCK"
+      ],
+      "odd_tiers": [
+        "NOMINAL_ODD",
+        "DEGRADED_ODD"
+      ],
+      "aggregate_odd_tier": "MIXED_ODD",
+      "justification": "Extended 23-minute corpus contains diverse viewpoints including shallow dock perspectives."
+    },
+    {
+      "metric_id": "METRIC_10_EVENT_RECALL_CORPUS",
+      "metric_name": "event_recall_full_corpus",
+      "source_streams": [
+        "STREAM_SET_A_NOMINAL",
+        "STREAM_SET_B_CORRIDOR",
+        "STREAM_SET_C_DOCK"
+      ],
+      "odd_tiers": [
+        "NOMINAL_ODD",
+        "DEGRADED_ODD"
+      ],
+      "aggregate_odd_tier": "MIXED_ODD",
+      "justification": "Extended 23-minute corpus contains nominal and degraded perspectives."
+    },
+    {
+      "metric_id": "METRIC_11_EVENT_PRECISION_BLIND",
+      "metric_name": "event_precision_blind_test",
+      "source_streams": [
+        "VID_TEST_001",
+        "VID_TEST_002"
+      ],
+      "odd_tiers": [
+        "NOMINAL_ODD",
+        "DEGRADED_ODD"
+      ],
+      "aggregate_odd_tier": "MIXED_ODD",
+      "justification": "Blind test incorporates CAM_DOCK_SOUTH (pitch 22.5 deg)."
+    },
+    {
+      "metric_id": "METRIC_12_EVENT_RECALL_BLIND",
+      "metric_name": "event_recall_blind_test",
+      "source_streams": [
+        "VID_TEST_001",
+        "VID_TEST_002"
+      ],
+      "odd_tiers": [
+        "NOMINAL_ODD",
+        "DEGRADED_ODD"
+      ],
+      "aggregate_odd_tier": "MIXED_ODD",
+      "justification": "Blind test incorporates CAM_DOCK_SOUTH (pitch 22.5 deg)."
+    },
+    {
+      "metric_id": "METRIC_13_FALSE_EVENT_RATE_CORPUS",
+      "metric_name": "false_event_count_rate_corpus",
+      "source_streams": [
+        "FULL_CORPUS_MANIFEST"
+      ],
+      "odd_tiers": [
+        "NOMINAL_ODD",
+        "DEGRADED_ODD"
+      ],
+      "aggregate_odd_tier": "MIXED_ODD",
+      "justification": "Full 1,380s corpus includes mixed ODD footage."
+    },
+    {
+      "metric_id": "METRIC_14_FALSE_EVENT_RATE_BLIND",
+      "metric_name": "false_event_count_rate_blind",
+      "source_streams": [
+        "VID_TEST_001",
+        "VID_TEST_002"
+      ],
+      "odd_tiers": [
+        "NOMINAL_ODD",
+        "DEGRADED_ODD"
+      ],
+      "aggregate_odd_tier": "MIXED_ODD",
+      "justification": "Blind 660s test includes CAM_DOCK_SOUTH (pitch 22.5 deg)."
+    },
+    {
+      "metric_id": "METRIC_15_UNCERTAINTY_COVERAGE",
+      "metric_name": "uncertainty_factor_coverage",
+      "source_streams": [
+        "CAM02_CALIBRATION_STREAM"
+      ],
+      "odd_tiers": [
+        "NOMINAL_ODD"
+      ],
+      "aggregate_odd_tier": "NOMINAL_ODD",
+      "justification": "In-sample calibration sequence recorded under nominal CCTV geometry."
+    },
+    {
+      "metric_id": "METRIC_16_BACKFIRE_CASE_CLASSIFICATION",
+      "metric_name": "backfire_case_study_classification",
+      "source_streams": [
+        "CASE_01_MIRROR",
+        "CASE_02_GOVERNOR"
+      ],
+      "odd_tiers": [
+        "NOMINAL_ODD"
+      ],
+      "aggregate_odd_tier": "NOMINAL_ODD",
+      "justification": "Both case studies conducted in nominal warehouse cells."
+    },
+    {
+      "metric_id": "METRIC_17_DID_COEFFICIENT",
+      "metric_name": "did_risk_redistribution_coefficient",
+      "source_streams": [
+        "SECTOR_B_TREATED",
+        "SECTOR_C_CONTROL"
+      ],
+      "odd_tiers": [
+        "NOMINAL_ODD"
+      ],
+      "aggregate_odd_tier": "NOMINAL_ODD",
+      "justification": "Quasi-experiment conducted in nominal warehouse sectors."
+    },
+    {
+      "metric_id": "METRIC_18_PTS_LATENCY_MEAN",
+      "metric_name": "pts_processing_latency_mean_ms",
+      "source_streams": [
+        "test.mp4",
+        "test2.mp4"
+      ],
+      "odd_tiers": [
+        "NOMINAL_ODD"
+      ],
+      "aggregate_odd_tier": "NOMINAL_ODD",
+      "justification": "Hardware PTS execution benchmarked on nominal physical raw video."
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "protocol_id": "V3_4_J_GT_ADJUDICATION_PROTOCOL",
+  "version": "1.0.0",
+  "status": "PROPOSED_SPECIFICATION",
+  "description": "Dual-Blinded Independent Human Adjudication Protocol for Establishing Ground Truth in Safety Backfire Research.",
+  "governance": {
+    "milestone": "V3.4-J",
+    "execution_policy": "DESIGN_ONLY_NOT_EXECUTED_IN_THIS_MILESTONE",
+    "ground_truth_status": "NOT_ESTABLISHED",
+    "taxonomy_status": "PROPOSED_GT_SCHEMA_NOT_ACTUAL_DATA"
+  },
+  "reviewer_roles_and_isolation": {
+    "reviewer_1": {
+      "qualification": "Certified Industrial Safety Professional (CSP / PE) with warehouse mobile equipment expertise.",
+      "blinding": "Strictly blinded to Reviewer 2, AI candidate scores, Model H outputs, and detector bounding boxes."
+    },
+    "reviewer_2": {
+      "qualification": "Independent Human Factors & Ergonomics Safety Engineer.",
+      "blinding": "Strictly blinded to Reviewer 1, AI candidate scores, Model H outputs, and detector bounding boxes."
+    },
+    "lead_adjudicator": {
+      "qualification": "Senior Safety Research Scientist.",
+      "role": "Adjudicates discrepancies when Reviewer 1 and Reviewer 2 reach conflicting gate-level or final determinations."
+    }
+  },
+  "event_presentation_interface": {
+    "visual_display": "Synchronized multi-pane video player rendering Camera A (primary), Camera B (entry), Camera C (depth), and Camera D (cross-view) in synchronized 60Hz lockstep.",
+    "telemetry_display": "Time-aligned telemetry ribbon displaying speed, longitudinal acceleration, brake pressure, and steering angle synchronously with the video playhead.",
+    "controls": "Frame-by-frame bidirectional stepping, loop playback of PRE/INTERVENTION/POST intervals, and zone polygon overlay toggle.",
+    "epistemic_sanitization": "All model scores, detector bounding boxes, and heuristic labels are completely stripped from the review interface."
+  },
+  "proposed_gt_taxonomy": [
+    {
+      "label": "CONFIRMED_BACKFIRE",
+      "definition": "An active intervention in response to a primary hazard causally precipitated an unconfounded secondary hazard exposure in an observable secondary zone.",
+      "prerequisites": "Intervention confirmed + Complete secondary observability + Net secondary risk increase + Causal linkage validated + Confounders excluded."
+    },
+    {
+      "label": "NO_BACKFIRE_OBSERVED",
+      "definition": "The intervention averted or mitigated the primary hazard without generating or transferring hazard into any observable secondary space.",
+      "prerequisites": "Intervention confirmed + Secondary zone observable + Zero secondary hazard increase (or secondary zone verified clear)."
+    },
+    {
+      "label": "INSUFFICIENT_EVIDENCE",
+      "definition": "Available sensor data, lines-of-sight, or temporal windows are inadequate to definitively confirm or refute the presence of safety backfire.",
+      "prerequisites": "Secondary depth occluded OR unconfirmed confounder OR missing critical telemetry."
+    }
+  ],
+  "inter_rater_agreement_design": {
+    "statistical_metrics": [
+      {
+        "metric_name": "Cohen_Kappa",
+        "scope": "Pairwise final event classification between Reviewer 1 and Reviewer 2",
+        "target_acceptable_threshold": 0.80
+      },
+      {
+        "metric_name": "Gate_Level_Percentage_Agreement",
+        "scope": "Gate-by-gate consensus across G1 (Intervention), G2 (Observability), G3 (Risk Delta), G4 (Causality)"
+      }
+    ],
+    "discrepancy_resolution_workflow": [
+      "Step 1: If Reviewer 1 and Reviewer 2 agree on final taxonomy label, consensus label is automatically accepted.",
+      "Step 2: If disagreement occurs on any gate, the event is routed to the Lead Adjudicator.",
+      "Step 3: Lead Adjudicator reviews the synchronized event package and writes an explicit adjudication rationale.",
+      "Step 4: The original individual review forms and the final adjudication note are permanently committed to an append-only audit log."
+    ]
+  },
+  "tamper_evident_audit_log": {
+    "storage": "SHA256 hash-chained JSONLines record",
+    "immutable_fields": [
+      "event_id",
+      "reviewer_id",
+      "review_timestamp_utc",
+      "gate_1_intervention_assessment",
+      "gate_2_observability_assessment",
+      "gate_3_risk_delta_assessment",
+      "gate_4_causal_assessment",
+      "final_gt_label",
+      "reviewer_notes",
+      "digital_signature"
+    ]
+  }
+}

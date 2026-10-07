@@ -1,0 +1,84 @@
+{
+  "manifest_version": "1.0.0",
+  "manifest_name": "PROVENANCE_CORRECTION_MANIFEST_V3_3_3",
+  "published_date": "2026-09-28T22:15:00Z",
+  "governance_authority": "Safety Backfire AI Provenance Assurance Committee",
+  "corrections": [
+    {
+      "correction_id": "CORR-PROV-001",
+      "date": "2026-09-28",
+      "reason": "Over-generalization of dataset-level synthetic description to real-world test scenes Warehouse_026 and Warehouse_027",
+      "affected_files": [
+        "outputs/v3_3_3/exp_333_01/DATA_PROVENANCE_AND_SIM_TO_REAL_GAP_ASSESSMENT.md",
+        "outputs/v3_3_3/exp_333_01/V3_3_3_CROSS_SCENE_FORENSIC_REPORT.md",
+        "outputs/v3_3_3/exp_333_01/reports/EXP_333_01_RUN_003_NVIDIA_WAREHOUSE_026_REPORT.md",
+        "outputs/v3_3_3/exp_333_01/reports/EXP_333_01_RUN_004_NVIDIA_WAREHOUSE_027_REPORT.md"
+      ],
+      "old_claim": "The dataset is synthetically generated with Omniverse and Cosmos Transfer across all warehouse scenes, including Warehouse_026 and Warehouse_027.",
+      "corrected_claim": "The NVIDIA PhysicalAI-SmartSpaces benchmark contains mixed provenance, including synthetic scenes and the real-world Warehouse_026 and Warehouse_027 test captures released on 2026-06-04.",
+      "source": "NVIDIA PhysicalAI-SmartSpaces Dataset Card and 2026-06-04 Release Changelog",
+      "source_url": "https://huggingface.co/datasets/nvidia/PhysicalAI-SmartSpaces",
+      "verification_method": "Cross-verification with official dataset card documentation and release changelog",
+      "review_status": "APPROVED_AND_SEALED"
+    },
+    {
+      "correction_id": "CORR-PROV-002",
+      "date": "2026-09-28",
+      "reason": "Inaccurate attribution of independent physical surveying to benchmark-supplied camera calibration without verifiable field surveying records",
+      "affected_files": [
+        "outputs/v3_3_3/exp_333_01/V3_3_3_CROSS_SCENE_FORENSIC_REPORT.md",
+        "outputs/v3_3_3/exp_333_01/final_v3_3_3_gate_status.json"
+      ],
+      "old_claim": "Two authentic, independently surveyed warehouse facilities provided by NVIDIA PhysicalAI-SmartSpaces benchmark.",
+      "corrected_claim": "Two real-world warehouse test captures (Warehouse_026 and Warehouse_027) provided by NVIDIA PhysicalAI-SmartSpaces benchmark. The available project evidence does not independently establish the physical surveying methodology or field measurement uncertainty underlying the supplied calibration.",
+      "source": "Engineering Audit of Calibration Provenance",
+      "source_url": "https://huggingface.co/datasets/nvidia/PhysicalAI-SmartSpaces",
+      "verification_method": "Artifact inspection confirming calibration is dataset-provided without independent survey logs",
+      "review_status": "APPROVED_AND_SEALED"
+    },
+    {
+      "correction_id": "CORR-PROV-003",
+      "date": "2026-09-28",
+      "reason": "Unjustified empirical generalization of camera pitch depression angles from 11 benchmark cameras to all industrial warehouses worldwide",
+      "affected_files": [
+        "outputs/v3_3_3/exp_333_01/V3_3_3_CROSS_SCENE_FORENSIC_REPORT.md",
+        "outputs/v3_3_3/exp_333_01/final_v3_3_3_gate_status.json"
+      ],
+      "old_claim": "The canonical top-down assumption is empirically refuted by real-world warehouse deployments; in authentic logistics facilities, cameras are always mounted at shallow angles (20° to 35°).",
+      "corrected_claim": "Across the 11 cameras analyzed in Warehouse_026 and Warehouse_027, the optical-axis depression angles derived from the supplied calibration were within the observed range of 20.56°–35.69°. This observation is limited to the two benchmark scenes and must not be generalized to industrial warehouses as a whole.",
+      "source": "Statistical and Domain Scope Review",
+      "source_url": "outputs/v3_3_3/exp_333_01/provenance/provenance_registry.json",
+      "verification_method": "Sample-size scope constraint verification (N=11 cameras across 2 scenes)",
+      "review_status": "APPROVED_AND_SEALED"
+    },
+    {
+      "correction_id": "CORR-PROV-004",
+      "date": "2026-09-28",
+      "reason": "Improper use of legal/regulatory terms and accusation of 'scientific fraud' in internal technical reports",
+      "affected_files": [
+        "outputs/v3_3_3/exp_333_01/V3_3_3_CROSS_SCENE_FORENSIC_REPORT.md"
+      ],
+      "old_claim": "Generating precision or recall against model predictions would constitute scientific fraud.",
+      "corrected_claim": "Generating precision or recall against model predictions would constitute scientifically invalid self-validation (or methodologically invalid ground-truth substitution) because ground truth is withheld by NVIDIA.",
+      "source": "Safety Case and Regulatory Terminology Standard (ISO 3691-4, ASME V&V 40)",
+      "source_url": "outputs/v3_3_3/exp_333_01/provenance/provenance_registry.json",
+      "verification_method": "Terminology audit against engineering assurance guidelines",
+      "review_status": "APPROVED_AND_SEALED"
+    },
+    {
+      "correction_id": "CORR-PROV-005",
+      "date": "2026-09-28",
+      "reason": "Clarification of Model H formal coverage status and distinction between missing physical lux and synthetic failure",
+      "affected_files": [
+        "outputs/v3_3_3/exp_333_01/DATA_PROVENANCE_AND_SIM_TO_REAL_GAP_ASSESSMENT.md",
+        "outputs/v3_3_3/exp_333_01/reports/EXP_333_01_MODEL_H_CONFORMANCE_RECONCILIATION.md"
+      ],
+      "old_claim": "Model H failed or cannot be evaluated because the benchmark is synthetic.",
+      "corrected_claim": "Model H formal coverage remains unestablished because physical lux telemetry required by the illumination-dependent component is unavailable in the released test capture package. Model H parameters remain strictly frozen (k0=2.40, beta_d=0.08, beta_l=0.12, beta_pitch=0.22).",
+      "source": "Model H Lineage Specification and Baseline Lock",
+      "source_url": "outputs/v3_3_3/reconciliation/model_h_lineage.json",
+      "verification_method": "Mathematical inspection of Model H formulation and sensor requirements",
+      "review_status": "APPROVED_AND_SEALED"
+    }
+  ]
+}

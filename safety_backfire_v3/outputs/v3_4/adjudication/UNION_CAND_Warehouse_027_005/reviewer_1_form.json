@@ -1,0 +1,31 @@
+{
+  "event_id": "UNION_CAND_Warehouse_027_005",
+  "reviewer_slot": "REVIEWER_1",
+  "reviewer_id": null,
+  "session_id": null,
+  "review_start_timestamp_utc": null,
+  "review_completion_timestamp_utc": null,
+  "status": "PENDING_HUMAN_REVIEW",
+  "observed_event_type": null,
+  "criteria_evaluations": {
+    "intervention_visible": null,
+    "primary_risk_present": null,
+    "primary_risk_reduced": null,
+    "secondary_risk_changed": null,
+    "causal_mechanism_observed": null,
+    "independent_evidence_present": null,
+    "evidence_quality": null
+  },
+  "causal_link_confidence": null,
+  "reviewer_notes": {
+    "observations": "",
+    "intervention_description": "",
+    "primary_zone_description": "",
+    "secondary_zone_description": "",
+    "reasoning_notes": ""
+  },
+  "label_decision": null,
+  "submission_locked": false,
+  "submission_hash": null,
+  "revisions": []
+}

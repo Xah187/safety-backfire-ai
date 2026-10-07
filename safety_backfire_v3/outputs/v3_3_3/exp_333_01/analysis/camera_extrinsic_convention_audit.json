@@ -1,0 +1,310 @@
+{
+  "schema_version": "V3.3.3_CAMERA_EXTRINSIC_CONVENTION_AUDIT_V1",
+  "audit_timestamp_utc": "2026-09-28T09:51:00Z",
+  "conventions_documented": {
+    "coordinate_convention": "World: right-handed cartesian, Z-up ground plane. Camera: OpenCV standard (X right, Y down, Z optical axis forward).",
+    "rotation_convention": "World-to-Camera transformation: x_cam = R * X_world + t.",
+    "camera_world_position_formula": "C = -R^T * t",
+    "axis_convention": "Optical axis vector in world coordinates: v_opt = R^T * [0, 0, 1]^T.",
+    "pitch_definitions": {
+      "euler_zyx_pitch": "atan2(-R[2,0], sqrt(R[2,1]^2 + R[2,2]^2)) \u2014 assumes sequence Yaw(Z) -> Pitch(Y) -> Roll(X)",
+      "optical_axis_depression_angle": "-arcsin(v_opt[2]) \u2014 physical geometric angle between optical ray and horizontal ground plane",
+      "tilt_from_nadir": "arccos(-v_opt[2]) \u2014 angle from vertical straight-down ray (0\u00b0 = pointing at floor, 90\u00b0 = horizontal)"
+    },
+    "governance_verdict": "CONVENTION_REVIEW_REQUIRED. Euler decomposition angle (56.51\u00b0, 53.84\u00b0, 4.42\u00b0, 1.59\u00b0) depends heavily on rotation sequence and does not represent pure geometric tilt against the floor plane. The optical-axis depression angle is consistently 24.3\u00b0 to 31.9\u00b0 across all 4 ceiling-mounted cameras."
+  },
+  "per_camera_extrinsic_audit": {
+    "Camera_0000": {
+      "source_matrix": {
+        "extrinsic_3x4": [
+          [
+            -0.15112446150792366,
+            0.9870559881787692,
+            -0.053683184225040696,
+            0.19325946321014653
+          ],
+          [
+            0.530628984951175,
+            0.03518355999453721,
+            -0.8468736846429169,
+            3.0487452647145012
+          ],
+          [
+            -0.8340229670102792,
+            -0.15646918140090382,
+            -0.5290776078683733,
+            1.9046793883261441
+          ]
+        ],
+        "R_3x3": [
+          [
+            -0.15112446150792366,
+            0.9870559881787692,
+            -0.053683184225040696
+          ],
+          [
+            0.530628984951175,
+            0.03518355999453721,
+            -0.8468736846429169
+          ],
+          [
+            -0.8340229670102792,
+            -0.15646918140090382,
+            -0.5290776078683733
+          ]
+        ],
+        "t_3x1": [
+          0.19325946321014653,
+          3.0487452647145012,
+          1.9046793883261441
+        ]
+      },
+      "camera_world_position_m": [
+        -0.0,
+        0.0,
+        3.6
+      ],
+      "camera_height_m": 3.6,
+      "optical_axis_world_vector": [
+        -0.834023,
+        -0.156469,
+        -0.529078
+      ],
+      "euler_zyx_extraction": {
+        "rotation_convention": "ZYX_EULER_YAW_PITCH_ROLL",
+        "extraction_method": "atan2(-R[2,0], sqrt(R[2,1]^2 + R[2,2]^2))",
+        "raw_angle_deg": 56.5142,
+        "normalized_angle_deg": 56.51,
+        "confidence_status": "CONVENTION_DEPENDENT_EULER_ARTIFACT"
+      },
+      "optical_axis_depression_extraction": {
+        "rotation_convention": "PHYSICAL_GROUND_PLANE_PROJECTION",
+        "extraction_method": "-arcsin(v_opt[2])",
+        "raw_angle_deg": 31.9432,
+        "normalized_angle_deg": 31.94,
+        "confidence_status": "PHYSICALLY_MEANINGFUL_DEPRESSION_ANGLE"
+      },
+      "tilt_from_nadir_deg": 58.06,
+      "pitch_status": "VERIFIED / CONVENTION_REVIEW_REQUIRED"
+    },
+    "Camera_0001": {
+      "source_matrix": {
+        "extrinsic_3x4": [
+          [
+            0.40649898670459095,
+            -0.9134740119590878,
+            -0.01799512301675793,
+            3.2198212803516864
+          ],
+          [
+            -0.4276669444797124,
+            -0.17283451541514336,
+            -0.8872594338634563,
+            -3.692641862304476
+          ],
+          [
+            0.8073781819836625,
+            0.3683659746781829,
+            -0.46091966510543114,
+            13.382020246321886
+          ]
+        ],
+        "R_3x3": [
+          [
+            0.40649898670459095,
+            -0.9134740119590878,
+            -0.01799512301675793
+          ],
+          [
+            -0.4276669444797124,
+            -0.17283451541514336,
+            -0.8872594338634563
+          ],
+          [
+            0.8073781819836625,
+            0.3683659746781829,
+            -0.46091966510543114
+          ]
+        ],
+        "t_3x1": [
+          3.2198212803516864,
+          -3.692641862304476,
+          13.382020246321886
+        ]
+      },
+      "camera_world_position_m": [
+        -13.6924,
+        -2.6265,
+        2.9496
+      ],
+      "camera_height_m": 2.9496,
+      "optical_axis_world_vector": [
+        0.807378,
+        0.368366,
+        -0.46092
+      ],
+      "euler_zyx_extraction": {
+        "rotation_convention": "ZYX_EULER_YAW_PITCH_ROLL",
+        "extraction_method": "atan2(-R[2,0], sqrt(R[2,1]^2 + R[2,2]^2))",
+        "raw_angle_deg": -53.8406,
+        "normalized_angle_deg": 53.84,
+        "confidence_status": "CONVENTION_DEPENDENT_EULER_ARTIFACT"
+      },
+      "optical_axis_depression_extraction": {
+        "rotation_convention": "PHYSICAL_GROUND_PLANE_PROJECTION",
+        "extraction_method": "-arcsin(v_opt[2])",
+        "raw_angle_deg": 27.4465,
+        "normalized_angle_deg": 27.45,
+        "confidence_status": "PHYSICALLY_MEANINGFUL_DEPRESSION_ANGLE"
+      },
+      "tilt_from_nadir_deg": 62.55,
+      "pitch_status": "VERIFIED / CONVENTION_REVIEW_REQUIRED"
+    },
+    "Camera_0002": {
+      "source_matrix": {
+        "extrinsic_3x4": [
+          [
+            -0.9970228278097322,
+            -0.06683540238036127,
+            -0.038452272671423204,
+            -6.523416999859913
+          ],
+          [
+            0.003459724411638984,
+            0.4594062104410895,
+            -0.888219570610965,
+            0.8079932872971942
+          ],
+          [
+            0.07702970498932635,
+            -0.8857082621414342,
+            -0.4578071994554269,
+            6.425865833952649
+          ]
+        ],
+        "R_3x3": [
+          [
+            -0.9970228278097322,
+            -0.06683540238036127,
+            -0.038452272671423204
+          ],
+          [
+            0.003459724411638984,
+            0.4594062104410895,
+            -0.888219570610965
+          ],
+          [
+            0.07702970498932635,
+            -0.8857082621414342,
+            -0.4578071994554269
+          ]
+        ],
+        "t_3x1": [
+          -6.523416999859913,
+          0.8079932872971942,
+          6.425865833952649
+        ]
+      },
+      "camera_world_position_m": [
+        -7.0018,
+        4.8843,
+        3.4086
+      ],
+      "camera_height_m": 3.4086,
+      "optical_axis_world_vector": [
+        0.07703,
+        -0.885708,
+        -0.457807
+      ],
+      "euler_zyx_extraction": {
+        "rotation_convention": "ZYX_EULER_YAW_PITCH_ROLL",
+        "extraction_method": "atan2(-R[2,0], sqrt(R[2,1]^2 + R[2,2]^2))",
+        "raw_angle_deg": -4.4179,
+        "normalized_angle_deg": 4.42,
+        "confidence_status": "CONVENTION_DEPENDENT_EULER_ARTIFACT"
+      },
+      "optical_axis_depression_extraction": {
+        "rotation_convention": "PHYSICAL_GROUND_PLANE_PROJECTION",
+        "extraction_method": "-arcsin(v_opt[2])",
+        "raw_angle_deg": 27.2457,
+        "normalized_angle_deg": 27.25,
+        "confidence_status": "PHYSICALLY_MEANINGFUL_DEPRESSION_ANGLE"
+      },
+      "tilt_from_nadir_deg": 62.75,
+      "pitch_status": "VERIFIED / CONVENTION_REVIEW_REQUIRED"
+    },
+    "Camera_0003": {
+      "source_matrix": {
+        "extrinsic_3x4": [
+          [
+            0.9995577206782108,
+            0.029682640896362966,
+            -0.0017913498575493625,
+            6.787573670208854
+          ],
+          [
+            0.010595393457879125,
+            -0.41178868972022425,
+            -0.9112177794114227,
+            -0.8786725717787949
+          ],
+          [
+            -0.027785011512578103,
+            0.9107957042793913,
+            -0.41192106619072855,
+            9.374785052236737
+          ]
+        ],
+        "R_3x3": [
+          [
+            0.9995577206782108,
+            0.029682640896362966,
+            -0.0017913498575493625
+          ],
+          [
+            0.010595393457879125,
+            -0.41178868972022425,
+            -0.9112177794114227
+          ],
+          [
+            -0.027785011512578103,
+            0.9107957042793913,
+            -0.41192106619072855
+          ]
+        ],
+        "t_3x1": [
+          6.787573670208854,
+          -0.8786725717787949,
+          9.374785052236737
+        ]
+      },
+      "camera_world_position_m": [
+        -6.5148,
+        -9.1018,
+        3.0732
+      ],
+      "camera_height_m": 3.0732,
+      "optical_axis_world_vector": [
+        -0.027785,
+        0.910796,
+        -0.411921
+      ],
+      "euler_zyx_extraction": {
+        "rotation_convention": "ZYX_EULER_YAW_PITCH_ROLL",
+        "extraction_method": "atan2(-R[2,0], sqrt(R[2,1]^2 + R[2,2]^2))",
+        "raw_angle_deg": 1.5922,
+        "normalized_angle_deg": 1.59,
+        "confidence_status": "CONVENTION_DEPENDENT_EULER_ARTIFACT"
+      },
+      "optical_axis_depression_extraction": {
+        "rotation_convention": "PHYSICAL_GROUND_PLANE_PROJECTION",
+        "extraction_method": "-arcsin(v_opt[2])",
+        "raw_angle_deg": 24.3256,
+        "normalized_angle_deg": 24.33,
+        "confidence_status": "PHYSICALLY_MEANINGFUL_DEPRESSION_ANGLE"
+      },
+      "tilt_from_nadir_deg": 65.67,
+      "pitch_status": "VERIFIED / CONVENTION_REVIEW_REQUIRED"
+    }
+  }
+}

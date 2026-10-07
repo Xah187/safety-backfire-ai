@@ -1,0 +1,282 @@
+{
+  "total_rows": 417,
+  "unique_tracks": 11,
+  "tracks_by_class": {
+    "forklift": 10,
+    "person": 1
+  },
+  "top_forklift_candidates": [
+    {
+      "class": "forklift",
+      "track_id": 2,
+      "frames": 209,
+      "first_frame": 1,
+      "last_frame": 303,
+      "duration_sec": 10.110366700033367,
+      "mean_confidence": 0.4656885167464113,
+      "min_confidence": 0.2536,
+      "max_confidence": 0.7629,
+      "start_center": [
+        278.5,
+        135.5
+      ],
+      "end_center": [
+        280.0,
+        134.5
+      ],
+      "displacement_px": 1.8027756377319948,
+      "path_length_px": 95.8116080544159,
+      "mobility_ratio": 53.14671778843924
+    },
+    {
+      "class": "forklift",
+      "track_id": 20,
+      "frames": 88,
+      "first_frame": 338,
+      "last_frame": 426,
+      "duration_sec": 2.969366700033367,
+      "mean_confidence": 0.6228068181818184,
+      "min_confidence": 0.3582,
+      "max_confidence": 0.8503,
+      "start_center": [
+        279.5,
+        135.5
+      ],
+      "end_center": [
+        278.5,
+        141.5
+      ],
+      "displacement_px": 6.0827625302982185,
+      "path_length_px": 37.35921509288168,
+      "mobility_ratio": 6.14181712779277
+    },
+    {
+      "class": "forklift",
+      "track_id": 13,
+      "frames": 41,
+      "first_frame": 185,
+      "last_frame": 243,
+      "duration_sec": 1.9693667000333657,
+      "mean_confidence": 0.47887317073170743,
+      "min_confidence": 0.353,
+      "max_confidence": 0.7005,
+      "start_center": [
+        295.5,
+        229.5
+      ],
+      "end_center": [
+        275.0,
+        264.5
+      ],
+      "displacement_px": 40.56168142471414,
+      "path_length_px": 45.88028303220194,
+      "mobility_ratio": 1.131123795184861
+    },
+    {
+      "class": "forklift",
+      "track_id": 10,
+      "frames": 12,
+      "first_frame": 112,
+      "last_frame": 123,
+      "duration_sec": 0.4003667000333663,
+      "mean_confidence": 0.43788333333333335,
+      "min_confidence": 0.3348,
+      "max_confidence": 0.5425,
+      "start_center": [
+        365.5,
+        214.0
+      ],
+      "end_center": [
+        362.0,
+        216.5
+      ],
+      "displacement_px": 4.301162633521313,
+      "path_length_px": 7.209055237752628,
+      "mobility_ratio": 1.6760712979250114
+    },
+    {
+      "class": "forklift",
+      "track_id": 3,
+      "frames": 11,
+      "first_frame": 47,
+      "last_frame": 57,
+      "duration_sec": 0.3673667000333668,
+      "mean_confidence": 0.4205818181818182,
+      "min_confidence": 0.3879,
+      "max_confidence": 0.4477,
+      "start_center": [
+        463.5,
+        196.0
+      ],
+      "end_center": [
+        450.0,
+        197.5
+      ],
+      "displacement_px": 13.583077707206124,
+      "path_length_px": 14.654748127603462,
+      "mobility_ratio": 1.0788974666491669
+    },
+    {
+      "class": "forklift",
+      "track_id": 4,
+      "frames": 5,
+      "first_frame": 95,
+      "last_frame": 99,
+      "duration_sec": 0.1673667000333666,
+      "mean_confidence": 0.33433999999999997,
+      "min_confidence": 0.3211,
+      "max_confidence": 0.3384,
+      "start_center": [
+        375.0,
+        181.0
+      ],
+      "end_center": [
+        375.0,
+        181.0
+      ],
+      "displacement_px": 0.0,
+      "path_length_px": 0.0,
+      "mobility_ratio": 0.0
+    },
+    {
+      "class": "forklift",
+      "track_id": 12,
+      "frames": 5,
+      "first_frame": 161,
+      "last_frame": 165,
+      "duration_sec": 0.1663667000333667,
+      "mean_confidence": 0.6871,
+      "min_confidence": 0.6871,
+      "max_confidence": 0.6871,
+      "start_center": [
+        318.0,
+        219.5
+      ],
+      "end_center": [
+        318.0,
+        219.5
+      ],
+      "displacement_px": 0.0,
+      "path_length_px": 0.0,
+      "mobility_ratio": 0.0
+    },
+    {
+      "class": "forklift",
+      "track_id": 19,
+      "frames": 5,
+      "first_frame": 287,
+      "last_frame": 291,
+      "duration_sec": 0.1663667000333676,
+      "mean_confidence": 0.40876,
+      "min_confidence": 0.3933,
+      "max_confidence": 0.4127,
+      "start_center": [
+        404.5,
+        237.0
+      ],
+      "end_center": [
+        404.5,
+        237.5
+      ],
+      "displacement_px": 0.5,
+      "path_length_px": 0.5,
+      "mobility_ratio": 0.5
+    },
+    {
+      "class": "forklift",
+      "track_id": 18,
+      "frames": 1,
+      "first_frame": 249,
+      "last_frame": 249,
+      "duration_sec": 0.033366700033366704,
+      "mean_confidence": 0.3221,
+      "min_confidence": 0.3221,
+      "max_confidence": 0.3221,
+      "start_center": [
+        300.5,
+        236.0
+      ],
+      "end_center": [
+        300.5,
+        236.0
+      ],
+      "displacement_px": 0.0,
+      "path_length_px": 0.0,
+      "mobility_ratio": 0.0
+    },
+    {
+      "class": "forklift",
+      "track_id": 1,
+      "frames": 1,
+      "first_frame": 1,
+      "last_frame": 1,
+      "duration_sec": 0.033366700033366704,
+      "mean_confidence": 0.6565,
+      "min_confidence": 0.6565,
+      "max_confidence": 0.6565,
+      "start_center": [
+        515.5,
+        189.5
+      ],
+      "end_center": [
+        515.5,
+        189.5
+      ],
+      "displacement_px": 0.0,
+      "path_length_px": 0.0,
+      "mobility_ratio": 0.0
+    }
+  ],
+  "person_tracks": [
+    {
+      "class": "person",
+      "track_id": 11,
+      "frames": 35,
+      "first_frame": 131,
+      "last_frame": 165,
+      "duration_sec": 1.167366700033367,
+      "mean_confidence": 0.6019942857142855,
+      "min_confidence": 0.3825,
+      "max_confidence": 0.8749,
+      "start_center": [
+        243.0,
+        174.5
+      ],
+      "end_center": [
+        248.0,
+        187.5
+      ],
+      "displacement_px": 13.92838827718412,
+      "path_length_px": 16.33281063086876,
+      "mobility_ratio": 1.1726274645590753
+    }
+  ],
+  "warning": "No human labels are inferred. Ranked forklift candidates are only triage heuristics.",
+  "human_audit_summary": {
+    "total_reviewed_detections": 413,
+    "background_false_positives": 297,
+    "true_forklift_detections": 76,
+    "true_person_detections": 35,
+    "uncertain_detections": 5,
+    "false_positive_tracks": [
+      2,
+      20
+    ],
+    "true_forklift_tracks": [
+      1,
+      3,
+      10,
+      12,
+      13,
+      18,
+      19
+    ],
+    "true_person_tracks": [
+      11
+    ],
+    "uncertain_tracks": [
+      4
+    ],
+    "notes": "Track 2 and 20 represent the exact same static dark shelf/goods stack at (x\u2248279, y\u2248135) with ~0px displacement."
+  }
+}

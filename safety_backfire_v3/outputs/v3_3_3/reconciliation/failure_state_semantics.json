@@ -1,0 +1,38 @@
+{
+  "audit_version": "V3.3.3_RECONCILIATION_FAILURE_SEMANTICS",
+  "issue_ids": ["CRITICAL_ISSUE_07_MITIGATED_BY_REFUSAL", "CRITICAL_ISSUE_08_BOUNDED_BY_ODD"],
+  "audit_timestamp_utc": "2026-09-25T14:28:00Z",
+  "semantics_governance_rules": {
+    "rule_1_mitigated_by_refusal": "When a failure is classified as MITIGATED_BY_REFUSAL, the system explicitly tracks dual states: UNDERLYING_LIMITATION = PRESENT, and SAFETY_EXPOSURE = MITIGATED. The underlying model or statistical limitation must NEVER be marked RESOLVED or FIXED.",
+    "rule_2_bounded_by_odd": "BOUNDED_BY_ODD is strictly reserved for physical operational envelope limits (e.g. radial distance <= 8.0m, pitch >= 20 deg, slope <= 3 deg). Evidence gaps and data absences (e.g. unobserved external facilities or small intervention sample sizes) must NOT be labeled BOUNDED_BY_ODD.",
+    "rule_3_evidence_gap_states": "For unobserved external evidence or sample size limitations, the mandatory states are EVIDENCE_GAP, NOT_ESTABLISHED, or UNDER_INVESTIGATION."
+  },
+  "reclassified_failures": [
+    {
+      "failure_id": "V3.3.2-FAIL-001",
+      "original_state": "MITIGATED_BY_REFUSAL",
+      "reconciled_semantics": {
+        "underlying_limitation": "PRESENT (Model H width expanded 8.5% and Sector D required empirical pitch scaling)",
+        "safety_exposure": "MITIGATED (action policy downgrades 24.28% elevated-uncertainty frames to ADVISORY_ONLY)",
+        "canonical_mitigation_state": "MITIGATED_BY_REFUSAL",
+        "resolved_status": false
+      }
+    },
+    {
+      "failure_id": "V3.3.2-FAIL-002",
+      "description": "Independent multi-facility generalization unverified (Facility E unavailable).",
+      "original_state": "BOUNDED_BY_ODD",
+      "corrected_classification": "DATASET_LIMITATION / EVIDENCE_GAP",
+      "corrected_state": "NOT_ESTABLISHED",
+      "justification": "The absence of Facility E data is an evidence gap in external validity, not an operational ODD boundary of the Facility Central 01 pilot."
+    },
+    {
+      "failure_id": "V3.3.2-FAIL-003",
+      "description": "Intervention sample size (N=6 with N=1 PHYSICAL_NEW) is discrete case evidence.",
+      "original_state": "BOUNDED_BY_ODD",
+      "corrected_classification": "EVIDENCE_GAP",
+      "corrected_state": "NOT_ESTABLISHED",
+      "justification": "Small sample size is a statistical evidence limitation preventing population claims, not an ODD boundary."
+    }
+  ]
+}

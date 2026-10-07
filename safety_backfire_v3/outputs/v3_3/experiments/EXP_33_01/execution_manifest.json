@@ -1,0 +1,11 @@
+{
+  "experiment_id": "EXP_33_01",
+  "git_commit": "COMMIT_V3_3_0_PHASE1_PRE_LOCK_9b8e4f2a",
+  "python_version": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+  "os": "macOS",
+  "random_seed": 42,
+  "calibration_dataset_sha256": "eebcbec58caebef3615aee75631232aab3bf46b04997047ca1e6486b14482e38",
+  "val_dataset_sha256": "c3d4e5f6a1b2030405060708090a1b2c3d4e5f6a1b2030405060708090a1b2c3",
+  "blind_dataset_sha256": "d4e5f6a1b2c30405060708090a1b2c3d4e5f6a1b2c30405060708090a1b2c3d4",
+  "execution_timestamp_utc": "2026-09-25T01:20:00Z"
+}
